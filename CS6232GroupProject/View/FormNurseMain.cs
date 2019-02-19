@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CS6232GroupProject
+namespace CS6232GroupProject.View
 {
-    public partial class Form1 : Form
+    public partial class FormNurseMain : Form
     {
-        public Form1()
+        public FormNurseMain()
         {
             InitializeComponent();
         }

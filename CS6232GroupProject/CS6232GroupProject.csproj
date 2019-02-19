@@ -46,19 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\UserControlNurseMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNurseMain.Designer.cs">
+      <DependentUpon>UserControlNurseMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormNurseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormNurseMain.Designer.cs">
+      <DependentUpon>FormNurseMain.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -70,8 +76,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\UserControlNurseMain.resx">
+      <DependentUpon>UserControlNurseMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormNurseMain.resx">
+      <DependentUpon>FormNurseMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bggradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nurseicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
