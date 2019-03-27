@@ -8,6 +8,7 @@ namespace CS6232GroupProject.View
         public FormNurseMain()
         {
             InitializeComponent();
+            this.FormClosed += (s, ev) => Application.Exit();
         }
 
         ///// <summary>
@@ -26,5 +27,6 @@ namespace CS6232GroupProject.View
         {
             this.labelName.Text = "Welcome! " + userName;
         }
+
     }
 }

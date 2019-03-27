@@ -24,5 +24,19 @@ namespace CS6232GroupProject.UserControls
         {
 
         }
+
+        private void buttonSearch_Click(object sender, System.EventArgs e)
+        {
+            panelPatientInfoResults.Visible = true;
+            linkLabelPatientInfoBack.Visible = true;
+            /// when selected and conditions approved, Patient Info results panel and back button should then be visible
+        }
+
+        private void linkLabelPatientInfoBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            panelPatientInfoResults.Visible = false;
+            linkLabelPatientInfoBack.Visible = false;
+            /// 
+        }
     }
 }

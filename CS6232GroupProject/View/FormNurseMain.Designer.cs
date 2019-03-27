@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNurseMain));
             this.labelName = new System.Windows.Forms.Label();
             this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
             this.pictureBoxNurseIcon = new System.Windows.Forms.PictureBox();
@@ -88,8 +89,9 @@
             this.Controls.Add(this.linkLabelLogout);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxNurseIcon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNurseMain";
-            this.Text = "FormNurseMain";
+            this.Text = "ClinicCare - Nurse View";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormNurseMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNurseIcon)).EndInit();
             this.ResumeLayout(false);

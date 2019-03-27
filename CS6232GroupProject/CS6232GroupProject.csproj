@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon_41d_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,6 +72,12 @@
     <Compile Include="UserControls\UserControlNurseMain.Designer.cs">
       <DependentUpon>UserControlNurseMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlPatientRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlPatientRecords.Designer.cs">
+      <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +89,12 @@
     </Compile>
     <Compile Include="View\FormNurseMain.Designer.cs">
       <DependentUpon>FormNurseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPatientRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPatientRecords.Designer.cs">
+      <DependentUpon>FormPatientRecords.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,11 +109,17 @@
     <EmbeddedResource Include="UserControls\UserControlNurseMain.resx">
       <DependentUpon>UserControlNurseMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlPatientRecords.resx">
+      <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormNurseMain.resx">
       <DependentUpon>FormNurseMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPatientRecords.resx">
+      <DependentUpon>FormPatientRecords.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

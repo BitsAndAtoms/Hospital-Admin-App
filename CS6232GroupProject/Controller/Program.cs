@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.View;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject
@@ -12,9 +13,22 @@ namespace CS6232GroupProject
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            bool instance = false;
+            using (Mutex mtex = new Mutex(true, "Login Instance", out instance))
+            {
+                if (instance)
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new FormLogin());
+                    mtex.ReleaseMutex();
+                }
+                else
+                {
+                    MessageBox.Show("This application is already running.");
+                }
+            }
+                
         }
     }
 }

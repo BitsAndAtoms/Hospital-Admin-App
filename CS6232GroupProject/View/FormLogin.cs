@@ -16,6 +16,7 @@ namespace CS6232GroupProject.View
             InitializeComponent();
             this.nurseMain = new FormNurseMain();
             this.newLoginController = new LoginController();
+            this.FormClosed += (s, ev) => Application.Exit();
         }
 
      
@@ -52,7 +53,7 @@ namespace CS6232GroupProject.View
                 { 
                 this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1]);
                 this.nurseMain.ShowDialog();
-                this.Show();
+                this.nurseMain.Show();
                 }
             }
             else
@@ -77,6 +78,19 @@ namespace CS6232GroupProject.View
         private void passwordChanged(object sender, System.EventArgs e)
         {
             this.labelErrorMessage.Text = "";
+        }
+
+        /// <summary>
+        /// activates submit upon pressing enter with password textbox on focus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.buttonLogin_Click(this, new System.EventArgs());
+            }
         }
     }
 }
