@@ -66,6 +66,7 @@
             this.textBoxUsername.TabIndex = 2;
             this.textBoxUsername.Text = "Username";
             this.textBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxUsername.TextChanged += new System.EventHandler(this.userNameChanged);
             // 
             // textBoxPassword
             // 
@@ -78,6 +79,7 @@
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.passwordChanged);
             // 
             // labelSignIn
             // 
@@ -103,6 +105,7 @@
             this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Submit";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // labelInformation
             // 

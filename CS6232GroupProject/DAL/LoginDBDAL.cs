@@ -13,11 +13,12 @@ namespace CS6232GroupProject.DAL
         /// This method verifies login
         /// </summary>
         /// <returns>true/false</returns>
-        public bool CheckLogin(string inputPassword)
+        public bool CheckLogin(string inputPassword, string inputUserName)
         {
                 string selectStatement =
                 "SELECT username FROM[Clinic].[dbo].[Login] " +
-                " WHERE PWDCOMPARE(@inputPassword, password_hash) = 1";
+                " WHERE PWDCOMPARE(@inputPassword , password) = 1" +
+                " AND username = @inputUserName ";
 
 
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -29,12 +30,22 @@ namespace CS6232GroupProject.DAL
                     
                     if (inputPassword == null)
                     {
-                        selectCommand.Parameters.AddWithValue("@Description", DBNull.Value);
+                        selectCommand.Parameters.AddWithValue("@inputPassword", DBNull.Value);
                     }
                     else
                     {
                      selectCommand.Parameters.AddWithValue("@inputPassword", inputPassword);
                     }
+
+                    if (inputUserName == null)
+                    {
+                        selectCommand.Parameters.AddWithValue("@inputUserName", DBNull.Value);
+                    }
+                    else
+                    {
+                        selectCommand.Parameters.AddWithValue("@inputUserName", inputUserName);
+                    }
+
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
