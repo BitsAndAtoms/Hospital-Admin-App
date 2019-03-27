@@ -274,7 +274,7 @@
             // 
             this.comboBoxPhysician.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(206, 61);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(206, 64);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPhysician.TabIndex = 10;
@@ -283,7 +283,7 @@
             // 
             this.comboBoxPatient.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxPatient.FormattingEnabled = true;
-            this.comboBoxPatient.Location = new System.Drawing.Point(206, 11);
+            this.comboBoxPatient.Location = new System.Drawing.Point(206, 14);
             this.comboBoxPatient.Name = "comboBoxPatient";
             this.comboBoxPatient.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPatient.TabIndex = 7;
@@ -665,7 +665,7 @@
             // 
             this.comboBoxState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(203, 25);
+            this.comboBoxState.Location = new System.Drawing.Point(203, 29);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(100, 28);
             this.comboBoxState.TabIndex = 15;
@@ -692,7 +692,7 @@
             this.buttonRegisterSubmit.Name = "buttonRegisterSubmit";
             this.buttonRegisterSubmit.Size = new System.Drawing.Size(137, 35);
             this.buttonRegisterSubmit.TabIndex = 7;
-            this.buttonRegisterSubmit.Text = "Search";
+            this.buttonRegisterSubmit.Text = "Register";
             this.buttonRegisterSubmit.UseVisualStyleBackColor = false;
             // 
             // labelRegisterPatient

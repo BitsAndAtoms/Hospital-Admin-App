@@ -48,9 +48,12 @@ namespace CS6232GroupProject.View
             {
                 this.Hide();
                 List<string> newNameAndRole = this.newLoginController.GETUserNameAndRole(this.textBoxUsername.Text);
-                this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1] +  " " + newNameAndRole[2]);
+                if(newNameAndRole[0].Equals("Nurse"))
+                { 
+                this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1]);
                 this.nurseMain.ShowDialog();
                 this.Show();
+                }
             }
             else
             {
