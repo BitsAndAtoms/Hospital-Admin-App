@@ -694,6 +694,7 @@
             this.buttonRegisterSubmit.TabIndex = 7;
             this.buttonRegisterSubmit.Text = "Register";
             this.buttonRegisterSubmit.UseVisualStyleBackColor = false;
+            this.buttonRegisterSubmit.Click += new System.EventHandler(this.buttonRegisterSubmit_Click);
             // 
             // labelRegisterPatient
             // 
