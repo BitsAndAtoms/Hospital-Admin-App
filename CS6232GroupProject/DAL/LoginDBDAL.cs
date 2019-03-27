@@ -43,7 +43,7 @@ namespace CS6232GroupProject.DAL
                     }
                     else
                     {
-                        selectCommand.Parameters.AddWithValue("@inputUserName", inputUserName);
+                        selectCommand.Parameters.AddWithValue("@inputUserName",  inputUserName);
                     }
 
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
