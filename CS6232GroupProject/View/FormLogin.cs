@@ -1,4 +1,5 @@
 ﻿using CS6232GroupProject.Controller;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject.View
@@ -6,7 +7,7 @@ namespace CS6232GroupProject.View
     public partial class FormLogin : Form
     {
         private FormNurseMain nurseMain;
-        private LoginController newLoginController;
+        private readonly LoginController newLoginController;
         /// <summary>
         /// constructor of login form
         /// </summary>
@@ -46,7 +47,8 @@ namespace CS6232GroupProject.View
             if (this.newLoginController.DoCheckLogin(this.textBoxPassword.Text,this.textBoxUsername.Text))
             {
                 this.Hide();
-                ///this.nurseMain.setUserNameDisplay(this.userName.Text);
+                List<string> newNameAndRole = this.newLoginController.GETUserNameAndRole(this.textBoxUsername.Text);
+                this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1] +  " " + newNameAndRole[2]);
                 this.nurseMain.ShowDialog();
                 this.Show();
             }

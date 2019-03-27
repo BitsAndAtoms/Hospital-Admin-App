@@ -30,5 +30,10 @@ namespace CS6232GroupProject.Controller
             return this.loginDetails.CheckLogin(inputPassword, inputUserName);
         }
 
+        internal List<string> GETUserNameAndRole(string userName)
+        {
+           List<string> newNameAndRole = this.loginDetails.FindUserNameAndRole(userName);
+            return newNameAndRole;
+        }
     }
 }
