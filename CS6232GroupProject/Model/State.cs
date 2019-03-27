@@ -5,7 +5,7 @@ namespace CS6232GroupProject.Model
 {
     class State
     {
-        private List<String> GetStates()
+        public static List<String> GetStates()
         {
             List<String> StateList = new List<String>
             {
