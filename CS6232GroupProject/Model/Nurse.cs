@@ -17,5 +17,6 @@ namespace CS6232GroupProject.Model
         public string Username { get; set; }
         public string Password { get; set; }
         public string AddressID { get; set; }
+        public Boolean Active { get; set; }
     }
 }

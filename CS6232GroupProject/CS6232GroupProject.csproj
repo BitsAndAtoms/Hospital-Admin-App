@@ -61,6 +61,7 @@
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\PatientVisit.cs" />
     <Compile Include="Model\Specialty.cs" />
+    <Compile Include="Model\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\UserControlNurseMain.cs">
       <SubType>UserControl</SubType>
