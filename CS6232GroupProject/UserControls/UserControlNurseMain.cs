@@ -8,5 +8,10 @@ namespace CS6232GroupProject.UserControls
         {
             InitializeComponent();
         }
+
+        private void buttonRegisterSubmit_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

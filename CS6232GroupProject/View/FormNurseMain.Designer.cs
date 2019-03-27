@@ -90,6 +90,7 @@
             this.Controls.Add(this.pictureBoxNurseIcon);
             this.Name = "FormNurseMain";
             this.Text = "FormNurseMain";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormNurseMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNurseIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

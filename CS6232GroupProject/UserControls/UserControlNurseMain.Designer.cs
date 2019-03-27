@@ -692,8 +692,9 @@
             this.buttonRegisterSubmit.Name = "buttonRegisterSubmit";
             this.buttonRegisterSubmit.Size = new System.Drawing.Size(137, 35);
             this.buttonRegisterSubmit.TabIndex = 7;
-            this.buttonRegisterSubmit.Text = "Search";
+            this.buttonRegisterSubmit.Text = "Register";
             this.buttonRegisterSubmit.UseVisualStyleBackColor = false;
+            this.buttonRegisterSubmit.Click += new System.EventHandler(this.buttonRegisterSubmit_Click);
             // 
             // labelRegisterPatient
             // 
