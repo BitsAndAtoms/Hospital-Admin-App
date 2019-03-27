@@ -10,7 +10,9 @@ namespace CS6232GroupProject.UserControls
             InitializeComponent();
             SetComboBox();
         }
-
+        /// <summary>
+        /// This private method populates the States ComboBox.
+        /// </summary>
         private void SetComboBox()
         {
             foreach (string state in State.GetStates())
