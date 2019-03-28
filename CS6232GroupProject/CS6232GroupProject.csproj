@@ -49,9 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clinicDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="clinicDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\DoctorDAL.cs" />
     <Compile Include="DAL\LoginDBDAL.cs" />
+    <Compile Include="DAL\PatientDAL.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Appointment.cs" />
@@ -121,6 +135,29 @@
     <EmbeddedResource Include="View\FormPatientRecords.resx">
       <DependentUpon>FormPatientRecords.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="clinicDataSet.xsc">
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clinicDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="clinicDataSet.xss">
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet1.xsc">
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clinicDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="clinicDataSet1.xss">
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\CS6232GroupProject.Model.Doctor.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

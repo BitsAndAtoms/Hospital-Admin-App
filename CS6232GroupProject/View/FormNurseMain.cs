@@ -27,6 +27,5 @@ namespace CS6232GroupProject.View
         {
             this.labelName.Text = "Welcome! " + userName;
         }
-
     }
 }
