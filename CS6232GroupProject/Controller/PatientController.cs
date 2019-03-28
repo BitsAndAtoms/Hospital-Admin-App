@@ -14,7 +14,7 @@ namespace CS6232GroupProject.Controller
 
         /// <summary>
         /// This method constructs the PatientController object
-        /// and initialises the PatientDAL variable.
+        /// and initialises the PatientDAL variable. 
         /// </summary>
         public PatientController()
         {
