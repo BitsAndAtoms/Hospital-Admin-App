@@ -49,7 +49,6 @@
             this.linkLabelDeletePatient = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.linkLabelRecordsPatientInfoResult = new System.Windows.Forms.LinkLabel();
-            this.linkLabelAppointmentsPatientInfoResult = new System.Windows.Forms.LinkLabel();
             this.labelPhonePatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxDOBPatientInfoResult = new System.Windows.Forms.TextBox();
             this.textBoxLastNamePatientInfoResult = new System.Windows.Forms.TextBox();
@@ -377,8 +376,6 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.Controls.Add(this.linkLabelRecordsPatientInfoResult, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.linkLabelAppointmentsPatientInfoResult, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelPhonePatientInfoResult, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.textBoxDOBPatientInfoResult, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.textBoxLastNamePatientInfoResult, 1, 1);
@@ -387,6 +384,7 @@
             this.tableLayoutPanel4.Controls.Add(this.labelDOBPatientInfoResult, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.labelFlastNamePatientInfoResult, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.textBoxPhonePatientInfoResult, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.linkLabelRecordsPatientInfoResult, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -404,25 +402,12 @@
             this.linkLabelRecordsPatientInfoResult.AutoSize = true;
             this.linkLabelRecordsPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelRecordsPatientInfoResult.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelRecordsPatientInfoResult.Location = new System.Drawing.Point(549, 62);
+            this.linkLabelRecordsPatientInfoResult.Location = new System.Drawing.Point(549, 12);
             this.linkLabelRecordsPatientInfoResult.Name = "linkLabelRecordsPatientInfoResult";
             this.linkLabelRecordsPatientInfoResult.Size = new System.Drawing.Size(126, 25);
             this.linkLabelRecordsPatientInfoResult.TabIndex = 18;
             this.linkLabelRecordsPatientInfoResult.TabStop = true;
             this.linkLabelRecordsPatientInfoResult.Text = "Visit Records";
-            // 
-            // linkLabelAppointmentsPatientInfoResult
-            // 
-            this.linkLabelAppointmentsPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.linkLabelAppointmentsPatientInfoResult.AutoSize = true;
-            this.linkLabelAppointmentsPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelAppointmentsPatientInfoResult.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelAppointmentsPatientInfoResult.Location = new System.Drawing.Point(543, 12);
-            this.linkLabelAppointmentsPatientInfoResult.Name = "linkLabelAppointmentsPatientInfoResult";
-            this.linkLabelAppointmentsPatientInfoResult.Size = new System.Drawing.Size(132, 25);
-            this.linkLabelAppointmentsPatientInfoResult.TabIndex = 17;
-            this.linkLabelAppointmentsPatientInfoResult.TabStop = true;
-            this.linkLabelAppointmentsPatientInfoResult.Text = "Appointments";
             // 
             // labelPhonePatientInfoResult
             // 
@@ -1274,7 +1259,6 @@
         private System.Windows.Forms.TextBox textBoxPhonePatientInfoResult;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.LinkLabel linkLabelRecordsPatientInfoResult;
-        private System.Windows.Forms.LinkLabel linkLabelAppointmentsPatientInfoResult;
         private System.Windows.Forms.BindingSource doctorBindingSource;
         private clinicDataSet clinicDataSet;
         private clinicDataSetTableAdapters.DoctorTableAdapter doctorTableAdapter;
