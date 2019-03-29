@@ -16,5 +16,15 @@ namespace CS6232GroupProject.UserControls
         {
             InitializeComponent();
         }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabelPatientInfoBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

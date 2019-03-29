@@ -178,12 +178,12 @@
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel8.Controls.Add(this.labelMailAddressPatentInfoResult, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel5, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel6, 1, 2);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel7, 1, 3);
             this.tableLayoutPanel8.Controls.Add(this.buttonPatientInfoResultUpdate, 1, 4);
             this.tableLayoutPanel8.Controls.Add(this.linkLabelDeletePatient, 1, 5);
+            this.tableLayoutPanel8.Controls.Add(this.labelMailAddressPatentInfoResult, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 192);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
