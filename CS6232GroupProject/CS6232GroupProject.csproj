@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon_41d_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,9 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clinicDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="clinicDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\DoctorDAL.cs" />
     <Compile Include="DAL\LoginDBDAL.cs" />
+    <Compile Include="DAL\PatientDAL.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Appointment.cs" />
@@ -69,6 +86,12 @@
     <Compile Include="UserControls\UserControlNurseMain.Designer.cs">
       <DependentUpon>UserControlNurseMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlPatientRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlPatientRecords.Designer.cs">
+      <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +103,12 @@
     </Compile>
     <Compile Include="View\FormNurseMain.Designer.cs">
       <DependentUpon>FormNurseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPatientRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPatientRecords.Designer.cs">
+      <DependentUpon>FormPatientRecords.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,12 +123,41 @@
     <EmbeddedResource Include="UserControls\UserControlNurseMain.resx">
       <DependentUpon>UserControlNurseMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlPatientRecords.resx">
+      <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormNurseMain.resx">
       <DependentUpon>FormNurseMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPatientRecords.resx">
+      <DependentUpon>FormPatientRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="clinicDataSet.xsc">
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clinicDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="clinicDataSet.xss">
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet1.xsc">
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clinicDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="clinicDataSet1.xss">
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\CS6232GroupProject.Model.Doctor.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,6 +189,17 @@
   <ItemGroup>
     <None Include="Resources\nurseicon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\bggradientD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bggradientB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bggradientC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bggradient-topsmall.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

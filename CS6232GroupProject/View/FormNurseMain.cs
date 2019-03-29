@@ -8,6 +8,7 @@ namespace CS6232GroupProject.View
         public FormNurseMain()
         {
             InitializeComponent();
+            this.FormClosed += (s, ev) => Application.Exit();
         }
 
         ///// <summary>
