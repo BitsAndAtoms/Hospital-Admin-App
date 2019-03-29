@@ -74,6 +74,8 @@
             this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicDataSet = new CS6232GroupProject.clinicDataSet();
             this.comboBoxPatient = new System.Windows.Forms.ComboBox();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicDataSet11 = new CS6232GroupProject.clinicDataSet1();
             this.labelSummary = new System.Windows.Forms.Label();
             this.textBoxDateTime = new System.Windows.Forms.TextBox();
             this.labelPatient = new System.Windows.Forms.Label();
@@ -108,8 +110,6 @@
             this.labelRegisterPatient = new System.Windows.Forms.Label();
             this.doctorTableAdapter = new CS6232GroupProject.clinicDataSetTableAdapters.DoctorTableAdapter();
             this.clinicDataSet1 = new CS6232GroupProject.clinicDataSet();
-            this.clinicDataSet11 = new CS6232GroupProject.clinicDataSet1();
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientTableAdapter = new CS6232GroupProject.clinicDataSet1TableAdapters.PatientTableAdapter();
             this.tabControlNurseMain.SuspendLayout();
             this.tabPageNursePatientInformation.SuspendLayout();
@@ -124,14 +124,14 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).BeginInit();
             this.tabPageNurseRegister.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanelRegisterZipcode.SuspendLayout();
             this.tableLayoutPanelRegisterStreet.SuspendLayout();
             this.tableLayoutPanelRegisterCityState.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlNurseMain
@@ -680,7 +680,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(678, 377);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
@@ -717,6 +717,16 @@
             this.comboBoxPatient.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPatient.TabIndex = 1;
             this.comboBoxPatient.ValueMember = "patientID";
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataMember = "Patient";
+            this.patientBindingSource.DataSource = this.clinicDataSet11;
+            // 
+            // clinicDataSet11
+            // 
+            this.clinicDataSet11.DataSetName = "clinicDataSet1";
+            this.clinicDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelSummary
             // 
@@ -783,14 +793,14 @@
             // 
             // buttonBookSubmit
             // 
+            this.buttonBookSubmit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.buttonBookSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonBookSubmit.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonBookSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBookSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBookSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonBookSubmit.Location = new System.Drawing.Point(538, 306);
+            this.buttonBookSubmit.Location = new System.Drawing.Point(538, 322);
             this.buttonBookSubmit.Name = "buttonBookSubmit";
-            this.buttonBookSubmit.Size = new System.Drawing.Size(137, 68);
+            this.buttonBookSubmit.Size = new System.Drawing.Size(137, 35);
             this.buttonBookSubmit.TabIndex = 5;
             this.buttonBookSubmit.Text = "Submit";
             this.buttonBookSubmit.UseVisualStyleBackColor = false;
@@ -1138,16 +1148,6 @@
             this.clinicDataSet1.DataSetName = "clinicDataSet";
             this.clinicDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // clinicDataSet11
-            // 
-            this.clinicDataSet11.DataSetName = "clinicDataSet1";
-            this.clinicDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataMember = "Patient";
-            this.patientBindingSource.DataSource = this.clinicDataSet11;
-            // 
             // patientTableAdapter
             // 
             this.patientTableAdapter.ClearBeforeFill = true;
@@ -1181,6 +1181,8 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).EndInit();
             this.tabPageNurseRegister.ResumeLayout(false);
             this.tabPageNurseRegister.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1192,8 +1194,6 @@
             this.tableLayoutPanelRegisterCityState.ResumeLayout(false);
             this.tableLayoutPanelRegisterCityState.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
