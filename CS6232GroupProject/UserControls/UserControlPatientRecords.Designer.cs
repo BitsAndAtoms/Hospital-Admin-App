@@ -116,6 +116,7 @@
             // 
             // tabPageRoutineChecks
             // 
+            this.tabPageRoutineChecks.AutoScroll = true;
             this.tabPageRoutineChecks.Controls.Add(this.tableLayoutRoutineChecks);
             this.tabPageRoutineChecks.Controls.Add(this.labelRoutineChecks);
             this.tabPageRoutineChecks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,6 +130,7 @@
             // 
             // tabPageDiagnosis
             // 
+            this.tabPageDiagnosis.AutoScroll = true;
             this.tabPageDiagnosis.Controls.Add(this.tableLayoutPanelDiagnosis);
             this.tabPageDiagnosis.Controls.Add(this.labelDiagnosis);
             this.tabPageDiagnosis.Location = new System.Drawing.Point(4, 29);
@@ -141,6 +143,7 @@
             // 
             // tabPageLabTests
             // 
+            this.tabPageLabTests.AutoScroll = true;
             this.tabPageLabTests.Controls.Add(this.tableLayoutPanel3);
             this.tabPageLabTests.Controls.Add(this.labelLabTests);
             this.tabPageLabTests.Location = new System.Drawing.Point(4, 29);
@@ -153,6 +156,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.tableLayoutPanel7);
             this.tabPage2.Controls.Add(this.labelAppointments);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
