@@ -33,7 +33,6 @@
             this.tabPageNursePatientInformation = new System.Windows.Forms.TabPage();
             this.panelPatientInfoResults = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelMailAddressPatentInfoResult = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxStreetPatientInfoResult = new System.Windows.Forms.TextBox();
             this.labelStreetPatientInfoResult = new System.Windows.Forms.Label();
@@ -47,8 +46,8 @@
             this.labelZipPatientInfoResult = new System.Windows.Forms.Label();
             this.buttonPatientInfoResultUpdate = new System.Windows.Forms.Button();
             this.linkLabelDeletePatient = new System.Windows.Forms.LinkLabel();
+            this.labelMailAddressPatentInfoResult = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.linkLabelRecordsPatientInfoResult = new System.Windows.Forms.LinkLabel();
             this.labelPhonePatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxDOBPatientInfoResult = new System.Windows.Forms.TextBox();
             this.textBoxLastNamePatientInfoResult = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.labelDOBPatientInfoResult = new System.Windows.Forms.Label();
             this.labelFlastNamePatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxPhonePatientInfoResult = new System.Windows.Forms.TextBox();
+            this.linkLabelRecordsPatientInfoVisitRecords = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxDateOfBirth = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
@@ -196,19 +196,6 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(678, 332);
             this.tableLayoutPanel8.TabIndex = 10;
             // 
-            // labelMailAddressPatentInfoResult
-            // 
-            this.labelMailAddressPatentInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelMailAddressPatentInfoResult.AutoSize = true;
-            this.labelMailAddressPatentInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMailAddressPatentInfoResult.Location = new System.Drawing.Point(3, 7);
-            this.labelMailAddressPatentInfoResult.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelMailAddressPatentInfoResult.Name = "labelMailAddressPatentInfoResult";
-            this.labelMailAddressPatentInfoResult.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelMailAddressPatentInfoResult.Size = new System.Drawing.Size(161, 20);
-            this.labelMailAddressPatentInfoResult.TabIndex = 12;
-            this.labelMailAddressPatentInfoResult.Text = "Mailing Address";
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
@@ -291,7 +278,7 @@
             // 
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 25);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 29);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 8;
@@ -370,6 +357,19 @@
             this.linkLabelDeletePatient.Text = "Delete Patient";
             this.linkLabelDeletePatient.Visible = false;
             // 
+            // labelMailAddressPatentInfoResult
+            // 
+            this.labelMailAddressPatentInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelMailAddressPatentInfoResult.AutoSize = true;
+            this.labelMailAddressPatentInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMailAddressPatentInfoResult.Location = new System.Drawing.Point(3, 7);
+            this.labelMailAddressPatentInfoResult.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelMailAddressPatentInfoResult.Name = "labelMailAddressPatentInfoResult";
+            this.labelMailAddressPatentInfoResult.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelMailAddressPatentInfoResult.Size = new System.Drawing.Size(161, 20);
+            this.labelMailAddressPatentInfoResult.TabIndex = 12;
+            this.labelMailAddressPatentInfoResult.Text = "Mailing Address";
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
@@ -384,7 +384,7 @@
             this.tableLayoutPanel4.Controls.Add(this.labelDOBPatientInfoResult, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.labelFlastNamePatientInfoResult, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.textBoxPhonePatientInfoResult, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.linkLabelRecordsPatientInfoResult, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.linkLabelRecordsPatientInfoVisitRecords, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -395,19 +395,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(678, 192);
             this.tableLayoutPanel4.TabIndex = 5;
-            // 
-            // linkLabelRecordsPatientInfoResult
-            // 
-            this.linkLabelRecordsPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.linkLabelRecordsPatientInfoResult.AutoSize = true;
-            this.linkLabelRecordsPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelRecordsPatientInfoResult.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelRecordsPatientInfoResult.Location = new System.Drawing.Point(549, 12);
-            this.linkLabelRecordsPatientInfoResult.Name = "linkLabelRecordsPatientInfoResult";
-            this.linkLabelRecordsPatientInfoResult.Size = new System.Drawing.Size(126, 25);
-            this.linkLabelRecordsPatientInfoResult.TabIndex = 18;
-            this.linkLabelRecordsPatientInfoResult.TabStop = true;
-            this.linkLabelRecordsPatientInfoResult.Text = "Visit Records";
             // 
             // labelPhonePatientInfoResult
             // 
@@ -498,6 +485,20 @@
             this.textBoxPhonePatientInfoResult.Name = "textBoxPhonePatientInfoResult";
             this.textBoxPhonePatientInfoResult.Size = new System.Drawing.Size(186, 29);
             this.textBoxPhonePatientInfoResult.TabIndex = 16;
+            // 
+            // linkLabelRecordsPatientInfoVisitRecords
+            // 
+            this.linkLabelRecordsPatientInfoVisitRecords.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.linkLabelRecordsPatientInfoVisitRecords.AutoSize = true;
+            this.linkLabelRecordsPatientInfoVisitRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelRecordsPatientInfoVisitRecords.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.linkLabelRecordsPatientInfoVisitRecords.Location = new System.Drawing.Point(549, 12);
+            this.linkLabelRecordsPatientInfoVisitRecords.Name = "linkLabelRecordsPatientInfoVisitRecords";
+            this.linkLabelRecordsPatientInfoVisitRecords.Size = new System.Drawing.Size(126, 25);
+            this.linkLabelRecordsPatientInfoVisitRecords.TabIndex = 18;
+            this.linkLabelRecordsPatientInfoVisitRecords.TabStop = true;
+            this.linkLabelRecordsPatientInfoVisitRecords.Text = "Visit Records";
+            this.linkLabelRecordsPatientInfoVisitRecords.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRecordsPatientInfoVisitRecords_LinkClicked);
             // 
             // tableLayoutPanel1
             // 
@@ -675,7 +676,7 @@
             this.comboBoxPhysician.DataSource = this.doctorBindingSource;
             this.comboBoxPhysician.DisplayMember = "lname";
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(206, 61);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(206, 64);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPhysician.TabIndex = 2;
@@ -697,7 +698,7 @@
             this.comboBoxPatient.DataSource = this.patientBindingSource;
             this.comboBoxPatient.DisplayMember = "lname";
             this.comboBoxPatient.FormattingEnabled = true;
-            this.comboBoxPatient.Location = new System.Drawing.Point(206, 11);
+            this.comboBoxPatient.Location = new System.Drawing.Point(206, 14);
             this.comboBoxPatient.Name = "comboBoxPatient";
             this.comboBoxPatient.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPatient.TabIndex = 1;
@@ -1082,7 +1083,7 @@
             // 
             this.comboBoxState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(203, 25);
+            this.comboBoxState.Location = new System.Drawing.Point(203, 29);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 10;
@@ -1258,7 +1259,7 @@
         private System.Windows.Forms.Label labelZipPatientInfoResult;
         private System.Windows.Forms.TextBox textBoxPhonePatientInfoResult;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.LinkLabel linkLabelRecordsPatientInfoResult;
+        private System.Windows.Forms.LinkLabel linkLabelRecordsPatientInfoVisitRecords;
         private System.Windows.Forms.BindingSource doctorBindingSource;
         private clinicDataSet clinicDataSet;
         private clinicDataSetTableAdapters.DoctorTableAdapter doctorTableAdapter;

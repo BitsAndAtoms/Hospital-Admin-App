@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.Controller;
 using CS6232GroupProject.Model;
+using CS6232GroupProject.View;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -106,6 +107,26 @@ namespace CS6232GroupProject.UserControls
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void linkLabelRecordsPatientInfoVisitRecords_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            bool isOpen = false;
+            FormPatientRecords formPatientRecords = new FormPatientRecords();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Name == "FormPatientRecords")
+                {
+                    isOpen = true;
+                    form.BringToFront();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                formPatientRecords.Show();
             }
 
         }
