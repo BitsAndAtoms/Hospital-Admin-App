@@ -295,6 +295,8 @@ namespace CS6232GroupProject {
             
             private global::System.Data.DataColumn columnaddressID;
             
+            private global::System.Data.DataColumn columnFull_Name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DoctorDataTable() {
@@ -394,6 +396,14 @@ namespace CS6232GroupProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Full_NameColumn {
+                get {
+                    return this.columnFull_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +439,7 @@ namespace CS6232GroupProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DoctorRow AddDoctorRow(string fname, string lname, System.DateTime dob, string ssn, string gender, string phone, int addressID) {
+            public DoctorRow AddDoctorRow(string fname, string lname, System.DateTime dob, string ssn, string gender, string phone, int addressID, string Full_Name) {
                 DoctorRow rowDoctorRow = ((DoctorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -439,7 +449,8 @@ namespace CS6232GroupProject {
                         ssn,
                         gender,
                         phone,
-                        addressID};
+                        addressID,
+                        Full_Name};
                 rowDoctorRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDoctorRow);
                 return rowDoctorRow;
@@ -477,6 +488,7 @@ namespace CS6232GroupProject {
                 this.columngender = base.Columns["gender"];
                 this.columnphone = base.Columns["phone"];
                 this.columnaddressID = base.Columns["addressID"];
+                this.columnFull_Name = base.Columns["Full Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -498,6 +510,8 @@ namespace CS6232GroupProject {
                 base.Columns.Add(this.columnphone);
                 this.columnaddressID = new global::System.Data.DataColumn("addressID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnaddressID);
+                this.columnFull_Name = new global::System.Data.DataColumn("Full Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFull_Name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columndoctorID}, true));
                 this.columndoctorID.AutoIncrement = true;
@@ -513,6 +527,8 @@ namespace CS6232GroupProject {
                 this.columngender.MaxLength = 40;
                 this.columnphone.MaxLength = 10;
                 this.columnaddressID.AllowDBNull = false;
+                this.columnFull_Name.ReadOnly = true;
+                this.columnFull_Name.MaxLength = 81;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -768,6 +784,22 @@ namespace CS6232GroupProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Full_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableDoctor.Full_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Full Name\' in table \'Doctor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDoctor.Full_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsfnameNull() {
                 return this.IsNull(this.tableDoctor.fnameColumn);
             }
@@ -824,6 +856,18 @@ namespace CS6232GroupProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetphoneNull() {
                 this[this.tableDoctor.phoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFull_NameNull() {
+                return this.IsNull(this.tableDoctor.Full_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFull_NameNull() {
+                this[this.tableDoctor.Full_NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -994,6 +1038,7 @@ namespace CS6232GroupProject.clinicDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("gender", "gender");
             tableMapping.ColumnMappings.Add("phone", "phone");
             tableMapping.ColumnMappings.Add("addressID", "addressID");
+            tableMapping.ColumnMappings.Add("Full Name", "Full Name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -1015,7 +1060,7 @@ namespace CS6232GroupProject.clinicDataSetTableAdapters {
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Doctor] SET [fname] = @fname, [lname] = @lname, [dob] = @dob, [ssn] = @ssn, [gender] = @gender, [phone] = @phone, [addressID] = @addressID WHERE (([doctorID] = @Original_doctorID) AND ((@IsNull_fname = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_lname = 1 AND [lname] IS NULL) OR ([lname] = @Original_lname)) AND ((@IsNull_dob = 1 AND [dob] IS NULL) OR ([dob] = @Original_dob)) AND ([ssn] = @Original_ssn) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ([addressID] = @Original_addressID));
-SELECT doctorID, fname, lname, dob, ssn, gender, phone, addressID FROM Doctor WHERE (doctorID = @doctorID)";
+SELECT doctorID, fname, lname, { fn CONCAT(fname, ' ', lname) } AS 'Full Name', dob, ssn, gender, phone, addressID FROM Doctor WHERE (doctorID = @doctorID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1053,8 +1098,8 @@ SELECT doctorID, fname, lname, dob, ssn, gender, phone, addressID FROM Doctor WH
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT doctorID, fname, lname, dob, ssn, gender, phone,  addressID FROM dbo.Docto" +
-                "r";
+            this._commandCollection[0].CommandText = "SELECT doctorID, fname, lname, CONCAT(fname, \' \', lname) as \'Full Name\', dob, ssn" +
+                ", gender, phone,  addressID FROM dbo.Doctor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;

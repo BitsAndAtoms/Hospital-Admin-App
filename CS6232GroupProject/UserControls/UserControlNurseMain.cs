@@ -47,6 +47,7 @@ namespace CS6232GroupProject.UserControls
                     PatientID = 1,
                     FName = "Cotton Eye",
                     LName = "Joe",
+                    FullName = "Cotton Eye Joe",
                     DOB = DateTime.Today
                 };
 
@@ -61,8 +62,9 @@ namespace CS6232GroupProject.UserControls
                 Doctor doctor = new Doctor
                 {
                     DoctorID = 1,
-                    FName = "FirstName",
-                    LName = "LastName",
+                    FName = "John",
+                    LName = "Smith",
+                    FullName = "John Smith",
                     DOB = DateTime.Today,
                     SSN = "123456789",
                     Gender = "M",
@@ -130,6 +132,11 @@ namespace CS6232GroupProject.UserControls
             {
                 formPatientRecords.Show();
             }
+
+        }
+
+        private void comboBoxPatient_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
