@@ -11,8 +11,8 @@ namespace CS6232GroupProject.DAL
         {
             List<Doctor> doctors = new List<Doctor>();
 
-            string selectStatement = 
-                "SELECT DoctorID, Fname, Lname, DOB, SSN, Gender, Phone, AddressID " +
+            string selectStatement =
+                "SELECT DoctorID, Fname, Lname, CONCAT(fname, ' ', lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
                 "FROM Clinic";
 
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -29,6 +29,7 @@ namespace CS6232GroupProject.DAL
                             doctor.DoctorID = (int)reader["DoctorID"];
                             doctor.FName = reader["Fname"].ToString();
                             doctor.LName = reader["Lname"].ToString();
+                            doctor.FullName = reader["FullName"].ToString();
                             doctor.DOB = (DateTime)reader["DOB"];
                             doctor.SSN = reader[""].ToString();
                             doctor.Gender = reader[""].ToString();

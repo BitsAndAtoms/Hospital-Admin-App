@@ -280,7 +280,7 @@
             // 
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 29);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 25);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 8;
@@ -676,14 +676,11 @@
             // comboBoxPhysician
             // 
             this.comboBoxPhysician.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxPhysician.DataSource = this.doctorBindingSource;
-            this.comboBoxPhysician.DisplayMember = "lname";
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(206, 64);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(206, 61);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPhysician.TabIndex = 2;
-            this.comboBoxPhysician.ValueMember = "doctorID";
             // 
             // doctorBindingSource
             // 
@@ -698,14 +695,11 @@
             // comboBoxPatient
             // 
             this.comboBoxPatient.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxPatient.DataSource = this.patientBindingSource;
-            this.comboBoxPatient.DisplayMember = "lname";
             this.comboBoxPatient.FormattingEnabled = true;
-            this.comboBoxPatient.Location = new System.Drawing.Point(206, 14);
+            this.comboBoxPatient.Location = new System.Drawing.Point(206, 11);
             this.comboBoxPatient.Name = "comboBoxPatient";
             this.comboBoxPatient.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPatient.TabIndex = 1;
-            this.comboBoxPatient.ValueMember = "patientID";
             // 
             // patientBindingSource
             // 
@@ -1087,7 +1081,7 @@
             // 
             this.comboBoxState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(203, 29);
+            this.comboBoxState.Location = new System.Drawing.Point(203, 25);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 10;
