@@ -227,13 +227,13 @@
             this.tableLayoutRoutineChecks.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutRoutineChecks.Name = "tableLayoutRoutineChecks";
             this.tableLayoutRoutineChecks.RowCount = 6;
-            this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutRoutineChecks.Size = new System.Drawing.Size(825, 377);
+            this.tableLayoutRoutineChecks.Size = new System.Drawing.Size(825, 408);
             this.tableLayoutRoutineChecks.TabIndex = 7;
             // 
             // buttonRoutineChecksSubmit
@@ -243,7 +243,7 @@
             this.buttonRoutineChecksSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRoutineChecksSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRoutineChecksSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonRoutineChecksSubmit.Location = new System.Drawing.Point(385, 332);
+            this.buttonRoutineChecksSubmit.Location = new System.Drawing.Point(385, 363);
             this.buttonRoutineChecksSubmit.Name = "buttonRoutineChecksSubmit";
             this.buttonRoutineChecksSubmit.Size = new System.Drawing.Size(137, 35);
             this.buttonRoutineChecksSubmit.TabIndex = 11;
@@ -265,7 +265,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 44);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 54);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // labelRoutineChecksTemp
@@ -285,7 +285,7 @@
             // 
             this.comboBoxRoutineChecksTemp.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxRoutineChecksTemp.FormattingEnabled = true;
-            this.comboBoxRoutineChecksTemp.Location = new System.Drawing.Point(208, 23);
+            this.comboBoxRoutineChecksTemp.Location = new System.Drawing.Point(208, 26);
             this.comboBoxRoutineChecksTemp.Name = "comboBoxRoutineChecksTemp";
             this.comboBoxRoutineChecksTemp.Size = new System.Drawing.Size(179, 28);
             this.comboBoxRoutineChecksTemp.TabIndex = 3;
@@ -319,13 +319,13 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.textRoutineChecksPulse, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.labelRoutineChecksPulse, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(85, 53);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(85, 63);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 44);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 54);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // textRoutineChecksPulse
@@ -360,13 +360,13 @@
             this.tableLayoutPanel1.Controls.Add(this.labelRoutineChecksDiastolic, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxRoutineChecksDiastolic, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBoxRoutineChecksSystolic, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(85, 123);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(85, 143);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(410, 44);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(410, 54);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // labelRoutineChecksSystolic
@@ -399,7 +399,7 @@
             // 
             this.comboBoxRoutineChecksDiastolic.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxRoutineChecksDiastolic.FormattingEnabled = true;
-            this.comboBoxRoutineChecksDiastolic.Location = new System.Drawing.Point(208, 23);
+            this.comboBoxRoutineChecksDiastolic.Location = new System.Drawing.Point(208, 26);
             this.comboBoxRoutineChecksDiastolic.Name = "comboBoxRoutineChecksDiastolic";
             this.comboBoxRoutineChecksDiastolic.Size = new System.Drawing.Size(179, 28);
             this.comboBoxRoutineChecksDiastolic.TabIndex = 8;
@@ -420,7 +420,7 @@
             this.labelRoutineChecksBloodPressure.AutoSize = true;
             this.labelRoutineChecksBloodPressure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoutineChecksBloodPressure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelRoutineChecksBloodPressure.Location = new System.Drawing.Point(85, 100);
+            this.labelRoutineChecksBloodPressure.Location = new System.Drawing.Point(85, 120);
             this.labelRoutineChecksBloodPressure.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelRoutineChecksBloodPressure.Name = "labelRoutineChecksBloodPressure";
             this.labelRoutineChecksBloodPressure.Size = new System.Drawing.Size(131, 20);
@@ -433,7 +433,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.labelRoutineChecksSummary, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxRoutineChecksSummary, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(85, 173);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(85, 203);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
