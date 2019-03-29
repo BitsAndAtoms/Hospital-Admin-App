@@ -148,6 +148,7 @@
             // 
             // tabPageNursePatientInformation
             // 
+            this.tabPageNursePatientInformation.AutoScroll = true;
             this.tabPageNursePatientInformation.Controls.Add(this.panelPatientInfoResults);
             this.tabPageNursePatientInformation.Controls.Add(this.tableLayoutPanel1);
             this.tabPageNursePatientInformation.Controls.Add(this.labelPatientInformation);
@@ -163,6 +164,7 @@
             // 
             // panelPatientInfoResults
             // 
+            this.panelPatientInfoResults.AutoScroll = true;
             this.panelPatientInfoResults.Controls.Add(this.tableLayoutPanel8);
             this.panelPatientInfoResults.Controls.Add(this.tableLayoutPanel4);
             this.panelPatientInfoResults.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -633,6 +635,7 @@
             // 
             // tabPageNurseBook
             // 
+            this.tabPageNurseBook.AutoScroll = true;
             this.tabPageNurseBook.BackColor = System.Drawing.Color.White;
             this.tabPageNurseBook.Controls.Add(this.tableLayoutPanel2);
             this.tabPageNurseBook.Controls.Add(this.labelBookAppointment);
@@ -816,6 +819,7 @@
             // 
             // tabPageNurseRegister
             // 
+            this.tabPageNurseRegister.AutoScroll = true;
             this.tabPageNurseRegister.Controls.Add(this.tableLayoutPanel3);
             this.tabPageNurseRegister.Controls.Add(this.labelRegisterPatient);
             this.tabPageNurseRegister.Location = new System.Drawing.Point(4, 29);
