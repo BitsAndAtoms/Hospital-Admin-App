@@ -56,6 +56,15 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelRoutineChecksSummary = new System.Windows.Forms.Label();
             this.textBoxRoutineChecksSummary = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelDiagnosis = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelDiagnosisFinal = new System.Windows.Forms.Label();
+            this.textBoxDiagnosisFinal = new System.Windows.Forms.TextBox();
+            this.buttonDiagnosisSubmit = new System.Windows.Forms.Button();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelDiagnosisInitial = new System.Windows.Forms.Label();
+            this.textBoxDiagnosisIntial = new System.Windows.Forms.TextBox();
+            this.checkBoxPendingLabTests = new System.Windows.Forms.CheckBox();
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageRoutineChecks.SuspendLayout();
             this.tabPageDiagnosis.SuspendLayout();
@@ -66,6 +75,9 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanelDiagnosis.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlPatientRecords
@@ -98,6 +110,7 @@
             // 
             // tabPageDiagnosis
             // 
+            this.tabPageDiagnosis.Controls.Add(this.tableLayoutPanelDiagnosis);
             this.tabPageDiagnosis.Controls.Add(this.labelDiagnosis);
             this.tabPageDiagnosis.Location = new System.Drawing.Point(4, 29);
             this.tabPageDiagnosis.Name = "tabPageDiagnosis";
@@ -431,6 +444,127 @@
             this.textBoxRoutineChecksSummary.Size = new System.Drawing.Size(427, 121);
             this.textBoxRoutineChecksSummary.TabIndex = 10;
             // 
+            // tableLayoutPanelDiagnosis
+            // 
+            this.tableLayoutPanelDiagnosis.AutoScroll = true;
+            this.tableLayoutPanelDiagnosis.ColumnCount = 2;
+            this.tableLayoutPanelDiagnosis.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelDiagnosis.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanelDiagnosis.Controls.Add(this.tableLayoutPanel10, 1, 0);
+            this.tableLayoutPanelDiagnosis.Controls.Add(this.tableLayoutPanel4, 1, 2);
+            this.tableLayoutPanelDiagnosis.Controls.Add(this.buttonDiagnosisSubmit, 1, 3);
+            this.tableLayoutPanelDiagnosis.Controls.Add(this.checkBoxPendingLabTests, 1, 1);
+            this.tableLayoutPanelDiagnosis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanelDiagnosis.Location = new System.Drawing.Point(3, 32);
+            this.tableLayoutPanelDiagnosis.Name = "tableLayoutPanelDiagnosis";
+            this.tableLayoutPanelDiagnosis.RowCount = 4;
+            this.tableLayoutPanelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tableLayoutPanelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tableLayoutPanelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelDiagnosis.Size = new System.Drawing.Size(825, 414);
+            this.tableLayoutPanelDiagnosis.TabIndex = 8;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.labelDiagnosisFinal, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxDiagnosisFinal, 0, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(85, 206);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(465, 147);
+            this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // labelDiagnosisFinal
+            // 
+            this.labelDiagnosisFinal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelDiagnosisFinal.AutoSize = true;
+            this.labelDiagnosisFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDiagnosisFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelDiagnosisFinal.Location = new System.Drawing.Point(3, 0);
+            this.labelDiagnosisFinal.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelDiagnosisFinal.Name = "labelDiagnosisFinal";
+            this.labelDiagnosisFinal.Size = new System.Drawing.Size(132, 20);
+            this.labelDiagnosisFinal.TabIndex = 11;
+            this.labelDiagnosisFinal.Text = "Final Diagnosis";
+            // 
+            // textBoxDiagnosisFinal
+            // 
+            this.textBoxDiagnosisFinal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxDiagnosisFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDiagnosisFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDiagnosisFinal.Location = new System.Drawing.Point(3, 23);
+            this.textBoxDiagnosisFinal.Multiline = true;
+            this.textBoxDiagnosisFinal.Name = "textBoxDiagnosisFinal";
+            this.textBoxDiagnosisFinal.Size = new System.Drawing.Size(427, 121);
+            this.textBoxDiagnosisFinal.TabIndex = 5;
+            // 
+            // buttonDiagnosisSubmit
+            // 
+            this.buttonDiagnosisSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonDiagnosisSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonDiagnosisSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDiagnosisSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDiagnosisSubmit.ForeColor = System.Drawing.Color.Black;
+            this.buttonDiagnosisSubmit.Location = new System.Drawing.Point(385, 367);
+            this.buttonDiagnosisSubmit.Name = "buttonDiagnosisSubmit";
+            this.buttonDiagnosisSubmit.Size = new System.Drawing.Size(137, 35);
+            this.buttonDiagnosisSubmit.TabIndex = 6;
+            this.buttonDiagnosisSubmit.Text = "Submit";
+            this.buttonDiagnosisSubmit.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Controls.Add(this.labelDiagnosisInitial, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.textBoxDiagnosisIntial, 0, 1);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(85, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(465, 147);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // labelDiagnosisInitial
+            // 
+            this.labelDiagnosisInitial.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelDiagnosisInitial.AutoSize = true;
+            this.labelDiagnosisInitial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDiagnosisInitial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelDiagnosisInitial.Location = new System.Drawing.Point(3, 0);
+            this.labelDiagnosisInitial.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelDiagnosisInitial.Name = "labelDiagnosisInitial";
+            this.labelDiagnosisInitial.Size = new System.Drawing.Size(137, 20);
+            this.labelDiagnosisInitial.TabIndex = 11;
+            this.labelDiagnosisInitial.Text = "Initial Diagnosis";
+            // 
+            // textBoxDiagnosisIntial
+            // 
+            this.textBoxDiagnosisIntial.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxDiagnosisIntial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDiagnosisIntial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDiagnosisIntial.Location = new System.Drawing.Point(3, 23);
+            this.textBoxDiagnosisIntial.Multiline = true;
+            this.textBoxDiagnosisIntial.Name = "textBoxDiagnosisIntial";
+            this.textBoxDiagnosisIntial.Size = new System.Drawing.Size(427, 121);
+            this.textBoxDiagnosisIntial.TabIndex = 2;
+            // 
+            // checkBoxPendingLabTests
+            // 
+            this.checkBoxPendingLabTests.AutoSize = true;
+            this.checkBoxPendingLabTests.Location = new System.Drawing.Point(85, 156);
+            this.checkBoxPendingLabTests.Name = "checkBoxPendingLabTests";
+            this.checkBoxPendingLabTests.Size = new System.Drawing.Size(210, 24);
+            this.checkBoxPendingLabTests.TabIndex = 3;
+            this.checkBoxPendingLabTests.Text = "Pending Lab Test Results";
+            this.checkBoxPendingLabTests.UseVisualStyleBackColor = true;
+            // 
             // UserControlPatientRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +591,12 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanelDiagnosis.ResumeLayout(false);
+            this.tableLayoutPanelDiagnosis.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -491,5 +631,14 @@
         private System.Windows.Forms.ComboBox comboBoxRoutineChecksDiastolic;
         private System.Windows.Forms.TextBox textBoxRoutineChecksSystolic;
         private System.Windows.Forms.Label labelRoutineChecksBloodPressure;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelDiagnosis;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Label labelDiagnosisInitial;
+        private System.Windows.Forms.TextBox textBoxDiagnosisIntial;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label labelDiagnosisFinal;
+        private System.Windows.Forms.TextBox textBoxDiagnosisFinal;
+        private System.Windows.Forms.Button buttonDiagnosisSubmit;
+        private System.Windows.Forms.CheckBox checkBoxPendingLabTests;
     }
 }
