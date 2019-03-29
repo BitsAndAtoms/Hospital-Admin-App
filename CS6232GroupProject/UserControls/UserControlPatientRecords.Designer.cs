@@ -621,6 +621,7 @@
             // 
             // checkedListBoxLabTests
             // 
+            this.checkedListBoxLabTests.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBoxLabTests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkedListBoxLabTests.FormattingEnabled = true;
             this.checkedListBoxLabTests.Items.AddRange(new object[] {
