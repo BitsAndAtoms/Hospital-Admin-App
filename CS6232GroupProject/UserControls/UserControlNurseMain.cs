@@ -18,6 +18,7 @@ namespace CS6232GroupProject.UserControls
         {
             InitializeComponent();
             this.doctorController = new DoctorController();
+            this.patientController = new PatientController();
             SetComboBox();
         }
 
@@ -37,8 +38,7 @@ namespace CS6232GroupProject.UserControls
 
                 // Below is the line that will bind it to the DB set of Doctors and Patients
                 // once there are some in the DB.
-
-                //patientList = this.patientController.GetPatients();
+                patientList = this.patientController.GetPatients();
                 List<Patient> patients = new List<Patient>();
                 Patient patient = new Patient
                 {
@@ -48,8 +48,9 @@ namespace CS6232GroupProject.UserControls
                     DOB = DateTime.Today
                 };
 
-                patients.Add(patient);
-                patientList = patients;
+                //patients.Add(patient);
+                //patientList = patients;
+
                 comboBoxPatient.DataSource = patientList;
 
                 

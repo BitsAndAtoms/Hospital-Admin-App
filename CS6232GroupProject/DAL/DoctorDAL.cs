@@ -13,7 +13,7 @@ namespace CS6232GroupProject.DAL
 
             string selectStatement = 
                 "SELECT DoctorID, Fname, Lname, DOB, SSN, Gender, Phone, AddressID " +
-                "FROM Clinic";
+                "FROM Doctor";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
