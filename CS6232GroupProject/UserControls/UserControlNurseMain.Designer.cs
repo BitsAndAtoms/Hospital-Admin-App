@@ -56,6 +56,7 @@
             this.labelFlastNamePatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxPhonePatientInfoResult = new System.Windows.Forms.TextBox();
             this.linkLabelRecordsPatientInfoVisitRecords = new System.Windows.Forms.LinkLabel();
+            this.dateTimePickerDOBPatientInfoResult = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
@@ -63,6 +64,7 @@
             this.labelDateOfBirth = new System.Windows.Forms.Label();
             this.labelLastName = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
             this.labelPatientInformation = new System.Windows.Forms.Label();
             this.linkLabelPatientInfoBack = new System.Windows.Forms.LinkLabel();
             this.tabPageNurseBook = new System.Windows.Forms.TabPage();
@@ -79,6 +81,7 @@
             this.labelPhysician = new System.Windows.Forms.Label();
             this.buttonBookSubmit = new System.Windows.Forms.Button();
             this.textBoxSummary = new System.Windows.Forms.TextBox();
+            this.dateTimePickerBookAppointment = new System.Windows.Forms.DateTimePicker();
             this.labelBookAppointment = new System.Windows.Forms.Label();
             this.tabPageNurseRegister = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -102,14 +105,11 @@
             this.comboBoxState = new System.Windows.Forms.ComboBox();
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.buttonRegisterSubmit = new System.Windows.Forms.Button();
+            this.dateTimePickerRegisterDOB = new System.Windows.Forms.DateTimePicker();
             this.labelRegisterPatient = new System.Windows.Forms.Label();
             this.doctorTableAdapter = new CS6232GroupProject.clinicDataSetTableAdapters.DoctorTableAdapter();
             this.clinicDataSet1 = new CS6232GroupProject.clinicDataSet();
             this.patientTableAdapter = new CS6232GroupProject.clinicDataSet1TableAdapters.PatientTableAdapter();
-            this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerDOBPatientInfoResult = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerBookAppointment = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerRegisterDOB = new System.Windows.Forms.DateTimePicker();
             this.tabControlNurseMain.SuspendLayout();
             this.tabPageNursePatientInformation.SuspendLayout();
             this.panelPatientInfoResults.SuspendLayout();
@@ -491,6 +491,14 @@
             this.linkLabelRecordsPatientInfoVisitRecords.Text = "Visit Records";
             this.linkLabelRecordsPatientInfoVisitRecords.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRecordsPatientInfoVisitRecords_LinkClicked);
             // 
+            // dateTimePickerDOBPatientInfoResult
+            // 
+            this.dateTimePickerDOBPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerDOBPatientInfoResult.Location = new System.Drawing.Point(206, 112);
+            this.dateTimePickerDOBPatientInfoResult.Name = "dateTimePickerDOBPatientInfoResult";
+            this.dateTimePickerDOBPatientInfoResult.Size = new System.Drawing.Size(280, 26);
+            this.dateTimePickerDOBPatientInfoResult.TabIndex = 3;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -585,6 +593,14 @@
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // dateTimePickerDOB
+            // 
+            this.dateTimePickerDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerDOB.Location = new System.Drawing.Point(206, 112);
+            this.dateTimePickerDOB.Name = "dateTimePickerDOB";
+            this.dateTimePickerDOB.Size = new System.Drawing.Size(280, 26);
+            this.dateTimePickerDOB.TabIndex = 3;
             // 
             // labelPatientInformation
             // 
@@ -773,6 +789,14 @@
             this.textBoxSummary.Name = "textBoxSummary";
             this.textBoxSummary.Size = new System.Drawing.Size(427, 121);
             this.textBoxSummary.TabIndex = 4;
+            // 
+            // dateTimePickerBookAppointment
+            // 
+            this.dateTimePickerBookAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerBookAppointment.Location = new System.Drawing.Point(206, 112);
+            this.dateTimePickerBookAppointment.Name = "dateTimePickerBookAppointment";
+            this.dateTimePickerBookAppointment.Size = new System.Drawing.Size(280, 26);
+            this.dateTimePickerBookAppointment.TabIndex = 3;
             // 
             // labelBookAppointment
             // 
@@ -1076,6 +1100,14 @@
             this.buttonRegisterSubmit.UseVisualStyleBackColor = false;
             this.buttonRegisterSubmit.Click += new System.EventHandler(this.buttonRegisterSubmit_Click);
             // 
+            // dateTimePickerRegisterDOB
+            // 
+            this.dateTimePickerRegisterDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerRegisterDOB.Location = new System.Drawing.Point(206, 112);
+            this.dateTimePickerRegisterDOB.Name = "dateTimePickerRegisterDOB";
+            this.dateTimePickerRegisterDOB.Size = new System.Drawing.Size(280, 26);
+            this.dateTimePickerRegisterDOB.TabIndex = 3;
+            // 
             // labelRegisterPatient
             // 
             this.labelRegisterPatient.AutoSize = true;
@@ -1100,38 +1132,6 @@
             // patientTableAdapter
             // 
             this.patientTableAdapter.ClearBeforeFill = true;
-            // 
-            // dateTimePickerDOB
-            // 
-            this.dateTimePickerDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerDOB.Location = new System.Drawing.Point(206, 112);
-            this.dateTimePickerDOB.Name = "dateTimePickerDOB";
-            this.dateTimePickerDOB.Size = new System.Drawing.Size(280, 26);
-            this.dateTimePickerDOB.TabIndex = 3;
-            // 
-            // dateTimePickerDOBPatientInfoResult
-            // 
-            this.dateTimePickerDOBPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerDOBPatientInfoResult.Location = new System.Drawing.Point(206, 112);
-            this.dateTimePickerDOBPatientInfoResult.Name = "dateTimePickerDOBPatientInfoResult";
-            this.dateTimePickerDOBPatientInfoResult.Size = new System.Drawing.Size(280, 26);
-            this.dateTimePickerDOBPatientInfoResult.TabIndex = 3;
-            // 
-            // dateTimePickerBookAppointment
-            // 
-            this.dateTimePickerBookAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerBookAppointment.Location = new System.Drawing.Point(206, 112);
-            this.dateTimePickerBookAppointment.Name = "dateTimePickerBookAppointment";
-            this.dateTimePickerBookAppointment.Size = new System.Drawing.Size(280, 26);
-            this.dateTimePickerBookAppointment.TabIndex = 3;
-            // 
-            // dateTimePickerRegisterDOB
-            // 
-            this.dateTimePickerRegisterDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerRegisterDOB.Location = new System.Drawing.Point(206, 112);
-            this.dateTimePickerRegisterDOB.Name = "dateTimePickerRegisterDOB";
-            this.dateTimePickerRegisterDOB.Size = new System.Drawing.Size(280, 26);
-            this.dateTimePickerRegisterDOB.TabIndex = 3;
             // 
             // UserControlNurseMain
             // 
