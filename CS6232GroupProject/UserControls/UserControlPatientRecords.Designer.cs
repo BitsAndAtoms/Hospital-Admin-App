@@ -35,6 +35,7 @@
             this.labelRoutineChecksSummary = new System.Windows.Forms.Label();
             this.textBoxRoutineChecksSummary = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxRoutineChecksDiastolic = new System.Windows.Forms.TextBox();
             this.labelRoutineChecksSystolic = new System.Windows.Forms.Label();
             this.labelRoutineChecksDiastolic = new System.Windows.Forms.Label();
             this.textBoxRoutineChecksSystolic = new System.Windows.Forms.TextBox();
@@ -43,6 +44,7 @@
             this.labelRoutineChecksPulse = new System.Windows.Forms.Label();
             this.buttonRoutineChecksSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxRoutineChecksTemp = new System.Windows.Forms.TextBox();
             this.labelRoutineChecksWeight = new System.Windows.Forms.Label();
             this.labelRoutineChecksTemp = new System.Windows.Forms.Label();
             this.textBoxRoutineChecksWeight = new System.Windows.Forms.TextBox();
@@ -80,8 +82,6 @@
             this.labelAppointmentsDateTime = new System.Windows.Forms.Label();
             this.dateTimePickerAppointments = new System.Windows.Forms.DateTimePicker();
             this.labelAppointments = new System.Windows.Forms.Label();
-            this.textBoxRoutineChecksTemp = new System.Windows.Forms.TextBox();
-            this.textBoxRoutineChecksDiastolic = new System.Windows.Forms.TextBox();
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageRoutineChecks.SuspendLayout();
             this.tableLayoutRoutineChecks.SuspendLayout();
@@ -209,6 +209,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(410, 54);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
+            // textBoxRoutineChecksDiastolic
+            // 
+            this.textBoxRoutineChecksDiastolic.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxRoutineChecksDiastolic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRoutineChecksDiastolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRoutineChecksDiastolic.Location = new System.Drawing.Point(208, 23);
+            this.textBoxRoutineChecksDiastolic.Name = "textBoxRoutineChecksDiastolic";
+            this.textBoxRoutineChecksDiastolic.Size = new System.Drawing.Size(186, 29);
+            this.textBoxRoutineChecksDiastolic.TabIndex = 15;
+            // 
             // labelRoutineChecksSystolic
             // 
             this.labelRoutineChecksSystolic.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -314,6 +324,16 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 54);
             this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // textBoxRoutineChecksTemp
+            // 
+            this.textBoxRoutineChecksTemp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxRoutineChecksTemp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRoutineChecksTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRoutineChecksTemp.Location = new System.Drawing.Point(208, 23);
+            this.textBoxRoutineChecksTemp.Name = "textBoxRoutineChecksTemp";
+            this.textBoxRoutineChecksTemp.Size = new System.Drawing.Size(186, 29);
+            this.textBoxRoutineChecksTemp.TabIndex = 15;
             // 
             // labelRoutineChecksWeight
             // 
@@ -801,26 +821,6 @@
             this.labelAppointments.Size = new System.Drawing.Size(172, 29);
             this.labelAppointments.TabIndex = 6;
             this.labelAppointments.Text = "Appointments";
-            // 
-            // textBoxRoutineChecksTemp
-            // 
-            this.textBoxRoutineChecksTemp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxRoutineChecksTemp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRoutineChecksTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRoutineChecksTemp.Location = new System.Drawing.Point(208, 23);
-            this.textBoxRoutineChecksTemp.Name = "textBoxRoutineChecksTemp";
-            this.textBoxRoutineChecksTemp.Size = new System.Drawing.Size(186, 29);
-            this.textBoxRoutineChecksTemp.TabIndex = 15;
-            // 
-            // textBoxRoutineChecksDiastolic
-            // 
-            this.textBoxRoutineChecksDiastolic.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxRoutineChecksDiastolic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRoutineChecksDiastolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRoutineChecksDiastolic.Location = new System.Drawing.Point(208, 23);
-            this.textBoxRoutineChecksDiastolic.Name = "textBoxRoutineChecksDiastolic";
-            this.textBoxRoutineChecksDiastolic.Size = new System.Drawing.Size(186, 29);
-            this.textBoxRoutineChecksDiastolic.TabIndex = 15;
             // 
             // UserControlPatientRecords
             // 
