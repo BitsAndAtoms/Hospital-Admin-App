@@ -30,9 +30,9 @@ namespace CS6232GroupProject.DAL
                             doctor.FName = reader["Fname"].ToString();
                             doctor.LName = reader["Lname"].ToString();
                             doctor.DOB = (DateTime)reader["DOB"];
-                            doctor.SSN = reader[""].ToString();
-                            doctor.Gender = reader[""].ToString();
-                            doctor.Phone = reader[""].ToString();
+                            doctor.SSN = reader["SSN"].ToString();
+                            doctor.Gender = reader["Gender"].ToString();
+                            doctor.Phone = reader["Phone"].ToString();
                             doctor.AddressID = (int)reader["AddressID"];
                             doctors.Add(doctor);
                         }
