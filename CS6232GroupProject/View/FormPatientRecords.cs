@@ -8,5 +8,6 @@ namespace CS6232GroupProject.View
         {
             InitializeComponent();
         }
+
     }
 }
