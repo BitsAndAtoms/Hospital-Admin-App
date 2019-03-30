@@ -78,6 +78,7 @@
             // comboBoxRoutineCheckAppointment
             // 
             this.comboBoxRoutineCheckAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxRoutineCheckAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoutineCheckAppointment.FormattingEnabled = true;
             this.comboBoxRoutineCheckAppointment.Location = new System.Drawing.Point(595, 16);
             this.comboBoxRoutineCheckAppointment.Name = "comboBoxRoutineCheckAppointment";

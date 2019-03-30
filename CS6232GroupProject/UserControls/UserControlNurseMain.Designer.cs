@@ -290,6 +290,7 @@
             // comboBoxStatePatientInfoResult
             // 
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
             this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 29);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
@@ -647,7 +648,7 @@
             this.tabPageNurseBook.Location = new System.Drawing.Point(4, 29);
             this.tabPageNurseBook.Name = "tabPageNurseBook";
             this.tabPageNurseBook.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNurseBook.Size = new System.Drawing.Size(684, 562);
+            this.tabPageNurseBook.Size = new System.Drawing.Size(1426, 562);
             this.tabPageNurseBook.TabIndex = 1;
             this.tabPageNurseBook.Text = "Book Appointment";
             // 
@@ -675,7 +676,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(678, 377);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1420, 377);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // comboBoxPhysician
@@ -683,8 +684,9 @@
             this.comboBoxPhysician.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxPhysician.DataSource = this.doctorBindingSource;
             this.comboBoxPhysician.DisplayMember = "lname";
+            this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(206, 64);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(429, 64);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPhysician.TabIndex = 2;
@@ -705,8 +707,9 @@
             this.comboBoxPatient.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxPatient.DataSource = this.patientBindingSource;
             this.comboBoxPatient.DisplayMember = "lname";
+            this.comboBoxPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatient.FormattingEnabled = true;
-            this.comboBoxPatient.Location = new System.Drawing.Point(206, 14);
+            this.comboBoxPatient.Location = new System.Drawing.Point(429, 14);
             this.comboBoxPatient.Name = "comboBoxPatient";
             this.comboBoxPatient.Size = new System.Drawing.Size(186, 28);
             this.comboBoxPatient.TabIndex = 1;
@@ -782,7 +785,7 @@
             this.buttonBookSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBookSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBookSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonBookSubmit.Location = new System.Drawing.Point(538, 322);
+            this.buttonBookSubmit.Location = new System.Drawing.Point(1280, 322);
             this.buttonBookSubmit.Name = "buttonBookSubmit";
             this.buttonBookSubmit.Size = new System.Drawing.Size(137, 35);
             this.buttonBookSubmit.TabIndex = 5;
@@ -794,7 +797,7 @@
             this.textBoxSummary.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSummary.Location = new System.Drawing.Point(206, 166);
+            this.textBoxSummary.Location = new System.Drawing.Point(429, 166);
             this.textBoxSummary.Multiline = true;
             this.textBoxSummary.Name = "textBoxSummary";
             this.textBoxSummary.Size = new System.Drawing.Size(427, 121);
@@ -803,7 +806,7 @@
             // dateTimePickerBookAppointment
             // 
             this.dateTimePickerBookAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerBookAppointment.Location = new System.Drawing.Point(206, 112);
+            this.dateTimePickerBookAppointment.Location = new System.Drawing.Point(429, 112);
             this.dateTimePickerBookAppointment.Name = "dateTimePickerBookAppointment";
             this.dateTimePickerBookAppointment.Size = new System.Drawing.Size(280, 26);
             this.dateTimePickerBookAppointment.TabIndex = 3;
@@ -828,7 +831,7 @@
             this.tabPageNurseRegister.Location = new System.Drawing.Point(4, 29);
             this.tabPageNurseRegister.Name = "tabPageNurseRegister";
             this.tabPageNurseRegister.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNurseRegister.Size = new System.Drawing.Size(684, 562);
+            this.tabPageNurseRegister.Size = new System.Drawing.Size(1426, 562);
             this.tabPageNurseRegister.TabIndex = 2;
             this.tabPageNurseRegister.Text = "Register Patient";
             this.tabPageNurseRegister.UseVisualStyleBackColor = true;
@@ -866,7 +869,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(678, 524);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1420, 524);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanelRegisterZipcode
@@ -875,7 +878,7 @@
             this.tableLayoutPanelRegisterZipcode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRegisterZipcode.Controls.Add(this.textBoxRegisterZipcode, 0, 1);
             this.tableLayoutPanelRegisterZipcode.Controls.Add(this.labelRegisterZipcode, 0, 0);
-            this.tableLayoutPanelRegisterZipcode.Location = new System.Drawing.Point(206, 363);
+            this.tableLayoutPanelRegisterZipcode.Location = new System.Drawing.Point(429, 363);
             this.tableLayoutPanelRegisterZipcode.Name = "tableLayoutPanelRegisterZipcode";
             this.tableLayoutPanelRegisterZipcode.RowCount = 2;
             this.tableLayoutPanelRegisterZipcode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -923,7 +926,7 @@
             this.textBoxRegisterLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxRegisterLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRegisterLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterLastName.Location = new System.Drawing.Point(206, 60);
+            this.textBoxRegisterLastName.Location = new System.Drawing.Point(429, 60);
             this.textBoxRegisterLastName.Name = "textBoxRegisterLastName";
             this.textBoxRegisterLastName.Size = new System.Drawing.Size(186, 29);
             this.textBoxRegisterLastName.TabIndex = 3;
@@ -933,7 +936,7 @@
             this.textBoxRegisterFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxRegisterFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRegisterFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterFirstName.Location = new System.Drawing.Point(206, 10);
+            this.textBoxRegisterFirstName.Location = new System.Drawing.Point(429, 10);
             this.textBoxRegisterFirstName.Name = "textBoxRegisterFirstName";
             this.textBoxRegisterFirstName.Size = new System.Drawing.Size(186, 29);
             this.textBoxRegisterFirstName.TabIndex = 2;
@@ -993,7 +996,7 @@
             this.textBoxRegisterPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxRegisterPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRegisterPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterPhone.Location = new System.Drawing.Point(206, 160);
+            this.textBoxRegisterPhone.Location = new System.Drawing.Point(429, 160);
             this.textBoxRegisterPhone.Name = "textBoxRegisterPhone";
             this.textBoxRegisterPhone.Size = new System.Drawing.Size(186, 29);
             this.textBoxRegisterPhone.TabIndex = 5;
@@ -1004,7 +1007,7 @@
             this.tableLayoutPanelRegisterStreet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRegisterStreet.Controls.Add(this.textBoxRegisterStreet, 0, 1);
             this.tableLayoutPanelRegisterStreet.Controls.Add(this.labelRegisterStreet, 0, 0);
-            this.tableLayoutPanelRegisterStreet.Location = new System.Drawing.Point(206, 233);
+            this.tableLayoutPanelRegisterStreet.Location = new System.Drawing.Point(429, 233);
             this.tableLayoutPanelRegisterStreet.Name = "tableLayoutPanelRegisterStreet";
             this.tableLayoutPanelRegisterStreet.RowCount = 2;
             this.tableLayoutPanelRegisterStreet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -1043,7 +1046,7 @@
             this.tableLayoutPanelRegisterCityState.Controls.Add(this.labelRegisterState, 1, 0);
             this.tableLayoutPanelRegisterCityState.Controls.Add(this.comboBoxState, 1, 1);
             this.tableLayoutPanelRegisterCityState.Controls.Add(this.textBoxCity, 0, 1);
-            this.tableLayoutPanelRegisterCityState.Location = new System.Drawing.Point(206, 298);
+            this.tableLayoutPanelRegisterCityState.Location = new System.Drawing.Point(429, 298);
             this.tableLayoutPanelRegisterCityState.Name = "tableLayoutPanelRegisterCityState";
             this.tableLayoutPanelRegisterCityState.RowCount = 2;
             this.tableLayoutPanelRegisterCityState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -1079,6 +1082,7 @@
             // comboBoxState
             // 
             this.comboBoxState.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
             this.comboBoxState.Location = new System.Drawing.Point(203, 29);
             this.comboBoxState.Name = "comboBoxState";
@@ -1102,7 +1106,7 @@
             this.buttonRegisterSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegisterSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegisterSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonRegisterSubmit.Location = new System.Drawing.Point(372, 432);
+            this.buttonRegisterSubmit.Location = new System.Drawing.Point(854, 432);
             this.buttonRegisterSubmit.Name = "buttonRegisterSubmit";
             this.buttonRegisterSubmit.Size = new System.Drawing.Size(137, 35);
             this.buttonRegisterSubmit.TabIndex = 13;
@@ -1113,7 +1117,7 @@
             // dateTimePickerRegisterDOB
             // 
             this.dateTimePickerRegisterDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerRegisterDOB.Location = new System.Drawing.Point(206, 112);
+            this.dateTimePickerRegisterDOB.Location = new System.Drawing.Point(429, 112);
             this.dateTimePickerRegisterDOB.Name = "dateTimePickerRegisterDOB";
             this.dateTimePickerRegisterDOB.Size = new System.Drawing.Size(280, 26);
             this.dateTimePickerRegisterDOB.TabIndex = 3;
