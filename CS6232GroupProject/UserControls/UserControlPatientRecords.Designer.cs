@@ -74,6 +74,8 @@
             this.buttonDiagnosisUpdate = new System.Windows.Forms.Button();
             this.checkBoxPendingLabTests = new System.Windows.Forms.CheckBox();
             this.labelDiagnosis = new System.Windows.Forms.Label();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateTimePickerAppointmentsTime = new System.Windows.Forms.DateTimePicker();
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageAppointments.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -87,6 +89,7 @@
             this.tableLayoutPanelDiagnosis.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlPatientRecords
@@ -121,6 +124,7 @@
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.87879F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.12122F));
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.textBoxAppointmentsSummary, 1, 3);
             this.tableLayoutPanel7.Controls.Add(this.comboBoxAppointmentsPatient, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.labelAppointmentsPatient, 0, 0);
@@ -130,7 +134,6 @@
             this.tableLayoutPanel7.Controls.Add(this.linkLabelAppointmentsCancel, 1, 5);
             this.tableLayoutPanel7.Controls.Add(this.comboBoxAppointmentsPhysician, 1, 1);
             this.tableLayoutPanel7.Controls.Add(this.labelAppointmentsDateTime, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.dateTimePickerAppointments, 1, 2);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -153,14 +156,14 @@
             this.textBoxAppointmentsSummary.Multiline = true;
             this.textBoxAppointmentsSummary.Name = "textBoxAppointmentsSummary";
             this.textBoxAppointmentsSummary.Size = new System.Drawing.Size(427, 121);
-            this.textBoxAppointmentsSummary.TabIndex = 5;
+            this.textBoxAppointmentsSummary.TabIndex = 6;
             // 
             // comboBoxAppointmentsPatient
             // 
             this.comboBoxAppointmentsPatient.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxAppointmentsPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPatient.FormattingEnabled = true;
-            this.comboBoxAppointmentsPatient.Location = new System.Drawing.Point(166, 15);
+            this.comboBoxAppointmentsPatient.Location = new System.Drawing.Point(166, 11);
             this.comboBoxAppointmentsPatient.Name = "comboBoxAppointmentsPatient";
             this.comboBoxAppointmentsPatient.Size = new System.Drawing.Size(179, 28);
             this.comboBoxAppointmentsPatient.TabIndex = 2;
@@ -214,7 +217,7 @@
             this.buttonAppointmentsUpdate.Location = new System.Drawing.Point(425, 307);
             this.buttonAppointmentsUpdate.Name = "buttonAppointmentsUpdate";
             this.buttonAppointmentsUpdate.Size = new System.Drawing.Size(137, 35);
-            this.buttonAppointmentsUpdate.TabIndex = 6;
+            this.buttonAppointmentsUpdate.TabIndex = 7;
             this.buttonAppointmentsUpdate.Text = "Update";
             this.buttonAppointmentsUpdate.UseVisualStyleBackColor = false;
             // 
@@ -227,7 +230,7 @@
             this.linkLabelAppointmentsCancel.Location = new System.Drawing.Point(633, 350);
             this.linkLabelAppointmentsCancel.Name = "linkLabelAppointmentsCancel";
             this.linkLabelAppointmentsCancel.Size = new System.Drawing.Size(189, 25);
-            this.linkLabelAppointmentsCancel.TabIndex = 7;
+            this.linkLabelAppointmentsCancel.TabIndex = 8;
             this.linkLabelAppointmentsCancel.TabStop = true;
             this.linkLabelAppointmentsCancel.Text = "Cancel Appointment";
             // 
@@ -236,7 +239,7 @@
             this.comboBoxAppointmentsPhysician.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 65);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 61);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(179, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -257,9 +260,10 @@
             // dateTimePickerAppointments
             // 
             this.dateTimePickerAppointments.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerAppointments.Location = new System.Drawing.Point(166, 112);
+            this.dateTimePickerAppointments.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerAppointments.Location = new System.Drawing.Point(3, 9);
             this.dateTimePickerAppointments.Name = "dateTimePickerAppointments";
-            this.dateTimePickerAppointments.Size = new System.Drawing.Size(287, 26);
+            this.dateTimePickerAppointments.Size = new System.Drawing.Size(162, 26);
             this.dateTimePickerAppointments.TabIndex = 4;
             // 
             // labelAppointments
@@ -702,6 +706,29 @@
             this.labelDiagnosis.TabIndex = 6;
             this.labelDiagnosis.Text = "Diagnosis";
             // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Controls.Add(this.dateTimePickerAppointmentsTime, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.dateTimePickerAppointments, 0, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(166, 103);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(337, 44);
+            this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // dateTimePickerAppointmentsTime
+            // 
+            this.dateTimePickerAppointmentsTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerAppointmentsTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerAppointmentsTime.Location = new System.Drawing.Point(171, 9);
+            this.dateTimePickerAppointmentsTime.Name = "dateTimePickerAppointmentsTime";
+            this.dateTimePickerAppointmentsTime.Size = new System.Drawing.Size(127, 26);
+            this.dateTimePickerAppointmentsTime.TabIndex = 5;
+            // 
             // UserControlPatientRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -734,6 +761,7 @@
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -786,5 +814,7 @@
         private System.Windows.Forms.TextBox textBoxAppointmentsSummary;
         private System.Windows.Forms.TextBox textBoxRoutineChecksDiastolic;
         private System.Windows.Forms.TextBox textBoxRoutineChecksTemp;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAppointmentsTime;
     }
 }
