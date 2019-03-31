@@ -62,7 +62,6 @@ namespace CS6232GroupProject.UserControls
             this.textBoxRegisterLastName.Clear();
             this.textBoxRegisterPhone.Clear();
             this.textBoxRegisterStreet.Clear();
-            this.textBoxRegisterCity.Clear();
             this.dateTimePickerRegisterDOB.Value = DateTimePicker.MinimumDateTime;
             this.comboBoxState.SelectedIndex = -1;
             this.textBoxRegisterZipcode.Clear();
@@ -105,11 +104,6 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a Street Address";
                 return false;
             }
-            else if (this.textBoxRegisterCity.Text.Length == 0 || this.textBoxRegisterCity.Text == null)
-            {
-                labelAddMessage.Text = "Please enter a City";
-                return false;
-            }
             else if (this.comboBoxState.SelectedIndex == -1)
             {
                 labelAddMessage.Text = "Please select a State";
@@ -144,6 +138,7 @@ namespace CS6232GroupProject.UserControls
                 newAddress.Zip = Convert.ToInt32(this.textBoxRegisterZipcode.Text);
                 this.patientController.registerPatient(newPatient, newAddress);
                 labelAddMessage.Text = "Successfully updated";
+                this.ClearText();
             }
             else {
                 labelAddMessage.Text = "Not added";
