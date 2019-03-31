@@ -37,18 +37,16 @@ namespace CS6232GroupProject.View
 
         private void buttonLogin_Click(object sender, System.EventArgs e)
         {
-            if (this.newLoginController.DoCheckLogin(this.textBoxPassword.Text,this.textBoxUsername.Text))
+            List<string> newNameAndRole = this.newLoginController.GETUserNameAndRole(this.textBoxUsername.Text);
+            if ((this.newLoginController.DoCheckLogin(this.textBoxPassword.Text,this.textBoxUsername.Text) && (newNameAndRole.Count>1)) && newNameAndRole[0].Equals("Nurse"))
             {
                 this.Hide();
-                List<string> newNameAndRole = this.newLoginController.GETUserNameAndRole(this.textBoxUsername.Text);
-                if(newNameAndRole[0].Equals("Nurse"))
-                { 
                 this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1]);
                 //this.nurseMain.ShowDialog();
                 this.nurseMain.Show();
                 this.textBoxUsername.Text = "";
                 this.textBoxPassword.Text = "";
-                }
+                
             }
             else
             {
