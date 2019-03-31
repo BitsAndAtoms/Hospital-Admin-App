@@ -13,7 +13,7 @@ namespace CS6232GroupProject.DAL
         public bool CheckLogin(string inputPassword, string inputUserName)
         {
                 string selectStatement =
-                "SELECT username FROM[Clinic].[dbo].[Login] " +
+                "SELECT username FROM [CS6232-g4].[dbo].[Login] " +
                 " WHERE PWDCOMPARE(@inputPassword , password) = 1" +
                 " AND username = @inputUserName ";
 

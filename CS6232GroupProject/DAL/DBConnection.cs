@@ -14,7 +14,7 @@ namespace CS6232GroupProject.DAL
         public static SqlConnection GetConnection()
         {
             string connectionString =
-                "Data Source=localhost;Initial Catalog=Clinic;" +
+                "Data Source=localhost;Initial Catalog=CS6232-g4;" +
                 "Integrated Security=True";
 
 

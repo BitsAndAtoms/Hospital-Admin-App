@@ -1400,6 +1400,7 @@
             // 
             this.doctorBindingSource.DataMember = "Doctor";
             this.doctorBindingSource.DataSource = this.clinicDataSet;
+            this.doctorBindingSource.CurrentChanged += new System.EventHandler(this.doctorBindingSource_CurrentChanged);
             // 
             // clinicDataSet
             // 

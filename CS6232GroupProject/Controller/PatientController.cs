@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.DAL;
 using CS6232GroupProject.Model;
+using System;
 using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
@@ -30,5 +31,9 @@ namespace CS6232GroupProject.Controller
             return this.patientSource.GetPatients();
         }
 
+        internal void registerPatient(Patient newPatient, Address newAddress)
+        {
+            this.patientSource.registerPatientInDB(newPatient, newAddress);
+        }
     }
 }
