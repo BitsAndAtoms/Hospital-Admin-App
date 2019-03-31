@@ -205,6 +205,14 @@ namespace CS6232GroupProject.UserControls
             // is added, then push the created Appointment object to the Appoinment controller, 
             // passing the new Appointment variable, which will call the AppoinmentDAL method to 
             // add it in the DB.
+
+            //Check to make sure the needed items are selected/filled in.
+            Appointment appointment = new Appointment();
+            appointment.PatientID = Convert.ToInt32(comboBoxPatient.SelectedValue);
+            appointment.DoctorID = Convert.ToInt32(comboBoxPhysician.SelectedValue);
+            appointment.Date = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
+            appointment.Reason = textBoxSummary.Text;
+
         }
 
         private void doctorBindingSource_CurrentChanged(object sender, EventArgs e)
