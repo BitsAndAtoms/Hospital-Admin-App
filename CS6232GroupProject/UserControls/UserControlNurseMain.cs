@@ -62,8 +62,9 @@ namespace CS6232GroupProject.UserControls
             this.textBoxRegisterLastName.Clear();
             this.textBoxRegisterPhone.Clear();
             this.textBoxRegisterStreet.Clear();
+            this.textBoxSSN.Clear();
             this.dateTimePickerRegisterDOB.Value = DateTimePicker.MinimumDateTime;
-            this.comboBoxState.SelectedIndex = -1;
+            this.comboBoxState.SelectedIndex = 0;
             this.textBoxRegisterZipcode.Clear();
             this.labelAddMessage.Text = "";
         }
@@ -200,45 +201,51 @@ namespace CS6232GroupProject.UserControls
 
         }
 
+        private bool CheckBookApointmentFields()
+        {
+            if (textBoxSummary.Text == "")
+            {
+                return false;
+            } else
+            {
+                return true;
+            }
+        }
         private void buttonBookSubmit_Click(object sender, EventArgs e)
         {
-            //Check to ensure that the needed Patient and Doctor comboboxes are selected, 
-            // ensure that the reason field is filled, and ensure that the date and time input 
-            // is added, then push the created Appointment object to the Appoinment controller, 
-            // passing the new Appointment variable, which will call the AppoinmentDAL method to 
-            // add it in the DB.
-
-            //Check to make sure the needed items are selected/filled in.
-            //If (all data entered)
-            var reason = textBoxSummary.Text;
-            try
+            if (CheckBookApointmentFields())
             {
-                Appointment appointment = new Appointment();
-                appointment.PatientID = Convert.ToInt32(comboBoxPatient.SelectedValue);
-                appointment.DoctorID = Convert.ToInt32(comboBoxPhysician.SelectedValue);
-                appointment.Date = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
-                appointment.Reason = reason;
+                try
+                {
+                    var reason = textBoxSummary.Text;
+                    Appointment appointment = new Appointment();
+                    appointment.PatientID = Convert.ToInt32(comboBoxPatient.SelectedValue);
+                    appointment.DoctorID = Convert.ToInt32(comboBoxPhysician.SelectedValue);
+                    appointment.Date = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
+                    appointment.Reason = reason;
 
-                if (this.appointmentController.CheckAvailability(appointment))
-                {
-                    this.appointmentController.CreateAppointment(appointment);
-                    //Clear textbox(es)
-                    MessageBox.Show("Appointment Booked!");
+                    if (this.appointmentController.CheckAvailability(appointment))
+                    {
+                        this.appointmentController.CreateAppointment(appointment);
+                        textBoxSummary.Text = "";
+                        MessageBox.Show("Appointment Booked!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("That Date and Time isn't available", "Date or Time Not Available");
+                    }
+
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("That Date and Time isn't available", "Date or Time Not Available");
+                    MessageBox.Show("There was an issue creating the Appointment!", "Appointment Creation Error!");
                 }
-                
-                
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("There was an issue creating the Appointment!", "Appointment Creation Error!");
+                MessageBox.Show("Please enter a Resaon", "Missing Information!");
             }
-            //else
-            // MessageBox.Show("Please enter a Resaon", "Missing Information!");
-
         }
 
         private void doctorBindingSource_CurrentChanged(object sender, EventArgs e)
