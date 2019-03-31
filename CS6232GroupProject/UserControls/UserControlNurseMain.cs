@@ -11,6 +11,7 @@ namespace CS6232GroupProject.UserControls
 {
     public partial class UserControlNurseMain : UserControl
     {
+        private Patient patient;
         private List<Doctor> doctorList;
         private List<Patient> patientList;
         private DoctorController doctorController;
@@ -34,46 +35,21 @@ namespace CS6232GroupProject.UserControls
                     this.comboBoxStatePatientInfoResult.Items.Add(state);
                 }
 
-                // Should we start using Data Sources?
-
-                //Just a set of test data to allow displaying of a Doctor and Patient.
-                // If it isn't useful, feel free to get rid of it.
-
-                // Below is the line that will bind it to the DB set of Doctors and Patients
-                // once there are some in the DB.
+                
+                
                 patientList = this.patientController.GetPatients();
-                List<Patient> patients = new List<Patient>();
-                Patient patient = new Patient
+                List<String> patientNames = new List<String>();
+                foreach (Patient patient in patientList)
                 {
-                    PatientID = 1,
-                    FName = "Cotton Eye",
-                    LName = "Joe",
-                    DOB = DateTime.Today
-                };
-
-                //patients.Add(patient);
-                //patientList = patients;
-
-                comboBoxPatient.DataSource = patientList;
+                    patientNames.Add(patient.FullName);
+                }
+                comboBoxPatient.DataSource = patientNames;
+                //comboBoxPatient.DataSource = patientList;
 
                 
          
-                //doctorList = this.doctorController.GetDoctors();
-                List<Doctor> doctors = new List<Doctor>();
-                Doctor doctor = new Doctor
-                {
-                    DoctorID = 1,
-                    FName = "FirstName",
-                    LName = "LastName",
-                    DOB = DateTime.Today,
-                    SSN = "123456789",
-                    Gender = "M",
-                    Phone = "6211122545",
-                    AddressID = 1
-                };
-
-                doctors.Add(doctor);
-                doctorList = doctors;
+                doctorList = this.doctorController.GetDoctors();
+                
                 comboBoxPhysician.DataSource = doctorList;
             }
             catch (Exception ex)

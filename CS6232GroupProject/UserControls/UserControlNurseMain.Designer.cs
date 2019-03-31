@@ -80,6 +80,7 @@
             this.labelGenderPatientInfoResult = new System.Windows.Forms.Label();
             this.labelSSNPatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxSSNPatientInfoResult = new System.Windows.Forms.TextBox();
+            this.comboBoxGenderPatientInfoResult = new System.Windows.Forms.ComboBox();
             this.labelPatientInformation = new System.Windows.Forms.Label();
             this.linkLabelPatientInfoBack = new System.Windows.Forms.LinkLabel();
             this.tabPageNurseBook = new System.Windows.Forms.TabPage();
@@ -100,6 +101,7 @@
             this.labelBookAppointment = new System.Windows.Forms.Label();
             this.tabPageNurseRegister = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxRegisterGender = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanelRegisterZipcode = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxRegisterZipcode = new System.Windows.Forms.TextBox();
             this.labelRegisterZipcode = new System.Windows.Forms.Label();
@@ -129,8 +131,6 @@
             this.doctorTableAdapter = new CS6232GroupProject.clinicDataSetTableAdapters.DoctorTableAdapter();
             this.clinicDataSet1 = new CS6232GroupProject.clinicDataSet();
             this.patientTableAdapter = new CS6232GroupProject.clinicDataSet1TableAdapters.PatientTableAdapter();
-            this.comboBoxGenderPatientInfoResult = new System.Windows.Forms.ComboBox();
-            this.comboBoxRegisterGender = new System.Windows.Forms.ComboBox();
             this.tabControlNurseMain.SuspendLayout();
             this.tabPageNursePatientInformation.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -757,6 +757,16 @@
             this.textBoxSSNPatientInfoResult.Size = new System.Drawing.Size(186, 29);
             this.textBoxSSNPatientInfoResult.TabIndex = 4;
             // 
+            // comboBoxGenderPatientInfoResult
+            // 
+            this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
+            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(206, 211);
+            this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
+            this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxGenderPatientInfoResult.TabIndex = 21;
+            // 
             // labelPatientInformation
             // 
             this.labelPatientInformation.AutoSize = true;
@@ -863,7 +873,7 @@
             this.comboBoxPhysician.FormattingEnabled = true;
             this.comboBoxPhysician.Location = new System.Drawing.Point(429, 64);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
-            this.comboBoxPhysician.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
             this.comboBoxPhysician.ValueMember = "doctorID";
             // 
@@ -881,12 +891,12 @@
             // 
             this.comboBoxPatient.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxPatient.DataSource = this.patientBindingSource;
-            this.comboBoxPatient.DisplayMember = "lname";
+            this.comboBoxPatient.DisplayMember = "Full Name";
             this.comboBoxPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatient.FormattingEnabled = true;
             this.comboBoxPatient.Location = new System.Drawing.Point(429, 14);
             this.comboBoxPatient.Name = "comboBoxPatient";
-            this.comboBoxPatient.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxPatient.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPatient.TabIndex = 1;
             this.comboBoxPatient.ValueMember = "patientID";
             // 
@@ -1035,6 +1045,16 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1420, 612);
             this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // comboBoxRegisterGender
+            // 
+            this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRegisterGender.FormattingEnabled = true;
+            this.comboBoxRegisterGender.Location = new System.Drawing.Point(429, 211);
+            this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
+            this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxRegisterGender.TabIndex = 6;
             // 
             // tableLayoutPanelRegisterZipcode
             // 
@@ -1356,26 +1376,6 @@
             // patientTableAdapter
             // 
             this.patientTableAdapter.ClearBeforeFill = true;
-            // 
-            // comboBoxGenderPatientInfoResult
-            // 
-            this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
-            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(206, 211);
-            this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
-            this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
-            this.comboBoxGenderPatientInfoResult.TabIndex = 21;
-            // 
-            // comboBoxRegisterGender
-            // 
-            this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRegisterGender.FormattingEnabled = true;
-            this.comboBoxRegisterGender.Location = new System.Drawing.Point(429, 211);
-            this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
-            this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
-            this.comboBoxRegisterGender.TabIndex = 6;
             // 
             // UserControlNurseMain
             // 
