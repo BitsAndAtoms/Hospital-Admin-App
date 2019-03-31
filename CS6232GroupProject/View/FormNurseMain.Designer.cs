@@ -32,9 +32,9 @@
             this.labelName = new System.Windows.Forms.Label();
             this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
             this.pictureBoxNurseIcon = new System.Windows.Forms.PictureBox();
-            this.userControlNurseMain1 = new CS6232GroupProject.UserControls.UserControlNurseMain();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.userControlNurseMain1 = new CS6232GroupProject.UserControls.UserControlNurseMain();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNurseIcon)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -46,7 +46,7 @@
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(140, 62);
+            this.labelName.Location = new System.Drawing.Point(139, 62);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(105, 25);
             this.labelName.TabIndex = 1;
@@ -80,22 +80,13 @@
             this.pictureBoxNurseIcon.TabIndex = 0;
             this.pictureBoxNurseIcon.TabStop = false;
             // 
-            // userControlNurseMain1
-            // 
-            this.userControlNurseMain1.AutoScroll = true;
-            this.userControlNurseMain1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlNurseMain1.Location = new System.Drawing.Point(0, 0);
-            this.userControlNurseMain1.Name = "userControlNurseMain1";
-            this.userControlNurseMain1.Size = new System.Drawing.Size(738, 601);
-            this.userControlNurseMain1.TabIndex = 3;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.3211F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.6789F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
             this.tableLayoutPanel1.Controls.Add(this.linkLabelLogout, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxNurseIcon, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelName, 1, 0);
@@ -113,8 +104,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 149);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 601);
+            this.panel1.Size = new System.Drawing.Size(738, 754);
             this.panel1.TabIndex = 5;
+            // 
+            // userControlNurseMain1
+            // 
+            this.userControlNurseMain1.AutoScroll = true;
+            this.userControlNurseMain1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlNurseMain1.Location = new System.Drawing.Point(0, 0);
+            this.userControlNurseMain1.Name = "userControlNurseMain1";
+            this.userControlNurseMain1.Size = new System.Drawing.Size(738, 754);
+            this.userControlNurseMain1.TabIndex = 3;
             // 
             // FormNurseMain
             // 
@@ -123,7 +123,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::CS6232GroupProject.Properties.Resources.bggradient_topsmall;
-            this.ClientSize = new System.Drawing.Size(738, 750);
+            this.ClientSize = new System.Drawing.Size(738, 903);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

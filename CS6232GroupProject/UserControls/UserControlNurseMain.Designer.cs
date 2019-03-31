@@ -57,10 +57,8 @@
             this.textBoxStreetPatientInfoResult = new System.Windows.Forms.TextBox();
             this.labelStreetPatientInfoResult = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelCityPatientInfoResult = new System.Windows.Forms.Label();
             this.labelStatePatientInfoResult = new System.Windows.Forms.Label();
             this.comboBoxStatePatientInfoResult = new System.Windows.Forms.ComboBox();
-            this.textBoxCityPatientInfoResult = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxZipPatientInfoResult = new System.Windows.Forms.TextBox();
             this.labelZipPatientInfoResult = new System.Windows.Forms.Label();
@@ -116,10 +114,8 @@
             this.textBoxRegisterStreet = new System.Windows.Forms.TextBox();
             this.labelRegisterStreet = new System.Windows.Forms.Label();
             this.tableLayoutPanelRegisterCityState = new System.Windows.Forms.TableLayoutPanel();
-            this.labelRegisterCity = new System.Windows.Forms.Label();
             this.labelRegisterState = new System.Windows.Forms.Label();
             this.comboBoxState = new System.Windows.Forms.ComboBox();
-            this.textBoxRegisterCity = new System.Windows.Forms.TextBox();
             this.buttonRegisterSubmit = new System.Windows.Forms.Button();
             this.dateTimePickerRegisterDOB = new System.Windows.Forms.DateTimePicker();
             this.labelAddMessage = new System.Windows.Forms.Label();
@@ -202,7 +198,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(6, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 477);
+            this.panel1.Size = new System.Drawing.Size(671, 586);
             this.panel1.TabIndex = 10;
             // 
             // dataGridViewPatientInfo
@@ -224,7 +220,7 @@
             this.dataGridViewPatientInfo.Location = new System.Drawing.Point(7, 217);
             this.dataGridViewPatientInfo.Name = "dataGridViewPatientInfo";
             this.dataGridViewPatientInfo.ReadOnly = true;
-            this.dataGridViewPatientInfo.Size = new System.Drawing.Size(661, 257);
+            this.dataGridViewPatientInfo.Size = new System.Drawing.Size(661, 366);
             this.dataGridViewPatientInfo.TabIndex = 5;
             // 
             // patientIDDataGridViewTextBoxColumn
@@ -470,40 +466,25 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.labelCityPatientInfoResult, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.labelStatePatientInfoResult, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.comboBoxStatePatientInfoResult, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.textBoxCityPatientInfoResult, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.labelStatePatientInfoResult, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.comboBoxStatePatientInfoResult, 0, 1);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(206, 118);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 59);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 59);
             this.tableLayoutPanel6.TabIndex = 10;
-            // 
-            // labelCityPatientInfoResult
-            // 
-            this.labelCityPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelCityPatientInfoResult.AutoSize = true;
-            this.labelCityPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCityPatientInfoResult.Location = new System.Drawing.Point(3, 0);
-            this.labelCityPatientInfoResult.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelCityPatientInfoResult.Name = "labelCityPatientInfoResult";
-            this.labelCityPatientInfoResult.Size = new System.Drawing.Size(39, 20);
-            this.labelCityPatientInfoResult.TabIndex = 11;
-            this.labelCityPatientInfoResult.Text = "City";
             // 
             // labelStatePatientInfoResult
             // 
             this.labelStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelStatePatientInfoResult.AutoSize = true;
             this.labelStatePatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatePatientInfoResult.Location = new System.Drawing.Point(208, 0);
+            this.labelStatePatientInfoResult.Location = new System.Drawing.Point(3, 0);
             this.labelStatePatientInfoResult.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelStatePatientInfoResult.Name = "labelStatePatientInfoResult";
             this.labelStatePatientInfoResult.Size = new System.Drawing.Size(53, 20);
@@ -515,20 +496,10 @@
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 29);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 12;
-            // 
-            // textBoxCityPatientInfoResult
-            // 
-            this.textBoxCityPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxCityPatientInfoResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxCityPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCityPatientInfoResult.Location = new System.Drawing.Point(3, 25);
-            this.textBoxCityPatientInfoResult.Name = "textBoxCityPatientInfoResult";
-            this.textBoxCityPatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxCityPatientInfoResult.TabIndex = 11;
             // 
             // tableLayoutPanel7
             // 
@@ -1231,40 +1202,25 @@
             // 
             // tableLayoutPanelRegisterCityState
             // 
-            this.tableLayoutPanelRegisterCityState.ColumnCount = 2;
+            this.tableLayoutPanelRegisterCityState.ColumnCount = 1;
             this.tableLayoutPanelRegisterCityState.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelRegisterCityState.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelRegisterCityState.Controls.Add(this.labelRegisterCity, 0, 0);
-            this.tableLayoutPanelRegisterCityState.Controls.Add(this.labelRegisterState, 1, 0);
-            this.tableLayoutPanelRegisterCityState.Controls.Add(this.comboBoxState, 1, 1);
-            this.tableLayoutPanelRegisterCityState.Controls.Add(this.textBoxRegisterCity, 0, 1);
+            this.tableLayoutPanelRegisterCityState.Controls.Add(this.labelRegisterState, 0, 0);
+            this.tableLayoutPanelRegisterCityState.Controls.Add(this.comboBoxState, 0, 1);
             this.tableLayoutPanelRegisterCityState.Location = new System.Drawing.Point(429, 398);
             this.tableLayoutPanelRegisterCityState.Name = "tableLayoutPanelRegisterCityState";
             this.tableLayoutPanelRegisterCityState.RowCount = 2;
             this.tableLayoutPanelRegisterCityState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelRegisterCityState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRegisterCityState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanelRegisterCityState.Size = new System.Drawing.Size(401, 59);
+            this.tableLayoutPanelRegisterCityState.Size = new System.Drawing.Size(200, 59);
             this.tableLayoutPanelRegisterCityState.TabIndex = 10;
-            // 
-            // labelRegisterCity
-            // 
-            this.labelRegisterCity.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelRegisterCity.AutoSize = true;
-            this.labelRegisterCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisterCity.Location = new System.Drawing.Point(3, 0);
-            this.labelRegisterCity.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelRegisterCity.Name = "labelRegisterCity";
-            this.labelRegisterCity.Size = new System.Drawing.Size(39, 20);
-            this.labelRegisterCity.TabIndex = 11;
-            this.labelRegisterCity.Text = "City";
             // 
             // labelRegisterState
             // 
             this.labelRegisterState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelRegisterState.AutoSize = true;
             this.labelRegisterState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisterState.Location = new System.Drawing.Point(203, 0);
+            this.labelRegisterState.Location = new System.Drawing.Point(3, 0);
             this.labelRegisterState.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelRegisterState.Name = "labelRegisterState";
             this.labelRegisterState.Size = new System.Drawing.Size(53, 20);
@@ -1276,20 +1232,10 @@
             this.comboBoxState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(203, 29);
+            this.comboBoxState.Location = new System.Drawing.Point(3, 29);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 12;
-            // 
-            // textBoxRegisterCity
-            // 
-            this.textBoxRegisterCity.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxRegisterCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRegisterCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterCity.Location = new System.Drawing.Point(3, 25);
-            this.textBoxRegisterCity.Name = "textBoxRegisterCity";
-            this.textBoxRegisterCity.Size = new System.Drawing.Size(186, 29);
-            this.textBoxRegisterCity.TabIndex = 11;
             // 
             // buttonRegisterSubmit
             // 
@@ -1514,10 +1460,8 @@
         private System.Windows.Forms.TextBox textBoxRegisterStreet;
         private System.Windows.Forms.Label labelRegisterStreet;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRegisterCityState;
-        private System.Windows.Forms.Label labelRegisterCity;
         private System.Windows.Forms.Label labelRegisterState;
         private System.Windows.Forms.ComboBox comboBoxState;
-        private System.Windows.Forms.TextBox textBoxRegisterCity;
         private System.Windows.Forms.Button buttonRegisterSubmit;
         private System.Windows.Forms.Label labelRegisterPatient;
         private System.Windows.Forms.Panel panelPatientInfoResults;
@@ -1536,10 +1480,8 @@
         private System.Windows.Forms.TextBox textBoxStreetPatientInfoResult;
         private System.Windows.Forms.Label labelStreetPatientInfoResult;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label labelCityPatientInfoResult;
         private System.Windows.Forms.Label labelStatePatientInfoResult;
         private System.Windows.Forms.ComboBox comboBoxStatePatientInfoResult;
-        private System.Windows.Forms.TextBox textBoxCityPatientInfoResult;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TextBox textBoxZipPatientInfoResult;
         private System.Windows.Forms.Label labelZipPatientInfoResult;
