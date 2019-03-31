@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CS6232GroupProject.Model;
 
 namespace CS6232GroupProject.UserControls
 {
@@ -39,9 +40,11 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonRoutineChecksUpdate_Click(object sender, EventArgs e)
         {
-            // Ensure all fields are filled, pass the new PatientVisit object to the 
-            // PatientVisit Controller, passing the object with it, to call the method 
-            // in the PatientDAL which creates the entry in the DB.
+            //Get the Patient visit from the Appointment class' AppointmentID, then get the PatientVisit object.
+            // Update that PatientVisit object then pass it to the UpdatePatientVisit method via contoller, 
+            // then to the PatientVisitDAL method.
+
+            
         }
 
         private void buttonDiagnosisUpdate_Click(object sender, EventArgs e)
