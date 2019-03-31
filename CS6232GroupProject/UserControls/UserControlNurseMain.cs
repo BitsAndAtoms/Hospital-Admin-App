@@ -70,6 +70,7 @@ namespace CS6232GroupProject.UserControls
         private bool CheckFields()
         {
             labelAddMessage.ForeColor = Color.Red;
+            int number;
             if (this.textBoxRegisterFirstName.Text.Length == 0 || this.textBoxRegisterFirstName.Text == null)
             {
                 labelAddMessage.Text = "Please enter a First Name";
@@ -83,6 +84,11 @@ namespace CS6232GroupProject.UserControls
             else if (this.dateTimePickerRegisterDOB.Value == DateTimePicker.MinimumDateTime)
             {
                 labelAddMessage.Text = "Please enter a Date of Birth";
+                return false;
+            }
+            else if (this.textBoxSSN.Text.Length < 9 || this.textBoxSSN.Text == null || int.TryParse(this.textBoxSSN.Text, out number))
+            {
+                labelAddMessage.Text = "Please enter a 9 digit SSN";
                 return false;
             }
             else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null)
@@ -129,6 +135,7 @@ namespace CS6232GroupProject.UserControls
             newAddress.Street = this.textBoxRegisterStreet.Text;
             newAddress.State = this.comboBoxState.Text;
             newAddress.Zip = Convert.ToInt32(this.textBoxRegisterZipcode.Text);
+            this.patientController.registerPatient
             // If true, call the controller method, passing the created patient object,
             // which calls the PatientDAL method that creates a new patient in the DB.
             // Later, we can even have it check if that patient exsists already.
