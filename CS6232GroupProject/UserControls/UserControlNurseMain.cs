@@ -193,17 +193,22 @@ namespace CS6232GroupProject.UserControls
                 appointment.Date = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
                 appointment.Reason = reason;
 
-
-                //if (datetime is available) {
-                this.appointmentController.CreateAppointment(appointment);
-                //else
-                //MessageBox.Show("That Date and Time isn't available", "Date or Time Not Available");
-                //Clear textbox(es)
-                MessageBox.Show("Appointment Booked!");
+                if (this.appointmentController.CheckAvailability(appointment))
+                {
+                    this.appointmentController.CreateAppointment(appointment);
+                    //Clear textbox(es)
+                    MessageBox.Show("Appointment Booked!");
+                }
+                else
+                {
+                    MessageBox.Show("That Date and Time isn't available", "Date or Time Not Available");
+                }
+                
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());//Should update this to be more descriptive.
+                MessageBox.Show("There was an issue creating the Appointment!", "Appointment Creation Error!");
             }
             //else
             // MessageBox.Show("Please enter a Resaon", "Missing Information!");

@@ -1,7 +1,7 @@
 ﻿using CS6232GroupProject.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -39,10 +39,10 @@ namespace CS6232GroupProject.DAL
                     {
                         while (reader.Read())
                         {
-                            //Tally the count
                             count++;
 
                         }
+                        MessageBox.Show("The count is: " + count, "Number of Results Test");//For testing only
                         if (count > 0)
                         {
                             return true;
