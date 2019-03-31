@@ -31,5 +31,16 @@ namespace CS6232GroupProject.Controller
         {
             return this.appointmentSource.CreateAppointment(appointment);
         }
+
+        /// <summary>
+        /// This method passing the potential appointment to the DAL and 
+        /// returns true or false if the Doctor and DateTime are available.
+        /// </summary>
+        /// <param name="appointment"></param>
+        /// <returns>True or false.</returns>
+        public bool CheckAvailability(Appointment appointment)
+        {
+            return this.appointmentSource.CheckAvailability(appointment);
+        }
     }
 }

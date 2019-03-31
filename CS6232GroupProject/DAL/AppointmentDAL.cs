@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.Model;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace CS6232GroupProject.DAL
@@ -10,6 +11,53 @@ namespace CS6232GroupProject.DAL
     /// </summary>
     class AppointmentDAL
     {
+
+        /// <summary>
+        /// This method checks if the Doctor is available during the current time.
+        /// It returns true if they do, false if they don't.
+        /// </summary>
+        /// <param name="appointment"></param>
+        /// <returns>A bool.</returns>
+        public bool CheckAvailability(Appointment appointment)
+        {
+            int count = 0;
+            string selectStatment =
+                "SELECT COUNT(DoctorID) " + 
+                "FROM Appointments " + 
+                "WHERE DoctorID = @DoctorID" + 
+                    "AND Date = @Date";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
+                    selectCommand.Parameters.AddWithValue("@Date", appointment.Date);
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //Tally the count
+                            count++;
+
+                        }
+                        if (count > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+
+            
+        }
         /// <summary>
         /// This method inserts a new Appointment into the DB and 
         /// returns the appointmentID.

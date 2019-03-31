@@ -22,6 +22,7 @@ namespace CS6232GroupProject.UserControls
             InitializeComponent();
             this.doctorController = new DoctorController();
             this.patientController = new PatientController();
+            this.appointmentController = new AppointmentController();
             SetComboBox();
         }
 
@@ -182,11 +183,30 @@ namespace CS6232GroupProject.UserControls
             // add it in the DB.
 
             //Check to make sure the needed items are selected/filled in.
-            Appointment appointment = new Appointment();
-            appointment.PatientID = Convert.ToInt32(comboBoxPatient.SelectedValue);
-            appointment.DoctorID = Convert.ToInt32(comboBoxPhysician.SelectedValue);
-            appointment.Date = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
-            appointment.Reason = textBoxSummary.Text;
+            //If (all data entered)
+            var reason = textBoxSummary.Text;
+            try
+            {
+                Appointment appointment = new Appointment();
+                appointment.PatientID = Convert.ToInt32(comboBoxPatient.SelectedValue);
+                appointment.DoctorID = Convert.ToInt32(comboBoxPhysician.SelectedValue);
+                appointment.Date = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
+                appointment.Reason = reason;
+
+
+                //if (datetime is available) {
+                this.appointmentController.CreateAppointment(appointment);
+                //else
+                //MessageBox.Show("That Date and Time isn't available", "Date or Time Not Available");
+                //Clear textbox(es)
+                MessageBox.Show("Appointment Booked!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());//Should update this to be more descriptive.
+            }
+            //else
+            // MessageBox.Show("Please enter a Resaon", "Missing Information!");
 
         }
     }
