@@ -138,8 +138,9 @@ namespace CS6232GroupProject.UserControls
                 newAddress.State = this.comboBoxState.Text;
                 newAddress.Zip = Convert.ToInt32(this.textBoxRegisterZipcode.Text);
                 this.patientController.registerPatient(newPatient, newAddress);
-                labelAddMessage.Text = "Successfully updated";
+                
                 this.ClearText();
+                labelAddMessage.Text = "Successfully updated";
             }
             else {
                 labelAddMessage.Text = "Not added";
