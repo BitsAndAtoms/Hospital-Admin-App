@@ -37,6 +37,7 @@ namespace CS6232GroupProject.View
 
         private void buttonLogin_Click(object sender, System.EventArgs e)
         {
+<<<<<<< HEAD
             List<string> newNameAndRole = this.newLoginController.GETUserNameAndRole(this.textBoxUsername.Text);
             if ((this.newLoginController.DoCheckLogin(this.textBoxPassword.Text,this.textBoxUsername.Text) && (newNameAndRole.Count>1)) && newNameAndRole[0].Equals("Nurse"))
             {
