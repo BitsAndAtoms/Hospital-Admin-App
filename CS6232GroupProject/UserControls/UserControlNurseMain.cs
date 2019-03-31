@@ -3,12 +3,15 @@ using CS6232GroupProject.Model;
 using CS6232GroupProject.View;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
 {
     public partial class UserControlNurseMain : UserControl
     {
+        private Patient patient;
         private List<Doctor> doctorList;
         private List<Patient> patientList;
         private DoctorController doctorController;
@@ -18,11 +21,10 @@ namespace CS6232GroupProject.UserControls
         {
             InitializeComponent();
             this.doctorController = new DoctorController();
+            this.patientController = new PatientController();
             SetComboBox();
         }
-        /// <summary>
-        /// This private method populates the States ComboBox.
-        /// </summary>
+
         private void SetComboBox()
         {
             try
@@ -30,50 +32,25 @@ namespace CS6232GroupProject.UserControls
                 foreach (string state in State.GetStates())
                 {
                     this.comboBoxState.Items.Add(state);
+                    this.comboBoxStatePatientInfoResult.Items.Add(state);
                 }
 
-                // Should we start using Data Sources?
-
-                //Just a set of test data to allow displaying of a Doctor and Patient.
-                // If it isn't useful, feel free to get rid of it.
-
-                // Below is the line that will bind it to the DB set of Doctors and Patients
-                // once there are some in the DB.
-
-                //patientList = this.patientController.GetPatients();
-                List<Patient> patients = new List<Patient>();
-                Patient patient = new Patient
+                
+                
+                patientList = this.patientController.GetPatients();
+                List<String> patientNames = new List<String>();
+                foreach (Patient patient in patientList)
                 {
-                    PatientID = 1,
-                    FName = "Cotton Eye",
-                    LName = "Joe",
-                    FullName = "Cotton Eye Joe",
-                    DOB = DateTime.Today
-                };
-
-                patients.Add(patient);
-                patientList = patients;
+                    patientNames.Add(patient.FullName);
+                }
+               // comboBoxPatient.DataSource = patientNames;
+                fullNameComboBox.DataSource = patientList;
                 comboBoxPatient.DataSource = patientList;
 
                 
          
-                //doctorList = this.doctorController.GetDoctors();
-                List<Doctor> doctors = new List<Doctor>();
-                Doctor doctor = new Doctor
-                {
-                    DoctorID = 1,
-                    FName = "John",
-                    LName = "Smith",
-                    FullName = "John Smith",
-                    DOB = DateTime.Today,
-                    SSN = "123456789",
-                    Gender = "M",
-                    Phone = "6211122545",
-                    AddressID = 1
-                };
-
-                doctors.Add(doctor);
-                doctorList = doctors;
+                doctorList = this.doctorController.GetDoctors();
+                
                 comboBoxPhysician.DataSource = doctorList;
             }
             catch (Exception ex)
@@ -83,8 +60,72 @@ namespace CS6232GroupProject.UserControls
             
         }
 
+        public void ClearText()
+        {
+            this.textBoxRegisterFirstName.Clear();
+            this.textBoxRegisterLastName.Clear();
+            this.textBoxRegisterPhone.Clear();
+            this.textBoxRegisterStreet.Clear();
+            this.textBoxRegisterCity.Clear();
+            this.dateTimePickerRegisterDOB.Value = DateTimePicker.MinimumDateTime;
+            this.comboBoxState.SelectedIndex = -1;
+            this.textBoxRegisterZipcode.Clear();
+            this.labelAddMessage.Text = "";
+        }
+
+        private bool CheckFields()
+        {
+            labelAddMessage.ForeColor = Color.Red;
+            if (this.textBoxRegisterFirstName.Text.Length == 0 || this.textBoxRegisterFirstName.Text == null)
+            {
+                labelAddMessage.Text = "Please enter a First Name";
+                return false;
+            }
+            else if (this.textBoxRegisterLastName.Text.Length == 0 || this.textBoxRegisterLastName.Text == null)
+            {
+                labelAddMessage.Text = "Please enter a Last Name";
+                return false;
+            }
+            else if (this.dateTimePickerRegisterDOB.Value == DateTimePicker.MinimumDateTime)
+            {
+                labelAddMessage.Text = "Please enter a Date of Birth";
+                return false;
+            }
+            else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null)
+            {
+                labelAddMessage.Text = "Please enter a Phone Number";
+                return false;
+            }
+            else if (this.textBoxRegisterStreet.Text.Length == 0 || this.textBoxRegisterStreet.Text == null)
+            {
+                labelAddMessage.Text = "Please enter a Street Address";
+                return false;
+            }
+            else if (this.textBoxRegisterCity.Text.Length == 0 || this.textBoxRegisterCity.Text == null)
+            {
+                labelAddMessage.Text = "Please enter a City";
+                return false;
+            }
+            else if (this.comboBoxState.SelectedIndex == -1)
+            {
+                labelAddMessage.Text = "Please select a State";
+                return false;
+            }
+            else if (this.textBoxRegisterZipcode.Text.Length == 0 || this.textBoxRegisterZipcode.Text == null)
+            {
+                labelAddMessage.Text = "Please enter a Zip Code";
+                return false;
+            }
+            else
+            {
+                labelAddMessage.Text = "";
+                return true;
+            }
+        }
+
         private void buttonRegisterSubmit_Click(object sender, EventArgs e)
         {
+            this.CheckFields();
 
         }
 
@@ -132,11 +173,6 @@ namespace CS6232GroupProject.UserControls
             {
                 formPatientRecords.Show();
             }
-
-        }
-
-        private void comboBoxPatient_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

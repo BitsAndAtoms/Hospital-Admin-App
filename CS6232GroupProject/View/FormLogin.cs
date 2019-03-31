@@ -14,18 +14,10 @@ namespace CS6232GroupProject.View
         public FormLogin()
         {
             InitializeComponent();
-            this.nurseMain = new FormNurseMain();
+            this.nurseMain = new FormNurseMain(this);
             this.newLoginController = new LoginController();
             this.FormClosed += (s, ev) => Application.Exit();
         }
-
-     
-
-
-        
-
-      
-       
 
         /// <summary>
         /// gracefully exits the application on clicking cancel button at top

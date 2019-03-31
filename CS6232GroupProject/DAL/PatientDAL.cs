@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -21,8 +22,8 @@ namespace CS6232GroupProject.DAL
             List<Patient> patients = new List<Patient>();
 
             string selectStatement =
-                "SELECT PatientID, Fname, Lname, CONCAT(fname, ' ', lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
-                "FROM Clinic";
+                "SELECT PatientID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
+                "FROM Patient";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -30,6 +31,7 @@ namespace CS6232GroupProject.DAL
 
                 using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
                 {
+
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
@@ -38,13 +40,14 @@ namespace CS6232GroupProject.DAL
                             patient.PatientID = (int)reader["PatientID"];
                             patient.FName = reader["Fname"].ToString();
                             patient.LName = reader["Lname"].ToString();
-                            patient.FullName = reader["FullName"].ToString();
+                            patient.FullName = reader["Full Name"].ToString();
                             patient.DOB = (DateTime)reader["DOB"];
-                            patient.SSN = reader[""].ToString();
-                            patient.Gender = reader[""].ToString();
-                            patient.Phone = reader[""].ToString();
+                            patient.SSN = reader["SSN"].ToString();
+                            patient.Gender = reader["Gender"].ToString();
+                            patient.Phone = reader["Phone"].ToString();
                             patient.AddressID = (int)reader["AddressID"];
                             patients.Add(patient);
+                            
                         }
                     }
                 }

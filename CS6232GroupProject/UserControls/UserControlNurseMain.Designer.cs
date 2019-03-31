@@ -29,8 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label fullNameLabel;
             this.tabControlNurseMain = new System.Windows.Forms.TabControl();
             this.tabPageNursePatientInformation = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridViewPatientInfo = new System.Windows.Forms.DataGridView();
+            this.patientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dobDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ssnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicDataSet11 = new CS6232GroupProject.clinicDataSet1();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.labelFirstName = new System.Windows.Forms.Label();
+            this.labelDateOfBirth = new System.Windows.Forms.Label();
+            this.labelLastName = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
             this.panelPatientInfoResults = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,7 +70,6 @@
             this.labelMailAddressPatentInfoResult = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPhonePatientInfoResult = new System.Windows.Forms.Label();
-            this.textBoxDOBPatientInfoResult = new System.Windows.Forms.TextBox();
             this.textBoxLastNamePatientInfoResult = new System.Windows.Forms.TextBox();
             this.textBoxFirstNamePatientInfoResult = new System.Windows.Forms.TextBox();
             this.labelFirstNamePatientInfoResult = new System.Windows.Forms.Label();
@@ -57,26 +77,27 @@
             this.labelFlastNamePatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxPhonePatientInfoResult = new System.Windows.Forms.TextBox();
             this.linkLabelRecordsPatientInfoVisitRecords = new System.Windows.Forms.LinkLabel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxDateOfBirth = new System.Windows.Forms.TextBox();
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.textBoxFirstName = new System.Windows.Forms.TextBox();
-            this.labelFirstName = new System.Windows.Forms.Label();
-            this.labelDateOfBirth = new System.Windows.Forms.Label();
-            this.labelLastName = new System.Windows.Forms.Label();
-            this.buttonSearch = new System.Windows.Forms.Button();
+            this.dateTimePickerDOBPatientInfoResult = new System.Windows.Forms.DateTimePicker();
+            this.labelGenderPatientInfoResult = new System.Windows.Forms.Label();
+            this.labelSSNPatientInfoResult = new System.Windows.Forms.Label();
+            this.textBoxSSNPatientInfoResult = new System.Windows.Forms.TextBox();
+            this.comboBoxGenderPatientInfoResult = new System.Windows.Forms.ComboBox();
             this.labelPatientInformation = new System.Windows.Forms.Label();
             this.linkLabelPatientInfoBack = new System.Windows.Forms.LinkLabel();
             this.tabPageNurseBook = new System.Windows.Forms.TabPage();
+            this.fullNameComboBox = new System.Windows.Forms.ComboBox();
+            this.patientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.patientBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateTimePickerBookAppointmentTime = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerBookAppointment = new System.Windows.Forms.DateTimePicker();
             this.comboBoxPhysician = new System.Windows.Forms.ComboBox();
             this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicDataSet = new CS6232GroupProject.clinicDataSet();
             this.comboBoxPatient = new System.Windows.Forms.ComboBox();
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clinicDataSet11 = new CS6232GroupProject.clinicDataSet1();
+            this.patientBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.labelSummary = new System.Windows.Forms.Label();
-            this.textBoxDateTime = new System.Windows.Forms.TextBox();
             this.labelPatient = new System.Windows.Forms.Label();
             this.labelDateTime = new System.Windows.Forms.Label();
             this.labelPhysician = new System.Windows.Forms.Label();
@@ -85,17 +106,16 @@
             this.labelBookAppointment = new System.Windows.Forms.Label();
             this.tabPageNurseRegister = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxRegisterGender = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanelRegisterZipcode = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxRegisterZipcode = new System.Windows.Forms.TextBox();
             this.labelRegisterZipcode = new System.Windows.Forms.Label();
             this.labelRegisterAddress = new System.Windows.Forms.Label();
-            this.textBoxRegisterDateOfBirth = new System.Windows.Forms.TextBox();
             this.textBoxRegisterLastName = new System.Windows.Forms.TextBox();
             this.textBoxRegisterFirstName = new System.Windows.Forms.TextBox();
             this.labelRegisterFirstName = new System.Windows.Forms.Label();
             this.labelRegisterDateOfBirth = new System.Windows.Forms.Label();
             this.labelRegisterLastName = new System.Windows.Forms.Label();
-            this.labelRegisterPhone = new System.Windows.Forms.Label();
             this.textBoxRegisterPhone = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelRegisterStreet = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxRegisterStreet = new System.Windows.Forms.TextBox();
@@ -104,40 +124,56 @@
             this.labelRegisterCity = new System.Windows.Forms.Label();
             this.labelRegisterState = new System.Windows.Forms.Label();
             this.comboBoxState = new System.Windows.Forms.ComboBox();
-            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.textBoxRegisterCity = new System.Windows.Forms.TextBox();
             this.buttonRegisterSubmit = new System.Windows.Forms.Button();
+            this.dateTimePickerRegisterDOB = new System.Windows.Forms.DateTimePicker();
+            this.labelAddMessage = new System.Windows.Forms.Label();
+            this.labelRegisterPhone = new System.Windows.Forms.Label();
+            this.labelRegisterGender = new System.Windows.Forms.Label();
+            this.labelRegisterSSN = new System.Windows.Forms.Label();
+            this.textBoxSSN = new System.Windows.Forms.TextBox();
             this.labelRegisterPatient = new System.Windows.Forms.Label();
-            this.doctorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.patientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.patientTableAdapter = new CS6232GroupProject.clinicDataSet1TableAdapters.PatientTableAdapter();
             this.doctorTableAdapter = new CS6232GroupProject.clinicDataSetTableAdapters.DoctorTableAdapter();
             this.clinicDataSet1 = new CS6232GroupProject.clinicDataSet();
-            this.doctorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.patientTableAdapter = new CS6232GroupProject.clinicDataSet1TableAdapters.PatientTableAdapter();
+            fullNameLabel = new System.Windows.Forms.Label();
             this.tabControlNurseMain.SuspendLayout();
             this.tabPageNursePatientInformation.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatientInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.panelPatientInfoResults.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tabPageNurseBook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource3)).BeginInit();
             this.tabPageNurseRegister.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanelRegisterZipcode.SuspendLayout();
             this.tableLayoutPanelRegisterStreet.SuspendLayout();
             this.tableLayoutPanelRegisterCityState.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // fullNameLabel
+            // 
+            fullNameLabel.AutoSize = true;
+            fullNameLabel.Location = new System.Drawing.Point(321, 484);
+            fullNameLabel.Name = "fullNameLabel";
+            fullNameLabel.Size = new System.Drawing.Size(84, 20);
+            fullNameLabel.TabIndex = 6;
+            fullNameLabel.Text = "Full Name:";
             // 
             // tabControlNurseMain
             // 
@@ -149,34 +185,224 @@
             this.tabControlNurseMain.Location = new System.Drawing.Point(0, 0);
             this.tabControlNurseMain.Name = "tabControlNurseMain";
             this.tabControlNurseMain.SelectedIndex = 0;
-            this.tabControlNurseMain.Size = new System.Drawing.Size(692, 595);
+            this.tabControlNurseMain.Size = new System.Drawing.Size(1434, 680);
             this.tabControlNurseMain.TabIndex = 0;
             // 
             // tabPageNursePatientInformation
             // 
             this.tabPageNursePatientInformation.AutoScroll = true;
+            this.tabPageNursePatientInformation.Controls.Add(this.panel1);
             this.tabPageNursePatientInformation.Controls.Add(this.panelPatientInfoResults);
-            this.tabPageNursePatientInformation.Controls.Add(this.tableLayoutPanel1);
             this.tabPageNursePatientInformation.Controls.Add(this.labelPatientInformation);
             this.tabPageNursePatientInformation.Controls.Add(this.linkLabelPatientInfoBack);
             this.tabPageNursePatientInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
             this.tabPageNursePatientInformation.Location = new System.Drawing.Point(4, 29);
             this.tabPageNursePatientInformation.Name = "tabPageNursePatientInformation";
             this.tabPageNursePatientInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNursePatientInformation.Size = new System.Drawing.Size(684, 562);
+            this.tabPageNursePatientInformation.Size = new System.Drawing.Size(1426, 647);
             this.tabPageNursePatientInformation.TabIndex = 0;
             this.tabPageNursePatientInformation.Text = "Patient Information";
             this.tabPageNursePatientInformation.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridViewPatientInfo);
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Location = new System.Drawing.Point(6, 47);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(671, 477);
+            this.panel1.TabIndex = 10;
+            // 
+            // dataGridViewPatientInfo
+            // 
+            this.dataGridViewPatientInfo.AutoGenerateColumns = false;
+            this.dataGridViewPatientInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPatientInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.patientIDDataGridViewTextBoxColumn,
+            this.fnameDataGridViewTextBoxColumn,
+            this.lnameDataGridViewTextBoxColumn,
+            this.dobDataGridViewTextBoxColumn,
+            this.ssnDataGridViewTextBoxColumn,
+            this.genderDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.addressIDDataGridViewTextBoxColumn});
+            this.dataGridViewPatientInfo.DataSource = this.patientBindingSource;
+            this.dataGridViewPatientInfo.Location = new System.Drawing.Point(7, 217);
+            this.dataGridViewPatientInfo.Name = "dataGridViewPatientInfo";
+            this.dataGridViewPatientInfo.Size = new System.Drawing.Size(661, 257);
+            this.dataGridViewPatientInfo.TabIndex = 5;
+            // 
+            // patientIDDataGridViewTextBoxColumn
+            // 
+            this.patientIDDataGridViewTextBoxColumn.DataPropertyName = "patientID";
+            this.patientIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.patientIDDataGridViewTextBoxColumn.Name = "patientIDDataGridViewTextBoxColumn";
+            this.patientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fnameDataGridViewTextBoxColumn
+            // 
+            this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
+            this.fnameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
+            // 
+            // lnameDataGridViewTextBoxColumn
+            // 
+            this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
+            this.lnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
+            // 
+            // dobDataGridViewTextBoxColumn
+            // 
+            this.dobDataGridViewTextBoxColumn.DataPropertyName = "dob";
+            this.dobDataGridViewTextBoxColumn.HeaderText = "Date of Birth";
+            this.dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
+            // 
+            // ssnDataGridViewTextBoxColumn
+            // 
+            this.ssnDataGridViewTextBoxColumn.DataPropertyName = "ssn";
+            this.ssnDataGridViewTextBoxColumn.HeaderText = "SSN";
+            this.ssnDataGridViewTextBoxColumn.Name = "ssnDataGridViewTextBoxColumn";
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // addressIDDataGridViewTextBoxColumn
+            // 
+            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "addressID";
+            this.addressIDDataGridViewTextBoxColumn.HeaderText = "Address ID";
+            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataMember = "Patient";
+            this.patientBindingSource.DataSource = this.clinicDataSet11;
+            // 
+            // clinicDataSet11
+            // 
+            this.clinicDataSet11.DataSetName = "clinicDataSet1";
+            this.clinicDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.Controls.Add(this.textBoxLastName, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxFirstName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelFirstName, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelDateOfBirth, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.labelLastName, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSearch, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePickerDOB, 1, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(671, 205);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLastName.Location = new System.Drawing.Point(204, 60);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(186, 29);
+            this.textBoxLastName.TabIndex = 5;
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFirstName.Location = new System.Drawing.Point(204, 10);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(186, 29);
+            this.textBoxFirstName.TabIndex = 4;
+            // 
+            // labelFirstName
+            // 
+            this.labelFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelFirstName.AutoSize = true;
+            this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFirstName.Location = new System.Drawing.Point(3, 15);
+            this.labelFirstName.Name = "labelFirstName";
+            this.labelFirstName.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelFirstName.Size = new System.Drawing.Size(121, 20);
+            this.labelFirstName.TabIndex = 1;
+            this.labelFirstName.Text = "First Name";
+            // 
+            // labelDateOfBirth
+            // 
+            this.labelDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelDateOfBirth.AutoSize = true;
+            this.labelDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateOfBirth.Location = new System.Drawing.Point(3, 115);
+            this.labelDateOfBirth.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelDateOfBirth.Name = "labelDateOfBirth";
+            this.labelDateOfBirth.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelDateOfBirth.Size = new System.Drawing.Size(137, 20);
+            this.labelDateOfBirth.TabIndex = 3;
+            this.labelDateOfBirth.Text = "Date of Birth";
+            // 
+            // labelLastName
+            // 
+            this.labelLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelLastName.AutoSize = true;
+            this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastName.Location = new System.Drawing.Point(3, 65);
+            this.labelLastName.Name = "labelLastName";
+            this.labelLastName.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelLastName.Size = new System.Drawing.Size(120, 20);
+            this.labelLastName.TabIndex = 2;
+            this.labelLastName.Text = "Last Name";
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.Black;
+            this.buttonSearch.Location = new System.Drawing.Point(367, 160);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(137, 35);
+            this.buttonSearch.TabIndex = 7;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // dateTimePickerDOB
+            // 
+            this.dateTimePickerDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDOB.Location = new System.Drawing.Point(204, 112);
+            this.dateTimePickerDOB.Name = "dateTimePickerDOB";
+            this.dateTimePickerDOB.Size = new System.Drawing.Size(186, 26);
+            this.dateTimePickerDOB.TabIndex = 3;
             // 
             // panelPatientInfoResults
             // 
             this.panelPatientInfoResults.AutoScroll = true;
             this.panelPatientInfoResults.Controls.Add(this.tableLayoutPanel8);
             this.panelPatientInfoResults.Controls.Add(this.tableLayoutPanel4);
-            this.panelPatientInfoResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPatientInfoResults.Location = new System.Drawing.Point(3, 32);
+            this.panelPatientInfoResults.Location = new System.Drawing.Point(694, 47);
             this.panelPatientInfoResults.Name = "panelPatientInfoResults";
-            this.panelPatientInfoResults.Size = new System.Drawing.Size(678, 527);
+            this.panelPatientInfoResults.Size = new System.Drawing.Size(678, 638);
             this.panelPatientInfoResults.TabIndex = 5;
             this.panelPatientInfoResults.Visible = false;
             // 
@@ -192,7 +418,7 @@
             this.tableLayoutPanel8.Controls.Add(this.linkLabelDeletePatient, 1, 5);
             this.tableLayoutPanel8.Controls.Add(this.labelMailAddressPatentInfoResult, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 192);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 299);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 6;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
@@ -201,8 +427,8 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(678, 332);
-            this.tableLayoutPanel8.TabIndex = 10;
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(678, 336);
+            this.tableLayoutPanel8.TabIndex = 7;
             // 
             // tableLayoutPanel5
             // 
@@ -216,7 +442,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 75);
-            this.tableLayoutPanel5.TabIndex = 4;
+            this.tableLayoutPanel5.TabIndex = 8;
             // 
             // textBoxStreetPatientInfoResult
             // 
@@ -226,7 +452,7 @@
             this.textBoxStreetPatientInfoResult.Location = new System.Drawing.Point(3, 33);
             this.textBoxStreetPatientInfoResult.Name = "textBoxStreetPatientInfoResult";
             this.textBoxStreetPatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxStreetPatientInfoResult.TabIndex = 5;
+            this.textBoxStreetPatientInfoResult.TabIndex = 9;
             // 
             // labelStreetPatientInfoResult
             // 
@@ -256,7 +482,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 59);
-            this.tableLayoutPanel6.TabIndex = 6;
+            this.tableLayoutPanel6.TabIndex = 10;
             // 
             // labelCityPatientInfoResult
             // 
@@ -285,11 +511,12 @@
             // comboBoxStatePatientInfoResult
             // 
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 29);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 25);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
-            this.comboBoxStatePatientInfoResult.TabIndex = 8;
+            this.comboBoxStatePatientInfoResult.TabIndex = 12;
             // 
             // textBoxCityPatientInfoResult
             // 
@@ -299,7 +526,7 @@
             this.textBoxCityPatientInfoResult.Location = new System.Drawing.Point(3, 25);
             this.textBoxCityPatientInfoResult.Name = "textBoxCityPatientInfoResult";
             this.textBoxCityPatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxCityPatientInfoResult.TabIndex = 7;
+            this.textBoxCityPatientInfoResult.TabIndex = 11;
             // 
             // tableLayoutPanel7
             // 
@@ -313,7 +540,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel7.TabIndex = 9;
+            this.tableLayoutPanel7.TabIndex = 13;
             // 
             // textBoxZipPatientInfoResult
             // 
@@ -323,7 +550,7 @@
             this.textBoxZipPatientInfoResult.Location = new System.Drawing.Point(3, 25);
             this.textBoxZipPatientInfoResult.Name = "textBoxZipPatientInfoResult";
             this.textBoxZipPatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxZipPatientInfoResult.TabIndex = 10;
+            this.textBoxZipPatientInfoResult.TabIndex = 14;
             // 
             // labelZipPatientInfoResult
             // 
@@ -347,7 +574,7 @@
             this.buttonPatientInfoResultUpdate.Location = new System.Drawing.Point(372, 252);
             this.buttonPatientInfoResultUpdate.Name = "buttonPatientInfoResultUpdate";
             this.buttonPatientInfoResultUpdate.Size = new System.Drawing.Size(137, 35);
-            this.buttonPatientInfoResultUpdate.TabIndex = 11;
+            this.buttonPatientInfoResultUpdate.TabIndex = 15;
             this.buttonPatientInfoResultUpdate.Text = "Update";
             this.buttonPatientInfoResultUpdate.UseVisualStyleBackColor = false;
             // 
@@ -360,7 +587,7 @@
             this.linkLabelDeletePatient.Location = new System.Drawing.Point(542, 295);
             this.linkLabelDeletePatient.Name = "linkLabelDeletePatient";
             this.linkLabelDeletePatient.Size = new System.Drawing.Size(133, 25);
-            this.linkLabelDeletePatient.TabIndex = 12;
+            this.linkLabelDeletePatient.TabIndex = 16;
             this.linkLabelDeletePatient.TabStop = true;
             this.linkLabelDeletePatient.Text = "Delete Patient";
             // 
@@ -380,27 +607,33 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.Controls.Add(this.labelPhonePatientInfoResult, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.textBoxDOBPatientInfoResult, 1, 2);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.98231F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.2217F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.79599F));
+            this.tableLayoutPanel4.Controls.Add(this.labelPhonePatientInfoResult, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.textBoxLastNamePatientInfoResult, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.textBoxFirstNamePatientInfoResult, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelFirstNamePatientInfoResult, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelDOBPatientInfoResult, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.labelFlastNamePatientInfoResult, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.textBoxPhonePatientInfoResult, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxPhonePatientInfoResult, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.linkLabelRecordsPatientInfoVisitRecords, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.dateTimePickerDOBPatientInfoResult, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.labelGenderPatientInfoResult, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.labelSSNPatientInfoResult, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxSSNPatientInfoResult, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxGenderPatientInfoResult, 1, 4);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowCount = 6;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(678, 192);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(678, 299);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // labelPhonePatientInfoResult
@@ -408,23 +641,13 @@
             this.labelPhonePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelPhonePatientInfoResult.AutoSize = true;
             this.labelPhonePatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhonePatientInfoResult.Location = new System.Drawing.Point(3, 165);
+            this.labelPhonePatientInfoResult.Location = new System.Drawing.Point(3, 265);
             this.labelPhonePatientInfoResult.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelPhonePatientInfoResult.Name = "labelPhonePatientInfoResult";
             this.labelPhonePatientInfoResult.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.labelPhonePatientInfoResult.Size = new System.Drawing.Size(85, 20);
             this.labelPhonePatientInfoResult.TabIndex = 11;
             this.labelPhonePatientInfoResult.Text = "Phone";
-            // 
-            // textBoxDOBPatientInfoResult
-            // 
-            this.textBoxDOBPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxDOBPatientInfoResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDOBPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDOBPatientInfoResult.Location = new System.Drawing.Point(206, 110);
-            this.textBoxDOBPatientInfoResult.Name = "textBoxDOBPatientInfoResult";
-            this.textBoxDOBPatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxDOBPatientInfoResult.TabIndex = 3;
             // 
             // textBoxLastNamePatientInfoResult
             // 
@@ -488,10 +711,10 @@
             this.textBoxPhonePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxPhonePatientInfoResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPhonePatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhonePatientInfoResult.Location = new System.Drawing.Point(206, 160);
+            this.textBoxPhonePatientInfoResult.Location = new System.Drawing.Point(206, 260);
             this.textBoxPhonePatientInfoResult.Name = "textBoxPhonePatientInfoResult";
             this.textBoxPhonePatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxPhonePatientInfoResult.TabIndex = 16;
+            this.textBoxPhonePatientInfoResult.TabIndex = 6;
             // 
             // linkLabelRecordsPatientInfoVisitRecords
             // 
@@ -499,118 +722,68 @@
             this.linkLabelRecordsPatientInfoVisitRecords.AutoSize = true;
             this.linkLabelRecordsPatientInfoVisitRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelRecordsPatientInfoVisitRecords.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelRecordsPatientInfoVisitRecords.Location = new System.Drawing.Point(549, 12);
+            this.linkLabelRecordsPatientInfoVisitRecords.Location = new System.Drawing.Point(526, 12);
             this.linkLabelRecordsPatientInfoVisitRecords.Name = "linkLabelRecordsPatientInfoVisitRecords";
-            this.linkLabelRecordsPatientInfoVisitRecords.Size = new System.Drawing.Size(126, 25);
+            this.linkLabelRecordsPatientInfoVisitRecords.Size = new System.Drawing.Size(149, 25);
             this.linkLabelRecordsPatientInfoVisitRecords.TabIndex = 18;
             this.linkLabelRecordsPatientInfoVisitRecords.TabStop = true;
-            this.linkLabelRecordsPatientInfoVisitRecords.Text = "Visit Records";
+            this.linkLabelRecordsPatientInfoVisitRecords.Text = "Patient Records";
             this.linkLabelRecordsPatientInfoVisitRecords.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRecordsPatientInfoVisitRecords_LinkClicked);
             // 
-            // tableLayoutPanel1
+            // dateTimePickerDOBPatientInfoResult
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.Controls.Add(this.textBoxDateOfBirth, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxLastName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxFirstName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelFirstName, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelDateOfBirth, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelLastName, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.buttonSearch, 1, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 32);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(678, 230);
-            this.tableLayoutPanel1.TabIndex = 4;
+            this.dateTimePickerDOBPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerDOBPatientInfoResult.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDOBPatientInfoResult.Location = new System.Drawing.Point(206, 112);
+            this.dateTimePickerDOBPatientInfoResult.Name = "dateTimePickerDOBPatientInfoResult";
+            this.dateTimePickerDOBPatientInfoResult.Size = new System.Drawing.Size(186, 26);
+            this.dateTimePickerDOBPatientInfoResult.TabIndex = 3;
             // 
-            // textBoxDateOfBirth
+            // labelGenderPatientInfoResult
             // 
-            this.textBoxDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDateOfBirth.Location = new System.Drawing.Point(206, 110);
-            this.textBoxDateOfBirth.Name = "textBoxDateOfBirth";
-            this.textBoxDateOfBirth.Size = new System.Drawing.Size(186, 29);
-            this.textBoxDateOfBirth.TabIndex = 6;
+            this.labelGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelGenderPatientInfoResult.AutoSize = true;
+            this.labelGenderPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGenderPatientInfoResult.Location = new System.Drawing.Point(3, 215);
+            this.labelGenderPatientInfoResult.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelGenderPatientInfoResult.Name = "labelGenderPatientInfoResult";
+            this.labelGenderPatientInfoResult.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelGenderPatientInfoResult.Size = new System.Drawing.Size(94, 20);
+            this.labelGenderPatientInfoResult.TabIndex = 19;
+            this.labelGenderPatientInfoResult.Text = "Gender";
             // 
-            // textBoxLastName
+            // labelSSNPatientInfoResult
             // 
-            this.textBoxLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLastName.Location = new System.Drawing.Point(206, 60);
-            this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(186, 29);
-            this.textBoxLastName.TabIndex = 5;
+            this.labelSSNPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelSSNPatientInfoResult.AutoSize = true;
+            this.labelSSNPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSSNPatientInfoResult.Location = new System.Drawing.Point(3, 165);
+            this.labelSSNPatientInfoResult.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelSSNPatientInfoResult.Name = "labelSSNPatientInfoResult";
+            this.labelSSNPatientInfoResult.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelSSNPatientInfoResult.Size = new System.Drawing.Size(70, 20);
+            this.labelSSNPatientInfoResult.TabIndex = 20;
+            this.labelSSNPatientInfoResult.Text = "SSN";
             // 
-            // textBoxFirstName
+            // textBoxSSNPatientInfoResult
             // 
-            this.textBoxFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(206, 10);
-            this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(186, 29);
-            this.textBoxFirstName.TabIndex = 4;
+            this.textBoxSSNPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxSSNPatientInfoResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSSNPatientInfoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSSNPatientInfoResult.Location = new System.Drawing.Point(206, 160);
+            this.textBoxSSNPatientInfoResult.Name = "textBoxSSNPatientInfoResult";
+            this.textBoxSSNPatientInfoResult.Size = new System.Drawing.Size(186, 29);
+            this.textBoxSSNPatientInfoResult.TabIndex = 4;
             // 
-            // labelFirstName
+            // comboBoxGenderPatientInfoResult
             // 
-            this.labelFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstName.Location = new System.Drawing.Point(3, 15);
-            this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelFirstName.Size = new System.Drawing.Size(121, 20);
-            this.labelFirstName.TabIndex = 1;
-            this.labelFirstName.Text = "First Name";
-            // 
-            // labelDateOfBirth
-            // 
-            this.labelDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelDateOfBirth.AutoSize = true;
-            this.labelDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateOfBirth.Location = new System.Drawing.Point(3, 115);
-            this.labelDateOfBirth.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelDateOfBirth.Name = "labelDateOfBirth";
-            this.labelDateOfBirth.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelDateOfBirth.Size = new System.Drawing.Size(137, 20);
-            this.labelDateOfBirth.TabIndex = 3;
-            this.labelDateOfBirth.Text = "Date of Birth";
-            // 
-            // labelLastName
-            // 
-            this.labelLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelLastName.AutoSize = true;
-            this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(3, 65);
-            this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelLastName.Size = new System.Drawing.Size(120, 20);
-            this.labelLastName.TabIndex = 2;
-            this.labelLastName.Text = "Last Name";
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.ForeColor = System.Drawing.Color.Black;
-            this.buttonSearch.Location = new System.Drawing.Point(372, 157);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(137, 35);
-            this.buttonSearch.TabIndex = 7;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
+            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(206, 214);
+            this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
+            this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxGenderPatientInfoResult.TabIndex = 21;
             // 
             // labelPatientInformation
             // 
@@ -625,11 +798,10 @@
             // 
             // linkLabelPatientInfoBack
             // 
-            this.linkLabelPatientInfoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelPatientInfoBack.AutoSize = true;
             this.linkLabelPatientInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelPatientInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(622, 7);
+            this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(782, 18);
             this.linkLabelPatientInfoBack.Name = "linkLabelPatientInfoBack";
             this.linkLabelPatientInfoBack.Size = new System.Drawing.Size(56, 25);
             this.linkLabelPatientInfoBack.TabIndex = 9;
@@ -642,14 +814,36 @@
             // 
             this.tabPageNurseBook.AutoScroll = true;
             this.tabPageNurseBook.BackColor = System.Drawing.Color.White;
+            this.tabPageNurseBook.Controls.Add(fullNameLabel);
+            this.tabPageNurseBook.Controls.Add(this.fullNameComboBox);
             this.tabPageNurseBook.Controls.Add(this.tableLayoutPanel2);
             this.tabPageNurseBook.Controls.Add(this.labelBookAppointment);
             this.tabPageNurseBook.Location = new System.Drawing.Point(4, 29);
             this.tabPageNurseBook.Name = "tabPageNurseBook";
             this.tabPageNurseBook.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNurseBook.Size = new System.Drawing.Size(684, 562);
+            this.tabPageNurseBook.Size = new System.Drawing.Size(1426, 647);
             this.tabPageNurseBook.TabIndex = 1;
             this.tabPageNurseBook.Text = "Book Appointment";
+            // 
+            // fullNameComboBox
+            // 
+            this.fullNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "FullName", true));
+            this.fullNameComboBox.DataSource = this.patientBindingSource2;
+            this.fullNameComboBox.DisplayMember = "FullName";
+            this.fullNameComboBox.FormattingEnabled = true;
+            this.fullNameComboBox.Location = new System.Drawing.Point(411, 481);
+            this.fullNameComboBox.Name = "fullNameComboBox";
+            this.fullNameComboBox.Size = new System.Drawing.Size(662, 28);
+            this.fullNameComboBox.TabIndex = 7;
+            this.fullNameComboBox.ValueMember = "PatientID";
+            // 
+            // patientBindingSource1
+            // 
+            this.patientBindingSource1.DataSource = typeof(CS6232GroupProject.Model.Patient);
+            // 
+            // patientBindingSource2
+            // 
+            this.patientBindingSource2.DataSource = typeof(CS6232GroupProject.Model.Patient);
             // 
             // tableLayoutPanel2
             // 
@@ -657,10 +851,10 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxPhysician, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxPatient, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelSummary, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.textBoxDateTime, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.labelPatient, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.labelDateTime, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.labelPhysician, 0, 1);
@@ -675,18 +869,52 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(678, 377);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1420, 377);
             this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Controls.Add(this.dateTimePickerBookAppointmentTime, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.dateTimePickerBookAppointment, 0, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(429, 103);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(337, 44);
+            this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // dateTimePickerBookAppointmentTime
+            // 
+            this.dateTimePickerBookAppointmentTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerBookAppointmentTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerBookAppointmentTime.Location = new System.Drawing.Point(171, 9);
+            this.dateTimePickerBookAppointmentTime.Name = "dateTimePickerBookAppointmentTime";
+            this.dateTimePickerBookAppointmentTime.Size = new System.Drawing.Size(127, 26);
+            this.dateTimePickerBookAppointmentTime.TabIndex = 5;
+            // 
+            // dateTimePickerBookAppointment
+            // 
+            this.dateTimePickerBookAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerBookAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerBookAppointment.Location = new System.Drawing.Point(3, 9);
+            this.dateTimePickerBookAppointment.Name = "dateTimePickerBookAppointment";
+            this.dateTimePickerBookAppointment.Size = new System.Drawing.Size(139, 26);
+            this.dateTimePickerBookAppointment.TabIndex = 4;
             // 
             // comboBoxPhysician
             // 
             this.comboBoxPhysician.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxPhysician.DataSource = this.doctorBindingSource;
-            this.comboBoxPhysician.DisplayMember = "Full Name";
+            this.comboBoxPhysician.DisplayMember = "lname";
+            this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(206, 64);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(429, 61);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
-            this.comboBoxPhysician.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
             this.comboBoxPhysician.ValueMember = "doctorID";
             // 
@@ -703,25 +931,19 @@
             // comboBoxPatient
             // 
             this.comboBoxPatient.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxPatient.DataSource = this.patientBindingSource;
-            this.comboBoxPatient.DisplayMember = "Full Name";
+            this.comboBoxPatient.DataSource = this.patientBindingSource3;
+            this.comboBoxPatient.DisplayMember = "FullName";
+            this.comboBoxPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatient.FormattingEnabled = true;
-            this.comboBoxPatient.Location = new System.Drawing.Point(206, 14);
+            this.comboBoxPatient.Location = new System.Drawing.Point(429, 11);
             this.comboBoxPatient.Name = "comboBoxPatient";
-            this.comboBoxPatient.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxPatient.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPatient.TabIndex = 1;
             this.comboBoxPatient.ValueMember = "patientID";
-            this.comboBoxPatient.SelectedIndexChanged += new System.EventHandler(this.comboBoxPatient_SelectedIndexChanged);
             // 
-            // patientBindingSource
+            // patientBindingSource3
             // 
-            this.patientBindingSource.DataMember = "Patient";
-            this.patientBindingSource.DataSource = this.clinicDataSet11;
-            // 
-            // clinicDataSet11
-            // 
-            this.clinicDataSet11.DataSetName = "clinicDataSet1";
-            this.clinicDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.patientBindingSource3.DataSource = typeof(CS6232GroupProject.Model.Patient);
             // 
             // labelSummary
             // 
@@ -735,16 +957,6 @@
             this.labelSummary.Size = new System.Drawing.Size(108, 40);
             this.labelSummary.TabIndex = 8;
             this.labelSummary.Text = "Summary";
-            // 
-            // textBoxDateTime
-            // 
-            this.textBoxDateTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxDateTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDateTime.Location = new System.Drawing.Point(206, 110);
-            this.textBoxDateTime.Name = "textBoxDateTime";
-            this.textBoxDateTime.Size = new System.Drawing.Size(186, 29);
-            this.textBoxDateTime.TabIndex = 3;
             // 
             // labelPatient
             // 
@@ -769,9 +981,9 @@
             this.labelDateTime.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelDateTime.Name = "labelDateTime";
             this.labelDateTime.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelDateTime.Size = new System.Drawing.Size(107, 20);
+            this.labelDateTime.Size = new System.Drawing.Size(116, 20);
             this.labelDateTime.TabIndex = 3;
-            this.labelDateTime.Text = "Datetime";
+            this.labelDateTime.Text = "Date Time";
             // 
             // labelPhysician
             // 
@@ -793,10 +1005,10 @@
             this.buttonBookSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBookSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBookSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonBookSubmit.Location = new System.Drawing.Point(538, 322);
+            this.buttonBookSubmit.Location = new System.Drawing.Point(1280, 322);
             this.buttonBookSubmit.Name = "buttonBookSubmit";
             this.buttonBookSubmit.Size = new System.Drawing.Size(137, 35);
-            this.buttonBookSubmit.TabIndex = 5;
+            this.buttonBookSubmit.TabIndex = 7;
             this.buttonBookSubmit.Text = "Submit";
             this.buttonBookSubmit.UseVisualStyleBackColor = false;
             // 
@@ -805,11 +1017,11 @@
             this.textBoxSummary.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSummary.Location = new System.Drawing.Point(206, 166);
+            this.textBoxSummary.Location = new System.Drawing.Point(429, 166);
             this.textBoxSummary.Multiline = true;
             this.textBoxSummary.Name = "textBoxSummary";
             this.textBoxSummary.Size = new System.Drawing.Size(427, 121);
-            this.textBoxSummary.TabIndex = 4;
+            this.textBoxSummary.TabIndex = 6;
             // 
             // labelBookAppointment
             // 
@@ -831,7 +1043,7 @@
             this.tabPageNurseRegister.Location = new System.Drawing.Point(4, 29);
             this.tabPageNurseRegister.Name = "tabPageNurseRegister";
             this.tabPageNurseRegister.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNurseRegister.Size = new System.Drawing.Size(684, 562);
+            this.tabPageNurseRegister.Size = new System.Drawing.Size(1426, 647);
             this.tabPageNurseRegister.TabIndex = 2;
             this.tabPageNurseRegister.Text = "Register Patient";
             this.tabPageNurseRegister.UseVisualStyleBackColor = true;
@@ -841,24 +1053,31 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanelRegisterZipcode, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.labelRegisterAddress, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxRegisterDateOfBirth, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxRegisterGender, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanelRegisterZipcode, 1, 9);
+            this.tableLayoutPanel3.Controls.Add(this.labelRegisterAddress, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.textBoxRegisterLastName, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.textBoxRegisterFirstName, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelRegisterFirstName, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelRegisterDateOfBirth, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.labelRegisterLastName, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.labelRegisterPhone, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxRegisterPhone, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanelRegisterStreet, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanelRegisterCityState, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.buttonRegisterSubmit, 1, 8);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxRegisterPhone, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanelRegisterStreet, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanelRegisterCityState, 1, 8);
+            this.tableLayoutPanel3.Controls.Add(this.buttonRegisterSubmit, 1, 10);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerRegisterDOB, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.labelAddMessage, 1, 11);
+            this.tableLayoutPanel3.Controls.Add(this.labelRegisterPhone, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.labelRegisterGender, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.labelRegisterSSN, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxSSN, 1, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 10;
+            this.tableLayoutPanel3.RowCount = 12;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -869,8 +1088,18 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(678, 524);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1420, 612);
             this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // comboBoxRegisterGender
+            // 
+            this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRegisterGender.FormattingEnabled = true;
+            this.comboBoxRegisterGender.Location = new System.Drawing.Point(429, 214);
+            this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
+            this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxRegisterGender.TabIndex = 6;
             // 
             // tableLayoutPanelRegisterZipcode
             // 
@@ -878,23 +1107,24 @@
             this.tableLayoutPanelRegisterZipcode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRegisterZipcode.Controls.Add(this.textBoxRegisterZipcode, 0, 1);
             this.tableLayoutPanelRegisterZipcode.Controls.Add(this.labelRegisterZipcode, 0, 0);
-            this.tableLayoutPanelRegisterZipcode.Location = new System.Drawing.Point(206, 363);
+            this.tableLayoutPanelRegisterZipcode.Location = new System.Drawing.Point(429, 463);
             this.tableLayoutPanelRegisterZipcode.Name = "tableLayoutPanelRegisterZipcode";
-            this.tableLayoutPanelRegisterZipcode.RowCount = 2;
+            this.tableLayoutPanelRegisterZipcode.RowCount = 3;
             this.tableLayoutPanelRegisterZipcode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelRegisterZipcode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelRegisterZipcode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelRegisterZipcode.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanelRegisterZipcode.TabIndex = 11;
+            this.tableLayoutPanelRegisterZipcode.TabIndex = 13;
             // 
             // textBoxRegisterZipcode
             // 
             this.textBoxRegisterZipcode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxRegisterZipcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRegisterZipcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterZipcode.Location = new System.Drawing.Point(3, 25);
+            this.textBoxRegisterZipcode.Location = new System.Drawing.Point(3, 23);
             this.textBoxRegisterZipcode.Name = "textBoxRegisterZipcode";
             this.textBoxRegisterZipcode.Size = new System.Drawing.Size(186, 29);
-            this.textBoxRegisterZipcode.TabIndex = 12;
+            this.textBoxRegisterZipcode.TabIndex = 14;
             // 
             // labelRegisterZipcode
             // 
@@ -913,7 +1143,7 @@
             this.labelRegisterAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelRegisterAddress.AutoSize = true;
             this.labelRegisterAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisterAddress.Location = new System.Drawing.Point(3, 205);
+            this.labelRegisterAddress.Location = new System.Drawing.Point(3, 305);
             this.labelRegisterAddress.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelRegisterAddress.Name = "labelRegisterAddress";
             this.labelRegisterAddress.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -921,22 +1151,12 @@
             this.labelRegisterAddress.TabIndex = 9;
             this.labelRegisterAddress.Text = "Mailing Address";
             // 
-            // textBoxRegisterDateOfBirth
-            // 
-            this.textBoxRegisterDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxRegisterDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRegisterDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterDateOfBirth.Location = new System.Drawing.Point(206, 110);
-            this.textBoxRegisterDateOfBirth.Name = "textBoxRegisterDateOfBirth";
-            this.textBoxRegisterDateOfBirth.Size = new System.Drawing.Size(186, 29);
-            this.textBoxRegisterDateOfBirth.TabIndex = 4;
-            // 
             // textBoxRegisterLastName
             // 
             this.textBoxRegisterLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxRegisterLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRegisterLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterLastName.Location = new System.Drawing.Point(206, 60);
+            this.textBoxRegisterLastName.Location = new System.Drawing.Point(429, 60);
             this.textBoxRegisterLastName.Name = "textBoxRegisterLastName";
             this.textBoxRegisterLastName.Size = new System.Drawing.Size(186, 29);
             this.textBoxRegisterLastName.TabIndex = 3;
@@ -946,7 +1166,7 @@
             this.textBoxRegisterFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxRegisterFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRegisterFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterFirstName.Location = new System.Drawing.Point(206, 10);
+            this.textBoxRegisterFirstName.Location = new System.Drawing.Point(429, 10);
             this.textBoxRegisterFirstName.Name = "textBoxRegisterFirstName";
             this.textBoxRegisterFirstName.Size = new System.Drawing.Size(186, 29);
             this.textBoxRegisterFirstName.TabIndex = 2;
@@ -988,28 +1208,15 @@
             this.labelRegisterLastName.TabIndex = 2;
             this.labelRegisterLastName.Text = "Last Name";
             // 
-            // labelRegisterPhone
-            // 
-            this.labelRegisterPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelRegisterPhone.AutoSize = true;
-            this.labelRegisterPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisterPhone.Location = new System.Drawing.Point(3, 165);
-            this.labelRegisterPhone.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelRegisterPhone.Name = "labelRegisterPhone";
-            this.labelRegisterPhone.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelRegisterPhone.Size = new System.Drawing.Size(85, 20);
-            this.labelRegisterPhone.TabIndex = 8;
-            this.labelRegisterPhone.Text = "Phone";
-            // 
             // textBoxRegisterPhone
             // 
             this.textBoxRegisterPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxRegisterPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRegisterPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegisterPhone.Location = new System.Drawing.Point(206, 160);
+            this.textBoxRegisterPhone.Location = new System.Drawing.Point(429, 260);
             this.textBoxRegisterPhone.Name = "textBoxRegisterPhone";
             this.textBoxRegisterPhone.Size = new System.Drawing.Size(186, 29);
-            this.textBoxRegisterPhone.TabIndex = 5;
+            this.textBoxRegisterPhone.TabIndex = 7;
             // 
             // tableLayoutPanelRegisterStreet
             // 
@@ -1017,13 +1224,13 @@
             this.tableLayoutPanelRegisterStreet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRegisterStreet.Controls.Add(this.textBoxRegisterStreet, 0, 1);
             this.tableLayoutPanelRegisterStreet.Controls.Add(this.labelRegisterStreet, 0, 0);
-            this.tableLayoutPanelRegisterStreet.Location = new System.Drawing.Point(206, 233);
+            this.tableLayoutPanelRegisterStreet.Location = new System.Drawing.Point(429, 333);
             this.tableLayoutPanelRegisterStreet.Name = "tableLayoutPanelRegisterStreet";
             this.tableLayoutPanelRegisterStreet.RowCount = 2;
             this.tableLayoutPanelRegisterStreet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelRegisterStreet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRegisterStreet.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanelRegisterStreet.TabIndex = 6;
+            this.tableLayoutPanelRegisterStreet.TabIndex = 8;
             // 
             // textBoxRegisterStreet
             // 
@@ -1033,7 +1240,7 @@
             this.textBoxRegisterStreet.Location = new System.Drawing.Point(3, 25);
             this.textBoxRegisterStreet.Name = "textBoxRegisterStreet";
             this.textBoxRegisterStreet.Size = new System.Drawing.Size(186, 29);
-            this.textBoxRegisterStreet.TabIndex = 7;
+            this.textBoxRegisterStreet.TabIndex = 9;
             // 
             // labelRegisterStreet
             // 
@@ -1055,15 +1262,15 @@
             this.tableLayoutPanelRegisterCityState.Controls.Add(this.labelRegisterCity, 0, 0);
             this.tableLayoutPanelRegisterCityState.Controls.Add(this.labelRegisterState, 1, 0);
             this.tableLayoutPanelRegisterCityState.Controls.Add(this.comboBoxState, 1, 1);
-            this.tableLayoutPanelRegisterCityState.Controls.Add(this.textBoxCity, 0, 1);
-            this.tableLayoutPanelRegisterCityState.Location = new System.Drawing.Point(206, 298);
+            this.tableLayoutPanelRegisterCityState.Controls.Add(this.textBoxRegisterCity, 0, 1);
+            this.tableLayoutPanelRegisterCityState.Location = new System.Drawing.Point(429, 398);
             this.tableLayoutPanelRegisterCityState.Name = "tableLayoutPanelRegisterCityState";
             this.tableLayoutPanelRegisterCityState.RowCount = 2;
             this.tableLayoutPanelRegisterCityState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelRegisterCityState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRegisterCityState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanelRegisterCityState.Size = new System.Drawing.Size(401, 59);
-            this.tableLayoutPanelRegisterCityState.TabIndex = 8;
+            this.tableLayoutPanelRegisterCityState.TabIndex = 10;
             // 
             // labelRegisterCity
             // 
@@ -1092,21 +1299,22 @@
             // comboBoxState
             // 
             this.comboBoxState.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(203, 29);
+            this.comboBoxState.Location = new System.Drawing.Point(203, 25);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
-            this.comboBoxState.TabIndex = 10;
+            this.comboBoxState.TabIndex = 12;
             // 
-            // textBoxCity
+            // textBoxRegisterCity
             // 
-            this.textBoxCity.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCity.Location = new System.Drawing.Point(3, 25);
-            this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(186, 29);
-            this.textBoxCity.TabIndex = 9;
+            this.textBoxRegisterCity.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxRegisterCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRegisterCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRegisterCity.Location = new System.Drawing.Point(3, 25);
+            this.textBoxRegisterCity.Name = "textBoxRegisterCity";
+            this.textBoxRegisterCity.Size = new System.Drawing.Size(186, 29);
+            this.textBoxRegisterCity.TabIndex = 11;
             // 
             // buttonRegisterSubmit
             // 
@@ -1115,13 +1323,79 @@
             this.buttonRegisterSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegisterSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegisterSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonRegisterSubmit.Location = new System.Drawing.Point(372, 432);
+            this.buttonRegisterSubmit.Location = new System.Drawing.Point(854, 532);
             this.buttonRegisterSubmit.Name = "buttonRegisterSubmit";
             this.buttonRegisterSubmit.Size = new System.Drawing.Size(137, 35);
-            this.buttonRegisterSubmit.TabIndex = 13;
+            this.buttonRegisterSubmit.TabIndex = 14;
             this.buttonRegisterSubmit.Text = "Register";
             this.buttonRegisterSubmit.UseVisualStyleBackColor = false;
             this.buttonRegisterSubmit.Click += new System.EventHandler(this.buttonRegisterSubmit_Click);
+            // 
+            // dateTimePickerRegisterDOB
+            // 
+            this.dateTimePickerRegisterDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerRegisterDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerRegisterDOB.Location = new System.Drawing.Point(429, 112);
+            this.dateTimePickerRegisterDOB.Name = "dateTimePickerRegisterDOB";
+            this.dateTimePickerRegisterDOB.Size = new System.Drawing.Size(186, 26);
+            this.dateTimePickerRegisterDOB.TabIndex = 4;
+            // 
+            // labelAddMessage
+            // 
+            this.labelAddMessage.AutoSize = true;
+            this.labelAddMessage.Location = new System.Drawing.Point(429, 575);
+            this.labelAddMessage.Name = "labelAddMessage";
+            this.labelAddMessage.Size = new System.Drawing.Size(0, 20);
+            this.labelAddMessage.TabIndex = 14;
+            // 
+            // labelRegisterPhone
+            // 
+            this.labelRegisterPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelRegisterPhone.AutoSize = true;
+            this.labelRegisterPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterPhone.Location = new System.Drawing.Point(3, 265);
+            this.labelRegisterPhone.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelRegisterPhone.Name = "labelRegisterPhone";
+            this.labelRegisterPhone.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelRegisterPhone.Size = new System.Drawing.Size(85, 20);
+            this.labelRegisterPhone.TabIndex = 8;
+            this.labelRegisterPhone.Text = "Phone";
+            // 
+            // labelRegisterGender
+            // 
+            this.labelRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelRegisterGender.AutoSize = true;
+            this.labelRegisterGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterGender.Location = new System.Drawing.Point(3, 215);
+            this.labelRegisterGender.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelRegisterGender.Name = "labelRegisterGender";
+            this.labelRegisterGender.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelRegisterGender.Size = new System.Drawing.Size(94, 20);
+            this.labelRegisterGender.TabIndex = 15;
+            this.labelRegisterGender.Text = "Gender";
+            // 
+            // labelRegisterSSN
+            // 
+            this.labelRegisterSSN.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelRegisterSSN.AutoSize = true;
+            this.labelRegisterSSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterSSN.Location = new System.Drawing.Point(3, 165);
+            this.labelRegisterSSN.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelRegisterSSN.Name = "labelRegisterSSN";
+            this.labelRegisterSSN.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelRegisterSSN.Size = new System.Drawing.Size(70, 20);
+            this.labelRegisterSSN.TabIndex = 16;
+            this.labelRegisterSSN.Text = "SSN";
+            // 
+            // textBoxSSN
+            // 
+            this.textBoxSSN.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxSSN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSSN.Location = new System.Drawing.Point(429, 160);
+            this.textBoxSSN.Name = "textBoxSSN";
+            this.textBoxSSN.Size = new System.Drawing.Size(186, 29);
+            this.textBoxSSN.TabIndex = 5;
             // 
             // labelRegisterPatient
             // 
@@ -1135,20 +1409,6 @@
             this.labelRegisterPatient.TabIndex = 5;
             this.labelRegisterPatient.Text = "Register Patient";
             // 
-            // doctorBindingSource2
-            // 
-            this.doctorBindingSource2.DataMember = "Doctor";
-            this.doctorBindingSource2.DataSource = this.clinicDataSet;
-            // 
-            // patientBindingSource1
-            // 
-            this.patientBindingSource1.DataMember = "Patient";
-            this.patientBindingSource1.DataSource = this.clinicDataSet11;
-            // 
-            // patientTableAdapter
-            // 
-            this.patientTableAdapter.ClearBeforeFill = true;
-            // 
             // doctorTableAdapter
             // 
             this.doctorTableAdapter.ClearBeforeFill = true;
@@ -1158,10 +1418,9 @@
             this.clinicDataSet1.DataSetName = "clinicDataSet";
             this.clinicDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // doctorBindingSource1
+            // patientTableAdapter
             // 
-            this.doctorBindingSource1.DataMember = "Doctor";
-            this.doctorBindingSource1.DataSource = this.clinicDataSet;
+            this.patientTableAdapter.ClearBeforeFill = true;
             // 
             // UserControlNurseMain
             // 
@@ -1169,10 +1428,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControlNurseMain);
             this.Name = "UserControlNurseMain";
-            this.Size = new System.Drawing.Size(692, 595);
+            this.Size = new System.Drawing.Size(1434, 680);
             this.tabControlNurseMain.ResumeLayout(false);
             this.tabPageNursePatientInformation.ResumeLayout(false);
             this.tabPageNursePatientInformation.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatientInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.panelPatientInfoResults.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
@@ -1184,16 +1449,16 @@
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tabPageNurseBook.ResumeLayout(false);
             this.tabPageNurseBook.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource3)).EndInit();
             this.tabPageNurseRegister.ResumeLayout(false);
             this.tabPageNurseRegister.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1204,10 +1469,7 @@
             this.tableLayoutPanelRegisterStreet.PerformLayout();
             this.tableLayoutPanelRegisterCityState.ResumeLayout(false);
             this.tableLayoutPanelRegisterCityState.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1223,13 +1485,11 @@
         private System.Windows.Forms.Label labelDateOfBirth;
         private System.Windows.Forms.Label labelLastName;
         private System.Windows.Forms.Label labelPatientInformation;
-        private System.Windows.Forms.TextBox textBoxDateOfBirth;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label labelSummary;
-        private System.Windows.Forms.TextBox textBoxDateTime;
         private System.Windows.Forms.Label labelPatient;
         private System.Windows.Forms.Label labelDateTime;
         private System.Windows.Forms.Label labelPhysician;
@@ -1243,7 +1503,6 @@
         private System.Windows.Forms.TextBox textBoxRegisterZipcode;
         private System.Windows.Forms.Label labelRegisterZipcode;
         private System.Windows.Forms.Label labelRegisterAddress;
-        private System.Windows.Forms.TextBox textBoxRegisterDateOfBirth;
         private System.Windows.Forms.TextBox textBoxRegisterLastName;
         private System.Windows.Forms.TextBox textBoxRegisterFirstName;
         private System.Windows.Forms.Label labelRegisterFirstName;
@@ -1258,12 +1517,11 @@
         private System.Windows.Forms.Label labelRegisterCity;
         private System.Windows.Forms.Label labelRegisterState;
         private System.Windows.Forms.ComboBox comboBoxState;
-        private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.TextBox textBoxRegisterCity;
         private System.Windows.Forms.Button buttonRegisterSubmit;
         private System.Windows.Forms.Label labelRegisterPatient;
         private System.Windows.Forms.Panel panelPatientInfoResults;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox textBoxDOBPatientInfoResult;
         private System.Windows.Forms.TextBox textBoxLastNamePatientInfoResult;
         private System.Windows.Forms.TextBox textBoxFirstNamePatientInfoResult;
         private System.Windows.Forms.Label labelFirstNamePatientInfoResult;
@@ -1295,8 +1553,34 @@
         private System.Windows.Forms.BindingSource patientBindingSource;
         private clinicDataSet1 clinicDataSet11;
         private clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter;
-        private System.Windows.Forms.BindingSource doctorBindingSource2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDOB;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDOBPatientInfoResult;
+        private System.Windows.Forms.DateTimePicker dateTimePickerBookAppointment;
+        private System.Windows.Forms.DateTimePicker dateTimePickerRegisterDOB;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridViewPatientInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dobDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ssnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label labelAddMessage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.DateTimePicker dateTimePickerBookAppointmentTime;
+        private System.Windows.Forms.Label labelRegisterGender;
+        private System.Windows.Forms.Label labelRegisterSSN;
+        private System.Windows.Forms.TextBox textBoxSSN;
+        private System.Windows.Forms.Label labelGenderPatientInfoResult;
+        private System.Windows.Forms.Label labelSSNPatientInfoResult;
+        private System.Windows.Forms.TextBox textBoxSSNPatientInfoResult;
+        private System.Windows.Forms.ComboBox comboBoxGenderPatientInfoResult;
+        private System.Windows.Forms.ComboBox comboBoxRegisterGender;
+        private System.Windows.Forms.ComboBox fullNameComboBox;
         private System.Windows.Forms.BindingSource patientBindingSource1;
-        private System.Windows.Forms.BindingSource doctorBindingSource1;
+        private System.Windows.Forms.BindingSource patientBindingSource2;
+        private System.Windows.Forms.BindingSource patientBindingSource3;
     }
 }

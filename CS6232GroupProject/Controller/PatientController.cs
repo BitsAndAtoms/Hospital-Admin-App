@@ -30,6 +30,5 @@ namespace CS6232GroupProject.Controller
             return this.patientSource.GetPatients();
         }
 
-
     }
 }
