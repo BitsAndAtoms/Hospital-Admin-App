@@ -34,5 +34,10 @@ namespace CS6232GroupProject.View
             this.loginForm.Show();
             this.Hide();
         }
+
+        private void userControlNurseMain1_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
