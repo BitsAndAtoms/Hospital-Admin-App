@@ -24,7 +24,7 @@ namespace CS6232GroupProject.DAL
             string selectStatment =
                 "SELECT COUNT(DoctorID) as 'Number' " +
                 "FROM HasAppointment " + 
-                "WHERE DoctorID = @DoctorID" +
+                "WHERE DoctorID = @DoctorID " +
                     "AND appointmentDateTime = @Date";
 
 
@@ -37,9 +37,7 @@ namespace CS6232GroupProject.DAL
                     
                     selectCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
                     selectCommand.Parameters.AddWithValue("@Date", appointment.Date);
-                    MessageBox.Show("The date is: " + appointment.Date, "Date");//For testing only
 
-                    MessageBox.Show("It got here!", "Test");//For testing only
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
@@ -49,14 +47,13 @@ namespace CS6232GroupProject.DAL
 
                         }
                     }
-                    MessageBox.Show("The count is: " + count, "Number of Results Test");//For testing only
                     if (count > 0)
                     {
-                        return true;
+                        return false;
                     }
                     else
                     {
-                        return false;
+                        return true;
                     }
                 }
             }
@@ -73,8 +70,8 @@ namespace CS6232GroupProject.DAL
         public int CreateAppointment(Appointment appointment)
         {
             string insertStatment =
-                "Insert Appointments " + 
-                "(PatientID, DoctorID, Date, Reason)" +
+                "Insert HasAppointment " +
+                "(PatientID, DoctorID, appointmentDateTime, Reasons)" +
                 "VALUES (@PatientID, @DoctorID, @Date, @Reason)";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -87,10 +84,13 @@ namespace CS6232GroupProject.DAL
                     insertCommand.Parameters.AddWithValue("@Date", appointment.Date);
                     insertCommand.Parameters.AddWithValue("@Reason", appointment.Reason);
                     insertCommand.ExecuteNonQuery();
-                    string selectStatment =
-                        "SELECT INDENT_CURRENT('Appointments') FROM Appoinments";
-                    SqlCommand selectCommand = new SqlCommand(selectStatment, connection);
-                    int appointmentID = Convert.ToInt32(selectCommand.ExecuteScalar());
+
+                    // This is the issue!
+                    //string selectStatment =
+                    //"SELECT INDENT_CURRENT('HasAppointment') FROM HasAppoinment";
+                    //SqlCommand selectCommand = new SqlCommand(selectStatment, connection);
+                    //int appointmentID = Convert.ToInt32(selectCommand.ExecuteScalar());
+                    int appointmentID = 0;
                     return appointmentID;
                 }
             }

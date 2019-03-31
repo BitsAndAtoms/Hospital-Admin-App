@@ -215,6 +215,8 @@ namespace CS6232GroupProject.UserControls
                 appointment.Reason = reason;
 
                 if (this.appointmentController.CheckAvailability(appointment))
+               // bool value = true;
+                //if (value)
                 {
                     this.appointmentController.CreateAppointment(appointment);
                     //Clear textbox(es)
