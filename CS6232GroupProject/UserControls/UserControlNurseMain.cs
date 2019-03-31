@@ -43,6 +43,9 @@ namespace CS6232GroupProject.UserControls
          
                 doctorList = this.doctorController.GetDoctors();
                 comboBoxPhysician.DataSource = doctorList;
+
+                //patientBindingSource.Clear();
+                //patientBindingSource.Add();
             }
             catch (Exception ex)
             {
