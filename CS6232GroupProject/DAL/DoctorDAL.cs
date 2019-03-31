@@ -5,8 +5,16 @@ using System.Data.SqlClient;
 
 namespace CS6232GroupProject.DAL
 {
+    /// <summary>
+    /// This class creates a DoctorDAL object to retrieve data from the 
+    /// Clinic DB.
+    /// </summary>
     class DoctorDAL
     {
+        /// <summary>
+        /// This method returns a list of Doctor objects from the DB.
+        /// </summary>
+        /// <returns>A list of Doctor objects.</returns>
         public List<Doctor> GetDoctors()
         {
             List<Doctor> doctors = new List<Doctor>();

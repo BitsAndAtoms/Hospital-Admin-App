@@ -59,9 +59,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>clinicDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PatientController.cs" />
+    <Compile Include="DAL\AppointmentDAL.cs" />
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\DoctorDAL.cs" />
     <Compile Include="DAL\LoginDBDAL.cs" />

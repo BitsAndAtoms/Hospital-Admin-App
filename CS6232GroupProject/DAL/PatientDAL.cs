@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {

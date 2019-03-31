@@ -15,6 +15,7 @@ namespace CS6232GroupProject.UserControls
         private List<Patient> patientList;
         private DoctorController doctorController;
         private PatientController patientController;
+        private AppointmentController appointmentController;
 
         public UserControlNurseMain()
         {
