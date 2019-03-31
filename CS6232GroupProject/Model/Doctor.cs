@@ -7,6 +7,7 @@ namespace CS6232GroupProject.Model
     /// </summary>
     class Doctor
     {
+
         public int DoctorID { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
@@ -17,4 +18,7 @@ namespace CS6232GroupProject.Model
         public string Phone { get; set; }
         public int AddressID { get; set; }
     }
+
+    
+
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label fullNameLabel;
             this.tabControlNurseMain = new System.Windows.Forms.TabControl();
             this.tabPageNursePatientInformation = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -85,16 +84,12 @@
             this.labelPatientInformation = new System.Windows.Forms.Label();
             this.linkLabelPatientInfoBack = new System.Windows.Forms.LinkLabel();
             this.tabPageNurseBook = new System.Windows.Forms.TabPage();
-            this.fullNameComboBox = new System.Windows.Forms.ComboBox();
-            this.patientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.patientBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.dateTimePickerBookAppointmentTime = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerBookAppointment = new System.Windows.Forms.DateTimePicker();
             this.comboBoxPhysician = new System.Windows.Forms.ComboBox();
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clinicDataSet = new CS6232GroupProject.clinicDataSet();
+            this.doctorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxPatient = new System.Windows.Forms.ComboBox();
             this.patientBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.labelSummary = new System.Windows.Forms.Label();
@@ -133,10 +128,14 @@
             this.labelRegisterSSN = new System.Windows.Forms.Label();
             this.textBoxSSN = new System.Windows.Forms.TextBox();
             this.labelRegisterPatient = new System.Windows.Forms.Label();
+            this.doctorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.patientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.patientBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicDataSet = new CS6232GroupProject.clinicDataSet();
             this.doctorTableAdapter = new CS6232GroupProject.clinicDataSetTableAdapters.DoctorTableAdapter();
             this.clinicDataSet1 = new CS6232GroupProject.clinicDataSet();
             this.patientTableAdapter = new CS6232GroupProject.clinicDataSet1TableAdapters.PatientTableAdapter();
-            fullNameLabel = new System.Windows.Forms.Label();
             this.tabControlNurseMain.SuspendLayout();
             this.tabPageNursePatientInformation.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -151,29 +150,22 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tabPageNurseBook.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource3)).BeginInit();
             this.tabPageNurseRegister.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanelRegisterZipcode.SuspendLayout();
             this.tableLayoutPanelRegisterStreet.SuspendLayout();
             this.tableLayoutPanelRegisterCityState.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // fullNameLabel
-            // 
-            fullNameLabel.AutoSize = true;
-            fullNameLabel.Location = new System.Drawing.Point(321, 484);
-            fullNameLabel.Name = "fullNameLabel";
-            fullNameLabel.Size = new System.Drawing.Size(84, 20);
-            fullNameLabel.TabIndex = 6;
-            fullNameLabel.Text = "Full Name:";
             // 
             // tabControlNurseMain
             // 
@@ -513,7 +505,7 @@
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 25);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(208, 29);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 12;
@@ -780,7 +772,7 @@
             this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
-            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(206, 214);
+            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(206, 211);
             this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
             this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderPatientInfoResult.TabIndex = 21;
@@ -814,8 +806,6 @@
             // 
             this.tabPageNurseBook.AutoScroll = true;
             this.tabPageNurseBook.BackColor = System.Drawing.Color.White;
-            this.tabPageNurseBook.Controls.Add(fullNameLabel);
-            this.tabPageNurseBook.Controls.Add(this.fullNameComboBox);
             this.tabPageNurseBook.Controls.Add(this.tableLayoutPanel2);
             this.tabPageNurseBook.Controls.Add(this.labelBookAppointment);
             this.tabPageNurseBook.Location = new System.Drawing.Point(4, 29);
@@ -824,26 +814,6 @@
             this.tabPageNurseBook.Size = new System.Drawing.Size(1426, 647);
             this.tabPageNurseBook.TabIndex = 1;
             this.tabPageNurseBook.Text = "Book Appointment";
-            // 
-            // fullNameComboBox
-            // 
-            this.fullNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patientBindingSource1, "FullName", true));
-            this.fullNameComboBox.DataSource = this.patientBindingSource2;
-            this.fullNameComboBox.DisplayMember = "FullName";
-            this.fullNameComboBox.FormattingEnabled = true;
-            this.fullNameComboBox.Location = new System.Drawing.Point(411, 481);
-            this.fullNameComboBox.Name = "fullNameComboBox";
-            this.fullNameComboBox.Size = new System.Drawing.Size(662, 28);
-            this.fullNameComboBox.TabIndex = 7;
-            this.fullNameComboBox.ValueMember = "PatientID";
-            // 
-            // patientBindingSource1
-            // 
-            this.patientBindingSource1.DataSource = typeof(CS6232GroupProject.Model.Patient);
-            // 
-            // patientBindingSource2
-            // 
-            this.patientBindingSource2.DataSource = typeof(CS6232GroupProject.Model.Patient);
             // 
             // tableLayoutPanel2
             // 
@@ -908,25 +878,19 @@
             // comboBoxPhysician
             // 
             this.comboBoxPhysician.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxPhysician.DataSource = this.doctorBindingSource;
-            this.comboBoxPhysician.DisplayMember = "lname";
+            this.comboBoxPhysician.DataSource = this.doctorBindingSource2;
+            this.comboBoxPhysician.DisplayMember = "FullName";
             this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(429, 61);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(429, 64);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
             this.comboBoxPhysician.ValueMember = "doctorID";
             // 
-            // doctorBindingSource
+            // doctorBindingSource2
             // 
-            this.doctorBindingSource.DataMember = "Doctor";
-            this.doctorBindingSource.DataSource = this.clinicDataSet;
-            // 
-            // clinicDataSet
-            // 
-            this.clinicDataSet.DataSetName = "clinicDataSet";
-            this.clinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.doctorBindingSource2.DataSource = typeof(CS6232GroupProject.Model.Doctor);
             // 
             // comboBoxPatient
             // 
@@ -935,7 +899,7 @@
             this.comboBoxPatient.DisplayMember = "FullName";
             this.comboBoxPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatient.FormattingEnabled = true;
-            this.comboBoxPatient.Location = new System.Drawing.Point(429, 11);
+            this.comboBoxPatient.Location = new System.Drawing.Point(429, 14);
             this.comboBoxPatient.Name = "comboBoxPatient";
             this.comboBoxPatient.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPatient.TabIndex = 1;
@@ -1096,7 +1060,7 @@
             this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRegisterGender.FormattingEnabled = true;
-            this.comboBoxRegisterGender.Location = new System.Drawing.Point(429, 214);
+            this.comboBoxRegisterGender.Location = new System.Drawing.Point(429, 211);
             this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
             this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
             this.comboBoxRegisterGender.TabIndex = 6;
@@ -1301,7 +1265,7 @@
             this.comboBoxState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(203, 25);
+            this.comboBoxState.Location = new System.Drawing.Point(203, 29);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 12;
@@ -1409,6 +1373,28 @@
             this.labelRegisterPatient.TabIndex = 5;
             this.labelRegisterPatient.Text = "Register Patient";
             // 
+            // doctorBindingSource1
+            // 
+            this.doctorBindingSource1.DataSource = typeof(CS6232GroupProject.Model.Doctor);
+            // 
+            // patientBindingSource1
+            // 
+            this.patientBindingSource1.DataSource = typeof(CS6232GroupProject.Model.Patient);
+            // 
+            // patientBindingSource2
+            // 
+            this.patientBindingSource2.DataSource = typeof(CS6232GroupProject.Model.Patient);
+            // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataMember = "Doctor";
+            this.doctorBindingSource.DataSource = this.clinicDataSet;
+            // 
+            // clinicDataSet
+            // 
+            this.clinicDataSet.DataSetName = "clinicDataSet";
+            this.clinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // doctorTableAdapter
             // 
             this.doctorTableAdapter.ClearBeforeFill = true;
@@ -1451,13 +1437,10 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tabPageNurseBook.ResumeLayout(false);
             this.tabPageNurseBook.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource3)).EndInit();
             this.tabPageNurseRegister.ResumeLayout(false);
             this.tabPageNurseRegister.PerformLayout();
@@ -1469,6 +1452,11 @@
             this.tableLayoutPanelRegisterStreet.PerformLayout();
             this.tableLayoutPanelRegisterCityState.ResumeLayout(false);
             this.tableLayoutPanelRegisterCityState.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1578,9 +1566,10 @@
         private System.Windows.Forms.TextBox textBoxSSNPatientInfoResult;
         private System.Windows.Forms.ComboBox comboBoxGenderPatientInfoResult;
         private System.Windows.Forms.ComboBox comboBoxRegisterGender;
-        private System.Windows.Forms.ComboBox fullNameComboBox;
         private System.Windows.Forms.BindingSource patientBindingSource1;
         private System.Windows.Forms.BindingSource patientBindingSource2;
         private System.Windows.Forms.BindingSource patientBindingSource3;
+        private System.Windows.Forms.BindingSource doctorBindingSource1;
+        private System.Windows.Forms.BindingSource doctorBindingSource2;
     }
 }

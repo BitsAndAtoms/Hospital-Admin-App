@@ -3,7 +3,6 @@ using CS6232GroupProject.Model;
 using CS6232GroupProject.View;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -44,7 +43,6 @@ namespace CS6232GroupProject.UserControls
                     patientNames.Add(patient.FullName);
                 }
                // comboBoxPatient.DataSource = patientNames;
-                fullNameComboBox.DataSource = patientList;
                 comboBoxPatient.DataSource = patientList;
 
                 
