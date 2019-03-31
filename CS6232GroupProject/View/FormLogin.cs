@@ -44,8 +44,10 @@ namespace CS6232GroupProject.View
                 if(newNameAndRole[0].Equals("Nurse"))
                 { 
                 this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1]);
-                this.nurseMain.ShowDialog();
+                //this.nurseMain.ShowDialog();
                 this.nurseMain.Show();
+                this.textBoxUsername.Text = "";
+                this.textBoxPassword.Text = "";
                 }
             }
             else

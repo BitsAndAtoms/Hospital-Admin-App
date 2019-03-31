@@ -10,7 +10,7 @@ namespace CS6232GroupProject.UserControls
 {
     public partial class UserControlNurseMain : UserControl
     {
-        private Patient patient;
+        
         private List<Doctor> doctorList;
         private List<Patient> patientList;
         private DoctorController doctorController;
@@ -37,18 +37,11 @@ namespace CS6232GroupProject.UserControls
                 
                 
                 patientList = this.patientController.GetPatients();
-                List<String> patientNames = new List<String>();
-                foreach (Patient patient in patientList)
-                {
-                    patientNames.Add(patient.FullName);
-                }
-               // comboBoxPatient.DataSource = patientNames;
                 comboBoxPatient.DataSource = patientList;
 
                 
          
                 doctorList = this.doctorController.GetDoctors();
-                
                 comboBoxPhysician.DataSource = doctorList;
             }
             catch (Exception ex)
