@@ -10,6 +10,7 @@ namespace CS6232GroupProject.Model
         public int DoctorID { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
+        public string FullName { get; set; }
         public DateTime? DOB { get; set; }
         public string SSN { get; set; }
         public string Gender { get; set; }

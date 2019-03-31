@@ -43,8 +43,9 @@ namespace CS6232GroupProject.UserControls
                 {
                     patientNames.Add(patient.FullName);
                 }
-                comboBoxPatient.DataSource = patientNames;
-                //comboBoxPatient.DataSource = patientList;
+               // comboBoxPatient.DataSource = patientNames;
+                fullNameComboBox.DataSource = patientList;
+                comboBoxPatient.DataSource = patientList;
 
                 
          
