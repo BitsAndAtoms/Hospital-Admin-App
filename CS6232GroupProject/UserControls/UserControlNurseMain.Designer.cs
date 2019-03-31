@@ -239,42 +239,49 @@
             this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
             this.fnameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
+            this.fnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lnameDataGridViewTextBoxColumn
             // 
             this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
             this.lnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
+            this.lnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dobDataGridViewTextBoxColumn
             // 
             this.dobDataGridViewTextBoxColumn.DataPropertyName = "dob";
             this.dobDataGridViewTextBoxColumn.HeaderText = "Date of Birth";
             this.dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
+            this.dobDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ssnDataGridViewTextBoxColumn
             // 
             this.ssnDataGridViewTextBoxColumn.DataPropertyName = "ssn";
             this.ssnDataGridViewTextBoxColumn.HeaderText = "SSN";
             this.ssnDataGridViewTextBoxColumn.Name = "ssnDataGridViewTextBoxColumn";
+            this.ssnDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // genderDataGridViewTextBoxColumn
             // 
             this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
             this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addressIDDataGridViewTextBoxColumn
             // 
             this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "addressID";
             this.addressIDDataGridViewTextBoxColumn.HeaderText = "Address ID";
             this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // patientBindingSource
             // 
@@ -1393,6 +1400,7 @@
             // 
             this.doctorBindingSource.DataMember = "Doctor";
             this.doctorBindingSource.DataSource = this.clinicDataSet;
+            this.doctorBindingSource.CurrentChanged += new System.EventHandler(this.doctorBindingSource_CurrentChanged);
             // 
             // clinicDataSet
             // 

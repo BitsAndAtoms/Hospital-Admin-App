@@ -119,7 +119,16 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonRegisterSubmit_Click(object sender, EventArgs e)
         {
+            Patient newPatient = new Patient();
             this.CheckFields();
+            newPatient.FName = this.textBoxFirstName.Text;
+            newPatient.LName = this.textBoxRegisterLastName.Text;
+            newPatient.DOB = this.dateTimePickerRegisterDOB.Value;
+            newPatient.Phone = this.textBoxRegisterPhone.Text;
+            Address newAddress = new Address();
+            newAddress.Street = this.textBoxRegisterStreet.Text;
+            newAddress.State = this.comboBoxState.Text;
+            newAddress.Zip = Convert.ToInt32(this.textBoxRegisterZipcode.Text);
             // If true, call the controller method, passing the created patient object,
             // which calls the PatientDAL method that creates a new patient in the DB.
             // Later, we can even have it check if that patient exsists already.
@@ -179,6 +188,11 @@ namespace CS6232GroupProject.UserControls
             // is added, then push the created Appointment object to the Appoinment controller, 
             // passing the new Appointment variable, which will call the AppoinmentDAL method to 
             // add it in the DB.
+        }
+
+        private void doctorBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
