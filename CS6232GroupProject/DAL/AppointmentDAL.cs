@@ -22,10 +22,11 @@ namespace CS6232GroupProject.DAL
         {
             int count = 0;
             string selectStatment =
-                "SELECT COUNT(DoctorID) " + 
-                "FROM Appointments " + 
-                "WHERE DoctorID = @DoctorID" + 
-                    "AND Date = @Date";
+                "SELECT COUNT(DoctorID) as 'Number' " +
+                "FROM HasAppointment " + 
+                "WHERE DoctorID = @DoctorID" +
+                    "AND appointmentDateTime = @Date";
+
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -33,24 +34,29 @@ namespace CS6232GroupProject.DAL
 
                 using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
                 {
+                    
                     selectCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
                     selectCommand.Parameters.AddWithValue("@Date", appointment.Date);
+                    MessageBox.Show("The date is: " + appointment.Date, "Date");//For testing only
+
+                    MessageBox.Show("It got here!", "Test");//For testing only
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            count++;
+                            int number = (int)reader["Number"];
+                            count += number;
 
                         }
-                        MessageBox.Show("The count is: " + count, "Number of Results Test");//For testing only
-                        if (count > 0)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
+                    }
+                    MessageBox.Show("The count is: " + count, "Number of Results Test");//For testing only
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
                     }
                 }
             }
