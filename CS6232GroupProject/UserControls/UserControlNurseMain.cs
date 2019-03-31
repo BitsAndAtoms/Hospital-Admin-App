@@ -62,8 +62,9 @@ namespace CS6232GroupProject.UserControls
             this.textBoxRegisterLastName.Clear();
             this.textBoxRegisterPhone.Clear();
             this.textBoxRegisterStreet.Clear();
+            this.textBoxSSN.Clear();
             this.dateTimePickerRegisterDOB.Value = DateTimePicker.MinimumDateTime;
-            this.comboBoxState.SelectedIndex = -1;
+            this.comboBoxState.SelectedIndex = 0;
             this.textBoxRegisterZipcode.Clear();
             this.labelAddMessage.Text = "";
         }
