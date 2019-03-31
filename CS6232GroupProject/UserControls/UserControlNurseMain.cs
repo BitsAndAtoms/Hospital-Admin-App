@@ -120,7 +120,9 @@ namespace CS6232GroupProject.UserControls
         private void buttonRegisterSubmit_Click(object sender, EventArgs e)
         {
             this.CheckFields();
-
+            // If true, call the controller method, passing the created patient object,
+            // which calls the PatientDAL method that creates a new patient in the DB.
+            // Later, we can even have it check if that patient exsists already.
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -168,6 +170,15 @@ namespace CS6232GroupProject.UserControls
                 formPatientRecords.Show();
             }
 
+        }
+
+        private void buttonBookSubmit_Click(object sender, EventArgs e)
+        {
+            //Check to ensure that the needed Patient and Doctor comboboxes are selected, 
+            // ensure that the reason field is filled, and ensure that the date and time input 
+            // is added, then push the created Appointment object to the Appoinment controller, 
+            // passing the new Appointment variable, which will call the AppoinmentDAL method to 
+            // add it in the DB.
         }
     }
 }

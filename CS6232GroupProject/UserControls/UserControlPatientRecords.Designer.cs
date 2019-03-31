@@ -37,12 +37,14 @@
             this.dateTimePickerAppointments = new System.Windows.Forms.DateTimePicker();
             this.textBoxAppointmentsSummary = new System.Windows.Forms.TextBox();
             this.comboBoxAppointmentsPatient = new System.Windows.Forms.ComboBox();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelAppointmentsPatient = new System.Windows.Forms.Label();
             this.labelAppointmentsSummary = new System.Windows.Forms.Label();
             this.labelAppointmentsPhysician = new System.Windows.Forms.Label();
             this.buttonAppointmentsUpdate = new System.Windows.Forms.Button();
             this.linkLabelAppointmentsCancel = new System.Windows.Forms.LinkLabel();
             this.comboBoxAppointmentsPhysician = new System.Windows.Forms.ComboBox();
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelAppointmentsDateTime = new System.Windows.Forms.Label();
             this.labelAppointments = new System.Windows.Forms.Label();
             this.tabPageRoutineChecks = new System.Windows.Forms.TabPage();
@@ -77,12 +79,12 @@
             this.buttonDiagnosisUpdate = new System.Windows.Forms.Button();
             this.checkBoxPendingLabTests = new System.Windows.Forms.CheckBox();
             this.labelDiagnosis = new System.Windows.Forms.Label();
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageAppointments.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             this.tabPageRoutineChecks.SuspendLayout();
             this.tableLayoutRoutineChecks.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -93,8 +95,6 @@
             this.tableLayoutPanelDiagnosis.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlPatientRecords
@@ -202,11 +202,15 @@
             this.comboBoxAppointmentsPatient.DisplayMember = "FullName";
             this.comboBoxAppointmentsPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPatient.FormattingEnabled = true;
-            this.comboBoxAppointmentsPatient.Location = new System.Drawing.Point(166, 15);
+            this.comboBoxAppointmentsPatient.Location = new System.Drawing.Point(166, 11);
             this.comboBoxAppointmentsPatient.Name = "comboBoxAppointmentsPatient";
             this.comboBoxAppointmentsPatient.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPatient.TabIndex = 2;
             this.comboBoxAppointmentsPatient.ValueMember = "PatientID";
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataSource = typeof(CS6232GroupProject.Model.Patient);
             // 
             // labelAppointmentsPatient
             // 
@@ -260,6 +264,7 @@
             this.buttonAppointmentsUpdate.TabIndex = 7;
             this.buttonAppointmentsUpdate.Text = "Update";
             this.buttonAppointmentsUpdate.UseVisualStyleBackColor = false;
+            this.buttonAppointmentsUpdate.Click += new System.EventHandler(this.buttonAppointmentsUpdate_Click);
             // 
             // linkLabelAppointmentsCancel
             // 
@@ -281,11 +286,15 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 65);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 61);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
             this.comboBoxAppointmentsPhysician.ValueMember = "DoctorID";
+            // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataSource = typeof(CS6232GroupProject.Model.Doctor);
             // 
             // labelAppointmentsDateTime
             // 
@@ -504,6 +513,7 @@
             this.buttonRoutineChecksUpdate.TabIndex = 13;
             this.buttonRoutineChecksUpdate.Text = "Update";
             this.buttonRoutineChecksUpdate.UseVisualStyleBackColor = false;
+            this.buttonRoutineChecksUpdate.Click += new System.EventHandler(this.buttonRoutineChecksUpdate_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -717,6 +727,7 @@
             this.buttonDiagnosisUpdate.TabIndex = 7;
             this.buttonDiagnosisUpdate.Text = "Update";
             this.buttonDiagnosisUpdate.UseVisualStyleBackColor = false;
+            this.buttonDiagnosisUpdate.Click += new System.EventHandler(this.buttonDiagnosisUpdate_Click);
             // 
             // checkBoxPendingLabTests
             // 
@@ -740,14 +751,6 @@
             this.labelDiagnosis.TabIndex = 6;
             this.labelDiagnosis.Text = "Diagnosis";
             // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataSource = typeof(CS6232GroupProject.Model.Patient);
-            // 
-            // doctorBindingSource
-            // 
-            this.doctorBindingSource.DataSource = typeof(CS6232GroupProject.Model.Doctor);
-            // 
             // UserControlPatientRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -761,6 +764,8 @@
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             this.tabPageRoutineChecks.ResumeLayout(false);
             this.tabPageRoutineChecks.PerformLayout();
             this.tableLayoutRoutineChecks.ResumeLayout(false);
@@ -781,8 +786,6 @@
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

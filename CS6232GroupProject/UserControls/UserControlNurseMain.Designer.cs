@@ -978,6 +978,7 @@
             this.buttonBookSubmit.TabIndex = 7;
             this.buttonBookSubmit.Text = "Submit";
             this.buttonBookSubmit.UseVisualStyleBackColor = false;
+            this.buttonBookSubmit.Click += new System.EventHandler(this.buttonBookSubmit_Click);
             // 
             // textBoxSummary
             // 
