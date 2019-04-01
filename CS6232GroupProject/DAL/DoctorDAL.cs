@@ -21,7 +21,8 @@ namespace CS6232GroupProject.DAL
 
             string selectStatement =
                 "SELECT DoctorID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
-                "FROM Doctor";
+                "FROM Doctor " +
+                "ORDER BY Fname ASC";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
