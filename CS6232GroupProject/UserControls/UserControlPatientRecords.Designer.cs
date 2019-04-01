@@ -238,6 +238,7 @@
             this.buttonAppointmentsUpdate.TabIndex = 7;
             this.buttonAppointmentsUpdate.Text = "Update";
             this.buttonAppointmentsUpdate.UseVisualStyleBackColor = false;
+            this.buttonAppointmentsUpdate.Visible = false;
             this.buttonAppointmentsUpdate.Click += new System.EventHandler(this.buttonAppointmentsUpdate_Click);
             // 
             // linkLabelAppointmentsCancel
@@ -252,6 +253,7 @@
             this.linkLabelAppointmentsCancel.TabIndex = 8;
             this.linkLabelAppointmentsCancel.TabStop = true;
             this.linkLabelAppointmentsCancel.Text = "Cancel Appointment";
+            this.linkLabelAppointmentsCancel.Visible = false;
             // 
             // comboBoxAppointmentsPhysician
             // 
@@ -261,7 +263,7 @@
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.Enabled = false;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;

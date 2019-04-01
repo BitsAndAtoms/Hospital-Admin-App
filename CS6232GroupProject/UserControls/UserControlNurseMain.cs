@@ -187,6 +187,11 @@ namespace CS6232GroupProject.UserControls
             /// when selected and conditions approved, Patient Info results panel and back button should then be visible
         }
 
+        /// <summary>
+        /// Populate Patient search results from datagrideview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             panelPatientSearch.Visible = false;
@@ -201,7 +206,7 @@ namespace CS6232GroupProject.UserControls
             textBoxPhonePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[6].Value.ToString();
             textBoxStreetPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value.ToString();
             //comboBoxStatePatientInfoResult.SelectedValue = this.dataGridViewPatientInfo.CurrentRow.Cells[8].Value.ToString();
-            //textBoxZipPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[9].Value.ToString();
+            textBoxZipPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value.ToString();
             patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
         }
 
@@ -210,7 +215,6 @@ namespace CS6232GroupProject.UserControls
             panelPatientSearch.Visible = true;
             panelPatientInfoResults.Visible = false;
             linkLabelPatientInfoBack.Visible = false;
-            /// 
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
