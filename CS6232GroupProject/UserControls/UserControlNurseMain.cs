@@ -3,6 +3,7 @@ using CS6232GroupProject.Model;
 using CS6232GroupProject.View;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,13 +11,15 @@ namespace CS6232GroupProject.UserControls
 {
     public partial class UserControlNurseMain : UserControl
     {
-        
+
         private List<Doctor> doctorList;
         private List<Patient> patientList;
         private DoctorController doctorController;
         private PatientController patientController;
         private AppointmentController appointmentController;
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public UserControlNurseMain()
         {
             InitializeComponent();
@@ -36,13 +39,15 @@ namespace CS6232GroupProject.UserControls
                     this.comboBoxStatePatientInfoResult.Items.Add(state);
                 }
 
-                
-                
+                foreach (string gender in Gender.GetGender())
+                {
+                    this.comboBoxRegisterGender.Items.Add(gender);
+                    this.comboBoxGenderPatientInfoResult.Items.Add(gender);
+                }
+
                 patientList = this.patientController.GetPatients();
                 comboBoxPatient.DataSource = patientList;
 
-                
-         
                 doctorList = this.doctorController.GetDoctors();
                 comboBoxPhysician.DataSource = doctorList;
 
@@ -53,18 +58,21 @@ namespace CS6232GroupProject.UserControls
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
-            
         }
 
+        /// <summary>
+        /// Clear fields.
+        /// </summary>
         public void ClearText()
         {
             this.textBoxRegisterFirstName.Clear();
             this.textBoxRegisterLastName.Clear();
             this.textBoxRegisterPhone.Clear();
-            this.textBoxRegisterStreet.Clear();
             this.textBoxSSN.Clear();
-            this.dateTimePickerRegisterDOB.Value = DateTimePicker.MinimumDateTime;
-            this.comboBoxState.SelectedIndex = 0;
+            this.comboBoxRegisterGender.SelectedIndex = -1;
+            this.textBoxRegisterStreet.Clear();
+            this.dateTimePickerRegisterDOB.Value = DateTime.Now;
+            this.comboBoxState.SelectedIndex = -1;
             this.textBoxRegisterZipcode.Clear();
             this.labelAddMessage.Text = "";
         }
@@ -85,14 +93,19 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a Last Name";
                 return false;
             }
-            else if (this.dateTimePickerRegisterDOB.Value == DateTimePicker.MinimumDateTime)
+            else if (this.dateTimePickerRegisterDOB.Value >= DateTime.Now)
             {
-                labelAddMessage.Text = "Please enter a Date of Birth";
+                labelAddMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
             else if (this.textBoxSSN.Text.Length < 9 || this.textBoxSSN.Text == null || !checkNumber)
             {
-                labelAddMessage.Text = "Please enter a 9 digit SSN";
+                labelAddMessage.Text = "Please enter a valid 9 digit SSN";
+                return false;
+            }
+            else if (this.comboBoxRegisterGender.SelectedIndex == -1)
+            {
+                labelAddMessage.Text = "Please select a Gender";
                 return false;
             }
             else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null)
@@ -125,25 +138,30 @@ namespace CS6232GroupProject.UserControls
         private void buttonRegisterSubmit_Click(object sender, EventArgs e)
         {
             Patient newPatient = new Patient();
+            Address newAddress = new Address();
             if (this.CheckFields())
             {
-                newPatient.FName = this.textBoxRegisterFirstName.Text;
-                newPatient.LName = this.textBoxRegisterLastName.Text;
-                newPatient.DOB = this.dateTimePickerRegisterDOB.Value;
-                newPatient.SSN = this.textBoxSSN.Text;
-                newPatient.Phone = this.textBoxRegisterPhone.Text;
-                newPatient.Gender = this.comboBoxGenderPatientInfoResult.Text;
-                Address newAddress = new Address();
-                newAddress.Street = this.textBoxRegisterStreet.Text;
-                newAddress.State = this.comboBoxState.Text;
-                newAddress.Zip = Convert.ToInt32(this.textBoxRegisterZipcode.Text);
-                this.patientController.registerPatient(newPatient, newAddress);
-                
-                this.ClearText();
-                labelAddMessage.Text = "Successfully updated";
-            }
-            else {
-                labelAddMessage.Text = "Not added";
+                try
+                {
+                    newPatient.FName = this.textBoxRegisterFirstName.Text;
+                    newPatient.LName = this.textBoxRegisterLastName.Text;
+                    newPatient.DOB = this.dateTimePickerRegisterDOB.Value;
+                    newPatient.SSN = this.textBoxSSN.Text;
+                    newPatient.Phone = this.textBoxRegisterPhone.Text;
+                    newPatient.Gender = this.comboBoxRegisterGender.Text;
+
+                    newAddress.Street = this.textBoxRegisterStreet.Text;
+                    newAddress.State = this.comboBoxState.Text;
+                    newAddress.Zip = Convert.ToInt32(this.textBoxRegisterZipcode.Text);
+                    patientController.registerPatient(newPatient, newAddress);
+                    MessageBox.Show("Patient Registered", "Confirm");
+                    this.ClearText();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Invalid. \n" + ex.Message,
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             // If true, call the controller method, passing the created patient object,
             // which calls the PatientDAL method that creates a new patient in the DB.
@@ -152,8 +170,15 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             this.dataGridViewPatientInfo.DataSource = null;
             this.dataGridViewPatientInfo.Rows.Clear();
+=======
+            Patient newPatient = new Patient();
+            newPatient.FName = this.textBoxFirstName.Text;
+            newPatient.LName = this.textBoxLastName.Text;
+            newPatient.DOB = this.dateTimePickerDOB.Value;
+>>>>>>> e6eb2cce8359b4113badc3159725f8e79b345a46
 
             Patient newPatient = new Patient();
            
@@ -211,7 +236,8 @@ namespace CS6232GroupProject.UserControls
             if (textBoxSummary.Text == "")
             {
                 return false;
-            } else
+            }
+            else
             {
                 return true;
             }

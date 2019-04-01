@@ -72,6 +72,7 @@
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />
+    <Compile Include="Model\Gender.cs" />
     <Compile Include="Model\LabTest.cs" />
     <Compile Include="Model\LabTestResult.cs" />
     <Compile Include="Model\Login.cs" />
