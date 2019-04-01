@@ -311,5 +311,10 @@ namespace CS6232GroupProject.UserControls
         {
 
         }
+
+        private void tabControlNurseMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetComboBox();
+        }
     }
 }
