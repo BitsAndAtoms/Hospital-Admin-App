@@ -504,7 +504,7 @@
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 12;
@@ -761,7 +761,7 @@
             this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
-            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(206, 214);
+            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(206, 211);
             this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
             this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderPatientInfoResult.TabIndex = 21;
@@ -871,7 +871,7 @@
             this.comboBoxPhysician.DisplayMember = "FullName";
             this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(429, 61);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(429, 64);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
@@ -888,7 +888,7 @@
             this.comboBoxPatient.DisplayMember = "FullName";
             this.comboBoxPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatient.FormattingEnabled = true;
-            this.comboBoxPatient.Location = new System.Drawing.Point(429, 11);
+            this.comboBoxPatient.Location = new System.Drawing.Point(429, 14);
             this.comboBoxPatient.Name = "comboBoxPatient";
             this.comboBoxPatient.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPatient.TabIndex = 1;
@@ -1050,7 +1050,7 @@
             this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRegisterGender.FormattingEnabled = true;
-            this.comboBoxRegisterGender.Location = new System.Drawing.Point(429, 214);
+            this.comboBoxRegisterGender.Location = new System.Drawing.Point(429, 211);
             this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
             this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
             this.comboBoxRegisterGender.TabIndex = 6;
@@ -1240,7 +1240,7 @@
             this.comboBoxState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxState.Location = new System.Drawing.Point(3, 29);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 12;

@@ -28,22 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPatientRecords));
-            this.userControlPatientRecords1 = new CS6232GroupProject.UserControls.UserControlPatientRecords();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPatientRecordsAppointment = new System.Windows.Forms.Label();
             this.comboBoxPatientRecordsAppointment = new System.Windows.Forms.ComboBox();
             this.labelPatientRecords = new System.Windows.Forms.Label();
+            this.userControlPatientRecords1 = new CS6232GroupProject.UserControls.UserControlPatientRecords();
+            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // userControlPatientRecords1
-            // 
-            this.userControlPatientRecords1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.userControlPatientRecords1.Location = new System.Drawing.Point(0, 57);
-            this.userControlPatientRecords1.Name = "userControlPatientRecords1";
-            this.userControlPatientRecords1.Size = new System.Drawing.Size(806, 506);
-            this.userControlPatientRecords1.TabIndex = 2;
             // 
             // tableLayoutPanel8
             // 
@@ -78,12 +73,15 @@
             // comboBoxPatientRecordsAppointment
             // 
             this.comboBoxPatientRecordsAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxPatientRecordsAppointment.DataSource = this.appointmentBindingSource;
+            this.comboBoxPatientRecordsAppointment.DisplayMember = "AppointmentDateTime";
             this.comboBoxPatientRecordsAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatientRecordsAppointment.FormattingEnabled = true;
             this.comboBoxPatientRecordsAppointment.Location = new System.Drawing.Point(595, 16);
             this.comboBoxPatientRecordsAppointment.Name = "comboBoxPatientRecordsAppointment";
             this.comboBoxPatientRecordsAppointment.Size = new System.Drawing.Size(179, 21);
             this.comboBoxPatientRecordsAppointment.TabIndex = 2;
+            this.comboBoxPatientRecordsAppointment.ValueMember = "AppointmentID";
             // 
             // labelPatientRecords
             // 
@@ -95,6 +93,18 @@
             this.labelPatientRecords.Size = new System.Drawing.Size(199, 29);
             this.labelPatientRecords.TabIndex = 1;
             this.labelPatientRecords.Text = "Patient Records";
+            // 
+            // userControlPatientRecords1
+            // 
+            this.userControlPatientRecords1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.userControlPatientRecords1.Location = new System.Drawing.Point(0, 57);
+            this.userControlPatientRecords1.Name = "userControlPatientRecords1";
+            this.userControlPatientRecords1.Size = new System.Drawing.Size(806, 506);
+            this.userControlPatientRecords1.TabIndex = 2;
+            // 
+            // appointmentBindingSource
+            // 
+            this.appointmentBindingSource.DataSource = typeof(CS6232GroupProject.Model.Appointment);
             // 
             // FormPatientRecords
             // 
@@ -110,6 +120,7 @@
             this.Text = "ClinicCare - Patient Records";
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,5 +131,6 @@
         private System.Windows.Forms.Label labelPatientRecordsAppointment;
         private System.Windows.Forms.ComboBox comboBoxPatientRecordsAppointment;
         private System.Windows.Forms.Label labelPatientRecords;
+        private System.Windows.Forms.BindingSource appointmentBindingSource;
     }
 }
