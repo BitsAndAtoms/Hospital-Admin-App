@@ -14,7 +14,7 @@ namespace CS6232GroupProject.DAL
             PatientVisit visit = new PatientVisit();
 
             string selectStatement =
-                "SELECT VisitID, AppoitnementID, NurseID, VisitDateTime, Diagnosis, " +
+                "SELECT VisitID, AppoitnementID, NurseID, visitDateTime, Diagnosis, " +
                     "Weight, Systolic, Diastolic, Temperature, Pulse, Symptoms " +
                 "FROM PatientVisit " +
                 "WHERE AppoitnementID = @AppoitnementID";
@@ -32,7 +32,8 @@ namespace CS6232GroupProject.DAL
                             visit.VisitID = (int)reader["VisitID"];
                             visit.AppointmentID = (int)reader["AppoitnementID"];
                             visit.NurseID = (int)reader["NurseID"];
-                            visit.Date = (DateTime)reader["VisitDateTime"];
+                            visit.Date = (DateTime)reader["visitDateTime"];
+                            MessageBox.Show("Date of visit is: " + visit.Date.ToString(), "The INFO");
                             visit.Diagnosis = reader["Diagnosis"].ToString();
                             visit.Weight = (decimal)reader["Weight"];
                             visit.Systolic = (int)reader["Systolic"];
@@ -56,11 +57,11 @@ namespace CS6232GroupProject.DAL
                     "Systolic = @NewSystolic, " +
                     "Diastolic = @NewDiastolic, " +
                     "Temperature = @NewTemperature, " +
-                    "Pulse = @NewPulse, " +
+                    "Pulse = @NewPulse " +
                 "WHERE VisitID = @OldVisitID " +
-                    "AND appointmeneID = @OldAppointmentID " +
+                    "AND appoitnementID = @OldAppointmentID " +
                     "AND visitDateTime = @OldDate " +
-                    "AND Symptoms = @OldSyptoms " +
+                    "AND Symptoms = @OldSymptoms " +
                     "AND Weight = @OldWeight " +
                     "AND Systolic = @OldSystolic " +
                     "AND Diastolic = @OldDiastolic " +
@@ -74,7 +75,7 @@ namespace CS6232GroupProject.DAL
                 using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
                 {
                     
-                    if (newVisit.Symptoms == "")
+                    if (newVisit.Symptoms == "" || newVisit.Symptoms == null)
                     {
                         updatedCommand.Parameters.AddWithValue("@NewSymptoms", DBNull.Value);
                     }
@@ -93,8 +94,17 @@ namespace CS6232GroupProject.DAL
                     
                     updatedCommand.Parameters.AddWithValue("@OldVisitID", oldVisit.VisitID);
                     updatedCommand.Parameters.AddWithValue("@OldAppointmentID", oldVisit.AppointmentID);
-                    updatedCommand.Parameters.AddWithValue("@OldDate", oldVisit.Date);
-                    if (oldVisit.Symptoms == "")
+
+                    if (oldVisit.Date == null)
+                    {
+                        updatedCommand.Parameters.AddWithValue("@OldDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        updatedCommand.Parameters.AddWithValue("@OldDate", oldVisit.Date);
+                    }
+                    
+                    if (oldVisit.Symptoms == "" || oldVisit.Symptoms == null)
                     {
                         updatedCommand.Parameters.AddWithValue("@OldSymptoms", DBNull.Value);
                     }
@@ -108,7 +118,7 @@ namespace CS6232GroupProject.DAL
                     updatedCommand.Parameters.AddWithValue("@OldTemperature", oldVisit.Temperature);
                     updatedCommand.Parameters.AddWithValue("@OldPulse", oldVisit.Pulse);
 
-
+                    MessageBox.Show("It got before the ExecuteNonQuery!", "TEST");//TEST ONLY
                     int count = updatedCommand.ExecuteNonQuery();
 
                     MessageBox.Show("It got here!", "TEST");//TEST ONLY

@@ -37,6 +37,7 @@ namespace CS6232GroupProject.UserControls
                 this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
                 this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
                 this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
+                this.textBoxRoutineChecksSummary.Text = this.visit.Date.ToString();
             }
             catch
             {
@@ -93,35 +94,40 @@ namespace CS6232GroupProject.UserControls
             //SetNewCheckUpInfo();
             try
             {
-                PatientVisit newVisit = new PatientVisit();
-                newVisit.VisitID = this.visit.VisitID;
-                newVisit.AppointmentID = this.visit.AppointmentID;
-                newVisit.NurseID = this.visit.NurseID;
-                newVisit.DoctorID = this.visit.DoctorID;
-                newVisit.Date = this.visit.Date;
-
-                newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
-                newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
-                newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
-                newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
-                newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
                 
-
-                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
-                {
-                    MessageBox.Show("Routine Check information updated!", "Success");
-                }
-                else
-                {
-                    MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
-                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
             }
-            
-            
+            PatientVisit newVisit = new PatientVisit();
+            newVisit.VisitID = this.visit.VisitID;
+            newVisit.AppointmentID = this.visit.AppointmentID;
+            newVisit.NurseID = this.visit.NurseID;
+            newVisit.DoctorID = this.visit.DoctorID;
+            newVisit.Date = this.visit.Date;
+
+            newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
+            newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
+            newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
+            newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
+            newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
+
+            /////////////////////////////////////////////////////////////
+            //string old = textBoxRoutineChecksSummary.Text;
+
+            //textBoxRoutineChecksSummary.Text = newVisit.Date.ToString();
+
+            /////////////////////////////////////////////////////////////
+            if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
+            {
+                MessageBox.Show("Routine Check information updated!", "Success");
+            }
+            else
+            {
+                MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
+            }
+
         }
 
         private void buttonDiagnosisUpdate_Click(object sender, EventArgs e)
