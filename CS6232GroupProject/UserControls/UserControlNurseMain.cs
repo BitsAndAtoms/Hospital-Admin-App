@@ -15,12 +15,11 @@ namespace CS6232GroupProject.UserControls
         public static int patientID { get; set; }
         private List<Doctor> doctorList;
         private List<Patient> patientList;
-        private List<Address> addressList;
+ 
         private DoctorController doctorController;
         private PatientController patientController;
         private AppointmentController appointmentController;
         private AddressController addressController;
-        private Address address;
         private int addressID;
         /// <summary>
         /// Constructor
@@ -209,12 +208,6 @@ namespace CS6232GroupProject.UserControls
             textBoxSSNPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[4].Value.ToString();
             comboBoxGenderPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[5].Value.ToString();
             textBoxPhonePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[6].Value.ToString();
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //  In order for the Zip, Street, and State to be selected, the the info needs to be gotten from the 
-            //  DB and put into the Address class. Then, that list can be linked to the patient info, that info can
-            //  be changed so that it can also be updated.
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             addressID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value;
             textBoxStreetPatientInfoResult.Text = this.addressController.GetAddressByID(addressID).Street;

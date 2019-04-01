@@ -597,8 +597,8 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.98231F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.2217F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.79599F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.13044F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.91788F));
             this.tableLayoutPanel4.Controls.Add(this.labelPhonePatientInfoResult, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.textBoxLastNamePatientInfoResult, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.textBoxFirstNamePatientInfoResult, 1, 0);
@@ -707,11 +707,11 @@
             // 
             // linkLabelRecordsPatientInfoVisitRecords
             // 
-            this.linkLabelRecordsPatientInfoVisitRecords.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.linkLabelRecordsPatientInfoVisitRecords.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelRecordsPatientInfoVisitRecords.AutoSize = true;
             this.linkLabelRecordsPatientInfoVisitRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelRecordsPatientInfoVisitRecords.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelRecordsPatientInfoVisitRecords.Location = new System.Drawing.Point(469, 12);
+            this.linkLabelRecordsPatientInfoVisitRecords.Location = new System.Drawing.Point(450, 12);
             this.linkLabelRecordsPatientInfoVisitRecords.Name = "linkLabelRecordsPatientInfoVisitRecords";
             this.linkLabelRecordsPatientInfoVisitRecords.Size = new System.Drawing.Size(149, 25);
             this.linkLabelRecordsPatientInfoVisitRecords.TabIndex = 18;
@@ -787,15 +787,16 @@
             // 
             // linkLabelPatientInfoBack
             // 
+            this.linkLabelPatientInfoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelPatientInfoBack.AutoSize = true;
             this.linkLabelPatientInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelPatientInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(568, 3);
+            this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(517, 0);
             this.linkLabelPatientInfoBack.Name = "linkLabelPatientInfoBack";
-            this.linkLabelPatientInfoBack.Size = new System.Drawing.Size(56, 25);
+            this.linkLabelPatientInfoBack.Size = new System.Drawing.Size(73, 25);
             this.linkLabelPatientInfoBack.TabIndex = 9;
             this.linkLabelPatientInfoBack.TabStop = true;
-            this.linkLabelPatientInfoBack.Text = "Back";
+            this.linkLabelPatientInfoBack.Text = "< Back";
             this.linkLabelPatientInfoBack.Visible = false;
             this.linkLabelPatientInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelPatientInfoBack_LinkClicked);
             // 
