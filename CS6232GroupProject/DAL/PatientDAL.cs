@@ -55,6 +55,11 @@ namespace CS6232GroupProject.DAL
             return patients;
         }
 
+        internal void updatePatient(Patient newPatient, Address newAddress)
+        {
+            throw new NotImplementedException();
+        }
+
         internal List<Patient> GetSearchPatientsByNameDOB(Patient newPatient)
         {
             List<Patient> patients = new List<Patient>();
