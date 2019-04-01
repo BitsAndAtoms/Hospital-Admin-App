@@ -565,6 +565,7 @@
             this.buttonPatientInfoResultUpdate.TabIndex = 15;
             this.buttonPatientInfoResultUpdate.Text = "Update";
             this.buttonPatientInfoResultUpdate.UseVisualStyleBackColor = false;
+            this.buttonPatientInfoResultUpdate.Click += new System.EventHandler(this.buttonPatientInfoResultUpdate_Click);
             // 
             // linkLabelDeletePatient
             // 

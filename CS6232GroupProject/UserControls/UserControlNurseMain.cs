@@ -326,5 +326,34 @@ namespace CS6232GroupProject.UserControls
         {
             SetComboBox();
         }
+
+        private void buttonPatientInfoResultUpdate_Click(object sender, EventArgs e)
+        {
+            Patient newPatient = new Patient();
+            Address newAddress = new Address();
+            newPatient.FName = this.textBoxFirstNamePatientInfoResult.Text;
+            newPatient.LName = this.textBoxLastNamePatientInfoResult.Text;
+            newPatient.SSN = this.textBoxSSNPatientInfoResult.Text;
+            newPatient.Gender = this.comboBoxGenderPatientInfoResult.Text;
+            newPatient.Phone = this.textBoxPhonePatientInfoResult.Text;
+            newPatient.PatientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+            newAddress.Street = this.textBoxStreetPatientInfoResult.Text;
+            newAddress.Zip = Convert.ToInt32(this.textBoxZipPatientInfoResult.Text);
+            newAddress.State = this.comboBoxStatePatientInfoResult.Text;
+            newAddress.AddressID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value;
+
+            try
+            {
+                patientController.updatePatient(newPatient, newAddress);
+               
+                MessageBox.Show("Patient Updated", "Confirm");
+                this.ClearText();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Invalid. \n" + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

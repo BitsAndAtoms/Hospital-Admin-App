@@ -40,5 +40,10 @@ namespace CS6232GroupProject.Controller
         {
            return this.patientSource.GetSearchPatientsByNameDOB(newPatient);
         }
+
+        internal void updatePatient(Patient newPatient, Address newAddress)
+        {
+            this.patientSource.updatePatient(newPatient,newAddress);
+        }
     }
 }
