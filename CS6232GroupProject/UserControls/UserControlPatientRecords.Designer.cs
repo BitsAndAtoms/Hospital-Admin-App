@@ -263,7 +263,7 @@
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.Enabled = false;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -704,6 +704,7 @@
             this.buttonDiagnosisUpdate.TabIndex = 7;
             this.buttonDiagnosisUpdate.Text = "Update";
             this.buttonDiagnosisUpdate.UseVisualStyleBackColor = false;
+            this.buttonDiagnosisUpdate.Visible = false;
             this.buttonDiagnosisUpdate.Click += new System.EventHandler(this.buttonDiagnosisUpdate_Click);
             // 
             // checkBoxPendingLabTests
@@ -715,6 +716,7 @@
             this.checkBoxPendingLabTests.TabIndex = 4;
             this.checkBoxPendingLabTests.Text = "Pending Lab Test Results";
             this.checkBoxPendingLabTests.UseVisualStyleBackColor = true;
+            this.checkBoxPendingLabTests.Visible = false;
             // 
             // labelDiagnosis
             // 
