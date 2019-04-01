@@ -221,6 +221,18 @@ namespace CS6232GroupProject.UserControls
             panelPatientSearch.Visible = true;
             panelPatientInfoResults.Visible = false;
             linkLabelPatientInfoBack.Visible = false;
+
+            bool isOpen = false;
+            FormPatientRecords formPatientRecords = new FormPatientRecords();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Name == "FormPatientRecords")
+                {
+                    isOpen = false;
+                    form.Close();
+                    break;
+                }
+            }
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
