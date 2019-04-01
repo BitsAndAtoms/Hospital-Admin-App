@@ -11,12 +11,24 @@ namespace CS6232GroupProject.UserControls
 
         private List<Appointment> appointmentList;
         private AppointmentController appointmentController;
+        private DoctorController doctorController;
+        private List<Doctor> doctorList;
+        private Appointment appointment;
+        private int appointmentID;
         public UserControlPatientRecords()
         {
             InitializeComponent();
             this.appointmentController = new AppointmentController();
-            this.appointmentList = new List<Appointment>();
+            this.doctorController = new DoctorController();
             SetComboBox();
+            SetAppointment();
+            
+        }
+
+        private void SetAppointment()
+        {
+            this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
+            this.appointment = this.appointmentController.GetAppointmentByID((int)this.comboBoxPatientRecordsAppointment.SelectedValue);
         }
 
         private void SetComboBox()
@@ -28,6 +40,12 @@ namespace CS6232GroupProject.UserControls
                 //labelPatientRecords.Text = UserControlNurseMain.patientID.ToString();
                 //Form patientRecordsForm = new FormPatientRecords();
                 this.comboBoxPatientRecordsAppointment.DataSource = this.appointmentList;
+
+                this.doctorList = this.doctorController.GetDoctors();
+                this.comboBoxAppointmentsPhysician.DataSource = this.doctorList;
+                
+                //
+                // When the appointment is changed, the doctor combo box value is matched to the appointment's doctorID
 
             }
             catch (Exception ex)
@@ -62,6 +80,14 @@ namespace CS6232GroupProject.UserControls
             // Ensure all fields are filled, pass the updated PatientVist object to the 
             // PatientVist controller, passing the PatientVist object with it, which calls 
             // the PatientVisitDAL method to update the PatientVisit.
+        }
+
+        private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
+            SetAppointment();
+            this.textBoxAppointmentsSummary.Text = this.appointmentID.ToString();
+            this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID; //This breaks the appointment combobox.
         }
     }
 }

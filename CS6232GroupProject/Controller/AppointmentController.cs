@@ -53,5 +53,10 @@ namespace CS6232GroupProject.Controller
         {
             return this.appointmentSource.GetAppointmentsForPatient(patientID);
         }
+
+        public Appointment GetAppointmentByID(int ID)
+        {
+            return this.appointmentSource.GetAppointmentByID(ID);
+        }
     }
 }

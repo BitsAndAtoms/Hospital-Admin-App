@@ -170,5 +170,37 @@ namespace CS6232GroupProject.DAL
             }
             return appointments;
         }
+
+        public Appointment GetAppointmentByID(int appointmentID)
+        {
+
+            Appointment appointment = new Appointment();
+
+            string selectStatement =
+                "SELECT AppointmentID, DoctorID, PatientID,  AppointmentDateTime, Reasons " +
+                "FROM HasAppointment " +
+                "WHERE AppointmentID = @AppointmentID";
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@AppointmentID", appointmentID);
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            appointment.AppointmentID = (int)reader["AppointmentID"];
+                            appointment.DoctorID = (int)reader["DoctorID"];
+                            appointment.PatientID = (int)reader["PatientID"];
+                            appointment.AppointmentDateTime = (DateTime)reader["AppointmentDateTime"];
+                            appointment.Reasons = reader["Reasons"].ToString();
+                        }
+                    }
+                }
+            }
+            return appointment;
+        }
     }
 }

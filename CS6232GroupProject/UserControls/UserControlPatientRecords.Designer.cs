@@ -80,6 +80,7 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPatientRecordsAppointment = new System.Windows.Forms.Label();
             this.comboBoxPatientRecordsAppointment = new System.Windows.Forms.ComboBox();
+            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelPatientRecords = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControlPatientRecords.SuspendLayout();
@@ -99,6 +100,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -760,6 +762,7 @@
             // comboBoxPatientRecordsAppointment
             // 
             this.comboBoxPatientRecordsAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxPatientRecordsAppointment.DataSource = this.appointmentBindingSource;
             this.comboBoxPatientRecordsAppointment.DisplayMember = "AppointmentDateTime";
             this.comboBoxPatientRecordsAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatientRecordsAppointment.FormattingEnabled = true;
@@ -768,6 +771,11 @@
             this.comboBoxPatientRecordsAppointment.Size = new System.Drawing.Size(179, 21);
             this.comboBoxPatientRecordsAppointment.TabIndex = 2;
             this.comboBoxPatientRecordsAppointment.ValueMember = "AppointmentID";
+            this.comboBoxPatientRecordsAppointment.SelectedIndexChanged += new System.EventHandler(this.comboBoxPatientRecordsAppointment_SelectedIndexChanged);
+            // 
+            // appointmentBindingSource
+            // 
+            this.appointmentBindingSource.DataSource = typeof(CS6232GroupProject.Model.Appointment);
             // 
             // labelPatientRecords
             // 
@@ -828,6 +836,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -888,5 +897,6 @@
         private System.Windows.Forms.ComboBox comboBoxPatientRecordsAppointment;
         private System.Windows.Forms.Label labelPatientRecords;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource appointmentBindingSource;
     }
 }
