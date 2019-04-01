@@ -188,6 +188,7 @@ namespace CS6232GroupProject.UserControls
 
         void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            panelPatientSearch.Visible = false;
             panelPatientInfoResults.Visible = true;
             linkLabelPatientInfoBack.Visible = true;
 
@@ -204,6 +205,7 @@ namespace CS6232GroupProject.UserControls
 
         private void linkLabelPatientInfoBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            panelPatientSearch.Visible = true;
             panelPatientInfoResults.Visible = false;
             linkLabelPatientInfoBack.Visible = false;
             /// 
