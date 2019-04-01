@@ -12,6 +12,7 @@ namespace CS6232GroupProject.UserControls
     public partial class UserControlNurseMain : UserControl
     {
 
+        public static int patientID { get; set; }
         private List<Doctor> doctorList;
         private List<Patient> patientList;
         private DoctorController doctorController;
@@ -201,6 +202,7 @@ namespace CS6232GroupProject.UserControls
             textBoxStreetPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value.ToString();
             //comboBoxStatePatientInfoResult.SelectedValue = this.dataGridViewPatientInfo.CurrentRow.Cells[8].Value.ToString();
             //textBoxZipPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[9].Value.ToString();
+            patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
         }
 
         private void linkLabelPatientInfoBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

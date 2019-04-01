@@ -132,7 +132,7 @@ namespace CS6232GroupProject.DAL
             return appointments;
         }
 
-        public List<Appointment> GetAppointmentsForPatient(Patient patient)
+        public List<Appointment> GetAppointmentsForPatient(int patientID)
         {
 
             List<Appointment> appointments = new List<Appointment>();
@@ -147,7 +147,7 @@ namespace CS6232GroupProject.DAL
 
                 using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
                 {
-                    selectCommand.Parameters.AddWithValue("@PatientID", patient.PatientID);
+                    selectCommand.Parameters.AddWithValue("@PatientID", patientID);
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())

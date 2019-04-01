@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.Controller;
 using CS6232GroupProject.Model;
+using CS6232GroupProject.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace CS6232GroupProject.View
         {
             InitializeComponent();
             this.appointmentController = new AppointmentController();
+            this.appointmentList = new List<Appointment>();
             SetComboBox();
         }
 
@@ -21,9 +23,11 @@ namespace CS6232GroupProject.View
         {
             try
             {
-                appointmentList = this.appointmentController.GetAppointments();
+                //Get the patient
+                this.appointmentList = this.appointmentController.GetAppointmentsForPatient(UserControlNurseMain.patientID);
+                //labelPatientRecords.Text = UserControlNurseMain.patientID.ToString();
                 //Form patientRecordsForm = new FormPatientRecords();
-                this.comboBoxPatientRecordsAppointment.DataSource = appointmentList;
+                this.comboBoxPatientRecordsAppointment.DataSource = this.appointmentList;
 
             }
             catch (Exception ex)
