@@ -180,7 +180,7 @@ namespace CS6232GroupProject.UserControls
              newPatient.DOB = this.dateTimePickerDOB.Value;
             
                 this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
-            if (this.dataGridViewPatientInfo.Rows.Count > 1) {
+            if (this.dataGridViewPatientInfo.Rows.Count > 0) {
                 panelPatientInfoResults.Visible = true;
                 linkLabelPatientInfoBack.Visible = true;
             }
