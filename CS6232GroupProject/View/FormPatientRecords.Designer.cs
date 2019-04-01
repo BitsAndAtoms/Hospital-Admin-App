@@ -47,10 +47,11 @@
             // 
             // userControlPatientRecords1
             // 
-            this.userControlPatientRecords1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControlPatientRecords1.BackColor = System.Drawing.Color.White;
+            this.userControlPatientRecords1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlPatientRecords1.Location = new System.Drawing.Point(0, 0);
             this.userControlPatientRecords1.Name = "userControlPatientRecords1";
-            this.userControlPatientRecords1.Size = new System.Drawing.Size(806, 506);
+            this.userControlPatientRecords1.Size = new System.Drawing.Size(806, 563);
             this.userControlPatientRecords1.TabIndex = 2;
             // 
             // FormPatientRecords
