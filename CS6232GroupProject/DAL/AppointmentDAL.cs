@@ -105,7 +105,8 @@ namespace CS6232GroupProject.DAL
             List<Appointment> appointments = new List<Appointment>();
 
             string selectStatement =
-                "SELECT * FROM HasAppointment;";
+                "SELECT AppointmentID, DoctorID, PatientID,  AppointmentDateTime, Reasons " + 
+                "FROM HasAppointment";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -119,7 +120,10 @@ namespace CS6232GroupProject.DAL
                         {
                             Appointment appointment = new Appointment();
                             appointment.AppointmentID = (int)reader["AppointmentID"];
+                            appointment.DoctorID = (int)reader["DoctorID"];
+                            appointment.PatientID = (int)reader["PatientID"];
                             appointment.AppointmentDateTime = (DateTime)reader["AppointmentDateTime"];
+                            appointment.Reasons = reader["Reasons"].ToString();
                             appointments.Add(appointment);
                         }
                     }
