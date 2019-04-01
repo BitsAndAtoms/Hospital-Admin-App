@@ -23,7 +23,7 @@ namespace CS6232GroupProject.View
             {
                 appointmentList = this.appointmentController.GetAppointments();
                 //Form patientRecordsForm = new FormPatientRecords();
-                this.comboBoxPatientRecordsAppointment.DataSource = appointmentController;
+                this.comboBoxPatientRecordsAppointment.DataSource = appointmentList;
 
             }
             catch (Exception ex)
