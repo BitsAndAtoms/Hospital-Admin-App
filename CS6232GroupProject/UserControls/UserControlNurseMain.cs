@@ -219,7 +219,7 @@ namespace CS6232GroupProject.UserControls
             addressID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value;
             textBoxStreetPatientInfoResult.Text = this.addressController.GetAddressByID(addressID).Street;
             comboBoxStatePatientInfoResult.Text = this.addressController.GetAddressByID(addressID).State;
-            //textBoxZipPatientInfoResult.Text = this.addressController.GetAddressByID(addressID).Zip;
+            textBoxZipPatientInfoResult.Text =  Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
             patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
         }
 
