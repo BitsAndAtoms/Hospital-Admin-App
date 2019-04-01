@@ -12,14 +12,17 @@ namespace CS6232GroupProject.UserControls
         private List<Appointment> appointmentList;
         private AppointmentController appointmentController;
         private DoctorController doctorController;
+        private PatientVisitController visitController;
         private List<Doctor> doctorList;
         private Appointment appointment;
+        private PatientVisit visit;
         private int appointmentID;
         public UserControlPatientRecords()
         {
             InitializeComponent();
             this.appointmentController = new AppointmentController();
             this.doctorController = new DoctorController();
+            this.visitController = new PatientVisitController();
             SetComboBox();
             SetAppointment();
             
@@ -28,10 +31,16 @@ namespace CS6232GroupProject.UserControls
         private void SetAppointment()
         {
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
-            this.appointment = this.appointmentController.GetAppointmentByID((int)this.comboBoxPatientRecordsAppointment.SelectedValue);
+            //this.appointment = this.appointmentController.GetAppointmentByID((int)this.comboBoxPatientRecordsAppointment.SelectedValue);
+            this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
+            this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
         }
 
+        private void SetPatientVisit()
+        {
+
+        }
         private void SetComboBox()
         {
             try
@@ -45,6 +54,7 @@ namespace CS6232GroupProject.UserControls
                 this.doctorList = this.doctorController.GetDoctors();
                 this.comboBoxAppointmentsPhysician.DataSource = this.doctorList;
                 
+
                 //
                 // When the appointment is changed, the doctor combo box value is matched to the appointment's doctorID
 
@@ -87,10 +97,19 @@ namespace CS6232GroupProject.UserControls
         {
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
             SetAppointment();
+            SetPatientVisit();
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
             this.textBoxAppointmentsSummary.Text = this.appointment.Reasons;
             this.dateTimePickerAppointments.Value = (DateTime)this.appointment.AppointmentDateTime;
             this.dateTimePickerAppointmentsTime.Value = (DateTime)this.appointment.AppointmentDateTime;
+
+            this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
+            this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
+            this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
+            this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
+            this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
+            this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
+            this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
         }
     }
 }
