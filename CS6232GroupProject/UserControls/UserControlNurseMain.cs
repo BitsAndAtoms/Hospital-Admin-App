@@ -241,8 +241,8 @@ namespace CS6232GroupProject.UserControls
                     Appointment appointment = new Appointment();
                     appointment.PatientID = Convert.ToInt32(comboBoxPatient.SelectedValue);
                     appointment.DoctorID = Convert.ToInt32(comboBoxPhysician.SelectedValue);
-                    appointment.Date = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
-                    appointment.Reason = reason;
+                    appointment.AppointmentDateTime = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
+                    appointment.Reasons = reason;
 
                     if (this.appointmentController.CheckAvailability(appointment))
                     {
@@ -259,12 +259,12 @@ namespace CS6232GroupProject.UserControls
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("There was an issue creating the Appointment!", "Appointment Creation Error!");
+                    MessageBox.Show("There was an issue creating the Appointment!" + ex.Message, "Appointment Creation Error!");
                 }
             }
             else
             {
-                MessageBox.Show("Please enter a Resaon", "Missing Information!");
+                MessageBox.Show("Please enter a Reason", "Missing Information!");
             }
         }
 

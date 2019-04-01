@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.DAL;
 using CS6232GroupProject.Model;
+using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
 {
@@ -41,6 +42,11 @@ namespace CS6232GroupProject.Controller
         public bool CheckAvailability(Appointment appointment)
         {
             return this.appointmentSource.CheckAvailability(appointment);
+        }
+
+        public List<Appointment> GetAppointments()
+        {
+            return this.appointmentSource.GetAppointments();
         }
     }
 }

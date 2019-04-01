@@ -32,7 +32,7 @@
             this.userControlPatientRecords1 = new CS6232GroupProject.UserControls.UserControlPatientRecords();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPatientRecordsAppointment = new System.Windows.Forms.Label();
-            this.comboBoxRoutineCheckAppointment = new System.Windows.Forms.ComboBox();
+            this.comboBoxPatientRecordsAppointment = new System.Windows.Forms.ComboBox();
             this.labelPatientRecords = new System.Windows.Forms.Label();
             this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Controls.Add(this.labelPatientRecordsAppointment, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.comboBoxRoutineCheckAppointment, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.comboBoxPatientRecordsAppointment, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.labelPatientRecords, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
@@ -75,15 +75,15 @@
             this.labelPatientRecordsAppointment.TabIndex = 12;
             this.labelPatientRecordsAppointment.Text = "Select Appointment";
             // 
-            // comboBoxRoutineCheckAppointment
+            // comboBoxPatientRecordsAppointment
             // 
-            this.comboBoxRoutineCheckAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxRoutineCheckAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRoutineCheckAppointment.FormattingEnabled = true;
-            this.comboBoxRoutineCheckAppointment.Location = new System.Drawing.Point(595, 16);
-            this.comboBoxRoutineCheckAppointment.Name = "comboBoxRoutineCheckAppointment";
-            this.comboBoxRoutineCheckAppointment.Size = new System.Drawing.Size(179, 21);
-            this.comboBoxRoutineCheckAppointment.TabIndex = 2;
+            this.comboBoxPatientRecordsAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxPatientRecordsAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPatientRecordsAppointment.FormattingEnabled = true;
+            this.comboBoxPatientRecordsAppointment.Location = new System.Drawing.Point(595, 16);
+            this.comboBoxPatientRecordsAppointment.Name = "comboBoxPatientRecordsAppointment";
+            this.comboBoxPatientRecordsAppointment.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxPatientRecordsAppointment.TabIndex = 2;
             // 
             // labelPatientRecords
             // 
@@ -118,7 +118,7 @@
         private UserControls.UserControlPatientRecords userControlPatientRecords1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label labelPatientRecordsAppointment;
-        private System.Windows.Forms.ComboBox comboBoxRoutineCheckAppointment;
+        private System.Windows.Forms.ComboBox comboBoxPatientRecordsAppointment;
         private System.Windows.Forms.Label labelPatientRecords;
     }
 }

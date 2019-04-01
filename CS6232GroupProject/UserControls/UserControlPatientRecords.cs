@@ -1,27 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CS6232GroupProject.Controller;
 using CS6232GroupProject.Model;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
 {
     public partial class UserControlPatientRecords : UserControl
     {
+
+        private List<Doctor> doctorList;
+        private List<Patient> patientList;
+        private DoctorController doctorController;
+        private PatientController patientController;
+        private AppointmentController appointmentController;
+
         public UserControlPatientRecords()
         {
             InitializeComponent();
+            this.doctorController = new DoctorController();
+            this.patientController = new PatientController();
+            this.appointmentController = new AppointmentController();
+            SetComboBox();
         }
 
         // Updating a Patient Appointment isn't yet required.
         //
         // The patient dropdown should be bound to a list of patients with appointments from 
         // the PatientDAL, a new method that gets a list of patients with appointments. 
+
+
+        private void SetComboBox()
+        {
+            try
+            {
+
+                patientList = this.patientController.GetPatients();
+                this.comboBoxAppointmentsPatient.DataSource = patientList;
+
+                doctorList = this.doctorController.GetDoctors();
+                this.comboBoxAppointmentsPhysician.DataSource = doctorList;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+        }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {

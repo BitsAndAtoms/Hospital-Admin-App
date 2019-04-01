@@ -1,7 +1,7 @@
 ﻿using CS6232GroupProject.Model;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -36,7 +36,7 @@ namespace CS6232GroupProject.DAL
                 {
                     
                     selectCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
-                    selectCommand.Parameters.AddWithValue("@Date", appointment.Date);
+                    selectCommand.Parameters.AddWithValue("@Date", appointment.AppointmentDateTime);
 
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
@@ -81,8 +81,8 @@ namespace CS6232GroupProject.DAL
                 {
                     insertCommand.Parameters.AddWithValue("@PatientID", appointment.PatientID);
                     insertCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
-                    insertCommand.Parameters.AddWithValue("@Date", appointment.Date);
-                    insertCommand.Parameters.AddWithValue("@Reason", appointment.Reason);
+                    insertCommand.Parameters.AddWithValue("@Date", appointment.AppointmentDateTime);
+                    insertCommand.Parameters.AddWithValue("@Reason", appointment.Reasons);
                     insertCommand.ExecuteNonQuery();
 
                     // This is the issue!
@@ -94,6 +94,37 @@ namespace CS6232GroupProject.DAL
                     return appointmentID;
                 }
             }
+        }
+
+        /// <summary>
+        /// Return list of Appointments
+        /// </summary>
+        /// <returns></returns>
+        public List<Appointment> GetAppointments()
+        {
+            List<Appointment> appointments = new List<Appointment>();
+
+            string selectStatement =
+                "SELECT * FROM HasAppointment;";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Appointment appointment = new Appointment();
+                            appointment.AppointmentID = (int)reader["AppointmentID"];
+                            appointments.Add(appointment);
+                        }
+                    }
+                }
+            }
+            return appointments;
         }
     }
 }

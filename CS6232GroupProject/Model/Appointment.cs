@@ -10,7 +10,7 @@ namespace CS6232GroupProject.Model
         public int AppointmentID { get; set; }
         public int DoctorID { get; set; }
         public int PatientID { get; set; }
-        public DateTime? Date { get; set; }
-        public string Reason { get; set; }
+        public DateTime? AppointmentDateTime { get; set; }
+        public string Reasons { get; set; }
     }
 }
