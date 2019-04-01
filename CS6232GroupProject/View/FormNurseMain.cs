@@ -26,7 +26,7 @@ namespace CS6232GroupProject.View
         ///// </summary>
         public void setUserNameDisplay(string userName)
         {
-            this.labelName.Text = "Welcome! " + userName;
+            this.labelName.Text = "Welcome " + userName + "!";
         }
 
         private void linkLabelLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

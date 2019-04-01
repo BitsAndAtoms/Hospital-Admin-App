@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CS6232GroupProject.Controller;
+using CS6232GroupProject.Model;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
@@ -6,10 +9,31 @@ namespace CS6232GroupProject.UserControls
     public partial class UserControlPatientRecords : UserControl
     {
 
-    
+        private List<Appointment> appointmentList;
+        private AppointmentController appointmentController;
         public UserControlPatientRecords()
         {
             InitializeComponent();
+            this.appointmentController = new AppointmentController();
+            this.appointmentList = new List<Appointment>();
+            SetComboBox();
+        }
+
+        private void SetComboBox()
+        {
+            try
+            {
+                //Get the patient
+                this.appointmentList = this.appointmentController.GetAppointmentsForPatient(UserControlNurseMain.patientID);
+                //labelPatientRecords.Text = UserControlNurseMain.patientID.ToString();
+                //Form patientRecordsForm = new FormPatientRecords();
+                this.comboBoxPatientRecordsAppointment.DataSource = this.appointmentList;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
 
         // Updating a Patient Appointment isn't yet required.

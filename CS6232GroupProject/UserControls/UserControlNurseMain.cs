@@ -257,6 +257,7 @@ namespace CS6232GroupProject.UserControls
                 return true;
             }
         }
+
         private void buttonBookSubmit_Click(object sender, EventArgs e)
         {
             if (CheckBookApointmentFields())

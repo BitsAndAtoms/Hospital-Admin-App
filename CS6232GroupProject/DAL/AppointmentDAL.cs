@@ -132,6 +132,11 @@ namespace CS6232GroupProject.DAL
             return appointments;
         }
 
+        /// <summary>
+        /// Get Appointment with associated Patient
+        /// </summary>
+        /// <param name="patientID"></param>
+        /// <returns></returns>
         public List<Appointment> GetAppointmentsForPatient(int patientID)
         {
 
