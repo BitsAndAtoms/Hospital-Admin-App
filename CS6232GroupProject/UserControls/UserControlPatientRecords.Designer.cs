@@ -258,7 +258,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -302,7 +302,7 @@
             this.tabPageRoutineChecks.Location = new System.Drawing.Point(4, 29);
             this.tabPageRoutineChecks.Name = "tabPageRoutineChecks";
             this.tabPageRoutineChecks.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRoutineChecks.Size = new System.Drawing.Size(831, 498);
+            this.tabPageRoutineChecks.Size = new System.Drawing.Size(831, 501);
             this.tabPageRoutineChecks.TabIndex = 0;
             this.tabPageRoutineChecks.Text = "Routine Checks";
             this.tabPageRoutineChecks.UseVisualStyleBackColor = true;
@@ -584,7 +584,7 @@
             this.tabPageDiagnosis.Location = new System.Drawing.Point(4, 29);
             this.tabPageDiagnosis.Name = "tabPageDiagnosis";
             this.tabPageDiagnosis.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDiagnosis.Size = new System.Drawing.Size(831, 498);
+            this.tabPageDiagnosis.Size = new System.Drawing.Size(831, 501);
             this.tabPageDiagnosis.TabIndex = 1;
             this.tabPageDiagnosis.Text = "Diagnosis";
             this.tabPageDiagnosis.UseVisualStyleBackColor = true;
