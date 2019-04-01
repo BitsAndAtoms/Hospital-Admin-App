@@ -35,5 +35,10 @@ namespace CS6232GroupProject.Controller
         {
             this.patientSource.registerPatientInDB(newPatient, newAddress);
         }
+
+        public List<Patient> getPatientInformation(Patient newPatient)
+        {
+           return this.patientSource.GetSearchPatientsByNameDOB(newPatient);
+        }
     }
 }

@@ -152,13 +152,17 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            Patient newPatient = new Patient();
-            newPatient.FName= this.textBoxFirstName.Text;
-            newPatient.LName = this.textBoxLastName.Text;
-            newPatient.DOB=this.dateTimePickerDOB.Value;
+            this.dataGridViewPatientInfo.DataSource = null;
+            this.dataGridViewPatientInfo.Rows.Clear();
 
-            panelPatientInfoResults.Visible = true;
-            linkLabelPatientInfoBack.Visible = true;
+            Patient newPatient = new Patient();
+           
+                newPatient.FName = this.textBoxFirstName.Text;
+                newPatient.LName = this.textBoxLastName.Text;
+                newPatient.DOB = this.dateTimePickerDOB.Value;
+                this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
+                panelPatientInfoResults.Visible = true;
+                linkLabelPatientInfoBack.Visible = true;
             /// when selected and conditions approved, Patient Info results panel and back button should then be visible
         }
 

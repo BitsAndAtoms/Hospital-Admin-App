@@ -54,6 +54,84 @@ namespace CS6232GroupProject.DAL
             return patients;
         }
 
+        internal List<Patient> GetSearchPatientsByNameDOB(Patient newPatient)
+        {
+            List<Patient> patients = new List<Patient>();
+            string selectStatement;
+            if (!String.IsNullOrEmpty(newPatient.FName) && !String.IsNullOrEmpty(newPatient.LName)){
+                selectStatement =
+                "SELECT PatientID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
+                "FROM Patient " +
+                "WHERE Fname = @fname AND Lname = @lname";
+            } else if (!String.IsNullOrEmpty(newPatient.LName))
+                {
+                    selectStatement =
+                    "SELECT PatientID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
+                    "FROM Patient " +
+                    "WHERE Lname = @lname AND DOB = @dob";
+                } else 
+                {
+                selectStatement =
+                "SELECT PatientID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
+                "FROM Patient " +
+                "WHERE DOB = @dob";
+            }
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    if (newPatient.FName == null)
+                    {
+                        selectCommand.Parameters.AddWithValue("@fname", DBNull.Value);
+                    }
+                    else
+                    {
+                        selectCommand.Parameters.AddWithValue("@fname", newPatient.FName);
+                    }
+                    if (newPatient.LName == null)
+                    {
+                        selectCommand.Parameters.AddWithValue("@lname", DBNull.Value);
+                    }
+                    else
+                    {
+                        selectCommand.Parameters.AddWithValue("@lname", newPatient.LName);
+                    }
+                    if (newPatient.DOB == null)
+                    {
+                        selectCommand.Parameters.AddWithValue("@dob", DBNull.Value);
+                    }
+                    else
+                    {
+                        selectCommand.Parameters.AddWithValue("@dob", newPatient.DOB.Value.Date);
+                    }
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Patient patient = new Patient();
+                            patient.PatientID = (int)reader["PatientID"];
+                            patient.FName = reader["Fname"].ToString();
+                            patient.LName = reader["Lname"].ToString();
+                            patient.FullName = reader["Full Name"].ToString();
+                            patient.DOB = (DateTime)reader["DOB"];
+                            patient.SSN = reader["SSN"].ToString();
+                            patient.Gender = reader["Gender"].ToString();
+                            patient.Phone = reader["Phone"].ToString();
+                            patient.AddressID = (int)reader["AddressID"];
+                            patients.Add(patient);
+
+                        }
+                    }
+                }
+            }
+            return patients;
+        }
+
         internal void registerPatientInDB(Patient newPatient, Address newAddress)
         {
             string updateStatement = 
