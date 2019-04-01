@@ -105,7 +105,7 @@ namespace CS6232GroupProject.DAL
             List<Appointment> appointments = new List<Appointment>();
 
             string selectStatement =
-                "SELECT * FROM HasAppointment;";
+                "SELECT AppointmentID FROM HasAppointment;";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {

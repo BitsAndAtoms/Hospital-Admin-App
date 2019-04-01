@@ -180,13 +180,26 @@ namespace CS6232GroupProject.UserControls
              newPatient.DOB = this.dateTimePickerDOB.Value;
             
                 this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
-            if (this.dataGridViewPatientInfo.Rows.Count > 0) {
-                panelPatientInfoResults.Visible = true;
-                linkLabelPatientInfoBack.Visible = true;
-            }
+ 
                 
            
             /// when selected and conditions approved, Patient Info results panel and back button should then be visible
+        }
+
+        void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            panelPatientInfoResults.Visible = true;
+            linkLabelPatientInfoBack.Visible = true;
+
+            textBoxFirstNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
+            textBoxLastNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
+            dateTimePickerDOBPatientInfoResult.Value = Convert.ToDateTime(this.dataGridViewPatientInfo.CurrentRow.Cells[3].Value);
+            textBoxSSNPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[4].Value.ToString();
+            comboBoxGenderPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[5].Value.ToString();
+            textBoxPhonePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[6].Value.ToString();
+            textBoxStreetPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value.ToString();
+            //comboBoxStatePatientInfoResult.SelectedValue = this.dataGridViewPatientInfo.CurrentRow.Cells[8].Value.ToString();
+            //textBoxZipPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[9].Value.ToString();
         }
 
         private void linkLabelPatientInfoBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

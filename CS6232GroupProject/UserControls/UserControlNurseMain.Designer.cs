@@ -224,6 +224,7 @@
             this.dataGridViewPatientInfo.ReadOnly = true;
             this.dataGridViewPatientInfo.Size = new System.Drawing.Size(661, 366);
             this.dataGridViewPatientInfo.TabIndex = 5;
+            this.dataGridViewPatientInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // patientIDDataGridViewTextBoxColumn
             // 

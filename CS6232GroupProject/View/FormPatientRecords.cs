@@ -22,7 +22,6 @@ namespace CS6232GroupProject.View
             try
             {
                 appointmentList = this.appointmentController.GetAppointments();
-                Form patientRecordsForm = new FormPatientRecords();
                 this.comboBoxPatientRecordsAppointment.DataSource = appointmentController;
 
             }

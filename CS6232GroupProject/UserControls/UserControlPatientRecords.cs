@@ -1,7 +1,4 @@
-﻿using CS6232GroupProject.Controller;
-using CS6232GroupProject.Model;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
@@ -9,19 +6,10 @@ namespace CS6232GroupProject.UserControls
     public partial class UserControlPatientRecords : UserControl
     {
 
-        private List<Doctor> doctorList;
-        private List<Patient> patientList;
-        private DoctorController doctorController;
-        private PatientController patientController;
-        private AppointmentController appointmentController;
-
+    
         public UserControlPatientRecords()
         {
             InitializeComponent();
-            this.doctorController = new DoctorController();
-            this.patientController = new PatientController();
-            this.appointmentController = new AppointmentController();
-            SetComboBox();
         }
 
         // Updating a Patient Appointment isn't yet required.
@@ -30,33 +18,6 @@ namespace CS6232GroupProject.UserControls
         // the PatientDAL, a new method that gets a list of patients with appointments. 
 
 
-        private void SetComboBox()
-        {
-            try
-            {
-
-                patientList = this.patientController.GetPatients();
-                this.comboBoxAppointmentsPatient.DataSource = patientList;
-
-                doctorList = this.doctorController.GetDoctors();
-                this.comboBoxAppointmentsPhysician.DataSource = doctorList;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-        }
-
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabelPatientInfoBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
 
         private void buttonAppointmentsUpdate_Click(object sender, EventArgs e)
         {
