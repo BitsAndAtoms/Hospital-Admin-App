@@ -29,6 +29,7 @@ namespace CS6232GroupProject.UserControls
         {
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
             this.appointment = this.appointmentController.GetAppointmentByID((int)this.comboBoxPatientRecordsAppointment.SelectedValue);
+            this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
         }
 
         private void SetComboBox()
@@ -86,8 +87,8 @@ namespace CS6232GroupProject.UserControls
         {
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
             SetAppointment();
-            this.textBoxAppointmentsSummary.Text = this.appointmentID.ToString();
-            this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID; //This breaks the appointment combobox.
+            //this.textBoxAppointmentsSummary.Text = this.appointmentID.ToString();
+            this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
         }
     }
 }
