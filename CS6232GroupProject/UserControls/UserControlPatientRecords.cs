@@ -30,11 +30,18 @@ namespace CS6232GroupProject.UserControls
 
         private void SetAppointment()
         {
-            this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
-            //this.appointment = this.appointmentController.GetAppointmentByID((int)this.comboBoxPatientRecordsAppointment.SelectedValue);
-            this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
-            this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
-            this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
+            try
+            {
+                this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
+                //this.appointment = this.appointmentController.GetAppointmentByID((int)this.comboBoxPatientRecordsAppointment.SelectedValue);
+                this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
+                this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
+                this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
+            }
+            catch
+            {
+                MessageBox.Show("This patient has no appointments.");
+            }
         }
 
         private void SetPatientVisit()
