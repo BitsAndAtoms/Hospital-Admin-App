@@ -89,6 +89,7 @@ namespace CS6232GroupProject.UserControls
             SetAppointment();
             //this.textBoxAppointmentsSummary.Text = this.appointmentID.ToString();
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
+            this.textBoxAppointmentsSummary.Text = this.appointment.Reasons;
         }
     }
 }
