@@ -89,7 +89,38 @@ namespace CS6232GroupProject.UserControls
             //Get the Patient visit from the Appointment class' AppointmentID, then get the PatientVisit object.
             // Update that PatientVisit object then pass it to the UpdatePatientVisit method via contoller, 
             // then to the PatientVisitDAL method.
+            // PLACEHOLDER FOR A METHOD TO HOLD ALL OF THIS INFO
+            //SetNewCheckUpInfo();
+            try
+            {
+                PatientVisit newVisit = new PatientVisit();
+                newVisit.VisitID = this.visit.VisitID;
+                newVisit.AppointmentID = this.visit.AppointmentID;
+                newVisit.NurseID = this.visit.NurseID;
+                newVisit.DoctorID = this.visit.DoctorID;
+                newVisit.Date = this.visit.Date;
 
+                newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
+                newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
+                newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
+                newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
+                newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
+                
+
+                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
+                {
+                    MessageBox.Show("Routine Check information updated!", "Success");
+                }
+                else
+                {
+                    MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
+            }
+            
             
         }
 

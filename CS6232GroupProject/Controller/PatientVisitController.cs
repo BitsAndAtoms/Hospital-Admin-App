@@ -16,5 +16,10 @@ namespace CS6232GroupProject.Controller
         {
             return this.visitSource.GetPatientVisitInfoByAppointment(appointmentID);
         }
+
+        public bool UpdateRoutineCheck(PatientVisit newVisit, PatientVisit oldVisit)
+        {
+            return this.visitSource.UpdateRoutineCheck(newVisit, oldVisit);
+        }
     }
 }

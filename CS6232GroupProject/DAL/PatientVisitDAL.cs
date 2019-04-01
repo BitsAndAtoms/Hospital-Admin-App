@@ -1,6 +1,7 @@
 ﻿using CS6232GroupProject.Model;
 using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -44,6 +45,83 @@ namespace CS6232GroupProject.DAL
                 }
             }
             return visit;
+        }
+
+        public bool UpdateRoutineCheck(PatientVisit newVisit, PatientVisit oldVisit)
+        {
+            string updateStatement =
+                "UPDATE PatientVisit SET " +
+                    "Symptoms = @NewSymptoms, " +
+                    "Weight = @NewWeight, " +
+                    "Systolic = @NewSystolic, " +
+                    "Diastolic = @NewDiastolic, " +
+                    "Temperature = @NewTemperature, " +
+                    "Pulse = @NewPulse, " +
+                "WHERE VisitID = @OldVisitID " +
+                    "AND appointmeneID = @OldAppointmentID " +
+                    "AND visitDateTime = @OldDate " +
+                    "AND Symptoms = @OldSyptoms " +
+                    "AND Weight = @OldWeight " +
+                    "AND Systolic = @OldSystolic " +
+                    "AND Diastolic = @OldDiastolic " +
+                    "AND Temperature = @OldTemperature " +
+                    "AND Pulse = @OldPulse ";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
+                {
+                    
+                    if (newVisit.Symptoms == "")
+                    {
+                        updatedCommand.Parameters.AddWithValue("@NewSymptoms", DBNull.Value);
+                    }
+                    else
+                    {
+                        updatedCommand.Parameters.AddWithValue("@NewSymptoms", newVisit.Symptoms);
+                    }
+                    
+                    updatedCommand.Parameters.AddWithValue("@NewWeight", newVisit.Weight);
+                    updatedCommand.Parameters.AddWithValue("@NewSystolic", newVisit.Systolic);
+                    updatedCommand.Parameters.AddWithValue("@NewDiastolic", newVisit.Diastolic);
+                    updatedCommand.Parameters.AddWithValue("@NewTemperature", newVisit.Temperature);
+                    updatedCommand.Parameters.AddWithValue("@NewPulse", newVisit.Pulse);
+
+
+                    
+                    updatedCommand.Parameters.AddWithValue("@OldVisitID", oldVisit.VisitID);
+                    updatedCommand.Parameters.AddWithValue("@OldAppointmentID", oldVisit.AppointmentID);
+                    updatedCommand.Parameters.AddWithValue("@OldDate", oldVisit.Date);
+                    if (oldVisit.Symptoms == "")
+                    {
+                        updatedCommand.Parameters.AddWithValue("@OldSymptoms", DBNull.Value);
+                    }
+                    else
+                    {
+                        updatedCommand.Parameters.AddWithValue("@OldSymptoms", oldVisit.Symptoms);
+                    }
+                    updatedCommand.Parameters.AddWithValue("@OldWeight", oldVisit.Weight);
+                    updatedCommand.Parameters.AddWithValue("@OldSystolic", oldVisit.Systolic);
+                    updatedCommand.Parameters.AddWithValue("@OldDiastolic", oldVisit.Diastolic);
+                    updatedCommand.Parameters.AddWithValue("@OldTemperature", oldVisit.Temperature);
+                    updatedCommand.Parameters.AddWithValue("@OldPulse", oldVisit.Pulse);
+
+
+                    int count = updatedCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("It got here!", "TEST");//TEST ONLY
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
     }
 }
