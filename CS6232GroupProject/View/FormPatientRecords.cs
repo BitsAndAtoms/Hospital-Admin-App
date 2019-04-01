@@ -25,7 +25,6 @@ namespace CS6232GroupProject.View
             {
                 //Get the patient
                 this.appointmentList = this.appointmentController.GetAppointmentsForPatient(UserControlNurseMain.patientID);
-                //labelPatientRecords.Text = UserControlNurseMain.patientID.ToString();
                 //Form patientRecordsForm = new FormPatientRecords();
                 this.comboBoxPatientRecordsAppointment.DataSource = this.appointmentList;
 

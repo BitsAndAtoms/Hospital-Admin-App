@@ -36,7 +36,6 @@
             this.dateTimePickerAppointmentsTime = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerAppointments = new System.Windows.Forms.DateTimePicker();
             this.textBoxAppointmentsSummary = new System.Windows.Forms.TextBox();
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelAppointmentsSummary = new System.Windows.Forms.Label();
             this.labelAppointmentsPhysician = new System.Windows.Forms.Label();
             this.buttonAppointmentsUpdate = new System.Windows.Forms.Button();
@@ -77,11 +76,11 @@
             this.buttonDiagnosisUpdate = new System.Windows.Forms.Button();
             this.checkBoxPendingLabTests = new System.Windows.Forms.CheckBox();
             this.labelDiagnosis = new System.Windows.Forms.Label();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageAppointments.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             this.tabPageRoutineChecks.SuspendLayout();
             this.tableLayoutRoutineChecks.SuspendLayout();
@@ -93,6 +92,7 @@
             this.tableLayoutPanelDiagnosis.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlPatientRecords
@@ -190,10 +190,6 @@
             this.textBoxAppointmentsSummary.Size = new System.Drawing.Size(427, 121);
             this.textBoxAppointmentsSummary.TabIndex = 6;
             // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataSource = typeof(CS6232GroupProject.Model.Patient);
-            // 
             // labelAppointmentsSummary
             // 
             this.labelAppointmentsSummary.AutoSize = true;
@@ -255,7 +251,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -720,6 +716,10 @@
             this.labelDiagnosis.TabIndex = 6;
             this.labelDiagnosis.Text = "Diagnosis";
             // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataSource = typeof(CS6232GroupProject.Model.Patient);
+            // 
             // UserControlPatientRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,7 +733,6 @@
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             this.tabPageRoutineChecks.ResumeLayout(false);
             this.tabPageRoutineChecks.PerformLayout();
@@ -755,6 +754,7 @@
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
