@@ -189,6 +189,7 @@ namespace CS6232GroupProject.UserControls
         /// </summary>
         private void SetCheckUpInfo()//The core issue is here.
         {
+            
             PatientVisit newVisit = new PatientVisit();
             try
             {
@@ -196,8 +197,8 @@ namespace CS6232GroupProject.UserControls
 
                 newVisit.VisitID = this.visit.VisitID;
                 newVisit.AppointmentID = this.visit.AppointmentID;
-                newVisit.NurseID = this.visit.NurseID;
-                newVisit.DoctorID = this.visit.DoctorID;
+                //newVisit.NurseID = this.visit.NurseID;
+                //newVisit.DoctorID = this.visit.DoctorID;
                 newVisit.Date = this.visit.Date;
 
                 newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
@@ -207,7 +208,26 @@ namespace CS6232GroupProject.UserControls
                 newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
                 newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
 
-                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
+
+                MessageBox.Show("appointID :" + newVisit.AppointmentID + "\nOld ID: " + this.visit.AppointmentID +
+                     "\nnew visitID: " + newVisit.VisitID + "old: " + this.visit.VisitID +
+                     "\nnew date: " + newVisit.Date + " old date: " + this.visit.Date +
+                     "\nnew weight: " + newVisit.Weight + " old weight: " + this.visit.Weight +
+                     "\nnew systolic: " + newVisit.Systolic + " old: " + this.visit.Systolic +
+                     "\nnew diastolic: " + newVisit.Diastolic + " old: " + this.visit.Diastolic +
+                     "\nnew temp: " + newVisit.Temperature + " old: " + this.visit.Temperature +
+                     "\nnew pulse: " + newVisit.Pulse + " old: " + this.visit.Pulse +
+                     "\n symptoms: " + newVisit.Symptoms + " old: " + this.visit.Symptoms
+                    
+                    
+                    
+                    , "VARIABLE COMPARE");
+                
+
+                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))//Error is here.
+
+
+                //Possibly due to the fact that the this.vist variable?
                 {
                     MessageBox.Show("Routine Check information updated!", "Success");
                 }
@@ -218,7 +238,8 @@ namespace CS6232GroupProject.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                //MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
             }
 
         }
