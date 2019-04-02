@@ -93,7 +93,7 @@ namespace CS6232GroupProject.DAL
                 using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
                 {
                     
-                    if (newVisit.Symptoms == "" || newVisit.Symptoms == null)
+                    if ( newVisit.Symptoms == null)
                     {
                         updatedCommand.Parameters.AddWithValue("@NewSymptoms", DBNull.Value);
                     }
@@ -123,7 +123,7 @@ namespace CS6232GroupProject.DAL
                         updatedCommand.Parameters.AddWithValue("@OldDate", oldVisit.Date);
                     }
                     
-                    if (oldVisit.Symptoms == "" || oldVisit.Symptoms == null)
+                    if ( oldVisit.Symptoms == null)
                     {
                         updatedCommand.Parameters.AddWithValue("@OldSymptoms", DBNull.Value);
                     }
