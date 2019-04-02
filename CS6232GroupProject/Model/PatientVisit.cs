@@ -2,6 +2,9 @@
 
 namespace CS6232GroupProject.Model
 {
+    /// <summary>
+    /// This class creates a PatientVisit object.
+    /// </summary>
     class PatientVisit
     {
         /// <summary>
@@ -19,13 +22,5 @@ namespace CS6232GroupProject.Model
         public decimal Temperature { get; set; }
         public int Pulse { get; set; }
         public string Symptoms { get; set; }
-
-        //public PatientVisit()
-        //{
-        //    if (Symptoms == null)
-        //    {
-        //        Symptoms = "";
-        //    }
-        //}
     }
 }

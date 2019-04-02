@@ -3,7 +3,10 @@ using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
 {
-    
+    /// <summary>
+    /// This class creates a LoginController object to access the
+    /// LoginDBDAL methods.
+    /// </summary>
     public class LoginController
     {
         private LoginDBDAL loginDetails;

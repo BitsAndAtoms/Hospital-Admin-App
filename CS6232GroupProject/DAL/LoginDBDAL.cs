@@ -4,6 +4,11 @@ using System.Data.SqlClient;
 
 namespace CS6232GroupProject.DAL
 {
+
+    /// <summary>
+    /// This class creates a LoginDBDAL object to get data 
+    /// from the DB.
+    /// </summary>
     class LoginDBDAL
     {
         /// <summary>
@@ -55,6 +60,11 @@ namespace CS6232GroupProject.DAL
             return false;
         }
 
+        /// <summary>
+        /// This method returns the username role, and id of the person logging in.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns>A list of usernames and roles.</returns>
         internal List<string> FindUserNameAndRole(string userName)
         {
             string selectStatement =

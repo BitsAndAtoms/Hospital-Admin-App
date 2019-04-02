@@ -3,8 +3,15 @@ using System.Collections.Generic;
 
 namespace CS6232GroupProject.Model
 {
+    /// <summary>
+    /// This class creates a State object.
+    /// </summary>
     class State
     {
+        /// <summary>
+        /// This method creates a list of States to choose from.
+        /// </summary>
+        /// <returns>A list of states.</returns>
         public static List<String> GetStates()
         {
             List<String> StateList = new List<String>
