@@ -1,6 +1,7 @@
 ﻿using CS6232GroupProject.Model;
 using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -199,7 +200,6 @@ namespace CS6232GroupProject.DAL
                 "INSERT  PatientVisit " +
                 "(appoitnementID, nurseID, visitDateTime, diagnosis, weight, systolic, diastolic, temperature, pulse, symptoms) " +
                 "VALUES (@appointmentID, @nurseID, @visitDateTime, @diagnosis, @weight, @systolic, @diastolic, @temperature, @pulse, @symptoms)";
-
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();

@@ -40,6 +40,7 @@ namespace CS6232GroupProject.UserControls
 
         private bool CheckIfPatientVisitExists(int AppointmentID)
         {
+            
             if (this.visitController.DoesPatientVisitExist(AppointmentID))
             {
                 this.hasVisit = false;
@@ -67,6 +68,7 @@ namespace CS6232GroupProject.UserControls
                 else
                 {
                     //Create a blank one.
+                    MessageBox.Show("Before create visit was called!", "TEST ");
                     CreateVisit();
                     MessageBox.Show("If it's here, that could be good!", "TEST ");
 
@@ -81,9 +83,11 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
-        private void CreateVisit()//This has to create new info but somehow retain the existing info like NurseID
+        private void CreateVisit()//This never completes. That is the issue along with 
+            //It being called more than once.
         {
-            PatientVisit newVisit = new PatientVisit();
+            MessageBox.Show("CreateVisit was called!", "TEST");
+            PatientVisit newVisit = new PatientVisit();//Has to return the visit obejct
             //newVisit.VisitID = this.visit.VisitID; Isn't needed
             newVisit.AppointmentID = this.appointmentID;//This should be right
             newVisit.NurseID = this.visit.NurseID;//Don't know how to set this
@@ -99,6 +103,8 @@ namespace CS6232GroupProject.UserControls
             newVisit.Symptoms = "";
 
             this.visitController.AddPatientVisit(newVisit);
+            this.visit = newVisit;
+            MessageBox.Show("end of CreateVisit was called!", "TEST");
         }
 
         private void SetPatientVisit()
@@ -148,7 +154,7 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
-        private void SetCheckUpInfo()
+        private void SetCheckUpInfo()//The core issue is here.
         {
             PatientVisit newVisit = new PatientVisit();
             try
@@ -205,7 +211,7 @@ namespace CS6232GroupProject.UserControls
         private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
-            SetAppointment();
+            SetAppointment();//My need to get what I need for this to work from the method
             SetPatientVisit();
             
         }
