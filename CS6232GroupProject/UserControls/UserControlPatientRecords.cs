@@ -88,35 +88,68 @@ namespace CS6232GroupProject.UserControls
 
         private void SetCheckUpInfo()
         {
-            try
+            PatientVisit newVisit = new PatientVisit();
+            if (this.visitController.DoesPatientVisitExist(this.visit.AppointmentID))
             {
-                PatientVisit newVisit = new PatientVisit();
-                newVisit.VisitID = this.visit.VisitID;
-                newVisit.AppointmentID = this.visit.AppointmentID;
-                newVisit.NurseID = this.visit.NurseID;
-                newVisit.DoctorID = this.visit.DoctorID;
-                newVisit.Date = this.visit.Date;
-
-                newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
-                newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
-                newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
-                newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
-                newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
-                newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
-
-                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
+                try
                 {
-                    MessageBox.Show("Routine Check information updated!", "Success");
+                    
+                    
+                    newVisit.VisitID = this.visit.VisitID;
+                    newVisit.AppointmentID = this.visit.AppointmentID;
+                    newVisit.NurseID = this.visit.NurseID;
+                    newVisit.DoctorID = this.visit.DoctorID;
+                    newVisit.Date = this.visit.Date;
+
+                    newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
+                    newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
+                    newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
+                    newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
+                    newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
+                    newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
+
+                    if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
+                    {
+                        MessageBox.Show("Routine Check information updated!", "Success");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
+                    MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
+                try
+                {
+                    newVisit.VisitID = this.visit.VisitID;
+                    newVisit.AppointmentID = this.visit.AppointmentID;
+                    newVisit.NurseID = this.visit.NurseID;
+                    newVisit.DoctorID = this.visit.DoctorID;
+                    newVisit.Date = this.visit.Date;
+
+                    newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
+                    newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
+                    newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
+                    newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
+                    newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
+                    newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
+
+                    this.visitController.AddPatientVisit(newVisit);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+                
+
             }
+            
         }
 
         private void buttonAppointmentsUpdate_Click(object sender, EventArgs e)
@@ -126,6 +159,7 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonRoutineChecksUpdate_Click(object sender, EventArgs e)
         {
+            //If no PatientVisit exists, create one with the entered info and reload the page.
             SetCheckUpInfo();
         }
 

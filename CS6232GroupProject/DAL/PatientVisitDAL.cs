@@ -143,5 +143,84 @@ namespace CS6232GroupProject.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Checks if an appointment exists yet and returns 
+        /// true if it does, false if it doesn't.
+        /// </summary>
+        /// <param name="AppointmentID"></param>
+        /// <returns>True or false.</returns>
+        public bool DoesPatientVisitExist(int AppointmentID)
+        {
+            int count = 0;
+            string selectStatment =
+                "SELECT COUNT(appoitnementID) as 'Number' " +
+                "FROM PatientVisit " +
+                "WHERE appoitnementID = @appointmentID";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
+                {
+
+                    selectCommand.Parameters.AddWithValue("@appointment", AppointmentID);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count += number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// This method creates a PatientVisit object.
+        /// </summary>
+        /// <param name="visit"></param>
+        /// <returns>Returns an int.</returns>
+        public int AddPatientVisit(PatientVisit visit)
+        {
+            string insertStatement =
+                "INSERT  PatientVisit " +
+                "(appoitnementID, nurseID, visitDateTime, diagnosis, weight, systolic, diastolic, temperature, pulse, symptoms) " +
+                "VALUES (@appointmentID, @nurseID, @visitDateTime, @diagnosis, @weight, @systolic, @diastolic, @temperature, @pulse, @symptoms)";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand insertCommand = new SqlCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("@appointmentID", visit.AppointmentID);
+                    insertCommand.Parameters.AddWithValue("@nurseID", visit.NurseID);
+                    insertCommand.Parameters.AddWithValue("@visitDateTime", visit.Date);
+                    insertCommand.Parameters.AddWithValue("@diagnosis", visit.Diagnosis);
+                    insertCommand.Parameters.AddWithValue("@weight", visit.Weight);
+                    insertCommand.Parameters.AddWithValue("@systolic", visit.Systolic);
+                    insertCommand.Parameters.AddWithValue("@diastolic", visit.Diastolic);
+                    insertCommand.Parameters.AddWithValue("@temperature", visit.Temperature);
+                    insertCommand.Parameters.AddWithValue("@pulse", visit.Pulse);
+                    insertCommand.Parameters.AddWithValue("@symptoms", visit.Symptoms);
+                    insertCommand.ExecuteNonQuery();
+                    int appointmentID = 0;
+                    return appointmentID;
+                }
+            }
+        }
     }
 }

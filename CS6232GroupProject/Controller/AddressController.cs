@@ -3,6 +3,10 @@ using CS6232GroupProject.Model;
 
 namespace CS6232GroupProject.Controller
 {
+    /// <summary>
+    /// This class creates an AddressController object to call 
+    /// methods from the AddressDAL.
+    /// </summary>
     class AddressController
     {
 
@@ -17,6 +21,11 @@ namespace CS6232GroupProject.Controller
             this.addressSource = new AddressDAL();
         }
 
+        /// <summary>
+        /// This method gets an Address object by its ID.
+        /// </summary>
+        /// <param name="addressID"></param>
+        /// <returns>An Address object. </returns>
         public Address GetAddressByID(int addressID)
         {
             return this.addressSource.GetAddressByID(addressID);

@@ -41,5 +41,20 @@ namespace CS6232GroupProject.Controller
         {
             return this.visitSource.UpdateRoutineCheck(newVisit, oldVisit);
         }
+
+        /// <summary>
+        /// This method checks to see if a PatientVisit exists.
+        /// </summary>
+        /// <param name="AppointmentID"></param>
+        /// <returns>True or false.</returns>
+        public bool DoesPatientVisitExist(int AppointmentID)
+        {
+            return this.visitSource.DoesPatientVisitExist(AppointmentID);
+        }
+
+        public int AddPatientVisit(PatientVisit visit)
+        {
+            return this.visitSource.AddPatientVisit(visit);
+        }
     }
 }
