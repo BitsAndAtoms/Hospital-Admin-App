@@ -1,4 +1,5 @@
 ﻿using CS6232GroupProject.Controller;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -8,7 +9,7 @@ namespace CS6232GroupProject.View
     {
         private FormNurseMain nurseMain;
         private readonly LoginController newLoginController;
-        public static int Nurse {get; set;}
+        public static int NurseID {get; set;}
         /// <summary>
         /// constructor of login form
         /// </summary>
@@ -45,6 +46,7 @@ namespace CS6232GroupProject.View
                 this.Hide();
 
                 this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1]);
+                NurseID = Convert.ToInt32(newNameAndRole[3]);
                 //this.nurseMain.ShowDialog();
                 this.nurseMain.Show();
                 this.textBoxUsername.Text = "";

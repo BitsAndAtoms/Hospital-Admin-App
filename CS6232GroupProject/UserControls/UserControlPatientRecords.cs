@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.Controller;
 using CS6232GroupProject.Model;
+using CS6232GroupProject.View;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -88,8 +89,7 @@ namespace CS6232GroupProject.UserControls
         {
             PatientVisit newVisit = new PatientVisit();
             newVisit.AppointmentID = this.appointmentID;
-            //newVisit.NurseID = this.visit.NurseID;//Don't know how to set this
-            newVisit.NurseID = 1;//TEST ONLY
+            newVisit.NurseID = FormLogin.NurseID;
             newVisit.DoctorID = this.appointment.DoctorID;
             newVisit.Date = (DateTime)this.appointment.AppointmentDateTime;
 
