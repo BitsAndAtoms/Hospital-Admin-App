@@ -87,12 +87,13 @@ namespace CS6232GroupProject.UserControls
             //It being called more than once.
         {
             MessageBox.Show("CreateVisit was called!", "TEST");
-            PatientVisit newVisit = new PatientVisit();//Has to return the visit obejct
-            //newVisit.VisitID = this.visit.VisitID; Isn't needed
-            newVisit.AppointmentID = this.appointmentID;//This should be right
-            newVisit.NurseID = this.visit.NurseID;//Don't know how to set this
-            newVisit.DoctorID = this.visit.DoctorID;//Needs to get from appointment
-            newVisit.Date = this.visit.Date;//How to get this?
+            PatientVisit newVisit = new PatientVisit();
+            newVisit.AppointmentID = this.appointmentID;
+            //newVisit.NurseID = this.visit.NurseID;//Don't know how to set this
+            newVisit.DoctorID = this.appointment.DoctorID;
+            newVisit.Date = (DateTime)this.appointment.AppointmentDateTime;
+
+            MessageBox.Show("AppID is: " + newVisit.AppointmentID + "DoctorID is: " + newVisit.DoctorID, "TEST");
 
             //These can be set to "" or the equivelent if need be.
             newVisit.Weight = 0;
