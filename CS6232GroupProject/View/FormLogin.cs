@@ -8,6 +8,7 @@ namespace CS6232GroupProject.View
     {
         private FormNurseMain nurseMain;
         private readonly LoginController newLoginController;
+        public static int Nurse {get; set;}
         /// <summary>
         /// constructor of login form
         /// </summary>
