@@ -195,6 +195,24 @@ namespace CS6232GroupProject.UserControls
         }
 
         /// <summary>
+        /// disable textfield if meet criteria
+        /// </summary>
+        private void AppointmentTimeCheck()
+        {
+
+            var appointment_time = Convert.ToDateTime(this.comboBoxPatientRecordsAppointment.Text);
+            var time_now = DateTime.Now;
+            if (time_now <= appointment_time)
+            {
+                textBoxAppointmentsSummary.Enabled = true;
+            }
+            else
+            {
+                textBoxAppointmentsSummary.Enabled = false;
+            }
+        }
+
+        /// <summary>
         /// Update appointments if datetime is now or earlier.
         /// </summary>
         /// <param name="sender"></param>
@@ -247,20 +265,8 @@ namespace CS6232GroupProject.UserControls
             SetAppointment();
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
             SetVisitInfo();
-            
+            AppointmentTimeCheck();
         }
-
-        private void CheckAppointment()//Call last in constructor and maybe in above method?
-        {
-            if (this.appointment.AppointmentDateTime <= System.DateTime.Now)//Is this right?
-            {
-                //Make uneditable (or editable)
-                
-            }
-            else
-            {
-                //make editable (or uneditable)
-            }
-        }
+        
     }
 }
