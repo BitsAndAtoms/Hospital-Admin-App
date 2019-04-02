@@ -43,6 +43,7 @@ namespace CS6232GroupProject.View
             if ((this.newLoginController.DoCheckLogin(this.textBoxPassword.Text,this.textBoxUsername.Text) && (newNameAndRole.Count>1)) && newNameAndRole[0].Equals("Nurse"))
             {
                 this.Hide();
+
                 this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1]);
                 //this.nurseMain.ShowDialog();
                 this.nurseMain.Show();
