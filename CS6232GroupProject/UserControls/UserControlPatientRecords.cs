@@ -21,6 +21,7 @@ namespace CS6232GroupProject.UserControls
         private Appointment appointment;
         private PatientVisit visit;
         private int appointmentID;
+        private bool hasVisit;
 
         /// <summary>
         /// This constructs the UserControlPatientRecords objects and instatiates
@@ -37,13 +38,40 @@ namespace CS6232GroupProject.UserControls
             
         }
 
-        private void SetAppointment()
+        private bool CheckIfPatientVisitExists(int AppointmentID)
+        {
+            if (this.visitController.DoesPatientVisitExist(AppointmentID))
+            {
+                this.hasVisit = false;
+                return false;
+
+            }
+            else
+            {
+                this.hasVisit = true;
+                return true;
+            }
+        }
+
+        private void SetAppointment()//This may need to be rearranged
         {
             try
             {
                 this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
                 this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
-                this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
+                if (CheckIfPatientVisitExists(this.appointmentID))
+                {
+                    MessageBox.Show("Appointment ID is: " + this.appointmentID, "TEST ");
+                    this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
+                }
+                else
+                {
+                    //Create a blank one.
+                    CreateVisit();
+                    MessageBox.Show("If it's here, that could be good!", "TEST ");
+
+                    this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
+                }
                 this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
                 
             }
@@ -53,6 +81,26 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        private void CreateVisit()//This has to create new info but somehow retain the existing info like NurseID
+        {
+            PatientVisit newVisit = new PatientVisit();
+            //newVisit.VisitID = this.visit.VisitID; Isn't needed
+            newVisit.AppointmentID = this.appointmentID;//This should be right
+            newVisit.NurseID = this.visit.NurseID;//Don't know how to set this
+            newVisit.DoctorID = this.visit.DoctorID;//Needs to get from appointment
+            newVisit.Date = this.visit.Date;//How to get this?
+
+            //These can be set to "" or the equivelent if need be.
+            newVisit.Weight = 0;
+            newVisit.Systolic = 0;
+            newVisit.Diastolic = 0;
+            newVisit.Temperature = 0;
+            newVisit.Pulse = 0;
+            newVisit.Symptoms = "";
+
+            this.visitController.AddPatientVisit(newVisit);
+        }
+
         private void SetPatientVisit()
         {
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
@@ -60,13 +108,27 @@ namespace CS6232GroupProject.UserControls
             this.dateTimePickerAppointments.Value = (DateTime)this.appointment.AppointmentDateTime;
             this.dateTimePickerAppointmentsTime.Value = (DateTime)this.appointment.AppointmentDateTime;
 
-            this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
-            this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
-            this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
-            this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
-            this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
-            this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
-            this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
+            if (this.hasVisit)
+            {
+                this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
+                this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
+                this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
+                this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
+                this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
+                this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
+                this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
+            } 
+            else
+            {
+                this.textBoxRoutineChecksWeight.Text = "";
+                this.textBoxRoutineChecksSystolic.Text = "";
+                this.textBoxRoutineChecksDiastolic.Text = "";
+                this.textBoxRoutineChecksTemp.Text = "";
+                this.textRoutineChecksPulse.Text = "";
+                this.textBoxRoutineChecksSummary.Text = "";
+                this.textBoxDiagnosisIntial.Text = "";
+            }
+            
         }
 
         private void SetComboBox()
@@ -89,67 +151,37 @@ namespace CS6232GroupProject.UserControls
         private void SetCheckUpInfo()
         {
             PatientVisit newVisit = new PatientVisit();
-            if (this.visitController.DoesPatientVisitExist(this.visit.AppointmentID))
+            try
             {
-                try
+
+
+                newVisit.VisitID = this.visit.VisitID;
+                newVisit.AppointmentID = this.visit.AppointmentID;
+                newVisit.NurseID = this.visit.NurseID;
+                newVisit.DoctorID = this.visit.DoctorID;
+                newVisit.Date = this.visit.Date;
+
+                newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
+                newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
+                newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
+                newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
+                newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
+                newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
+
+                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
                 {
-                    
-                    
-                    newVisit.VisitID = this.visit.VisitID;
-                    newVisit.AppointmentID = this.visit.AppointmentID;
-                    newVisit.NurseID = this.visit.NurseID;
-                    newVisit.DoctorID = this.visit.DoctorID;
-                    newVisit.Date = this.visit.Date;
-
-                    newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
-                    newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
-                    newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
-                    newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
-                    newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
-                    newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
-
-                    if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
-                    {
-                        MessageBox.Show("Routine Check information updated!", "Success");
-                    }
-                    else
-                    {
-                        MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
-                    }
+                    MessageBox.Show("Routine Check information updated!", "Success");
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("There was an issue updating the database.\n" + ex.Message, "Error Updating Database");
+                    MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                try
-                {
-                    newVisit.VisitID = this.visit.VisitID;
-                    newVisit.AppointmentID = this.visit.AppointmentID;
-                    newVisit.NurseID = this.visit.NurseID;
-                    newVisit.DoctorID = this.visit.DoctorID;
-                    newVisit.Date = this.visit.Date;
-
-                    newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
-                    newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
-                    newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
-                    newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
-                    newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
-                    newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
-
-                    this.visitController.AddPatientVisit(newVisit);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
-                
-
+                MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
             }
-            
+
         }
 
         private void buttonAppointmentsUpdate_Click(object sender, EventArgs e)

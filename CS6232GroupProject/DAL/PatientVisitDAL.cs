@@ -165,7 +165,7 @@ namespace CS6232GroupProject.DAL
                 using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
                 {
 
-                    selectCommand.Parameters.AddWithValue("@appointment", AppointmentID);
+                    selectCommand.Parameters.AddWithValue("@appointmentID", AppointmentID);
 
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
