@@ -20,5 +20,12 @@ namespace CS6232GroupProject.Model
         public int Pulse { get; set; }
         public string Symptoms { get; set; }
 
+        //public PatientVisit()
+        //{
+        //    if (Symptoms == null)
+        //    {
+        //        Symptoms = "";
+        //    }
+        //}
     }
 }
