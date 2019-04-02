@@ -68,7 +68,7 @@ namespace CS6232GroupProject.DAL
         internal List<string> FindUserNameAndRole(string userName)
         {
             string selectStatement =
-                "if exists(Select 'Nurse' as Role, fname, lname FROM Nurse WHERE nurseUserName = @userName)" +
+                "if exists(Select 'Nurse' as Role, fname, lname, nurseID FROM Nurse WHERE nurseUserName = @userName)" +
                 " Select 'Nurse' as Role, fname, lname, nurseID from Nurse WHERE nurseUserName = @userName" +
                 " else if exists(Select 'Admin' as Role, fname, lname FROM Administrator WHERE adminUserName = @userName)" +
                 " Select 'Admin' as Role, fname, lname from Administrator WHERE adminUserName =  @userName" +
