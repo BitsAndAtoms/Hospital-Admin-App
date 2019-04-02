@@ -64,8 +64,6 @@ namespace CS6232GroupProject.UserControls
         {
             try
             {
-                //this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
-               // this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
                 if (CheckIfPatientVisitExists(this.appointmentID))
                 {
                     this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
@@ -73,15 +71,13 @@ namespace CS6232GroupProject.UserControls
                 else
                 {
                     CreateVisit();
-                    //this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
                 }
-                //this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
                 
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("This patient has no appointments.");//This will be called if the patient doesn't have 
-                //an appointment so maybe set it to patient appointment created?
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                //MessageBox.Show("This patient has no appointments.");
             }
         }
 
@@ -91,15 +87,12 @@ namespace CS6232GroupProject.UserControls
         private void CreateVisit()//This never completes. That is the issue along with 
             //It being called more than once.
         {
-            MessageBox.Show("CreateVisit was called!", "TEST");
             PatientVisit newVisit = new PatientVisit();
             newVisit.AppointmentID = this.appointmentID;
             //newVisit.NurseID = this.visit.NurseID;//Don't know how to set this
             newVisit.NurseID = 1;//TEST ONLY
             newVisit.DoctorID = this.appointment.DoctorID;
             newVisit.Date = (DateTime)this.appointment.AppointmentDateTime;
-
-            MessageBox.Show("AppID is: " + newVisit.AppointmentID + "DoctorID is: " + newVisit.DoctorID, "TEST");
 
             
             newVisit.Weight = 0.0m;
@@ -108,7 +101,6 @@ namespace CS6232GroupProject.UserControls
             newVisit.Temperature = 0.0m;
             newVisit.Pulse = 0;
             newVisit.Symptoms = "";
-            MessageBox.Show("Before of add visit was called!", "TEST");
 
             try
             {
@@ -120,7 +112,6 @@ namespace CS6232GroupProject.UserControls
             }
             
             this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
-            MessageBox.Show("END OF CreateVisit was called!", "END OF CREATE VISIT");
         }
 
         /// <summary>
@@ -140,27 +131,6 @@ namespace CS6232GroupProject.UserControls
             this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
             this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
             this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
-
-            //if (this.hasVisit)
-            //{
-            //    this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
-            //    this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
-            //    this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
-            //    this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
-            //    this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
-            //    this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
-            //    this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
-            //} 
-            //else
-            //{
-            //    this.textBoxRoutineChecksWeight.Text = "";
-            //    this.textBoxRoutineChecksSystolic.Text = "";
-            //    this.textBoxRoutineChecksDiastolic.Text = "";
-            //    this.textBoxRoutineChecksTemp.Text = "";
-            //    this.textRoutineChecksPulse.Text = "";
-            //    this.textBoxRoutineChecksSummary.Text = "";
-            //    this.textBoxDiagnosisIntial.Text = "";
-            //}
 
         }
 
@@ -187,7 +157,7 @@ namespace CS6232GroupProject.UserControls
         /// <summary>
         /// sets up check up info
         /// </summary>
-        private void SetCheckUpInfo()//The core issue is here.
+        private void SetCheckUpInfo()
         {
             
             PatientVisit newVisit = new PatientVisit();
@@ -197,8 +167,6 @@ namespace CS6232GroupProject.UserControls
 
                 newVisit.VisitID = this.visit.VisitID;
                 newVisit.AppointmentID = this.visit.AppointmentID;
-                //newVisit.NurseID = this.visit.NurseID;
-                //newVisit.DoctorID = this.visit.DoctorID;
                 newVisit.Date = this.visit.Date;
 
                 newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
@@ -224,10 +192,7 @@ namespace CS6232GroupProject.UserControls
                     , "VARIABLE COMPARE");
                 
 
-                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))//Error is here.
-
-
-                //Possibly due to the fact that the this.vist variable?
+                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
                 {
                     MessageBox.Show("Routine Check information updated!", "Success");
                 }
@@ -236,10 +201,10 @@ namespace CS6232GroupProject.UserControls
                     MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-                //MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
+                
+                MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
             }
 
         }
@@ -266,11 +231,8 @@ namespace CS6232GroupProject.UserControls
         {
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
             this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
-            SetAppointment();//My need to get what I need for this to work from the method
+            SetAppointment();
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
-            
-
-
             SetVisitInfo();
             
         }
