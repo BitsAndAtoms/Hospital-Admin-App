@@ -196,7 +196,7 @@ namespace CS6232GroupProject.UserControls
         private void buttonAppointmentsUpdate_Click(object sender, EventArgs e)
         {
             Appointment newAppointment = new Appointment();
-            newAppointment.DoctorID = Convert.ToInt32(this.comboBoxAppointmentsPhysician.SelectedIndex);
+            newAppointment.DoctorID = Convert.ToInt32(this.comboBoxAppointmentsPhysician.SelectedValue);
             newAppointment.AppointmentDateTime = this.dateTimePickerAppointments.Value.Date + this.dateTimePickerAppointmentsTime.Value.TimeOfDay;
             newAppointment.Reasons = this.textBoxAppointmentsSummary.Text;
 
