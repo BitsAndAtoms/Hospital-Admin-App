@@ -223,13 +223,11 @@ namespace CS6232GroupProject.UserControls
             panelPatientInfoResults.Visible = false;
             linkLabelPatientInfoBack.Visible = false;
 
-            bool isOpen = false;
             FormPatientRecords formPatientRecords = new FormPatientRecords();
             foreach (Form form in Application.OpenForms)
             {
                 if (form.Name == "FormPatientRecords")
                 {
-                    isOpen = false;
                     form.Close();
                     break;
                 }
@@ -323,11 +321,6 @@ namespace CS6232GroupProject.UserControls
 
         }
 
-        private void tabControlNurseMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SetComboBox();
-        }
-
         private void buttonPatientInfoResultUpdate_Click(object sender, EventArgs e)
         {
             Patient newPatient = new Patient();
@@ -356,6 +349,15 @@ namespace CS6232GroupProject.UserControls
                 MessageBox.Show("Invalid. \n" + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tabControlNurseMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            patientList = this.patientController.GetPatients();
+            comboBoxPatient.DataSource = patientList;
+
+            doctorList = this.doctorController.GetDoctors();
+            comboBoxPhysician.DataSource = doctorList;
         }
     }
 }

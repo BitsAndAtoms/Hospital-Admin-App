@@ -119,7 +119,7 @@ namespace CS6232GroupProject.UserControls
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
+                    MessageBox.Show("There was an issue updating the database.\n" + ex.Message, "Error Updating Database");
                 }
             }
             else
