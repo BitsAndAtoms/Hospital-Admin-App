@@ -10,6 +10,11 @@ namespace CS6232GroupProject.DAL
 {
     class AddressDAL
     {
+        /// <summary>
+        /// Gets an address by the PK address ID
+        /// </summary>
+        /// <param name="addressID"></param>
+        /// <returns>address</returns>
         public Address GetAddressByID(int addressID)
         {
 
