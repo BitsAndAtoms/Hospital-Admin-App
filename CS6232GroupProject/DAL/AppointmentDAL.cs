@@ -250,5 +250,47 @@ namespace CS6232GroupProject.DAL
                 }
             }
         }
+
+        public bool UpdateAppointment(Appointment newAppointment, Appointment oldAppointment)
+        {
+            string updateStatement =
+                "UPDATE HasAppointment SET " + 
+                    "DoctorID = @NewDoctorID, " +
+                    "appointmentDateTime = @NewDate, " +
+                    "reasons = @NewReasons " +
+                "WHERE appointmentID = @OldAppointmentID " + 
+                    "AND patientID = @OldPatientID";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
+                {
+                    if (newAppointment.Reasons == "")
+                    {
+                        updatedCommand.Parameters.AddWithValue("@NewAppointment", oldAppointment.Reasons);
+                    }
+                    else
+                    {
+                        updatedCommand.Parameters.AddWithValue("@NewAppointment", newAppointment.Reasons);
+                    }
+                    updatedCommand.Parameters.AddWithValue("@NewDate", newAppointment.AppointmentDateTime);
+                    
+                    updatedCommand.Parameters.AddWithValue("@OldAppointment", oldAppointment.AppointmentID);
+                    updatedCommand.Parameters.AddWithValue("@OldPatientID", oldAppointment.PatientID);
+
+                    int count = updatedCommand.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

@@ -85,5 +85,10 @@ namespace CS6232GroupProject.Controller
         {
             return this.appointmentSource.CheckIfAppointmentExists(patientID);
         }
+
+        public bool UpdateAppointment(Appointment newAppointment, Appointment oldAppointment)
+        {
+            return this.appointmentSource.UpdateAppointment(newAppointment, oldAppointment);
+        }
     }
 }

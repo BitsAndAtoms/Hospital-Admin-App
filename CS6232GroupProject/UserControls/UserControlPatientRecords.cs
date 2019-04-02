@@ -195,7 +195,19 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonAppointmentsUpdate_Click(object sender, EventArgs e)
         {
-            // NOT YET NEEDED FOR ITERATION 1!
+            Appointment newAppointment = new Appointment();
+            newAppointment.DoctorID = (int)this.comboBoxAppointmentsPhysician.SelectedItem;//Error here. May be due to being disabled.
+            newAppointment.AppointmentDateTime = this.dateTimePickerAppointments.Value.Date + this.dateTimePickerAppointmentsTime.Value.TimeOfDay;
+            newAppointment.Reasons = this.textBoxAppointmentsSummary.Text;
+
+            if (this.appointmentController.UpdateAppointment(newAppointment, this.appointment))
+            {
+                MessageBox.Show("Appointment Updated!", "Sucess");
+            }
+            else
+            {
+                MessageBox.Show("There was an issue updating the Appointment!", "Error");
+            }
         }
 
         private void buttonRoutineChecksUpdate_Click(object sender, EventArgs e)
