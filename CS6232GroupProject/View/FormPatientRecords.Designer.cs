@@ -64,6 +64,7 @@
             this.Controls.Add(this.userControlPatientRecords1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPatientRecords";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClinicCare - Patient Records";
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
