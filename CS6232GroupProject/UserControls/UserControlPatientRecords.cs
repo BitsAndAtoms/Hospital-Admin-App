@@ -21,7 +21,6 @@ namespace CS6232GroupProject.UserControls
         private Appointment appointment;
         private PatientVisit visit;
         private int appointmentID;
-        private bool hasVisit;
 
         /// <summary>
         /// This constructs the UserControlPatientRecords objects and instatiates
@@ -43,13 +42,13 @@ namespace CS6232GroupProject.UserControls
             
             if (this.visitController.DoesPatientVisitExist(AppointmentID))
             {
-                this.hasVisit = false;
+                
                 return false;
 
             }
             else
             {
-                this.hasVisit = true;
+                
                 return true;
             }
         }
@@ -58,28 +57,24 @@ namespace CS6232GroupProject.UserControls
         {
             try
             {
-                this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
-                this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
+                //this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
+               // this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
                 if (CheckIfPatientVisitExists(this.appointmentID))
                 {
-                    MessageBox.Show("Appointment ID is: " + this.appointmentID, "TEST ");
                     this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
                 }
                 else
                 {
-                    //Create a blank one.
-                    MessageBox.Show("Before create visit was called!", "TEST ");
                     CreateVisit();
-                    MessageBox.Show("If it's here, that could be good!", "TEST ");
-
-                    this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
+                    //this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
                 }
-                this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
+                //this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
                 
             }
             catch
             {
-                MessageBox.Show("This patient has no appointments.");
+                MessageBox.Show("This patient has no appointments.");//This will be called if the patient doesn't have 
+                //an appointment so maybe set it to patient appointment created?
             }
         }
 
@@ -96,7 +91,7 @@ namespace CS6232GroupProject.UserControls
 
             MessageBox.Show("AppID is: " + newVisit.AppointmentID + "DoctorID is: " + newVisit.DoctorID, "TEST");
 
-            //These can be set to "" or the equivelent if need be.
+            
             newVisit.Weight = 0.0m;
             newVisit.Systolic = 0;
             newVisit.Diastolic = 0;
@@ -107,45 +102,53 @@ namespace CS6232GroupProject.UserControls
 
             try
             {
-                this.visitController.AddPatientVisit(newVisit);//Diagnosis isn't being called
+                this.visitController.AddPatientVisit(newVisit);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
             
-            this.visit = newVisit;
+            this.visit = this.visitController.GetPatientVisitInfoByAppointment(this.appointmentID);
             MessageBox.Show("END OF CreateVisit was called!", "END OF CREATE VISIT");
         }
 
-        private void SetPatientVisit()
+        private void SetVisitInfo()
         {
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
             this.textBoxAppointmentsSummary.Text = this.appointment.Reasons;
             this.dateTimePickerAppointments.Value = (DateTime)this.appointment.AppointmentDateTime;
             this.dateTimePickerAppointmentsTime.Value = (DateTime)this.appointment.AppointmentDateTime;
 
-            if (this.hasVisit)
-            {
-                this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
-                this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
-                this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
-                this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
-                this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
-                this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
-                this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
-            } 
-            else
-            {
-                this.textBoxRoutineChecksWeight.Text = "";
-                this.textBoxRoutineChecksSystolic.Text = "";
-                this.textBoxRoutineChecksDiastolic.Text = "";
-                this.textBoxRoutineChecksTemp.Text = "";
-                this.textRoutineChecksPulse.Text = "";
-                this.textBoxRoutineChecksSummary.Text = "";
-                this.textBoxDiagnosisIntial.Text = "";
-            }
-            
+            this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
+            this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
+            this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
+            this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
+            this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
+            this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
+            this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
+
+            //if (this.hasVisit)
+            //{
+            //    this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
+            //    this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
+            //    this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
+            //    this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
+            //    this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
+            //    this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
+            //    this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
+            //} 
+            //else
+            //{
+            //    this.textBoxRoutineChecksWeight.Text = "";
+            //    this.textBoxRoutineChecksSystolic.Text = "";
+            //    this.textBoxRoutineChecksDiastolic.Text = "";
+            //    this.textBoxRoutineChecksTemp.Text = "";
+            //    this.textRoutineChecksPulse.Text = "";
+            //    this.textBoxRoutineChecksSummary.Text = "";
+            //    this.textBoxDiagnosisIntial.Text = "";
+            //}
+
         }
 
         private void SetComboBox()
@@ -222,8 +225,13 @@ namespace CS6232GroupProject.UserControls
         private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
+            this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
             SetAppointment();//My need to get what I need for this to work from the method
-            SetPatientVisit();
+            this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
+            
+
+
+            SetVisitInfo();
             
         }
     }
