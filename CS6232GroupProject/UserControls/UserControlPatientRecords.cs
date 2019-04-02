@@ -145,6 +145,7 @@ namespace CS6232GroupProject.UserControls
 
                 this.doctorList = this.doctorController.GetDoctors();
                 this.comboBoxAppointmentsPhysician.DataSource = this.doctorList;
+                this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
 
             }
             catch (Exception ex)
@@ -203,6 +204,7 @@ namespace CS6232GroupProject.UserControls
             if (this.appointmentController.UpdateAppointment(newAppointment, this.appointment))
             {
                 MessageBox.Show("Appointment Updated!", "Sucess");
+                this.comboBoxAppointmentsPhysician.SelectedValue = newAppointment.DoctorID;
             }
             else
             {
