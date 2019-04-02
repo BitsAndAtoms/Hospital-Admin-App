@@ -207,5 +207,42 @@ namespace CS6232GroupProject.DAL
             }
             return appointment;
         }
+
+        public bool CheckIfAppointmentExists(int patientID)
+        {
+            int count = 0;
+            string selectStatement =
+                "SELECT COUNT(appointmentID) " +
+                "FROM HasAppointment " +
+                "WHERE patientID = @patientID";
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+
+                    selectCommand.Parameters.AddWithValue("@patientID", patientID);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count += number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
     }
 }

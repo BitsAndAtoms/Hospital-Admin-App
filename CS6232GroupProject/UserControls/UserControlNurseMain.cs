@@ -276,21 +276,29 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         private void linkLabelRecordsPatientInfoVisitRecords_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            bool isOpen = false;
-            FormPatientRecords formPatientRecords = new FormPatientRecords();
-            foreach (Form form in Application.OpenForms)
+            if(this.appointmentController.CheckIfAppointmentExists(patientID))
             {
-                if (form.Name == "FormPatientRecords")
+                bool isOpen = false;
+                FormPatientRecords formPatientRecords = new FormPatientRecords();
+                foreach (Form form in Application.OpenForms)
                 {
-                    isOpen = true;
-                    form.BringToFront();
-                    break;
+                    if (form.Name == "FormPatientRecords")
+                    {
+                        isOpen = true;
+                        form.BringToFront();
+                        break;
+                    }
+                }
+                if (isOpen == false)
+                {
+                    formPatientRecords.Show();
                 }
             }
-            if (isOpen == false)
+            else
             {
-                formPatientRecords.Show();
+                MessageBox.Show("Patient has no appointments. Please book one.", "Error - No Appointment Found");
             }
+            
 
         }
 
