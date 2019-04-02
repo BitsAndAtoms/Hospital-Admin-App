@@ -83,7 +83,7 @@ namespace CS6232GroupProject.UserControls
             this.labelAddMessage.Text = "";
         }
 
-        private bool CheckFields()
+        private bool CheckFieldsRegister()
         {
             labelAddMessage.ForeColor = Color.Red;
             int number;
@@ -145,7 +145,7 @@ namespace CS6232GroupProject.UserControls
         {
             Patient newPatient = new Patient();
             Address newAddress = new Address();
-            if (this.CheckFields())
+            if (this.CheckFieldsRegister())
             {
                 try
                 {
@@ -321,33 +321,98 @@ namespace CS6232GroupProject.UserControls
 
         }
 
+        /// <summary>
+        /// Checks update fields are empty or null, correct SSN length.
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckFieldsUpdate()
+        {
+            labelAddUpdateMessage.ForeColor = Color.Red;
+            int number;
+            int.TryParse(this.textBoxSSNPatientInfoResult.Text, out number);
+            bool checkNumber = number.GetType().Equals(typeof(int));
+            if (this.textBoxFirstNamePatientInfoResult.Text.Length == 0 || this.textBoxFirstNamePatientInfoResult.Text == null)
+            {
+                labelAddUpdateMessage.Text = "Please enter a First Name";
+                return false;
+            }
+            else if (this.textBoxLastNamePatientInfoResult.Text.Length == 0 || this.textBoxLastNamePatientInfoResult.Text == null)
+            {
+                labelAddUpdateMessage.Text = "Please enter a Last Name";
+                return false;
+            }
+            else if (this.dateTimePickerDOBPatientInfoResult.Value >= DateTime.Now)
+            {
+                labelAddUpdateMessage.Text = "Please enter a valid Date of Birth";
+                return false;
+            }
+            else if (this.textBoxSSNPatientInfoResult.Text.Length < 9 || this.textBoxSSNPatientInfoResult.Text == null || !checkNumber)
+            {
+                labelAddUpdateMessage.Text = "Please enter a valid 9 digit SSN";
+                return false;
+            }
+            else if (this.comboBoxGenderPatientInfoResult.SelectedIndex == -1)
+            {
+                labelAddUpdateMessage.Text = "Please select a Gender";
+                return false;
+            }
+            else if (this.textBoxPhonePatientInfoResult.Text.Length == 0 || this.textBoxPhonePatientInfoResult.Text == null)
+            {
+                labelAddUpdateMessage.Text = "Please enter a Phone Number";
+                return false;
+            }
+            else if (this.textBoxStreetPatientInfoResult.Text.Length == 0 || this.textBoxStreetPatientInfoResult.Text == null)
+            {
+                labelAddUpdateMessage.Text = "Please enter a Street Address";
+                return false;
+            }
+            else if (this.comboBoxStatePatientInfoResult.SelectedIndex == -1)
+            {
+                labelAddUpdateMessage.Text = "Please select a State";
+                return false;
+            }
+            else if (this.textBoxZipPatientInfoResult.Text.Length == 0 || this.textBoxZipPatientInfoResult.Text == null)
+            {
+                labelAddUpdateMessage.Text = "Please enter a Zip Code";
+                return false;
+            }
+            else
+            {
+                labelAddUpdateMessage.Text = "";
+                return true;
+            }
+        }
+
         private void buttonPatientInfoResultUpdate_Click(object sender, EventArgs e)
         {
             Patient newPatient = new Patient();
             Address newAddress = new Address();
-            newPatient.PatientID = patientID;
-            newPatient.FName = this.textBoxFirstNamePatientInfoResult.Text;
-            newPatient.LName = this.textBoxLastNamePatientInfoResult.Text;
-            newPatient.SSN = this.textBoxSSNPatientInfoResult.Text;
-            newPatient.Gender = this.comboBoxGenderPatientInfoResult.Text;
-            newPatient.Phone = this.textBoxPhonePatientInfoResult.Text;
-            newPatient.DOB = this.dateTimePickerDOBPatientInfoResult.Value;
-            newAddress.AddressID = this.addressID;
-            newAddress.Street = this.textBoxStreetPatientInfoResult.Text;
-            newAddress.Zip = Convert.ToInt32(this.textBoxZipPatientInfoResult.Text);
-            newAddress.State = this.comboBoxStatePatientInfoResult.Text;
+            if (this.CheckFieldsUpdate())
+            {
+                newPatient.PatientID = patientID;
+                newPatient.FName = this.textBoxFirstNamePatientInfoResult.Text;
+                newPatient.LName = this.textBoxLastNamePatientInfoResult.Text;
+                newPatient.SSN = this.textBoxSSNPatientInfoResult.Text;
+                newPatient.Gender = this.comboBoxGenderPatientInfoResult.Text;
+                newPatient.Phone = this.textBoxPhonePatientInfoResult.Text;
+                newPatient.DOB = this.dateTimePickerDOBPatientInfoResult.Value;
+                newAddress.AddressID = this.addressID;
+                newAddress.Street = this.textBoxStreetPatientInfoResult.Text;
+                newAddress.Zip = Convert.ToInt32(this.textBoxZipPatientInfoResult.Text);
+                newAddress.State = this.comboBoxStatePatientInfoResult.Text;
 
-            try
-            {
-                patientController.updatePatient(newPatient, newAddress);
-               
-                MessageBox.Show("Patient Updated", "Confirm");
-                this.ClearText();
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Invalid. \n" + ex.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    patientController.updatePatient(newPatient, newAddress);
+
+                    MessageBox.Show("Patient Updated", "Confirm");
+                    this.ClearText();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Invalid. \n" + ex.Message,
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
