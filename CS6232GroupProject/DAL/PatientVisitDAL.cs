@@ -82,14 +82,12 @@ namespace CS6232GroupProject.DAL
                     "AND Diastolic = @OldDiastolic " +
                     "AND Temperature = @OldTemperature " +
                     "AND Pulse = @OldPulse ";
-
-            MessageBox.Show("I'm in!", "INSIDE THE UPDATE");
+            
 
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
-                MessageBox.Show("I'm in!", "INSIDE THE Connectoin");
                 using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
                 {
                     
@@ -108,8 +106,7 @@ namespace CS6232GroupProject.DAL
                     updatedCommand.Parameters.AddWithValue("@NewTemperature", newVisit.Temperature);
                     updatedCommand.Parameters.AddWithValue("@NewPulse", newVisit.Pulse);
 
-
-                    MessageBox.Show("End of new, begining of old", "INSIDE THE Connectoin");
+                    
 
                     updatedCommand.Parameters.AddWithValue("@OldVisitID", oldVisit.VisitID);
                     updatedCommand.Parameters.AddWithValue("@OldAppointmentID", oldVisit.AppointmentID);
@@ -136,18 +133,14 @@ namespace CS6232GroupProject.DAL
                     updatedCommand.Parameters.AddWithValue("@OldDiastolic", oldVisit.Diastolic);
                     updatedCommand.Parameters.AddWithValue("@OldTemperature", oldVisit.Temperature);
                     updatedCommand.Parameters.AddWithValue("@OldPulse", oldVisit.Pulse);
-
-                    MessageBox.Show("Before executnonquery", "INSIDE THE Connectoin");
+                    
                     int count = updatedCommand.ExecuteNonQuery();
-                    MessageBox.Show("after executnonquery", "INSIDE THE Connectoin");
                     if (count > 0)
                     {
-                        MessageBox.Show("In return true", "INSIDE THE Connectoin");
                         return true;
                     }
                     else
                     {
-                        MessageBox.Show("In return false", "INSIDE THE Connectoin");
                         return false;
                     }
                 }
