@@ -204,11 +204,32 @@ namespace CS6232GroupProject.UserControls
             var time_now = DateTime.Now;
             if (time_now <= appointment_time)
             {
-                textBoxAppointmentsSummary.Enabled = true;
+                this.textBoxAppointmentsSummary.Enabled = true;
+                this.comboBoxAppointmentsPhysician.Enabled = true;
+                this.dateTimePickerAppointments.Enabled = true;
+                this.dateTimePickerAppointmentsTime.Enabled = true;
+
+                this.textBoxRoutineChecksWeight.Enabled = true;
+                this.textBoxRoutineChecksTemp.Enabled = true;
+                this.textBoxRoutineChecksSystolic.Enabled = true;
+                this.textBoxRoutineChecksDiastolic.Enabled = true;
+                this.textBoxRoutineChecksSummary.Enabled = true;
+                this.textBoxDiagnosisIntial.Enabled = true;
+                this.textBoxDiagnosisFinal.Enabled = true;
             }
             else
             {
-                textBoxAppointmentsSummary.Enabled = false;
+                this.textBoxAppointmentsSummary.Enabled = false;
+                this.comboBoxAppointmentsPhysician.Enabled = false;
+                this.dateTimePickerAppointments.Enabled = false;
+                this.dateTimePickerAppointmentsTime.Enabled = false;
+                this.textBoxRoutineChecksWeight.Enabled = false;
+                this.textBoxRoutineChecksTemp.Enabled = false;
+                this.textBoxRoutineChecksSystolic.Enabled = false;
+                this.textBoxRoutineChecksDiastolic.Enabled = false;
+                this.textBoxRoutineChecksSummary.Enabled = false;
+                this.textBoxDiagnosisIntial.Enabled = false;
+                this.textBoxDiagnosisFinal.Enabled = false;
             }
         }
 
