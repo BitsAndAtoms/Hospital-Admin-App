@@ -36,7 +36,11 @@ namespace CS6232GroupProject.UserControls
             SetAppointment();
             
         }
-
+        /// <summary>
+        /// Checks if a patient visit exists
+        /// </summary>
+        /// <param name="AppointmentID"></param>
+        /// <returns></returns>
         private bool CheckIfPatientVisitExists(int AppointmentID)
         {
             
@@ -53,6 +57,9 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        /// <summary>
+        /// sets appointment for a patient
+        /// </summary>
         private void SetAppointment()//This may need to be rearranged
         {
             try
@@ -78,6 +85,9 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        /// <summary>
+        /// creates a visit
+        /// </summary>
         private void CreateVisit()//This never completes. That is the issue along with 
             //It being called more than once.
         {
@@ -113,6 +123,9 @@ namespace CS6232GroupProject.UserControls
             MessageBox.Show("END OF CreateVisit was called!", "END OF CREATE VISIT");
         }
 
+        /// <summary>
+        /// sets the visit info for a patient
+        /// </summary>
         private void SetVisitInfo()
         {
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
@@ -151,6 +164,9 @@ namespace CS6232GroupProject.UserControls
 
         }
 
+        /// <summary>
+        /// sets a combo box for the appointment list  and doctor
+        /// </summary>
         private void SetComboBox()
         {
             try
@@ -168,6 +184,9 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        /// <summary>
+        /// sets up check up info
+        /// </summary>
         private void SetCheckUpInfo()//The core issue is here.
         {
             PatientVisit newVisit = new PatientVisit();
