@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace CS6232GroupProject.View
 {
+    /// <summary>
+    /// This class creates a FormLogin object.
+    /// </summary>
     public partial class FormLogin : Form
     {
         private FormNurseMain nurseMain;

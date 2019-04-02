@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
 {
+    /// <summary>
+    /// This class creates the NurseMain UserControl object.
+    /// </summary>
     public partial class UserControlNurseMain : UserControl
     {
 
