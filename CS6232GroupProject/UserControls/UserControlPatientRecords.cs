@@ -196,17 +196,28 @@ namespace CS6232GroupProject.UserControls
         private void buttonAppointmentsUpdate_Click(object sender, EventArgs e)
         {
             Appointment newAppointment = new Appointment();
-            newAppointment.DoctorID = Convert.ToInt32(this.comboBoxAppointmentsPhysician.SelectedValue);
-            newAppointment.AppointmentDateTime = this.dateTimePickerAppointments.Value.Date + this.dateTimePickerAppointmentsTime.Value.TimeOfDay;
-            newAppointment.Reasons = this.textBoxAppointmentsSummary.Text;
+            var appointment_time = Convert.ToDateTime(comboBoxPatientRecordsAppointment.Text);
+            var time_now = DateTime.Now;
+            
 
-            if (this.appointmentController.UpdateAppointment(newAppointment, this.appointment))
+            if (time_now <= appointment_time)
             {
-                MessageBox.Show("Appointment Updated!", "Sucess");
+                newAppointment.DoctorID = Convert.ToInt32(this.comboBoxAppointmentsPhysician.SelectedValue);
+                newAppointment.AppointmentDateTime = this.dateTimePickerAppointments.Value.Date + this.dateTimePickerAppointmentsTime.Value.TimeOfDay;
+                newAppointment.Reasons = this.textBoxAppointmentsSummary.Text;
+
+                if (this.appointmentController.UpdateAppointment(newAppointment, this.appointment))
+                {
+                    MessageBox.Show("Appointment Updated!", "Sucess");
+                }
+                else
+                {
+                    MessageBox.Show("There was an issue updating the Appointment!", "Error");
+                }
             }
             else
             {
-                MessageBox.Show("There was an issue updating the Appointment!", "Error");
+                MessageBox.Show("Appointment date has expired and can no longer be edited.", "Confirm");
             }
         }
 
