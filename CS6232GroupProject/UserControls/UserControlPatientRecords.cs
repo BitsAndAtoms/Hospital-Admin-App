@@ -208,14 +208,6 @@ namespace CS6232GroupProject.UserControls
                 this.comboBoxAppointmentsPhysician.Enabled = true;
                 this.dateTimePickerAppointments.Enabled = true;
                 this.dateTimePickerAppointmentsTime.Enabled = true;
-
-                this.textBoxRoutineChecksWeight.Enabled = true;
-                this.textBoxRoutineChecksTemp.Enabled = true;
-                this.textBoxRoutineChecksSystolic.Enabled = true;
-                this.textBoxRoutineChecksDiastolic.Enabled = true;
-                this.textBoxRoutineChecksSummary.Enabled = true;
-                this.textBoxDiagnosisIntial.Enabled = true;
-                this.textBoxDiagnosisFinal.Enabled = true;
             }
             else
             {
@@ -223,13 +215,6 @@ namespace CS6232GroupProject.UserControls
                 this.comboBoxAppointmentsPhysician.Enabled = false;
                 this.dateTimePickerAppointments.Enabled = false;
                 this.dateTimePickerAppointmentsTime.Enabled = false;
-                this.textBoxRoutineChecksWeight.Enabled = false;
-                this.textBoxRoutineChecksTemp.Enabled = false;
-                this.textBoxRoutineChecksSystolic.Enabled = false;
-                this.textBoxRoutineChecksDiastolic.Enabled = false;
-                this.textBoxRoutineChecksSummary.Enabled = false;
-                this.textBoxDiagnosisIntial.Enabled = false;
-                this.textBoxDiagnosisFinal.Enabled = false;
             }
         }
 
