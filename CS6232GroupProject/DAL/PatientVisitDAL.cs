@@ -33,7 +33,6 @@ namespace CS6232GroupProject.DAL
                             visit.AppointmentID = (int)reader["AppoitnementID"];
                             visit.NurseID = (int)reader["NurseID"];
                             visit.Date = (DateTime)reader["visitDateTime"];
-                            MessageBox.Show("Date of visit is: " + visit.Date.ToString(), "The INFO");
                             visit.Diagnosis = reader["Diagnosis"].ToString();
                             visit.Weight = (decimal)reader["Weight"];
                             visit.Systolic = (int)reader["Systolic"];

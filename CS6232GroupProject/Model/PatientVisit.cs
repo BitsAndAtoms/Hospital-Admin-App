@@ -11,7 +11,7 @@ namespace CS6232GroupProject.Model
         public int AppointmentID { get; set; }
         public int NurseID { get; set; }
         public int DoctorID { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
         public string Diagnosis { get; set; }
         public decimal Weight { get; set; }
         public int Systolic { get; set; }
