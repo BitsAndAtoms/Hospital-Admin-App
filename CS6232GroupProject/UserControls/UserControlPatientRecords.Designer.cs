@@ -238,7 +238,6 @@
             this.buttonAppointmentsUpdate.TabIndex = 7;
             this.buttonAppointmentsUpdate.Text = "Update";
             this.buttonAppointmentsUpdate.UseVisualStyleBackColor = false;
-            this.buttonAppointmentsUpdate.Visible = false;
             this.buttonAppointmentsUpdate.Click += new System.EventHandler(this.buttonAppointmentsUpdate_Click);
             // 
             // linkLabelAppointmentsCancel
