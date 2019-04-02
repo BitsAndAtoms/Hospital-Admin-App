@@ -59,7 +59,7 @@ namespace CS6232GroupProject.DAL
         {
             string selectStatement =
                 "if exists(Select 'Nurse' as Role, fname, lname FROM Nurse WHERE nurseUserName = @userName)" +
-                " Select 'Nurse' as Role, fname, lname from Nurse WHERE nurseUserName = @userName" +
+                " Select 'Nurse' as Role, fname, lname, nurseID from Nurse WHERE nurseUserName = @userName" +
                 " else if exists(Select 'Admin' as Role, fname, lname FROM Administrator WHERE adminUserName = @userName)" +
                 " Select 'Admin' as Role, fname, lname from Administrator WHERE adminUserName =  @userName" +
                 " else if exists(Select 'Doctor' as Role, fname, lname FROM Doctor WHERE doctorUserName = @userName)" +
@@ -93,6 +93,7 @@ namespace CS6232GroupProject.DAL
                             nameAndRole.Add(reader["Role"].ToString());
                             nameAndRole.Add(reader["fname"].ToString());
                             nameAndRole.Add(reader["lname"].ToString());
+                            nameAndRole.Add(reader["nurseID"].ToString());
                         }
                     }
                 }
