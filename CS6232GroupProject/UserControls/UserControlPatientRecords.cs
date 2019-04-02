@@ -175,21 +175,6 @@ namespace CS6232GroupProject.UserControls
                 newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
                 newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
                 newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
-
-
-                MessageBox.Show("appointID :" + newVisit.AppointmentID + "\nOld ID: " + this.visit.AppointmentID +
-                     "\nnew visitID: " + newVisit.VisitID + "old: " + this.visit.VisitID +
-                     "\nnew date: " + newVisit.Date + " old date: " + this.visit.Date +
-                     "\nnew weight: " + newVisit.Weight + " old weight: " + this.visit.Weight +
-                     "\nnew systolic: " + newVisit.Systolic + " old: " + this.visit.Systolic +
-                     "\nnew diastolic: " + newVisit.Diastolic + " old: " + this.visit.Diastolic +
-                     "\nnew temp: " + newVisit.Temperature + " old: " + this.visit.Temperature +
-                     "\nnew pulse: " + newVisit.Pulse + " old: " + this.visit.Pulse +
-                     "\n symptoms: " + newVisit.Symptoms + " old: " + this.visit.Symptoms
-                    
-                    
-                    
-                    , "VARIABLE COMPARE");
                 
 
                 if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
@@ -242,6 +227,7 @@ namespace CS6232GroupProject.UserControls
             if (this.appointment.AppointmentDateTime <= System.DateTime.Now)//Is this right?
             {
                 //Make uneditable (or editable)
+                
             }
             else
             {
