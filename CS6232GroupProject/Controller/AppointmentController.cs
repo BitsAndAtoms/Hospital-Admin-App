@@ -44,6 +44,10 @@ namespace CS6232GroupProject.Controller
             return this.appointmentSource.CheckAvailability(appointment);
         }
 
+        /// <summary>
+        /// This method returns a list of appointments.
+        /// </summary>
+        /// <returns>A list of Appointment objects.</returns>
         public List<Appointment> GetAppointments()
         {
             return this.appointmentSource.GetAppointments();

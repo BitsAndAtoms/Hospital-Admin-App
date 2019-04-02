@@ -51,10 +51,5 @@ namespace CS6232GroupProject.DAL
             }
             return doctors;
         }
-
-        public List<Doctor> GetDoctorsByAppointment(int appointmentID)
-        {
-            return null;//Remove
-        }
     }
 }

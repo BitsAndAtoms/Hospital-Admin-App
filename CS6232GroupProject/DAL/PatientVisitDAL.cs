@@ -1,7 +1,6 @@
 ﻿using CS6232GroupProject.Model;
 using System;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {

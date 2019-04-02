@@ -55,6 +55,12 @@ namespace CS6232GroupProject.DAL
             return patients;
         }
 
+        /// <summary>
+        /// This method updates the patient with new information so long as it doesn't 
+        /// conflict. 
+        /// </summary>
+        /// <param name="newPatient"></param>
+        /// <param name="newAddress"></param>
         internal void updatePatient(Patient newPatient, Address newAddress)
         {
             string updateStatement =
@@ -167,7 +173,11 @@ namespace CS6232GroupProject.DAL
         }
     
 
-
+        /// <summary>
+        /// This method searchs for a Patient by Name and DOB.
+        /// </summary>
+        /// <param name="newPatient"></param>
+        /// <returns>A list of Patient objects.</returns>
         internal List<Patient> GetSearchPatientsByNameDOB(Patient newPatient)
         {
             List<Patient> patients = new List<Patient>();
@@ -246,6 +256,11 @@ namespace CS6232GroupProject.DAL
             return patients;
         }
 
+        /// <summary>
+        /// This method updates a patients information.
+        /// </summary>
+        /// <param name="newPatient"></param>
+        /// <param name="newAddress"></param>
         internal void registerPatientInDB(Patient newPatient, Address newAddress)
         {
             string updateStatement = 

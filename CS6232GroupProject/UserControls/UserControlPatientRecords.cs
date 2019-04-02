@@ -60,7 +60,7 @@ namespace CS6232GroupProject.UserControls
         /// <summary>
         /// sets appointment for a patient
         /// </summary>
-        private void SetAppointment()//This may need to be rearranged
+        private void SetAppointment()
         {
             try
             {
@@ -74,18 +74,17 @@ namespace CS6232GroupProject.UserControls
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-                //MessageBox.Show("This patient has no appointments.");
+                //MessageBox.Show(ex.Message, ex.GetType().ToString());
+                MessageBox.Show("This patient has no appointments.");
             }
         }
 
         /// <summary>
         /// creates a visit
         /// </summary>
-        private void CreateVisit()//This never completes. That is the issue along with 
-            //It being called more than once.
+        private void CreateVisit()
         {
             PatientVisit newVisit = new PatientVisit();
             newVisit.AppointmentID = this.appointmentID;

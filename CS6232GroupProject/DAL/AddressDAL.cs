@@ -1,13 +1,13 @@
 ﻿using CS6232GroupProject.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CS6232GroupProject.DAL
 {
+    /// <summary>
+    /// This class creates an AddressDAL object to get data from 
+    /// the DB.
+    /// </summary>
     class AddressDAL
     {
         /// <summary>
