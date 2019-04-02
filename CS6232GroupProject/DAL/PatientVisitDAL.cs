@@ -1,14 +1,22 @@
 ﻿using CS6232GroupProject.Model;
 using System;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
+
+    /// <summary>
+    /// This class creates an AppointmentDAL object to retrieve data from the 
+    /// Clinic DB.
+    /// </summary>
     class PatientVisitDAL
     {
 
-        //The DB has AppointmentID misspelled as AppoitnementID.
+        /// <summary>
+        /// This method gets a PatientVist object based on an appointmentID.
+        /// </summary>
+        /// <param name="appointmentID"></param>
+        /// <returns>A PatientVisit object. </returns>
         public PatientVisit GetPatientVisitInfoByAppointment(int appointmentID)
         {
             PatientVisit visit = new PatientVisit();
@@ -47,6 +55,13 @@ namespace CS6232GroupProject.DAL
             return visit;
         }
 
+        /// <summary>
+        /// This method updates a PatientVisit row that returns true if complete
+        /// or false if not.
+        /// </summary>
+        /// <param name="newVisit"></param>
+        /// <param name="oldVisit"></param>
+        /// <returns>True or False</returns>
         public bool UpdateRoutineCheck(PatientVisit newVisit, PatientVisit oldVisit)
         {
             string updateStatement =
@@ -116,11 +131,7 @@ namespace CS6232GroupProject.DAL
                     updatedCommand.Parameters.AddWithValue("@OldDiastolic", oldVisit.Diastolic);
                     updatedCommand.Parameters.AddWithValue("@OldTemperature", oldVisit.Temperature);
                     updatedCommand.Parameters.AddWithValue("@OldPulse", oldVisit.Pulse);
-
-                    MessageBox.Show("It got before the ExecuteNonQuery!", "TEST");//TEST ONLY
                     int count = updatedCommand.ExecuteNonQuery();
-
-                    MessageBox.Show("It got here!", "TEST");//TEST ONLY
                     if (count > 0)
                     {
                         return true;

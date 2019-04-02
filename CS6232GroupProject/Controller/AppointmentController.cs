@@ -49,11 +49,23 @@ namespace CS6232GroupProject.Controller
             return this.appointmentSource.GetAppointments();
         }
 
+        /// <summary>
+        /// This method returns a list of Appointment objects based on 
+        /// a patientID.
+        /// </summary>
+        /// <param name="patientID"></param>
+        /// <returns>List of Appointmnet objects.</returns>
         public List<Appointment> GetAppointmentsForPatient(int patientID)
         {
             return this.appointmentSource.GetAppointmentsForPatient(patientID);
         }
 
+        /// <summary>
+        /// This method returns an Appointment object based on 
+        /// an AppointmentID.
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns>An Appointment object. </returns>
         public Appointment GetAppointmentByID(int ID)
         {
             return this.appointmentSource.GetAppointmentByID(ID);

@@ -171,6 +171,11 @@ namespace CS6232GroupProject.DAL
             return appointments;
         }
 
+        /// <summary>
+        /// This method gets an Appointment by appointmentID and returns it.
+        /// </summary>
+        /// <param name="appointmentID"></param>
+        /// <returns>An Appointment object. </returns>
         public Appointment GetAppointmentByID(int appointmentID)
         {
 
