@@ -269,16 +269,20 @@ namespace CS6232GroupProject.DAL
                 {
                     if (newAppointment.Reasons == "")
                     {
-                        updatedCommand.Parameters.AddWithValue("@NewAppointment", oldAppointment.Reasons);
+                        updatedCommand.Parameters.AddWithValue("@OldAppointment", oldAppointment.Reasons);
                     }
                     else
                     {
-                        updatedCommand.Parameters.AddWithValue("@NewAppointment", newAppointment.Reasons);
+                        updatedCommand.Parameters.AddWithValue("@OldAppointment", newAppointment.Reasons);
                     }
                     updatedCommand.Parameters.AddWithValue("@NewDate", newAppointment.AppointmentDateTime);
+                    updatedCommand.Parameters.AddWithValue("@NewDoctorID", newAppointment.DoctorID);
+                    updatedCommand.Parameters.AddWithValue("@NewReasons", newAppointment.Reasons);
+
                     
-                    updatedCommand.Parameters.AddWithValue("@OldAppointment", oldAppointment.AppointmentID);
                     updatedCommand.Parameters.AddWithValue("@OldPatientID", oldAppointment.PatientID);
+                    updatedCommand.Parameters.AddWithValue("@OldDoctorID", oldAppointment.DoctorID);
+                    updatedCommand.Parameters.AddWithValue("@OldReasons", oldAppointment.Reasons);
 
                     int count = updatedCommand.ExecuteNonQuery();
                     if (count > 0)
