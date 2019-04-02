@@ -52,6 +52,11 @@ namespace CS6232GroupProject.Controller
             return this.visitSource.DoesPatientVisitExist(AppointmentID);
         }
 
+        /// <summary>
+        /// Add a patients visti
+        /// </summary>
+        /// <param name="visit"></param>
+        /// <returns></returns>
         public int AddPatientVisit(PatientVisit visit)
         {
             return this.visitSource.AddPatientVisit(visit);

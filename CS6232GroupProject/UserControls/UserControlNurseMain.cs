@@ -15,7 +15,7 @@ namespace CS6232GroupProject.UserControls
         public static int patientID { get; set; }
         private List<Doctor> doctorList;
         private List<Patient> patientList;
- 
+        
         private DoctorController doctorController;
         private PatientController patientController;
         private AppointmentController appointmentController;
@@ -35,6 +35,9 @@ namespace CS6232GroupProject.UserControls
             SetComboBox();
         }
 
+        /// <summary>
+        /// Add's the states and gender to combobox
+        /// </summary>
         private void SetComboBox()
         {
             try
@@ -83,6 +86,10 @@ namespace CS6232GroupProject.UserControls
             this.labelAddMessage.Text = "";
         }
 
+        /// <summary>
+        /// Chekck fields prior to register
+        /// </summary>
+        /// <returns></returns>
         private bool CheckFieldsRegister()
         {
             labelAddMessage.ForeColor = Color.Red;
@@ -174,6 +181,11 @@ namespace CS6232GroupProject.UserControls
             // Later, we can even have it check if that patient exsists already.
         }
 
+        /// <summary>
+        /// Activates click via button search in data grid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
 
@@ -217,6 +229,11 @@ namespace CS6232GroupProject.UserControls
             patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
         }
 
+        /// <summary>
+        /// Links to patients info
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void linkLabelPatientInfoBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             panelPatientSearch.Visible = true;
@@ -234,6 +251,11 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        /// <summary>
+        /// Gets doctor info
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
@@ -247,6 +269,11 @@ namespace CS6232GroupProject.UserControls
 
         }
 
+        /// <summary>
+        /// Patient visit info by clicking the link
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void linkLabelRecordsPatientInfoVisitRecords_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             bool isOpen = false;
@@ -267,6 +294,10 @@ namespace CS6232GroupProject.UserControls
 
         }
 
+        /// <summary>
+        /// check the field for booking approinments
+        /// </summary>
+        /// <returns></returns>
         private bool CheckBookApointmentFields()
         {
             if (textBoxSummary.Text == "")
@@ -279,6 +310,11 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        /// <summary>
+        /// Method to book appointment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonBookSubmit_Click(object sender, EventArgs e)
         {
             if (CheckBookApointmentFields())
@@ -383,6 +419,11 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        /// <summary>
+        /// Updates the patient info
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPatientInfoResultUpdate_Click(object sender, EventArgs e)
         {
             Patient newPatient = new Patient();
@@ -416,6 +457,11 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        /// <summary>
+        /// Tab group selection changed function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabControlNurseMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             patientList = this.patientController.GetPatients();

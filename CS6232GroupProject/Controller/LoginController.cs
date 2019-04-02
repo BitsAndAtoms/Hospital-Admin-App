@@ -26,6 +26,11 @@ namespace CS6232GroupProject.Controller
             return this.loginDetails.CheckLogin(inputPassword, inputUserName);
         }
 
+        /// <summary>
+        /// method to check user name and role of the person logging in
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns>user name and role as list</returns>
         internal List<string> GETUserNameAndRole(string userName)
         {
            List<string> newNameAndRole = this.loginDetails.FindUserNameAndRole(userName);
