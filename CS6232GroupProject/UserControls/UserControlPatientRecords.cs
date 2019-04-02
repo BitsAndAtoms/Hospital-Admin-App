@@ -249,18 +249,6 @@ namespace CS6232GroupProject.UserControls
             SetVisitInfo();
             
         }
-
-        private void CheckAppointment()//Call last in constructor and maybe in above method?
-        {
-            if (this.appointment.AppointmentDateTime <= System.DateTime.Now)//Is this right?
-            {
-                //Make uneditable (or editable)
-                
-            }
-            else
-            {
-                //make editable (or uneditable)
-            }
-        }
+        
     }
 }
