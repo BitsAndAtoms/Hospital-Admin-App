@@ -136,9 +136,9 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a State";
                 return false;
             }
-            else if (this.textBoxRegisterZipcode.Text.Length == 0 || this.textBoxRegisterZipcode.Text == null)
+            else if (this.textBoxRegisterZipcode.Text.Length == 0 || this.textBoxRegisterZipcode.Text == null || !int.TryParse(textBoxZipPatientInfoResult.Text, out number))
             {
-                labelAddMessage.Text = "Please enter a Zip Code";
+                labelAddMessage.Text = "Please enter a valid Zip Code";
                 return false;
             }
             else
@@ -407,9 +407,9 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a State";
                 return false;
             }
-            else if (this.textBoxZipPatientInfoResult.Text.Length == 0 || this.textBoxZipPatientInfoResult.Text == null)
+            else if (this.textBoxZipPatientInfoResult.Text.Length == 0 || this.textBoxZipPatientInfoResult.Text == null || !int.TryParse(textBoxZipPatientInfoResult.Text, out number))
             {
-                labelAddUpdateMessage.Text = "Please enter a Zip Code";
+                labelAddUpdateMessage.Text = "Please enter a valid Zip Code";
                 return false;
             }
             else
