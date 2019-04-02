@@ -90,22 +90,32 @@ namespace CS6232GroupProject.UserControls
             PatientVisit newVisit = new PatientVisit();
             newVisit.AppointmentID = this.appointmentID;
             //newVisit.NurseID = this.visit.NurseID;//Don't know how to set this
+            newVisit.NurseID = 1;//TEST ONLY
             newVisit.DoctorID = this.appointment.DoctorID;
             newVisit.Date = (DateTime)this.appointment.AppointmentDateTime;
 
             MessageBox.Show("AppID is: " + newVisit.AppointmentID + "DoctorID is: " + newVisit.DoctorID, "TEST");
 
             //These can be set to "" or the equivelent if need be.
-            newVisit.Weight = 0;
+            newVisit.Weight = 0.0m;
             newVisit.Systolic = 0;
             newVisit.Diastolic = 0;
-            newVisit.Temperature = 0;
+            newVisit.Temperature = 0.0m;
             newVisit.Pulse = 0;
             newVisit.Symptoms = "";
+            MessageBox.Show("Before of add visit was called!", "TEST");
 
-            this.visitController.AddPatientVisit(newVisit);
+            try
+            {
+                this.visitController.AddPatientVisit(newVisit);//Diagnosis isn't being called
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+            
             this.visit = newVisit;
-            MessageBox.Show("end of CreateVisit was called!", "TEST");
+            MessageBox.Show("END OF CreateVisit was called!", "END OF CREATE VISIT");
         }
 
         private void SetPatientVisit()

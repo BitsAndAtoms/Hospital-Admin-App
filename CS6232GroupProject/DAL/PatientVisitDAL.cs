@@ -198,8 +198,8 @@ namespace CS6232GroupProject.DAL
         {
             string insertStatement =
                 "INSERT  PatientVisit " +
-                "(appoitnementID, nurseID, visitDateTime, diagnosis, weight, systolic, diastolic, temperature, pulse, symptoms) " +
-                "VALUES (@appointmentID, @nurseID, @visitDateTime, @diagnosis, @weight, @systolic, @diastolic, @temperature, @pulse, @symptoms)";
+                "(appoitnementID, nurseID, visitDateTime, weight, systolic, diastolic, temperature, pulse, symptoms) " +
+                "VALUES (@appointmentID, @nurseID, @visitDateTime, @weight, @systolic, @diastolic, @temperature, @pulse, @symptoms)";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
@@ -209,7 +209,6 @@ namespace CS6232GroupProject.DAL
                     insertCommand.Parameters.AddWithValue("@appointmentID", visit.AppointmentID);
                     insertCommand.Parameters.AddWithValue("@nurseID", visit.NurseID);
                     insertCommand.Parameters.AddWithValue("@visitDateTime", visit.Date);
-                    insertCommand.Parameters.AddWithValue("@diagnosis", visit.Diagnosis);
                     insertCommand.Parameters.AddWithValue("@weight", visit.Weight);
                     insertCommand.Parameters.AddWithValue("@systolic", visit.Systolic);
                     insertCommand.Parameters.AddWithValue("@diastolic", visit.Diastolic);
