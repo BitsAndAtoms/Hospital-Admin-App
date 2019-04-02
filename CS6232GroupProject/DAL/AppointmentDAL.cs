@@ -208,11 +208,17 @@ namespace CS6232GroupProject.DAL
             return appointment;
         }
 
+        /// <summary>
+        /// This method returns true or false if the patientID has 
+        /// an appointment or not.
+        /// </summary>
+        /// <param name="patientID"></param>
+        /// <returns>True or false.</returns>
         public bool CheckIfAppointmentExists(int patientID)
         {
             int count = 0;
             string selectStatement =
-                "SELECT COUNT(appointmentID) " +
+                "SELECT COUNT(appointmentID) as 'Number'" +
                 "FROM HasAppointment " +
                 "WHERE patientID = @patientID";
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -235,11 +241,11 @@ namespace CS6232GroupProject.DAL
                     }
                     if (count > 0)
                     {
-                        return false;
+                        return true;
                     }
                     else
                     {
-                        return true;
+                        return false;
                     }
                 }
             }

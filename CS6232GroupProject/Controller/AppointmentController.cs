@@ -71,6 +71,12 @@ namespace CS6232GroupProject.Controller
             return this.appointmentSource.GetAppointmentByID(ID);
         }
 
+        /// <summary>
+        /// This method returns true or false if a patient has 
+        /// an appointment or not.
+        /// </summary>
+        /// <param name="patientID"></param>
+        /// <returns>True or false.</returns>
         public bool CheckIfAppointmentExists(int patientID)
         {
             return this.appointmentSource.CheckIfAppointmentExists(patientID);
