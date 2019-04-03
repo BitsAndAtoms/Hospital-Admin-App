@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
             this.pictureBoxNurseIcon = new System.Windows.Forms.PictureBox();
@@ -43,7 +44,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.3211F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.6789F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
             this.tableLayoutPanel1.Controls.Add(this.linkLabelLogout, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxNurseIcon, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelName, 1, 0);
@@ -69,6 +70,7 @@
             this.linkLabelLogout.TabIndex = 2;
             this.linkLabelLogout.TabStop = true;
             this.linkLabelLogout.Text = "Logout";
+            this.linkLabelLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogout_LinkClicked);
             // 
             // pictureBoxNurseIcon
             // 
@@ -77,7 +79,7 @@
             this.pictureBoxNurseIcon.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxNurseIcon.Name = "pictureBoxNurseIcon";
             this.pictureBoxNurseIcon.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.pictureBoxNurseIcon.Size = new System.Drawing.Size(129, 130);
+            this.pictureBoxNurseIcon.Size = new System.Drawing.Size(128, 130);
             this.pictureBoxNurseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxNurseIcon.TabIndex = 0;
             this.pictureBoxNurseIcon.TabStop = false;
@@ -88,7 +90,7 @@
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(138, 62);
+            this.labelName.Location = new System.Drawing.Point(137, 62);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(105, 25);
             this.labelName.TabIndex = 1;
@@ -96,10 +98,10 @@
             // 
             // userControlAdminMain1
             // 
-            this.userControlAdminMain1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userControlAdminMain1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlAdminMain1.Location = new System.Drawing.Point(0, 149);
             this.userControlAdminMain1.Name = "userControlAdminMain1";
-            this.userControlAdminMain1.Size = new System.Drawing.Size(738, 632);
+            this.userControlAdminMain1.Size = new System.Drawing.Size(738, 754);
             this.userControlAdminMain1.TabIndex = 6;
             // 
             // FormAdminMain
@@ -110,7 +112,9 @@
             this.ClientSize = new System.Drawing.Size(738, 903);
             this.Controls.Add(this.userControlAdminMain1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdminMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdminMain";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

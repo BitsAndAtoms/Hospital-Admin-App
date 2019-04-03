@@ -11,8 +11,10 @@ namespace CS6232GroupProject.View
     public partial class FormLogin : Form
     {
         private FormNurseMain nurseMain;
+        private FormAdminMain adminMain;
         private readonly LoginController newLoginController;
         public static int NurseID {get; set;}
+        public static int AdminID { get; set; }
         /// <summary>
         /// constructor of login form
         /// </summary>
@@ -20,6 +22,7 @@ namespace CS6232GroupProject.View
         {
             InitializeComponent();
             this.nurseMain = new FormNurseMain(this);
+            this.adminMain = new FormAdminMain(this);
             this.newLoginController = new LoginController();
             this.FormClosed += (s, ev) => Application.Exit();
         }
@@ -55,6 +58,15 @@ namespace CS6232GroupProject.View
                 this.textBoxUsername.Text = "";
                 this.textBoxPassword.Text = "";
                 
+            }
+            else if ((this.newLoginController.DoCheckLogin(this.textBoxPassword.Text, this.textBoxUsername.Text) && (newNameAndRole.Count > 1)) && newNameAndRole[0].Equals("Admin"))
+            {
+                this.Hide();
+                this.adminMain.setUserNameDisplay(newNameAndRole[0] + " " + newNameAndRole[1]);
+                AdminID = Convert.ToInt32(newNameAndRole[3]);
+                this.adminMain.Show();
+                this.textBoxUsername.Text = "";
+                this.textBoxPassword.Text = "";
             }
             else
             {

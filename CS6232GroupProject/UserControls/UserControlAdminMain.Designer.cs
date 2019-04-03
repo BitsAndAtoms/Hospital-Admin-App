@@ -78,36 +78,37 @@
             this.labelRegisterNurse = new System.Windows.Forms.Label();
             this.dateTimePickerReportsStartDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerReportsEndDate = new System.Windows.Forms.DateTimePicker();
-            this.radioButtonNurseActive = new System.Windows.Forms.RadioButton();
+            this.radioButtonRegisterNurseActive = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPhoneRegisterNurse = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxLastNameRegisterNurse = new System.Windows.Forms.TextBox();
+            this.textBoxFirstNameRegisterNurse = new System.Windows.Forms.TextBox();
             this.labelFirstNameRegisterNurse = new System.Windows.Forms.Label();
             this.labelDOBRegisterNurse = new System.Windows.Forms.Label();
             this.labelLastNameRegisterNurse = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxPhoneRegisterNurse = new System.Windows.Forms.TextBox();
+            this.dateTimePickerDOBRegisterNurse = new System.Windows.Forms.DateTimePicker();
             this.labelGenderRegisterNurse = new System.Windows.Forms.Label();
             this.labelSSNRegisterNurse = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxSSNRegisterNurse = new System.Windows.Forms.TextBox();
+            this.comboBoxGenderRegisterNurse = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxStreetRegisterNurse = new System.Windows.Forms.TextBox();
             this.labelStreetRegisterNurse = new System.Windows.Forms.Label();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.labelStateRegisterNurse = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxStateRegisterNurse = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxZipRegisterNurse = new System.Windows.Forms.TextBox();
             this.labelZipRegisterNurse = new System.Windows.Forms.Label();
             this.buttonRegisterNurse = new System.Windows.Forms.Button();
             this.labelMailingAddressRegisterNurse = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.radioButtonNurseInactive = new System.Windows.Forms.RadioButton();
+            this.radioButtonRegisterNurseInactive = new System.Windows.Forms.RadioButton();
             this.radioButtonNurseInfoResultsActive = new System.Windows.Forms.RadioButton();
             this.radioButtonNurseInfoResultsInactive = new System.Windows.Forms.RadioButton();
+            this.labelAddMessage = new System.Windows.Forms.Label();
             this.tabControlAdminMain.SuspendLayout();
             this.tabPageAdminNurseInfo.SuspendLayout();
             this.panelNurseSearch.SuspendLayout();
@@ -260,6 +261,7 @@
             this.buttonNurseInfoSearch.TabIndex = 7;
             this.buttonNurseInfoSearch.Text = "Search";
             this.buttonNurseInfoSearch.UseVisualStyleBackColor = false;
+            this.buttonNurseInfoSearch.Click += new System.EventHandler(this.buttonNurseInfoSearch_Click);
             // 
             // dateTimePickerDOBNurseInfo
             // 
@@ -642,6 +644,7 @@
             this.linkLabelNurseInfoBack.TabStop = true;
             this.linkLabelNurseInfoBack.Text = "< Back";
             this.linkLabelNurseInfoBack.Visible = false;
+            this.linkLabelNurseInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNurseInfoBack_LinkClicked);
             // 
             // tabPageAdminReports
             // 
@@ -774,19 +777,19 @@
             this.dateTimePickerReportsEndDate.Size = new System.Drawing.Size(139, 26);
             this.dateTimePickerReportsEndDate.TabIndex = 10;
             // 
-            // radioButtonNurseActive
+            // radioButtonRegisterNurseActive
             // 
-            this.radioButtonNurseActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.radioButtonRegisterNurseActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonNurseActive.AutoSize = true;
-            this.radioButtonNurseActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.radioButtonNurseActive.Location = new System.Drawing.Point(742, 23);
-            this.radioButtonNurseActive.Name = "radioButtonNurseActive";
-            this.radioButtonNurseActive.Size = new System.Drawing.Size(179, 24);
-            this.radioButtonNurseActive.TabIndex = 6;
-            this.radioButtonNurseActive.TabStop = true;
-            this.radioButtonNurseActive.Text = "Active";
-            this.radioButtonNurseActive.UseVisualStyleBackColor = true;
+            this.radioButtonRegisterNurseActive.AutoSize = true;
+            this.radioButtonRegisterNurseActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.radioButtonRegisterNurseActive.Location = new System.Drawing.Point(742, 23);
+            this.radioButtonRegisterNurseActive.Name = "radioButtonRegisterNurseActive";
+            this.radioButtonRegisterNurseActive.Size = new System.Drawing.Size(179, 24);
+            this.radioButtonRegisterNurseActive.TabIndex = 6;
+            this.radioButtonRegisterNurseActive.TabStop = true;
+            this.radioButtonRegisterNurseActive.Text = "Active";
+            this.radioButtonRegisterNurseActive.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -794,20 +797,20 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.radioButtonNurseInactive, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.radioButtonRegisterNurseInactive, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.labelPhoneRegisterNurse, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.radioButtonNurseActive, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxLastNameRegisterNurse, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.radioButtonRegisterNurseActive, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxFirstNameRegisterNurse, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelFirstNameRegisterNurse, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelDOBRegisterNurse, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.labelLastNameRegisterNurse, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBox3, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker1, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxPhoneRegisterNurse, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerDOBRegisterNurse, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.labelGenderRegisterNurse, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.labelSSNRegisterNurse, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.textBox4, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox1, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxSSNRegisterNurse, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxGenderRegisterNurse, 1, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -835,25 +838,25 @@
             this.labelPhoneRegisterNurse.TabIndex = 11;
             this.labelPhoneRegisterNurse.Text = "Phone";
             // 
-            // textBox1
+            // textBoxLastNameRegisterNurse
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(280, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 29);
-            this.textBox1.TabIndex = 2;
+            this.textBoxLastNameRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxLastNameRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLastNameRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLastNameRegisterNurse.Location = new System.Drawing.Point(280, 60);
+            this.textBoxLastNameRegisterNurse.Name = "textBoxLastNameRegisterNurse";
+            this.textBoxLastNameRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxLastNameRegisterNurse.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxFirstNameRegisterNurse
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(280, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 29);
-            this.textBox2.TabIndex = 1;
+            this.textBoxFirstNameRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxFirstNameRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxFirstNameRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFirstNameRegisterNurse.Location = new System.Drawing.Point(280, 10);
+            this.textBoxFirstNameRegisterNurse.Name = "textBoxFirstNameRegisterNurse";
+            this.textBoxFirstNameRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxFirstNameRegisterNurse.TabIndex = 1;
             // 
             // labelFirstNameRegisterNurse
             // 
@@ -895,24 +898,24 @@
             this.labelLastNameRegisterNurse.TabIndex = 2;
             this.labelLastNameRegisterNurse.Text = "Last Name";
             // 
-            // textBox3
+            // textBoxPhoneRegisterNurse
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(280, 260);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(186, 29);
-            this.textBox3.TabIndex = 6;
+            this.textBoxPhoneRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxPhoneRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPhoneRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPhoneRegisterNurse.Location = new System.Drawing.Point(280, 260);
+            this.textBoxPhoneRegisterNurse.Name = "textBoxPhoneRegisterNurse";
+            this.textBoxPhoneRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxPhoneRegisterNurse.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dateTimePickerDOBRegisterNurse
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(280, 112);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(186, 26);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePickerDOBRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerDOBRegisterNurse.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDOBRegisterNurse.Location = new System.Drawing.Point(280, 112);
+            this.dateTimePickerDOBRegisterNurse.Name = "dateTimePickerDOBRegisterNurse";
+            this.dateTimePickerDOBRegisterNurse.Size = new System.Drawing.Size(186, 26);
+            this.dateTimePickerDOBRegisterNurse.TabIndex = 3;
             // 
             // labelGenderRegisterNurse
             // 
@@ -942,25 +945,25 @@
             this.labelSSNRegisterNurse.TabIndex = 20;
             this.labelSSNRegisterNurse.Text = "SSN";
             // 
-            // textBox4
+            // textBoxSSNRegisterNurse
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(280, 160);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(186, 29);
-            this.textBox4.TabIndex = 4;
+            this.textBoxSSNRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxSSNRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSSNRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSSNRegisterNurse.Location = new System.Drawing.Point(280, 160);
+            this.textBoxSSNRegisterNurse.Name = "textBoxSSNRegisterNurse";
+            this.textBoxSSNRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxSSNRegisterNurse.TabIndex = 4;
             // 
-            // comboBox1
+            // comboBoxGenderRegisterNurse
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(280, 211);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(186, 28);
-            this.comboBox1.TabIndex = 21;
+            this.comboBoxGenderRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxGenderRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGenderRegisterNurse.FormattingEnabled = true;
+            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(280, 211);
+            this.comboBoxGenderRegisterNurse.Name = "comboBoxGenderRegisterNurse";
+            this.comboBoxGenderRegisterNurse.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxGenderRegisterNurse.TabIndex = 21;
             // 
             // tableLayoutPanel9
             // 
@@ -973,6 +976,7 @@
             this.tableLayoutPanel9.Controls.Add(this.buttonRegisterNurse, 1, 4);
             this.tableLayoutPanel9.Controls.Add(this.labelMailingAddressRegisterNurse, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label11, 0, 5);
+            this.tableLayoutPanel9.Controls.Add(this.labelAddMessage, 1, 5);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 331);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -990,7 +994,7 @@
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Controls.Add(this.textBox5, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.textBoxStreetRegisterNurse, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.labelStreetRegisterNurse, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(280, 37);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -1000,15 +1004,15 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(200, 75);
             this.tableLayoutPanel10.TabIndex = 8;
             // 
-            // textBox5
+            // textBoxStreetRegisterNurse
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(3, 33);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(186, 29);
-            this.textBox5.TabIndex = 9;
+            this.textBoxStreetRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxStreetRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxStreetRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxStreetRegisterNurse.Location = new System.Drawing.Point(3, 33);
+            this.textBoxStreetRegisterNurse.Name = "textBoxStreetRegisterNurse";
+            this.textBoxStreetRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxStreetRegisterNurse.TabIndex = 9;
             // 
             // labelStreetRegisterNurse
             // 
@@ -1028,7 +1032,7 @@
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.Controls.Add(this.labelStateRegisterNurse, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.comboBox2, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.comboBoxStateRegisterNurse, 0, 1);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(280, 118);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
@@ -1051,21 +1055,21 @@
             this.labelStateRegisterNurse.TabIndex = 14;
             this.labelStateRegisterNurse.Text = "State";
             // 
-            // comboBox2
+            // comboBoxStateRegisterNurse
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(3, 29);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(179, 28);
-            this.comboBox2.TabIndex = 12;
+            this.comboBoxStateRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxStateRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStateRegisterNurse.FormattingEnabled = true;
+            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 29);
+            this.comboBoxStateRegisterNurse.Name = "comboBoxStateRegisterNurse";
+            this.comboBoxStateRegisterNurse.Size = new System.Drawing.Size(179, 28);
+            this.comboBoxStateRegisterNurse.TabIndex = 12;
             // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 1;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Controls.Add(this.textBox6, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.textBoxZipRegisterNurse, 0, 1);
             this.tableLayoutPanel12.Controls.Add(this.labelZipRegisterNurse, 0, 0);
             this.tableLayoutPanel12.Location = new System.Drawing.Point(280, 183);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -1075,15 +1079,15 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(200, 59);
             this.tableLayoutPanel12.TabIndex = 13;
             // 
-            // textBox6
+            // textBoxZipRegisterNurse
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(3, 25);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(186, 29);
-            this.textBox6.TabIndex = 14;
+            this.textBoxZipRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxZipRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxZipRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxZipRegisterNurse.Location = new System.Drawing.Point(3, 25);
+            this.textBoxZipRegisterNurse.Name = "textBoxZipRegisterNurse";
+            this.textBoxZipRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxZipRegisterNurse.TabIndex = 14;
             // 
             // labelZipRegisterNurse
             // 
@@ -1111,6 +1115,7 @@
             this.buttonRegisterNurse.TabIndex = 15;
             this.buttonRegisterNurse.Text = "Register";
             this.buttonRegisterNurse.UseVisualStyleBackColor = false;
+            this.buttonRegisterNurse.Click += new System.EventHandler(this.buttonRegisterNurse_Click);
             // 
             // labelMailingAddressRegisterNurse
             // 
@@ -1134,19 +1139,20 @@
             this.label11.Size = new System.Drawing.Size(0, 20);
             this.label11.TabIndex = 17;
             // 
-            // radioButtonNurseInactive
+            // radioButtonRegisterNurseInactive
             // 
-            this.radioButtonNurseInactive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.radioButtonRegisterNurseInactive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonNurseInactive.AutoSize = true;
-            this.radioButtonNurseInactive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.radioButtonNurseInactive.Location = new System.Drawing.Point(742, 53);
-            this.radioButtonNurseInactive.Name = "radioButtonNurseInactive";
-            this.radioButtonNurseInactive.Size = new System.Drawing.Size(179, 24);
-            this.radioButtonNurseInactive.TabIndex = 22;
-            this.radioButtonNurseInactive.TabStop = true;
-            this.radioButtonNurseInactive.Text = "Inactive";
-            this.radioButtonNurseInactive.UseVisualStyleBackColor = true;
+            this.radioButtonRegisterNurseInactive.AutoSize = true;
+            this.radioButtonRegisterNurseInactive.Checked = true;
+            this.radioButtonRegisterNurseInactive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.radioButtonRegisterNurseInactive.Location = new System.Drawing.Point(742, 53);
+            this.radioButtonRegisterNurseInactive.Name = "radioButtonRegisterNurseInactive";
+            this.radioButtonRegisterNurseInactive.Size = new System.Drawing.Size(179, 24);
+            this.radioButtonRegisterNurseInactive.TabIndex = 22;
+            this.radioButtonRegisterNurseInactive.TabStop = true;
+            this.radioButtonRegisterNurseInactive.Text = "Inactive";
+            this.radioButtonRegisterNurseInactive.UseVisualStyleBackColor = true;
             // 
             // radioButtonNurseInfoResultsActive
             // 
@@ -1171,6 +1177,14 @@
             this.radioButtonNurseInfoResultsInactive.TabStop = true;
             this.radioButtonNurseInfoResultsInactive.Text = "Inactive";
             this.radioButtonNurseInfoResultsInactive.UseVisualStyleBackColor = true;
+            // 
+            // labelAddMessage
+            // 
+            this.labelAddMessage.AutoSize = true;
+            this.labelAddMessage.Location = new System.Drawing.Point(280, 295);
+            this.labelAddMessage.Name = "labelAddMessage";
+            this.labelAddMessage.Size = new System.Drawing.Size(0, 20);
+            this.labelAddMessage.TabIndex = 18;
             // 
             // UserControlAdminMain
             // 
@@ -1270,33 +1284,34 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerReportsEndDate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxStreetRegisterNurse;
         private System.Windows.Forms.Label labelStreetRegisterNurse;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Label labelStateRegisterNurse;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxStateRegisterNurse;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxZipRegisterNurse;
         private System.Windows.Forms.Label labelZipRegisterNurse;
         private System.Windows.Forms.Button buttonRegisterNurse;
         private System.Windows.Forms.Label labelMailingAddressRegisterNurse;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label labelPhoneRegisterNurse;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxLastNameRegisterNurse;
+        private System.Windows.Forms.TextBox textBoxFirstNameRegisterNurse;
         private System.Windows.Forms.Label labelFirstNameRegisterNurse;
         private System.Windows.Forms.Label labelDOBRegisterNurse;
         private System.Windows.Forms.Label labelLastNameRegisterNurse;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBoxPhoneRegisterNurse;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDOBRegisterNurse;
         private System.Windows.Forms.Label labelGenderRegisterNurse;
         private System.Windows.Forms.Label labelSSNRegisterNurse;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButtonNurseActive;
-        private System.Windows.Forms.RadioButton radioButtonNurseInactive;
+        private System.Windows.Forms.TextBox textBoxSSNRegisterNurse;
+        private System.Windows.Forms.ComboBox comboBoxGenderRegisterNurse;
+        private System.Windows.Forms.RadioButton radioButtonRegisterNurseActive;
+        private System.Windows.Forms.RadioButton radioButtonRegisterNurseInactive;
         private System.Windows.Forms.RadioButton radioButtonNurseInfoResultsActive;
         private System.Windows.Forms.RadioButton radioButtonNurseInfoResultsInactive;
+        private System.Windows.Forms.Label labelAddMessage;
     }
 }

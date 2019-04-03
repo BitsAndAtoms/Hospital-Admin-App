@@ -12,9 +12,27 @@ namespace CS6232GroupProject.View
 {
     public partial class FormAdminMain : Form
     {
-        public FormAdminMain()
+        private FormLogin loginForm;
+        public FormAdminMain(FormLogin loginForm)
         {
             InitializeComponent();
+            this.loginForm = loginForm;
+            this.FormClosed += (s, ev) => Application.Exit();
+        }
+
+        /// <summary>
+        /// Set username display
+        /// </summary>
+        /// <param name="userName"></param>
+        public void setUserNameDisplay(string userName)
+        {
+            this.labelName.Text = "Welcome " + userName + "!";
+        }
+
+        private void linkLabelLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.loginForm.Show();
+            this.Hide();
         }
     }
 }
