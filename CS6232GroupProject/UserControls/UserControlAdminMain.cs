@@ -181,6 +181,7 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+
         /// <summary>
         /// Populate DatGridView with search results
         /// </summary>

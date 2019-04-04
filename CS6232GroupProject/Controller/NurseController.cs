@@ -22,5 +22,10 @@ namespace CS6232GroupProject.Controller
         {
             this.nurseSource.registerNurseInDB(newNurse, newAddress);
         }
+
+        internal void updateNurse(Nurse newNurse, Address newAddress)
+        {
+            this.nurseSource.updateNurse(newNurse, newAddress);
+        }
     }
 }
