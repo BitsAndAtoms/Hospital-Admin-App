@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlAdminMain = new System.Windows.Forms.TabControl();
+            this.tabPageAdminReports = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelReportsStartDate = new System.Windows.Forms.Label();
+            this.labelReportsEndDate = new System.Windows.Forms.Label();
+            this.dateTimePickerReportsStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerReportsEndDate = new System.Windows.Forms.DateTimePicker();
+            this.buttonReportsSubmit = new System.Windows.Forms.Button();
+            this.labelReports = new System.Windows.Forms.Label();
             this.tabPageAdminNurseInfo = new System.Windows.Forms.TabPage();
             this.panelNurseSearch = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,33 +74,12 @@
             this.labelGenderNurseInfoResults = new System.Windows.Forms.Label();
             this.labelSSNNurseInfoResults = new System.Windows.Forms.Label();
             this.textBoxSSNNurseInfoResults = new System.Windows.Forms.TextBox();
-            this.comboBoxNurseInfoResults = new System.Windows.Forms.ComboBox();
+            this.comboBoxGenderNurseInfoResults = new System.Windows.Forms.ComboBox();
+            this.radioButtonNurseInfoResultsActive = new System.Windows.Forms.RadioButton();
+            this.radioButtonNurseInfoResultsInactive = new System.Windows.Forms.RadioButton();
             this.labelNurseInformation = new System.Windows.Forms.Label();
             this.linkLabelNurseInfoBack = new System.Windows.Forms.LinkLabel();
-            this.tabPageAdminReports = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelReportsStartDate = new System.Windows.Forms.Label();
-            this.labelReportsEndDate = new System.Windows.Forms.Label();
-            this.buttonReportsSubmit = new System.Windows.Forms.Button();
-            this.labelReports = new System.Windows.Forms.Label();
             this.tabPageNurseRegister = new System.Windows.Forms.TabPage();
-            this.labelRegisterNurse = new System.Windows.Forms.Label();
-            this.dateTimePickerReportsStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerReportsEndDate = new System.Windows.Forms.DateTimePicker();
-            this.radioButtonRegisterNurseActive = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPhoneRegisterNurse = new System.Windows.Forms.Label();
-            this.textBoxLastNameRegisterNurse = new System.Windows.Forms.TextBox();
-            this.textBoxFirstNameRegisterNurse = new System.Windows.Forms.TextBox();
-            this.labelFirstNameRegisterNurse = new System.Windows.Forms.Label();
-            this.labelDOBRegisterNurse = new System.Windows.Forms.Label();
-            this.labelLastNameRegisterNurse = new System.Windows.Forms.Label();
-            this.textBoxPhoneRegisterNurse = new System.Windows.Forms.TextBox();
-            this.dateTimePickerDOBRegisterNurse = new System.Windows.Forms.DateTimePicker();
-            this.labelGenderRegisterNurse = new System.Windows.Forms.Label();
-            this.labelSSNRegisterNurse = new System.Windows.Forms.Label();
-            this.textBoxSSNRegisterNurse = new System.Windows.Forms.TextBox();
-            this.comboBoxGenderRegisterNurse = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxStreetRegisterNurse = new System.Windows.Forms.TextBox();
@@ -105,11 +93,40 @@
             this.buttonRegisterNurse = new System.Windows.Forms.Button();
             this.labelMailingAddressRegisterNurse = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.radioButtonRegisterNurseInactive = new System.Windows.Forms.RadioButton();
-            this.radioButtonNurseInfoResultsActive = new System.Windows.Forms.RadioButton();
-            this.radioButtonNurseInfoResultsInactive = new System.Windows.Forms.RadioButton();
             this.labelAddMessage = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButtonRegisterNurseInactive = new System.Windows.Forms.RadioButton();
+            this.labelPhoneRegisterNurse = new System.Windows.Forms.Label();
+            this.textBoxLastNameRegisterNurse = new System.Windows.Forms.TextBox();
+            this.radioButtonRegisterNurseActive = new System.Windows.Forms.RadioButton();
+            this.textBoxFirstNameRegisterNurse = new System.Windows.Forms.TextBox();
+            this.labelFirstNameRegisterNurse = new System.Windows.Forms.Label();
+            this.labelDOBRegisterNurse = new System.Windows.Forms.Label();
+            this.labelLastNameRegisterNurse = new System.Windows.Forms.Label();
+            this.textBoxPhoneRegisterNurse = new System.Windows.Forms.TextBox();
+            this.dateTimePickerDOBRegisterNurse = new System.Windows.Forms.DateTimePicker();
+            this.labelGenderRegisterNurse = new System.Windows.Forms.Label();
+            this.labelSSNRegisterNurse = new System.Windows.Forms.Label();
+            this.textBoxSSNRegisterNurse = new System.Windows.Forms.TextBox();
+            this.comboBoxGenderRegisterNurse = new System.Windows.Forms.ComboBox();
+            this.labelRegisterNurse = new System.Windows.Forms.Label();
+            this.dataGridViewNurseInfo = new System.Windows.Forms.DataGridView();
+            this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControlAdminMain.SuspendLayout();
+            this.tabPageAdminReports.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.tabPageAdminNurseInfo.SuspendLayout();
             this.panelNurseSearch.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -119,14 +136,14 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tabPageAdminReports.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tabPageNurseRegister.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNurseInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAdminMain
@@ -141,6 +158,111 @@
             this.tabControlAdminMain.SelectedIndex = 0;
             this.tabControlAdminMain.Size = new System.Drawing.Size(955, 632);
             this.tabControlAdminMain.TabIndex = 1;
+            // 
+            // tabPageAdminReports
+            // 
+            this.tabPageAdminReports.AutoScroll = true;
+            this.tabPageAdminReports.BackColor = System.Drawing.Color.White;
+            this.tabPageAdminReports.Controls.Add(this.tableLayoutPanel2);
+            this.tabPageAdminReports.Controls.Add(this.labelReports);
+            this.tabPageAdminReports.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAdminReports.Name = "tabPageAdminReports";
+            this.tabPageAdminReports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAdminReports.Size = new System.Drawing.Size(947, 599);
+            this.tabPageAdminReports.TabIndex = 1;
+            this.tabPageAdminReports.Text = "Reports";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoScroll = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.labelReportsStartDate, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelReportsEndDate, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dateTimePickerReportsStartDate, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dateTimePickerReportsEndDate, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.buttonReportsSubmit, 1, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 32);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(941, 164);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // labelReportsStartDate
+            // 
+            this.labelReportsStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelReportsStartDate.AutoSize = true;
+            this.labelReportsStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReportsStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelReportsStartDate.Location = new System.Drawing.Point(3, 15);
+            this.labelReportsStartDate.Name = "labelReportsStartDate";
+            this.labelReportsStartDate.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelReportsStartDate.Size = new System.Drawing.Size(118, 20);
+            this.labelReportsStartDate.TabIndex = 1;
+            this.labelReportsStartDate.Text = "Start Date";
+            // 
+            // labelReportsEndDate
+            // 
+            this.labelReportsEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelReportsEndDate.AutoSize = true;
+            this.labelReportsEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReportsEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelReportsEndDate.Location = new System.Drawing.Point(3, 65);
+            this.labelReportsEndDate.Name = "labelReportsEndDate";
+            this.labelReportsEndDate.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelReportsEndDate.Size = new System.Drawing.Size(110, 20);
+            this.labelReportsEndDate.TabIndex = 2;
+            this.labelReportsEndDate.Text = "End Date";
+            // 
+            // dateTimePickerReportsStartDate
+            // 
+            this.dateTimePickerReportsStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerReportsStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerReportsStartDate.Location = new System.Drawing.Point(285, 12);
+            this.dateTimePickerReportsStartDate.Name = "dateTimePickerReportsStartDate";
+            this.dateTimePickerReportsStartDate.Size = new System.Drawing.Size(139, 26);
+            this.dateTimePickerReportsStartDate.TabIndex = 9;
+            // 
+            // dateTimePickerReportsEndDate
+            // 
+            this.dateTimePickerReportsEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerReportsEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerReportsEndDate.Location = new System.Drawing.Point(285, 62);
+            this.dateTimePickerReportsEndDate.Name = "dateTimePickerReportsEndDate";
+            this.dateTimePickerReportsEndDate.Size = new System.Drawing.Size(139, 26);
+            this.dateTimePickerReportsEndDate.TabIndex = 10;
+            // 
+            // buttonReportsSubmit
+            // 
+            this.buttonReportsSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonReportsSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonReportsSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReportsSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReportsSubmit.ForeColor = System.Drawing.Color.Black;
+            this.buttonReportsSubmit.Location = new System.Drawing.Point(543, 114);
+            this.buttonReportsSubmit.Name = "buttonReportsSubmit";
+            this.buttonReportsSubmit.Size = new System.Drawing.Size(137, 35);
+            this.buttonReportsSubmit.TabIndex = 7;
+            this.buttonReportsSubmit.Text = "Search";
+            this.buttonReportsSubmit.UseVisualStyleBackColor = false;
+            // 
+            // labelReports
+            // 
+            this.labelReports.AutoSize = true;
+            this.labelReports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelReports.Location = new System.Drawing.Point(3, 3);
+            this.labelReports.Name = "labelReports";
+            this.labelReports.Size = new System.Drawing.Size(220, 29);
+            this.labelReports.TabIndex = 5;
+            this.labelReports.Text = "Generate Reports";
             // 
             // tabPageAdminNurseInfo
             // 
@@ -160,6 +282,7 @@
             // 
             // panelNurseSearch
             // 
+            this.panelNurseSearch.Controls.Add(this.dataGridViewNurseInfo);
             this.panelNurseSearch.Controls.Add(this.tableLayoutPanel1);
             this.panelNurseSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNurseSearch.Location = new System.Drawing.Point(3, 670);
@@ -376,7 +499,7 @@
             this.comboBoxStateNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStateNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStateNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStateNurseInfoResults.Name = "comboBoxStateNurseInfoResults";
             this.comboBoxStateNurseInfoResults.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStateNurseInfoResults.TabIndex = 12;
@@ -469,7 +592,7 @@
             this.tableLayoutPanel4.Controls.Add(this.labelGenderNurseInfoResults, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.labelSSNNurseInfoResults, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.textBoxSSNNurseInfoResults, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.comboBoxNurseInfoResults, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxGenderNurseInfoResults, 1, 4);
             this.tableLayoutPanel4.Controls.Add(this.radioButtonNurseInfoResultsActive, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.radioButtonNurseInfoResultsInactive, 2, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -610,15 +733,39 @@
             this.textBoxSSNNurseInfoResults.Size = new System.Drawing.Size(186, 29);
             this.textBoxSSNNurseInfoResults.TabIndex = 4;
             // 
-            // comboBoxNurseInfoResults
+            // comboBoxGenderNurseInfoResults
             // 
-            this.comboBoxNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxNurseInfoResults.Location = new System.Drawing.Point(280, 214);
-            this.comboBoxNurseInfoResults.Name = "comboBoxNurseInfoResults";
-            this.comboBoxNurseInfoResults.Size = new System.Drawing.Size(186, 28);
-            this.comboBoxNurseInfoResults.TabIndex = 21;
+            this.comboBoxGenderNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxGenderNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGenderNurseInfoResults.FormattingEnabled = true;
+            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(280, 211);
+            this.comboBoxGenderNurseInfoResults.Name = "comboBoxGenderNurseInfoResults";
+            this.comboBoxGenderNurseInfoResults.Size = new System.Drawing.Size(186, 28);
+            this.comboBoxGenderNurseInfoResults.TabIndex = 21;
+            // 
+            // radioButtonNurseInfoResultsActive
+            // 
+            this.radioButtonNurseInfoResultsActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonNurseInfoResultsActive.AutoSize = true;
+            this.radioButtonNurseInfoResultsActive.Location = new System.Drawing.Point(742, 23);
+            this.radioButtonNurseInfoResultsActive.Name = "radioButtonNurseInfoResultsActive";
+            this.radioButtonNurseInfoResultsActive.Size = new System.Drawing.Size(179, 24);
+            this.radioButtonNurseInfoResultsActive.TabIndex = 22;
+            this.radioButtonNurseInfoResultsActive.TabStop = true;
+            this.radioButtonNurseInfoResultsActive.Text = "Active";
+            this.radioButtonNurseInfoResultsActive.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNurseInfoResultsInactive
+            // 
+            this.radioButtonNurseInfoResultsInactive.AutoSize = true;
+            this.radioButtonNurseInfoResultsInactive.Location = new System.Drawing.Point(742, 53);
+            this.radioButtonNurseInfoResultsInactive.Name = "radioButtonNurseInfoResultsInactive";
+            this.radioButtonNurseInfoResultsInactive.Size = new System.Drawing.Size(82, 24);
+            this.radioButtonNurseInfoResultsInactive.TabIndex = 23;
+            this.radioButtonNurseInfoResultsInactive.TabStop = true;
+            this.radioButtonNurseInfoResultsInactive.Text = "Inactive";
+            this.radioButtonNurseInfoResultsInactive.UseVisualStyleBackColor = true;
             // 
             // labelNurseInformation
             // 
@@ -637,7 +784,7 @@
             this.linkLabelNurseInfoBack.AutoSize = true;
             this.linkLabelNurseInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelNurseInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelNurseInfoBack.Location = new System.Drawing.Point(749, 3);
+            this.linkLabelNurseInfoBack.Location = new System.Drawing.Point(732, 3);
             this.linkLabelNurseInfoBack.Name = "linkLabelNurseInfoBack";
             this.linkLabelNurseInfoBack.Size = new System.Drawing.Size(73, 25);
             this.linkLabelNurseInfoBack.TabIndex = 9;
@@ -645,93 +792,6 @@
             this.linkLabelNurseInfoBack.Text = "< Back";
             this.linkLabelNurseInfoBack.Visible = false;
             this.linkLabelNurseInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNurseInfoBack_LinkClicked);
-            // 
-            // tabPageAdminReports
-            // 
-            this.tabPageAdminReports.AutoScroll = true;
-            this.tabPageAdminReports.BackColor = System.Drawing.Color.White;
-            this.tabPageAdminReports.Controls.Add(this.tableLayoutPanel2);
-            this.tabPageAdminReports.Controls.Add(this.labelReports);
-            this.tabPageAdminReports.Location = new System.Drawing.Point(4, 29);
-            this.tabPageAdminReports.Name = "tabPageAdminReports";
-            this.tabPageAdminReports.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdminReports.Size = new System.Drawing.Size(765, 599);
-            this.tabPageAdminReports.TabIndex = 1;
-            this.tabPageAdminReports.Text = "Reports";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.AutoScroll = true;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.Controls.Add(this.labelReportsStartDate, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelReportsEndDate, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePickerReportsStartDate, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePickerReportsEndDate, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.buttonReportsSubmit, 1, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 32);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(759, 164);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // labelReportsStartDate
-            // 
-            this.labelReportsStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelReportsStartDate.AutoSize = true;
-            this.labelReportsStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReportsStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelReportsStartDate.Location = new System.Drawing.Point(3, 15);
-            this.labelReportsStartDate.Name = "labelReportsStartDate";
-            this.labelReportsStartDate.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelReportsStartDate.Size = new System.Drawing.Size(118, 20);
-            this.labelReportsStartDate.TabIndex = 1;
-            this.labelReportsStartDate.Text = "Start Date";
-            // 
-            // labelReportsEndDate
-            // 
-            this.labelReportsEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelReportsEndDate.AutoSize = true;
-            this.labelReportsEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReportsEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelReportsEndDate.Location = new System.Drawing.Point(3, 65);
-            this.labelReportsEndDate.Name = "labelReportsEndDate";
-            this.labelReportsEndDate.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelReportsEndDate.Size = new System.Drawing.Size(110, 20);
-            this.labelReportsEndDate.TabIndex = 2;
-            this.labelReportsEndDate.Text = "End Date";
-            // 
-            // buttonReportsSubmit
-            // 
-            this.buttonReportsSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonReportsSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonReportsSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReportsSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReportsSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonReportsSubmit.Location = new System.Drawing.Point(424, 114);
-            this.buttonReportsSubmit.Name = "buttonReportsSubmit";
-            this.buttonReportsSubmit.Size = new System.Drawing.Size(137, 35);
-            this.buttonReportsSubmit.TabIndex = 7;
-            this.buttonReportsSubmit.Text = "Search";
-            this.buttonReportsSubmit.UseVisualStyleBackColor = false;
-            // 
-            // labelReports
-            // 
-            this.labelReports.AutoSize = true;
-            this.labelReports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelReports.Location = new System.Drawing.Point(3, 3);
-            this.labelReports.Name = "labelReports";
-            this.labelReports.Size = new System.Drawing.Size(220, 29);
-            this.labelReports.TabIndex = 5;
-            this.labelReports.Text = "Generate Reports";
             // 
             // tabPageNurseRegister
             // 
@@ -747,49 +807,187 @@
             this.tabPageNurseRegister.Text = "Register Nurse";
             this.tabPageNurseRegister.UseVisualStyleBackColor = true;
             // 
-            // labelRegisterNurse
+            // tableLayoutPanel9
             // 
-            this.labelRegisterNurse.AutoSize = true;
-            this.labelRegisterNurse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelRegisterNurse.Location = new System.Drawing.Point(3, 3);
-            this.labelRegisterNurse.Name = "labelRegisterNurse";
-            this.labelRegisterNurse.Size = new System.Drawing.Size(189, 29);
-            this.labelRegisterNurse.TabIndex = 5;
-            this.labelRegisterNurse.Text = "Register Nurse";
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel11, 1, 2);
+            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel12, 1, 3);
+            this.tableLayoutPanel9.Controls.Add(this.buttonRegisterNurse, 1, 4);
+            this.tableLayoutPanel9.Controls.Add(this.labelMailingAddressRegisterNurse, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label11, 0, 5);
+            this.tableLayoutPanel9.Controls.Add(this.labelAddMessage, 1, 5);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 331);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 6;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(924, 336);
+            this.tableLayoutPanel9.TabIndex = 8;
             // 
-            // dateTimePickerReportsStartDate
+            // tableLayoutPanel10
             // 
-            this.dateTimePickerReportsStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerReportsStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerReportsStartDate.Location = new System.Drawing.Point(230, 12);
-            this.dateTimePickerReportsStartDate.Name = "dateTimePickerReportsStartDate";
-            this.dateTimePickerReportsStartDate.Size = new System.Drawing.Size(139, 26);
-            this.dateTimePickerReportsStartDate.TabIndex = 9;
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Controls.Add(this.textBoxStreetRegisterNurse, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.labelStreetRegisterNurse, 0, 0);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(280, 37);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(200, 75);
+            this.tableLayoutPanel10.TabIndex = 8;
             // 
-            // dateTimePickerReportsEndDate
+            // textBoxStreetRegisterNurse
             // 
-            this.dateTimePickerReportsEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerReportsEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerReportsEndDate.Location = new System.Drawing.Point(230, 62);
-            this.dateTimePickerReportsEndDate.Name = "dateTimePickerReportsEndDate";
-            this.dateTimePickerReportsEndDate.Size = new System.Drawing.Size(139, 26);
-            this.dateTimePickerReportsEndDate.TabIndex = 10;
+            this.textBoxStreetRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxStreetRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxStreetRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxStreetRegisterNurse.Location = new System.Drawing.Point(3, 33);
+            this.textBoxStreetRegisterNurse.Name = "textBoxStreetRegisterNurse";
+            this.textBoxStreetRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxStreetRegisterNurse.TabIndex = 9;
             // 
-            // radioButtonRegisterNurseActive
+            // labelStreetRegisterNurse
             // 
-            this.radioButtonRegisterNurseActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonRegisterNurseActive.AutoSize = true;
-            this.radioButtonRegisterNurseActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.radioButtonRegisterNurseActive.Location = new System.Drawing.Point(742, 23);
-            this.radioButtonRegisterNurseActive.Name = "radioButtonRegisterNurseActive";
-            this.radioButtonRegisterNurseActive.Size = new System.Drawing.Size(179, 24);
-            this.radioButtonRegisterNurseActive.TabIndex = 6;
-            this.radioButtonRegisterNurseActive.TabStop = true;
-            this.radioButtonRegisterNurseActive.Text = "Active";
-            this.radioButtonRegisterNurseActive.UseVisualStyleBackColor = true;
+            this.labelStreetRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelStreetRegisterNurse.AutoSize = true;
+            this.labelStreetRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStreetRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelStreetRegisterNurse.Location = new System.Drawing.Point(3, 0);
+            this.labelStreetRegisterNurse.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelStreetRegisterNurse.Name = "labelStreetRegisterNurse";
+            this.labelStreetRegisterNurse.Size = new System.Drawing.Size(59, 20);
+            this.labelStreetRegisterNurse.TabIndex = 11;
+            this.labelStreetRegisterNurse.Text = "Street";
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Controls.Add(this.labelStateRegisterNurse, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.comboBoxStateRegisterNurse, 0, 1);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(280, 118);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(200, 59);
+            this.tableLayoutPanel11.TabIndex = 10;
+            // 
+            // labelStateRegisterNurse
+            // 
+            this.labelStateRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelStateRegisterNurse.AutoSize = true;
+            this.labelStateRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStateRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelStateRegisterNurse.Location = new System.Drawing.Point(3, 0);
+            this.labelStateRegisterNurse.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelStateRegisterNurse.Name = "labelStateRegisterNurse";
+            this.labelStateRegisterNurse.Size = new System.Drawing.Size(53, 20);
+            this.labelStateRegisterNurse.TabIndex = 14;
+            this.labelStateRegisterNurse.Text = "State";
+            // 
+            // comboBoxStateRegisterNurse
+            // 
+            this.comboBoxStateRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxStateRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStateRegisterNurse.FormattingEnabled = true;
+            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStateRegisterNurse.Name = "comboBoxStateRegisterNurse";
+            this.comboBoxStateRegisterNurse.Size = new System.Drawing.Size(179, 28);
+            this.comboBoxStateRegisterNurse.TabIndex = 12;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 1;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Controls.Add(this.textBoxZipRegisterNurse, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.labelZipRegisterNurse, 0, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(280, 183);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(200, 59);
+            this.tableLayoutPanel12.TabIndex = 13;
+            // 
+            // textBoxZipRegisterNurse
+            // 
+            this.textBoxZipRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxZipRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxZipRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxZipRegisterNurse.Location = new System.Drawing.Point(3, 25);
+            this.textBoxZipRegisterNurse.Name = "textBoxZipRegisterNurse";
+            this.textBoxZipRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxZipRegisterNurse.TabIndex = 14;
+            // 
+            // labelZipRegisterNurse
+            // 
+            this.labelZipRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelZipRegisterNurse.AutoSize = true;
+            this.labelZipRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelZipRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelZipRegisterNurse.Location = new System.Drawing.Point(3, 0);
+            this.labelZipRegisterNurse.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelZipRegisterNurse.Name = "labelZipRegisterNurse";
+            this.labelZipRegisterNurse.Size = new System.Drawing.Size(73, 20);
+            this.labelZipRegisterNurse.TabIndex = 11;
+            this.labelZipRegisterNurse.Text = "Zipcode";
+            // 
+            // buttonRegisterNurse
+            // 
+            this.buttonRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRegisterNurse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonRegisterNurse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegisterNurse.ForeColor = System.Drawing.Color.Black;
+            this.buttonRegisterNurse.Location = new System.Drawing.Point(532, 252);
+            this.buttonRegisterNurse.Name = "buttonRegisterNurse";
+            this.buttonRegisterNurse.Size = new System.Drawing.Size(137, 35);
+            this.buttonRegisterNurse.TabIndex = 15;
+            this.buttonRegisterNurse.Text = "Register";
+            this.buttonRegisterNurse.UseVisualStyleBackColor = false;
+            this.buttonRegisterNurse.Click += new System.EventHandler(this.buttonRegisterNurse_Click);
+            // 
+            // labelMailingAddressRegisterNurse
+            // 
+            this.labelMailingAddressRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelMailingAddressRegisterNurse.AutoSize = true;
+            this.labelMailingAddressRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMailingAddressRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelMailingAddressRegisterNurse.Location = new System.Drawing.Point(3, 7);
+            this.labelMailingAddressRegisterNurse.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelMailingAddressRegisterNurse.Name = "labelMailingAddressRegisterNurse";
+            this.labelMailingAddressRegisterNurse.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelMailingAddressRegisterNurse.Size = new System.Drawing.Size(161, 20);
+            this.labelMailingAddressRegisterNurse.TabIndex = 12;
+            this.labelMailingAddressRegisterNurse.Text = "Mailing Address";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 295);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 20);
+            this.label11.TabIndex = 17;
+            // 
+            // labelAddMessage
+            // 
+            this.labelAddMessage.AutoSize = true;
+            this.labelAddMessage.Location = new System.Drawing.Point(280, 295);
+            this.labelAddMessage.Name = "labelAddMessage";
+            this.labelAddMessage.Size = new System.Drawing.Size(0, 20);
+            this.labelAddMessage.TabIndex = 18;
             // 
             // tableLayoutPanel3
             // 
@@ -824,6 +1022,21 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(924, 299);
             this.tableLayoutPanel3.TabIndex = 7;
             // 
+            // radioButtonRegisterNurseInactive
+            // 
+            this.radioButtonRegisterNurseInactive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonRegisterNurseInactive.AutoSize = true;
+            this.radioButtonRegisterNurseInactive.Checked = true;
+            this.radioButtonRegisterNurseInactive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.radioButtonRegisterNurseInactive.Location = new System.Drawing.Point(742, 53);
+            this.radioButtonRegisterNurseInactive.Name = "radioButtonRegisterNurseInactive";
+            this.radioButtonRegisterNurseInactive.Size = new System.Drawing.Size(179, 24);
+            this.radioButtonRegisterNurseInactive.TabIndex = 22;
+            this.radioButtonRegisterNurseInactive.TabStop = true;
+            this.radioButtonRegisterNurseInactive.Text = "Inactive";
+            this.radioButtonRegisterNurseInactive.UseVisualStyleBackColor = true;
+            // 
             // labelPhoneRegisterNurse
             // 
             this.labelPhoneRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -847,6 +1060,20 @@
             this.textBoxLastNameRegisterNurse.Name = "textBoxLastNameRegisterNurse";
             this.textBoxLastNameRegisterNurse.Size = new System.Drawing.Size(186, 29);
             this.textBoxLastNameRegisterNurse.TabIndex = 2;
+            // 
+            // radioButtonRegisterNurseActive
+            // 
+            this.radioButtonRegisterNurseActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonRegisterNurseActive.AutoSize = true;
+            this.radioButtonRegisterNurseActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.radioButtonRegisterNurseActive.Location = new System.Drawing.Point(742, 23);
+            this.radioButtonRegisterNurseActive.Name = "radioButtonRegisterNurseActive";
+            this.radioButtonRegisterNurseActive.Size = new System.Drawing.Size(179, 24);
+            this.radioButtonRegisterNurseActive.TabIndex = 6;
+            this.radioButtonRegisterNurseActive.TabStop = true;
+            this.radioButtonRegisterNurseActive.Text = "Active";
+            this.radioButtonRegisterNurseActive.UseVisualStyleBackColor = true;
             // 
             // textBoxFirstNameRegisterNurse
             // 
@@ -960,231 +1187,150 @@
             this.comboBoxGenderRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderRegisterNurse.FormattingEnabled = true;
-            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(280, 211);
+            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(280, 214);
             this.comboBoxGenderRegisterNurse.Name = "comboBoxGenderRegisterNurse";
             this.comboBoxGenderRegisterNurse.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderRegisterNurse.TabIndex = 21;
             // 
-            // tableLayoutPanel9
+            // labelRegisterNurse
             // 
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel11, 1, 2);
-            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel12, 1, 3);
-            this.tableLayoutPanel9.Controls.Add(this.buttonRegisterNurse, 1, 4);
-            this.tableLayoutPanel9.Controls.Add(this.labelMailingAddressRegisterNurse, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label11, 0, 5);
-            this.tableLayoutPanel9.Controls.Add(this.labelAddMessage, 1, 5);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 331);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 6;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(924, 336);
-            this.tableLayoutPanel9.TabIndex = 8;
+            this.labelRegisterNurse.AutoSize = true;
+            this.labelRegisterNurse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelRegisterNurse.Location = new System.Drawing.Point(3, 3);
+            this.labelRegisterNurse.Name = "labelRegisterNurse";
+            this.labelRegisterNurse.Size = new System.Drawing.Size(189, 29);
+            this.labelRegisterNurse.TabIndex = 5;
+            this.labelRegisterNurse.Text = "Register Nurse";
             // 
-            // tableLayoutPanel10
+            // dataGridViewNurseInfo
             // 
-            this.tableLayoutPanel10.ColumnCount = 1;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Controls.Add(this.textBoxStreetRegisterNurse, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.labelStreetRegisterNurse, 0, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(280, 37);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(200, 75);
-            this.tableLayoutPanel10.TabIndex = 8;
+            this.dataGridViewNurseInfo.AllowUserToAddRows = false;
+            this.dataGridViewNurseInfo.AllowUserToDeleteRows = false;
+            this.dataGridViewNurseInfo.AutoGenerateColumns = false;
+            this.dataGridViewNurseInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNurseInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nurseIDDataGridViewTextBoxColumn,
+            this.fNameDataGridViewTextBoxColumn,
+            this.lNameDataGridViewTextBoxColumn,
+            this.fullNameDataGridViewTextBoxColumn,
+            this.dOBDataGridViewTextBoxColumn,
+            this.sSNDataGridViewTextBoxColumn,
+            this.genderDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.addressIDDataGridViewTextBoxColumn,
+            this.activeDataGridViewCheckBoxColumn});
+            this.dataGridViewNurseInfo.DataSource = this.nurseBindingSource;
+            this.dataGridViewNurseInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewNurseInfo.Location = new System.Drawing.Point(0, 268);
+            this.dataGridViewNurseInfo.Name = "dataGridViewNurseInfo";
+            this.dataGridViewNurseInfo.ReadOnly = true;
+            this.dataGridViewNurseInfo.Size = new System.Drawing.Size(924, 318);
+            this.dataGridViewNurseInfo.TabIndex = 6;
+            this.dataGridViewNurseInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNurseInfo_CellClick);
             // 
-            // textBoxStreetRegisterNurse
+            // nurseBindingSource
             // 
-            this.textBoxStreetRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxStreetRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxStreetRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxStreetRegisterNurse.Location = new System.Drawing.Point(3, 33);
-            this.textBoxStreetRegisterNurse.Name = "textBoxStreetRegisterNurse";
-            this.textBoxStreetRegisterNurse.Size = new System.Drawing.Size(186, 29);
-            this.textBoxStreetRegisterNurse.TabIndex = 9;
+            this.nurseBindingSource.DataSource = typeof(CS6232GroupProject.Model.Nurse);
             // 
-            // labelStreetRegisterNurse
+            // nurseIDDataGridViewTextBoxColumn
             // 
-            this.labelStreetRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelStreetRegisterNurse.AutoSize = true;
-            this.labelStreetRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStreetRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelStreetRegisterNurse.Location = new System.Drawing.Point(3, 0);
-            this.labelStreetRegisterNurse.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelStreetRegisterNurse.Name = "labelStreetRegisterNurse";
-            this.labelStreetRegisterNurse.Size = new System.Drawing.Size(59, 20);
-            this.labelStreetRegisterNurse.TabIndex = 11;
-            this.labelStreetRegisterNurse.Text = "Street";
+            this.nurseIDDataGridViewTextBoxColumn.DataPropertyName = "NurseID";
+            this.nurseIDDataGridViewTextBoxColumn.HeaderText = "NurseID";
+            this.nurseIDDataGridViewTextBoxColumn.Name = "nurseIDDataGridViewTextBoxColumn";
+            this.nurseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nurseIDDataGridViewTextBoxColumn.Visible = false;
             // 
-            // tableLayoutPanel11
+            // fNameDataGridViewTextBoxColumn
             // 
-            this.tableLayoutPanel11.ColumnCount = 1;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Controls.Add(this.labelStateRegisterNurse, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.comboBoxStateRegisterNurse, 0, 1);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(280, 118);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 2;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel11.TabIndex = 10;
+            this.fNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
+            this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
+            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // labelStateRegisterNurse
+            // lNameDataGridViewTextBoxColumn
             // 
-            this.labelStateRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelStateRegisterNurse.AutoSize = true;
-            this.labelStateRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStateRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelStateRegisterNurse.Location = new System.Drawing.Point(3, 0);
-            this.labelStateRegisterNurse.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelStateRegisterNurse.Name = "labelStateRegisterNurse";
-            this.labelStateRegisterNurse.Size = new System.Drawing.Size(53, 20);
-            this.labelStateRegisterNurse.TabIndex = 14;
-            this.labelStateRegisterNurse.Text = "State";
+            this.lNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
+            this.lNameDataGridViewTextBoxColumn.HeaderText = "LName";
+            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // comboBoxStateRegisterNurse
+            // fullNameDataGridViewTextBoxColumn
             // 
-            this.comboBoxStateRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxStateRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxStateRegisterNurse.FormattingEnabled = true;
-            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 29);
-            this.comboBoxStateRegisterNurse.Name = "comboBoxStateRegisterNurse";
-            this.comboBoxStateRegisterNurse.Size = new System.Drawing.Size(179, 28);
-            this.comboBoxStateRegisterNurse.TabIndex = 12;
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fullNameDataGridViewTextBoxColumn.Visible = false;
             // 
-            // tableLayoutPanel12
+            // dOBDataGridViewTextBoxColumn
             // 
-            this.tableLayoutPanel12.ColumnCount = 1;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Controls.Add(this.textBoxZipRegisterNurse, 0, 1);
-            this.tableLayoutPanel12.Controls.Add(this.labelZipRegisterNurse, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(280, 183);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 2;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel12.TabIndex = 13;
+            this.dOBDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
+            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
+            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
+            this.dOBDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // textBoxZipRegisterNurse
+            // sSNDataGridViewTextBoxColumn
             // 
-            this.textBoxZipRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxZipRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxZipRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxZipRegisterNurse.Location = new System.Drawing.Point(3, 25);
-            this.textBoxZipRegisterNurse.Name = "textBoxZipRegisterNurse";
-            this.textBoxZipRegisterNurse.Size = new System.Drawing.Size(186, 29);
-            this.textBoxZipRegisterNurse.TabIndex = 14;
+            this.sSNDataGridViewTextBoxColumn.DataPropertyName = "SSN";
+            this.sSNDataGridViewTextBoxColumn.HeaderText = "SSN";
+            this.sSNDataGridViewTextBoxColumn.Name = "sSNDataGridViewTextBoxColumn";
+            this.sSNDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sSNDataGridViewTextBoxColumn.Visible = false;
             // 
-            // labelZipRegisterNurse
+            // genderDataGridViewTextBoxColumn
             // 
-            this.labelZipRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelZipRegisterNurse.AutoSize = true;
-            this.labelZipRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelZipRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelZipRegisterNurse.Location = new System.Drawing.Point(3, 0);
-            this.labelZipRegisterNurse.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelZipRegisterNurse.Name = "labelZipRegisterNurse";
-            this.labelZipRegisterNurse.Size = new System.Drawing.Size(73, 20);
-            this.labelZipRegisterNurse.TabIndex = 11;
-            this.labelZipRegisterNurse.Text = "Zipcode";
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.genderDataGridViewTextBoxColumn.Visible = false;
             // 
-            // buttonRegisterNurse
+            // phoneDataGridViewTextBoxColumn
             // 
-            this.buttonRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonRegisterNurse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonRegisterNurse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegisterNurse.ForeColor = System.Drawing.Color.Black;
-            this.buttonRegisterNurse.Location = new System.Drawing.Point(532, 252);
-            this.buttonRegisterNurse.Name = "buttonRegisterNurse";
-            this.buttonRegisterNurse.Size = new System.Drawing.Size(137, 35);
-            this.buttonRegisterNurse.TabIndex = 15;
-            this.buttonRegisterNurse.Text = "Register";
-            this.buttonRegisterNurse.UseVisualStyleBackColor = false;
-            this.buttonRegisterNurse.Click += new System.EventHandler(this.buttonRegisterNurse_Click);
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Visible = false;
             // 
-            // labelMailingAddressRegisterNurse
+            // usernameDataGridViewTextBoxColumn
             // 
-            this.labelMailingAddressRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelMailingAddressRegisterNurse.AutoSize = true;
-            this.labelMailingAddressRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMailingAddressRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelMailingAddressRegisterNurse.Location = new System.Drawing.Point(3, 7);
-            this.labelMailingAddressRegisterNurse.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelMailingAddressRegisterNurse.Name = "labelMailingAddressRegisterNurse";
-            this.labelMailingAddressRegisterNurse.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelMailingAddressRegisterNurse.Size = new System.Drawing.Size(161, 20);
-            this.labelMailingAddressRegisterNurse.TabIndex = 12;
-            this.labelMailingAddressRegisterNurse.Text = "Mailing Address";
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usernameDataGridViewTextBoxColumn.Visible = false;
             // 
-            // label11
+            // passwordDataGridViewTextBoxColumn
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 295);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 20);
-            this.label11.TabIndex = 17;
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.passwordDataGridViewTextBoxColumn.Visible = false;
             // 
-            // radioButtonRegisterNurseInactive
+            // addressIDDataGridViewTextBoxColumn
             // 
-            this.radioButtonRegisterNurseInactive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonRegisterNurseInactive.AutoSize = true;
-            this.radioButtonRegisterNurseInactive.Checked = true;
-            this.radioButtonRegisterNurseInactive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.radioButtonRegisterNurseInactive.Location = new System.Drawing.Point(742, 53);
-            this.radioButtonRegisterNurseInactive.Name = "radioButtonRegisterNurseInactive";
-            this.radioButtonRegisterNurseInactive.Size = new System.Drawing.Size(179, 24);
-            this.radioButtonRegisterNurseInactive.TabIndex = 22;
-            this.radioButtonRegisterNurseInactive.TabStop = true;
-            this.radioButtonRegisterNurseInactive.Text = "Inactive";
-            this.radioButtonRegisterNurseInactive.UseVisualStyleBackColor = true;
+            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressIDDataGridViewTextBoxColumn.Visible = false;
             // 
-            // radioButtonNurseInfoResultsActive
+            // activeDataGridViewCheckBoxColumn
             // 
-            this.radioButtonNurseInfoResultsActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonNurseInfoResultsActive.AutoSize = true;
-            this.radioButtonNurseInfoResultsActive.Location = new System.Drawing.Point(742, 23);
-            this.radioButtonNurseInfoResultsActive.Name = "radioButtonNurseInfoResultsActive";
-            this.radioButtonNurseInfoResultsActive.Size = new System.Drawing.Size(179, 24);
-            this.radioButtonNurseInfoResultsActive.TabIndex = 22;
-            this.radioButtonNurseInfoResultsActive.TabStop = true;
-            this.radioButtonNurseInfoResultsActive.Text = "Active";
-            this.radioButtonNurseInfoResultsActive.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonNurseInfoResultsInactive
-            // 
-            this.radioButtonNurseInfoResultsInactive.AutoSize = true;
-            this.radioButtonNurseInfoResultsInactive.Location = new System.Drawing.Point(742, 53);
-            this.radioButtonNurseInfoResultsInactive.Name = "radioButtonNurseInfoResultsInactive";
-            this.radioButtonNurseInfoResultsInactive.Size = new System.Drawing.Size(82, 24);
-            this.radioButtonNurseInfoResultsInactive.TabIndex = 23;
-            this.radioButtonNurseInfoResultsInactive.TabStop = true;
-            this.radioButtonNurseInfoResultsInactive.Text = "Inactive";
-            this.radioButtonNurseInfoResultsInactive.UseVisualStyleBackColor = true;
-            // 
-            // labelAddMessage
-            // 
-            this.labelAddMessage.AutoSize = true;
-            this.labelAddMessage.Location = new System.Drawing.Point(280, 295);
-            this.labelAddMessage.Name = "labelAddMessage";
-            this.labelAddMessage.Size = new System.Drawing.Size(0, 20);
-            this.labelAddMessage.TabIndex = 18;
+            this.activeDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
+            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
+            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
+            this.activeDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // UserControlAdminMain
             // 
@@ -1194,6 +1340,10 @@
             this.Name = "UserControlAdminMain";
             this.Size = new System.Drawing.Size(955, 632);
             this.tabControlAdminMain.ResumeLayout(false);
+            this.tabPageAdminReports.ResumeLayout(false);
+            this.tabPageAdminReports.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tabPageAdminNurseInfo.ResumeLayout(false);
             this.tabPageAdminNurseInfo.PerformLayout();
             this.panelNurseSearch.ResumeLayout(false);
@@ -1210,14 +1360,8 @@
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tabPageAdminReports.ResumeLayout(false);
-            this.tabPageAdminReports.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.tabPageNurseRegister.ResumeLayout(false);
             this.tabPageNurseRegister.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
@@ -1226,6 +1370,10 @@
             this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNurseInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1269,7 +1417,7 @@
         private System.Windows.Forms.Label labelGenderNurseInfoResults;
         private System.Windows.Forms.Label labelSSNNurseInfoResults;
         private System.Windows.Forms.TextBox textBoxSSNNurseInfoResults;
-        private System.Windows.Forms.ComboBox comboBoxNurseInfoResults;
+        private System.Windows.Forms.ComboBox comboBoxGenderNurseInfoResults;
         private System.Windows.Forms.Label labelNurseInformation;
         private System.Windows.Forms.LinkLabel linkLabelNurseInfoBack;
         private System.Windows.Forms.TabPage tabPageAdminReports;
@@ -1313,5 +1461,19 @@
         private System.Windows.Forms.RadioButton radioButtonNurseInfoResultsActive;
         private System.Windows.Forms.RadioButton radioButtonNurseInfoResultsInactive;
         private System.Windows.Forms.Label labelAddMessage;
+        private System.Windows.Forms.DataGridView dataGridViewNurseInfo;
+        private System.Windows.Forms.BindingSource nurseBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nurseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dOBDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sSNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
     }
 }

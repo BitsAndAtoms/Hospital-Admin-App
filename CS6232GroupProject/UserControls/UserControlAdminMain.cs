@@ -1,4 +1,5 @@
-﻿using CS6232GroupProject.Model;
+﻿using CS6232GroupProject.Controller;
+using CS6232GroupProject.Model;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -8,9 +9,18 @@ namespace CS6232GroupProject.UserControls
 {
     public partial class UserControlAdminMain : UserControl
     {
+        private AddressController addressController;
+        private NurseController nurseController;
+        private int addressID;
+        public static int nurseID { get; set; }
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public UserControlAdminMain()
         {
             InitializeComponent();
+            this.addressController = new AddressController();
+            this.nurseController = new NurseController();
             SetComboBox();
         }
 
@@ -30,7 +40,7 @@ namespace CS6232GroupProject.UserControls
                 foreach (string gender in Gender.GetGender())
                 {
                     this.comboBoxGenderRegisterNurse.Items.Add(gender);
-                    this.comboBoxNurseInfoResults.Items.Add(gender);
+                    this.comboBoxGenderNurseInfoResults.Items.Add(gender);
                 }
 
             }
@@ -128,9 +138,15 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonNurseInfoSearch_Click(object sender, EventArgs e)
         {
-            panelNurseSearch.Visible = false;
-            panelNurseInfoResults.Visible = true;
-            linkLabelNurseInfoBack.Visible = true;
+            this.dataGridViewNurseInfo.DataSource = null;
+            this.dataGridViewNurseInfo.Rows.Clear();
+            Nurse newNurse = new Nurse();
+
+            newNurse.FName = this.textBoxFirstNameNurseInfo.Text;
+            newNurse.LName = this.textBoxLastNameNurseInfo.Text;
+            newNurse.DOB = this.dateTimePickerDOBNurseInfo.Value;
+
+            this.dataGridViewNurseInfo.DataSource = this.nurseController.GetSearchNurseByNameDOB(newNurse);
         }
 
         private void buttonRegisterNurse_Click(object sender, EventArgs e)
@@ -147,6 +163,41 @@ namespace CS6232GroupProject.UserControls
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        /// <summary>
+        /// Populate DatGridView with search results
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewNurseInfo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            panelNurseSearch.Visible = false;
+            panelNurseInfoResults.Visible = true;
+            linkLabelNurseInfoBack.Visible = true;
+
+            nurseID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[0].Value;
+            textBoxFirstNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[1].Value.ToString();
+            textBoxLastNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[2].Value.ToString();
+            dateTimePickerDOBNurseInfoResults.Value = Convert.ToDateTime(this.dataGridViewNurseInfo.CurrentRow.Cells[4].Value);
+            textBoxSSNNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[5].Value.ToString();
+            comboBoxGenderNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[6].Value.ToString();
+            textBoxPhoneNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[7].Value.ToString();
+
+            //addressID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value;
+            textBoxStreetNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).Street;
+            comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
+            textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
+            
+
+            //if (this.dataGridViewNurseInfo.CurrentRow.Cells[10].Value.Equals("Active"))
+            //{
+            //    radioButtonNurseInfoResultsActive.Checked = true;
+            //}
+            //else if (this.dataGridViewNurseInfo.CurrentRow.Cells[10].Value.Equals("Inactive"))
+            //{
+            //    radioButtonNurseInfoResultsInactive.Checked = true;
+            //}
         }
     }
 }
