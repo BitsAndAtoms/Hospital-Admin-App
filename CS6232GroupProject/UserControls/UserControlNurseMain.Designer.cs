@@ -817,7 +817,7 @@
             this.linkLabelPatientInfoBack.AutoSize = true;
             this.linkLabelPatientInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelPatientInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(395, 3);
+            this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(361, 3);
             this.linkLabelPatientInfoBack.Name = "linkLabelPatientInfoBack";
             this.linkLabelPatientInfoBack.Size = new System.Drawing.Size(73, 25);
             this.linkLabelPatientInfoBack.TabIndex = 9;

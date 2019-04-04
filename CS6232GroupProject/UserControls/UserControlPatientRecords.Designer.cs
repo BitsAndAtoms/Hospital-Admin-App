@@ -76,6 +76,12 @@
             this.buttonDiagnosisUpdate = new System.Windows.Forms.Button();
             this.checkBoxPendingLabTests = new System.Windows.Forms.CheckBox();
             this.labelDiagnosis = new System.Windows.Forms.Label();
+            this.tabPageLabTests = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelLabTestsInformation = new System.Windows.Forms.Label();
+            this.checkedListBoxLabTests = new System.Windows.Forms.CheckedListBox();
+            this.buttonLabTestsSubmit = new System.Windows.Forms.Button();
+            this.labelLabTests = new System.Windows.Forms.Label();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPatientRecordsAppointment = new System.Windows.Forms.Label();
@@ -98,6 +104,8 @@
             this.tableLayoutPanelDiagnosis.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tabPageLabTests.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
@@ -109,6 +117,7 @@
             this.tabControlPatientRecords.Controls.Add(this.tabPageAppointments);
             this.tabControlPatientRecords.Controls.Add(this.tabPageRoutineChecks);
             this.tabControlPatientRecords.Controls.Add(this.tabPageDiagnosis);
+            this.tabControlPatientRecords.Controls.Add(this.tabPageLabTests);
             this.tabControlPatientRecords.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPatientRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlPatientRecords.ItemSize = new System.Drawing.Size(147, 25);
@@ -261,7 +270,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -714,7 +723,6 @@
             this.checkBoxPendingLabTests.TabIndex = 4;
             this.checkBoxPendingLabTests.Text = "Pending Lab Test Results";
             this.checkBoxPendingLabTests.UseVisualStyleBackColor = true;
-            this.checkBoxPendingLabTests.Visible = false;
             // 
             // labelDiagnosis
             // 
@@ -727,6 +735,89 @@
             this.labelDiagnosis.Size = new System.Drawing.Size(129, 29);
             this.labelDiagnosis.TabIndex = 6;
             this.labelDiagnosis.Text = "Diagnosis";
+            // 
+            // tabPageLabTests
+            // 
+            this.tabPageLabTests.Controls.Add(this.tableLayoutPanel3);
+            this.tabPageLabTests.Controls.Add(this.labelLabTests);
+            this.tabPageLabTests.Location = new System.Drawing.Point(4, 29);
+            this.tabPageLabTests.Name = "tabPageLabTests";
+            this.tabPageLabTests.Size = new System.Drawing.Size(831, 501);
+            this.tabPageLabTests.TabIndex = 4;
+            this.tabPageLabTests.Text = "Lab Tests";
+            this.tabPageLabTests.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.AutoScroll = true;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel3.Controls.Add(this.labelLabTestsInformation, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.checkedListBoxLabTests, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.buttonLabTestsSubmit, 1, 2);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 29);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(831, 208);
+            this.tableLayoutPanel3.TabIndex = 9;
+            // 
+            // labelLabTestsInformation
+            // 
+            this.labelLabTestsInformation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelLabTestsInformation.AutoSize = true;
+            this.labelLabTestsInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLabTestsInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelLabTestsInformation.Location = new System.Drawing.Point(86, 4);
+            this.labelLabTestsInformation.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelLabTestsInformation.Name = "labelLabTestsInformation";
+            this.labelLabTestsInformation.Size = new System.Drawing.Size(156, 20);
+            this.labelLabTestsInformation.TabIndex = 11;
+            this.labelLabTestsInformation.Text = "Select Lab Test(s)";
+            // 
+            // checkedListBoxLabTests
+            // 
+            this.checkedListBoxLabTests.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBoxLabTests.FormattingEnabled = true;
+            this.checkedListBoxLabTests.Items.AddRange(new object[] {
+            "White Blood Cell (WBC)",
+            "Low Density Lipoproteins (LDL)",
+            "Hepatitis A",
+            "Hepatitis B"});
+            this.checkedListBoxLabTests.Location = new System.Drawing.Point(86, 31);
+            this.checkedListBoxLabTests.Name = "checkedListBoxLabTests";
+            this.checkedListBoxLabTests.Size = new System.Drawing.Size(251, 84);
+            this.checkedListBoxLabTests.TabIndex = 12;
+            // 
+            // buttonLabTestsSubmit
+            // 
+            this.buttonLabTestsSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonLabTestsSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonLabTestsSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLabTestsSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLabTestsSubmit.ForeColor = System.Drawing.Color.Black;
+            this.buttonLabTestsSubmit.Location = new System.Drawing.Point(388, 152);
+            this.buttonLabTestsSubmit.Name = "buttonLabTestsSubmit";
+            this.buttonLabTestsSubmit.Size = new System.Drawing.Size(137, 35);
+            this.buttonLabTestsSubmit.TabIndex = 7;
+            this.buttonLabTestsSubmit.Text = "Submit";
+            this.buttonLabTestsSubmit.UseVisualStyleBackColor = false;
+            // 
+            // labelLabTests
+            // 
+            this.labelLabTests.AutoSize = true;
+            this.labelLabTests.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelLabTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLabTests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelLabTests.Location = new System.Drawing.Point(0, 0);
+            this.labelLabTests.Name = "labelLabTests";
+            this.labelLabTests.Size = new System.Drawing.Size(128, 29);
+            this.labelLabTests.TabIndex = 7;
+            this.labelLabTests.Text = "Lab Tests";
             // 
             // patientBindingSource
             // 
@@ -836,6 +927,10 @@
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tabPageLabTests.ResumeLayout(false);
+            this.tabPageLabTests.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
@@ -901,5 +996,11 @@
         private System.Windows.Forms.Label labelPatientRecords;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.BindingSource appointmentBindingSource;
+        private System.Windows.Forms.TabPage tabPageLabTests;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label labelLabTestsInformation;
+        private System.Windows.Forms.CheckedListBox checkedListBoxLabTests;
+        private System.Windows.Forms.Button buttonLabTestsSubmit;
+        private System.Windows.Forms.Label labelLabTests;
     }
 }
