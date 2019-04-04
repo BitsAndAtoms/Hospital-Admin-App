@@ -17,5 +17,10 @@ namespace CS6232GroupProject.Controller
         {
             return this.nurseSource.GetSearchNurseByNameDOB(newNurse);
         }
+
+        internal void registerNurse(Nurse newNurse, Address newAddress)
+        {
+            this.nurseSource.registerNurseInDB(newNurse, newAddress);
+        }
     }
 }

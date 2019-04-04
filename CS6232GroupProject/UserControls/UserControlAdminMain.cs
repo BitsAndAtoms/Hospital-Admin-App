@@ -151,10 +151,26 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonRegisterNurse_Click(object sender, EventArgs e)
         {
+            Nurse newNurse = new Nurse();
+            Address newAddress = new Address();
             if (this.CheckFieldsRegister())
             {
                 try
                 {
+                    newNurse.FName = this.textBoxFirstNameRegisterNurse.Text;
+                    newNurse.LName = this.textBoxLastNameRegisterNurse.Text;
+                    newNurse.DOB = this.dateTimePickerDOBRegisterNurse.Value;
+                    newNurse.SSN = this.textBoxSSNRegisterNurse.Text;
+                    newNurse.Phone = this.textBoxPhoneRegisterNurse.Text;
+                    newNurse.Gender = this.comboBoxGenderRegisterNurse.Text;
+
+                    newAddress.Street = this.textBoxStreetRegisterNurse.Text;
+                    newAddress.State = this.comboBoxStateRegisterNurse.Text;
+                    newAddress.Zip = Convert.ToInt32(this.textBoxZipRegisterNurse.Text);
+
+                    nurseController.registerNurse(newNurse, newAddress);
+
+                    MessageBox.Show("Nurse Registered", "Confirm");
                     this.ClearText();
                 }
                 catch (SqlException ex)

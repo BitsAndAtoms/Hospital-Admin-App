@@ -89,5 +89,111 @@ namespace CS6232GroupProject.DAL
             }
             return nurses;
         }
+
+        internal void registerNurseInDB(Nurse newNurse, Address newAddress)
+        {
+            string updateStatement =
+                " begin transaction " +
+                " begin try " +
+                " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
+                " SELECT SCOPE_IDENTITY()" +
+                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID)" +
+                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY())" +
+                " commit transaction" +
+                " end try" +
+                " begin catch" +
+                "  raiserror('Update failed',16,1)" +
+                "  rollback transaction" +
+                " end catch";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand updateCommand = new SqlCommand(updateStatement, connection))
+                {
+                    if (newAddress.State == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@state", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@state", newAddress.State);
+                    }
+                    if (newAddress.Zip.ToString() == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@zip", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@zip", newAddress.Zip.ToString());
+                    }
+                    if (newAddress.Street == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@street", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@street", newAddress.Street);
+                    }
+                    if (newNurse.FName == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@fname", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@fname", newNurse.FName);
+                    }
+                    if (newNurse.LName == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@lname", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@lname", newNurse.LName);
+                    }
+                    if (newNurse.DOB == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@dob", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@dob", newNurse.DOB);
+                    }
+                    if (newNurse.SSN == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@ssn", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@ssn", newNurse.SSN);
+                    }
+                    if (newNurse.Phone == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@phone", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@phone", newNurse.Phone);
+                    }
+                    if (newNurse.Gender == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@gender", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
+                    }
+
+
+
+                    updateCommand.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
+            }
+        }
     }
 }
