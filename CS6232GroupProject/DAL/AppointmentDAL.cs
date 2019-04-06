@@ -25,7 +25,8 @@ namespace CS6232GroupProject.DAL
                 "SELECT COUNT(DoctorID) as 'Number' " +
                 "FROM HasAppointment " + 
                 "WHERE DoctorID = @DoctorID " +
-                    "AND appointmentDateTime = @Date";
+                    "AND appointmentDateTime >= DATEADD(minute, -30,@Date) " +
+                    " AND appointmentDateTime <= DATEADD(minute, 30,@Date) ";
 
 
             using (SqlConnection connection = DBConnection.GetConnection())
