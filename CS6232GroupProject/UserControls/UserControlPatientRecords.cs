@@ -195,7 +195,7 @@ namespace CS6232GroupProject.UserControls
         }
 
         /// <summary>
-        /// disable textfield if meet criteria
+        /// disable textfield if meet criteria 
         /// </summary>
         private void AppointmentTimeCheck()
         {
