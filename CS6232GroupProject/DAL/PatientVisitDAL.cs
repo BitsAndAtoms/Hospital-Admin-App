@@ -22,23 +22,23 @@ namespace CS6232GroupProject.DAL
             PatientVisit visit = new PatientVisit();
 
             string selectStatement =
-                "SELECT VisitID, AppoitnementID, NurseID, visitDateTime, Diagnosis, " +
+                "SELECT VisitID, appointmentID, NurseID, visitDateTime, Diagnosis, " +
                     "Weight, Systolic, Diastolic, Temperature, Pulse, Symptoms " +
                 "FROM PatientVisit " +
-                "WHERE AppoitnementID = @AppoitnementID";
+                "WHERE appointmentID = @appointmentID";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
                 using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
                 {
-                    selectCommand.Parameters.AddWithValue("@AppoitnementID", appointmentID);
+                    selectCommand.Parameters.AddWithValue("@appointmentID", appointmentID);
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             visit.VisitID = (int)reader["VisitID"];
-                            visit.AppointmentID = (int)reader["AppoitnementID"];
+                            visit.AppointmentID = (int)reader["appointmentID"];
                             visit.NurseID = (int)reader["NurseID"];
                             visit.Date = (DateTime)reader["visitDateTime"];
                             visit.Diagnosis = reader["Diagnosis"].ToString();
@@ -73,7 +73,7 @@ namespace CS6232GroupProject.DAL
                     "Temperature = @NewTemperature, " +
                     "Pulse = @NewPulse " +
                 "WHERE VisitID = @OldVisitID " +
-                    "AND appoitnementID = @OldAppointmentID " +
+                    "AND appointmentID = @OldAppointmentID " +
                     "AND visitDateTime = @OldDate " +
                     "AND Symptoms = @OldSymptoms " +
                     "AND Weight = @OldWeight " +
@@ -156,9 +156,9 @@ namespace CS6232GroupProject.DAL
         {
             int count = 0;
             string selectStatment =
-                "SELECT COUNT(appoitnementID) as 'Number' " +
+                "SELECT COUNT(appointmentID) as 'Number' " +
                 "FROM PatientVisit " +
-                "WHERE appoitnementID = @appointmentID";
+                "WHERE appointmentID = @appointmentID";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -199,7 +199,7 @@ namespace CS6232GroupProject.DAL
         {
             string insertStatement =
                 "INSERT  PatientVisit " +
-                "(appoitnementID, nurseID, visitDateTime, weight, systolic, diastolic, temperature, pulse, symptoms) " +
+                "(appointmentID, nurseID, visitDateTime, weight, systolic, diastolic, temperature, pulse, symptoms) " +
                 "VALUES (@appointmentID, @nurseID, @visitDateTime, @weight, @systolic, @diastolic, @temperature, @pulse, @symptoms)";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
