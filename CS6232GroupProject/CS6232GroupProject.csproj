@@ -63,6 +63,7 @@
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\NurseController.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="Controller\PatientVisitController.cs" />
     <Compile Include="DAL\AddressDAL.cs" />
