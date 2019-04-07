@@ -14,10 +14,8 @@ namespace CS6232GroupProject.Model
         public DateTime? DOB { get; set; }
         public string SSN { get; set; }
         public string Gender { get; set; }
-        public string phone { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string AddressID { get; set; }
+        public string Phone { get; set; }
+        public int AddressID { get; set; }
         public Boolean Active { get; set; }
     }
 }
