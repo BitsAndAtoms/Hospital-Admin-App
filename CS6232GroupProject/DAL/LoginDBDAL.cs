@@ -67,6 +67,7 @@ namespace CS6232GroupProject.DAL
         /// <returns>A list of usernames and roles.</returns>
         internal List<string> FindUserNameAndRole(string userName)
         {
+
             string selectStatement =
                 "if exists(Select 'Nurse' as Role, fname, lname, nurseID FROM Nurse WHERE nurseUserName = @userName)" +
                 " Select 'Nurse' as Role, fname, lname, nurseID from Nurse WHERE nurseUserName = @userName" +
