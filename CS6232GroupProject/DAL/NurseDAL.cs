@@ -67,5 +67,120 @@ namespace CS6232GroupProject.DAL
             return nurses;
         }
 
+        /// <summary>
+        /// This method adds a new Nurse to the DB if possible, or rollsback 
+        /// if not.
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newAddress"></param>
+        internal void AddNurse(Nurse newNurse, Address newAddress)//We may want to make it a bool that returns true or false
+                                                                //So that we can have a MessageBox pop up and notify the user 
+                                                                //of any issues in the view based on what is returned.
+        {
+            string updateStatement =
+                " begin transaction " +
+                " begin try " +
+                " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
+                " SELECT SCOPE_IDENTITY()" +
+                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID, activeStatus)" +
+                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, @activeStatus, SCOPE_IDENTITY())" +
+                " commit transaction" +
+                " end try" +
+                " begin catch" +
+                "  raiserror('Update failed',16,1)" +
+                "  rollback transaction" +
+                " end catch";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand updateCommand = new SqlCommand(updateStatement, connection))
+                {
+                    if (newAddress.State == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@state", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@state", newAddress.State);
+                    }
+                    if (newAddress.Zip.ToString() == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@zip", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@zip", newAddress.Zip.ToString());
+                    }
+                    if (newAddress.Street == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@street", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@street", newAddress.Street);
+                    }
+                    if (newNurse.FName == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@fname", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@fname", newNurse.FName);
+                    }
+                    if (newNurse.LName == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@lname", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@lname", newNurse.LName);
+                    }
+                    if (newNurse.DOB == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@dob", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@dob", newNurse.DOB);
+                    }
+                    if (newNurse.SSN == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@ssn", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@ssn", newNurse.SSN);
+                    }
+                    if (newNurse.Phone == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@phone", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@phone", newNurse.Phone);
+                    }
+                    if (newNurse.Gender == null)
+                    {
+                        updateCommand.Parameters.AddWithValue("@gender", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
+                    }
+                    updateCommand.Parameters.AddWithValue("@activeStatus", newNurse.Active);
+
+
+
+                    updateCommand.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
+            }
+        }
+
     }
 }
