@@ -4,28 +4,36 @@ using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
 {
+    /// <summary>
+    /// This class allows the calling of methods in the NurseDAL, to 
+    /// get Nurse data from the DB.
+    /// </summary>
     class NurseController
     {
         private readonly NurseDAL nurseSource;
 
+        /// <summary>
+        /// This constructs the NurseController.
+        /// </summary>
         public NurseController()
         {
             this.nurseSource = new NurseDAL();
         }
 
-        public List<Nurse> GetSearchNurseByNameDOB(Nurse newNurse)
+        /// <summary>
+        /// This method returns a list of all Nurse objects.
+        /// </summary>
+        /// <returns>A list of Nurse objects. </returns>
+        public List<Nurse> GetNurses()
         {
-            return this.nurseSource.GetSearchNurseByNameDOB(newNurse);
+            return this.nurseSource.GetNurses();
         }
 
-        internal void registerNurse(Nurse newNurse, Address newAddress)
+        public void AddNurse(Nurse newNurse, Address newAddress)// Should probably return a bool from the method 
+                                                                // to allow the view to show a MessageBox about if it 
+                                                                // worked or not.
         {
-            this.nurseSource.registerNurseInDB(newNurse, newAddress);
-        }
-
-        internal void updateNurse(Nurse newNurse, Address newAddress)
-        {
-            this.nurseSource.updateNurse(newNurse, newAddress);
+            this.nurseSource.AddNurse(newNurse, newAddress);
         }
     }
 }
