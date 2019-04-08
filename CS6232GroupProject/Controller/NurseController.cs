@@ -28,5 +28,12 @@ namespace CS6232GroupProject.Controller
         {
             return this.nurseSource.GetNurses();
         }
+
+        public void AddNurse(Nurse newNurse, Address newAddress)// Should probably return a bool from the method 
+                                                                // to allow the view to show a MessageBox about if it 
+                                                                // worked or not.
+        {
+            this.nurseSource.AddNurse(newNurse, newAddress);
+        }
     }
 }
