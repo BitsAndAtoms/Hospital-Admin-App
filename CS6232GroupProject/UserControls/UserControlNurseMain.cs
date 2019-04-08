@@ -215,22 +215,54 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            panelPatientSearch.Visible = false;
-            panelPatientInfoResults.Visible = true;
-            linkLabelPatientInfoBack.Visible = true;
+            if (e.ColumnIndex == 8)
+            {
+                panelPatientSearch.Visible = false;
+                panelPatientInfoResults.Visible = true;
+                linkLabelPatientInfoBack.Visible = true;
 
-            textBoxFirstNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
-            textBoxLastNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
-            dateTimePickerDOBPatientInfoResult.Value = Convert.ToDateTime(this.dataGridViewPatientInfo.CurrentRow.Cells[3].Value);
-            textBoxSSNPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[4].Value.ToString();
-            comboBoxGenderPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[5].Value.ToString();
-            textBoxPhonePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[6].Value.ToString();
+                textBoxFirstNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
+                textBoxLastNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
+                dateTimePickerDOBPatientInfoResult.Value = Convert.ToDateTime(this.dataGridViewPatientInfo.CurrentRow.Cells[3].Value);
+                textBoxSSNPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[4].Value.ToString();
+                comboBoxGenderPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[5].Value.ToString();
+                textBoxPhonePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[6].Value.ToString();
 
-            addressID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value;
-            textBoxStreetPatientInfoResult.Text = this.addressController.GetAddressByID(addressID).Street;
-            comboBoxStatePatientInfoResult.Text = this.addressController.GetAddressByID(addressID).State;
-            textBoxZipPatientInfoResult.Text =  Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
-            patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+                addressID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value;
+                textBoxStreetPatientInfoResult.Text = this.addressController.GetAddressByID(addressID).Street;
+                comboBoxStatePatientInfoResult.Text = this.addressController.GetAddressByID(addressID).State;
+                textBoxZipPatientInfoResult.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
+                patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+            }
+            if (e.ColumnIndex == 9)
+            {
+
+                patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+
+                if (appointmentController.CheckIfAppointmentExists(patientID))
+                {
+                    bool isOpen = false;
+                    FormPatientRecords formPatientRecords = new FormPatientRecords();
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        if (form.Name == "FormPatientRecords")
+                        {
+                            isOpen = true;
+                            form.BringToFront();
+                            break;
+                        }
+                    }
+                    if (isOpen == false)
+                    {
+                        formPatientRecords.Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Patient has no appointments. Please book one.", "Error - No Appointment Found");
+                }
+            }
+            
         }
 
         /// <summary>
@@ -273,38 +305,6 @@ namespace CS6232GroupProject.UserControls
 
         }
 
-        /// <summary>
-        /// Patient visit info by clicking the link
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void linkLabelRecordsPatientInfoVisitRecords_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if(this.appointmentController.CheckIfAppointmentExists(patientID))
-            {
-                bool isOpen = false;
-                FormPatientRecords formPatientRecords = new FormPatientRecords();
-                foreach (Form form in Application.OpenForms)
-                {
-                    if (form.Name == "FormPatientRecords")
-                    {
-                        isOpen = true;
-                        form.BringToFront();
-                        break;
-                    }
-                }
-                if (isOpen == false)
-                {
-                    formPatientRecords.Show();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Patient has no appointments. Please book one.", "Error - No Appointment Found");
-            }
-            
-
-        }
 
         /// <summary>
         /// check the field for booking approinments

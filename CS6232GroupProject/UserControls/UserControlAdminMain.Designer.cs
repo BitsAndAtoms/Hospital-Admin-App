@@ -52,6 +52,7 @@
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewButtonColumnNurseInformation = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLastNameNurseInfo = new System.Windows.Forms.TextBox();
@@ -88,10 +89,10 @@
             this.labelSSNNurseInfoResults = new System.Windows.Forms.Label();
             this.textBoxSSNNurseInfoResults = new System.Windows.Forms.TextBox();
             this.comboBoxGenderNurseInfoResults = new System.Windows.Forms.ComboBox();
-            this.radioButtonNurseInfoResultsActive = new System.Windows.Forms.RadioButton();
             this.radioButtonNurseInfoResultsInactive = new System.Windows.Forms.RadioButton();
-            this.labelNurseInformation = new System.Windows.Forms.Label();
+            this.radioButtonNurseInfoResultsActive = new System.Windows.Forms.RadioButton();
             this.linkLabelNurseInfoBack = new System.Windows.Forms.LinkLabel();
+            this.labelNurseInformation = new System.Windows.Forms.Label();
             this.tabPageNurseRegister = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
@@ -269,7 +270,6 @@
             this.tabPageAdminNurseInfo.Controls.Add(this.panelNurseSearch);
             this.tabPageAdminNurseInfo.Controls.Add(this.panelNurseInfoResults);
             this.tabPageAdminNurseInfo.Controls.Add(this.labelNurseInformation);
-            this.tabPageAdminNurseInfo.Controls.Add(this.linkLabelNurseInfoBack);
             this.tabPageAdminNurseInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
             this.tabPageAdminNurseInfo.Location = new System.Drawing.Point(4, 29);
             this.tabPageAdminNurseInfo.Name = "tabPageAdminNurseInfo";
@@ -306,7 +306,8 @@
             this.usernameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.addressIDDataGridViewTextBoxColumn,
-            this.activeDataGridViewCheckBoxColumn});
+            this.activeDataGridViewCheckBoxColumn,
+            this.dataGridViewButtonColumnNurseInformation});
             this.dataGridViewNurseInfo.DataSource = this.nurseBindingSource;
             this.dataGridViewNurseInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewNurseInfo.Location = new System.Drawing.Point(0, 268);
@@ -403,6 +404,15 @@
             this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
             this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
             this.activeDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewButtonColumnNurseInformation
+            // 
+            this.dataGridViewButtonColumnNurseInformation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewButtonColumnNurseInformation.HeaderText = "";
+            this.dataGridViewButtonColumnNurseInformation.Name = "dataGridViewButtonColumnNurseInformation";
+            this.dataGridViewButtonColumnNurseInformation.ReadOnly = true;
+            this.dataGridViewButtonColumnNurseInformation.Text = "View/Edit";
+            this.dataGridViewButtonColumnNurseInformation.UseColumnTextForButtonValue = true;
             // 
             // nurseBindingSource
             // 
@@ -617,7 +627,7 @@
             this.comboBoxStateNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStateNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStateNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStateNurseInfoResults.Name = "comboBoxStateNurseInfoResults";
             this.comboBoxStateNurseInfoResults.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStateNurseInfoResults.TabIndex = 12;
@@ -711,8 +721,9 @@
             this.tableLayoutPanel4.Controls.Add(this.labelSSNNurseInfoResults, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.textBoxSSNNurseInfoResults, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.comboBoxGenderNurseInfoResults, 1, 4);
-            this.tableLayoutPanel4.Controls.Add(this.radioButtonNurseInfoResultsActive, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.radioButtonNurseInfoResultsInactive, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.radioButtonNurseInfoResultsInactive, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.radioButtonNurseInfoResultsActive, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.linkLabelNurseInfoBack, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -861,12 +872,23 @@
             this.comboBoxGenderNurseInfoResults.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderNurseInfoResults.TabIndex = 21;
             // 
+            // radioButtonNurseInfoResultsInactive
+            // 
+            this.radioButtonNurseInfoResultsInactive.AutoSize = true;
+            this.radioButtonNurseInfoResultsInactive.Location = new System.Drawing.Point(742, 103);
+            this.radioButtonNurseInfoResultsInactive.Name = "radioButtonNurseInfoResultsInactive";
+            this.radioButtonNurseInfoResultsInactive.Size = new System.Drawing.Size(82, 24);
+            this.radioButtonNurseInfoResultsInactive.TabIndex = 23;
+            this.radioButtonNurseInfoResultsInactive.TabStop = true;
+            this.radioButtonNurseInfoResultsInactive.Text = "Inactive";
+            this.radioButtonNurseInfoResultsInactive.UseVisualStyleBackColor = true;
+            // 
             // radioButtonNurseInfoResultsActive
             // 
             this.radioButtonNurseInfoResultsActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonNurseInfoResultsActive.AutoSize = true;
-            this.radioButtonNurseInfoResultsActive.Location = new System.Drawing.Point(742, 23);
+            this.radioButtonNurseInfoResultsActive.Location = new System.Drawing.Point(742, 73);
             this.radioButtonNurseInfoResultsActive.Name = "radioButtonNurseInfoResultsActive";
             this.radioButtonNurseInfoResultsActive.Size = new System.Drawing.Size(179, 24);
             this.radioButtonNurseInfoResultsActive.TabIndex = 22;
@@ -874,16 +896,20 @@
             this.radioButtonNurseInfoResultsActive.Text = "Active";
             this.radioButtonNurseInfoResultsActive.UseVisualStyleBackColor = true;
             // 
-            // radioButtonNurseInfoResultsInactive
+            // linkLabelNurseInfoBack
             // 
-            this.radioButtonNurseInfoResultsInactive.AutoSize = true;
-            this.radioButtonNurseInfoResultsInactive.Location = new System.Drawing.Point(742, 53);
-            this.radioButtonNurseInfoResultsInactive.Name = "radioButtonNurseInfoResultsInactive";
-            this.radioButtonNurseInfoResultsInactive.Size = new System.Drawing.Size(82, 24);
-            this.radioButtonNurseInfoResultsInactive.TabIndex = 23;
-            this.radioButtonNurseInfoResultsInactive.TabStop = true;
-            this.radioButtonNurseInfoResultsInactive.Text = "Inactive";
-            this.radioButtonNurseInfoResultsInactive.UseVisualStyleBackColor = true;
+            this.linkLabelNurseInfoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelNurseInfoBack.AutoSize = true;
+            this.linkLabelNurseInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelNurseInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.linkLabelNurseInfoBack.Location = new System.Drawing.Point(848, 0);
+            this.linkLabelNurseInfoBack.Name = "linkLabelNurseInfoBack";
+            this.linkLabelNurseInfoBack.Size = new System.Drawing.Size(73, 25);
+            this.linkLabelNurseInfoBack.TabIndex = 11;
+            this.linkLabelNurseInfoBack.TabStop = true;
+            this.linkLabelNurseInfoBack.Text = "< Back";
+            this.linkLabelNurseInfoBack.Visible = false;
+            this.linkLabelNurseInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNurseInfoBack_LinkClicked);
             // 
             // labelNurseInformation
             // 
@@ -895,21 +921,6 @@
             this.labelNurseInformation.Size = new System.Drawing.Size(220, 29);
             this.labelNurseInformation.TabIndex = 0;
             this.labelNurseInformation.Text = "Nurse Information";
-            // 
-            // linkLabelNurseInfoBack
-            // 
-            this.linkLabelNurseInfoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabelNurseInfoBack.AutoSize = true;
-            this.linkLabelNurseInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelNurseInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelNurseInfoBack.Location = new System.Drawing.Point(715, 3);
-            this.linkLabelNurseInfoBack.Name = "linkLabelNurseInfoBack";
-            this.linkLabelNurseInfoBack.Size = new System.Drawing.Size(73, 25);
-            this.linkLabelNurseInfoBack.TabIndex = 9;
-            this.linkLabelNurseInfoBack.TabStop = true;
-            this.linkLabelNurseInfoBack.Text = "< Back";
-            this.linkLabelNurseInfoBack.Visible = false;
-            this.linkLabelNurseInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNurseInfoBack_LinkClicked);
             // 
             // tabPageNurseRegister
             // 
@@ -1305,7 +1316,7 @@
             this.comboBoxGenderRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderRegisterNurse.FormattingEnabled = true;
-            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(280, 211);
+            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(280, 214);
             this.comboBoxGenderRegisterNurse.Name = "comboBoxGenderRegisterNurse";
             this.comboBoxGenderRegisterNurse.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderRegisterNurse.TabIndex = 21;
@@ -1409,7 +1420,6 @@
         private System.Windows.Forms.TextBox textBoxSSNNurseInfoResults;
         private System.Windows.Forms.ComboBox comboBoxGenderNurseInfoResults;
         private System.Windows.Forms.Label labelNurseInformation;
-        private System.Windows.Forms.LinkLabel linkLabelNurseInfoBack;
         private System.Windows.Forms.TabPage tabPageAdminReports;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label labelReportsStartDate;
@@ -1453,6 +1463,7 @@
         private System.Windows.Forms.Label labelAddMessage;
         private System.Windows.Forms.DataGridView dataGridViewNurseInfo;
         private System.Windows.Forms.BindingSource nurseBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nurseIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn;
@@ -1460,10 +1471,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dOBDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sSNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumnNurseInformation;
+        private System.Windows.Forms.LinkLabel linkLabelNurseInfoBack;
     }
 }

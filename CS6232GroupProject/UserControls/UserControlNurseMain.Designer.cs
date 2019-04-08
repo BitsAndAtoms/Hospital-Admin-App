@@ -33,14 +33,6 @@
             this.tabPageNursePatientInformation = new System.Windows.Forms.TabPage();
             this.panelPatientSearch = new System.Windows.Forms.Panel();
             this.dataGridViewPatientInfo = new System.Windows.Forms.DataGridView();
-            this.patientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dobDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ssnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicDataSet11 = new CS6232GroupProject.clinicDataSet1();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -71,18 +63,17 @@
             this.labelPhonePatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxLastNamePatientInfoResult = new System.Windows.Forms.TextBox();
             this.textBoxFirstNamePatientInfoResult = new System.Windows.Forms.TextBox();
+            this.linkLabelPatientInfoBack = new System.Windows.Forms.LinkLabel();
             this.labelFirstNamePatientInfoResult = new System.Windows.Forms.Label();
             this.labelDOBPatientInfoResult = new System.Windows.Forms.Label();
             this.labelFlastNamePatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxPhonePatientInfoResult = new System.Windows.Forms.TextBox();
-            this.linkLabelRecordsPatientInfoVisitRecords = new System.Windows.Forms.LinkLabel();
             this.dateTimePickerDOBPatientInfoResult = new System.Windows.Forms.DateTimePicker();
             this.labelGenderPatientInfoResult = new System.Windows.Forms.Label();
             this.labelSSNPatientInfoResult = new System.Windows.Forms.Label();
             this.textBoxSSNPatientInfoResult = new System.Windows.Forms.TextBox();
             this.comboBoxGenderPatientInfoResult = new System.Windows.Forms.ComboBox();
             this.labelPatientInformation = new System.Windows.Forms.Label();
-            this.linkLabelPatientInfoBack = new System.Windows.Forms.LinkLabel();
             this.tabPageNurseBook = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -134,6 +125,16 @@
             this.doctorTableAdapter = new CS6232GroupProject.clinicDataSetTableAdapters.DoctorTableAdapter();
             this.clinicDataSet1 = new CS6232GroupProject.clinicDataSet();
             this.patientTableAdapter = new CS6232GroupProject.clinicDataSet1TableAdapters.PatientTableAdapter();
+            this.patientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dobDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ssnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumnPatientInfo = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumnPatientRecords = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControlNurseMain.SuspendLayout();
             this.tabPageNursePatientInformation.SuspendLayout();
             this.panelPatientSearch.SuspendLayout();
@@ -185,7 +186,6 @@
             this.tabPageNursePatientInformation.Controls.Add(this.panelPatientSearch);
             this.tabPageNursePatientInformation.Controls.Add(this.panelPatientInfoResults);
             this.tabPageNursePatientInformation.Controls.Add(this.labelPatientInformation);
-            this.tabPageNursePatientInformation.Controls.Add(this.linkLabelPatientInfoBack);
             this.tabPageNursePatientInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
             this.tabPageNursePatientInformation.Location = new System.Drawing.Point(4, 29);
             this.tabPageNursePatientInformation.Name = "tabPageNursePatientInformation";
@@ -219,7 +219,9 @@
             this.ssnDataGridViewTextBoxColumn,
             this.genderDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn,
-            this.addressIDDataGridViewTextBoxColumn});
+            this.addressIDDataGridViewTextBoxColumn,
+            this.dataGridViewButtonColumnPatientInfo,
+            this.dataGridViewButtonColumnPatientRecords});
             this.dataGridViewPatientInfo.DataSource = this.patientBindingSource;
             this.dataGridViewPatientInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewPatientInfo.Location = new System.Drawing.Point(0, 268);
@@ -228,73 +230,6 @@
             this.dataGridViewPatientInfo.Size = new System.Drawing.Size(621, 318);
             this.dataGridViewPatientInfo.TabIndex = 5;
             this.dataGridViewPatientInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // patientIDDataGridViewTextBoxColumn
-            // 
-            this.patientIDDataGridViewTextBoxColumn.DataPropertyName = "patientID";
-            this.patientIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.patientIDDataGridViewTextBoxColumn.Name = "patientIDDataGridViewTextBoxColumn";
-            this.patientIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.patientIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fnameDataGridViewTextBoxColumn
-            // 
-            this.fnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
-            this.fnameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.fnameDataGridViewTextBoxColumn.MinimumWidth = 100;
-            this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
-            this.fnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lnameDataGridViewTextBoxColumn
-            // 
-            this.lnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
-            this.lnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lnameDataGridViewTextBoxColumn.MinimumWidth = 100;
-            this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
-            this.lnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dobDataGridViewTextBoxColumn
-            // 
-            this.dobDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dobDataGridViewTextBoxColumn.DataPropertyName = "dob";
-            this.dobDataGridViewTextBoxColumn.HeaderText = "Date of Birth";
-            this.dobDataGridViewTextBoxColumn.MinimumWidth = 100;
-            this.dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
-            this.dobDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ssnDataGridViewTextBoxColumn
-            // 
-            this.ssnDataGridViewTextBoxColumn.DataPropertyName = "ssn";
-            this.ssnDataGridViewTextBoxColumn.HeaderText = "SSN";
-            this.ssnDataGridViewTextBoxColumn.Name = "ssnDataGridViewTextBoxColumn";
-            this.ssnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ssnDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-            this.genderDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // addressIDDataGridViewTextBoxColumn
-            // 
-            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "addressID";
-            this.addressIDDataGridViewTextBoxColumn.HeaderText = "Address ID";
-            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
-            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // patientBindingSource
             // 
@@ -628,11 +563,11 @@
             this.tableLayoutPanel4.Controls.Add(this.labelPhonePatientInfoResult, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.textBoxLastNamePatientInfoResult, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.textBoxFirstNamePatientInfoResult, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.linkLabelPatientInfoBack, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelFirstNamePatientInfoResult, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelDOBPatientInfoResult, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.labelFlastNamePatientInfoResult, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.textBoxPhonePatientInfoResult, 1, 5);
-            this.tableLayoutPanel4.Controls.Add(this.linkLabelRecordsPatientInfoVisitRecords, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.dateTimePickerDOBPatientInfoResult, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.labelGenderPatientInfoResult, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.labelSSNPatientInfoResult, 0, 3);
@@ -684,6 +619,21 @@
             this.textBoxFirstNamePatientInfoResult.Size = new System.Drawing.Size(186, 29);
             this.textBoxFirstNamePatientInfoResult.TabIndex = 1;
             // 
+            // linkLabelPatientInfoBack
+            // 
+            this.linkLabelPatientInfoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelPatientInfoBack.AutoSize = true;
+            this.linkLabelPatientInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelPatientInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(545, 0);
+            this.linkLabelPatientInfoBack.Name = "linkLabelPatientInfoBack";
+            this.linkLabelPatientInfoBack.Size = new System.Drawing.Size(73, 25);
+            this.linkLabelPatientInfoBack.TabIndex = 9;
+            this.linkLabelPatientInfoBack.TabStop = true;
+            this.linkLabelPatientInfoBack.Text = "< Back";
+            this.linkLabelPatientInfoBack.Visible = false;
+            this.linkLabelPatientInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelPatientInfoBack_LinkClicked);
+            // 
             // labelFirstNamePatientInfoResult
             // 
             this.labelFirstNamePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -730,20 +680,6 @@
             this.textBoxPhonePatientInfoResult.Name = "textBoxPhonePatientInfoResult";
             this.textBoxPhonePatientInfoResult.Size = new System.Drawing.Size(186, 29);
             this.textBoxPhonePatientInfoResult.TabIndex = 6;
-            // 
-            // linkLabelRecordsPatientInfoVisitRecords
-            // 
-            this.linkLabelRecordsPatientInfoVisitRecords.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.linkLabelRecordsPatientInfoVisitRecords.AutoSize = true;
-            this.linkLabelRecordsPatientInfoVisitRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelRecordsPatientInfoVisitRecords.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelRecordsPatientInfoVisitRecords.Location = new System.Drawing.Point(450, 12);
-            this.linkLabelRecordsPatientInfoVisitRecords.Name = "linkLabelRecordsPatientInfoVisitRecords";
-            this.linkLabelRecordsPatientInfoVisitRecords.Size = new System.Drawing.Size(149, 25);
-            this.linkLabelRecordsPatientInfoVisitRecords.TabIndex = 18;
-            this.linkLabelRecordsPatientInfoVisitRecords.TabStop = true;
-            this.linkLabelRecordsPatientInfoVisitRecords.Text = "Patient Records";
-            this.linkLabelRecordsPatientInfoVisitRecords.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRecordsPatientInfoVisitRecords_LinkClicked);
             // 
             // dateTimePickerDOBPatientInfoResult
             // 
@@ -810,21 +746,6 @@
             this.labelPatientInformation.Size = new System.Drawing.Size(231, 29);
             this.labelPatientInformation.TabIndex = 0;
             this.labelPatientInformation.Text = "Patient Information";
-            // 
-            // linkLabelPatientInfoBack
-            // 
-            this.linkLabelPatientInfoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabelPatientInfoBack.AutoSize = true;
-            this.linkLabelPatientInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelPatientInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(378, 3);
-            this.linkLabelPatientInfoBack.Name = "linkLabelPatientInfoBack";
-            this.linkLabelPatientInfoBack.Size = new System.Drawing.Size(73, 25);
-            this.linkLabelPatientInfoBack.TabIndex = 9;
-            this.linkLabelPatientInfoBack.TabStop = true;
-            this.linkLabelPatientInfoBack.Text = "< Back";
-            this.linkLabelPatientInfoBack.Visible = false;
-            this.linkLabelPatientInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelPatientInfoBack_LinkClicked);
             // 
             // tabPageNurseBook
             // 
@@ -1410,6 +1331,91 @@
             // 
             this.patientTableAdapter.ClearBeforeFill = true;
             // 
+            // patientIDDataGridViewTextBoxColumn
+            // 
+            this.patientIDDataGridViewTextBoxColumn.DataPropertyName = "patientID";
+            this.patientIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.patientIDDataGridViewTextBoxColumn.Name = "patientIDDataGridViewTextBoxColumn";
+            this.patientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.patientIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fnameDataGridViewTextBoxColumn
+            // 
+            this.fnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
+            this.fnameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.fnameDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
+            this.fnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lnameDataGridViewTextBoxColumn
+            // 
+            this.lnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
+            this.lnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lnameDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
+            this.lnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dobDataGridViewTextBoxColumn
+            // 
+            this.dobDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dobDataGridViewTextBoxColumn.DataPropertyName = "dob";
+            this.dobDataGridViewTextBoxColumn.HeaderText = "Date of Birth";
+            this.dobDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.dobDataGridViewTextBoxColumn.Name = "dobDataGridViewTextBoxColumn";
+            this.dobDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ssnDataGridViewTextBoxColumn
+            // 
+            this.ssnDataGridViewTextBoxColumn.DataPropertyName = "ssn";
+            this.ssnDataGridViewTextBoxColumn.HeaderText = "SSN";
+            this.ssnDataGridViewTextBoxColumn.Name = "ssnDataGridViewTextBoxColumn";
+            this.ssnDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ssnDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.genderDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // addressIDDataGridViewTextBoxColumn
+            // 
+            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "addressID";
+            this.addressIDDataGridViewTextBoxColumn.HeaderText = "Address ID";
+            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataGridViewButtonColumnPatientInfo
+            // 
+            this.dataGridViewButtonColumnPatientInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewButtonColumnPatientInfo.HeaderText = "";
+            this.dataGridViewButtonColumnPatientInfo.Name = "dataGridViewButtonColumnPatientInfo";
+            this.dataGridViewButtonColumnPatientInfo.ReadOnly = true;
+            this.dataGridViewButtonColumnPatientInfo.Text = "Information";
+            this.dataGridViewButtonColumnPatientInfo.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumnPatientRecords
+            // 
+            this.dataGridViewButtonColumnPatientRecords.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewButtonColumnPatientRecords.HeaderText = "";
+            this.dataGridViewButtonColumnPatientRecords.Name = "dataGridViewButtonColumnPatientRecords";
+            this.dataGridViewButtonColumnPatientRecords.ReadOnly = true;
+            this.dataGridViewButtonColumnPatientRecords.Text = "Records";
+            this.dataGridViewButtonColumnPatientRecords.UseColumnTextForButtonValue = true;
+            // 
             // UserControlNurseMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1531,7 +1537,6 @@
         private System.Windows.Forms.Label labelZipPatientInfoResult;
         private System.Windows.Forms.TextBox textBoxPhonePatientInfoResult;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.LinkLabel linkLabelRecordsPatientInfoVisitRecords;
         private System.Windows.Forms.BindingSource doctorBindingSource;
         private clinicDataSet clinicDataSet;
         private clinicDataSetTableAdapters.DoctorTableAdapter doctorTableAdapter;
@@ -1571,5 +1576,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumnPatientInfo;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumnPatientRecords;
     }
 }
