@@ -190,21 +190,21 @@ namespace CS6232GroupProject.DAL
             if (!String.IsNullOrEmpty(newNurse.FName) && !String.IsNullOrEmpty(newNurse.LName))
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID, activeStatus " +
                 "FROM Nurse " +
-                "WHERE Fname = @fname AND Lname = @lname";
+                "WHERE Fname LIKE @fname AND Lname LIKE @lname";
             }
             else if (!String.IsNullOrEmpty(newNurse.LName))
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID, activeStatus " +
                 "FROM Nurse " +
-                "WHERE Lname = @lname AND DOB = @dob";
+                "WHERE Lname LIKE @lname AND DOB = @dob";
             }
             else
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID, activeStatus " +
                 "FROM Nurse " +
                 "WHERE DOB = @dob";
             }
@@ -222,7 +222,7 @@ namespace CS6232GroupProject.DAL
                     }
                     else
                     {
-                        selectCommand.Parameters.AddWithValue("@fname", newNurse.FName);
+                        selectCommand.Parameters.AddWithValue("@fname", newNurse.FName + "%");
                     }
                     if (newNurse.LName == null)
                     {
@@ -230,7 +230,7 @@ namespace CS6232GroupProject.DAL
                     }
                     else
                     {
-                        selectCommand.Parameters.AddWithValue("@lname", newNurse.LName);
+                        selectCommand.Parameters.AddWithValue("@lname", newNurse.LName + "%");
                     }
                     if (newNurse.DOB == null)
                     {
@@ -255,7 +255,18 @@ namespace CS6232GroupProject.DAL
                             nurse.Gender = reader["Gender"].ToString();
                             nurse.Phone = reader["Phone"].ToString();
                             nurse.AddressID = (int)reader["AddressID"];
-                            //nurse.Active = (Boolean)reader["Active"];
+                            if (reader["activeSatus"] == null)
+                            {
+                                nurse.Active = false;
+                            }
+                            else if ((bool)reader["activeSatus"] == true)
+                            {
+                                nurse.Active = true;
+                            }
+                            else
+                            {
+                                nurse.Active = false;
+                            }
                             nurses.Add(nurse);
 
                         }
@@ -275,7 +286,7 @@ namespace CS6232GroupProject.DAL
                " WHERE Address.addressID = (SELECT AddressID FROM Nurse " +
                " WHERE nurseID = @nurseID) " +
                " UPDATE Nurse" +
-               " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID " +//Activestatus missing
+               " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID, activeStatus = @activeStatus " +
                 " WHERE nurseID = @nurseID" +
                " commit transaction" +
                " end try" +
@@ -365,8 +376,15 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
                     }
-
-
+                    // Need to check if true/false is automatically converted into 1/0 in the DB.
+                    if (newNurse.Active == true)
+                    {
+                        updateCommand.Parameters.AddWithValue("@activeStatus", 1);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("activeStatus", 0);
+                    }
 
                     updateCommand.ExecuteNonQuery();
 
@@ -376,7 +394,7 @@ namespace CS6232GroupProject.DAL
             }
         }
 
-        internal void registerNurseInDB(Nurse newNurse, Address newAddress)
+        internal void registerNurseInDB(Nurse newNurse, Address newAddress)// Is this a duplicate of the AddNurse method?
         {
             string updateStatement =
                 " begin transaction " +
@@ -384,7 +402,7 @@ namespace CS6232GroupProject.DAL
                 " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
                 " SELECT SCOPE_IDENTITY()" +
                 " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID)" +
-                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY())" +//active status missing
+                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY())" +
                 " commit transaction" +
                 " end try" +
                 " begin catch" +
