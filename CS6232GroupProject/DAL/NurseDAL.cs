@@ -275,7 +275,7 @@ namespace CS6232GroupProject.DAL
                " WHERE Address.addressID = (SELECT AddressID FROM Nurse " +
                " WHERE nurseID = @nurseID) " +
                " UPDATE Nurse" +
-               " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID " +
+               " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID " +//Activestatus missing
                 " WHERE nurseID = @nurseID" +
                " commit transaction" +
                " end try" +
@@ -384,7 +384,7 @@ namespace CS6232GroupProject.DAL
                 " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
                 " SELECT SCOPE_IDENTITY()" +
                 " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID)" +
-                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY())" +
+                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY())" +//active status missing
                 " commit transaction" +
                 " end try" +
                 " begin catch" +
