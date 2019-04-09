@@ -3,7 +3,7 @@
 namespace CS6232GroupProject.Model
 {
     /// <summary>
-    /// This class creates a Nurse object with auto-implemented properties.
+    /// This class creates a Nurse object with auto-implemented properties. 
     /// </summary>
     class Nurse
     {
