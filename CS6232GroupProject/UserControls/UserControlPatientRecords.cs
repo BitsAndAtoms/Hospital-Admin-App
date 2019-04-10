@@ -3,6 +3,7 @@ using CS6232GroupProject.Model;
 using CS6232GroupProject.View;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
@@ -259,9 +260,18 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonDiagnosisUpdate_Click(object sender, EventArgs e)
         {
-            // Ensure all fields are filled, pass the updated PatientVist object to the 
-            // PatientVist controller, passing the PatientVist object with it, which calls 
-            // the PatientVisitDAL method to update the PatientVisit.
+            if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text))
+            {
+                this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
+                this.visitController.EnterInitialDiagnosis(this.visit);
+
+            }
+            if (!this.checkBoxPendingLabTests.Checked & !String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text))
+            {
+                this.visit.Diagnosis = this.textBoxDiagnosisFinal.Text;
+                this.visitController.EnterFinalDiagnosis(this.visit);
+            }
+            
         }
 
         private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)
@@ -273,6 +283,15 @@ namespace CS6232GroupProject.UserControls
             SetVisitInfo();
             AppointmentTimeCheck();
         }
-        
+
+        private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
+        {
+           
+            List<string> listOfTestsOrdered = this.checkedListBoxLabTests.CheckedItems.Cast<string>().ToList();
+            foreach (var testOrdered in listOfTestsOrdered)
+            {
+                this.visitController.OrderSelectedTestForVisit(this.visit.VisitID, testOrdered);
+            }
+        }
     }
 }

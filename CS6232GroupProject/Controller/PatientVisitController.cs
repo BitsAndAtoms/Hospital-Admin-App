@@ -1,4 +1,6 @@
-﻿using CS6232GroupProject.DAL;
+﻿using System;
+using System.Collections.Generic;
+using CS6232GroupProject.DAL;
 using CS6232GroupProject.Model;
 
 namespace CS6232GroupProject.Controller
@@ -60,6 +62,21 @@ namespace CS6232GroupProject.Controller
         public int AddPatientVisit(PatientVisit visit)
         {
             return this.visitSource.AddPatientVisit(visit);
+        }
+
+        internal void OrderSelectedTestForVisit(int visitID,string testOrdered)
+        {
+            this.visitSource.OrderSelectedTestForVisit(visitID, testOrdered);
+        }
+
+        internal void EnterFinalDiagnosis(PatientVisit visit)
+        {
+            this.visitSource.EnterFinalDiagnosis(visit);
+        }
+
+        internal void EnterInitialDiagnosis(PatientVisit visit)
+        {
+            this.visitSource.EnterInitialDiagnosis(visit);
         }
     }
 }

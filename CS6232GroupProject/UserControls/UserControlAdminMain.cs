@@ -146,7 +146,7 @@ namespace CS6232GroupProject.UserControls
             newNurse.LName = this.textBoxLastNameNurseInfo.Text;
             newNurse.DOB = this.dateTimePickerDOBNurseInfo.Value;
 
-            this.dataGridViewNurseInfo.DataSource = this.nurseController.GetSearchNurseByNameDOB(newNurse);
+           /// this.dataGridViewNurseInfo.DataSource = this.nurseController.GetSearchNurseByNameDOB(newNurse);
         }
 
         private void buttonRegisterNurse_Click(object sender, EventArgs e)
@@ -168,7 +168,7 @@ namespace CS6232GroupProject.UserControls
                     newAddress.State = this.comboBoxStateRegisterNurse.Text;
                     newAddress.Zip = Convert.ToInt32(this.textBoxZipRegisterNurse.Text);
 
-                    nurseController.registerNurse(newNurse, newAddress);
+                 ///   nurseController.registerNurse(newNurse, newAddress);
 
                     MessageBox.Show("Nurse Registered", "Confirm");
                     this.ClearText();

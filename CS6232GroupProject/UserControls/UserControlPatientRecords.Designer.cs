@@ -806,6 +806,7 @@
             this.buttonLabTestsSubmit.TabIndex = 7;
             this.buttonLabTestsSubmit.Text = "Submit";
             this.buttonLabTestsSubmit.UseVisualStyleBackColor = false;
+            this.buttonLabTestsSubmit.Click += new System.EventHandler(this.buttonLabTestsSubmit_Click);
             // 
             // labelLabTests
             // 

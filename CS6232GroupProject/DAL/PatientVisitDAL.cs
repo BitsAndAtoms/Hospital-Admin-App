@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.Model;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace CS6232GroupProject.DAL
@@ -53,6 +54,78 @@ namespace CS6232GroupProject.DAL
                 }
             }
             return visit;
+        }
+
+        internal void OrderSelectedTestForVisit(int visitID, string testOrdered)
+        {
+            string insertStatement =
+                "INSERT LabTestResult (testID, visitID) " +
+                "VALUES (SELECT testID FROM LabTestList WHERE testName = @testName, @visitID)";
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand insertCommand = new SqlCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("@visitID", visitID);
+                    insertCommand.Parameters.AddWithValue("@testName", testOrdered);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        internal bool EnterInitialDiagnosis(PatientVisit visit)
+        {
+            string updateStatement =
+                "UPDATE PatientVisit SET " +
+                    "diagnosis = @diagnosis, " +
+                "WHERE VisitID = @OldVisitID ";
+            
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
+                {
+                    updatedCommand.Parameters.AddWithValue("@diagnosis", visit.Diagnosis);
+                    updatedCommand.Parameters.AddWithValue("@OldVisitID", visit.VisitID);
+                    int count = updatedCommand.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        internal bool EnterFinalDiagnosis(PatientVisit visit)
+        {
+            string updateStatement =
+                "UPDATE PatientVisit SET " +
+                    "diagnosis = @diagnosis, " +
+                "WHERE VisitID = @OldVisitID ";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
+                {
+                    updatedCommand.Parameters.AddWithValue("@diagnosis", visit.Diagnosis);
+                    updatedCommand.Parameters.AddWithValue("@OldVisitID", visit.VisitID);
+                    int count = updatedCommand.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
 
         /// <summary>
