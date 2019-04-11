@@ -90,7 +90,7 @@ namespace CS6232GroupProject.UserControls
         }
 
         /// <summary>
-        /// Chekck fields prior to register
+        /// Chekck fields prior to register 
         /// </summary>
         /// <returns></returns>
         private bool CheckFieldsRegister()
