@@ -35,5 +35,22 @@ namespace CS6232GroupProject.Controller
         {
             this.nurseSource.AddNurse(newNurse, newAddress);
         }
+
+        //Below from rchesser
+
+        public List<Nurse> GetSearchNurseByNameDOB(Nurse newNurse)
+        {
+            return this.nurseSource.GetSearchNurseByNameDOB(newNurse);
+        }
+
+        internal void registerNurse(Nurse newNurse, Address newAddress)
+        {
+            this.nurseSource.registerNurseInDB(newNurse, newAddress);
+        }
+
+        internal void updateNurse(Nurse newNurse, Address newAddress)
+        {
+            this.nurseSource.updateNurse(newNurse, newAddress);
+        }
     }
 }
