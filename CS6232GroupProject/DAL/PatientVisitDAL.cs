@@ -86,10 +86,12 @@ namespace CS6232GroupProject.DAL
             List<LabTestResult> result = new List<LabTestResult>();
             
             string selectStatement =
-                "SELECT testResult, testDate " +
-                   
-                "FROM LabTestResult " +
-                "WHERE visitID = @visitID";
+                "SELECT testID, testName testResult, testDate " +          
+                "FROM LabTestResult t1" +
+                "LEFT JOIN " +
+                "LabTestList t2 " +
+                " ON t1.testID = t2.testID " +
+                " WHERE visitID = @visitID";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
@@ -102,7 +104,9 @@ namespace CS6232GroupProject.DAL
                         while (reader.Read())
                         {
                             LabTestResult newResult = new LabTestResult();
+                            
                             newResult.Result = reader["testResult"].ToString();
+                            newResult.Name = reader["testResult"].ToString();
                             newResult.TestDate = (DateTime)reader["testDate"];
                             result.Add(newResult);
                         }
@@ -113,19 +117,14 @@ namespace CS6232GroupProject.DAL
         }
 
 
-
-
-
-
-
-
-
         internal void EnterTestResultForVisit(PatientVisit visit,LabTest test,LabTestResult result)
         {
             string insertStatement =
                 "UPDATE LabTestResult SET" +
                 " testResult = @testResult " +
-                "WHERE  testID = (SELECT testID FROM LabTestList WHERE testName = @testName)" +
+                "WHERE  testID = " +
+                "(SELECT testID FROM LabTestList " +
+                "WHERE testName = @testName)" +
                 " AND visitID = @visitID";
 
             using (SqlConnection connection = DBConnection.GetConnection())
