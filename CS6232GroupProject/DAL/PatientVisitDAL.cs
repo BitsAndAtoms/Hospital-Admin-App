@@ -56,7 +56,12 @@ namespace CS6232GroupProject.DAL
             return visit;
         }
 
-        internal void OrderSelectedTestForVisit(int visitID, string testOrdered)
+        /// <summary>
+        /// This method orders the tests chosen from checkbox list
+        /// </summary>
+        /// <param name="visit"> is the visit of the patient</param>
+        /// <param name="testOrdered"> is the name of the test to be added for the visitID</param>
+        internal void OrderSelectedTestForVisit(PatientVisit visit, string testOrdered)
         {
             string insertStatement =
                 "INSERT LabTestResult (testID, visitID) " +
@@ -67,7 +72,7 @@ namespace CS6232GroupProject.DAL
 
                 using (SqlCommand insertCommand = new SqlCommand(insertStatement, connection))
                 {
-                    insertCommand.Parameters.AddWithValue("@visitID", visitID);
+                    insertCommand.Parameters.AddWithValue("@visitID", visit.VisitID);
                     insertCommand.Parameters.AddWithValue("@testName", testOrdered);
                     insertCommand.ExecuteNonQuery();
                 }

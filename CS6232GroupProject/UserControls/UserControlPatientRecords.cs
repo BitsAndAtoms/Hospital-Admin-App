@@ -288,9 +288,17 @@ namespace CS6232GroupProject.UserControls
         {
            
             List<string> listOfTestsOrdered = this.checkedListBoxLabTests.CheckedItems.Cast<string>().ToList();
-            foreach (var testOrdered in listOfTestsOrdered)
+            foreach (var nameOfTestOrdered in listOfTestsOrdered)
             {
-                this.visitController.OrderSelectedTestForVisit(this.visit.VisitID, testOrdered);
+                try
+                { 
+                     this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Error: The test could not be ordered");
+                }
             }
         }
     }
