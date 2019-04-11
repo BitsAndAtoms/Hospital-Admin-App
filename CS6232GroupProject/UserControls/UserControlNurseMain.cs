@@ -58,7 +58,7 @@ namespace CS6232GroupProject.UserControls
                 }
 
                 patientList = this.patientController.GetPatients();
-                comboBoxPatient.DataSource = patientList;
+                //comboBoxPatient.DataSource = patientList;
 
                 doctorList = this.doctorController.GetDoctors();
                 comboBoxPhysician.DataSource = doctorList;
@@ -225,7 +225,6 @@ namespace CS6232GroupProject.UserControls
             {
                 panelPatientSearch.Visible = false;
                 panelPatientInfoResults.Visible = true;
-                linkLabelPatientInfoBack.Visible = true;
 
                 textBoxFirstNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
                 textBoxLastNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
@@ -268,6 +267,13 @@ namespace CS6232GroupProject.UserControls
                     MessageBox.Show("Patient has no appointments. Please book one.", "Error - No Appointment Found");
                 }
             }
+            if (e.ColumnIndex == 10)
+            {
+                panelPatientSearch.Visible = false;
+                panelPatientBookAppointment.Visible = true;
+                labelPatientInformation.Visible = false;
+                patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+            }
             
         }
 
@@ -291,6 +297,13 @@ namespace CS6232GroupProject.UserControls
                     break;
                 }
             }
+        }
+
+        private void linkLabelBookBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            panelPatientSearch.Visible = true;
+            panelPatientBookAppointment.Visible = false;
+            labelPatientInformation.Visible = true;
         }
 
         /// <summary>
@@ -335,13 +348,15 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         private void buttonBookSubmit_Click(object sender, EventArgs e)
         {
-            if (CheckBookApointmentFields())
+            Patient newPatient = new Patient();
+                newPatient.PatientID = patientID;
+                if (CheckBookApointmentFields())
             {
                 try
                 {
                     var reason = textBoxSummary.Text;
                     Appointment appointment = new Appointment();
-                    appointment.PatientID = Convert.ToInt32(comboBoxPatient.SelectedValue);
+                    appointment.PatientID = patientID;
                     appointment.DoctorID = Convert.ToInt32(comboBoxPhysician.SelectedValue);
                     appointment.AppointmentDateTime = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
                     appointment.Reasons = reason;
@@ -487,10 +502,12 @@ namespace CS6232GroupProject.UserControls
         private void tabControlNurseMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             patientList = this.patientController.GetPatients();
-            comboBoxPatient.DataSource = patientList;
+            //comboBoxPatient.DataSource = patientList;
 
             doctorList = this.doctorController.GetDoctors();
             comboBoxPhysician.DataSource = doctorList;
         }
+
+        
     }
 }
