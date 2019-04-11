@@ -186,13 +186,13 @@ namespace CS6232GroupProject.DAL
                 selectStatement =
                 "SELECT PatientID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
                 "FROM Patient " +
-                "WHERE Fname = @fname AND Lname = @lname";
+                "WHERE Fname LIKE @fname AND Lname LIKE @lname";
             } else if (!String.IsNullOrEmpty(newPatient.LName))
                 {
                     selectStatement =
                     "SELECT PatientID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID " +
                     "FROM Patient " +
-                    "WHERE Lname = @lname AND DOB = @dob";
+                    "WHERE Lname LIKE @lname AND DOB = @dob";
                 } else 
                 {
                 selectStatement =
@@ -214,7 +214,7 @@ namespace CS6232GroupProject.DAL
                     }
                     else
                     {
-                        selectCommand.Parameters.AddWithValue("@fname", newPatient.FName);
+                        selectCommand.Parameters.AddWithValue("@fname", newPatient.FName + "%");
                     }
                     if (newPatient.LName == null)
                     {
@@ -222,7 +222,7 @@ namespace CS6232GroupProject.DAL
                     }
                     else
                     {
-                        selectCommand.Parameters.AddWithValue("@lname", newPatient.LName);
+                        selectCommand.Parameters.AddWithValue("@lname", newPatient.LName + "%");
                     }
                     if (newPatient.DOB == null)
                     {

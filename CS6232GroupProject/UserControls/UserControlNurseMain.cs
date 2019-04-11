@@ -90,15 +90,18 @@ namespace CS6232GroupProject.UserControls
         }
 
         /// <summary>
-        /// Chekck fields prior to register
+        /// Chekck fields prior to register 
         /// </summary>
         /// <returns></returns>
         private bool CheckFieldsRegister()
         {
             labelAddMessage.ForeColor = Color.Red;
             int number;
+            int phoneNumber;
             int.TryParse(this.textBoxSSN.Text, out number);
+            int.TryParse(this.textBoxRegisterPhone.Text, out phoneNumber);
             bool checkNumber = number.GetType().Equals(typeof(int));
+            bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
             if (this.textBoxRegisterFirstName.Text.Length == 0 || this.textBoxRegisterFirstName.Text == null)
             {
                 labelAddMessage.Text = "Please enter a First Name";
@@ -124,7 +127,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null)
+            else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null || !checkPhone)
             {
                 labelAddMessage.Text = "Please enter a Phone Number";
                 return false;
@@ -172,6 +175,7 @@ namespace CS6232GroupProject.UserControls
                     patientController.registerPatient(newPatient, newAddress);
                     MessageBox.Show("Patient Registered", "Confirm");
                     this.ClearText();
+                    this.SetComboBox();
                 }
                 catch (SqlException ex)
                 {
@@ -345,6 +349,7 @@ namespace CS6232GroupProject.UserControls
                         this.appointmentController.CreateAppointment(appointment);
                         textBoxSummary.Text = "";
                         MessageBox.Show("Appointment Booked!");
+                        this.SetComboBox();
                     }
                     else
                     {
