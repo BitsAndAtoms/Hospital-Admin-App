@@ -265,13 +265,7 @@ namespace CS6232GroupProject.UserControls
                 this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
                 this.visitController.EnterInitialDiagnosis(this.visit);
 
-            }
-            if (!this.checkBoxPendingLabTests.Checked & !String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text))
-            {
-                this.visit.Diagnosis = this.textBoxDiagnosisFinal.Text;
-                this.visitController.EnterFinalDiagnosis(this.visit);
-            }
-            
+            }            
         }
 
         private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)

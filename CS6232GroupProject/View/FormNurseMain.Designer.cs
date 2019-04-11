@@ -46,7 +46,7 @@
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(139, 62);
+            this.labelName.Location = new System.Drawing.Point(152, 62);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(105, 25);
             this.labelName.TabIndex = 1;
@@ -59,7 +59,7 @@
             this.linkLabelLogout.BackColor = System.Drawing.Color.Transparent;
             this.linkLabelLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelLogout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(100)))));
-            this.linkLabelLogout.Location = new System.Drawing.Point(647, 0);
+            this.linkLabelLogout.Location = new System.Drawing.Point(703, 0);
             this.linkLabelLogout.Name = "linkLabelLogout";
             this.linkLabelLogout.Padding = new System.Windows.Forms.Padding(0, 10, 10, 0);
             this.linkLabelLogout.Size = new System.Drawing.Size(88, 35);
@@ -86,7 +86,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.3211F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.6789F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tableLayoutPanel1.Controls.Add(this.linkLabelLogout, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxNurseIcon, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelName, 1, 0);
@@ -95,7 +95,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(738, 149);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(794, 149);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // panel1
@@ -104,7 +104,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 149);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 754);
+            this.panel1.Size = new System.Drawing.Size(794, 754);
             this.panel1.TabIndex = 5;
             // 
             // userControlNurseMain1
@@ -113,7 +113,7 @@
             this.userControlNurseMain1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlNurseMain1.Location = new System.Drawing.Point(0, 0);
             this.userControlNurseMain1.Name = "userControlNurseMain1";
-            this.userControlNurseMain1.Size = new System.Drawing.Size(738, 754);
+            this.userControlNurseMain1.Size = new System.Drawing.Size(794, 754);
             this.userControlNurseMain1.TabIndex = 3;
             this.userControlNurseMain1.Load += new System.EventHandler(this.userControlNurseMain1_Load);
             // 
@@ -124,7 +124,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::CS6232GroupProject.Properties.Resources.bggradient_topsmall;
-            this.ClientSize = new System.Drawing.Size(738, 903);
+            this.ClientSize = new System.Drawing.Size(794, 903);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
