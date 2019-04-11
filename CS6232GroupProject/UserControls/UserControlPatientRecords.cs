@@ -258,18 +258,39 @@ namespace CS6232GroupProject.UserControls
             SetCheckUpInfo();
         }
 
+        /// <summary>
+        /// Thie method updates diagnosis 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonDiagnosisUpdate_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text))
             {
                 this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
-                this.visitController.EnterInitialDiagnosis(this.visit);
+                try
+                {
+                    this.visitController.EnterInitialDiagnosis(this.visit);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error: Initial diagnosis could not be updated");
+                }
 
             }
-            if (!this.checkBoxPendingLabTests.Checked & !String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text))
+            if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text))
             {
-                this.visit.Diagnosis = this.textBoxDiagnosisFinal.Text;
-                this.visitController.EnterFinalDiagnosis(this.visit);
+                
+               this.visit.Diagnosis = this.textBoxDiagnosisFinal.Text;
+                try
+                {
+                    this.visitController.EnterFinalDiagnosis(this.visit);
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Error: Final diagnosis could not be updated");
+                }
             }
             
         }
