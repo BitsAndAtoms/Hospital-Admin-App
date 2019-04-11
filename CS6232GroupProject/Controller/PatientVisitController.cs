@@ -74,6 +74,11 @@ namespace CS6232GroupProject.Controller
             this.visitSource.EnterFinalDiagnosis(visit);
         }
 
+        internal void EnterTestResultForVisit(PatientVisit visit, LabTest test, LabTestResult result)
+        {
+            this.visitSource.EnterTestResultForVisit(visit, test, result);
+        }
+
         internal void EnterInitialDiagnosis(PatientVisit visit)
         {
             this.visitSource.EnterInitialDiagnosis(visit);
