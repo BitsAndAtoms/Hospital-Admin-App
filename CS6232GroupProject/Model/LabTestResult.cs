@@ -12,5 +12,6 @@ namespace CS6232GroupProject.Model
         public int VisitID { get; set; }
         public string Result { get; set; }
         public DateTime? TestDate { get; set; }
+        public string Name { get; set; }
     }
 }
