@@ -172,6 +172,7 @@ namespace CS6232GroupProject.UserControls
                     patientController.registerPatient(newPatient, newAddress);
                     MessageBox.Show("Patient Registered", "Confirm");
                     this.ClearText();
+                    this.SetComboBox();
                 }
                 catch (SqlException ex)
                 {
@@ -345,6 +346,7 @@ namespace CS6232GroupProject.UserControls
                         this.appointmentController.CreateAppointment(appointment);
                         textBoxSummary.Text = "";
                         MessageBox.Show("Appointment Booked!");
+                        this.SetComboBox();
                     }
                     else
                     {
