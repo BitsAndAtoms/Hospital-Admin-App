@@ -74,6 +74,73 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+
+
+        public List<LabTestResult> GetLabTestResultByVisitID(PatientVisit visit)
+        {
+            List<LabTestResult> result = new List<LabTestResult>();
+            
+            string selectStatement =
+                "SELECT testResult, testDate " +
+                   
+                "FROM LabTestResult " +
+                "WHERE visitID = @visitID";
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@visitID", visit.VisitID);
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            LabTestResult newResult = new LabTestResult();
+                            newResult.Result = reader["testResult"].ToString();
+                            newResult.TestDate = (DateTime)reader["testDate"];
+                            result.Add(newResult);
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+        internal void EnterTestResultForVisit(PatientVisit visit,LabTest test,LabTestResult result)
+        {
+            string insertStatement =
+                "UPDATE LabTestResult SET" +
+                " testResult = @testResult " +
+                "WHERE  testID = (SELECT testID FROM LabTestList WHERE testName = @testName)" +
+                " AND visitID = @visitID";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand insertCommand = new SqlCommand(insertStatement, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("@visitID", visit.VisitID);
+                    insertCommand.Parameters.AddWithValue("@testName", test.Name);
+                    insertCommand.Parameters.AddWithValue("@testResult",result.Result);
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+
+
         internal bool EnterInitialDiagnosis(PatientVisit visit)
         {
             string updateStatement =
