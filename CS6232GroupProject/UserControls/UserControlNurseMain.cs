@@ -384,8 +384,11 @@ namespace CS6232GroupProject.UserControls
         {
             labelAddUpdateMessage.ForeColor = Color.Red;
             int number;
-            int.TryParse(this.textBoxSSNPatientInfoResult.Text, out number);
+            int phoneNumber;
+            int.TryParse(this.textBoxSSN.Text, out number);
+            int.TryParse(this.textBoxRegisterPhone.Text, out phoneNumber);
             bool checkNumber = number.GetType().Equals(typeof(int));
+            bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
             if (this.textBoxFirstNamePatientInfoResult.Text.Length == 0 || this.textBoxFirstNamePatientInfoResult.Text == null)
             {
                 labelAddUpdateMessage.Text = "Please enter a First Name";
@@ -411,7 +414,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxPhonePatientInfoResult.Text.Length == 0 || this.textBoxPhonePatientInfoResult.Text == null)
+            else if (this.textBoxPhonePatientInfoResult.Text.Length == 0 || this.textBoxPhonePatientInfoResult.Text == null || checkPhone)
             {
                 labelAddUpdateMessage.Text = "Please enter a Phone Number";
                 return false;
