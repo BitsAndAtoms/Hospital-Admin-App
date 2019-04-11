@@ -64,6 +64,12 @@ namespace CS6232GroupProject.Controller
             return this.visitSource.AddPatientVisit(visit);
         }
 
+        public List<LabTestResult> SearchLabTestResultByVisitID(PatientVisit visit)
+        {
+            return this.visitSource.GetLabTestResultByVisitID(visit);
+        }
+
+
         internal void OrderSelectedTestForVisit(PatientVisit visit,string testOrdered)
         {
             this.visitSource.OrderSelectedTestForVisit(visit, testOrdered);
