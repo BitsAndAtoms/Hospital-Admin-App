@@ -16,6 +16,6 @@ namespace CS6232GroupProject.Model
         public string Gender { get; set; }
         public string Phone { get; set; }
         public int AddressID { get; set; }
-        public Boolean Active { get; set; }
+        public Boolean? Active { get; set; }
     }
 }

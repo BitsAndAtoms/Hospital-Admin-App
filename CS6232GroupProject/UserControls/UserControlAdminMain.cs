@@ -238,6 +238,40 @@ namespace CS6232GroupProject.UserControls
             Address newAddress = new Address();
             if (this.CheckFieldsRegister())
             {
+                ///TEST CODE
+                ///
+                newNurse.FName = this.textBoxFirstNameRegisterNurse.Text;
+                newNurse.LName = this.textBoxLastNameRegisterNurse.Text;
+                newNurse.DOB = this.dateTimePickerDOBRegisterNurse.Value;
+                newNurse.SSN = this.textBoxSSNRegisterNurse.Text;
+                newNurse.Phone = this.textBoxPhoneRegisterNurse.Text;
+                newNurse.Gender = this.comboBoxGenderRegisterNurse.Text;
+
+                if (this.comboBoxRegisterNurseActive.Text == "Active")
+                {
+                    newNurse.Active = true;
+                }
+                else
+                {
+                    newNurse.Active = false;
+                }
+
+                newAddress.Street = this.textBoxStreetRegisterNurse.Text;
+                newAddress.State = this.comboBoxStateRegisterNurse.Text;
+                newAddress.Zip = Convert.ToInt32(this.textBoxZipRegisterNurse.Text);
+
+
+
+                nurseController.registerNurse(newNurse, newAddress);
+
+
+                MessageBox.Show("Nurse Registered", "Confirm");
+                this.ClearText();
+
+
+                ///END TEST CODE
+                ///
+
                 try
                 {
                     newNurse.FName = this.textBoxFirstNameRegisterNurse.Text;
@@ -246,6 +280,7 @@ namespace CS6232GroupProject.UserControls
                     newNurse.SSN = this.textBoxSSNRegisterNurse.Text;
                     newNurse.Phone = this.textBoxPhoneRegisterNurse.Text;
                     newNurse.Gender = this.comboBoxGenderRegisterNurse.Text;
+                    
                     if (this.comboBoxRegisterNurseActive.Text == "Active")
                     {
                         newNurse.Active = true;
@@ -254,13 +289,15 @@ namespace CS6232GroupProject.UserControls
                     {
                         newNurse.Active = false;
                     }
-
+                    
                     newAddress.Street = this.textBoxStreetRegisterNurse.Text;
                     newAddress.State = this.comboBoxStateRegisterNurse.Text;
                     newAddress.Zip = Convert.ToInt32(this.textBoxZipRegisterNurse.Text);
+                    
 
 
                     nurseController.registerNurse(newNurse, newAddress);
+                    
 
                     MessageBox.Show("Nurse Registered", "Confirm");
                     this.ClearText();
