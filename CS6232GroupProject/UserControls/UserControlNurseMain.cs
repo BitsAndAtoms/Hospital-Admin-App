@@ -177,7 +177,6 @@ namespace CS6232GroupProject.UserControls
                     patientController.registerPatient(newPatient, newAddress);
                     MessageBox.Show("Patient Registered", "Confirm");
                     this.ClearText();
-                    this.SetComboBox();
                 }
                 catch (SqlException ex)
                 {
