@@ -46,11 +46,11 @@ namespace CS6232GroupProject.DAL
 
                             //This section either needs to be re-written after the DB sets the ActiveStatus for 
                             // Nurses to not null with default false, or we need to make sure it is all correct.
-                            if (reader["activeSatus"] == null)
+                            if (reader["activeStatus"] == null)
                             {
                                 nurse.Active = false;
                             }
-                            else if ((bool)reader["activeSatus"] == true)
+                            else if ((bool)reader["activeStatus"] == true)
                             {
                                 nurse.Active = true;
                             }
@@ -255,11 +255,11 @@ namespace CS6232GroupProject.DAL
                             nurse.Gender = reader["Gender"].ToString();
                             nurse.Phone = reader["Phone"].ToString();
                             nurse.AddressID = (int)reader["AddressID"];
-                            if (reader["activeSatus"] == null)
+                            if (reader["activeStatus"] == null)
                             {
                                 nurse.Active = false;
                             }
-                            else if ((bool)reader["activeSatus"] == true)
+                            else if ((bool)reader["activeStatus"] == true)
                             {
                                 nurse.Active = true;
                             }
