@@ -58,7 +58,7 @@ namespace CS6232GroupProject.UserControls
                 }
 
                 patientList = this.patientController.GetPatients();
-                comboBoxPatient.DataSource = patientList;
+                //comboBoxPatient.DataSource = patientList;
 
                 doctorList = this.doctorController.GetDoctors();
                 comboBoxPhysician.DataSource = doctorList;
@@ -102,6 +102,8 @@ namespace CS6232GroupProject.UserControls
             int.TryParse(this.textBoxRegisterPhone.Text, out phoneNumber);
             bool checkNumber = number.GetType().Equals(typeof(int));
             bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
+
+
             if (this.textBoxRegisterFirstName.Text.Length == 0 || this.textBoxRegisterFirstName.Text == null)
             {
                 labelAddMessage.Text = "Please enter a First Name";
@@ -127,7 +129,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null || !checkPhone)
+            else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null || checkPhone)
             {
                 labelAddMessage.Text = "Please enter a Phone Number";
                 return false;
@@ -223,7 +225,6 @@ namespace CS6232GroupProject.UserControls
             {
                 panelPatientSearch.Visible = false;
                 panelPatientInfoResults.Visible = true;
-                linkLabelPatientInfoBack.Visible = true;
 
                 textBoxFirstNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
                 textBoxLastNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
@@ -266,6 +267,13 @@ namespace CS6232GroupProject.UserControls
                     MessageBox.Show("Patient has no appointments. Please book one.", "Error - No Appointment Found");
                 }
             }
+            if (e.ColumnIndex == 10)
+            {
+                panelPatientSearch.Visible = false;
+                panelPatientBookAppointment.Visible = true;
+                labelPatientInformation.Visible = false;
+                patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+            }
             
         }
 
@@ -289,6 +297,13 @@ namespace CS6232GroupProject.UserControls
                     break;
                 }
             }
+        }
+
+        private void linkLabelBookBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            panelPatientSearch.Visible = true;
+            panelPatientBookAppointment.Visible = false;
+            labelPatientInformation.Visible = true;
         }
 
         /// <summary>
@@ -333,13 +348,15 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         private void buttonBookSubmit_Click(object sender, EventArgs e)
         {
-            if (CheckBookApointmentFields())
+            Patient newPatient = new Patient();
+                newPatient.PatientID = patientID;
+                if (CheckBookApointmentFields())
             {
                 try
                 {
                     var reason = textBoxSummary.Text;
                     Appointment appointment = new Appointment();
-                    appointment.PatientID = Convert.ToInt32(comboBoxPatient.SelectedValue);
+                    appointment.PatientID = patientID;
                     appointment.DoctorID = Convert.ToInt32(comboBoxPhysician.SelectedValue);
                     appointment.AppointmentDateTime = dateTimePickerBookAppointment.Value.Date + dateTimePickerBookAppointmentTime.Value.TimeOfDay;
                     appointment.Reasons = reason;
@@ -382,8 +399,11 @@ namespace CS6232GroupProject.UserControls
         {
             labelAddUpdateMessage.ForeColor = Color.Red;
             int number;
-            int.TryParse(this.textBoxSSNPatientInfoResult.Text, out number);
+            int phoneNumber;
+            int.TryParse(this.textBoxSSN.Text, out number);
+            int.TryParse(this.textBoxRegisterPhone.Text, out phoneNumber);
             bool checkNumber = number.GetType().Equals(typeof(int));
+            bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
             if (this.textBoxFirstNamePatientInfoResult.Text.Length == 0 || this.textBoxFirstNamePatientInfoResult.Text == null)
             {
                 labelAddUpdateMessage.Text = "Please enter a First Name";
@@ -409,7 +429,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxPhonePatientInfoResult.Text.Length == 0 || this.textBoxPhonePatientInfoResult.Text == null)
+            else if (this.textBoxPhonePatientInfoResult.Text.Length == 0 || this.textBoxPhonePatientInfoResult.Text == null || checkPhone)
             {
                 labelAddUpdateMessage.Text = "Please enter a Phone Number";
                 return false;
@@ -482,10 +502,12 @@ namespace CS6232GroupProject.UserControls
         private void tabControlNurseMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             patientList = this.patientController.GetPatients();
-            comboBoxPatient.DataSource = patientList;
+            //comboBoxPatient.DataSource = patientList;
 
             doctorList = this.doctorController.GetDoctors();
             comboBoxPhysician.DataSource = doctorList;
         }
+
+        
     }
 }
