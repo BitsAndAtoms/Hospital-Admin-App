@@ -186,7 +186,6 @@
     </None>
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Appointment.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Doctor.datasource" />
-    <None Include="Properties\DataSources\CS6232GroupProject.Model.LabTestResult.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Nurse.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Patient.datasource" />
     <None Include="Properties\Settings.settings">
