@@ -77,6 +77,9 @@ namespace CS6232GroupProject.UserControls
             int number;
             int.TryParse(this.textBoxSSNRegisterNurse.Text, out number);
             bool checkNumber = number.GetType().Equals(typeof(int));
+            int phoneNumber;
+            int.TryParse(this.textBoxPhoneRegisterNurse.Text, out phoneNumber);
+            bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
             if (this.textBoxFirstNameRegisterNurse.Text.Length == 0 || this.textBoxFirstNameRegisterNurse.Text == null)
             {
                 labelAddMessage.Text = "Please enter a First Name";
@@ -102,7 +105,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxPhoneRegisterNurse.Text.Length == 0 || this.textBoxPhoneRegisterNurse.Text == null)
+            else if (this.textBoxPhoneRegisterNurse.Text.Length == 0 || this.textBoxPhoneRegisterNurse.Text == null || checkPhone)
             {
                 labelAddMessage.Text = "Please enter a Phone Number";
                 return false;

@@ -97,11 +97,12 @@ namespace CS6232GroupProject.UserControls
         {
             labelAddMessage.ForeColor = Color.Red;
             int number;
-            int phoneNumber;
             int.TryParse(this.textBoxSSN.Text, out number);
-            int.TryParse(this.textBoxRegisterPhone.Text, out phoneNumber);
             bool checkNumber = number.GetType().Equals(typeof(int));
+            int phoneNumber;
+            int.TryParse(this.textBoxRegisterPhone.Text, out phoneNumber);
             bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
+
 
 
             if (this.textBoxRegisterFirstName.Text.Length == 0 || this.textBoxRegisterFirstName.Text == null)
