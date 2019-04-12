@@ -246,10 +246,19 @@ namespace CS6232GroupProject.UserControls
                     newNurse.SSN = this.textBoxSSNRegisterNurse.Text;
                     newNurse.Phone = this.textBoxPhoneRegisterNurse.Text;
                     newNurse.Gender = this.comboBoxGenderRegisterNurse.Text;
+                    if (this.comboBoxRegisterNurseActive.Text == "Active")
+                    {
+                        newNurse.Active = true;
+                    }
+                    else
+                    {
+                        newNurse.Active = false;
+                    }
 
                     newAddress.Street = this.textBoxStreetRegisterNurse.Text;
                     newAddress.State = this.comboBoxStateRegisterNurse.Text;
                     newAddress.Zip = Convert.ToInt32(this.textBoxZipRegisterNurse.Text);
+
 
                     nurseController.registerNurse(newNurse, newAddress);
 
@@ -290,14 +299,13 @@ namespace CS6232GroupProject.UserControls
                 comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
                 textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
 
-
-                if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(0))
+                if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
                 {
-                    radioButtonNurseInfoResultsActive.Checked = true;
+                    comboBoxNurseInfoResultsActive.Text = "Active";
                 }
-                else if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(1))
+                else
                 {
-                    radioButtonNurseInfoResultsInactive.Checked = true;
+                    comboBoxNurseInfoResultsActive.Text = "Inactive";
                 }
                 nurseID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[0].Value;
             }
@@ -321,6 +329,15 @@ namespace CS6232GroupProject.UserControls
                 newNurse.Gender = this.comboBoxGenderNurseInfoResults.Text;
                 newNurse.Phone = this.textBoxPhoneNurseInfoResults.Text;
                 newNurse.DOB = this.dateTimePickerDOBNurseInfoResults.Value;
+                if (this.comboBoxNurseInfoResultsActive.Text == "Active")
+                {
+                    newNurse.Active = true;
+                }
+                else
+                {
+                    newNurse.Active = false;
+                }
+
                 newAddress.AddressID = this.addressID;
                 newAddress.Street = this.textBoxStreetNurseInfoResults.Text;
                 newAddress.Zip = Convert.ToInt32(this.textBoxZipNurseInfoResults.Text);

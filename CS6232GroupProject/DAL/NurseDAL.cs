@@ -383,7 +383,7 @@ namespace CS6232GroupProject.DAL
                     }
                     else
                     {
-                        updateCommand.Parameters.AddWithValue("activeStatus", 0);
+                        updateCommand.Parameters.AddWithValue("@activeStatus", 0);
                     }
 
                     updateCommand.ExecuteNonQuery();
@@ -401,8 +401,8 @@ namespace CS6232GroupProject.DAL
                 " begin try " +
                 " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
                 " SELECT SCOPE_IDENTITY()" +
-                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID)" +
-                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY())" +
+                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID, activeStatus)" +
+                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY(), @activeStatus)" +
                 " commit transaction" +
                 " end try" +
                 " begin catch" +
@@ -488,6 +488,14 @@ namespace CS6232GroupProject.DAL
                     else
                     {
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
+                    }
+                    if (newNurse.Active == true)
+                    {
+                        updateCommand.Parameters.AddWithValue("@activeStatus", 1);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@activeStatus", 0);
                     }
 
 
