@@ -46,11 +46,11 @@ namespace CS6232GroupProject.DAL
 
                             //This section either needs to be re-written after the DB sets the ActiveStatus for 
                             // Nurses to not null with default false, or we need to make sure it is all correct.
-                            if (reader["activeSatus"] == null)
+                            if (reader["activeStatus"] == null)
                             {
                                 nurse.Active = false;
                             }
-                            else if ((bool)reader["activeSatus"] == true)
+                            else if ((bool)reader["activeStatus"] == true)
                             {
                                 nurse.Active = true;
                             }
@@ -255,11 +255,11 @@ namespace CS6232GroupProject.DAL
                             nurse.Gender = reader["Gender"].ToString();
                             nurse.Phone = reader["Phone"].ToString();
                             nurse.AddressID = (int)reader["AddressID"];
-                            if (reader["activeSatus"] == null)
+                            if (reader["activeStatus"] == null)
                             {
                                 nurse.Active = false;
                             }
-                            else if ((bool)reader["activeSatus"] == true)
+                            else if ((bool)reader["activeStatus"] == true)
                             {
                                 nurse.Active = true;
                             }
@@ -383,7 +383,7 @@ namespace CS6232GroupProject.DAL
                     }
                     else
                     {
-                        updateCommand.Parameters.AddWithValue("activeStatus", 0);
+                        updateCommand.Parameters.AddWithValue("@activeStatus", 0);
                     }
 
                     updateCommand.ExecuteNonQuery();
@@ -401,8 +401,8 @@ namespace CS6232GroupProject.DAL
                 " begin try " +
                 " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
                 " SELECT SCOPE_IDENTITY()" +
-                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID)" +
-                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY())" +
+                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID, activeStatus)" +
+                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY(), @activeStatus)" +
                 " commit transaction" +
                 " end try" +
                 " begin catch" +
@@ -488,6 +488,14 @@ namespace CS6232GroupProject.DAL
                     else
                     {
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
+                    }
+                    if (newNurse.Active == true)
+                    {
+                        updateCommand.Parameters.AddWithValue("@activeStatus", 1);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@activeStatus", 0);
                     }
 
 
