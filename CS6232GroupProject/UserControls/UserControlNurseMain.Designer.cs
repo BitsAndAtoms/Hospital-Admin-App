@@ -591,7 +591,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxPhysician, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelSummary, 0, 3);
@@ -620,7 +620,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.dateTimePickerBookAppointmentTime, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.dateTimePickerBookAppointment, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(160, 89);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(159, 89);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -652,7 +652,7 @@
             this.comboBoxPhysician.DisplayMember = "FullName";
             this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(160, 50);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(159, 50);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
@@ -709,7 +709,7 @@
             this.buttonBookSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBookSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBookSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonBookSubmit.Location = new System.Drawing.Point(383, 292);
+            this.buttonBookSubmit.Location = new System.Drawing.Point(381, 292);
             this.buttonBookSubmit.Name = "buttonBookSubmit";
             this.buttonBookSubmit.Size = new System.Drawing.Size(137, 29);
             this.buttonBookSubmit.TabIndex = 7;
@@ -722,7 +722,7 @@
             this.textBoxSummary.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSummary.Location = new System.Drawing.Point(160, 152);
+            this.textBoxSummary.Location = new System.Drawing.Point(159, 152);
             this.textBoxSummary.Multiline = true;
             this.textBoxSummary.Name = "textBoxSummary";
             this.textBoxSummary.Size = new System.Drawing.Size(351, 121);
