@@ -286,7 +286,6 @@ namespace CS6232GroupProject.UserControls
         {
             panelPatientSearch.Visible = true;
             panelPatientInfoResults.Visible = false;
-            linkLabelPatientInfoBack.Visible = false;
 
             FormPatientRecords formPatientRecords = new FormPatientRecords();
             foreach (Form form in Application.OpenForms)
