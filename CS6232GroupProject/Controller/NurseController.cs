@@ -53,9 +53,9 @@ namespace CS6232GroupProject.Controller
         /// </summary>
         /// <param name="newNurse"></param>
         /// <param name="newAddress"></param>
-        internal void registerNurse(Nurse newNurse, Address newAddress)
+        internal void registerNurse(Nurse newNurse, Address newAddress, Login newLogin)
         {
-            this.nurseSource.registerNurseInDB(newNurse, newAddress);
+            this.nurseSource.registerNurseInDB(newNurse, newAddress, newLogin);
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace CS6232GroupProject.Controller
         /// </summary>
         /// <param name="newNurse"></param>
         /// <param name="newAddress"></param>
-        internal void updateNurse(Nurse newNurse, Address newAddress)
+        internal void updateNurse(Nurse newNurse, Address newAddress, Login newLogin)
         {
-            this.nurseSource.updateNurse(newNurse, newAddress);
+            this.nurseSource.updateNurse(newNurse, newAddress, newLogin);
         }
     }
 }

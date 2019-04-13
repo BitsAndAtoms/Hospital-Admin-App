@@ -236,8 +236,12 @@ namespace CS6232GroupProject.UserControls
         {
             Nurse newNurse = new Nurse();
             Address newAddress = new Address();
+            Login newLogin = new Login();
+
             if (this.CheckFieldsRegister())
             {
+                
+
                 try
                 {
                     newNurse.FName = this.textBoxFirstNameRegisterNurse.Text;
@@ -246,6 +250,7 @@ namespace CS6232GroupProject.UserControls
                     newNurse.SSN = this.textBoxSSNRegisterNurse.Text;
                     newNurse.Phone = this.textBoxPhoneRegisterNurse.Text;
                     newNurse.Gender = this.comboBoxGenderRegisterNurse.Text;
+                    
                     if (this.comboBoxRegisterNurseActive.Text == "Active")
                     {
                         newNurse.Active = true;
@@ -254,13 +259,21 @@ namespace CS6232GroupProject.UserControls
                     {
                         newNurse.Active = false;
                     }
-
+                    
                     newAddress.Street = this.textBoxStreetRegisterNurse.Text;
                     newAddress.State = this.comboBoxStateRegisterNurse.Text;
                     newAddress.Zip = Convert.ToInt32(this.textBoxZipRegisterNurse.Text);
 
 
-                    nurseController.registerNurse(newNurse, newAddress);
+
+                    
+                    newLogin.Username = this.textBoxUsernameRegisterNurse.Text;
+                    newLogin.Password = this.textBoxPasswordRegisterNurse.Text;
+
+
+
+                    nurseController.registerNurse(newNurse, newAddress, newLogin);
+
 
                     MessageBox.Show("Nurse Registered", "Confirm");
                     this.ClearText();
@@ -320,6 +333,7 @@ namespace CS6232GroupProject.UserControls
         {
             Nurse newNurse= new Nurse();
             Address newAddress = new Address();
+            Login newLogin = new Login();
             if (this.CheckFieldsUpdate())
             {
                 newNurse.NurseID = nurseID;
@@ -343,9 +357,12 @@ namespace CS6232GroupProject.UserControls
                 newAddress.Zip = Convert.ToInt32(this.textBoxZipNurseInfoResults.Text);
                 newAddress.State = this.comboBoxStateNurseInfoResults.Text;
 
+                newLogin.Username = this.textBoxUsernameNurseInfoResults.Text;
+                newLogin.Password = this.textBoxPasswordNurseInfoResults.Text;
+
                 try
                 {
-                    nurseController.updateNurse(newNurse, newAddress);
+                    nurseController.updateNurse(newNurse, newAddress, newLogin);
 
                     MessageBox.Show("Nurse Updated", "Confirm");
                     this.ClearText();
