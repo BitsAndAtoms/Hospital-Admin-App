@@ -23,7 +23,7 @@ namespace CS6232GroupProject.DAL
             PatientVisit visit = new PatientVisit();
 
             string selectStatement =
-                "SELECT VisitID, appointmentID, NurseID, visitDateTime, Diagnosis, " +
+                "SELECT VisitID, appointmentID, NurseID, visitDateTime, Diagnosis, finalDiagnosis, " +
                     "Weight, Systolic, Diastolic, Temperature, Pulse, Symptoms " +
                 "FROM PatientVisit " +
                 "WHERE appointmentID = @appointmentID";
@@ -43,6 +43,7 @@ namespace CS6232GroupProject.DAL
                             visit.NurseID = (int)reader["NurseID"];
                             visit.Date = (DateTime)reader["visitDateTime"];
                             visit.Diagnosis = reader["Diagnosis"].ToString();
+                            visit.finalDiagnosis = reader["finalDiagnosis"].ToString();
                             visit.Weight = (decimal)reader["Weight"];
                             visit.Systolic = (int)reader["Systolic"];
                             visit.Diastolic = (int)reader["Diastolic"];
