@@ -236,41 +236,11 @@ namespace CS6232GroupProject.UserControls
         {
             Nurse newNurse = new Nurse();
             Address newAddress = new Address();
+            Login newLogin = new Login();
+
             if (this.CheckFieldsRegister())
             {
-                ///TEST CODE
-                ///
-                newNurse.FName = this.textBoxFirstNameRegisterNurse.Text;
-                newNurse.LName = this.textBoxLastNameRegisterNurse.Text;
-                newNurse.DOB = this.dateTimePickerDOBRegisterNurse.Value;
-                newNurse.SSN = this.textBoxSSNRegisterNurse.Text;
-                newNurse.Phone = this.textBoxPhoneRegisterNurse.Text;
-                newNurse.Gender = this.comboBoxGenderRegisterNurse.Text;
-
-                if (this.comboBoxRegisterNurseActive.Text == "Active")
-                {
-                    newNurse.Active = true;
-                }
-                else
-                {
-                    newNurse.Active = false;
-                }
-
-                newAddress.Street = this.textBoxStreetRegisterNurse.Text;
-                newAddress.State = this.comboBoxStateRegisterNurse.Text;
-                newAddress.Zip = Convert.ToInt32(this.textBoxZipRegisterNurse.Text);
-
-
-
-                nurseController.registerNurse(newNurse, newAddress);
-
-
-                MessageBox.Show("Nurse Registered", "Confirm");
-                this.ClearText();
-
-
-                ///END TEST CODE
-                ///
+                
 
                 try
                 {
@@ -293,11 +263,17 @@ namespace CS6232GroupProject.UserControls
                     newAddress.Street = this.textBoxStreetRegisterNurse.Text;
                     newAddress.State = this.comboBoxStateRegisterNurse.Text;
                     newAddress.Zip = Convert.ToInt32(this.textBoxZipRegisterNurse.Text);
-                    
 
 
-                    nurseController.registerNurse(newNurse, newAddress);
-                    
+
+                    // Methods for when the textboxes are added.
+                    //newLogin.Username = "textbox for username";
+                    //newLogin.Password = "textbox for password";
+
+
+
+                    nurseController.registerNurse(newNurse, newAddress, newLogin);
+
 
                     MessageBox.Show("Nurse Registered", "Confirm");
                     this.ClearText();

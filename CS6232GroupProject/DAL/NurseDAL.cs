@@ -407,15 +407,17 @@ namespace CS6232GroupProject.DAL
             }
         }
 
-        internal void registerNurseInDB(Nurse newNurse, Address newAddress)// Is this a duplicate of the AddNurse method?
+        internal void registerNurseInDB(Nurse newNurse, Address newAddress, Login newLogin)// Is this a duplicate of the AddNurse method?
         {
             string updateStatement =
                 " begin transaction " +
                 " begin try " +
                 " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
                 " SELECT SCOPE_IDENTITY()" +
-                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID, activeStatus)" +
-                " VALUES (@fname, @lname, @dob, @ssn, @gender, @phone, @activeStatus, SCOPE_IDENTITY())" +
+                " INSERT INTO Login(username, password) Values(@username, PWDCOMPARE(@password , password)) " +
+                " SELECT SCOPE_IDENTITY()" +
+                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, nurseUsername, addressID, activeStatus)" +
+                " VALUES (@fname, @lname, @dob, @ssn, @gender, @phone, @nurseUsername, @activeStatus, SCOPE_IDENTITY())" +
                 " commit transaction" +
                 " end try" +
                 " begin catch" +
@@ -502,7 +504,7 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
                     }
-                    MessageBox.Show("Issue before active status!", "Issue Here!");
+                    
                     if (newNurse.Active == true)
                     {
                         updateCommand.Parameters.AddWithValue("@activeStatus", true);
@@ -511,11 +513,9 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@activeStatus", false);
                     }
-                    MessageBox.Show("Issue after Active status before Execute!", "Issue Here!");
 
 
                     updateCommand.ExecuteNonQuery();
-                    MessageBox.Show("Issue after ExecuteNonQuery!", "Issue Here!");
                 }
 
                 connection.Close();
