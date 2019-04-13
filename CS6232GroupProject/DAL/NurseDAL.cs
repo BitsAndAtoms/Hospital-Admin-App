@@ -21,7 +21,7 @@ namespace CS6232GroupProject.DAL
             List<Nurse> nurses = new List<Nurse>();
 
             string selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID, activeStatus " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, Username, AddressID, activeStatus " +
                 "FROM Nurse";
 
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -43,6 +43,7 @@ namespace CS6232GroupProject.DAL
                             nurse.SSN = reader["SSN"].ToString();
                             nurse.Gender = reader["Gender"].ToString();
                             nurse.Phone = reader["Phone"].ToString();
+                            nurse.Username = reader["Username"].ToString();
                             nurse.AddressID = (int)reader["AddressID"];
 
                             //This section either needs to be re-written after the DB sets the ActiveStatus for 
@@ -203,21 +204,21 @@ namespace CS6232GroupProject.DAL
             if (!String.IsNullOrEmpty(newNurse.FName) && !String.IsNullOrEmpty(newNurse.LName))
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID, activeStatus " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, Username, AddressID, activeStatus " +
                 "FROM Nurse " +
                 "WHERE Fname LIKE @fname AND Lname LIKE @lname";
             }
             else if (!String.IsNullOrEmpty(newNurse.LName))
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID, activeStatus " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, Username, AddressID, activeStatus " +
                 "FROM Nurse " +
                 "WHERE Lname LIKE @lname AND DOB = @dob";
             }
             else
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, AddressID, activeStatus " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, Username, AddressID, activeStatus " +
                 "FROM Nurse " +
                 "WHERE DOB = @dob";
             }
@@ -267,6 +268,7 @@ namespace CS6232GroupProject.DAL
                             nurse.SSN = reader["SSN"].ToString();
                             nurse.Gender = reader["Gender"].ToString();
                             nurse.Phone = reader["Phone"].ToString();
+                            nurse.Username = reader["Username"].ToString();
                             nurse.AddressID = (int)reader["AddressID"];
                             if (reader["activeStatus"] == null)
                             {
@@ -289,7 +291,7 @@ namespace CS6232GroupProject.DAL
             return nurses;
         }
 
-        internal void updateNurse(Nurse newNurse, Address newAddress)
+        internal void updateNurse(Nurse newNurse, Address newAddress, Login newLogin)
         {
             string updateStatement =
                " begin transaction " +
@@ -504,7 +506,9 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
                     }
-                    
+
+                    updateCommand.Parameters.AddWithValue("@username", newNurse.Username);
+
                     if (newNurse.Active == true)
                     {
                         updateCommand.Parameters.AddWithValue("@activeStatus", true);

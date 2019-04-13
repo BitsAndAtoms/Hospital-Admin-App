@@ -266,9 +266,9 @@ namespace CS6232GroupProject.UserControls
 
 
 
-                    // Methods for when the textboxes are added.
-                    //newLogin.Username = "textbox for username";
-                    //newLogin.Password = "textbox for password";
+                    
+                    newLogin.Username = this.textBoxUsernameRegisterNurse.Text;
+                    newLogin.Password = this.textBoxPasswordRegisterNurse.Text;
 
 
 
@@ -333,6 +333,7 @@ namespace CS6232GroupProject.UserControls
         {
             Nurse newNurse= new Nurse();
             Address newAddress = new Address();
+            Login newLogin = new Login();
             if (this.CheckFieldsUpdate())
             {
                 newNurse.NurseID = nurseID;
@@ -356,9 +357,12 @@ namespace CS6232GroupProject.UserControls
                 newAddress.Zip = Convert.ToInt32(this.textBoxZipNurseInfoResults.Text);
                 newAddress.State = this.comboBoxStateNurseInfoResults.Text;
 
+                newLogin.Username = this.textBoxUsernameNurseInfoResults.Text;
+                newLogin.Password = this.textBoxPasswordNurseInfoResults.Text;
+
                 try
                 {
-                    nurseController.updateNurse(newNurse, newAddress);
+                    nurseController.updateNurse(newNurse, newAddress, newLogin);
 
                     MessageBox.Show("Nurse Updated", "Confirm");
                     this.ClearText();
