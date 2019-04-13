@@ -186,11 +186,10 @@
     </None>
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Appointment.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Doctor.datasource" />
-<<<<<<< HEAD
-=======
+
     <None Include="Properties\DataSources\CS6232GroupProject.Model.LabTest.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.LabTestResult.datasource" />
->>>>>>> d9a5184ad932442a7181db58a3d9191a3c468d66
+
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Nurse.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Patient.datasource" />
     <None Include="Properties\Settings.settings">
