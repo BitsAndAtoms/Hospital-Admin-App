@@ -234,9 +234,10 @@ namespace CS6232GroupProject.UserControls
                 textBoxPhonePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[6].Value.ToString();
 
                 addressID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value;
-                textBoxStreetPatientInfoResult.Text = this.addressController.GetAddressByID(addressID).Street;
-                comboBoxStatePatientInfoResult.Text = this.addressController.GetAddressByID(addressID).State;
-                textBoxZipPatientInfoResult.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
+                Address patientAddress = this.addressController.GetAddressByID(addressID);
+                textBoxStreetPatientInfoResult.Text = patientAddress.Street;
+                comboBoxStatePatientInfoResult.Text = patientAddress.State;
+                textBoxZipPatientInfoResult.Text = Convert.ToString(patientAddress.Zip);
                 patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
             }
             if (e.ColumnIndex == 9)
@@ -287,7 +288,6 @@ namespace CS6232GroupProject.UserControls
             panelPatientSearch.Visible = true;
             panelPatientInfoResults.Visible = false;
 
-            FormPatientRecords formPatientRecords = new FormPatientRecords();
             foreach (Form form in Application.OpenForms)
             {
                 if (form.Name == "FormPatientRecords")

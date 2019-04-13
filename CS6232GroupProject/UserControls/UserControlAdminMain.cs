@@ -332,9 +332,10 @@ namespace CS6232GroupProject.UserControls
                 textBoxPhoneNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[7].Value.ToString();
 
                 addressID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[8].Value;
-                textBoxStreetNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).Street;
-                comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
-                textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
+                Address nurseAddress = this.addressController.GetAddressByID(addressID);
+                textBoxStreetNurseInfoResults.Text = nurseAddress.Street;
+                comboBoxStateNurseInfoResults.Text = nurseAddress.State;
+                textBoxZipNurseInfoResults.Text = Convert.ToString(nurseAddress.Zip);
 
                 if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
                 {
