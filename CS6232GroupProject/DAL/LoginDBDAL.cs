@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CS6232GroupProject.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -120,6 +121,35 @@ namespace CS6232GroupProject.DAL
                 }
             }
             return nameAndRole;
+        }
+
+        public Login GetLoginInformationByUsername(string Username)
+        {
+            string selectStatement =
+                "SELECT username, password " +
+                "FROM Login " +
+                "WHERE username = @username";
+            Login login = new Login();
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@userame", Username);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            login.Username = reader["username"].ToString();
+                            login.Password = reader["password"].ToString();
+
+                        }
+                    }
+                }
+            }
+            return login;
         }
     }
 }

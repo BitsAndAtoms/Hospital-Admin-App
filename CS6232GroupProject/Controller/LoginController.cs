@@ -1,4 +1,5 @@
 ﻿using CS6232GroupProject.DAL;
+using CS6232GroupProject.Model;
 using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
@@ -38,6 +39,11 @@ namespace CS6232GroupProject.Controller
         {
            List<string> newNameAndRole = this.loginDetails.FindUserNameAndRole(userName);
             return newNameAndRole;
+        }
+
+        internal Login GetLoginInformationByUsername(string Username)
+        {
+            return this.loginDetails.GetLoginInformationByUsername(Username);
         }
     }
 }

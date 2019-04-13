@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -69,132 +68,7 @@ namespace CS6232GroupProject.DAL
             return nurses;
         }
 
-        /// <summary>
-        /// This method adds a new Nurse to the DB if possible, or rollsback 
-        /// if not.
-        /// </summary>
-        /// <param name="newNurse"></param>
-        /// <param name="newAddress"></param>
-        internal void AddNurse(Nurse newNurse, Address newAddress)//We may want to make it a bool that returns true or false
-                                                                //So that we can have a MessageBox pop up and notify the user 
-                                                                //of any issues in the view based on what is returned.
-        {
-            string updateStatement =
-                " begin transaction " +
-                " begin try " +
-                " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
-                " SELECT SCOPE_IDENTITY()" +
-                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID, activeStatus)" +
-                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, @activeStatus, SCOPE_IDENTITY())" +
-                " commit transaction" +
-                " end try" +
-                " begin catch" +
-                "  raiserror('Update failed',16,1)" +
-                "  rollback transaction" +
-                " end catch";
-
-            //MessageBox.Show("Here is the issue!", "Issue Here!");
-            using (SqlConnection connection = DBConnection.GetConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand updateCommand = new SqlCommand(updateStatement, connection))
-                {
-                    if (newAddress.State == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@state", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@state", newAddress.State);
-                    }
-                    if (newAddress.Zip.ToString() == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@zip", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@zip", newAddress.Zip.ToString());
-                    }
-                    if (newAddress.Street == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@street", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@street", newAddress.Street);
-                    }
-                    if (newNurse.FName == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@fname", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@fname", newNurse.FName);
-                    }
-                    if (newNurse.LName == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@lname", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@lname", newNurse.LName);
-                    }
-                    if (newNurse.DOB == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@dob", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@dob", newNurse.DOB);
-                    }
-                    if (newNurse.SSN == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@ssn", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@ssn", newNurse.SSN);
-                    }
-                    if (newNurse.Phone == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@phone", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@phone", newNurse.Phone);
-                    }
-                    if (newNurse.Gender == null)
-                    {
-                        updateCommand.Parameters.AddWithValue("@gender", DBNull.Value);
-                    }
-                    else
-                    {
-                        updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
-                    }
-               
-
-                    updateCommand.Parameters.AddWithValue("@activeStatus", newNurse.Active);
-
-
-                    //if (newNurse.Active == true)
-                    //{
-                    //    updateCommand.Parameters.AddWithValue("@activeStatus", 1);
-                    //}
-                    //else
-                    //{
-                    //    updateCommand.Parameters.AddWithValue("@activeStatus", 0);
-                    //}
-
-
-
-                        updateCommand.ExecuteNonQuery();
-
-                }
-
-                connection.Close();
-            }
-        }
+        
 
         //Below from rchesser
         internal List<Nurse> GetSearchNurseByNameDOB(Nurse newNurse)
@@ -204,21 +78,21 @@ namespace CS6232GroupProject.DAL
             if (!String.IsNullOrEmpty(newNurse.FName) && !String.IsNullOrEmpty(newNurse.LName))
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, Username, AddressID, activeStatus " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, nurseUsername, AddressID, activeStatus " +
                 "FROM Nurse " +
                 "WHERE Fname LIKE @fname AND Lname LIKE @lname";
             }
             else if (!String.IsNullOrEmpty(newNurse.LName))
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, Username, AddressID, activeStatus " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, nurseUsername, AddressID, activeStatus " +
                 "FROM Nurse " +
                 "WHERE Lname LIKE @lname AND DOB = @dob";
             }
             else
             {
                 selectStatement =
-                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, Username, AddressID, activeStatus " +
+                "SELECT NurseID, Fname, Lname, CONCAT(Fname, ' ', Lname) as 'Full Name', DOB, SSN, Gender, Phone, nurseUsername, AddressID, activeStatus " +
                 "FROM Nurse " +
                 "WHERE DOB = @dob";
             }
@@ -268,7 +142,7 @@ namespace CS6232GroupProject.DAL
                             nurse.SSN = reader["SSN"].ToString();
                             nurse.Gender = reader["Gender"].ToString();
                             nurse.Phone = reader["Phone"].ToString();
-                            nurse.Username = reader["Username"].ToString();
+                            nurse.Username = reader["nurseUsername"].ToString();
                             nurse.AddressID = (int)reader["AddressID"];
                             if (reader["activeStatus"] == null)
                             {
