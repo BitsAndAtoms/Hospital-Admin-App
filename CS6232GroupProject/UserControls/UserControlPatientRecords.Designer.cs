@@ -297,7 +297,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -879,6 +879,7 @@
             this.buttonLabTestsOrder.TabIndex = 14;
             this.buttonLabTestsOrder.Text = "Order";
             this.buttonLabTestsOrder.UseVisualStyleBackColor = false;
+            this.buttonLabTestsOrder.Click += new System.EventHandler(this.buttonLabTestsOrder_Click);
             // 
             // labelLabTestsOrder
             // 
@@ -1025,6 +1026,7 @@
             this.labTestResultDataGridView.Name = "labTestResultDataGridView";
             this.labTestResultDataGridView.Size = new System.Drawing.Size(825, 495);
             this.labTestResultDataGridView.TabIndex = 0;
+            this.labTestResultDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.labTestResultDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn5
             // 
