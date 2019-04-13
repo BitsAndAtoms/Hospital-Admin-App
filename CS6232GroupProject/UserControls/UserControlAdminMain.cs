@@ -11,6 +11,7 @@ namespace CS6232GroupProject.UserControls
     {
         private AddressController addressController;
         private NurseController nurseController;
+        private LoginController loginController;
         private int addressID;
         public static int nurseID { get; set; }
         /// <summary>
@@ -315,6 +316,8 @@ namespace CS6232GroupProject.UserControls
 
                 ///
                 //NEED THE INFORMATION FOR USERNAME AND PASSWORD VIA THE NEW METHOD
+                textBoxUsernameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[11].Value.ToString();
+                //textBoxPasswordNurseInfoResults.Text = this.loginController.GetLoginInformationByUsername(textBoxUsernameNurseInfoResults.Text);
                 ///
 
                 if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
