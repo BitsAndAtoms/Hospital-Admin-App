@@ -38,16 +38,31 @@ namespace CS6232GroupProject.Controller
 
         //Below from rchesser
 
+        /// <summary>
+        /// Get Nurse
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <returns></returns>
         public List<Nurse> GetSearchNurseByNameDOB(Nurse newNurse)
         {
             return this.nurseSource.GetSearchNurseByNameDOB(newNurse);
         }
 
+        /// <summary>
+        /// Register a nurse
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newAddress"></param>
         internal void registerNurse(Nurse newNurse, Address newAddress)
         {
             this.nurseSource.registerNurseInDB(newNurse, newAddress);
         }
 
+        /// <summary>
+        /// Update a nurse
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newAddress"></param>
         internal void updateNurse(Nurse newNurse, Address newAddress)
         {
             this.nurseSource.updateNurse(newNurse, newAddress);

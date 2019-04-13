@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -46,11 +47,11 @@ namespace CS6232GroupProject.DAL
 
                             //This section either needs to be re-written after the DB sets the ActiveStatus for 
                             // Nurses to not null with default false, or we need to make sure it is all correct.
-                            if (reader["activeSatus"] == null)
+                            if (reader["activeStatus"] == null)
                             {
                                 nurse.Active = false;
                             }
-                            else if ((bool)reader["activeSatus"] == true)
+                            else if ((bool)reader["activeStatus"] == true)
                             {
                                 nurse.Active = true;
                             }
@@ -91,7 +92,7 @@ namespace CS6232GroupProject.DAL
                 "  rollback transaction" +
                 " end catch";
 
-
+            //MessageBox.Show("Here is the issue!", "Issue Here!");
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
@@ -170,11 +171,23 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
                     }
+               
+
                     updateCommand.Parameters.AddWithValue("@activeStatus", newNurse.Active);
 
 
+                    //if (newNurse.Active == true)
+                    //{
+                    //    updateCommand.Parameters.AddWithValue("@activeStatus", 1);
+                    //}
+                    //else
+                    //{
+                    //    updateCommand.Parameters.AddWithValue("@activeStatus", 0);
+                    //}
 
-                    updateCommand.ExecuteNonQuery();
+
+
+                        updateCommand.ExecuteNonQuery();
 
                 }
 
@@ -255,11 +268,11 @@ namespace CS6232GroupProject.DAL
                             nurse.Gender = reader["Gender"].ToString();
                             nurse.Phone = reader["Phone"].ToString();
                             nurse.AddressID = (int)reader["AddressID"];
-                            if (reader["activeSatus"] == null)
+                            if (reader["activeStatus"] == null)
                             {
                                 nurse.Active = false;
                             }
-                            else if ((bool)reader["activeSatus"] == true)
+                            else if ((bool)reader["activeStatus"] == true)
                             {
                                 nurse.Active = true;
                             }
@@ -383,7 +396,7 @@ namespace CS6232GroupProject.DAL
                     }
                     else
                     {
-                        updateCommand.Parameters.AddWithValue("activeStatus", 0);
+                        updateCommand.Parameters.AddWithValue("@activeStatus", 0);
                     }
 
                     updateCommand.ExecuteNonQuery();
@@ -401,8 +414,8 @@ namespace CS6232GroupProject.DAL
                 " begin try " +
                 " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
                 " SELECT SCOPE_IDENTITY()" +
-                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID)" +
-                " VALUES (@fname, @lname,@dob, @ssn, @gender, @phone, SCOPE_IDENTITY())" +
+                " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, addressID, activeStatus)" +
+                " VALUES (@fname, @lname, @dob, @ssn, @gender, @phone, @activeStatus, SCOPE_IDENTITY())" +
                 " commit transaction" +
                 " end try" +
                 " begin catch" +
@@ -410,7 +423,7 @@ namespace CS6232GroupProject.DAL
                 "  rollback transaction" +
                 " end catch";
 
-
+            
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
@@ -489,11 +502,20 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
                     }
-
+                    MessageBox.Show("Issue before active status!", "Issue Here!");
+                    if (newNurse.Active == true)
+                    {
+                        updateCommand.Parameters.AddWithValue("@activeStatus", true);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@activeStatus", false);
+                    }
+                    MessageBox.Show("Issue after Active status before Execute!", "Issue Here!");
 
 
                     updateCommand.ExecuteNonQuery();
-
+                    MessageBox.Show("Issue after ExecuteNonQuery!", "Issue Here!");
                 }
 
                 connection.Close();

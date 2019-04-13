@@ -68,7 +68,6 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.dateTimePickerBookAppointmentTime = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerBookAppointment = new System.Windows.Forms.DateTimePicker();
-            this.labelBookAppointment = new System.Windows.Forms.Label();
             this.comboBoxPhysician = new System.Windows.Forms.ComboBox();
             this.doctorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.labelSummary = new System.Windows.Forms.Label();
@@ -77,6 +76,7 @@
             this.buttonBookSubmit = new System.Windows.Forms.Button();
             this.textBoxSummary = new System.Windows.Forms.TextBox();
             this.linkLabelBookBack = new System.Windows.Forms.LinkLabel();
+            this.labelBookAppointment = new System.Windows.Forms.Label();
             this.panelPatientSearch = new System.Windows.Forms.Panel();
             this.dataGridViewPatientInfo = new System.Windows.Forms.DataGridView();
             this.patientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -303,7 +303,7 @@
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 12;
@@ -569,7 +569,7 @@
             this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
-            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(195, 214);
+            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(195, 211);
             this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
             this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderPatientInfoResult.TabIndex = 21;
@@ -591,7 +591,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxPhysician, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelSummary, 0, 3);
@@ -620,7 +620,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.dateTimePickerBookAppointmentTime, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.dateTimePickerBookAppointment, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(160, 89);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(159, 89);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -645,18 +645,6 @@
             this.dateTimePickerBookAppointment.Size = new System.Drawing.Size(139, 26);
             this.dateTimePickerBookAppointment.TabIndex = 4;
             // 
-            // labelBookAppointment
-            // 
-            this.labelBookAppointment.AutoSize = true;
-            this.labelBookAppointment.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelBookAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelBookAppointment.Location = new System.Drawing.Point(0, 0);
-            this.labelBookAppointment.Name = "labelBookAppointment";
-            this.labelBookAppointment.Size = new System.Drawing.Size(226, 29);
-            this.labelBookAppointment.TabIndex = 5;
-            this.labelBookAppointment.Text = "Book Appointment";
-            // 
             // comboBoxPhysician
             // 
             this.comboBoxPhysician.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -664,7 +652,7 @@
             this.comboBoxPhysician.DisplayMember = "FullName";
             this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(160, 47);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(159, 50);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
@@ -721,7 +709,7 @@
             this.buttonBookSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBookSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBookSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonBookSubmit.Location = new System.Drawing.Point(384, 292);
+            this.buttonBookSubmit.Location = new System.Drawing.Point(380, 292);
             this.buttonBookSubmit.Name = "buttonBookSubmit";
             this.buttonBookSubmit.Size = new System.Drawing.Size(137, 29);
             this.buttonBookSubmit.TabIndex = 7;
@@ -734,7 +722,7 @@
             this.textBoxSummary.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSummary.Location = new System.Drawing.Point(160, 152);
+            this.textBoxSummary.Location = new System.Drawing.Point(159, 152);
             this.textBoxSummary.Multiline = true;
             this.textBoxSummary.Name = "textBoxSummary";
             this.textBoxSummary.Size = new System.Drawing.Size(351, 121);
@@ -753,6 +741,18 @@
             this.linkLabelBookBack.TabStop = true;
             this.linkLabelBookBack.Text = "< Back";
             this.linkLabelBookBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBookBack_LinkClicked);
+            // 
+            // labelBookAppointment
+            // 
+            this.labelBookAppointment.AutoSize = true;
+            this.labelBookAppointment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelBookAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelBookAppointment.Location = new System.Drawing.Point(0, 0);
+            this.labelBookAppointment.Name = "labelBookAppointment";
+            this.labelBookAppointment.Size = new System.Drawing.Size(226, 29);
+            this.labelBookAppointment.TabIndex = 5;
+            this.labelBookAppointment.Text = "Book Appointment";
             // 
             // panelPatientSearch
             // 
@@ -1098,7 +1098,7 @@
             this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRegisterGender.FormattingEnabled = true;
-            this.comboBoxRegisterGender.Location = new System.Drawing.Point(195, 214);
+            this.comboBoxRegisterGender.Location = new System.Drawing.Point(195, 211);
             this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
             this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
             this.comboBoxRegisterGender.TabIndex = 6;
@@ -1289,7 +1289,7 @@
             this.comboBoxState.BackColor = System.Drawing.Color.White;
             this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxState.Location = new System.Drawing.Point(3, 29);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 12;

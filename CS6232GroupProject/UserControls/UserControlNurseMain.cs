@@ -97,11 +97,12 @@ namespace CS6232GroupProject.UserControls
         {
             labelAddMessage.ForeColor = Color.Red;
             int number;
-            int phoneNumber;
             int.TryParse(this.textBoxSSN.Text, out number);
-            int.TryParse(this.textBoxRegisterPhone.Text, out phoneNumber);
             bool checkNumber = number.GetType().Equals(typeof(int));
+            int phoneNumber;
+            int.TryParse(this.textBoxRegisterPhone.Text, out phoneNumber);
             bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
+
 
 
             if (this.textBoxRegisterFirstName.Text.Length == 0 || this.textBoxRegisterFirstName.Text == null)
@@ -129,7 +130,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null || checkPhone)
+            else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null || !checkPhone)
             {
                 labelAddMessage.Text = "Please enter a Phone Number";
                 return false;
@@ -177,7 +178,6 @@ namespace CS6232GroupProject.UserControls
                     patientController.registerPatient(newPatient, newAddress);
                     MessageBox.Show("Patient Registered", "Confirm");
                     this.ClearText();
-                    this.SetComboBox();
                 }
                 catch (SqlException ex)
                 {
@@ -286,7 +286,6 @@ namespace CS6232GroupProject.UserControls
         {
             panelPatientSearch.Visible = true;
             panelPatientInfoResults.Visible = false;
-            linkLabelPatientInfoBack.Visible = false;
 
             FormPatientRecords formPatientRecords = new FormPatientRecords();
             foreach (Form form in Application.OpenForms)
@@ -429,7 +428,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxPhonePatientInfoResult.Text.Length == 0 || this.textBoxPhonePatientInfoResult.Text == null || checkPhone)
+            else if (this.textBoxPhonePatientInfoResult.Text.Length == 0 || this.textBoxPhonePatientInfoResult.Text == null || !checkPhone)
             {
                 labelAddUpdateMessage.Text = "Please enter a Phone Number";
                 return false;
@@ -485,6 +484,8 @@ namespace CS6232GroupProject.UserControls
 
                     MessageBox.Show("Patient Updated", "Confirm");
                     this.ClearText();
+                    this.dataGridViewPatientInfo.DataSource = null;
+                    this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
                 }
                 catch (SqlException ex)
                 {
