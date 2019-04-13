@@ -416,7 +416,7 @@ namespace CS6232GroupProject.DAL
                 " begin try " +
                 " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
                 " SELECT SCOPE_IDENTITY()" +
-                " INSERT INTO Login(username, password) Values(@username, PWDCOMPARE(@password , password)) " +
+                " INSERT INTO Login(username, password) Values(@username, PWDENCRYPT(@password)) " +
                 " SELECT SCOPE_IDENTITY()" +
                 " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, nurseUsername, addressID, activeStatus)" +
                 " VALUES (@fname, @lname, @dob, @ssn, @gender, @phone, @nurseUsername, @activeStatus, SCOPE_IDENTITY())" +
@@ -458,6 +458,10 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@street", newAddress.Street);
                     }
+                    
+                    updateCommand.Parameters.AddWithValue("@username", newLogin.Username);
+                    updateCommand.Parameters.AddWithValue("@password", newLogin.Password);
+
                     if (newNurse.FName == null)
                     {
                         updateCommand.Parameters.AddWithValue("@fname", DBNull.Value);
@@ -507,7 +511,7 @@ namespace CS6232GroupProject.DAL
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
                     }
 
-                    updateCommand.Parameters.AddWithValue("@username", newNurse.Username);
+                    updateCommand.Parameters.AddWithValue("@nurseUsername", newNurse.Username);
 
                     if (newNurse.Active == true)
                     {
