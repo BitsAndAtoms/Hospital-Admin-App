@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlNurseMain = new System.Windows.Forms.TabControl();
             this.tabPageNursePatientInformation = new System.Windows.Forms.TabPage();
             this.panelPatientInfoResults = new System.Windows.Forms.Panel();
@@ -136,6 +136,7 @@
             this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicDataSet = new CS6232GroupProject.clinicDataSet();
             this.doctorTableAdapter = new CS6232GroupProject.clinicDataSetTableAdapters.DoctorTableAdapter();
+            this.clinicDataSet1 = new CS6232GroupProject.clinicDataSet();
             this.patientTableAdapter = new CS6232GroupProject.clinicDataSet1TableAdapters.PatientTableAdapter();
             this.tabControlNurseMain.SuspendLayout();
             this.tabPageNursePatientInformation.SuspendLayout();
@@ -165,6 +166,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlNurseMain
@@ -369,6 +371,7 @@
             this.linkLabelDeletePatient.TabIndex = 16;
             this.linkLabelDeletePatient.TabStop = true;
             this.linkLabelDeletePatient.Text = "Delete Patient";
+            this.linkLabelDeletePatient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDeletePatient_LinkClicked);
             // 
             // labelMailAddressPatentInfoResult
             // 
@@ -859,11 +862,11 @@
             // dataGridViewButtonColumnPatientInfo
             // 
             this.dataGridViewButtonColumnPatientInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.dataGridViewButtonColumnPatientInfo.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.dataGridViewButtonColumnPatientInfo.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewButtonColumnPatientInfo.HeaderText = "";
             this.dataGridViewButtonColumnPatientInfo.Name = "dataGridViewButtonColumnPatientInfo";
             this.dataGridViewButtonColumnPatientInfo.ReadOnly = true;
@@ -873,10 +876,10 @@
             // dataGridViewButtonColumnPatientRecords
             // 
             this.dataGridViewButtonColumnPatientRecords.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewButtonColumnPatientRecords.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewButtonColumnPatientRecords.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewButtonColumnPatientRecords.HeaderText = "";
             this.dataGridViewButtonColumnPatientRecords.Name = "dataGridViewButtonColumnPatientRecords";
             this.dataGridViewButtonColumnPatientRecords.ReadOnly = true;
@@ -886,10 +889,10 @@
             // dataGridViewButtonColumnBookAppointment
             // 
             this.dataGridViewButtonColumnBookAppointment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
-            this.dataGridViewButtonColumnBookAppointment.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewButtonColumnBookAppointment.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewButtonColumnBookAppointment.HeaderText = "";
             this.dataGridViewButtonColumnBookAppointment.Name = "dataGridViewButtonColumnBookAppointment";
             this.dataGridViewButtonColumnBookAppointment.ReadOnly = true;
@@ -1416,6 +1419,11 @@
             // 
             this.doctorTableAdapter.ClearBeforeFill = true;
             // 
+            // clinicDataSet1
+            // 
+            this.clinicDataSet1.DataSetName = "clinicDataSet";
+            this.clinicDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // patientTableAdapter
             // 
             this.patientTableAdapter.ClearBeforeFill = true;
@@ -1469,6 +1477,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1532,6 +1541,7 @@
         private System.Windows.Forms.BindingSource doctorBindingSource;
         private clinicDataSet clinicDataSet;
         private clinicDataSetTableAdapters.DoctorTableAdapter doctorTableAdapter;
+        private clinicDataSet clinicDataSet1;
         private System.Windows.Forms.BindingSource patientBindingSource;
         private clinicDataSet1 clinicDataSet11;
         private clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter;

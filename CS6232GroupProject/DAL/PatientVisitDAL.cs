@@ -106,7 +106,7 @@ namespace CS6232GroupProject.DAL
                             LabTestResult newResult = new LabTestResult();
                             
                             newResult.Result = reader["testResult"].ToString();
-                            newResult.Name = reader["testResult"].ToString();
+                            newResult.Name = reader["testName"].ToString();
                             newResult.TestDate = (DateTime)reader["testDate"];
                             result.Add(newResult);
                         }

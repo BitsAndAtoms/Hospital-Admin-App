@@ -314,13 +314,35 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
         {
-           
+            LabTestResult newResult = new LabTestResult();
+            LabTest test = new LabTest();
+
+            newResult.Result = this.textBoxLabTestResultsWBC.Text;
+            test.Name = "White Blood Cell(WBC)";
+            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+
+            newResult.Result = this.textBoxLabTestResultsLDL.Text;
+            test.Name = "Low Density Lipoproteins (LDL)";
+            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+
+            newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
+            test.Name = " Hepatitis A";
+            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+            
+            newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
+            test.Name = " Hepatitis B";
+            this.visitController.EnterTestResultForVisit(visit,test,newResult);
+
+        }
+
+        private void buttonLabTestsOrder_Click(object sender, EventArgs e)
+        {
             List<string> listOfTestsOrdered = this.checkedListBoxLabTests.CheckedItems.Cast<string>().ToList();
             foreach (var nameOfTestOrdered in listOfTestsOrdered)
             {
                 try
-                { 
-                     this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
+                {
+                    this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
                 }
                 catch (Exception)
                 {
@@ -328,6 +350,11 @@ namespace CS6232GroupProject.UserControls
                     MessageBox.Show("Error: The test could not be ordered");
                 }
             }
+        }
+
+        private void labTestResultDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
