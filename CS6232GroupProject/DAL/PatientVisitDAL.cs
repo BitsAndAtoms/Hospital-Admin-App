@@ -149,7 +149,7 @@ namespace CS6232GroupProject.DAL
         {
             string updateStatement =
                 "UPDATE PatientVisit SET " +
-                    "diagnosis = @diagnosis, " +
+                    "diagnosis = @diagnosis " +
                 "WHERE VisitID = @OldVisitID ";
             
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -176,7 +176,7 @@ namespace CS6232GroupProject.DAL
         {
             string updateStatement =
                 "UPDATE PatientVisit SET " +
-                    "diagnosis = @diagnosis, " +
+                    "finalDiagnosis = @diagnosis " +
                 "WHERE VisitID = @OldVisitID ";
 
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -184,7 +184,7 @@ namespace CS6232GroupProject.DAL
                 connection.Open();
                 using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
                 {
-                    updatedCommand.Parameters.AddWithValue("@diagnosis", visit.Diagnosis);
+                    updatedCommand.Parameters.AddWithValue("@diagnosis", visit.finalDiagnosis);
                     updatedCommand.Parameters.AddWithValue("@OldVisitID", visit.VisitID);
                     int count = updatedCommand.ExecuteNonQuery();
                     if (count > 0)

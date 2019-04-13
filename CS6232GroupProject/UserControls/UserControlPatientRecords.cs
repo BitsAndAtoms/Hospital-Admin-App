@@ -134,6 +134,7 @@ namespace CS6232GroupProject.UserControls
                 this.textboxRoutineChecksPulse.Text = this.visit.Pulse.ToString();
                 this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
                 this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
+                this.textBoxDiagnosisFinal.Text = this.visit.finalDiagnosis;
             }
             catch (Exception ex)
             {
@@ -322,6 +323,7 @@ namespace CS6232GroupProject.UserControls
                 this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
                 try
                 {
+                    
                     this.visitController.EnterInitialDiagnosis(this.visit);
                 }
                 catch (Exception)
@@ -333,7 +335,7 @@ namespace CS6232GroupProject.UserControls
             if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text))
             {
                 
-               this.visit.Diagnosis = this.textBoxDiagnosisFinal.Text;
+               this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
                 try
                 {
                     this.visitController.EnterFinalDiagnosis(this.visit);
@@ -397,9 +399,6 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
-        private void labTestResultDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
     }
 }
