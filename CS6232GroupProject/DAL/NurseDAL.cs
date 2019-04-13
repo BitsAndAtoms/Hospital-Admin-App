@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -396,7 +397,7 @@ namespace CS6232GroupProject.DAL
                         updateCommand.Parameters.AddWithValue("@activeStatus", false);
                     }
 
-
+                    MessageBox.Show("Before the Execute!", "Error Here!");
                     updateCommand.ExecuteNonQuery();
                 }
 
