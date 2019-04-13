@@ -119,18 +119,25 @@ namespace CS6232GroupProject.UserControls
         /// </summary>
         private void SetVisitInfo()
         {
-            this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
-            this.textBoxAppointmentsSummary.Text = this.appointment.Reasons;
-            this.dateTimePickerAppointments.Value = (DateTime)this.appointment.AppointmentDateTime;
-            this.dateTimePickerAppointmentsTime.Value = (DateTime)this.appointment.AppointmentDateTime;
+            try
+            {
+                this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
+                this.textBoxAppointmentsSummary.Text = this.appointment.Reasons;
+                this.dateTimePickerAppointments.Value = (DateTime)this.appointment.AppointmentDateTime;
+                this.dateTimePickerAppointmentsTime.Value = (DateTime)this.appointment.AppointmentDateTime;
 
-            this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
-            this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
-            this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
-            this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
-            this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
-            this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
-            this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
+                this.textBoxRoutineChecksWeight.Text = this.visit.Weight.ToString();
+                this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
+                this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
+                this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
+                this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
+                this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
+                this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
 
         }
 

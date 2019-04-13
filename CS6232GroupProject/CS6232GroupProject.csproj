@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clinicDataSet.cs">
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="clinicDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +149,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNurseMain.resx">
       <DependentUpon>UserControlNurseMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlPatientRecords.resx">
       <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
@@ -186,10 +190,8 @@
     </None>
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Appointment.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Doctor.datasource" />
-
     <None Include="Properties\DataSources\CS6232GroupProject.Model.LabTest.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.LabTestResult.datasource" />
-
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Nurse.datasource" />
     <None Include="Properties\DataSources\CS6232GroupProject.Model.Patient.datasource" />
     <None Include="Properties\Settings.settings">
