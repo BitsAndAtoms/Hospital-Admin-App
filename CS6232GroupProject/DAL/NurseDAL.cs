@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -283,7 +284,7 @@ namespace CS6232GroupProject.DAL
             }
         }
 
-        internal void registerNurseInDB(Nurse newNurse, Address newAddress, Login newLogin)// Is this a duplicate of the AddNurse method?
+        internal void registerNurseInDB(Nurse newNurse, Address newAddress, Login newLogin)
         {
             string updateStatement =
                 " begin transaction " +
@@ -396,7 +397,7 @@ namespace CS6232GroupProject.DAL
                         updateCommand.Parameters.AddWithValue("@activeStatus", false);
                     }
 
-
+                    MessageBox.Show("Before the Execute!", "Error Here!");
                     updateCommand.ExecuteNonQuery();
                 }
 
