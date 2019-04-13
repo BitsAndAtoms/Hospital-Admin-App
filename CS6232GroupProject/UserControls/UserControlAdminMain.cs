@@ -351,6 +351,7 @@ namespace CS6232GroupProject.UserControls
                 newNurse.Gender = this.comboBoxGenderNurseInfoResults.Text;
                 newNurse.Phone = this.textBoxPhoneNurseInfoResults.Text;
                 newNurse.DOB = this.dateTimePickerDOBNurseInfoResults.Value;
+                newNurse.Username = this.textBoxUsernameNurseInfoResults.Text;
                 if (this.comboBoxNurseInfoResultsActive.Text == "Active")
                 {
                     newNurse.Active = true;
@@ -365,8 +366,10 @@ namespace CS6232GroupProject.UserControls
                 newAddress.Zip = Convert.ToInt32(this.textBoxZipNurseInfoResults.Text);
                 newAddress.State = this.comboBoxStateNurseInfoResults.Text;
 
+
+
                 newLogin.Username = this.textBoxUsernameNurseInfoResults.Text;
-                newLogin.Password = this.textBoxPasswordNurseInfoResults.Text;
+                //newLogin.Password = this.textBoxPasswordNurseInfoResults.Text;
 
                 try
                 {

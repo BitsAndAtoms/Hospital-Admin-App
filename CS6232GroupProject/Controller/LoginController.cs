@@ -40,10 +40,6 @@ namespace CS6232GroupProject.Controller
            List<string> newNameAndRole = this.loginDetails.FindUserNameAndRole(userName);
             return newNameAndRole;
         }
-
-        internal string GetLoginInformationByUsername(string Username)
-        {
-            return this.loginDetails.GetLoginInformationByUsername(Username);
-        }
+        
     }
 }

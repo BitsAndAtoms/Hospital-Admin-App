@@ -122,33 +122,6 @@ namespace CS6232GroupProject.DAL
             }
             return nameAndRole;
         }
-
-        public string GetLoginInformationByUsername(string Username)
-        {
-            string selectStatement =
-                "SELECT  PWDDECRYPT(password) " +
-                "FROM Login " +
-                "WHERE username = @username";
-            string login = "";
-            using (SqlConnection connection = DBConnection.GetConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
-                {
-                    selectCommand.Parameters.AddWithValue("@userame", Username);
-
-                    using (SqlDataReader reader = selectCommand.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            login = reader["password"].ToString();
-
-                        }
-                    }
-                }
-            }
-            return login;
-        }
+        
     }
 }

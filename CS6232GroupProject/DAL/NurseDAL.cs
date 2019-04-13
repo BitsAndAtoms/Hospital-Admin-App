@@ -175,8 +175,11 @@ namespace CS6232GroupProject.DAL
                " SET state = @state, zip =@zip,street =@street " +
                " WHERE Address.addressID = (SELECT AddressID FROM Nurse " +
                " WHERE nurseID = @nurseID) " +
+               " UPDATE Login " +
+               " SET username = @username " +
+               " WHERE username = (SELECT username FROM Login WHERE username = @username) " +
                " UPDATE Nurse" +
-               " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID, activeStatus = @activeStatus " +
+               " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID, nurseUsername = @nurseUsername, activeStatus = @activeStatus " +
                 " WHERE nurseID = @nurseID" +
                " commit transaction" +
                " end try" +
@@ -218,6 +221,9 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@street", newAddress.Street);
                     }
+
+                    updateCommand.Parameters.AddWithValue("@username", newLogin.Username);
+
                     if (newNurse.FName == null)
                     {
                         updateCommand.Parameters.AddWithValue("@fname", DBNull.Value);
@@ -266,7 +272,9 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
                     }
-                    // Need to check if true/false is automatically converted into 1/0 in the DB.
+
+                    updateCommand.Parameters.AddWithValue("@nurseUsername", newNurse.Username);
+
                     if (newNurse.Active == true)
                     {
                         updateCommand.Parameters.AddWithValue("@activeStatus", 1);
@@ -396,8 +404,7 @@ namespace CS6232GroupProject.DAL
                     {
                         updateCommand.Parameters.AddWithValue("@activeStatus", false);
                     }
-
-                    MessageBox.Show("Before the Execute!", "Error Here!");
+                    
                     updateCommand.ExecuteNonQuery();
                 }
 
