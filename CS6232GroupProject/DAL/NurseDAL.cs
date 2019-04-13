@@ -289,12 +289,12 @@ namespace CS6232GroupProject.DAL
             string updateStatement =
                 " begin transaction " +
                 " begin try " +
+                " DECLARE @newAddressID int" +
                 " INSERT INTO Address(state, zip,street) Values(@state,@zip,@street) " +
-                " SELECT SCOPE_IDENTITY()" +
+                " SET @newAddressID = SCOPE_IDENTITY()" +
                 " INSERT INTO Login(username, password) Values(@username, PWDENCRYPT(@password)) " +
-                " SELECT SCOPE_IDENTITY()" +
                 " INSERT INTO Nurse(fname, lname, dob, ssn, gender, phone, nurseUsername, addressID, activeStatus)" +
-                " VALUES (@fname, @lname, @dob, @ssn, @gender, @phone, @nurseUsername, @activeStatus, SCOPE_IDENTITY())" +
+                " VALUES (@fname, @lname, @dob, @ssn, @gender, @phone, @nurseUsername, @newAddressID, @activeStatus)" +
                 " commit transaction" +
                 " end try" +
                 " begin catch" +
