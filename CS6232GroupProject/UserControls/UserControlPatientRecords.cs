@@ -3,6 +3,7 @@ using CS6232GroupProject.Model;
 using CS6232GroupProject.View;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -130,7 +131,7 @@ namespace CS6232GroupProject.UserControls
                 this.textBoxRoutineChecksSystolic.Text = this.visit.Systolic.ToString();
                 this.textBoxRoutineChecksDiastolic.Text = this.visit.Diastolic.ToString();
                 this.textBoxRoutineChecksTemp.Text = this.visit.Temperature.ToString();
-                this.textRoutineChecksPulse.Text = this.visit.Pulse.ToString();
+                this.textboxRoutineChecksPulse.Text = this.visit.Pulse.ToString();
                 this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
                 this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
             }
@@ -162,44 +163,88 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
+        private bool CheckFieldsVisitRoutine()
+        {
+            labelAddMessageVisitRoutine.ForeColor = Color.Red;
+
+            if (this.textBoxRoutineChecksWeight.Text.Length == 0 || this.textBoxRoutineChecksWeight.Text == null)
+            {
+                labelAddMessageVisitRoutine.Text = "Please enter weight.";
+                return false;
+            }
+            else if (this.textBoxRoutineChecksTemp.Text.Length == 0 || this.textBoxRoutineChecksTemp.Text == null)
+            {
+                labelAddMessageVisitRoutine.Text = "Please enter temperature.";
+                return false;
+            }
+            else if (this.textboxRoutineChecksPulse.Text.Length == 0 || this.textboxRoutineChecksPulse == null)
+            {
+                labelAddMessageVisitRoutine.Text = "Please enter pulse.";
+                return false;
+            }
+            else if (this.textBoxRoutineChecksSystolic.Text.Length == 0 || this.textBoxRoutineChecksSystolic == null)
+            {
+                labelAddMessageVisitRoutine.Text = "Please enter systolic blood pressure.";
+                return false;
+            }
+            else if (this.textBoxRoutineChecksDiastolic.Text.Length == 0 || this.textBoxRoutineChecksDiastolic == null)
+            {
+                labelAddMessageVisitRoutine.Text = "Please enter diastolic blood pressure.";
+                return false;
+            }
+            else if (this.textBoxRoutineChecksSummary.Text.Length == 0 || this.textBoxRoutineChecksSummary == null)
+            {
+                labelAddMessageVisitRoutine.Text = "Please fill out summary/symptoms.";
+                return false;
+            }
+            else
+            {
+                labelAddMessageVisitRoutine.Text = "";
+                return true;
+            }
+        }
+
         /// <summary>
         /// sets up check up info
         /// </summary>
         private void SetCheckUpInfo()
         {
-            
+
             PatientVisit newVisit = new PatientVisit();
-            try
+            if (CheckFieldsVisitRoutine())
             {
-
-
-                newVisit.VisitID = this.visit.VisitID;
-                newVisit.AppointmentID = this.visit.AppointmentID;
-                newVisit.Date = this.visit.Date;
-
-                newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
-                newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
-                newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
-                newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
-                newVisit.Pulse = Convert.ToInt32(this.textRoutineChecksPulse.Text);
-                newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
-                
-
-                if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
+                try
                 {
-                    MessageBox.Show("Routine Check information updated!", "Success");
-                }
-                else
-                {
-                    MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
-                }
-            }
-            catch (Exception)
-            {
-                
-                MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
-            }
 
+
+                    newVisit.VisitID = this.visit.VisitID;
+                    newVisit.AppointmentID = this.visit.AppointmentID;
+                    newVisit.Date = this.visit.Date;
+
+                    newVisit.Weight = Convert.ToDecimal(this.textBoxRoutineChecksWeight.Text);
+                    newVisit.Systolic = Convert.ToInt32(this.textBoxRoutineChecksSystolic.Text);
+                    newVisit.Diastolic = Convert.ToInt32(this.textBoxRoutineChecksDiastolic.Text);
+                    newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
+                    newVisit.Pulse = Convert.ToInt32(this.textboxRoutineChecksPulse.Text);
+                    newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
+
+
+                    if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
+                    {
+                        MessageBox.Show("Routine Check information updated!", "Success");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The information couldn't be updated.", "Error Updating Database");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("There was an issue updating the database.", "Error Updating Database");
+                }
+
+            }
         }
 
         /// <summary>
