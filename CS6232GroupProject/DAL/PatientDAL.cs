@@ -61,16 +61,20 @@ namespace CS6232GroupProject.DAL
                " begin transaction " +
                " begin try " +
                " If NOT EXISTS (select * from HasAppointment where patientID = @patientID)" +
-                " BEGIN" +
+               " BEGIN " +
                " DELETE FROM Patient" +
                " WHERE patientID = @patientID " +
-                " DELETE FROM Address " +
-               " WHERE Address.addressID = @addressID " +
-               " commit transaction" +
+               " DELETE FROM Address " +
+               " WHERE Address.addressID = @addressID; " +
                " END" +
-               " end try" +
+               " ELSE" +
+               " BEGIN " +
+               " raiserror('Update failed',16,1);" +
+               " END" +
+               " commit transaction" +
+               " end try " +
                " begin catch" +
-               "  raiserror('Update failed',16,1)" +
+               "  raiserror('Update failed',16,1);" +
                "  rollback transaction" +
                " end catch";
 
