@@ -283,7 +283,7 @@ namespace CS6232GroupProject.DAL
             }
         }
 
-        internal void registerNurseInDB(Nurse newNurse, Address newAddress, Login newLogin)// Is this a duplicate of the AddNurse method?
+        internal void registerNurseInDB(Nurse newNurse, Address newAddress, Login newLogin)
         {
             string updateStatement =
                 " begin transaction " +

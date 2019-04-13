@@ -250,6 +250,7 @@ namespace CS6232GroupProject.UserControls
                     newNurse.SSN = this.textBoxSSNRegisterNurse.Text;
                     newNurse.Phone = this.textBoxPhoneRegisterNurse.Text;
                     newNurse.Gender = this.comboBoxGenderRegisterNurse.Text;
+                    newNurse.Username = this.textBoxUsernameRegisterNurse.Text;
                     
                     if (this.comboBoxRegisterNurseActive.Text == "Active")
                     {
@@ -312,7 +313,9 @@ namespace CS6232GroupProject.UserControls
                 comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
                 textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
 
+                ///
                 //NEED THE INFORMATION FOR USERNAME AND PASSWORD VIA THE NEW METHOD
+                ///
 
                 if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
                 {
