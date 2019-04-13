@@ -22,11 +22,19 @@ namespace CS6232GroupProject.DAL
         {
             int count = 0;
             string selectStatment =
-                "SELECT COUNT(DoctorID) as 'Number' " +
+                "SELECT SUM(Number) as 'Number' " +
+                "FROM (" +
+                "SELECT COUNT(DoctorID) as 'Number'  " +
                 "FROM HasAppointment " + 
                 "WHERE DoctorID = @DoctorID " +
-                    "AND appointmentDateTime >= DATEADD(minute, -30,@Date) " +
-                    " AND appointmentDateTime <= DATEADD(minute, 30,@Date) ";
+                " AND appointmentDateTime >= DATEADD(minute, -30,@Date) " +
+                " AND appointmentDateTime <= DATEADD(minute, 30,@Date) " +
+                " UNION ALL " +
+                "SELECT COUNT(PatientID) as 'Number'  " +
+                "FROM HasAppointment " +
+                "WHERE PatientID = @PatientID " +
+                "AND appointmentDateTime >= DATEADD(minute, -30,@Date) " +
+                "AND appointmentDateTime <= DATEADD(minute, 30,@Date) ) s";
 
 
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -35,7 +43,7 @@ namespace CS6232GroupProject.DAL
 
                 using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
                 {
-                    
+                    selectCommand.Parameters.AddWithValue("@PatientID", appointment.PatientID);
                     selectCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
                     selectCommand.Parameters.AddWithValue("@Date", appointment.AppointmentDateTime);
 
