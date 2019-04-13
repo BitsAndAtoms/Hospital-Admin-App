@@ -171,16 +171,23 @@ namespace CS6232GroupProject.DAL
             string updateStatement =
                " begin transaction " +
                " begin try " +
+               " DECLARE @oldLoginUserName varchar(10);" +
                " UPDATE Address " +
                " SET state = @state, zip =@zip,street =@street " +
                " WHERE Address.addressID = (SELECT AddressID FROM Nurse " +
                " WHERE nurseID = @nurseID) " +
-               " UPDATE Login " +
-               " SET username = @username " +
-               " WHERE username = (SELECT username FROM Login WHERE username = @username) " +
+               " SET @oldLoginUserName = (SELECT nurseUsername FROM Nurse " +
+               " WHERE nurseID = @nurseID) " +
+               " IF (@oldLoginUserName != @username )" +
+               " INSERT INTO Login(username,password) Values(@username,PWDENCRYPT(@password)) " +
+               " ELSE "+
+                   " UPDATE Login " +
+               " SET password = PWDENCRYPT(@password) WHERE username = @oldLoginUserName " +
                " UPDATE Nurse" +
                " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID, nurseUsername = @nurseUsername, activeStatus = @activeStatus " +
-                " WHERE nurseID = @nurseID" +
+               " WHERE nurseID = @nurseID" +
+               " IF (@oldLoginUserName != @username )" +
+               " DELETE FROM Login WHERE username = @oldLoginUserName " +
                " commit transaction" +
                " end try" +
                " begin catch" +
@@ -223,6 +230,7 @@ namespace CS6232GroupProject.DAL
                     }
 
                     updateCommand.Parameters.AddWithValue("@username", newLogin.Username);
+                    updateCommand.Parameters.AddWithValue("@password", newLogin.Password);
 
                     if (newNurse.FName == null)
                     {

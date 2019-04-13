@@ -369,7 +369,7 @@ namespace CS6232GroupProject.UserControls
 
 
                 newLogin.Username = this.textBoxUsernameNurseInfoResults.Text;
-                //newLogin.Password = this.textBoxPasswordNurseInfoResults.Text;
+                newLogin.Password = this.textBoxPasswordNurseInfoResults.Text;
 
                 try
                 {
