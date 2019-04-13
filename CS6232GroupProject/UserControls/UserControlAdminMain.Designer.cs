@@ -84,6 +84,7 @@
             this.labelUsernameNurseInfoResults = new System.Windows.Forms.Label();
             this.labelPasswordNurseInfoResults = new System.Windows.Forms.Label();
             this.textBoxLastNameNurseInfoResults = new System.Windows.Forms.TextBox();
+            this.labelActiveNurseInfoResults = new System.Windows.Forms.Label();
             this.labelNurseInformation = new System.Windows.Forms.Label();
             this.tabPageNurseRegister = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -118,9 +119,8 @@
             this.labelPasswordRegisterNurse = new System.Windows.Forms.Label();
             this.textBoxUsernameRegisterNurse = new System.Windows.Forms.TextBox();
             this.textBoxPasswordRegisterNurse = new System.Windows.Forms.TextBox();
-            this.labelRegisterNurse = new System.Windows.Forms.Label();
             this.labelActiveRegisterNurse = new System.Windows.Forms.Label();
-            this.labelActiveNurseInfoResults = new System.Windows.Forms.Label();
+            this.labelRegisterNurse = new System.Windows.Forms.Label();
             this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -794,24 +794,28 @@
             // 
             this.linkLabelNurseInfoBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelNurseInfoBack.AutoSize = true;
+            this.linkLabelNurseInfoBack.Cursor = System.Windows.Forms.Cursors.Default;
             this.linkLabelNurseInfoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelNurseInfoBack.Image = global::CS6232GroupProject.Properties.Resources.back_circle;
+            this.linkLabelNurseInfoBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkLabelNurseInfoBack.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelNurseInfoBack.Location = new System.Drawing.Point(848, 0);
+            this.linkLabelNurseInfoBack.Location = new System.Drawing.Point(835, 0);
             this.linkLabelNurseInfoBack.Name = "linkLabelNurseInfoBack";
-            this.linkLabelNurseInfoBack.Size = new System.Drawing.Size(73, 25);
+            this.linkLabelNurseInfoBack.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.linkLabelNurseInfoBack.Size = new System.Drawing.Size(86, 25);
             this.linkLabelNurseInfoBack.TabIndex = 1;
             this.linkLabelNurseInfoBack.TabStop = true;
-            this.linkLabelNurseInfoBack.Text = "< Back";
+            this.linkLabelNurseInfoBack.Text = "Back";
             this.linkLabelNurseInfoBack.Visible = false;
             this.linkLabelNurseInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNurseInfoBack_LinkClicked);
             // 
             // comboBoxNurseInfoResultsActive
             // 
-            this.comboBoxNurseInfoResultsActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxNurseInfoResultsActive.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.comboBoxNurseInfoResultsActive.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(800, 53);
+            this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(800, 61);
             this.comboBoxNurseInfoResultsActive.Name = "comboBoxNurseInfoResultsActive";
             this.comboBoxNurseInfoResultsActive.Size = new System.Drawing.Size(121, 28);
             this.comboBoxNurseInfoResultsActive.TabIndex = 8;
@@ -869,6 +873,18 @@
             this.textBoxLastNameNurseInfoResults.Name = "textBoxLastNameNurseInfoResults";
             this.textBoxLastNameNurseInfoResults.Size = new System.Drawing.Size(186, 29);
             this.textBoxLastNameNurseInfoResults.TabIndex = 3;
+            // 
+            // labelActiveNurseInfoResults
+            // 
+            this.labelActiveNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelActiveNurseInfoResults.AutoSize = true;
+            this.labelActiveNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActiveNurseInfoResults.Location = new System.Drawing.Point(564, 65);
+            this.labelActiveNurseInfoResults.Name = "labelActiveNurseInfoResults";
+            this.labelActiveNurseInfoResults.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelActiveNurseInfoResults.Size = new System.Drawing.Size(141, 20);
+            this.labelActiveNurseInfoResults.TabIndex = 26;
+            this.labelActiveNurseInfoResults.Text = "Active Status";
             // 
             // labelNurseInformation
             // 
@@ -1313,18 +1329,6 @@
             this.textBoxPasswordRegisterNurse.Size = new System.Drawing.Size(186, 29);
             this.textBoxPasswordRegisterNurse.TabIndex = 9;
             // 
-            // labelRegisterNurse
-            // 
-            this.labelRegisterNurse.AutoSize = true;
-            this.labelRegisterNurse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelRegisterNurse.Location = new System.Drawing.Point(3, 3);
-            this.labelRegisterNurse.Name = "labelRegisterNurse";
-            this.labelRegisterNurse.Size = new System.Drawing.Size(189, 29);
-            this.labelRegisterNurse.TabIndex = 5;
-            this.labelRegisterNurse.Text = "Register Nurse";
-            // 
             // labelActiveRegisterNurse
             // 
             this.labelActiveRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1338,17 +1342,17 @@
             this.labelActiveRegisterNurse.TabIndex = 26;
             this.labelActiveRegisterNurse.Text = "Active Status";
             // 
-            // labelActiveNurseInfoResults
+            // labelRegisterNurse
             // 
-            this.labelActiveNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelActiveNurseInfoResults.AutoSize = true;
-            this.labelActiveNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActiveNurseInfoResults.Location = new System.Drawing.Point(564, 65);
-            this.labelActiveNurseInfoResults.Name = "labelActiveNurseInfoResults";
-            this.labelActiveNurseInfoResults.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelActiveNurseInfoResults.Size = new System.Drawing.Size(141, 20);
-            this.labelActiveNurseInfoResults.TabIndex = 26;
-            this.labelActiveNurseInfoResults.Text = "Active Status";
+            this.labelRegisterNurse.AutoSize = true;
+            this.labelRegisterNurse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelRegisterNurse.Location = new System.Drawing.Point(3, 3);
+            this.labelRegisterNurse.Name = "labelRegisterNurse";
+            this.labelRegisterNurse.Size = new System.Drawing.Size(189, 29);
+            this.labelRegisterNurse.TabIndex = 5;
+            this.labelRegisterNurse.Text = "Register Nurse";
             // 
             // nurseIDDataGridViewTextBoxColumn
             // 
