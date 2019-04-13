@@ -310,16 +310,21 @@ namespace CS6232GroupProject.UserControls
             LabTestResult newResult = new LabTestResult();
             LabTest test = new LabTest();
 
-
-            newResult.Result = this.textBoxLabTestResultsWBC;
+            newResult.Result = this.textBoxLabTestResultsWBC.Text;
             test.Name = "White Blood Cell(WBC)";
+            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+
             newResult.Result = this.textBoxLabTestResultsLDL.Text;
             test.Name = "Low Density Lipoproteins (LDL)";
+            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+
             newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
             test.Name = " Hepatitis A";
+            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+            
             newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
             test.Name = " Hepatitis B";
-            this.visitController.EnterTestResultForVisit(visit,, test, newResult);
+            this.visitController.EnterTestResultForVisit(visit,test,newResult);
 
         }
 

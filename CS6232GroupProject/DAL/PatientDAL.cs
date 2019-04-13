@@ -55,6 +55,42 @@ namespace CS6232GroupProject.DAL
             return patients;
         }
 
+        internal void deletePatient(Patient newPatient, Address newAddress)
+        {
+            string deleteStatement =
+               " begin transaction " +
+               " begin try " +
+               " If NOT EXISTS (select * from HasAppointment where patientID = @patientID)" +
+                " BEGIN" +
+               " DELETE FROM Patient" +
+               " WHERE patientID = @patientID " +
+                " DELETE FROM Address " +
+               " WHERE Address.addressID = @addressID " +
+               " commit transaction" +
+               " END" +
+               " end try" +
+               " begin catch" +
+               "  raiserror('Update failed',16,1)" +
+               "  rollback transaction" +
+               " end catch";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand deleteCommand = new SqlCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("@addressID", newAddress.AddressID);
+                    deleteCommand.Parameters.AddWithValue("@patientID", newPatient.PatientID);
+                    deleteCommand.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
+            }
+        }
+
         /// <summary>
         /// This method updates the patient with new information so long as it doesn't 
         /// conflict. 

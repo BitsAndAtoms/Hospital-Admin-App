@@ -509,6 +509,40 @@ namespace CS6232GroupProject.UserControls
             comboBoxPhysician.DataSource = doctorList;
         }
 
-        
+        private void linkLabelDeletePatient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            Patient newPatient = new Patient();
+            Address newAddress = new Address();
+            if (this.CheckFieldsUpdate())
+            {
+                newPatient.PatientID = patientID;
+                newPatient.FName = this.textBoxFirstNamePatientInfoResult.Text;
+                newPatient.LName = this.textBoxLastNamePatientInfoResult.Text;
+                newPatient.SSN = this.textBoxSSNPatientInfoResult.Text;
+                newPatient.Gender = this.comboBoxGenderPatientInfoResult.Text;
+                newPatient.Phone = this.textBoxPhonePatientInfoResult.Text;
+                newPatient.DOB = this.dateTimePickerDOBPatientInfoResult.Value;
+                newAddress.AddressID = this.addressID;
+                newAddress.Street = this.textBoxStreetPatientInfoResult.Text;
+                newAddress.Zip = Convert.ToInt32(this.textBoxZipPatientInfoResult.Text);
+                newAddress.State = this.comboBoxStatePatientInfoResult.Text;
+                try
+                {
+                    patientController.deletePatient(newPatient, newAddress);
+
+                    MessageBox.Show("Patient deleted", "Confirm");
+                    this.ClearText();
+                    this.dataGridViewPatientInfo.DataSource = null;
+                    this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Invalid. \n" + ex.Message,
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+               
+        }
     }
 }

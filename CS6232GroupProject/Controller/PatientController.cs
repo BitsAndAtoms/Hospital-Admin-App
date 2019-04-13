@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.DAL;
 using CS6232GroupProject.Model;
+using System;
 using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
@@ -57,6 +58,11 @@ namespace CS6232GroupProject.Controller
         internal void updatePatient(Patient newPatient, Address newAddress)
         {
             this.patientSource.updatePatient(newPatient,newAddress);
+        }
+
+        internal void deletePatient(Patient newPatient, Address newAddress)
+        {
+            this.patientSource.deletePatient(newPatient, newAddress);
         }
     }
 }
