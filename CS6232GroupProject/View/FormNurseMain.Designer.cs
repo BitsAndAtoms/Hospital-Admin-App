@@ -115,7 +115,6 @@
             this.userControlNurseMain1.Name = "userControlNurseMain1";
             this.userControlNurseMain1.Size = new System.Drawing.Size(794, 754);
             this.userControlNurseMain1.TabIndex = 3;
-            this.userControlNurseMain1.Load += new System.EventHandler(this.userControlNurseMain1_Load);
             // 
             // FormNurseMain
             // 

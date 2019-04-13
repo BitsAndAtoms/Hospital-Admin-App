@@ -53,7 +53,6 @@ namespace CS6232GroupProject.View
 
                 this.nurseMain.setUserNameDisplay(newNameAndRole[0]+ " " + newNameAndRole[1]);
                 NurseID = Convert.ToInt32(newNameAndRole[3]);
-                //this.nurseMain.ShowDialog();
                 this.nurseMain.Show();
                 this.textBoxUsername.Text = "";
                 this.textBoxPassword.Text = "";
@@ -95,8 +94,8 @@ namespace CS6232GroupProject.View
         /// <summary>
         /// activates submit upon pressing enter with password textbox on focus
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">is the event handler object</param>
+        /// <param name="e">e is the event arg</param>
         private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
