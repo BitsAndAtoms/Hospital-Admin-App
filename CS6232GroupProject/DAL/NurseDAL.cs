@@ -166,7 +166,7 @@ namespace CS6232GroupProject.DAL
             return nurses;
         }
 
-        internal void updateNurse(Nurse newNurse, Address newAddress, Login newLogin)//Not Done yet
+        internal void updateNurse(Nurse newNurse, Address newAddress, Login newLogin)
         {
             string updateStatement =
                " begin transaction " +

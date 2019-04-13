@@ -36,6 +36,7 @@ namespace CS6232GroupProject.UserControls
             this.appointmentController = new AppointmentController();
             this.addressController = new AddressController();
             SetComboBox();
+            UpdatePatientAndDoctors();
         }
 
         /// <summary>
@@ -57,6 +58,18 @@ namespace CS6232GroupProject.UserControls
                     this.comboBoxGenderPatientInfoResult.Items.Add(gender);
                 }
 
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+        }
+
+        private void UpdatePatientAndDoctors()
+        {
+            try
+            {
                 patientList = this.patientController.GetPatients();
                 //comboBoxPatient.DataSource = patientList;
 
@@ -365,7 +378,7 @@ namespace CS6232GroupProject.UserControls
                         this.appointmentController.CreateAppointment(appointment);
                         textBoxSummary.Text = "";
                         MessageBox.Show("Appointment Booked!");
-                        this.SetComboBox();
+                        UpdatePatientAndDoctors();
                     }
                     else
                     {

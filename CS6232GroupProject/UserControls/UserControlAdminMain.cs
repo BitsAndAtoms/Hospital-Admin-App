@@ -11,7 +11,6 @@ namespace CS6232GroupProject.UserControls
     {
         private AddressController addressController;
         private NurseController nurseController;
-        private LoginController loginController;
         private int addressID;
         public static int nurseID { get; set; }
         /// <summary>
@@ -65,6 +64,8 @@ namespace CS6232GroupProject.UserControls
             this.dateTimePickerDOBRegisterNurse.Value = DateTime.Now;
             this.comboBoxStateRegisterNurse.SelectedIndex = -1;
             this.textBoxZipRegisterNurse.Clear();
+            this.textBoxUsernameRegisterNurse.Clear();
+            this.textBoxPasswordRegisterNurse.Clear();
             this.labelAddMessage.Text = "";
         }
 
@@ -124,6 +125,16 @@ namespace CS6232GroupProject.UserControls
             else if (this.textBoxZipRegisterNurse.Text.Length == 0 || this.textBoxZipRegisterNurse.Text == null || !int.TryParse(textBoxZipRegisterNurse.Text, out number))
             {
                 labelAddMessage.Text = "Please enter a valid Zip Code";
+                return false;
+            }
+            else if (this.textBoxUsernameRegisterNurse.Text.Length == 0 || this.textBoxUsernameRegisterNurse.Text == "")
+            {
+                labelAddMessage.Text = "Please enter a valid Username";
+                return false;
+            }
+            else if (this.textBoxPasswordRegisterNurse.Text.Length == 0 || this.textBoxPasswordRegisterNurse.Text == "")
+            {
+                labelAddMessage.Text = "Please enter a valid Password";
                 return false;
             }
             else
@@ -189,6 +200,11 @@ namespace CS6232GroupProject.UserControls
             else if (this.textBoxZipNurseInfoResults.Text.Length == 0 || this.textBoxZipNurseInfoResults.Text == null || !int.TryParse(textBoxZipNurseInfoResults.Text, out number))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid Zip Code";
+                return false;
+            }
+            else if (this.textBoxUsernameNurseInfoResults.Text.Length == 0 || this.textBoxUsernameNurseInfoResults.Text == "")
+            {
+                labelAddUpdateMessage.Text = "Please enter a valid Username";
                 return false;
             }
             else
