@@ -55,7 +55,7 @@
             this.labelRoutineChecksDiastolic = new System.Windows.Forms.Label();
             this.textBoxRoutineChecksSystolic = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textRoutineChecksPulse = new System.Windows.Forms.TextBox();
+            this.textboxRoutineChecksPulse = new System.Windows.Forms.TextBox();
             this.labelRoutineChecksPulse = new System.Windows.Forms.Label();
             this.buttonRoutineChecksUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,6 +64,7 @@
             this.labelRoutineChecksTemp = new System.Windows.Forms.Label();
             this.textBoxRoutineChecksWeight = new System.Windows.Forms.TextBox();
             this.labelRoutineChecksBloodPressure = new System.Windows.Forms.Label();
+            this.labelAddMessageVisitRoutine = new System.Windows.Forms.Label();
             this.labelRoutineChecks = new System.Windows.Forms.Label();
             this.tabPageDiagnosis = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelDiagnosis = new System.Windows.Forms.TableLayoutPanel();
@@ -358,17 +359,19 @@
             this.tableLayoutRoutineChecks.Controls.Add(this.buttonRoutineChecksUpdate, 1, 5);
             this.tableLayoutRoutineChecks.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutRoutineChecks.Controls.Add(this.labelRoutineChecksBloodPressure, 1, 2);
-            this.tableLayoutRoutineChecks.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutRoutineChecks.Controls.Add(this.labelAddMessageVisitRoutine, 1, 6);
+            this.tableLayoutRoutineChecks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutRoutineChecks.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutRoutineChecks.Name = "tableLayoutRoutineChecks";
-            this.tableLayoutRoutineChecks.RowCount = 6;
+            this.tableLayoutRoutineChecks.RowCount = 7;
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutRoutineChecks.Size = new System.Drawing.Size(825, 405);
+            this.tableLayoutRoutineChecks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutRoutineChecks.Size = new System.Drawing.Size(825, 466);
             this.tableLayoutRoutineChecks.TabIndex = 7;
             // 
             // tableLayoutPanel2
@@ -394,9 +397,9 @@
             this.labelRoutineChecksSummary.Location = new System.Drawing.Point(3, 0);
             this.labelRoutineChecksSummary.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelRoutineChecksSummary.Name = "labelRoutineChecksSummary";
-            this.labelRoutineChecksSummary.Size = new System.Drawing.Size(83, 20);
+            this.labelRoutineChecksSummary.Size = new System.Drawing.Size(171, 20);
             this.labelRoutineChecksSummary.TabIndex = 11;
-            this.labelRoutineChecksSummary.Text = "Summary";
+            this.labelRoutineChecksSummary.Text = "Summary/Symptoms";
             // 
             // textBoxRoutineChecksSummary
             // 
@@ -477,7 +480,7 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.textRoutineChecksPulse, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.textboxRoutineChecksPulse, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.labelRoutineChecksPulse, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(77, 63);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -488,15 +491,15 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 54);
             this.tableLayoutPanel5.TabIndex = 6;
             // 
-            // textRoutineChecksPulse
+            // textboxRoutineChecksPulse
             // 
-            this.textRoutineChecksPulse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textRoutineChecksPulse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textRoutineChecksPulse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textRoutineChecksPulse.Location = new System.Drawing.Point(3, 23);
-            this.textRoutineChecksPulse.Name = "textRoutineChecksPulse";
-            this.textRoutineChecksPulse.Size = new System.Drawing.Size(186, 29);
-            this.textRoutineChecksPulse.TabIndex = 7;
+            this.textboxRoutineChecksPulse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textboxRoutineChecksPulse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textboxRoutineChecksPulse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxRoutineChecksPulse.Location = new System.Drawing.Point(3, 23);
+            this.textboxRoutineChecksPulse.Name = "textboxRoutineChecksPulse";
+            this.textboxRoutineChecksPulse.Size = new System.Drawing.Size(186, 29);
+            this.textboxRoutineChecksPulse.TabIndex = 7;
             // 
             // labelRoutineChecksPulse
             // 
@@ -518,7 +521,7 @@
             this.buttonRoutineChecksUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRoutineChecksUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRoutineChecksUpdate.ForeColor = System.Drawing.Color.Black;
-            this.buttonRoutineChecksUpdate.Location = new System.Drawing.Point(381, 361);
+            this.buttonRoutineChecksUpdate.Location = new System.Drawing.Point(381, 360);
             this.buttonRoutineChecksUpdate.Name = "buttonRoutineChecksUpdate";
             this.buttonRoutineChecksUpdate.Size = new System.Drawing.Size(137, 35);
             this.buttonRoutineChecksUpdate.TabIndex = 13;
@@ -602,6 +605,14 @@
             this.labelRoutineChecksBloodPressure.Size = new System.Drawing.Size(131, 20);
             this.labelRoutineChecksBloodPressure.TabIndex = 13;
             this.labelRoutineChecksBloodPressure.Text = "Blood Pressure";
+            // 
+            // labelAddMessageVisitRoutine
+            // 
+            this.labelAddMessageVisitRoutine.AutoSize = true;
+            this.labelAddMessageVisitRoutine.Location = new System.Drawing.Point(77, 403);
+            this.labelAddMessageVisitRoutine.Name = "labelAddMessageVisitRoutine";
+            this.labelAddMessageVisitRoutine.Size = new System.Drawing.Size(0, 20);
+            this.labelAddMessageVisitRoutine.TabIndex = 14;
             // 
             // labelRoutineChecks
             // 
@@ -1215,7 +1226,7 @@
         private System.Windows.Forms.Label labelRoutineChecksTemp;
         private System.Windows.Forms.TextBox textBoxRoutineChecksWeight;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox textRoutineChecksPulse;
+        private System.Windows.Forms.TextBox textboxRoutineChecksPulse;
         private System.Windows.Forms.Label labelRoutineChecksPulse;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label labelRoutineChecksSummary;
@@ -1281,5 +1292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource labTestResultBindingSource;
         private System.Windows.Forms.BindingSource labTestBindingSource;
+        private System.Windows.Forms.Label labelAddMessageVisitRoutine;
     }
 }
