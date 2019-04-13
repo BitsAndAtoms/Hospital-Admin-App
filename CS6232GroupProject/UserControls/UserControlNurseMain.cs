@@ -532,6 +532,17 @@ namespace CS6232GroupProject.UserControls
                     patientController.deletePatient(newPatient, newAddress);
 
                     MessageBox.Show("Patient deleted", "Confirm");
+                    panelPatientSearch.Visible = true;
+                    panelPatientInfoResults.Visible = false;
+
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        if (form.Name == "FormPatientRecords")
+                        {
+                            form.Close();
+                            break;
+                        }
+                    }
                     this.ClearText();
                     this.dataGridViewPatientInfo.DataSource = null;
                     this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
