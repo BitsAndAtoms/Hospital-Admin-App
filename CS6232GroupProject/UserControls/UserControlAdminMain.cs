@@ -64,6 +64,8 @@ namespace CS6232GroupProject.UserControls
             this.dateTimePickerDOBRegisterNurse.Value = DateTime.Now;
             this.comboBoxStateRegisterNurse.SelectedIndex = -1;
             this.textBoxZipRegisterNurse.Clear();
+            this.textBoxUsernameRegisterNurse.Clear();
+            this.textBoxPasswordRegisterNurse.Clear();
             this.labelAddMessage.Text = "";
         }
 
@@ -127,12 +129,12 @@ namespace CS6232GroupProject.UserControls
             }
             else if (this.textBoxUsernameRegisterNurse.Text.Length == 0 || this.textBoxUsernameRegisterNurse.Text == "")
             {
-                labelAddUpdateMessage.Text = "Please enter a valid Username";
+                labelAddMessage.Text = "Please enter a valid Username";
                 return false;
             }
             else if (this.textBoxPasswordRegisterNurse.Text.Length == 0 || this.textBoxPasswordRegisterNurse.Text == "")
             {
-                labelAddUpdateMessage.Text = "Please enter a valid Password";
+                labelAddMessage.Text = "Please enter a valid Password";
                 return false;
             }
             else
