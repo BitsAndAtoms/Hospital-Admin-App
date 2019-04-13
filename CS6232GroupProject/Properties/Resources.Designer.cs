@@ -73,6 +73,16 @@ namespace CS6232GroupProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_circle {
+            get {
+                object obj = ResourceManager.GetObject("back-circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bggradient {
             get {
                 object obj = ResourceManager.GetObject("bggradient", resourceCulture);
