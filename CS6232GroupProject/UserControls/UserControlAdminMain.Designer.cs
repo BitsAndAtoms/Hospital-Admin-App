@@ -41,18 +41,8 @@
             this.tabPageAdminNurseInfo = new System.Windows.Forms.TabPage();
             this.panelNurseSearch = new System.Windows.Forms.Panel();
             this.dataGridViewNurseInfo = new System.Windows.Forms.DataGridView();
-            this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sSNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewButtonColumnNurseInformation = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLastNameNurseInfo = new System.Windows.Forms.TextBox();
             this.textBoxFirstNameNurseInfo = new System.Windows.Forms.TextBox();
@@ -121,13 +111,30 @@
             this.comboBoxGenderRegisterNurse = new System.Windows.Forms.ComboBox();
             this.comboBoxRegisterNurseActive = new System.Windows.Forms.ComboBox();
             this.labelRegisterNurse = new System.Windows.Forms.Label();
+            this.textBoxUsernameNurseInfoResults = new System.Windows.Forms.TextBox();
+            this.textBoxPasswordNurseInfoResults = new System.Windows.Forms.TextBox();
+            this.labelUsernameNurseInfoResults = new System.Windows.Forms.Label();
+            this.labelPasswordNurseInfoResults = new System.Windows.Forms.Label();
+            this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelUsernameRegisterNurse = new System.Windows.Forms.Label();
+            this.labelPasswordRegisterNurse = new System.Windows.Forms.Label();
+            this.textBoxUsernameRegisterNurse = new System.Windows.Forms.TextBox();
+            this.textBoxPasswordRegisterNurse = new System.Windows.Forms.TextBox();
             this.tabControlAdminMain.SuspendLayout();
             this.tabPageAdminReports.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPageAdminNurseInfo.SuspendLayout();
             this.panelNurseSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNurseInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelNurseInfoResults.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -141,6 +148,7 @@
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAdminMain
@@ -313,62 +321,6 @@
             this.dataGridViewNurseInfo.TabIndex = 6;
             this.dataGridViewNurseInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNurseInfo_CellClick);
             // 
-            // nurseIDDataGridViewTextBoxColumn
-            // 
-            this.nurseIDDataGridViewTextBoxColumn.DataPropertyName = "NurseID";
-            this.nurseIDDataGridViewTextBoxColumn.HeaderText = "NurseID";
-            this.nurseIDDataGridViewTextBoxColumn.Name = "nurseIDDataGridViewTextBoxColumn";
-            this.nurseIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nurseIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fNameDataGridViewTextBoxColumn
-            // 
-            this.fNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
-            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lNameDataGridViewTextBoxColumn
-            // 
-            this.lNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
-            this.lNameDataGridViewTextBoxColumn.HeaderText = "LName";
-            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
-            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fullNameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dOBDataGridViewTextBoxColumn
-            // 
-            this.dOBDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
-            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
-            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
-            this.dOBDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sSNDataGridViewTextBoxColumn
-            // 
-            this.sSNDataGridViewTextBoxColumn.DataPropertyName = "SSN";
-            this.sSNDataGridViewTextBoxColumn.HeaderText = "SSN";
-            this.sSNDataGridViewTextBoxColumn.Name = "sSNDataGridViewTextBoxColumn";
-            this.sSNDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sSNDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-            this.genderDataGridViewTextBoxColumn.Visible = false;
-            // 
             // Phone
             // 
             this.Phone.DataPropertyName = "Phone";
@@ -376,22 +328,6 @@
             this.Phone.Name = "Phone";
             this.Phone.ReadOnly = true;
             this.Phone.Visible = false;
-            // 
-            // addressIDDataGridViewTextBoxColumn
-            // 
-            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
-            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // activeDataGridViewCheckBoxColumn
-            // 
-            this.activeDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
-            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
-            this.activeDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // dataGridViewButtonColumnNurseInformation
             // 
@@ -401,10 +337,6 @@
             this.dataGridViewButtonColumnNurseInformation.ReadOnly = true;
             this.dataGridViewButtonColumnNurseInformation.Text = "View/Edit";
             this.dataGridViewButtonColumnNurseInformation.UseColumnTextForButtonValue = true;
-            // 
-            // nurseBindingSource
-            // 
-            this.nurseBindingSource.DataSource = typeof(CS6232GroupProject.Model.Nurse);
             // 
             // tableLayoutPanel1
             // 
@@ -559,7 +491,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 75);
-            this.tableLayoutPanel5.TabIndex = 8;
+            this.tableLayoutPanel5.TabIndex = 10;
             // 
             // textBoxStreetNurseInfoResults
             // 
@@ -569,7 +501,7 @@
             this.textBoxStreetNurseInfoResults.Location = new System.Drawing.Point(3, 33);
             this.textBoxStreetNurseInfoResults.Name = "textBoxStreetNurseInfoResults";
             this.textBoxStreetNurseInfoResults.Size = new System.Drawing.Size(186, 29);
-            this.textBoxStreetNurseInfoResults.TabIndex = 9;
+            this.textBoxStreetNurseInfoResults.TabIndex = 11;
             // 
             // labelStreetNurseInfoResults
             // 
@@ -596,7 +528,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel6.TabIndex = 10;
+            this.tableLayoutPanel6.TabIndex = 12;
             // 
             // labelStateNurseInfoResults
             // 
@@ -618,7 +550,7 @@
             this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 25);
             this.comboBoxStateNurseInfoResults.Name = "comboBoxStateNurseInfoResults";
             this.comboBoxStateNurseInfoResults.Size = new System.Drawing.Size(179, 28);
-            this.comboBoxStateNurseInfoResults.TabIndex = 12;
+            this.comboBoxStateNurseInfoResults.TabIndex = 13;
             // 
             // tableLayoutPanel7
             // 
@@ -632,7 +564,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel7.TabIndex = 13;
+            this.tableLayoutPanel7.TabIndex = 14;
             // 
             // textBoxZipNurseInfoResults
             // 
@@ -642,7 +574,7 @@
             this.textBoxZipNurseInfoResults.Location = new System.Drawing.Point(3, 25);
             this.textBoxZipNurseInfoResults.Name = "textBoxZipNurseInfoResults";
             this.textBoxZipNurseInfoResults.Size = new System.Drawing.Size(186, 29);
-            this.textBoxZipNurseInfoResults.TabIndex = 14;
+            this.textBoxZipNurseInfoResults.TabIndex = 15;
             // 
             // labelZipNurseInfoResults
             // 
@@ -666,7 +598,7 @@
             this.buttonNurseInfoResultsUpdate.Location = new System.Drawing.Point(532, 252);
             this.buttonNurseInfoResultsUpdate.Name = "buttonNurseInfoResultsUpdate";
             this.buttonNurseInfoResultsUpdate.Size = new System.Drawing.Size(137, 35);
-            this.buttonNurseInfoResultsUpdate.TabIndex = 15;
+            this.buttonNurseInfoResultsUpdate.TabIndex = 16;
             this.buttonNurseInfoResultsUpdate.Text = "Update";
             this.buttonNurseInfoResultsUpdate.UseVisualStyleBackColor = false;
             this.buttonNurseInfoResultsUpdate.Click += new System.EventHandler(this.buttonNurseInfoResultsUpdate_Click);
@@ -694,12 +626,12 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.10195F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.7961F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.10195F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 237F));
             this.tableLayoutPanel4.Controls.Add(this.labelPhoneNurseInfoResults, 0, 5);
-            this.tableLayoutPanel4.Controls.Add(this.textBoxLastNameNurseInfoResults, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.textBoxFirstNameNurseInfoResults, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelFirstNameNurseInfoResults, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelDOBNurseInfoResults, 0, 2);
@@ -710,8 +642,13 @@
             this.tableLayoutPanel4.Controls.Add(this.labelSSNNurseInfoResults, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.textBoxSSNNurseInfoResults, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.comboBoxGenderNurseInfoResults, 1, 4);
-            this.tableLayoutPanel4.Controls.Add(this.linkLabelNurseInfoBack, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.comboBoxNurseInfoResultsActive, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.linkLabelNurseInfoBack, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxNurseInfoResultsActive, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxUsernameNurseInfoResults, 3, 2);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxPasswordNurseInfoResults, 3, 3);
+            this.tableLayoutPanel4.Controls.Add(this.labelUsernameNurseInfoResults, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.labelPasswordNurseInfoResults, 2, 3);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxLastNameNurseInfoResults, 1, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -743,7 +680,7 @@
             this.textBoxLastNameNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxLastNameNurseInfoResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxLastNameNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLastNameNurseInfoResults.Location = new System.Drawing.Point(280, 60);
+            this.textBoxLastNameNurseInfoResults.Location = new System.Drawing.Point(202, 60);
             this.textBoxLastNameNurseInfoResults.Name = "textBoxLastNameNurseInfoResults";
             this.textBoxLastNameNurseInfoResults.Size = new System.Drawing.Size(186, 29);
             this.textBoxLastNameNurseInfoResults.TabIndex = 2;
@@ -753,7 +690,7 @@
             this.textBoxFirstNameNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxFirstNameNurseInfoResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFirstNameNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFirstNameNurseInfoResults.Location = new System.Drawing.Point(280, 10);
+            this.textBoxFirstNameNurseInfoResults.Location = new System.Drawing.Point(202, 10);
             this.textBoxFirstNameNurseInfoResults.Name = "textBoxFirstNameNurseInfoResults";
             this.textBoxFirstNameNurseInfoResults.Size = new System.Drawing.Size(186, 29);
             this.textBoxFirstNameNurseInfoResults.TabIndex = 1;
@@ -800,7 +737,7 @@
             this.textBoxPhoneNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxPhoneNurseInfoResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPhoneNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhoneNurseInfoResults.Location = new System.Drawing.Point(280, 260);
+            this.textBoxPhoneNurseInfoResults.Location = new System.Drawing.Point(202, 260);
             this.textBoxPhoneNurseInfoResults.Name = "textBoxPhoneNurseInfoResults";
             this.textBoxPhoneNurseInfoResults.Size = new System.Drawing.Size(186, 29);
             this.textBoxPhoneNurseInfoResults.TabIndex = 6;
@@ -809,7 +746,7 @@
             // 
             this.dateTimePickerDOBNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePickerDOBNurseInfoResults.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDOBNurseInfoResults.Location = new System.Drawing.Point(280, 112);
+            this.dateTimePickerDOBNurseInfoResults.Location = new System.Drawing.Point(202, 112);
             this.dateTimePickerDOBNurseInfoResults.Name = "dateTimePickerDOBNurseInfoResults";
             this.dateTimePickerDOBNurseInfoResults.Size = new System.Drawing.Size(186, 26);
             this.dateTimePickerDOBNurseInfoResults.TabIndex = 3;
@@ -845,7 +782,7 @@
             this.textBoxSSNNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxSSNNurseInfoResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSSNNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSSNNurseInfoResults.Location = new System.Drawing.Point(280, 160);
+            this.textBoxSSNNurseInfoResults.Location = new System.Drawing.Point(202, 160);
             this.textBoxSSNNurseInfoResults.Name = "textBoxSSNNurseInfoResults";
             this.textBoxSSNNurseInfoResults.Size = new System.Drawing.Size(186, 29);
             this.textBoxSSNNurseInfoResults.TabIndex = 4;
@@ -855,10 +792,10 @@
             this.comboBoxGenderNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(280, 211);
+            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(202, 211);
             this.comboBoxGenderNurseInfoResults.Name = "comboBoxGenderNurseInfoResults";
             this.comboBoxGenderNurseInfoResults.Size = new System.Drawing.Size(186, 28);
-            this.comboBoxGenderNurseInfoResults.TabIndex = 21;
+            this.comboBoxGenderNurseInfoResults.TabIndex = 5;
             // 
             // linkLabelNurseInfoBack
             // 
@@ -884,7 +821,7 @@
             this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(800, 53);
             this.comboBoxNurseInfoResultsActive.Name = "comboBoxNurseInfoResultsActive";
             this.comboBoxNurseInfoResultsActive.Size = new System.Drawing.Size(121, 28);
-            this.comboBoxNurseInfoResultsActive.TabIndex = 0;
+            this.comboBoxNurseInfoResultsActive.TabIndex = 7;
             // 
             // labelNurseInformation
             // 
@@ -948,7 +885,7 @@
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(200, 75);
-            this.tableLayoutPanel10.TabIndex = 8;
+            this.tableLayoutPanel10.TabIndex = 10;
             // 
             // textBoxStreetRegisterNurse
             // 
@@ -958,7 +895,7 @@
             this.textBoxStreetRegisterNurse.Location = new System.Drawing.Point(3, 33);
             this.textBoxStreetRegisterNurse.Name = "textBoxStreetRegisterNurse";
             this.textBoxStreetRegisterNurse.Size = new System.Drawing.Size(186, 29);
-            this.textBoxStreetRegisterNurse.TabIndex = 9;
+            this.textBoxStreetRegisterNurse.TabIndex = 11;
             // 
             // labelStreetRegisterNurse
             // 
@@ -986,7 +923,7 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel11.TabIndex = 10;
+            this.tableLayoutPanel11.TabIndex = 12;
             // 
             // labelStateRegisterNurse
             // 
@@ -1009,7 +946,7 @@
             this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 25);
             this.comboBoxStateRegisterNurse.Name = "comboBoxStateRegisterNurse";
             this.comboBoxStateRegisterNurse.Size = new System.Drawing.Size(179, 28);
-            this.comboBoxStateRegisterNurse.TabIndex = 12;
+            this.comboBoxStateRegisterNurse.TabIndex = 13;
             // 
             // tableLayoutPanel12
             // 
@@ -1023,7 +960,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel12.TabIndex = 13;
+            this.tableLayoutPanel12.TabIndex = 14;
             // 
             // textBoxZipRegisterNurse
             // 
@@ -1033,7 +970,7 @@
             this.textBoxZipRegisterNurse.Location = new System.Drawing.Point(3, 25);
             this.textBoxZipRegisterNurse.Name = "textBoxZipRegisterNurse";
             this.textBoxZipRegisterNurse.Size = new System.Drawing.Size(186, 29);
-            this.textBoxZipRegisterNurse.TabIndex = 14;
+            this.textBoxZipRegisterNurse.TabIndex = 15;
             // 
             // labelZipRegisterNurse
             // 
@@ -1058,7 +995,7 @@
             this.buttonRegisterNurse.Location = new System.Drawing.Point(532, 252);
             this.buttonRegisterNurse.Name = "buttonRegisterNurse";
             this.buttonRegisterNurse.Size = new System.Drawing.Size(137, 35);
-            this.buttonRegisterNurse.TabIndex = 15;
+            this.buttonRegisterNurse.TabIndex = 16;
             this.buttonRegisterNurse.Text = "Register";
             this.buttonRegisterNurse.UseVisualStyleBackColor = false;
             this.buttonRegisterNurse.Click += new System.EventHandler(this.buttonRegisterNurse_Click);
@@ -1095,10 +1032,11 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.63203F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.02597F));
             this.tableLayoutPanel3.Controls.Add(this.labelPhoneRegisterNurse, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.textBoxLastNameRegisterNurse, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.textBoxFirstNameRegisterNurse, 1, 0);
@@ -1111,7 +1049,11 @@
             this.tableLayoutPanel3.Controls.Add(this.labelSSNRegisterNurse, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.textBoxSSNRegisterNurse, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxGenderRegisterNurse, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxRegisterNurseActive, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxRegisterNurseActive, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.labelUsernameRegisterNurse, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.labelPasswordRegisterNurse, 2, 3);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxUsernameRegisterNurse, 3, 2);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxPasswordRegisterNurse, 3, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1144,7 +1086,7 @@
             this.textBoxLastNameRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxLastNameRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxLastNameRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLastNameRegisterNurse.Location = new System.Drawing.Point(280, 60);
+            this.textBoxLastNameRegisterNurse.Location = new System.Drawing.Point(216, 60);
             this.textBoxLastNameRegisterNurse.Name = "textBoxLastNameRegisterNurse";
             this.textBoxLastNameRegisterNurse.Size = new System.Drawing.Size(186, 29);
             this.textBoxLastNameRegisterNurse.TabIndex = 2;
@@ -1154,7 +1096,7 @@
             this.textBoxFirstNameRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxFirstNameRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFirstNameRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFirstNameRegisterNurse.Location = new System.Drawing.Point(280, 10);
+            this.textBoxFirstNameRegisterNurse.Location = new System.Drawing.Point(216, 10);
             this.textBoxFirstNameRegisterNurse.Name = "textBoxFirstNameRegisterNurse";
             this.textBoxFirstNameRegisterNurse.Size = new System.Drawing.Size(186, 29);
             this.textBoxFirstNameRegisterNurse.TabIndex = 1;
@@ -1204,7 +1146,7 @@
             this.textBoxPhoneRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxPhoneRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPhoneRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhoneRegisterNurse.Location = new System.Drawing.Point(280, 260);
+            this.textBoxPhoneRegisterNurse.Location = new System.Drawing.Point(216, 260);
             this.textBoxPhoneRegisterNurse.Name = "textBoxPhoneRegisterNurse";
             this.textBoxPhoneRegisterNurse.Size = new System.Drawing.Size(186, 29);
             this.textBoxPhoneRegisterNurse.TabIndex = 6;
@@ -1213,7 +1155,7 @@
             // 
             this.dateTimePickerDOBRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePickerDOBRegisterNurse.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDOBRegisterNurse.Location = new System.Drawing.Point(280, 112);
+            this.dateTimePickerDOBRegisterNurse.Location = new System.Drawing.Point(216, 112);
             this.dateTimePickerDOBRegisterNurse.Name = "dateTimePickerDOBRegisterNurse";
             this.dateTimePickerDOBRegisterNurse.Size = new System.Drawing.Size(186, 26);
             this.dateTimePickerDOBRegisterNurse.TabIndex = 3;
@@ -1251,7 +1193,7 @@
             this.textBoxSSNRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxSSNRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSSNRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSSNRegisterNurse.Location = new System.Drawing.Point(280, 160);
+            this.textBoxSSNRegisterNurse.Location = new System.Drawing.Point(216, 160);
             this.textBoxSSNRegisterNurse.Name = "textBoxSSNRegisterNurse";
             this.textBoxSSNRegisterNurse.Size = new System.Drawing.Size(186, 29);
             this.textBoxSSNRegisterNurse.TabIndex = 4;
@@ -1261,10 +1203,10 @@
             this.comboBoxGenderRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderRegisterNurse.FormattingEnabled = true;
-            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(280, 211);
+            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(216, 211);
             this.comboBoxGenderRegisterNurse.Name = "comboBoxGenderRegisterNurse";
             this.comboBoxGenderRegisterNurse.Size = new System.Drawing.Size(186, 28);
-            this.comboBoxGenderRegisterNurse.TabIndex = 21;
+            this.comboBoxGenderRegisterNurse.TabIndex = 5;
             // 
             // comboBoxRegisterNurseActive
             // 
@@ -1275,7 +1217,7 @@
             this.comboBoxRegisterNurseActive.Location = new System.Drawing.Point(800, 53);
             this.comboBoxRegisterNurseActive.Name = "comboBoxRegisterNurseActive";
             this.comboBoxRegisterNurseActive.Size = new System.Drawing.Size(121, 28);
-            this.comboBoxRegisterNurseActive.TabIndex = 23;
+            this.comboBoxRegisterNurseActive.TabIndex = 7;
             // 
             // labelRegisterNurse
             // 
@@ -1288,6 +1230,172 @@
             this.labelRegisterNurse.Size = new System.Drawing.Size(189, 29);
             this.labelRegisterNurse.TabIndex = 5;
             this.labelRegisterNurse.Text = "Register Nurse";
+            // 
+            // textBoxUsernameNurseInfoResults
+            // 
+            this.textBoxUsernameNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxUsernameNurseInfoResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxUsernameNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsernameNurseInfoResults.Location = new System.Drawing.Point(688, 110);
+            this.textBoxUsernameNurseInfoResults.Name = "textBoxUsernameNurseInfoResults";
+            this.textBoxUsernameNurseInfoResults.Size = new System.Drawing.Size(186, 29);
+            this.textBoxUsernameNurseInfoResults.TabIndex = 8;
+            // 
+            // textBoxPasswordNurseInfoResults
+            // 
+            this.textBoxPasswordNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxPasswordNurseInfoResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPasswordNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPasswordNurseInfoResults.Location = new System.Drawing.Point(688, 160);
+            this.textBoxPasswordNurseInfoResults.Name = "textBoxPasswordNurseInfoResults";
+            this.textBoxPasswordNurseInfoResults.Size = new System.Drawing.Size(186, 29);
+            this.textBoxPasswordNurseInfoResults.TabIndex = 9;
+            // 
+            // labelUsernameNurseInfoResults
+            // 
+            this.labelUsernameNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelUsernameNurseInfoResults.AutoSize = true;
+            this.labelUsernameNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsernameNurseInfoResults.Location = new System.Drawing.Point(489, 115);
+            this.labelUsernameNurseInfoResults.Name = "labelUsernameNurseInfoResults";
+            this.labelUsernameNurseInfoResults.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelUsernameNurseInfoResults.Size = new System.Drawing.Size(116, 20);
+            this.labelUsernameNurseInfoResults.TabIndex = 24;
+            this.labelUsernameNurseInfoResults.Text = "Username";
+            // 
+            // labelPasswordNurseInfoResults
+            // 
+            this.labelPasswordNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelPasswordNurseInfoResults.AutoSize = true;
+            this.labelPasswordNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPasswordNurseInfoResults.Location = new System.Drawing.Point(489, 165);
+            this.labelPasswordNurseInfoResults.Name = "labelPasswordNurseInfoResults";
+            this.labelPasswordNurseInfoResults.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelPasswordNurseInfoResults.Size = new System.Drawing.Size(111, 20);
+            this.labelPasswordNurseInfoResults.TabIndex = 25;
+            this.labelPasswordNurseInfoResults.Text = "Password";
+            // 
+            // nurseIDDataGridViewTextBoxColumn
+            // 
+            this.nurseIDDataGridViewTextBoxColumn.DataPropertyName = "NurseID";
+            this.nurseIDDataGridViewTextBoxColumn.HeaderText = "NurseID";
+            this.nurseIDDataGridViewTextBoxColumn.Name = "nurseIDDataGridViewTextBoxColumn";
+            this.nurseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nurseIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fNameDataGridViewTextBoxColumn
+            // 
+            this.fNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
+            this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
+            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lNameDataGridViewTextBoxColumn
+            // 
+            this.lNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
+            this.lNameDataGridViewTextBoxColumn.HeaderText = "LName";
+            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fullNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dOBDataGridViewTextBoxColumn
+            // 
+            this.dOBDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
+            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
+            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
+            this.dOBDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sSNDataGridViewTextBoxColumn
+            // 
+            this.sSNDataGridViewTextBoxColumn.DataPropertyName = "SSN";
+            this.sSNDataGridViewTextBoxColumn.HeaderText = "SSN";
+            this.sSNDataGridViewTextBoxColumn.Name = "sSNDataGridViewTextBoxColumn";
+            this.sSNDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sSNDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.genderDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // addressIDDataGridViewTextBoxColumn
+            // 
+            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // activeDataGridViewCheckBoxColumn
+            // 
+            this.activeDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
+            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
+            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
+            this.activeDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // nurseBindingSource
+            // 
+            this.nurseBindingSource.DataSource = typeof(CS6232GroupProject.Model.Nurse);
+            // 
+            // labelUsernameRegisterNurse
+            // 
+            this.labelUsernameRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelUsernameRegisterNurse.AutoSize = true;
+            this.labelUsernameRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsernameRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelUsernameRegisterNurse.Location = new System.Drawing.Point(536, 115);
+            this.labelUsernameRegisterNurse.Name = "labelUsernameRegisterNurse";
+            this.labelUsernameRegisterNurse.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelUsernameRegisterNurse.Size = new System.Drawing.Size(116, 20);
+            this.labelUsernameRegisterNurse.TabIndex = 24;
+            this.labelUsernameRegisterNurse.Text = "Username";
+            // 
+            // labelPasswordRegisterNurse
+            // 
+            this.labelPasswordRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelPasswordRegisterNurse.AutoSize = true;
+            this.labelPasswordRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPasswordRegisterNurse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelPasswordRegisterNurse.Location = new System.Drawing.Point(536, 165);
+            this.labelPasswordRegisterNurse.Name = "labelPasswordRegisterNurse";
+            this.labelPasswordRegisterNurse.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelPasswordRegisterNurse.Size = new System.Drawing.Size(111, 20);
+            this.labelPasswordRegisterNurse.TabIndex = 25;
+            this.labelPasswordRegisterNurse.Text = "Password";
+            // 
+            // textBoxUsernameRegisterNurse
+            // 
+            this.textBoxUsernameRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxUsernameRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxUsernameRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsernameRegisterNurse.Location = new System.Drawing.Point(704, 110);
+            this.textBoxUsernameRegisterNurse.Name = "textBoxUsernameRegisterNurse";
+            this.textBoxUsernameRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxUsernameRegisterNurse.TabIndex = 8;
+            // 
+            // textBoxPasswordRegisterNurse
+            // 
+            this.textBoxPasswordRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxPasswordRegisterNurse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPasswordRegisterNurse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPasswordRegisterNurse.Location = new System.Drawing.Point(704, 160);
+            this.textBoxPasswordRegisterNurse.Name = "textBoxPasswordRegisterNurse";
+            this.textBoxPasswordRegisterNurse.Size = new System.Drawing.Size(186, 29);
+            this.textBoxPasswordRegisterNurse.TabIndex = 9;
             // 
             // UserControlAdminMain
             // 
@@ -1305,7 +1413,6 @@
             this.tabPageAdminNurseInfo.PerformLayout();
             this.panelNurseSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNurseInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panelNurseInfoResults.ResumeLayout(false);
@@ -1331,6 +1438,7 @@
             this.tableLayoutPanel12.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1432,5 +1540,13 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumnNurseInformation;
         private System.Windows.Forms.ComboBox comboBoxNurseInfoResultsActive;
         private System.Windows.Forms.ComboBox comboBoxRegisterNurseActive;
+        private System.Windows.Forms.TextBox textBoxUsernameNurseInfoResults;
+        private System.Windows.Forms.TextBox textBoxPasswordNurseInfoResults;
+        private System.Windows.Forms.Label labelUsernameNurseInfoResults;
+        private System.Windows.Forms.Label labelPasswordNurseInfoResults;
+        private System.Windows.Forms.Label labelUsernameRegisterNurse;
+        private System.Windows.Forms.Label labelPasswordRegisterNurse;
+        private System.Windows.Forms.TextBox textBoxUsernameRegisterNurse;
+        private System.Windows.Forms.TextBox textBoxPasswordRegisterNurse;
     }
 }
