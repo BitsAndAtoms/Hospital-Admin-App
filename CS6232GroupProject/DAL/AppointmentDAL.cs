@@ -11,7 +11,6 @@ namespace CS6232GroupProject.DAL
     /// </summary>
     class AppointmentDAL
     {
-
         /// <summary>
         /// This method checks if the Doctor is available during the current time.
         /// It returns true if they do, false if they don't.
@@ -66,7 +65,6 @@ namespace CS6232GroupProject.DAL
                     }
                 }
             }
-
 
             
         }
