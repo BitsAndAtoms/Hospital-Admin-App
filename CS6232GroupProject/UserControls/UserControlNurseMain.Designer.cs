@@ -233,7 +233,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(643, 336);
-            this.tableLayoutPanel8.TabIndex = 7;
+            this.tableLayoutPanel8.TabIndex = 8;
             // 
             // tableLayoutPanel5
             // 
@@ -247,7 +247,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 75);
-            this.tableLayoutPanel5.TabIndex = 8;
+            this.tableLayoutPanel5.TabIndex = 9;
             // 
             // textBoxStreetPatientInfoResult
             // 
@@ -257,7 +257,7 @@
             this.textBoxStreetPatientInfoResult.Location = new System.Drawing.Point(3, 33);
             this.textBoxStreetPatientInfoResult.Name = "textBoxStreetPatientInfoResult";
             this.textBoxStreetPatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxStreetPatientInfoResult.TabIndex = 9;
+            this.textBoxStreetPatientInfoResult.TabIndex = 10;
             // 
             // labelStreetPatientInfoResult
             // 
@@ -284,7 +284,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel6.TabIndex = 10;
+            this.tableLayoutPanel6.TabIndex = 11;
             // 
             // labelStatePatientInfoResult
             // 
@@ -303,7 +303,7 @@
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 12;
@@ -447,7 +447,7 @@
             this.textBoxLastNamePatientInfoResult.Location = new System.Drawing.Point(195, 60);
             this.textBoxLastNamePatientInfoResult.Name = "textBoxLastNamePatientInfoResult";
             this.textBoxLastNamePatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxLastNamePatientInfoResult.TabIndex = 2;
+            this.textBoxLastNamePatientInfoResult.TabIndex = 3;
             // 
             // textBoxFirstNamePatientInfoResult
             // 
@@ -457,7 +457,7 @@
             this.textBoxFirstNamePatientInfoResult.Location = new System.Drawing.Point(195, 10);
             this.textBoxFirstNamePatientInfoResult.Name = "textBoxFirstNamePatientInfoResult";
             this.textBoxFirstNamePatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxFirstNamePatientInfoResult.TabIndex = 1;
+            this.textBoxFirstNamePatientInfoResult.TabIndex = 2;
             // 
             // linkLabelPatientInfoBack
             // 
@@ -468,7 +468,7 @@
             this.linkLabelPatientInfoBack.Location = new System.Drawing.Point(567, 0);
             this.linkLabelPatientInfoBack.Name = "linkLabelPatientInfoBack";
             this.linkLabelPatientInfoBack.Size = new System.Drawing.Size(73, 25);
-            this.linkLabelPatientInfoBack.TabIndex = 9;
+            this.linkLabelPatientInfoBack.TabIndex = 1;
             this.linkLabelPatientInfoBack.TabStop = true;
             this.linkLabelPatientInfoBack.Text = "< Back";
             this.linkLabelPatientInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelPatientInfoBack_LinkClicked);
@@ -518,7 +518,7 @@
             this.textBoxPhonePatientInfoResult.Location = new System.Drawing.Point(195, 260);
             this.textBoxPhonePatientInfoResult.Name = "textBoxPhonePatientInfoResult";
             this.textBoxPhonePatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxPhonePatientInfoResult.TabIndex = 6;
+            this.textBoxPhonePatientInfoResult.TabIndex = 7;
             // 
             // dateTimePickerDOBPatientInfoResult
             // 
@@ -527,7 +527,7 @@
             this.dateTimePickerDOBPatientInfoResult.Location = new System.Drawing.Point(195, 112);
             this.dateTimePickerDOBPatientInfoResult.Name = "dateTimePickerDOBPatientInfoResult";
             this.dateTimePickerDOBPatientInfoResult.Size = new System.Drawing.Size(186, 26);
-            this.dateTimePickerDOBPatientInfoResult.TabIndex = 3;
+            this.dateTimePickerDOBPatientInfoResult.TabIndex = 4;
             // 
             // labelGenderPatientInfoResult
             // 
@@ -563,17 +563,17 @@
             this.textBoxSSNPatientInfoResult.Location = new System.Drawing.Point(195, 160);
             this.textBoxSSNPatientInfoResult.Name = "textBoxSSNPatientInfoResult";
             this.textBoxSSNPatientInfoResult.Size = new System.Drawing.Size(186, 29);
-            this.textBoxSSNPatientInfoResult.TabIndex = 4;
+            this.textBoxSSNPatientInfoResult.TabIndex = 5;
             // 
             // comboBoxGenderPatientInfoResult
             // 
             this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
-            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(195, 214);
+            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(195, 211);
             this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
             this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
-            this.comboBoxGenderPatientInfoResult.TabIndex = 21;
+            this.comboBoxGenderPatientInfoResult.TabIndex = 6;
             // 
             // panelPatientBookAppointment
             // 
@@ -635,7 +635,7 @@
             this.dateTimePickerBookAppointmentTime.Location = new System.Drawing.Point(171, 9);
             this.dateTimePickerBookAppointmentTime.Name = "dateTimePickerBookAppointmentTime";
             this.dateTimePickerBookAppointmentTime.Size = new System.Drawing.Size(127, 26);
-            this.dateTimePickerBookAppointmentTime.TabIndex = 5;
+            this.dateTimePickerBookAppointmentTime.TabIndex = 4;
             // 
             // dateTimePickerBookAppointment
             // 
@@ -644,7 +644,7 @@
             this.dateTimePickerBookAppointment.Location = new System.Drawing.Point(3, 9);
             this.dateTimePickerBookAppointment.Name = "dateTimePickerBookAppointment";
             this.dateTimePickerBookAppointment.Size = new System.Drawing.Size(139, 26);
-            this.dateTimePickerBookAppointment.TabIndex = 4;
+            this.dateTimePickerBookAppointment.TabIndex = 3;
             // 
             // comboBoxPhysician
             // 
@@ -653,7 +653,7 @@
             this.comboBoxPhysician.DisplayMember = "FullName";
             this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(159, 47);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(159, 50);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
@@ -713,7 +713,7 @@
             this.buttonBookSubmit.Location = new System.Drawing.Point(380, 292);
             this.buttonBookSubmit.Name = "buttonBookSubmit";
             this.buttonBookSubmit.Size = new System.Drawing.Size(137, 29);
-            this.buttonBookSubmit.TabIndex = 7;
+            this.buttonBookSubmit.TabIndex = 6;
             this.buttonBookSubmit.Text = "Submit";
             this.buttonBookSubmit.UseVisualStyleBackColor = false;
             this.buttonBookSubmit.Click += new System.EventHandler(this.buttonBookSubmit_Click);
@@ -727,7 +727,7 @@
             this.textBoxSummary.Multiline = true;
             this.textBoxSummary.Name = "textBoxSummary";
             this.textBoxSummary.Size = new System.Drawing.Size(351, 121);
-            this.textBoxSummary.TabIndex = 6;
+            this.textBoxSummary.TabIndex = 5;
             // 
             // linkLabelBookBack
             // 
@@ -738,7 +738,7 @@
             this.linkLabelBookBack.Location = new System.Drawing.Point(567, 0);
             this.linkLabelBookBack.Name = "linkLabelBookBack";
             this.linkLabelBookBack.Size = new System.Drawing.Size(73, 25);
-            this.linkLabelBookBack.TabIndex = 10;
+            this.linkLabelBookBack.TabIndex = 1;
             this.linkLabelBookBack.TabStop = true;
             this.linkLabelBookBack.Text = "< Back";
             this.linkLabelBookBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBookBack_LinkClicked);
@@ -942,7 +942,7 @@
             this.textBoxLastName.Location = new System.Drawing.Point(195, 60);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(186, 29);
-            this.textBoxLastName.TabIndex = 5;
+            this.textBoxLastName.TabIndex = 2;
             // 
             // textBoxFirstName
             // 
@@ -952,7 +952,7 @@
             this.textBoxFirstName.Location = new System.Drawing.Point(195, 10);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(186, 29);
-            this.textBoxFirstName.TabIndex = 4;
+            this.textBoxFirstName.TabIndex = 1;
             // 
             // labelFirstName
             // 
@@ -1001,7 +1001,7 @@
             this.buttonSearch.Location = new System.Drawing.Point(349, 157);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(137, 35);
-            this.buttonSearch.TabIndex = 7;
+            this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
@@ -1099,7 +1099,7 @@
             this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRegisterGender.FormattingEnabled = true;
-            this.comboBoxRegisterGender.Location = new System.Drawing.Point(195, 214);
+            this.comboBoxRegisterGender.Location = new System.Drawing.Point(195, 211);
             this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
             this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
             this.comboBoxRegisterGender.TabIndex = 6;
@@ -1290,7 +1290,7 @@
             this.comboBoxState.BackColor = System.Drawing.Color.White;
             this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxState.Location = new System.Drawing.Point(3, 29);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 12;
