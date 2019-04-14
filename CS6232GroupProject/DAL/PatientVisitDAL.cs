@@ -124,8 +124,8 @@ namespace CS6232GroupProject.DAL
             List<LabTestResult> result = new List<LabTestResult>();
             
             string selectStatement =
-                "SELECT testID, testName testResult, testDate " +          
-                "FROM LabTestResult t1" +
+                "SELECT t1.testID, testName, testResult, testDate " +          
+                "FROM LabTestResult t1 " +
                 "LEFT JOIN " +
                 "LabTestList t2 " +
                 " ON t1.testID = t2.testID " +

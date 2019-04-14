@@ -414,6 +414,15 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
-      
+        private void labTestResultDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabControlPatientRecords_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int num = this.tabControlPatientRecords.TabIndex;
+            this.labTestResultDataGridView.DataSource = this.visitController.GetLabTestResultByVisitID(this.visit);
+        }
     }
 }

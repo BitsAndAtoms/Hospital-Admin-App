@@ -154,6 +154,7 @@
             this.tabControlPatientRecords.SelectedIndex = 0;
             this.tabControlPatientRecords.Size = new System.Drawing.Size(839, 534);
             this.tabControlPatientRecords.TabIndex = 0;
+            this.tabControlPatientRecords.SelectedIndexChanged += new System.EventHandler(this.tabControlPatientRecords_SelectedIndexChanged);
             // 
             // tabPageAppointments
             // 
@@ -298,7 +299,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -1037,6 +1038,7 @@
             this.labTestResultDataGridView.Name = "labTestResultDataGridView";
             this.labTestResultDataGridView.Size = new System.Drawing.Size(825, 495);
             this.labTestResultDataGridView.TabIndex = 0;
+            this.labTestResultDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.labTestResultDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn5
             // 

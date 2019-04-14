@@ -94,5 +94,10 @@ namespace CS6232GroupProject.Controller
         {
            return this.visitSource.CheckForpendingTestsFromVisitDAL(visit);
         }
+
+        internal List<LabTestResult> GetLabTestResultByVisitID(PatientVisit visit)
+        {
+            return this.visitSource.GetLabTestResultByVisitID(visit);
+        }
     }
 }
