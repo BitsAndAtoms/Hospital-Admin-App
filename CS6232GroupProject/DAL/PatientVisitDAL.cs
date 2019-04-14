@@ -159,7 +159,7 @@ namespace CS6232GroupProject.DAL
         {
             string insertStatement =
                 "UPDATE LabTestResult SET" +
-                " testResult = @testResult " +
+                " testResult = @testResult, testDate = getdate() " +
                 "WHERE  testID = " +
                 "(SELECT testID FROM LabTestList " +
                 "WHERE testName = @testName)" +
