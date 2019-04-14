@@ -157,7 +157,10 @@ namespace CS6232GroupProject.DAL
                             newResult.VisitID = (int)reader["visitID"];
                             newResult.Result = reader["testResult"].ToString();
                             newResult.Name = reader["testName"].ToString();
-                            newResult.TestDate = (DateTime)reader["testDate"];
+                            if (!string.IsNullOrEmpty(reader["testDate"].ToString())) {
+                                newResult.TestDate = (DateTime)reader["testDate"];
+                            }
+                            
                             result.Add(newResult);
                         }
                     }

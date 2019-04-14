@@ -338,6 +338,7 @@ namespace CS6232GroupProject.UserControls
                     {
                         this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
                         this.visitController.EnterFinalDiagnosis(this.visit);
+                    this.textBoxDiagnosisIntial.Enabled = false;
                     }
                     catch (Exception)
                     {
@@ -356,12 +357,14 @@ namespace CS6232GroupProject.UserControls
 
         private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
             this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
             SetAppointment();
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
             SetVisitInfo();
             AppointmentTimeCheck();
+            this.tabControlPatientRecords_SelectedIndexChanged(null, null);
         }
 
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
@@ -378,11 +381,11 @@ namespace CS6232GroupProject.UserControls
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
 
             newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
-            test.Name = " Hepatitis A";
+            test.Name = "Hepatitis A";
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
             
             newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
-            test.Name = " Hepatitis B";
+            test.Name = "Hepatitis B";
             this.visitController.EnterTestResultForVisit(visit,test,newResult);
 
         }
@@ -408,7 +411,7 @@ namespace CS6232GroupProject.UserControls
             }
             else
             {
-                MessageBox.Show("Tests cant be ordered without an inital diagnosis");
+                MessageBox.Show("Tests cant be ordered without an inital diagnosis or after a final diagnosis");
             }
         }
 
@@ -417,18 +420,56 @@ namespace CS6232GroupProject.UserControls
 
         }
 
+        /// <summary>
+        /// Drives the flow of application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabControlPatientRecords_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.tabControlPatientRecords.SelectedIndex == 4)
             {
                 this.labTestResultDataGridView.DataSource = this.visitController.GetLabTestResultByVisitID(this.visit);
             }
-            else if (this.tabControlPatientRecords.SelectedIndex == 2 & !String.IsNullOrEmpty(this.visit.finalDiagnosis))
+            else if (this.tabControlPatientRecords.SelectedIndex == 1)
             {
-                this.textBoxDiagnosisIntial.Enabled = false;
+                this.buttonRoutineChecksUpdate.Enabled = true;
+                if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.buttonRoutineChecksUpdate.Enabled = false;
+                }
+
             }
-            else if (this.tabControlPatientRecords.SelectedIndex == 3)
+            else if (this.tabControlPatientRecords.SelectedIndex == 2 )
             {
+                this.textBoxDiagnosisIntial.Enabled = true;
+                this.textBoxDiagnosisFinal.Enabled = true;
+                if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.textBoxDiagnosisIntial.Enabled = false;
+                }
+                if (String.IsNullOrEmpty(this.visit.Diagnosis))
+                {
+                    this.textBoxDiagnosisFinal.Enabled = false;
+                }
+
+            }
+            else if (this.tabControlPatientRecords.SelectedIndex == 3 )
+            {
+                if (String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.buttonLabTestsUpdate.Enabled = true;
+                    this.checkedListBoxLabTests.Enabled = true;
+                } else if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.buttonLabTestsUpdate.Enabled = false;
+                    this.checkedListBoxLabTests.Enabled = false;
+                }
+                for (int index = 0; index < 4; index++)
+                {
+                    this.checkedListBoxLabTests.SetItemCheckState(index, CheckState.Unchecked);
+                }
+               
                 List<LabTestResult> listOfResults = this.visitController.GetLabTestResultByVisitID(this.visit);
                 foreach (var nameOfTestOrdered in listOfResults)
                 {
@@ -436,8 +477,24 @@ namespace CS6232GroupProject.UserControls
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(0, CheckState.Checked);
                     }
+                    if (nameOfTestOrdered.Name == "Low Density Lipoproteins (LDL)")
+                    {
+                        this.checkedListBoxLabTests.SetItemCheckState(1, CheckState.Checked);
+                    }
+                    if (nameOfTestOrdered.Name == "Hepatitis A")
+                    {
+                        this.checkedListBoxLabTests.SetItemCheckState(2, CheckState.Checked);
+                    }
+                    if (nameOfTestOrdered.Name == "Hepatitis B")
+                    {
+                        this.checkedListBoxLabTests.SetItemCheckState(3, CheckState.Checked);
+                    }
                 }
+
             }
+            
+
+            
         }
     }
 }
