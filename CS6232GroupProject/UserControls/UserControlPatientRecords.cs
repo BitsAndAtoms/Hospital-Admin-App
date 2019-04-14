@@ -332,14 +332,11 @@ namespace CS6232GroupProject.UserControls
                 }
 
             }
-            if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text))
+            if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & this.visitController.CheckForPendingTests(this.visit))
             {
-                
-               this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
-                if (this.visitController.CheckForPendingTests(this.visit))
-                {
-                    try
+                  try
                     {
+                        this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
                         this.visitController.EnterFinalDiagnosis(this.visit);
                     }
                     catch (Exception)
@@ -352,9 +349,10 @@ namespace CS6232GroupProject.UserControls
                     this.textBoxDiagnosisFinal.Text = "";
                     MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
                 }
-            }
-            
+
         }
+            
+        
 
         private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -424,6 +422,21 @@ namespace CS6232GroupProject.UserControls
             if (this.tabControlPatientRecords.SelectedIndex == 4)
             {
                 this.labTestResultDataGridView.DataSource = this.visitController.GetLabTestResultByVisitID(this.visit);
+            }
+            else if (this.tabControlPatientRecords.SelectedIndex == 2 & !String.IsNullOrEmpty(this.visit.finalDiagnosis))
+            {
+                this.textBoxDiagnosisIntial.Enabled = false;
+            }
+            else if (this.tabControlPatientRecords.SelectedIndex == 3)
+            {
+                List<LabTestResult> listOfResults = this.visitController.GetLabTestResultByVisitID(this.visit);
+                foreach (var nameOfTestOrdered in listOfResults)
+                {
+                    if (nameOfTestOrdered.Name == "White Blood Cell (WBC)")
+                    {
+                        this.checkedListBoxLabTests.SetItemCheckState(0, CheckState.Checked);
+                    }
+                }
             }
         }
     }

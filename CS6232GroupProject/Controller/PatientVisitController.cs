@@ -64,37 +64,70 @@ namespace CS6232GroupProject.Controller
             return this.visitSource.AddPatientVisit(visit);
         }
 
+        /// <summary>
+        /// return the list of lab results
+        /// </summary>
+        /// <param name="visit">the visit for which results are reuired</param>
+        /// <returns>list of results</returns>
         public List<LabTestResult> SearchLabTestResultByVisitID(PatientVisit visit)
         {
             return this.visitSource.GetLabTestResultByVisitID(visit);
         }
 
-
+        /// <summary>
+        /// Order the tests for given visit
+        /// </summary>
+        /// <param name="visit">given visit</param>
+        /// <param name="testOrdered">name of test ordered</param>
         internal void OrderSelectedTestForVisit(PatientVisit visit,string testOrdered)
         {
             this.visitSource.OrderSelectedTestForVisit(visit, testOrdered);
         }
 
+        /// <summary>
+        /// enter the final diagnosis
+        /// </summary>
+        /// <param name="visit">given visit</param>
         internal void EnterFinalDiagnosis(PatientVisit visit)
         {
             this.visitSource.EnterFinalDiagnosis(visit);
         }
 
+        /// <summary>
+        /// enter test result for a test on a given visit
+        /// </summary>
+        /// <param name="visit">given visit</param>
+        /// <param name="test">test in the lab</param>
+        /// <param name="result">result of the test</param>
         internal void EnterTestResultForVisit(PatientVisit visit, LabTest test, LabTestResult result)
         {
             this.visitSource.EnterTestResultForVisit(visit, test, result);
         }
 
+        /// <summary>
+        /// Enter the initial diagnosis
+        /// </summary>
+        /// <param name="visit"></param>
         internal void EnterInitialDiagnosis(PatientVisit visit)
         {
             this.visitSource.EnterInitialDiagnosis(visit);
         }
 
+        /// <summary>
+        /// check if there are pending tests
+        /// </summary>
+        /// <param name="visit">given visit</param>
+        /// <returns>true/false</returns>
         internal bool CheckForPendingTests(PatientVisit visit)
         {
            return this.visitSource.CheckForPendingTestsFromVisitDAL(visit);
         }
 
+        /// <summary>
+        /// get lab test result as list for a particular visit
+        /// </summary>
+        /// <param name="visit">visit</param>
+        /// <returns>lsit of results for a given visit</returns>
         internal List<LabTestResult> GetLabTestResultByVisitID(PatientVisit visit)
         {
             return this.visitSource.GetLabTestResultByVisitID(visit);
