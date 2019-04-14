@@ -89,5 +89,10 @@ namespace CS6232GroupProject.Controller
         {
             this.visitSource.EnterInitialDiagnosis(visit);
         }
+
+        internal bool CheckForPendingTests(PatientVisit visit)
+        {
+           return this.visitSource.CheckForpendingTestsFromVisitDAL(visit);
+        }
     }
 }

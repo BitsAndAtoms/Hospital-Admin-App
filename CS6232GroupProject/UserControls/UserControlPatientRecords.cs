@@ -336,14 +336,21 @@ namespace CS6232GroupProject.UserControls
             {
                 
                this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
-                try
+                if (this.visitController.CheckForPendingTests(this.visit))
                 {
-                    this.visitController.EnterFinalDiagnosis(this.visit);
-                }
-                catch (Exception)
-                {
+                    try
+                    {
+                        this.visitController.EnterFinalDiagnosis(this.visit);
+                    }
+                    catch (Exception)
+                    {
 
-                    MessageBox.Show("Error: Final diagnosis could not be updated");
+                        MessageBox.Show("Error: Final diagnosis could not be updated");
+                    }
+                }
+                else {
+                    this.textBoxDiagnosisFinal.Text = "";
+                    MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
                 }
             }
             

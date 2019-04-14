@@ -80,7 +80,44 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        internal bool CheckForpendingTestsFromVisitDAL(PatientVisit visit)
+        {
+            int count = 0;
+            string selectStatment =
+                "SELECT COUNT(testID) as 'Number' " +
+                "FROM LabTestResult " +
+                "WHERE visitID = @visitID AND testResult IS NULL ";
 
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
+                {
+
+                    selectCommand.Parameters.AddWithValue("@visitID", visit.VisitID);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count += number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+
+        }
 
         public List<LabTestResult> GetLabTestResultByVisitID(PatientVisit visit)
         {
