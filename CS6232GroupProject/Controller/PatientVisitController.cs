@@ -92,7 +92,7 @@ namespace CS6232GroupProject.Controller
 
         internal bool CheckForPendingTests(PatientVisit visit)
         {
-           return this.visitSource.CheckForpendingTestsFromVisitDAL(visit);
+           return this.visitSource.CheckForPendingTestsFromVisitDAL(visit);
         }
 
         internal List<LabTestResult> GetLabTestResultByVisitID(PatientVisit visit)

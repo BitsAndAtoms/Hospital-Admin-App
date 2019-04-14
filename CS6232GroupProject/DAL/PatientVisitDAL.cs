@@ -24,7 +24,7 @@ namespace CS6232GroupProject.DAL
 
             string selectStatement =
                 "SELECT VisitID, appointmentID, NurseID, visitDateTime, Diagnosis, finalDiagnosis, " +
-                    "Weight, Systolic, Diastolic, Temperature, Pulse, Symptoms " +
+                "Weight, Systolic, Diastolic, Temperature, Pulse, Symptoms " +
                 "FROM PatientVisit " +
                 "WHERE appointmentID = @appointmentID";
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -80,7 +80,12 @@ namespace CS6232GroupProject.DAL
             }
         }
 
-        internal bool CheckForpendingTestsFromVisitDAL(PatientVisit visit)
+        /// <summary>
+        /// Check if their are pending tests
+        /// </summary>
+        /// <param name="visit">visit </param>
+        /// <returns>true or false</returns>
+        internal bool CheckForPendingTestsFromVisitDAL(PatientVisit visit)
         {
             int count = 0;
             string selectStatment =
@@ -119,12 +124,17 @@ namespace CS6232GroupProject.DAL
 
         }
 
+        /// <summary>
+        /// Get lab test results based on visit
+        /// </summary>
+        /// <param name="visit">visit of the patient</param>
+        /// <returns>list of lab test results</returns>
         public List<LabTestResult> GetLabTestResultByVisitID(PatientVisit visit)
         {
             List<LabTestResult> result = new List<LabTestResult>();
             
             string selectStatement =
-                "SELECT t1.testID, testName, testResult, testDate " +          
+                "SELECT t1.testID as testID, visitID, labTestResultID as resultID, testName, testResult, testDate " +          
                 "FROM LabTestResult t1 " +
                 "LEFT JOIN " +
                 "LabTestList t2 " +
@@ -142,7 +152,9 @@ namespace CS6232GroupProject.DAL
                         while (reader.Read())
                         {
                             LabTestResult newResult = new LabTestResult();
-                            
+                            newResult.ResultID = (int)reader["resultID"];
+                            newResult.TestID = (int)reader["testID"];
+                            newResult.VisitID = (int)reader["visitID"];
                             newResult.Result = reader["testResult"].ToString();
                             newResult.Name = reader["testName"].ToString();
                             newResult.TestDate = (DateTime)reader["testDate"];
@@ -154,7 +166,12 @@ namespace CS6232GroupProject.DAL
             return result;
         }
 
-
+        /// <summary>
+        /// Method to enter results of test
+        /// </summary>
+        /// <param name="visit">Is the associated visit</param>
+        /// <param name="test">Is the associated test</param>
+        /// <param name="result">Result of the test</param>
         internal void EnterTestResultForVisit(PatientVisit visit,LabTest test,LabTestResult result)
         {
             string insertStatement =
@@ -182,7 +199,11 @@ namespace CS6232GroupProject.DAL
 
 
 
-
+        /// <summary>
+        /// Enter the initial diagnosis
+        /// </summary>
+        /// <param name="visit"></param>
+        /// <returns>true/false for success scenario</returns>
         internal bool EnterInitialDiagnosis(PatientVisit visit)
         {
             string updateStatement =
@@ -210,6 +231,11 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        /// <summary>
+        /// Enter the final diagnosis
+        /// </summary>
+        /// <param name="visit"></param>
+        /// <returns>true/false for success scenario</returns>
         internal bool EnterFinalDiagnosis(PatientVisit visit)
         {
             string updateStatement =

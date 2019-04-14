@@ -421,8 +421,10 @@ namespace CS6232GroupProject.UserControls
 
         private void tabControlPatientRecords_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int num = this.tabControlPatientRecords.TabIndex;
-            this.labTestResultDataGridView.DataSource = this.visitController.GetLabTestResultByVisitID(this.visit);
+            if (this.tabControlPatientRecords.SelectedIndex == 4)
+            {
+                this.labTestResultDataGridView.DataSource = this.visitController.GetLabTestResultByVisitID(this.visit);
+            }
         }
     }
 }
