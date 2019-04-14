@@ -391,18 +391,26 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonLabTestsOrder_Click(object sender, EventArgs e)
         {
-            List<string> listOfTestsOrdered = this.checkedListBoxLabTests.CheckedItems.Cast<string>().ToList();
-            foreach (var nameOfTestOrdered in listOfTestsOrdered)
+            if (!string.IsNullOrEmpty(this.visit.Diagnosis) & string.IsNullOrEmpty(this.visit.finalDiagnosis))
             {
-                try
-                {
-                    this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
-                }
-                catch (Exception)
-                {
+                List<string> listOfTestsOrdered = this.checkedListBoxLabTests.CheckedItems.Cast<string>().ToList();
 
-                    MessageBox.Show("Error: The test could not be ordered");
+                foreach (var nameOfTestOrdered in listOfTestsOrdered)
+                {
+                    try
+                    {
+                        this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Error: The test could not be ordered");
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Tests cant be ordered without an inital diagnosis");
             }
         }
 

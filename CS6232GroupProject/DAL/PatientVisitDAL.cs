@@ -66,7 +66,7 @@ namespace CS6232GroupProject.DAL
         {
             string insertStatement =
                 "INSERT LabTestResult (testID, visitID) " +
-                "VALUES (SELECT testID FROM LabTestList WHERE testName = @testName, @visitID)";
+                "VALUES ((SELECT testID FROM LabTestList WHERE testName = @testName), @visitID)";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
