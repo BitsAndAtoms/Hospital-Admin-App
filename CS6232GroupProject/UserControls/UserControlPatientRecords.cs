@@ -372,7 +372,7 @@ namespace CS6232GroupProject.UserControls
             LabTest test = new LabTest();
 
             newResult.Result = this.textBoxLabTestResultsWBC.Text;
-            test.Name = "White Blood Cell(WBC)";
+            test.Name = "White Blood Cell (WBC)";
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
 
             newResult.Result = this.textBoxLabTestResultsLDL.Text;
