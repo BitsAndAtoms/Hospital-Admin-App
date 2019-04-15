@@ -64,6 +64,7 @@ namespace CS6232GroupProject.Controller
         /// if an SSN is taken or not.
         /// </summary>
         /// <param name="ssn"></param>
+        /// <param name="nurseID"></param>
         /// <returns>True or false.</returns>
         public bool IsNurseSSNTaken(string ssn, int nurseID)
         {

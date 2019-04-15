@@ -87,11 +87,10 @@ namespace CS6232GroupProject.Controller
         /// checks if a SSN is unqiue or not.
         /// </summary>
         /// <param name="ssn"></param>
-        /// <param name="patientID"></param>
         /// <returns>True or false.</returns>
-        public bool CheckIfSSNExists(string ssn)
+        public bool CheckIfPatientSSNExists(string ssn)
         {
-            return this.patientSource.CheckIfSSNExists(ssn);
+            return this.patientSource.CheckPatientSSN(ssn);
         }
     }
 }

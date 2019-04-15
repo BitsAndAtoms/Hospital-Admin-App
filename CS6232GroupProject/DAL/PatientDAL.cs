@@ -460,12 +460,13 @@ namespace CS6232GroupProject.DAL
         }
 
         /// <summary>
-        /// This method checks if a SSN exists in the DB based
-        /// only on the ssn.
+        /// This method checks to see if a SSN is unique to anyone other than 
+        /// the patientID entered.
         /// </summary>
         /// <param name="ssn"></param>
+        /// <param name="patientID"></param>
         /// <returns>True or false.</returns>
-        public bool CheckIfSSNExists(string ssn)
+        public bool CheckPatientSSN(string ssn)
         {
             int count = 0;
             string selectStatment =
