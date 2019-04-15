@@ -11,6 +11,7 @@ namespace CS6232GroupProject.UserControls
     {
         private AddressController addressController;
         private NurseController nurseController;
+        private LoginController loginContoller;
         private int addressID;
         public static int nurseID { get; set; }
         /// <summary>
@@ -21,6 +22,7 @@ namespace CS6232GroupProject.UserControls
             InitializeComponent();
             this.addressController = new AddressController();
             this.nurseController = new NurseController();
+            this.loginContoller = new LoginController();
             SetComboBox();
         }
 
@@ -98,9 +100,9 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNRegisterNurse.Text.Length < 9 || this.textBoxSSNRegisterNurse.Text == null || !checkNumber)
+            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !checkNumber || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text, nurseID))
             {
-                labelAddMessage.Text = "Please enter a valid 9 digit SSN";
+                labelAddMessage.Text = "Please enter a valid or non-taken 9 digit SSN";
                 return false;
             }
             else if (this.comboBoxGenderRegisterNurse.SelectedIndex == -1)
@@ -128,9 +130,9 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a valid Zip Code";
                 return false;
             }
-            else if (this.textBoxUsernameRegisterNurse.Text.Length == 0 || this.textBoxUsernameRegisterNurse.Text == "")
+            else if (this.textBoxUsernameRegisterNurse.Text.Length == 0 || this.textBoxUsernameRegisterNurse.Text == "" || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameRegisterNurse.Text, nurseID))
             {
-                labelAddMessage.Text = "Please enter a valid Username";
+                labelAddMessage.Text = "Please enter a valid or non-taken Username";
                 return false;
             }
             else if (this.textBoxPasswordRegisterNurse.Text.Length == 0 || this.textBoxPasswordRegisterNurse.Text == "")
@@ -173,7 +175,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !checkNumber || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text))
+            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !checkNumber || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text, nurseID))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid 9 digit SSN";
                 return false;
@@ -203,7 +205,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please enter a valid Zip Code";
                 return false;
             }
-            else if (this.textBoxUsernameNurseInfoResults.Text.Length == 0 || this.textBoxUsernameNurseInfoResults.Text == "")
+            else if (this.textBoxUsernameNurseInfoResults.Text.Length == 0 || this.textBoxUsernameNurseInfoResults.Text == "" || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameRegisterNurse.Text, nurseID))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid Username";
                 return false;

@@ -65,9 +65,9 @@ namespace CS6232GroupProject.Controller
         /// </summary>
         /// <param name="ssn"></param>
         /// <returns>True or false.</returns>
-        public bool IsNurseSSNTaken(string ssn)
+        public bool IsNurseSSNTaken(string ssn, int nurseID)
         {
-            return this.nurseSource.CheckNurseSSN(ssn);
+            return this.nurseSource.CheckNurseSSN(ssn, nurseID);
         }
     }
 }

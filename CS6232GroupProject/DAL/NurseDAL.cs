@@ -441,13 +441,13 @@ namespace CS6232GroupProject.DAL
         /// </summary>
         /// <param name="ssn"></param>
         /// <returns>True or false.</returns>
-        public bool CheckNurseSSN(string ssn)
+        public bool CheckNurseSSN(string ssn, int nurseID)
         {
             int count = 0;
             string selectStatment =
                 "SELECT COUNT(ssn) as 'Number' " +
                 "FROM Nurse " +
-                "WHERE ssn = @ssn";
+                "WHERE ssn = @ssn AND NOT nurseID = @nurseID";
 
 
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -457,6 +457,7 @@ namespace CS6232GroupProject.DAL
                 using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
                 {
                     selectCommand.Parameters.AddWithValue("@ssn", ssn);
+                    selectCommand.Parameters.AddWithValue("@nurseID", nurseID);
 
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {

@@ -123,5 +123,51 @@ namespace CS6232GroupProject.DAL
             return nameAndRole;
         }
         
+        /// <summary>
+        /// This method checks if a Username is taken or not.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>True or false</returns>
+        public bool CheckNurseUsername(string username, int nurseID)
+        {
+            int count = 0;
+            string selectStatment =
+                "SELECT COUNT(username) as 'Number' " +
+                "FROM Login " +
+                "INNER JOIN Nurse " +
+                "ON Login.username = Nurse.nurseUsername " +
+                "WHERE username = @username AND NOT nurseID = @nurseID";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@username", username);
+                    selectCommand.Parameters.AddWithValue("@nurseID", nurseID);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count = number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
     }
 }

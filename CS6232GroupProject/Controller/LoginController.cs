@@ -1,5 +1,4 @@
 ﻿using CS6232GroupProject.DAL;
-using CS6232GroupProject.Model;
 using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
@@ -39,6 +38,17 @@ namespace CS6232GroupProject.Controller
         {
            List<string> newNameAndRole = this.loginDetails.FindUserNameAndRole(userName);
             return newNameAndRole;
+        }
+
+        /// <summary>
+        /// This method calls on the LoginDAL method that checks 
+        /// if a login username is taken or not.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>True or false</returns>
+        public bool CheckIfUsernameExists(string username, int nurseID)
+        {
+            return this.loginDetails.CheckNurseUsername(username, nurseID);
         }
         
     }
