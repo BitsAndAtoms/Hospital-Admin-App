@@ -29,9 +29,6 @@ namespace CS6232GroupProject.Controller
             return this.nurseSource.GetNurses();
         }
 
-
-        //Below from rchesser
-
         /// <summary>
         /// Get Nurse
         /// </summary>
@@ -60,6 +57,17 @@ namespace CS6232GroupProject.Controller
         internal void updateNurse(Nurse newNurse, Address newAddress, Login newLogin)
         {
             this.nurseSource.updateNurse(newNurse, newAddress, newLogin);
+        }
+
+        /// <summary>
+        /// This method calls on the NurseDAL method that checks
+        /// if an SSN is taken or not.
+        /// </summary>
+        /// <param name="ssn"></param>
+        /// <returns>True or false.</returns>
+        public bool IsNurseSSNTaken(string ssn)
+        {
+            return this.nurseSource.CheckNurseSSN(ssn);
         }
     }
 }

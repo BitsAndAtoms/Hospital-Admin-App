@@ -172,7 +172,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text == null || !checkNumber)
+            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !checkNumber || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid 9 digit SSN";
                 return false;
@@ -254,6 +254,8 @@ namespace CS6232GroupProject.UserControls
             Nurse newNurse = new Nurse();
             Address newAddress = new Address();
             Login newLogin = new Login();
+
+            
 
             if (this.CheckFieldsRegister())
             {
@@ -358,11 +360,13 @@ namespace CS6232GroupProject.UserControls
             Nurse newNurse= new Nurse();
             Address newAddress = new Address();
             Login newLogin = new Login();
+
             if (this.CheckFieldsUpdate())
             {
                 newNurse.NurseID = nurseID;
                 newNurse.FName = this.textBoxFirstNameNurseInfoResults.Text;
                 newNurse.LName = this.textBoxLastNameNurseInfoResults.Text;
+
                 newNurse.SSN = this.textBoxSSNNurseInfoResults.Text;
                 newNurse.Gender = this.comboBoxGenderNurseInfoResults.Text;
                 newNurse.Phone = this.textBoxPhoneNurseInfoResults.Text;
@@ -402,6 +406,7 @@ namespace CS6232GroupProject.UserControls
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
         }
     }
 }

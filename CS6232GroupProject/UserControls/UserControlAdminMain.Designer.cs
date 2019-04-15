@@ -122,6 +122,7 @@
             this.textBoxPasswordRegisterNurse = new System.Windows.Forms.TextBox();
             this.labelActiveRegisterNurse = new System.Windows.Forms.Label();
             this.labelRegisterNurse = new System.Windows.Forms.Label();
+            this.PasswordInfoLabel = new System.Windows.Forms.Label();
             this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,7 +133,6 @@
             this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PasswordInfoLabel = new System.Windows.Forms.Label();
             this.tabControlAdminMain.SuspendLayout();
             this.tabPageAdminReports.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -1368,6 +1368,22 @@
             this.labelRegisterNurse.TabIndex = 5;
             this.labelRegisterNurse.Text = "Register Nurse";
             // 
+            // PasswordInfoLabel
+            // 
+            this.PasswordInfoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PasswordInfoLabel.AutoSize = true;
+            this.tableLayoutPanel4.SetColumnSpan(this.PasswordInfoLabel, 2);
+            this.PasswordInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordInfoLabel.Location = new System.Drawing.Point(586, 220);
+            this.PasswordInfoLabel.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.PasswordInfoLabel.Name = "PasswordInfoLabel";
+            this.PasswordInfoLabel.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.tableLayoutPanel4.SetRowSpan(this.PasswordInfoLabel, 2);
+            this.PasswordInfoLabel.Size = new System.Drawing.Size(291, 60);
+            this.PasswordInfoLabel.TabIndex = 27;
+            this.PasswordInfoLabel.Text = "Note that the Password will not display but if a new password is entered, it will" +
+    " be updated.";
+            // 
             // nurseIDDataGridViewTextBoxColumn
             // 
             this.nurseIDDataGridViewTextBoxColumn.DataPropertyName = "NurseID";
@@ -1443,22 +1459,6 @@
             // nurseBindingSource
             // 
             this.nurseBindingSource.DataSource = typeof(CS6232GroupProject.Model.Nurse);
-            // 
-            // PasswordInfoLabel
-            // 
-            this.PasswordInfoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordInfoLabel.AutoSize = true;
-            this.tableLayoutPanel4.SetColumnSpan(this.PasswordInfoLabel, 2);
-            this.PasswordInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordInfoLabel.Location = new System.Drawing.Point(586, 220);
-            this.PasswordInfoLabel.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.PasswordInfoLabel.Name = "PasswordInfoLabel";
-            this.PasswordInfoLabel.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.tableLayoutPanel4.SetRowSpan(this.PasswordInfoLabel, 2);
-            this.PasswordInfoLabel.Size = new System.Drawing.Size(291, 60);
-            this.PasswordInfoLabel.TabIndex = 27;
-            this.PasswordInfoLabel.Text = "Note that the Password will not display but if a new password is entered, it will" +
-    " be updated.";
             // 
             // UserControlAdminMain
             // 

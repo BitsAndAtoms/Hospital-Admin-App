@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace CS6232GroupProject.DAL
 {
@@ -71,7 +70,12 @@ namespace CS6232GroupProject.DAL
 
         
 
-        //Below from rchesser
+        /// <summary>
+        /// This method seaches for a Nurse in the DB by: first and last name
+        /// last name and DOB, or all three.
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <returns>A nurse object that matches in the DB.</returns>
         internal List<Nurse> GetSearchNurseByNameDOB(Nurse newNurse)
         {
             List<Nurse> nurses = new List<Nurse>();
@@ -166,6 +170,12 @@ namespace CS6232GroupProject.DAL
             return nurses;
         }
 
+        /// <summary>
+        /// This method updates a Nurse in the DB.
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newAddress"></param>
+        /// <param name="newLogin"></param>
         internal void updateNurse(Nurse newNurse, Address newAddress, Login newLogin)
         {
             string updateStatement =
@@ -300,6 +310,12 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        /// <summary>
+        /// This method adds a Nurse to the DB.
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newAddress"></param>
+        /// <param name="newLogin"></param>
         internal void registerNurseInDB(Nurse newNurse, Address newAddress, Login newLogin)
         {
             string updateStatement =
@@ -419,6 +435,51 @@ namespace CS6232GroupProject.DAL
                 connection.Close();
             }
         }
+
+        /// <summary>
+        /// This method checks to see if a SSN is already taken in the db.
+        /// </summary>
+        /// <param name="ssn"></param>
+        /// <returns>True or false.</returns>
+        public bool CheckNurseSSN(string ssn)
+        {
+            int count = 0;
+            string selectStatment =
+                "SELECT COUNT(ssn) as 'Number' " +
+                "FROM Nurse " +
+                "WHERE ssn = @ssn";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@ssn", ssn);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count = number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        
 
     }
 }
