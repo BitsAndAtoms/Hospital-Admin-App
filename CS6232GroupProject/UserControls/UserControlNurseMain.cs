@@ -524,46 +524,53 @@ namespace CS6232GroupProject.UserControls
 
         private void linkLabelDeletePatient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
             Patient newPatient = new Patient();
             Address newAddress = new Address();
             if (this.CheckFieldsUpdate())
             {
-                newPatient.PatientID = patientID;
-                newPatient.FName = this.textBoxFirstNamePatientInfoResult.Text;
-                newPatient.LName = this.textBoxLastNamePatientInfoResult.Text;
-                newPatient.SSN = this.textBoxSSNPatientInfoResult.Text;
-                newPatient.Gender = this.comboBoxGenderPatientInfoResult.Text;
-                newPatient.Phone = this.textBoxPhonePatientInfoResult.Text;
-                newPatient.DOB = this.dateTimePickerDOBPatientInfoResult.Value;
-                newAddress.AddressID = this.addressID;
-                newAddress.Street = this.textBoxStreetPatientInfoResult.Text;
-                newAddress.Zip = Convert.ToInt32(this.textBoxZipPatientInfoResult.Text);
-                newAddress.State = this.comboBoxStatePatientInfoResult.Text;
-                try
+                DialogResult confirmDelete = MessageBox.Show("Patient will be removed from database.\nContinue?", "Delete Patient Warning", MessageBoxButtons.YesNo);
+                if(confirmDelete == DialogResult.Yes)
                 {
-                    patientController.deletePatient(newPatient, newAddress);
-
-                    MessageBox.Show("Patient deleted", "Confirm");
-                    panelPatientSearch.Visible = true;
-                    panelPatientInfoResults.Visible = false;
-
-                    foreach (Form form in Application.OpenForms)
+                    newPatient.PatientID = patientID;
+                    newPatient.FName = this.textBoxFirstNamePatientInfoResult.Text;
+                    newPatient.LName = this.textBoxLastNamePatientInfoResult.Text;
+                    newPatient.SSN = this.textBoxSSNPatientInfoResult.Text;
+                    newPatient.Gender = this.comboBoxGenderPatientInfoResult.Text;
+                    newPatient.Phone = this.textBoxPhonePatientInfoResult.Text;
+                    newPatient.DOB = this.dateTimePickerDOBPatientInfoResult.Value;
+                    newAddress.AddressID = this.addressID;
+                    newAddress.Street = this.textBoxStreetPatientInfoResult.Text;
+                    newAddress.Zip = Convert.ToInt32(this.textBoxZipPatientInfoResult.Text);
+                    newAddress.State = this.comboBoxStatePatientInfoResult.Text;
+                    try
                     {
-                        if (form.Name == "FormPatientRecords")
+                        patientController.deletePatient(newPatient, newAddress);
+
+                        MessageBox.Show("Patient deleted", "Confirm");
+                        panelPatientSearch.Visible = true;
+                        panelPatientInfoResults.Visible = false;
+
+                        foreach (Form form in Application.OpenForms)
                         {
-                            form.Close();
-                            break;
+                            if (form.Name == "FormPatientRecords")
+                            {
+                                form.Close();
+                                break;
+                            }
                         }
+                        this.ClearText();
+                        this.dataGridViewPatientInfo.DataSource = null;
+                        this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
                     }
-                    this.ClearText();
-                    this.dataGridViewPatientInfo.DataSource = null;
-                    this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Patient with appointments cannot be deleted.\n",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (SqlException ex)
+                else if (confirmDelete == DialogResult.No)
                 {
-                    MessageBox.Show("Invalid. \n" + ex.Message,
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
                

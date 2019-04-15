@@ -401,6 +401,7 @@ namespace CS6232GroupProject.UserControls
                     try
                     {
                         this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
+                        MessageBox.Show("Test(s) ordered.", "Confirm");
                     }
                     catch (Exception)
                     {
