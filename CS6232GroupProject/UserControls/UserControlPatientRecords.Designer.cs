@@ -154,6 +154,7 @@
             this.tabControlPatientRecords.SelectedIndex = 0;
             this.tabControlPatientRecords.Size = new System.Drawing.Size(839, 534);
             this.tabControlPatientRecords.TabIndex = 0;
+            this.tabControlPatientRecords.SelectedIndexChanged += new System.EventHandler(this.tabControlPatientRecords_SelectedIndexChanged);
             // 
             // tabPageAppointments
             // 

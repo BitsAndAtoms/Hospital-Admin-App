@@ -23,8 +23,8 @@ namespace CS6232GroupProject.DAL
             PatientVisit visit = new PatientVisit();
 
             string selectStatement =
-                "SELECT VisitID, appointmentID, NurseID, visitDateTime, Diagnosis, " +
-                    "Weight, Systolic, Diastolic, Temperature, Pulse, Symptoms " +
+                "SELECT VisitID, appointmentID, NurseID, visitDateTime, Diagnosis, finalDiagnosis, " +
+                "Weight, Systolic, Diastolic, Temperature, Pulse, Symptoms " +
                 "FROM PatientVisit " +
                 "WHERE appointmentID = @appointmentID";
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -43,6 +43,7 @@ namespace CS6232GroupProject.DAL
                             visit.NurseID = (int)reader["NurseID"];
                             visit.Date = (DateTime)reader["visitDateTime"];
                             visit.Diagnosis = reader["Diagnosis"].ToString();
+                            visit.finalDiagnosis = reader["finalDiagnosis"].ToString();
                             visit.Weight = (decimal)reader["Weight"];
                             visit.Systolic = (int)reader["Systolic"];
                             visit.Diastolic = (int)reader["Diastolic"];
@@ -65,7 +66,7 @@ namespace CS6232GroupProject.DAL
         {
             string insertStatement =
                 "INSERT LabTestResult (testID, visitID) " +
-                "VALUES (SELECT testID FROM LabTestList WHERE testName = @testName, @visitID)";
+                "VALUES ((SELECT testID FROM LabTestList WHERE testName = @testName), @visitID)";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
@@ -79,15 +80,62 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        /// <summary>
+        /// Check if their are pending tests
+        /// </summary>
+        /// <param name="visit">visit </param>
+        /// <returns>true or false</returns>
+        internal bool CheckForPendingTestsFromVisitDAL(PatientVisit visit)
+        {
+            int count = 0;
+            string selectStatment =
+                "SELECT COUNT(testID) as 'Number' " +
+                "FROM LabTestResult " +
+                "WHERE visitID = @visitID AND testResult IS NULL ";
 
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
 
+                using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
+                {
+
+                    selectCommand.Parameters.AddWithValue("@visitID", visit.VisitID);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count += number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Get lab test results based on visit
+        /// </summary>
+        /// <param name="visit">visit of the patient</param>
+        /// <returns>list of lab test results</returns>
         public List<LabTestResult> GetLabTestResultByVisitID(PatientVisit visit)
         {
             List<LabTestResult> result = new List<LabTestResult>();
             
             string selectStatement =
-                "SELECT testID, testName testResult, testDate " +          
-                "FROM LabTestResult t1" +
+                "SELECT t1.testID as testID, visitID, labTestResultID as resultID, testName, testResult, testDate " +          
+                "FROM LabTestResult t1 " +
                 "LEFT JOIN " +
                 "LabTestList t2 " +
                 " ON t1.testID = t2.testID " +
@@ -104,10 +152,15 @@ namespace CS6232GroupProject.DAL
                         while (reader.Read())
                         {
                             LabTestResult newResult = new LabTestResult();
-                            
+                            newResult.ResultID = (int)reader["resultID"];
+                            newResult.TestID = (int)reader["testID"];
+                            newResult.VisitID = (int)reader["visitID"];
                             newResult.Result = reader["testResult"].ToString();
                             newResult.Name = reader["testName"].ToString();
-                            newResult.TestDate = (DateTime)reader["testDate"];
+                            if (!string.IsNullOrEmpty(reader["testDate"].ToString())) {
+                                newResult.TestDate = (DateTime)reader["testDate"];
+                            }
+                            
                             result.Add(newResult);
                         }
                     }
@@ -116,12 +169,17 @@ namespace CS6232GroupProject.DAL
             return result;
         }
 
-
+        /// <summary>
+        /// Method to enter results of test
+        /// </summary>
+        /// <param name="visit">Is the associated visit</param>
+        /// <param name="test">Is the associated test</param>
+        /// <param name="result">Result of the test</param>
         internal void EnterTestResultForVisit(PatientVisit visit,LabTest test,LabTestResult result)
         {
             string insertStatement =
                 "UPDATE LabTestResult SET" +
-                " testResult = @testResult " +
+                " testResult = @testResult, testDate = getdate() " +
                 "WHERE  testID = " +
                 "(SELECT testID FROM LabTestList " +
                 "WHERE testName = @testName)" +
@@ -144,12 +202,16 @@ namespace CS6232GroupProject.DAL
 
 
 
-
+        /// <summary>
+        /// Enter the initial diagnosis
+        /// </summary>
+        /// <param name="visit"></param>
+        /// <returns>true/false for success scenario</returns>
         internal bool EnterInitialDiagnosis(PatientVisit visit)
         {
             string updateStatement =
                 "UPDATE PatientVisit SET " +
-                    "diagnosis = @diagnosis, " +
+                    "diagnosis = @diagnosis " +
                 "WHERE VisitID = @OldVisitID ";
             
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -172,11 +234,16 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        /// <summary>
+        /// Enter the final diagnosis
+        /// </summary>
+        /// <param name="visit"></param>
+        /// <returns>true/false for success scenario</returns>
         internal bool EnterFinalDiagnosis(PatientVisit visit)
         {
             string updateStatement =
                 "UPDATE PatientVisit SET " +
-                    "diagnosis = @diagnosis, " +
+                    "finalDiagnosis = @diagnosis " +
                 "WHERE VisitID = @OldVisitID ";
 
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -184,7 +251,7 @@ namespace CS6232GroupProject.DAL
                 connection.Open();
                 using (SqlCommand updatedCommand = new SqlCommand(updateStatement, connection))
                 {
-                    updatedCommand.Parameters.AddWithValue("@diagnosis", visit.Diagnosis);
+                    updatedCommand.Parameters.AddWithValue("@diagnosis", visit.finalDiagnosis);
                     updatedCommand.Parameters.AddWithValue("@OldVisitID", visit.VisitID);
                     int count = updatedCommand.ExecuteNonQuery();
                     if (count > 0)

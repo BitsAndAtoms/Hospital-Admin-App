@@ -16,6 +16,7 @@ namespace CS6232GroupProject.Model
         public int DoctorID { get; set; }
         public DateTime Date { get; set; }
         public string Diagnosis { get; set; }
+        public string finalDiagnosis { get; set; }
         public decimal Weight { get; set; }
         public int Systolic { get; set; }
         public int Diastolic { get; set; }

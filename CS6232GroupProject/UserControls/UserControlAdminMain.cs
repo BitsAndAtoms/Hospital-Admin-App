@@ -67,6 +67,7 @@ namespace CS6232GroupProject.UserControls
             this.textBoxUsernameRegisterNurse.Clear();
             this.textBoxPasswordRegisterNurse.Clear();
             this.labelAddMessage.Text = "";
+            this.comboBoxRegisterNurseActive.SelectedIndex = -1;
         }
 
         /// <summary>

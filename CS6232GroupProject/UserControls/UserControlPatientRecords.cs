@@ -134,6 +134,7 @@ namespace CS6232GroupProject.UserControls
                 this.textboxRoutineChecksPulse.Text = this.visit.Pulse.ToString();
                 this.textBoxRoutineChecksSummary.Text = this.visit.Symptoms;
                 this.textBoxDiagnosisIntial.Text = this.visit.Diagnosis;
+                this.textBoxDiagnosisFinal.Text = this.visit.finalDiagnosis;
             }
             catch (Exception ex)
             {
@@ -322,6 +323,7 @@ namespace CS6232GroupProject.UserControls
                 this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
                 try
                 {
+                    
                     this.visitController.EnterInitialDiagnosis(this.visit);
                 }
                 catch (Exception)
@@ -330,31 +332,39 @@ namespace CS6232GroupProject.UserControls
                 }
 
             }
-            if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text))
+            if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & this.visitController.CheckForPendingTests(this.visit))
             {
-                
-               this.visit.Diagnosis = this.textBoxDiagnosisFinal.Text;
-                try
-                {
-                    this.visitController.EnterFinalDiagnosis(this.visit);
-                }
-                catch (Exception)
-                {
+                  try
+                    {
+                        this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
+                        this.visitController.EnterFinalDiagnosis(this.visit);
+                    this.textBoxDiagnosisIntial.Enabled = false;
+                    }
+                    catch (Exception)
+                    {
 
-                    MessageBox.Show("Error: Final diagnosis could not be updated");
+                        MessageBox.Show("Error: Final diagnosis could not be updated");
+                    }
                 }
-            }
-            
+                else {
+                    this.textBoxDiagnosisFinal.Text = "";
+                    MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
+                }
+
         }
+            
+        
 
         private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             this.appointmentID = (int)this.comboBoxPatientRecordsAppointment.SelectedValue;
             this.appointment = this.appointmentController.GetAppointmentByID(this.appointmentID);
             SetAppointment();
             this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
             SetVisitInfo();
             AppointmentTimeCheck();
+            this.tabControlPatientRecords_SelectedIndexChanged(null, null);
         }
 
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
@@ -363,7 +373,7 @@ namespace CS6232GroupProject.UserControls
             LabTest test = new LabTest();
 
             newResult.Result = this.textBoxLabTestResultsWBC.Text;
-            test.Name = "White Blood Cell(WBC)";
+            test.Name = "White Blood Cell (WBC)";
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
 
             newResult.Result = this.textBoxLabTestResultsLDL.Text;
@@ -371,35 +381,121 @@ namespace CS6232GroupProject.UserControls
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
 
             newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
-            test.Name = " Hepatitis A";
+            test.Name = "Hepatitis A";
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
             
             newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
-            test.Name = " Hepatitis B";
+            test.Name = "Hepatitis B";
             this.visitController.EnterTestResultForVisit(visit,test,newResult);
 
         }
 
         private void buttonLabTestsOrder_Click(object sender, EventArgs e)
         {
-            List<string> listOfTestsOrdered = this.checkedListBoxLabTests.CheckedItems.Cast<string>().ToList();
-            foreach (var nameOfTestOrdered in listOfTestsOrdered)
+            if (!string.IsNullOrEmpty(this.visit.Diagnosis) & string.IsNullOrEmpty(this.visit.finalDiagnosis))
             {
-                try
-                {
-                    this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
-                }
-                catch (Exception)
-                {
+                List<string> listOfTestsOrdered = this.checkedListBoxLabTests.CheckedItems.Cast<string>().ToList();
 
-                    MessageBox.Show("Error: The test could not be ordered");
+                foreach (var nameOfTestOrdered in listOfTestsOrdered)
+                {
+                    try
+                    {
+                        this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
+                        MessageBox.Show("Test(s) ordered.", "Confirm");
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Error: The test could not be ordered");
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Tests cant be ordered without an inital diagnosis or after a final diagnosis");
             }
         }
 
         private void labTestResultDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Drives the flow of application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabControlPatientRecords_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.tabControlPatientRecords.SelectedIndex == 4)
+            {
+                this.labTestResultDataGridView.DataSource = this.visitController.GetLabTestResultByVisitID(this.visit);
+            }
+            else if (this.tabControlPatientRecords.SelectedIndex == 1)
+            {
+                this.buttonRoutineChecksUpdate.Enabled = true;
+                if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.buttonRoutineChecksUpdate.Enabled = false;
+                }
+
+            }
+            else if (this.tabControlPatientRecords.SelectedIndex == 2 )
+            {
+                this.textBoxDiagnosisIntial.Enabled = true;
+                this.textBoxDiagnosisFinal.Enabled = true;
+                if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.textBoxDiagnosisIntial.Enabled = false;
+                }
+                if (String.IsNullOrEmpty(this.visit.Diagnosis))
+                {
+                    this.textBoxDiagnosisFinal.Enabled = false;
+                }
+
+            }
+            else if (this.tabControlPatientRecords.SelectedIndex == 3 )
+            {
+                if (String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.buttonLabTestsUpdate.Enabled = true;
+                    this.checkedListBoxLabTests.Enabled = true;
+                } else if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.buttonLabTestsUpdate.Enabled = false;
+                    this.checkedListBoxLabTests.Enabled = false;
+                }
+                for (int index = 0; index < 4; index++)
+                {
+                    this.checkedListBoxLabTests.SetItemCheckState(index, CheckState.Unchecked);
+                }
+               
+                List<LabTestResult> listOfResults = this.visitController.GetLabTestResultByVisitID(this.visit);
+                foreach (var nameOfTestOrdered in listOfResults)
+                {
+                    if (nameOfTestOrdered.Name == "White Blood Cell (WBC)")
+                    {
+                        this.checkedListBoxLabTests.SetItemCheckState(0, CheckState.Checked);
+                    }
+                    if (nameOfTestOrdered.Name == "Low Density Lipoproteins (LDL)")
+                    {
+                        this.checkedListBoxLabTests.SetItemCheckState(1, CheckState.Checked);
+                    }
+                    if (nameOfTestOrdered.Name == "Hepatitis A")
+                    {
+                        this.checkedListBoxLabTests.SetItemCheckState(2, CheckState.Checked);
+                    }
+                    if (nameOfTestOrdered.Name == "Hepatitis B")
+                    {
+                        this.checkedListBoxLabTests.SetItemCheckState(3, CheckState.Checked);
+                    }
+                }
+
+            }
+            
+
+            
         }
     }
 }
