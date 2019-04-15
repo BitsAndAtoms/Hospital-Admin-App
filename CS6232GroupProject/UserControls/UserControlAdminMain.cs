@@ -130,7 +130,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a valid Zip Code";
                 return false;
             }
-            else if (this.textBoxUsernameRegisterNurse.Text.Length == 0 || this.textBoxUsernameRegisterNurse.Text == "" || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameRegisterNurse.Text, nurseID))
+            else if (this.textBoxUsernameRegisterNurse.Text.Length == 0 || this.textBoxUsernameRegisterNurse.Text == "" || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameRegisterNurse.Text))
             {
                 labelAddMessage.Text = "Please enter a valid or non-taken Username";
                 return false;
