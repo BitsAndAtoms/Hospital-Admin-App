@@ -480,7 +480,50 @@ namespace CS6232GroupProject.DAL
             }
         }
 
-        
+        /// <summary>
+        /// This method checks to see if a SSN is already taken in the db.
+        /// </summary>
+        /// <param name="ssn"></param>
+        /// <returns>True or false.</returns>
+        public bool CheckNurseSSN(string ssn)
+        {
+            int count = 0;
+            string selectStatment =
+                "SELECT COUNT(ssn) as 'Number' " +
+                "FROM Nurse " +
+                "WHERE ssn = @ssn";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@ssn", ssn);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count = number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+
 
     }
 }

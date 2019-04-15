@@ -100,7 +100,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !checkNumber || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text, nurseID))
+            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !checkNumber || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text))
             {
                 labelAddMessage.Text = "Please enter a valid or non-taken 9 digit SSN";
                 return false;

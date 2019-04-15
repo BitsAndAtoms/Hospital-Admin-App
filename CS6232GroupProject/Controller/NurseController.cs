@@ -69,5 +69,16 @@ namespace CS6232GroupProject.Controller
         {
             return this.nurseSource.CheckNurseSSN(ssn, nurseID);
         }
+
+        /// <summary>
+        /// This method calls on the NurseDAL method that checks
+        /// if an SSN is taken or not.
+        /// </summary>
+        /// <param name="ssn"></param>
+        /// <returns>True or false.</returns>
+        public bool IsNurseSSNTaken(string ssn)
+        {
+            return this.nurseSource.CheckNurseSSN(ssn);
+        }
     }
 }
