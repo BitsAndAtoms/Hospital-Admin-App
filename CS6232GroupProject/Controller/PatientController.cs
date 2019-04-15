@@ -81,5 +81,17 @@ namespace CS6232GroupProject.Controller
         {
             return this.patientSource.CheckPatientSSN(ssn, patientID);
         }
+
+        /// <summary>
+        /// This method calls a method in the PatientDAL that 
+        /// checks if a SSN is unqiue or not.
+        /// </summary>
+        /// <param name="ssn"></param>
+        /// <param name="patientID"></param>
+        /// <returns>True or false.</returns>
+        public bool CheckIfSSNExists(string ssn)
+        {
+            return this.patientSource.CheckIfSSNExists(ssn);
+        }
     }
 }
