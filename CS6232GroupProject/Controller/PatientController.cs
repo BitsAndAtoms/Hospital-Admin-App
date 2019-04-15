@@ -1,6 +1,5 @@
 ﻿using CS6232GroupProject.DAL;
 using CS6232GroupProject.Model;
-using System;
 using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
@@ -60,9 +59,27 @@ namespace CS6232GroupProject.Controller
             this.patientSource.updatePatient(newPatient,newAddress);
         }
 
+        /// <summary>
+        /// This method calls a method in the PatientDAL that
+        /// deletes a patient if they have no appointments.
+        /// </summary>
+        /// <param name="newPatient"></param>
+        /// <param name="newAddress"></param>
         internal void deletePatient(Patient newPatient, Address newAddress)
         {
             this.patientSource.deletePatient(newPatient, newAddress);
+        }
+
+        /// <summary>
+        /// This method calls a method in the PatientDAL that 
+        /// checks if a SSN is unqiue or not.
+        /// </summary>
+        /// <param name="ssn"></param>
+        /// <param name="patientID"></param>
+        /// <returns>True or false.</returns>
+        public bool CheckIfPatientSSNExists(string ssn, int patientID)
+        {
+            return this.patientSource.CheckPatientSSN(ssn, patientID);
         }
     }
 }

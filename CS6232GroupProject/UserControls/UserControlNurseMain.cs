@@ -133,7 +133,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSN.Text.Length < 9 || this.textBoxSSN.Text == null || !checkNumber)
+            else if (this.textBoxSSN.Text.Length < 9 || this.textBoxSSN.Text.Length > 9 || this.textBoxSSN.Text == null || !checkNumber)
             {
                 labelAddMessage.Text = "Please enter a valid 9 digit SSN";
                 return false;
@@ -431,7 +431,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNPatientInfoResult.Text.Length < 9 || this.textBoxSSNPatientInfoResult.Text == null || !checkNumber)
+            else if (this.textBoxSSNPatientInfoResult.Text.Length < 9 || this.textBoxSSNPatientInfoResult.Text.Length > 9 || this.textBoxSSNPatientInfoResult.Text == null || !checkNumber || this.patientController.CheckIfPatientSSNExists(this.textBoxSSNPatientInfoResult.Text, patientID))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid 9 digit SSN";
                 return false;

@@ -55,6 +55,12 @@ namespace CS6232GroupProject.DAL
             return patients;
         }
 
+        /// <summary>
+        /// This method deletes a Patient from the DB if they don't 
+        /// have an appointment.
+        /// </summary>
+        /// <param name="newPatient"></param>
+        /// <param name="newAddress"></param>
         internal void deletePatient(Patient newPatient, Address newAddress)
         {
             string deleteStatement =
@@ -404,6 +410,52 @@ namespace CS6232GroupProject.DAL
                 }
 
                 connection.Close();
+            }
+        }
+
+        /// <summary>
+        /// This method checks to see if a SSN is unique to anyone other than 
+        /// the patientID entered.
+        /// </summary>
+        /// <param name="ssn"></param>
+        /// <param name="patientID"></param>
+        /// <returns>True or false.</returns>
+        public bool CheckPatientSSN(string ssn, int patientID)
+        {
+            int count = 0;
+            string selectStatment =
+                "SELECT COUNT(ssn) as 'Number' " +
+                "FROM Patient " +
+                "WHERE ssn = @ssn AND NOT patientID = @patientID";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatment, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@ssn", ssn);
+                    selectCommand.Parameters.AddWithValue("@patientID", patientID);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count = number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
         }
     }

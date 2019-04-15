@@ -205,7 +205,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please enter a valid Zip Code";
                 return false;
             }
-            else if (this.textBoxUsernameNurseInfoResults.Text.Length == 0 || this.textBoxUsernameNurseInfoResults.Text == "" || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameRegisterNurse.Text, nurseID))
+            else if (this.textBoxUsernameNurseInfoResults.Text.Length == 0 || this.textBoxUsernameNurseInfoResults.Text == "" || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameNurseInfoResults.Text, nurseID))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid Username";
                 return false;
@@ -363,6 +363,7 @@ namespace CS6232GroupProject.UserControls
             Nurse newNurse= new Nurse();
             Address newAddress = new Address();
             Login newLogin = new Login();
+            
 
             if (this.CheckFieldsUpdate())
             {
