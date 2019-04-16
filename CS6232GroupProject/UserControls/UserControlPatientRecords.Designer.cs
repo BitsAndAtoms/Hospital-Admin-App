@@ -823,6 +823,7 @@
             this.textBoxLabTestResultsHepatitisB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLabTestResultsHepatitisB.Location = new System.Drawing.Point(208, 23);
             this.textBoxLabTestResultsHepatitisB.Name = "textBoxLabTestResultsHepatitisB";
+            this.textBoxLabTestResultsHepatitisB.ReadOnly = true;
             this.textBoxLabTestResultsHepatitisB.Size = new System.Drawing.Size(186, 29);
             this.textBoxLabTestResultsHepatitisB.TabIndex = 5;
             // 
@@ -859,6 +860,7 @@
             this.textBoxLabTestResultsHepatitisA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLabTestResultsHepatitisA.Location = new System.Drawing.Point(3, 23);
             this.textBoxLabTestResultsHepatitisA.Name = "textBoxLabTestResultsHepatitisA";
+            this.textBoxLabTestResultsHepatitisA.ReadOnly = true;
             this.textBoxLabTestResultsHepatitisA.Size = new System.Drawing.Size(186, 29);
             this.textBoxLabTestResultsHepatitisA.TabIndex = 4;
             // 
@@ -943,6 +945,7 @@
             this.textBoxLabTestResultsLDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLabTestResultsLDL.Location = new System.Drawing.Point(208, 23);
             this.textBoxLabTestResultsLDL.Name = "textBoxLabTestResultsLDL";
+            this.textBoxLabTestResultsLDL.ReadOnly = true;
             this.textBoxLabTestResultsLDL.Size = new System.Drawing.Size(186, 29);
             this.textBoxLabTestResultsLDL.TabIndex = 5;
             // 
@@ -979,6 +982,7 @@
             this.textBoxLabTestResultsWBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLabTestResultsWBC.Location = new System.Drawing.Point(3, 23);
             this.textBoxLabTestResultsWBC.Name = "textBoxLabTestResultsWBC";
+            this.textBoxLabTestResultsWBC.ReadOnly = true;
             this.textBoxLabTestResultsWBC.Size = new System.Drawing.Size(186, 29);
             this.textBoxLabTestResultsWBC.TabIndex = 4;
             // 
