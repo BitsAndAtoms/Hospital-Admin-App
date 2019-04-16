@@ -295,6 +295,7 @@ namespace CS6232GroupProject.UserControls
                 {
                     MessageBox.Show("Appointment Updated!", "Sucess");
                     this.comboBoxAppointmentsPhysician.SelectedValue = newAppointment.DoctorID;
+                    SetComboBox();
                 }
                 else
                 {
