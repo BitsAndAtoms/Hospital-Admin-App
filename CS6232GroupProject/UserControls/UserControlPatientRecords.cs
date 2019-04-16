@@ -414,7 +414,7 @@ namespace CS6232GroupProject.UserControls
                 }
             }
 
-         
+            this.tabControlPatientRecords_SelectedIndexChanged(null, null);
         }
 
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
