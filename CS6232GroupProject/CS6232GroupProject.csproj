@@ -65,6 +65,7 @@
     <Compile Include="Controller\AddressController.cs" />
     <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\DoctorController.cs" />
+    <Compile Include="Controller\LabTestResultsController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\NurseController.cs" />
     <Compile Include="Controller\PatientController.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="DAL\AppointmentDAL.cs" />
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\DoctorDAL.cs" />
+    <Compile Include="DAL\LabTestResultsDAL.cs" />
     <Compile Include="DAL\LoginDBDAL.cs" />
     <Compile Include="DAL\NurseDAL.cs" />
     <Compile Include="DAL\PatientDAL.cs" />

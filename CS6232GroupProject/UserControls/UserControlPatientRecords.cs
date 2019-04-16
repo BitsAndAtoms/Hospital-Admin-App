@@ -20,6 +20,7 @@ namespace CS6232GroupProject.UserControls
         private AppointmentController appointmentController;
         private DoctorController doctorController;
         private PatientVisitController visitController;
+        private LabTestResultsController labTestResultsController;
         private List<Doctor> doctorList;
         private Appointment appointment;
         private PatientVisit visit;
@@ -35,6 +36,7 @@ namespace CS6232GroupProject.UserControls
             this.appointmentController = new AppointmentController();
             this.doctorController = new DoctorController();
             this.visitController = new PatientVisitController();
+            this.labTestResultsController = new LabTestResultsController();
             SetComboBox();
             SetAppointment();
             
@@ -332,7 +334,7 @@ namespace CS6232GroupProject.UserControls
                 }
 
             }
-            if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & this.visitController.CheckForPendingTests(this.visit))
+            if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & this.labTestResultsController.CheckForPendingTests(this.visit))
             {
                   try
                     {
@@ -378,7 +380,7 @@ namespace CS6232GroupProject.UserControls
             //Need to get the TestID
             newResult.TestResultDate = DateTime.Now;
             test.Name = "White Blood Cell (WBC)";
-            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
             newResult.Result = this.textBoxLabTestResultsLDL.Text;
             newResult.VisitID = this.visit.VisitID;
@@ -386,7 +388,7 @@ namespace CS6232GroupProject.UserControls
             //Need to get the TestID
             newResult.TestResultDate = DateTime.Now;
             test.Name = "Low Density Lipoproteins (LDL)";
-            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
             newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
             newResult.VisitID = this.visit.VisitID;
@@ -394,7 +396,7 @@ namespace CS6232GroupProject.UserControls
             //Need to get the TestID
             newResult.TestResultDate = DateTime.Now;
             test.Name = "Hepatitis A";
-            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
             
             newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
             newResult.VisitID = this.visit.VisitID;
@@ -402,7 +404,7 @@ namespace CS6232GroupProject.UserControls
             //Need to get the TestID
             newResult.TestResultDate = DateTime.Now;
             test.Name = "Hepatitis B";
-            this.visitController.EnterTestResultForVisit(visit, test, newResult);
+            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
         }
 
@@ -416,7 +418,7 @@ namespace CS6232GroupProject.UserControls
                 {
                     try
                     {
-                        this.visitController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
+                        this.labTestResultsController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
                         MessageBox.Show("Test(s) ordered.", "Confirm");
                     }
                     catch (Exception)
@@ -446,7 +448,7 @@ namespace CS6232GroupProject.UserControls
         {
             if (this.tabControlPatientRecords.SelectedIndex == 4)
             {
-                this.labTestResultDataGridView.DataSource = this.visitController.GetLabTestResultByVisitID(this.visit);
+                this.labTestResultDataGridView.DataSource = this.labTestResultsController.GetLabTestResultByVisitID(this.visit);
             }
             else if (this.tabControlPatientRecords.SelectedIndex == 1)
             {
@@ -487,7 +489,7 @@ namespace CS6232GroupProject.UserControls
                     this.checkedListBoxLabTests.SetItemCheckState(index, CheckState.Unchecked);
                 }
                
-                List<LabTestResult> listOfResults = this.visitController.GetLabTestResultByVisitID(this.visit);
+                List<LabTestResult> listOfResults = this.labTestResultsController.GetLabTestResultByVisitID(this.visit);
                 foreach (var nameOfTestOrdered in listOfResults)
                 {
                     if (nameOfTestOrdered.Name == "White Blood Cell (WBC)")
