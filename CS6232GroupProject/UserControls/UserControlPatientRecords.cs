@@ -370,42 +370,61 @@ namespace CS6232GroupProject.UserControls
             this.tabControlPatientRecords_SelectedIndexChanged(null, null);
         }
 
+        private void SetLabTestsTextBoxes()
+        {
+            
+
+            this.textBoxLabTestResultsWBC.Text = "";
+            this.textBoxLabTestResultsLDL.Text = "";
+            this.textBoxLabTestResultsHepatitisA.Text = "";
+            this.textBoxLabTestResultsHepatitisB.Text = "";
+        }
+
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
         {
-            LabTestResult newResult = new LabTestResult();
-            LabTest test = new LabTest();
+            try
+            {
+                LabTestResult newResult = new LabTestResult();
+                LabTest test = new LabTest();
 
-            newResult.Result = this.textBoxLabTestResultsWBC.Text;
-            newResult.VisitID = this.visit.VisitID;
-            newResult.TestID = 11;//Hard coded
-            //Need to get the TestID
-            newResult.TestResultDate = DateTime.Now;
-            test.Name = "White Blood Cell (WBC)";
-            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                newResult.Result = this.textBoxLabTestResultsWBC.Text;
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = 11;//Hard coded
+                                      //Need to get the TestID
+                newResult.TestResultDate = DateTime.Now;
+                test.Name = "White Blood Cell (WBC)";
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-            newResult.Result = this.textBoxLabTestResultsLDL.Text;
-            newResult.VisitID = this.visit.VisitID;
-            newResult.TestID = 10;//Hard coded
-            //Need to get the TestID
-            newResult.TestResultDate = DateTime.Now;
-            test.Name = "Low Density Lipoproteins (LDL)";
-            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                newResult.Result = this.textBoxLabTestResultsLDL.Text;
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = 10;//Hard coded
+                                      //Need to get the TestID
+                newResult.TestResultDate = DateTime.Now;
+                test.Name = "Low Density Lipoproteins (LDL)";
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-            newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
-            newResult.VisitID = this.visit.VisitID;
-            newResult.TestID = 8;//Hard coded
-            //Need to get the TestID
-            newResult.TestResultDate = DateTime.Now;
-            test.Name = "Hepatitis A";
-            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
-            
-            newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
-            newResult.VisitID = this.visit.VisitID;
-            newResult.TestID = 9;//Hard coded
-            //Need to get the TestID
-            newResult.TestResultDate = DateTime.Now;
-            test.Name = "Hepatitis B";
-            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = 8;//Hard coded
+                                     //Need to get the TestID
+                newResult.TestResultDate = DateTime.Now;
+                test.Name = "Hepatitis A";
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+
+                newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = 9;//Hard coded
+                                     //Need to get the TestID
+                newResult.TestResultDate = DateTime.Now;
+                test.Name = "Hepatitis B";
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+
+                MessageBox.Show("Any ordered tests updated!", "Success!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an issue updating the tests!", "Error");
+            }
 
         }
 
