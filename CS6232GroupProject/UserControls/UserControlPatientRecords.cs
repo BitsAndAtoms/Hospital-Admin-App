@@ -387,16 +387,23 @@ namespace CS6232GroupProject.UserControls
         {
             List<LabTestResult> results = new List<LabTestResult>();
             results = this.labTestResultsController.GetLabTestResultByVisitID(this.visit);
-
-            //this.textBoxLabTestResultsWBC.Text = results[1].Result;
-            //this.textBoxLabTestResultsLDL.Text = results[2].Result;
-            //this.textBoxLabTestResultsHepatitisA.Text = results[3].Result;
-            //this.textBoxLabTestResultsHepatitisB.Text = results[4].Result;
-
-            this.textBoxLabTestResultsWBC.Text = "";
-            this.textBoxLabTestResultsLDL.Text = "";
-            this.textBoxLabTestResultsHepatitisA.Text = "";
-            this.textBoxLabTestResultsHepatitisB.Text = "";
+            foreach (var nameOfTestOrdered in results) {
+                if (nameOfTestOrdered.Name == "Low Density Lipoproteins (LDL)")
+                {
+                    this.textBoxLabTestResultsLDL.Text = nameOfTestOrdered.Result;
+                } else if (nameOfTestOrdered.Name == "White Blood Cell (WBC)")
+                {
+                    this.textBoxLabTestResultsWBC.Text = nameOfTestOrdered.Result;
+                }
+                else if (nameOfTestOrdered.Name == "Hepatitis B")
+                {
+                    this.textBoxLabTestResultsHepatitisB.Text = nameOfTestOrdered.Result;
+                }
+                else if (nameOfTestOrdered.Name == "Hepatitis A")
+                {
+                    this.textBoxLabTestResultsHepatitisA.Text = nameOfTestOrdered.Result;
+                }
+            }
         }
 
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
