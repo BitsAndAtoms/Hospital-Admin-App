@@ -9,6 +9,10 @@ namespace CS6232GroupProject.Controller
 
         private readonly LabTestResultsDAL labTestResultsSource;
 
+        public LabTestResultsController()
+        {
+            this.labTestResultsSource = new LabTestResultsDAL();
+        }
 
         /// <summary>
         /// check if there are pending tests
