@@ -115,7 +115,13 @@ namespace CS6232GroupProject.DAL
                             newResult.Result = reader["testResult"].ToString();
                             newResult.Name = reader["testName"].ToString();
                             newResult.TestResultDate = (DateTime)reader["testResultDate"];
-                            newResult.TestOrderedDate = (DateTime)reader["testPerformedDate"];
+                            if (!string.IsNullOrEmpty(reader["testPerformedDate"].ToString()))
+                            {
+                                newResult.TestOrderedDate = (DateTime)reader["testPerformedDate"];
+                            } else
+                            {
+                                newResult.TestOrderedDate = visit.Date;
+                            } 
 
 
                             result.Add(newResult);
