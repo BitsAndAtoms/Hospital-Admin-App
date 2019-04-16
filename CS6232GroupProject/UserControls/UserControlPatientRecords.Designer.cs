@@ -107,8 +107,8 @@
             this.labTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TestOrderedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TestResultDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TestResultDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -301,7 +301,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -1037,8 +1037,8 @@
             this.labTestResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TestName,
             this.TestOrderedDate,
-            this.TestResultDate,
             this.dataGridViewTextBoxColumn4,
+            this.TestResultDate,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
@@ -1143,17 +1143,9 @@
             // 
             this.TestOrderedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TestOrderedDate.DataPropertyName = "TestOrderedDate";
-            this.TestOrderedDate.HeaderText = "TestOrderedDate";
+            this.TestOrderedDate.HeaderText = "Order Date";
             this.TestOrderedDate.Name = "TestOrderedDate";
             this.TestOrderedDate.ReadOnly = true;
-            // 
-            // TestResultDate
-            // 
-            this.TestResultDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TestResultDate.DataPropertyName = "TestResultDate";
-            this.TestResultDate.HeaderText = "TestResultDate";
-            this.TestResultDate.Name = "TestResultDate";
-            this.TestResultDate.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -1162,6 +1154,14 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Result";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // TestResultDate
+            // 
+            this.TestResultDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TestResultDate.DataPropertyName = "TestResultDate";
+            this.TestResultDate.HeaderText = "Result Date";
+            this.TestResultDate.Name = "TestResultDate";
+            this.TestResultDate.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -1327,8 +1327,8 @@
         private System.Windows.Forms.Label labelAddMessageVisitRoutine;
         private System.Windows.Forms.DataGridViewTextBoxColumn TestName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TestOrderedDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TestResultDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TestResultDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
