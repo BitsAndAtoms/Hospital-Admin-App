@@ -96,6 +96,13 @@
             this.labelLabTests = new System.Windows.Forms.Label();
             this.tabPageLabResults = new System.Windows.Forms.TabPage();
             this.labTestResultDataGridView = new System.Windows.Forms.DataGridView();
+            this.TestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TestOrderedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TestResultDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labTestResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -105,13 +112,6 @@
             this.labelPatientRecords = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.TestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TestOrderedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TestResultDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageAppointments.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -301,7 +301,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -447,12 +447,12 @@
             // 
             this.labelRoutineChecksSystolic.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelRoutineChecksSystolic.AutoSize = true;
-            this.labelRoutineChecksSystolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRoutineChecksSystolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoutineChecksSystolic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelRoutineChecksSystolic.Location = new System.Drawing.Point(3, 0);
+            this.labelRoutineChecksSystolic.Location = new System.Drawing.Point(3, 1);
             this.labelRoutineChecksSystolic.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelRoutineChecksSystolic.Name = "labelRoutineChecksSystolic";
-            this.labelRoutineChecksSystolic.Size = new System.Drawing.Size(71, 20);
+            this.labelRoutineChecksSystolic.Size = new System.Drawing.Size(68, 18);
             this.labelRoutineChecksSystolic.TabIndex = 11;
             this.labelRoutineChecksSystolic.Text = "Systolic";
             // 
@@ -460,12 +460,12 @@
             // 
             this.labelRoutineChecksDiastolic.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelRoutineChecksDiastolic.AutoSize = true;
-            this.labelRoutineChecksDiastolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRoutineChecksDiastolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoutineChecksDiastolic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelRoutineChecksDiastolic.Location = new System.Drawing.Point(208, 0);
+            this.labelRoutineChecksDiastolic.Location = new System.Drawing.Point(208, 1);
             this.labelRoutineChecksDiastolic.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelRoutineChecksDiastolic.Name = "labelRoutineChecksDiastolic";
-            this.labelRoutineChecksDiastolic.Size = new System.Drawing.Size(78, 20);
+            this.labelRoutineChecksDiastolic.Size = new System.Drawing.Size(74, 18);
             this.labelRoutineChecksDiastolic.TabIndex = 14;
             this.labelRoutineChecksDiastolic.Text = "Diastolic";
             // 
@@ -834,12 +834,12 @@
             // 
             this.labelLabTestResultsHepatitisA.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelLabTestResultsHepatitisA.AutoSize = true;
-            this.labelLabTestResultsHepatitisA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLabTestResultsHepatitisA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLabTestResultsHepatitisA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelLabTestResultsHepatitisA.Location = new System.Drawing.Point(3, 0);
+            this.labelLabTestResultsHepatitisA.Location = new System.Drawing.Point(3, 1);
             this.labelLabTestResultsHepatitisA.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelLabTestResultsHepatitisA.Name = "labelLabTestResultsHepatitisA";
-            this.labelLabTestResultsHepatitisA.Size = new System.Drawing.Size(98, 20);
+            this.labelLabTestResultsHepatitisA.Size = new System.Drawing.Size(89, 18);
             this.labelLabTestResultsHepatitisA.TabIndex = 11;
             this.labelLabTestResultsHepatitisA.Text = "Hepatitis A";
             // 
@@ -847,12 +847,12 @@
             // 
             this.labelLabTestResultsHepatitisB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelLabTestResultsHepatitisB.AutoSize = true;
-            this.labelLabTestResultsHepatitisB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLabTestResultsHepatitisB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLabTestResultsHepatitisB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelLabTestResultsHepatitisB.Location = new System.Drawing.Point(208, 0);
+            this.labelLabTestResultsHepatitisB.Location = new System.Drawing.Point(208, 1);
             this.labelLabTestResultsHepatitisB.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelLabTestResultsHepatitisB.Name = "labelLabTestResultsHepatitisB";
-            this.labelLabTestResultsHepatitisB.Size = new System.Drawing.Size(98, 20);
+            this.labelLabTestResultsHepatitisB.Size = new System.Drawing.Size(90, 18);
             this.labelLabTestResultsHepatitisB.TabIndex = 14;
             this.labelLabTestResultsHepatitisB.Text = "Hepatitis B";
             // 
@@ -956,12 +956,12 @@
             // 
             this.labelLabTestResultsWBC.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelLabTestResultsWBC.AutoSize = true;
-            this.labelLabTestResultsWBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLabTestResultsWBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLabTestResultsWBC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelLabTestResultsWBC.Location = new System.Drawing.Point(3, 0);
+            this.labelLabTestResultsWBC.Location = new System.Drawing.Point(3, 1);
             this.labelLabTestResultsWBC.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelLabTestResultsWBC.Name = "labelLabTestResultsWBC";
-            this.labelLabTestResultsWBC.Size = new System.Drawing.Size(49, 20);
+            this.labelLabTestResultsWBC.Size = new System.Drawing.Size(47, 18);
             this.labelLabTestResultsWBC.TabIndex = 11;
             this.labelLabTestResultsWBC.Text = "WBC";
             // 
@@ -969,12 +969,12 @@
             // 
             this.labelLabTestResultsLDL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelLabTestResultsLDL.AutoSize = true;
-            this.labelLabTestResultsLDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLabTestResultsLDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLabTestResultsLDL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelLabTestResultsLDL.Location = new System.Drawing.Point(208, 0);
+            this.labelLabTestResultsLDL.Location = new System.Drawing.Point(208, 1);
             this.labelLabTestResultsLDL.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelLabTestResultsLDL.Name = "labelLabTestResultsLDL";
-            this.labelLabTestResultsLDL.Size = new System.Drawing.Size(42, 20);
+            this.labelLabTestResultsLDL.Size = new System.Drawing.Size(38, 18);
             this.labelLabTestResultsLDL.TabIndex = 14;
             this.labelLabTestResultsLDL.Text = "LDL";
             // 
@@ -1050,6 +1050,65 @@
             this.labTestResultDataGridView.Size = new System.Drawing.Size(825, 495);
             this.labTestResultDataGridView.TabIndex = 0;
             this.labTestResultDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.labTestResultDataGridView_CellContentClick);
+            // 
+            // TestName
+            // 
+            this.TestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TestName.DataPropertyName = "Name";
+            this.TestName.HeaderText = "Lab Test";
+            this.TestName.Name = "TestName";
+            this.TestName.ReadOnly = true;
+            // 
+            // TestOrderedDate
+            // 
+            this.TestOrderedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TestOrderedDate.DataPropertyName = "TestOrderedDate";
+            this.TestOrderedDate.HeaderText = "Order Date";
+            this.TestOrderedDate.Name = "TestOrderedDate";
+            this.TestOrderedDate.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Result";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Result";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // TestResultDate
+            // 
+            this.TestResultDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TestResultDate.DataPropertyName = "TestResultDate";
+            this.TestResultDate.HeaderText = "Result Date";
+            this.TestResultDate.Name = "TestResultDate";
+            this.TestResultDate.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "VisitID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "VisitID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ResultID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ResultID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TestID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "TestID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // labTestResultBindingSource
             // 
@@ -1130,65 +1189,6 @@
             // labTestBindingSource
             // 
             this.labTestBindingSource.DataSource = typeof(CS6232GroupProject.Model.LabTest);
-            // 
-            // TestName
-            // 
-            this.TestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TestName.DataPropertyName = "Name";
-            this.TestName.HeaderText = "Lab Test";
-            this.TestName.Name = "TestName";
-            this.TestName.ReadOnly = true;
-            // 
-            // TestOrderedDate
-            // 
-            this.TestOrderedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TestOrderedDate.DataPropertyName = "TestOrderedDate";
-            this.TestOrderedDate.HeaderText = "Order Date";
-            this.TestOrderedDate.Name = "TestOrderedDate";
-            this.TestOrderedDate.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Result";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Result";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // TestResultDate
-            // 
-            this.TestResultDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TestResultDate.DataPropertyName = "TestResultDate";
-            this.TestResultDate.HeaderText = "Result Date";
-            this.TestResultDate.Name = "TestResultDate";
-            this.TestResultDate.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "VisitID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "VisitID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ResultID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ResultID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TestID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TestID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // UserControlPatientRecords
             // 
