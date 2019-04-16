@@ -388,7 +388,6 @@ namespace CS6232GroupProject.UserControls
 
         private void SetLabTestsTextBoxes()
         {
-             
             this.textBoxLabTestResultsHepatitisA.Text = "";
             this.textBoxLabTestResultsHepatitisB.Text = "";
             this.textBoxLabTestResultsWBC.Text = "";
