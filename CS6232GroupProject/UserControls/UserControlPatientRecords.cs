@@ -382,6 +382,7 @@ namespace CS6232GroupProject.UserControls
             AppointmentTimeCheck();
             this.tabControlPatientRecords_SelectedIndexChanged(null, null);
             EnableTests();
+            SetLabTestsTextBoxes();
         }
 
         private void SetLabTestsTextBoxes()
