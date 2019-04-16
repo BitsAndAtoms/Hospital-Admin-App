@@ -39,6 +39,7 @@ namespace CS6232GroupProject.UserControls
             this.labTestResultsController = new LabTestResultsController();
             SetComboBox();
             SetAppointment();
+            SetLabTestsTextBoxes();
         }
         /// <summary>
         /// Checks if a patient visit exists
@@ -320,13 +321,15 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         private void buttonDiagnosisUpdate_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text))
+            int count = 0;
+            if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text) & this.textBoxDiagnosisIntial.Text != this.visit.Diagnosis)
             {
                 this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
                 try
                 {
                     
                     this.visitController.EnterInitialDiagnosis(this.visit);
+                    count = 1;
                 }
                 catch (Exception)
                 {
@@ -340,7 +343,7 @@ namespace CS6232GroupProject.UserControls
                     {
                         this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
                         this.visitController.EnterFinalDiagnosis(this.visit);
-                    this.textBoxDiagnosisIntial.Enabled = false;
+                        this.textBoxDiagnosisIntial.Enabled = false;
                     }
                     catch (Exception)
                     {
@@ -349,17 +352,19 @@ namespace CS6232GroupProject.UserControls
                     }
                 }
                 else {
-                    this.textBoxDiagnosisFinal.Text = "";
-                if (this.labTestResultsController.CheckForPendingTests(this.visit))
+
+                this.textBoxDiagnosisFinal.Text = "";
+
+                if (!this.labTestResultsController.CheckForPendingTests(this.visit))
                 {
                     MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
                 }
-                else {
+                else if(String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & count == 0)
+                {
                     MessageBox.Show("Final diagnosis is null or empty");
                 }
                    
                 }
-
         }
             
         
@@ -376,42 +381,68 @@ namespace CS6232GroupProject.UserControls
             this.tabControlPatientRecords_SelectedIndexChanged(null, null);
         }
 
+        private void SetLabTestsTextBoxes()
+        {
+            List<LabTestResult> results = new List<LabTestResult>();
+            results = this.labTestResultsController.GetLabTestResultByVisitID(this.visit);
+
+            //this.textBoxLabTestResultsWBC.Text = results[1].Result;
+            //this.textBoxLabTestResultsLDL.Text = results[2].Result;
+            //this.textBoxLabTestResultsHepatitisA.Text = results[3].Result;
+            //this.textBoxLabTestResultsHepatitisB.Text = results[4].Result;
+
+            this.textBoxLabTestResultsWBC.Text = "";
+            this.textBoxLabTestResultsLDL.Text = "";
+            this.textBoxLabTestResultsHepatitisA.Text = "";
+            this.textBoxLabTestResultsHepatitisB.Text = "";
+        }
+
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
         {
-            LabTestResult newResult = new LabTestResult();
-            LabTest test = new LabTest();
+            try
+            {
+                LabTestResult newResult = new LabTestResult();
+                LabTest test = new LabTest();
 
-            newResult.Result = this.textBoxLabTestResultsWBC.Text;
-            newResult.VisitID = this.visit.VisitID;
-            newResult.TestID = 11;//Hard coded
-            //Need to get the TestID
-            newResult.TestResultDate = DateTime.Now;
-            test.Name = "White Blood Cell (WBC)";
-            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                newResult.Result = this.textBoxLabTestResultsWBC.Text;
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = 11;//Hard coded
+                                      //Need to get the TestID
+                newResult.TestResultDate = DateTime.Now;
+                test.Name = "White Blood Cell (WBC)";
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-            newResult.Result = this.textBoxLabTestResultsLDL.Text;
-            newResult.VisitID = this.visit.VisitID;
-            newResult.TestID = 10;//Hard coded
-            //Need to get the TestID
-            newResult.TestResultDate = DateTime.Now;
-            test.Name = "Low Density Lipoproteins (LDL)";
-            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                newResult.Result = this.textBoxLabTestResultsLDL.Text;
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = 10;//Hard coded
+                                      //Need to get the TestID
+                newResult.TestResultDate = DateTime.Now;
+                test.Name = "Low Density Lipoproteins (LDL)";
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-            newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
-            newResult.VisitID = this.visit.VisitID;
-            newResult.TestID = 8;//Hard coded
-            //Need to get the TestID
-            newResult.TestResultDate = DateTime.Now;
-            test.Name = "Hepatitis A";
-            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
-            
-            newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
-            newResult.VisitID = this.visit.VisitID;
-            newResult.TestID = 9;//Hard coded
-            //Need to get the TestID
-            newResult.TestResultDate = DateTime.Now;
-            test.Name = "Hepatitis B";
-            this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = 8;//Hard coded
+                                     //Need to get the TestID
+                newResult.TestResultDate = DateTime.Now;
+                test.Name = "Hepatitis A";
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+
+                newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = 9;//Hard coded
+                                     //Need to get the TestID
+                newResult.TestResultDate = DateTime.Now;
+                test.Name = "Hepatitis B";
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+
+                SetLabTestsTextBoxes();
+                MessageBox.Show("Any ordered tests updated!", "Success!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an issue updating the tests!", "Error");
+            }
 
         }
 
