@@ -115,7 +115,7 @@ namespace CS6232GroupProject.DAL
                             newResult.Result = reader["testResult"].ToString();
                             newResult.Name = reader["testName"].ToString();
                             newResult.TestResultDate = (DateTime)reader["testResultDate"];
-                            if (string.IsNullOrEmpty(reader["testPerformedDate"].ToString()))
+                            if (!string.IsNullOrEmpty(reader["testPerformedDate"].ToString()))
                             {
                                 newResult.TestOrderedDate = (DateTime)reader["testPerformedDate"];
                             } else
