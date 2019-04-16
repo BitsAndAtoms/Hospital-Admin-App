@@ -39,7 +39,6 @@ namespace CS6232GroupProject.UserControls
             this.labTestResultsController = new LabTestResultsController();
             SetComboBox();
             SetAppointment();
-            
         }
         /// <summary>
         /// Checks if a patient visit exists
@@ -421,6 +420,7 @@ namespace CS6232GroupProject.UserControls
                     {
                         this.labTestResultsController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
                         MessageBox.Show("Test(s) ordered.", "Confirm");
+                        this.EnableTests();
                     }
                     catch (Exception)
                     {
@@ -496,24 +496,73 @@ namespace CS6232GroupProject.UserControls
                     if (nameOfTestOrdered.Name == "White Blood Cell (WBC)")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(0, CheckState.Checked);
+                        this.textBoxLabTestResultsWBC.ReadOnly = false;
                     }
                     if (nameOfTestOrdered.Name == "Low Density Lipoproteins (LDL)")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(1, CheckState.Checked);
+                        this.textBoxLabTestResultsLDL.ReadOnly = false;
                     }
                     if (nameOfTestOrdered.Name == "Hepatitis A")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(2, CheckState.Checked);
+                        this.textBoxLabTestResultsHepatitisA.ReadOnly = false;
                     }
                     if (nameOfTestOrdered.Name == "Hepatitis B")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(3, CheckState.Checked);
+                        this.textBoxLabTestResultsHepatitisB.ReadOnly = false;
                     }
                 }
 
             }
-            
 
+        }
+
+        private void EnableTests()
+        {
+            try
+            {
+                if (this.checkedListBoxLabTests.GetItemCheckState(0) == CheckState.Checked)
+                {
+                    this.textBoxLabTestResultsWBC.ReadOnly = false;
+                }
+                else
+                {
+                    this.textBoxLabTestResultsWBC.ReadOnly = true;
+                }
+
+                if (this.checkedListBoxLabTests.GetItemCheckState(1) == CheckState.Checked)
+                {
+                    this.textBoxLabTestResultsLDL.ReadOnly = false;
+                }
+                else
+                {
+                    this.textBoxLabTestResultsLDL.ReadOnly = true;
+                }
+
+                if (this.checkedListBoxLabTests.GetItemCheckState(2) == CheckState.Checked)
+                {
+                    this.textBoxLabTestResultsHepatitisA.ReadOnly = false;
+                }
+                else
+                {
+                    this.textBoxLabTestResultsHepatitisA.ReadOnly = true;
+                }
+
+                if (this.checkedListBoxLabTests.GetItemCheckState(3) == CheckState.Checked)
+                {
+                    this.textBoxLabTestResultsHepatitisB.ReadOnly = false;
+                }
+                else
+                {
+                    this.textBoxLabTestResultsHepatitisB.ReadOnly = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
             
         }
     }
