@@ -342,31 +342,32 @@ namespace CS6232GroupProject.UserControls
             if (!String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & this.labTestResultsController.CheckForPendingTests(this.visit))
             {
                   try
-                    {
-                        this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
-                        this.visitController.EnterFinalDiagnosis(this.visit);
-                        this.textBoxDiagnosisIntial.Enabled = false;
-                    }
-                    catch (Exception)
-                    {
+                  {
+                      this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
+                      this.visitController.EnterFinalDiagnosis(this.visit);
+                      this.textBoxDiagnosisIntial.Enabled = false;
+                  }
+                  catch (Exception)
+                  {
 
-                        MessageBox.Show("Error: Final diagnosis could not be updated");
-                    }
+                      MessageBox.Show("Error: Final diagnosis could not be updated");
+                  }
+            }
+            else
+            {
+
+                this.textBoxDiagnosisFinal.Text = "";
+
+                if (!this.labTestResultsController.CheckForPendingTests(this.visit))
+                {
+                    MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
                 }
-                else {
-
-                    this.textBoxDiagnosisFinal.Text = "";
-
-                    if (!this.labTestResultsController.CheckForPendingTests(this.visit))
-                    {
-                        MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
-                    }
-                    else if(String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & count == 0)
-                    {
-                        MessageBox.Show("Final diagnosis is null or empty");
-                    }
+                else if(String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & count == 0)
+                {
+                    MessageBox.Show("Final diagnosis is null or empty");
+                }
                    
-                }
+            }
         }
             
         

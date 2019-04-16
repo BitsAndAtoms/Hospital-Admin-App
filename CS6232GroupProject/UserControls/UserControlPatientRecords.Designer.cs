@@ -96,10 +96,6 @@
             this.labelLabTests = new System.Windows.Forms.Label();
             this.tabPageLabResults = new System.Windows.Forms.TabPage();
             this.labTestResultDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labTestResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -109,6 +105,13 @@
             this.labelPatientRecords = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TestOrderedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TestResultDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageAppointments.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -298,7 +301,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -1032,10 +1035,13 @@
             this.labTestResultDataGridView.AutoGenerateColumns = false;
             this.labTestResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.labTestResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TestName,
+            this.TestOrderedDate,
+            this.TestResultDate,
             this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn2});
             this.labTestResultDataGridView.DataSource = this.labTestResultBindingSource;
             this.labTestResultDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labTestResultDataGridView.Location = new System.Drawing.Point(3, 3);
@@ -1044,38 +1050,6 @@
             this.labTestResultDataGridView.Size = new System.Drawing.Size(825, 495);
             this.labTestResultDataGridView.TabIndex = 0;
             this.labTestResultDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.labTestResultDataGridView_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Result";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Result";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ResultID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ResultID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TestID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TestID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "VisitID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "VisitID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // labTestResultBindingSource
             // 
@@ -1156,6 +1130,65 @@
             // labTestBindingSource
             // 
             this.labTestBindingSource.DataSource = typeof(CS6232GroupProject.Model.LabTest);
+            // 
+            // TestName
+            // 
+            this.TestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TestName.DataPropertyName = "Name";
+            this.TestName.HeaderText = "Lab Test";
+            this.TestName.Name = "TestName";
+            this.TestName.ReadOnly = true;
+            // 
+            // TestOrderedDate
+            // 
+            this.TestOrderedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TestOrderedDate.DataPropertyName = "TestOrderedDate";
+            this.TestOrderedDate.HeaderText = "TestOrderedDate";
+            this.TestOrderedDate.Name = "TestOrderedDate";
+            this.TestOrderedDate.ReadOnly = true;
+            // 
+            // TestResultDate
+            // 
+            this.TestResultDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TestResultDate.DataPropertyName = "TestResultDate";
+            this.TestResultDate.HeaderText = "TestResultDate";
+            this.TestResultDate.Name = "TestResultDate";
+            this.TestResultDate.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Result";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Result";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "VisitID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "VisitID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ResultID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ResultID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TestID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "TestID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // UserControlPatientRecords
             // 
@@ -1289,12 +1322,15 @@
         private System.Windows.Forms.TabPage tabPageLabResults;
         private System.Windows.Forms.DataGridView labTestResultDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource labTestResultBindingSource;
         private System.Windows.Forms.BindingSource labTestBindingSource;
         private System.Windows.Forms.Label labelAddMessageVisitRoutine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TestName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TestOrderedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TestResultDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
