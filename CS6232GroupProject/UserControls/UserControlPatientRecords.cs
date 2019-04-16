@@ -39,6 +39,7 @@ namespace CS6232GroupProject.UserControls
             this.labTestResultsController = new LabTestResultsController();
             SetComboBox();
             SetAppointment();
+            SetLabTestsTextBoxes();
         }
         /// <summary>
         /// Checks if a patient visit exists
@@ -378,7 +379,13 @@ namespace CS6232GroupProject.UserControls
 
         private void SetLabTestsTextBoxes()
         {
-            
+            List<LabTestResult> results = new List<LabTestResult>();
+            results = this.labTestResultsController.GetLabTestResultByVisitID(this.visit);
+
+            //this.textBoxLabTestResultsWBC.Text = results[1].Result;
+            //this.textBoxLabTestResultsLDL.Text = results[2].Result;
+            //this.textBoxLabTestResultsHepatitisA.Text = results[3].Result;
+            //this.textBoxLabTestResultsHepatitisB.Text = results[4].Result;
 
             this.textBoxLabTestResultsWBC.Text = "";
             this.textBoxLabTestResultsLDL.Text = "";
@@ -425,6 +432,7 @@ namespace CS6232GroupProject.UserControls
                 test.Name = "Hepatitis B";
                 this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
+                SetLabTestsTextBoxes();
                 MessageBox.Show("Any ordered tests updated!", "Success!");
             }
             catch (Exception)
