@@ -373,20 +373,32 @@ namespace CS6232GroupProject.UserControls
             LabTest test = new LabTest();
 
             newResult.Result = this.textBoxLabTestResultsWBC.Text;
+            //Need to get the VisitID
+            //Need to get the TestID
+            newResult.TestDate = DateTime.Now;
             test.Name = "White Blood Cell (WBC)";
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
 
             newResult.Result = this.textBoxLabTestResultsLDL.Text;
+            //Need to get the VisitID
+            //Need to get the TestID
+            newResult.TestDate = DateTime.Now;
             test.Name = "Low Density Lipoproteins (LDL)";
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
 
             newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
+            //Need to get the VisitID
+            //Need to get the TestID
+            newResult.TestDate = DateTime.Now;
             test.Name = "Hepatitis A";
             this.visitController.EnterTestResultForVisit(visit, test, newResult);
             
             newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
+            //Need to get the VisitID
+            //Need to get the TestID
+            newResult.TestDate = DateTime.Now;
             test.Name = "Hepatitis B";
-            this.visitController.EnterTestResultForVisit(visit,test,newResult);
+            this.visitController.EnterTestResultForVisit(visit, test, newResult);
 
         }
 
