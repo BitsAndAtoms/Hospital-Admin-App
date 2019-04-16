@@ -321,7 +321,7 @@ namespace CS6232GroupProject.UserControls
         private void buttonDiagnosisUpdate_Click(object sender, EventArgs e)
         {
             int count = 0;
-            if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text))
+            if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text) & this.textBoxDiagnosisIntial.Text != this.visit.Diagnosis)
             {
                 this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
                 try
