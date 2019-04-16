@@ -341,7 +341,7 @@ namespace CS6232GroupProject.UserControls
                     {
                         this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
                         this.visitController.EnterFinalDiagnosis(this.visit);
-                    this.textBoxDiagnosisIntial.Enabled = false;
+                        this.textBoxDiagnosisIntial.Enabled = false;
                     }
                     catch (Exception)
                     {
@@ -350,17 +350,18 @@ namespace CS6232GroupProject.UserControls
                     }
                 }
                 else {
-                    this.textBoxDiagnosisFinal.Text = "";
-                if (this.labTestResultsController.CheckForPendingTests(this.visit))
+
+                this.textBoxDiagnosisFinal.Text = "";
+
+                if (!this.labTestResultsController.CheckForPendingTests(this.visit))
                 {
                     MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
                 }
-                else {
+                {
                     MessageBox.Show("Final diagnosis is null or empty");
                 }
                    
                 }
-
         }
             
         
