@@ -321,6 +321,7 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         private void buttonDiagnosisUpdate_Click(object sender, EventArgs e)
         {
+            int count = 0;
             if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text))
             {
                 this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
@@ -328,6 +329,7 @@ namespace CS6232GroupProject.UserControls
                 {
                     
                     this.visitController.EnterInitialDiagnosis(this.visit);
+                    count = 1;
                 }
                 catch (Exception)
                 {
@@ -357,6 +359,7 @@ namespace CS6232GroupProject.UserControls
                 {
                     MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
                 }
+                else if(String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & count == 0)
                 {
                     MessageBox.Show("Final diagnosis is null or empty");
                 }
