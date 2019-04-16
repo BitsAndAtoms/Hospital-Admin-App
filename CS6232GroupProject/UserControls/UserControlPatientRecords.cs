@@ -331,6 +331,7 @@ namespace CS6232GroupProject.UserControls
                     
                     this.visitController.EnterInitialDiagnosis(this.visit);
                     count = 1;
+                    MessageBox.Show("Initial diagnosis submitted.", "Success");
                 }
                 catch (Exception)
                 {
@@ -354,16 +355,16 @@ namespace CS6232GroupProject.UserControls
                 }
                 else {
 
-                this.textBoxDiagnosisFinal.Text = "";
+                    this.textBoxDiagnosisFinal.Text = "";
 
-                if (!this.labTestResultsController.CheckForPendingTests(this.visit))
-                {
-                    MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
-                }
-                else if(String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & count == 0)
-                {
-                    MessageBox.Show("Final diagnosis is null or empty");
-                }
+                    if (!this.labTestResultsController.CheckForPendingTests(this.visit))
+                    {
+                        MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
+                    }
+                    else if(String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & count == 0)
+                    {
+                        MessageBox.Show("Final diagnosis is null or empty");
+                    }
                    
                 }
         }
