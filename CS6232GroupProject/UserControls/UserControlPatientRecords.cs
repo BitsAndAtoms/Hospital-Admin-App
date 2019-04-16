@@ -321,13 +321,15 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         private void buttonDiagnosisUpdate_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text))
+            int count = 0;
+            if (!String.IsNullOrEmpty(this.textBoxDiagnosisIntial.Text) & this.textBoxDiagnosisIntial.Text != this.visit.Diagnosis)
             {
                 this.visit.Diagnosis = this.textBoxDiagnosisIntial.Text;
                 try
                 {
                     
                     this.visitController.EnterInitialDiagnosis(this.visit);
+                    count = 1;
                 }
                 catch (Exception)
                 {
@@ -341,7 +343,7 @@ namespace CS6232GroupProject.UserControls
                     {
                         this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
                         this.visitController.EnterFinalDiagnosis(this.visit);
-                    this.textBoxDiagnosisIntial.Enabled = false;
+                        this.textBoxDiagnosisIntial.Enabled = false;
                     }
                     catch (Exception)
                     {
@@ -350,17 +352,19 @@ namespace CS6232GroupProject.UserControls
                     }
                 }
                 else {
-                    this.textBoxDiagnosisFinal.Text = "";
-                if (this.labTestResultsController.CheckForPendingTests(this.visit))
+
+                this.textBoxDiagnosisFinal.Text = "";
+
+                if (!this.labTestResultsController.CheckForPendingTests(this.visit))
                 {
                     MessageBox.Show("Final diagnosis could not be updated as there are tests pending");
                 }
-                else {
+                else if(String.IsNullOrEmpty(this.textBoxDiagnosisFinal.Text) & count == 0)
+                {
                     MessageBox.Show("Final diagnosis is null or empty");
                 }
                    
                 }
-
         }
             
         
