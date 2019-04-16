@@ -40,6 +40,7 @@ namespace CS6232GroupProject.UserControls
             SetComboBox();
             SetAppointment();
             SetLabTestsTextBoxes();
+            EnableTests();
         }
         /// <summary>
         /// Checks if a patient visit exists
@@ -379,6 +380,7 @@ namespace CS6232GroupProject.UserControls
             SetVisitInfo();
             AppointmentTimeCheck();
             this.tabControlPatientRecords_SelectedIndexChanged(null, null);
+            EnableTests();
         }
 
         private void SetLabTestsTextBoxes()
@@ -537,21 +539,25 @@ namespace CS6232GroupProject.UserControls
                         this.checkedListBoxLabTests.SetItemCheckState(0, CheckState.Checked);
                         this.textBoxLabTestResultsWBC.ReadOnly = false;
                     }
+
                     if (nameOfTestOrdered.Name == "Low Density Lipoproteins (LDL)")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(1, CheckState.Checked);
                         this.textBoxLabTestResultsLDL.ReadOnly = false;
                     }
+
                     if (nameOfTestOrdered.Name == "Hepatitis A")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(2, CheckState.Checked);
                         this.textBoxLabTestResultsHepatitisA.ReadOnly = false;
                     }
+
                     if (nameOfTestOrdered.Name == "Hepatitis B")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(3, CheckState.Checked);
                         this.textBoxLabTestResultsHepatitisB.ReadOnly = false;
                     }
+
                 }
 
             }
