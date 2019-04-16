@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace CS6232GroupProject
 {
     /// <summary>
-    /// This class creates the start of the application.
+    /// This class creates the start of the application. 
     /// </summary>
     static class Program
     {
