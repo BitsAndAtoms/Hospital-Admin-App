@@ -426,8 +426,7 @@ namespace CS6232GroupProject.UserControls
                     try
                     {
                         this.labTestResultsController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
-                        MessageBox.Show("Test(s) ordered.", "Confirm");
-                        this.EnableTests();
+                        
                     }
                     catch (Exception)
                     {
@@ -435,6 +434,8 @@ namespace CS6232GroupProject.UserControls
                         MessageBox.Show("Error: The test could not be ordered");
                     }
                 }
+                MessageBox.Show("Test(s) ordered.", "Confirm");
+                this.EnableTests();
             }
             else
             {
