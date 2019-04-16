@@ -198,9 +198,6 @@ namespace CS6232GroupProject.UserControls
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            // If true, call the controller method, passing the created patient object,
-            // which calls the PatientDAL method that creates a new patient in the DB.
-            // Later, we can even have it check if that patient exsists already.
         }
 
         /// <summary>
@@ -220,11 +217,6 @@ namespace CS6232GroupProject.UserControls
              newPatient.DOB = this.dateTimePickerDOB.Value;
             
                 this.dataGridViewPatientInfo.DataSource = this.patientController.getPatientInformation(newPatient);
-
- 
-                
-           
-            /// when selected and conditions approved, Patient Info results panel and back button should then be visible
         }
 
         /// <summary>

@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
 {
+    /// <summary>
+    /// This class creates the UserControl Object for AdminMain.
+    /// </summary>
     public partial class UserControlAdminMain : UserControl
     {
         private AddressController addressController;
@@ -14,6 +17,7 @@ namespace CS6232GroupProject.UserControls
         private LoginController loginContoller;
         private int addressID;
         public static int nurseID { get; set; }
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -336,11 +340,8 @@ namespace CS6232GroupProject.UserControls
                 comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
                 textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
 
-                ///
-                //NEED THE INFORMATION FOR USERNAME AND PASSWORD VIA THE NEW METHOD
+                
                 textBoxUsernameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[11].Value.ToString();
-                //textBoxPasswordNurseInfoResults.Text = this.loginController.GetLoginInformationByUsername(textBoxUsernameNurseInfoResults.Text);
-                ///
 
                 if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
                 {

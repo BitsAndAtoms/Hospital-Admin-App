@@ -15,6 +15,7 @@ namespace CS6232GroupProject.View
         private readonly LoginController newLoginController;
         public static int NurseID {get; set;}
         public static int AdminID { get; set; }
+
         /// <summary>
         /// constructor of login form
         /// </summary>

@@ -86,6 +86,12 @@ namespace CS6232GroupProject.Controller
             return this.appointmentSource.CheckIfAppointmentExists(patientID);
         }
 
+        /// <summary>
+        /// This method Updates and Appointment in the DB.
+        /// </summary>
+        /// <param name="newAppointment"></param>
+        /// <param name="oldAppointment"></param>
+        /// <returns>True or false.</returns>
         public bool UpdateAppointment(Appointment newAppointment, Appointment oldAppointment)
         {
             return this.appointmentSource.UpdateAppointment(newAppointment, oldAppointment);

@@ -258,6 +258,12 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        /// <summary>
+        /// This method Updates an Appointment in the DB.
+        /// </summary>
+        /// <param name="newAppointment"></param>
+        /// <param name="oldAppointment"></param>
+        /// <returns>True or false.</returns>
         public bool UpdateAppointment(Appointment newAppointment, Appointment oldAppointment)
         {
             string updateStatement =
