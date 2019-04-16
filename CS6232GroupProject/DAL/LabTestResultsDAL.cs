@@ -114,10 +114,10 @@ namespace CS6232GroupProject.DAL
                             newResult.VisitID = (int)reader["visitID"];
                             newResult.Result = reader["testResult"].ToString();
                             newResult.Name = reader["testName"].ToString();
-                            newResult.TestResultDate = (DateTime)reader["testResultDate"];
-                            if (!string.IsNullOrEmpty(reader["testPerformedDate"].ToString()))
+                            newResult.TestResultDate = (DateTime)reader["testPerformedDate"];
+                            if (!string.IsNullOrEmpty(reader["testResultDate"].ToString()))
                             {
-                                newResult.TestOrderedDate = (DateTime)reader["testPerformedDate"];
+                                newResult.TestOrderedDate = (DateTime)reader["testResultDate"];
                             } else
                             {
                                 newResult.TestOrderedDate = visit.Date;
