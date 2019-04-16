@@ -387,6 +387,11 @@ namespace CS6232GroupProject.UserControls
 
         private void SetLabTestsTextBoxes()
         {
+            this.textBoxLabTestResultsHepatitisA.Text = "";
+            this.textBoxLabTestResultsHepatitisB.Text = "";
+            this.textBoxLabTestResultsWBC.Text = "";
+            this.textBoxLabTestResultsLDL.Text = "";
+
             List<LabTestResult> results = new List<LabTestResult>();
             results = this.labTestResultsController.GetLabTestResultByVisitID(this.visit);
             foreach (var nameOfTestOrdered in results) {
