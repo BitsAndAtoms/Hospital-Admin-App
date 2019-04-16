@@ -5,6 +5,10 @@ using System.Data.SqlClient;
 
 namespace CS6232GroupProject.DAL
 {
+    /// <summary>
+    /// This class creates a LabTestResultsDAL that can send or recieve 
+    /// information from the DB.
+    /// </summary>
     class LabTestResultsDAL
     {
 

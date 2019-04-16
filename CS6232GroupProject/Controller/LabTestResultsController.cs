@@ -4,11 +4,18 @@ using System.Collections.Generic;
 
 namespace CS6232GroupProject.Controller
 {
+    /// <summary>
+    /// This class creates a LabTestResultController object to call on methods in the 
+    /// LabTestResultDAL.
+    /// </summary>
     class LabTestResultsController
     {
 
         private readonly LabTestResultsDAL labTestResultsSource;
 
+        /// <summary>
+        /// This instatiates the LabTestResultsDAL and constructs the LabTestResultsController.
+        /// </summary>
         public LabTestResultsController()
         {
             this.labTestResultsSource = new LabTestResultsDAL();

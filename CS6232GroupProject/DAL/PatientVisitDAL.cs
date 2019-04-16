@@ -1,6 +1,5 @@
 ﻿using CS6232GroupProject.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace CS6232GroupProject.DAL
