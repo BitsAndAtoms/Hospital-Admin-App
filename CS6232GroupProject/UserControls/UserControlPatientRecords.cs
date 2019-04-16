@@ -388,6 +388,7 @@ namespace CS6232GroupProject.UserControls
 
         private void SetLabTestsTextBoxes()
         {
+             
             this.textBoxLabTestResultsHepatitisA.Text = "";
             this.textBoxLabTestResultsHepatitisB.Text = "";
             this.textBoxLabTestResultsWBC.Text = "";
@@ -412,6 +413,8 @@ namespace CS6232GroupProject.UserControls
                     this.textBoxLabTestResultsHepatitisA.Text = nameOfTestOrdered.Result;
                 }
             }
+
+         
         }
 
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
@@ -540,6 +543,7 @@ namespace CS6232GroupProject.UserControls
                 {
                     this.buttonLabTestsUpdate.Enabled = false;
                     this.checkedListBoxLabTests.Enabled = false;
+                  
                 }
                 for (int index = 0; index < 4; index++)
                 {
@@ -573,6 +577,14 @@ namespace CS6232GroupProject.UserControls
                         this.textBoxLabTestResultsHepatitisB.ReadOnly = false;
                     }
 
+                }
+
+                if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
+                {
+                    this.textBoxLabTestResultsWBC.ReadOnly = true;
+                    this.textBoxLabTestResultsLDL.ReadOnly = true;
+                    this.textBoxLabTestResultsHepatitisB.ReadOnly = true;
+                    this.textBoxLabTestResultsHepatitisA.ReadOnly = true;
                 }
 
             }
