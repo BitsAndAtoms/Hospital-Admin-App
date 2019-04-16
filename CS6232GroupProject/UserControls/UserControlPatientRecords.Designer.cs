@@ -299,7 +299,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -1049,6 +1049,7 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "TestDate";
             this.dataGridViewTextBoxColumn5.HeaderText = "TestDate";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -1056,6 +1057,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Result";
             this.dataGridViewTextBoxColumn4.HeaderText = "Result";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1063,6 +1065,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ResultID";
             this.dataGridViewTextBoxColumn1.HeaderText = "ResultID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -1070,6 +1073,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TestID";
             this.dataGridViewTextBoxColumn2.HeaderText = "TestID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -1077,6 +1081,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "VisitID";
             this.dataGridViewTextBoxColumn3.HeaderText = "VisitID";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // labTestResultBindingSource
             // 

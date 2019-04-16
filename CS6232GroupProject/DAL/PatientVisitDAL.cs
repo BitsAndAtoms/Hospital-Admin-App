@@ -65,8 +65,8 @@ namespace CS6232GroupProject.DAL
         internal void OrderSelectedTestForVisit(PatientVisit visit, string testOrdered)
         {
             string insertStatement =
-                "INSERT LabTestResult (testID, visitID) " +
-                "VALUES ((SELECT testID FROM LabTestList WHERE testName = @testName), @visitID)";
+                "INSERT LabTestResult (testID, visitID,testPerformedDate,testResultDate) " +
+                "VALUES ((SELECT testID FROM LabTestList WHERE testName = @testName), @visitID, @testPerformedDate,@testResultDate)";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
@@ -75,6 +75,8 @@ namespace CS6232GroupProject.DAL
                 {
                     insertCommand.Parameters.AddWithValue("@visitID", visit.VisitID);
                     insertCommand.Parameters.AddWithValue("@testName", testOrdered);
+                    insertCommand.Parameters.AddWithValue("@testPerformedDate", visit.Date);
+                    insertCommand.Parameters.AddWithValue("@testResultDate", DateTime.Now);
                     insertCommand.ExecuteNonQuery();
                 }
             }
@@ -134,7 +136,7 @@ namespace CS6232GroupProject.DAL
             List<LabTestResult> result = new List<LabTestResult>();
             
             string selectStatement =
-                "SELECT t1.testID as testID, visitID, labTestResultID as resultID, testName, testResult, testDate " +          
+                "SELECT t1.testID as testID, visitID, labTestResultID as resultID, testName, testResult, testResultDate, testPerformedDate " +          
                 "FROM LabTestResult t1 " +
                 "LEFT JOIN " +
                 "LabTestList t2 " +
@@ -157,10 +159,10 @@ namespace CS6232GroupProject.DAL
                             newResult.VisitID = (int)reader["visitID"];
                             newResult.Result = reader["testResult"].ToString();
                             newResult.Name = reader["testName"].ToString();
-                            if (!string.IsNullOrEmpty(reader["testDate"].ToString())) {
-                                newResult.TestDate = (DateTime)reader["testDate"];
-                            }
-                            
+                            newResult.TestResultDate = (DateTime)reader["testResultDate"];
+                            newResult.TestOrderedDate = (DateTime)reader["testPerformedDate"];
+
+
                             result.Add(newResult);
                         }
                     }
@@ -179,7 +181,7 @@ namespace CS6232GroupProject.DAL
         {
             string insertStatement =
                 "UPDATE LabTestResult SET" +
-                " testResult = @testResult, testDate = getdate() " +
+                " testResult = @testResult, testResultDate = getdate() " +
                 "WHERE  testID = " +
                 "(SELECT testID FROM LabTestList " +
                 "WHERE testName = @testName)" +
