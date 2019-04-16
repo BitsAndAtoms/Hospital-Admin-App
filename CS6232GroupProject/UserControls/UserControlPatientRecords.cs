@@ -82,7 +82,6 @@ namespace CS6232GroupProject.UserControls
             }
             catch (Exception)
             {
-                //MessageBox.Show(ex.Message, ex.GetType().ToString());
                 MessageBox.Show("This patient has no appointments.");
             }
         }

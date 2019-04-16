@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject.View
 {
+    /// <summary>
+    /// This class creates a Form for the MainAdmin UserControl.
+    /// </summary>
     public partial class FormAdminMain : Form
     {
         private FormLogin loginForm;
+        /// <summary>
+        /// This constructs the MainAdmin Form.
+        /// </summary>
+        /// <param name="loginForm"></param>
         public FormAdminMain(FormLogin loginForm)
         {
             InitializeComponent();
