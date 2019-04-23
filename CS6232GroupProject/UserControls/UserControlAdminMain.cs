@@ -3,6 +3,7 @@ using CS6232GroupProject.Model;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
@@ -84,12 +85,19 @@ namespace CS6232GroupProject.UserControls
         private bool CheckFieldsRegister()
         {
             labelAddMessage.ForeColor = Color.Red;
+
             int number;
-            int phoneNumber;
             int.TryParse(this.textBoxSSNRegisterNurse.Text, out number);
-            int.TryParse(this.textBoxPhoneRegisterNurse.Text, out phoneNumber);
-            bool checkNumber = number.GetType().Equals(typeof(int));
-            bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
+
+            string ssnPattern = @"^\d{9}|\d{3}-\d{2}-\d{4}$";
+            bool isSSNValid = Regex.IsMatch(this.textBoxSSNRegisterNurse.Text, ssnPattern);
+
+            string phonePattern = @"\(?\d{3}\)?[-\.]? *\d{3}[-\.]? *[-\.]?\d{4}$";
+            bool isPhoneValid = Regex.IsMatch(this.textBoxPhoneRegisterNurse.Text, phonePattern);
+
+            string zipPattern = @"^\d{5}(?:[-\s]\d{4})?$";
+            bool isZipValid = Regex.IsMatch(this.textBoxZipRegisterNurse.Text, zipPattern);
+
             if (this.textBoxFirstNameRegisterNurse.Text.Length == 0 || this.textBoxFirstNameRegisterNurse.Text == null)
             {
                 labelAddMessage.Text = "Please enter a First Name";
@@ -105,7 +113,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNRegisterNurse.Text.Length < 9 || this.textBoxSSNRegisterNurse.Text.Length > 9 || this.textBoxSSNRegisterNurse.Text == null || !checkNumber || this.nurseController.IsNurseSSNTaken(this.textBoxSSNRegisterNurse.Text))
+            else if (this.textBoxSSNRegisterNurse.Text.Length < 9 || this.textBoxSSNRegisterNurse.Text.Length > 9 || this.textBoxSSNRegisterNurse.Text == null || !isSSNValid || this.nurseController.IsNurseSSNTaken(this.textBoxSSNRegisterNurse.Text))
             {
                 labelAddMessage.Text = "Please enter a valid or non-taken 9 digit SSN";
                 return false;
@@ -115,7 +123,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxPhoneRegisterNurse.Text.Length == 0 || this.textBoxPhoneRegisterNurse.Text == null || !checkPhone)
+            else if (this.textBoxPhoneRegisterNurse.Text.Length == 0 || this.textBoxPhoneRegisterNurse.Text == null || !isPhoneValid)
             {
                 labelAddMessage.Text = "Please enter a Phone Number";
                 return false;
@@ -130,7 +138,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a State";
                 return false;
             }
-            else if (this.textBoxZipRegisterNurse.Text.Length == 0 || this.textBoxZipRegisterNurse.Text == null || !int.TryParse(textBoxZipRegisterNurse.Text, out number))
+            else if (this.textBoxZipRegisterNurse.Text.Length == 0 || this.textBoxZipRegisterNurse.Text == null || !int.TryParse(textBoxZipRegisterNurse.Text, out number) || !isZipValid)
             {
                 labelAddMessage.Text = "Please enter a valid Zip Code";
                 return false;
@@ -160,11 +168,17 @@ namespace CS6232GroupProject.UserControls
         {
             labelAddUpdateMessage.ForeColor = Color.Red;
             int number;
-            int phoneNumber;
             int.TryParse(this.textBoxSSNNurseInfoResults.Text, out number);
-            int.TryParse(this.textBoxPhoneNurseInfoResults.Text, out phoneNumber);
-            bool checkNumber = number.GetType().Equals(typeof(int));
-            bool checkPhone = phoneNumber.GetType().Equals(typeof(int));
+            
+            string ssnPattern = @"^\d{9}|\d{3}-\d{2}-\d{4}$";
+            bool isSSNValid = Regex.IsMatch(this.textBoxSSNNurseInfoResults.Text, ssnPattern);
+
+            string phonePattern = @"\(?\d{3}\)?[-\.]? *\d{3}[-\.]? *[-\.]?\d{4}$";
+            bool isPhoneValid = Regex.IsMatch(this.textBoxPhoneNurseInfoResults.Text, phonePattern);
+
+            string zipPattern = @"^\d{5}(?:[-\s]\d{4})?$";
+            bool isZipValid = Regex.IsMatch(this.textBoxZipNurseInfoResults.Text, zipPattern);
+
             if (this.textBoxFirstNameNurseInfoResults.Text.Length == 0 || this.textBoxFirstNameNurseInfoResults.Text == null)
             {
                 labelAddUpdateMessage.Text = "Please enter a First Name";
@@ -180,7 +194,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !checkNumber || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text, nurseID))
+            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !isSSNValid || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text, nurseID))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid 9 digit SSN";
                 return false;
@@ -190,7 +204,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxPhoneNurseInfoResults.Text.Length == 0 || this.textBoxPhoneNurseInfoResults.Text == null || !checkPhone)
+            else if (this.textBoxPhoneNurseInfoResults.Text.Length == 0 || this.textBoxPhoneNurseInfoResults.Text == null || !isPhoneValid)
             {
                 labelAddUpdateMessage.Text = "Please enter a Phone Number";
                 return false;
@@ -205,7 +219,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a State";
                 return false;
             }
-            else if (this.textBoxZipNurseInfoResults.Text.Length == 0 || this.textBoxZipNurseInfoResults.Text == null || !int.TryParse(textBoxZipNurseInfoResults.Text, out number))
+            else if (this.textBoxZipNurseInfoResults.Text.Length == 0 || this.textBoxZipNurseInfoResults.Text == null || !int.TryParse(textBoxZipNurseInfoResults.Text, out number) || !isZipValid)
             {
                 labelAddUpdateMessage.Text = "Please enter a valid Zip Code";
                 return false;
