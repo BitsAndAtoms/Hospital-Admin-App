@@ -580,5 +580,14 @@ namespace CS6232GroupProject.UserControls
             }
                
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            this.textBoxFirstName.Clear();
+            this.textBoxLastName.Clear();
+            this.dateTimePickerDOB.Value = DateTime.Now;
+            this.dataGridViewPatientInfo.DataSource = null;
+            this.dataGridViewPatientInfo.Rows.Clear();
+        }
     }
 }

@@ -133,6 +133,8 @@
             this.dateTimePickerReportsEndDate = new System.Windows.Forms.DateTimePicker();
             this.buttonReportsSubmit = new System.Windows.Forms.Button();
             this.labelReports = new System.Windows.Forms.Label();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonNurseInfoClear = new System.Windows.Forms.Button();
             this.tabControlAdminMain.SuspendLayout();
             this.tabPageAdminNurseInfo.SuspendLayout();
             this.panelNurseSearch.SuspendLayout();
@@ -153,6 +155,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tabPageAdminReports.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdminMain
@@ -332,8 +335,8 @@
             this.tableLayoutPanel1.Controls.Add(this.labelFirstNameNurseInfo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelDateOfBirthNurseInfo, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelLastNameNurseInfo, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.buttonNurseInfoSearch, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePickerDOBNurseInfo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel13, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -405,12 +408,12 @@
             // 
             // buttonNurseInfoSearch
             // 
-            this.buttonNurseInfoSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonNurseInfoSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.buttonNurseInfoSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
             this.buttonNurseInfoSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNurseInfoSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNurseInfoSearch.ForeColor = System.Drawing.Color.Black;
-            this.buttonNurseInfoSearch.Location = new System.Drawing.Point(532, 157);
+            this.buttonNurseInfoSearch.Location = new System.Drawing.Point(180, 4);
             this.buttonNurseInfoSearch.Name = "buttonNurseInfoSearch";
             this.buttonNurseInfoSearch.Size = new System.Drawing.Size(137, 35);
             this.buttonNurseInfoSearch.TabIndex = 7;
@@ -531,7 +534,7 @@
             this.comboBoxStateNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStateNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStateNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 29);
+            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 25);
             this.comboBoxStateNurseInfoResults.Name = "comboBoxStateNurseInfoResults";
             this.comboBoxStateNurseInfoResults.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStateNurseInfoResults.TabIndex = 15;
@@ -768,7 +771,7 @@
             this.comboBoxGenderNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(250, 214);
+            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(250, 211);
             this.comboBoxGenderNurseInfoResults.Name = "comboBoxGenderNurseInfoResults";
             this.comboBoxGenderNurseInfoResults.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderNurseInfoResults.TabIndex = 6;
@@ -799,7 +802,7 @@
             this.comboBoxNurseInfoResultsActive.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(800, 64);
+            this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(800, 61);
             this.comboBoxNurseInfoResultsActive.Name = "comboBoxNurseInfoResultsActive";
             this.comboBoxNurseInfoResultsActive.Size = new System.Drawing.Size(121, 28);
             this.comboBoxNurseInfoResultsActive.TabIndex = 8;
@@ -1006,7 +1009,7 @@
             this.comboBoxStateRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStateRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStateRegisterNurse.FormattingEnabled = true;
-            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 29);
+            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 25);
             this.comboBoxStateRegisterNurse.Name = "comboBoxStateRegisterNurse";
             this.comboBoxStateRegisterNurse.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStateRegisterNurse.TabIndex = 13;
@@ -1267,7 +1270,7 @@
             this.comboBoxGenderRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderRegisterNurse.FormattingEnabled = true;
-            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(250, 214);
+            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(250, 211);
             this.comboBoxGenderRegisterNurse.Name = "comboBoxGenderRegisterNurse";
             this.comboBoxGenderRegisterNurse.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderRegisterNurse.TabIndex = 5;
@@ -1279,7 +1282,7 @@
             this.comboBoxRegisterNurseActive.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboBoxRegisterNurseActive.Location = new System.Drawing.Point(800, 64);
+            this.comboBoxRegisterNurseActive.Location = new System.Drawing.Point(800, 61);
             this.comboBoxRegisterNurseActive.Name = "comboBoxRegisterNurseActive";
             this.comboBoxRegisterNurseActive.Size = new System.Drawing.Size(121, 28);
             this.comboBoxRegisterNurseActive.TabIndex = 7;
@@ -1460,6 +1463,36 @@
             this.labelReports.TabIndex = 5;
             this.labelReports.Text = "Generate Reports";
             // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 2;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Controls.Add(this.buttonNurseInfoClear, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.buttonNurseInfoSearch, 0, 0);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(280, 153);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(641, 44);
+            this.tableLayoutPanel13.TabIndex = 8;
+            // 
+            // buttonNurseInfoClear
+            // 
+            this.buttonNurseInfoClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonNurseInfoClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonNurseInfoClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNurseInfoClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNurseInfoClear.ForeColor = System.Drawing.Color.Black;
+            this.buttonNurseInfoClear.Location = new System.Drawing.Point(412, 4);
+            this.buttonNurseInfoClear.Name = "buttonNurseInfoClear";
+            this.buttonNurseInfoClear.Size = new System.Drawing.Size(137, 35);
+            this.buttonNurseInfoClear.TabIndex = 9;
+            this.buttonNurseInfoClear.Text = "Clear";
+            this.buttonNurseInfoClear.UseVisualStyleBackColor = false;
+            this.buttonNurseInfoClear.Click += new System.EventHandler(this.buttonNurseInfoClear_Click);
+            // 
             // UserControlAdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1502,6 +1535,7 @@
             this.tabPageAdminReports.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1615,5 +1649,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumnNurseInformation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.Label PasswordInfoLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Button buttonNurseInfoClear;
     }
 }

@@ -98,9 +98,10 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.labelDateOfBirth = new System.Windows.Forms.Label();
             this.labelLastName = new System.Windows.Forms.Label();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
-            this.labelInfo = new System.Windows.Forms.Label();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.labelPatientInformation = new System.Windows.Forms.Label();
             this.tabPageNurseRegister = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -155,6 +156,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.tabPageNurseRegister.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanelRegisterZipcode.SuspendLayout();
@@ -929,9 +931,8 @@
             this.tableLayoutPanel1.Controls.Add(this.labelFirstName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelDateOfBirth, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelLastName, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.buttonSearch, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePickerDOB, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelInfo, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -1001,21 +1002,6 @@
             this.labelLastName.TabIndex = 2;
             this.labelLastName.Text = "Last Name";
             // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.ForeColor = System.Drawing.Color.Black;
-            this.buttonSearch.Location = new System.Drawing.Point(349, 157);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(137, 35);
-            this.buttonSearch.TabIndex = 4;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
             // dateTimePickerDOB
             // 
             this.dateTimePickerDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1025,17 +1011,50 @@
             this.dateTimePickerDOB.Size = new System.Drawing.Size(186, 26);
             this.dateTimePickerDOB.TabIndex = 3;
             // 
-            // labelInfo
+            // tableLayoutPanel10
             // 
-            this.labelInfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelInfo.AutoSize = true;
-            this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo.Location = new System.Drawing.Point(195, 224);
-            this.labelInfo.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(301, 20);
-            this.labelInfo.TabIndex = 8;
-            this.labelInfo.Text = "Select a Patient From the List Below";
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.buttonClear, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.buttonSearch, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(195, 153);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(445, 44);
+            this.tableLayoutPanel10.TabIndex = 5;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClear.ForeColor = System.Drawing.Color.Black;
+            this.buttonClear.Location = new System.Drawing.Point(274, 4);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(118, 35);
+            this.buttonClear.TabIndex = 6;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.Black;
+            this.buttonSearch.Location = new System.Drawing.Point(101, 4);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(118, 35);
+            this.buttonSearch.TabIndex = 4;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // labelPatientInformation
             // 
@@ -1471,6 +1490,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
             this.tabPageNurseRegister.ResumeLayout(false);
             this.tabPageNurseRegister.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1575,7 +1595,6 @@
         private System.Windows.Forms.BindingSource doctorBindingSource1;
         private System.Windows.Forms.BindingSource doctorBindingSource2;
         private System.Windows.Forms.Label labelAddUpdateMessage;
-        private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lnameDataGridViewTextBoxColumn;
@@ -1600,5 +1619,7 @@
         private System.Windows.Forms.Button buttonBookSubmit;
         private System.Windows.Forms.TextBox textBoxSummary;
         private System.Windows.Forms.LinkLabel linkLabelBookBack;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
