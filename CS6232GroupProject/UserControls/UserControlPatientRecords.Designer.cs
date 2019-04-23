@@ -115,8 +115,8 @@
             this.labelPatientRecordsAppointment = new System.Windows.Forms.Label();
             this.labelPatientRecords = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPatientName = new System.Windows.Forms.Label();
             this.labelPatientNameDisplay = new System.Windows.Forms.Label();
+            this.labelPatientName = new System.Windows.Forms.Label();
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageAppointments.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -770,6 +770,7 @@
             // 
             // tabPageLabTests
             // 
+            this.tabPageLabTests.AutoScroll = true;
             this.tabPageLabTests.Controls.Add(this.tableLayoutPanel3);
             this.tabPageLabTests.Controls.Add(this.labelLabTests);
             this.tabPageLabTests.Location = new System.Drawing.Point(4, 29);
@@ -1186,7 +1187,7 @@
             this.comboBoxPatientRecordsAppointment.DisplayMember = "AppointmentDateTime";
             this.comboBoxPatientRecordsAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatientRecordsAppointment.FormattingEnabled = true;
-            this.comboBoxPatientRecordsAppointment.Location = new System.Drawing.Point(642, 39);
+            this.comboBoxPatientRecordsAppointment.Location = new System.Drawing.Point(600, 39);
             this.comboBoxPatientRecordsAppointment.Name = "comboBoxPatientRecordsAppointment";
             this.comboBoxPatientRecordsAppointment.Size = new System.Drawing.Size(187, 21);
             this.comboBoxPatientRecordsAppointment.TabIndex = 2;
@@ -1199,7 +1200,7 @@
             this.labelPatientRecordsAppointment.AutoSize = true;
             this.labelPatientRecordsAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPatientRecordsAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelPatientRecordsAppointment.Location = new System.Drawing.Point(498, 40);
+            this.labelPatientRecordsAppointment.Location = new System.Drawing.Point(456, 40);
             this.labelPatientRecordsAppointment.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelPatientRecordsAppointment.Name = "labelPatientRecordsAppointment";
             this.labelPatientRecordsAppointment.Size = new System.Drawing.Size(116, 20);
@@ -1220,10 +1221,10 @@
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 4;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 231F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 343F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 385F));
             this.tableLayoutPanel8.Controls.Add(this.labelPatientNameDisplay, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.labelPatientRecords, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.comboBoxPatientRecordsAppointment, 3, 1);
@@ -1238,31 +1239,31 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(839, 71);
             this.tableLayoutPanel8.TabIndex = 4;
             // 
+            // labelPatientNameDisplay
+            // 
+            this.labelPatientNameDisplay.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelPatientNameDisplay.AutoSize = true;
+            this.labelPatientNameDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPatientNameDisplay.ForeColor = System.Drawing.Color.Black;
+            this.labelPatientNameDisplay.Location = new System.Drawing.Point(225, 40);
+            this.labelPatientNameDisplay.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelPatientNameDisplay.Name = "labelPatientNameDisplay";
+            this.labelPatientNameDisplay.Size = new System.Drawing.Size(91, 20);
+            this.labelPatientNameDisplay.TabIndex = 14;
+            this.labelPatientNameDisplay.Text = "placeholder";
+            // 
             // labelPatientName
             // 
             this.labelPatientName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelPatientName.AutoSize = true;
             this.labelPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPatientName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelPatientName.Location = new System.Drawing.Point(135, 40);
+            this.labelPatientName.Location = new System.Drawing.Point(126, 40);
             this.labelPatientName.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelPatientName.Name = "labelPatientName";
             this.labelPatientName.Size = new System.Drawing.Size(71, 20);
             this.labelPatientName.TabIndex = 13;
             this.labelPatientName.Text = "Patient:";
-            // 
-            // labelPatientNameDisplay
-            // 
-            this.labelPatientNameDisplay.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelPatientNameDisplay.AutoSize = true;
-            this.labelPatientNameDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPatientNameDisplay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelPatientNameDisplay.Location = new System.Drawing.Point(307, 40);
-            this.labelPatientNameDisplay.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelPatientNameDisplay.Name = "labelPatientNameDisplay";
-            this.labelPatientNameDisplay.Size = new System.Drawing.Size(102, 20);
-            this.labelPatientNameDisplay.TabIndex = 14;
-            this.labelPatientNameDisplay.Text = "placeholder";
             // 
             // UserControlPatientRecords
             // 

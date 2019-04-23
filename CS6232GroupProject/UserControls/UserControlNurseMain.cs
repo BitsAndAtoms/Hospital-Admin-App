@@ -15,11 +15,10 @@ namespace CS6232GroupProject.UserControls
     /// </summary>
     public partial class UserControlNurseMain : UserControl
     {
-
+        public static string patientName;
         public static int patientID { get; set; }
         private List<Doctor> doctorList;
         private List<Patient> patientList;
-        
         private DoctorController doctorController;
         private PatientController patientController;
         private AppointmentController appointmentController;
@@ -257,6 +256,7 @@ namespace CS6232GroupProject.UserControls
                 patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
                 string fName = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
                 string lName = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
+                patientName = fName + " " + lName;
 
                 if (appointmentController.CheckIfAppointmentExists(patientID))
                 {
@@ -265,7 +265,7 @@ namespace CS6232GroupProject.UserControls
                 }
                 else
                 {
-                    MessageBox.Show("No appointments found for " + fName + " " + lName + ". \nPlease book an appointment to continue.", "Error - No Appointment Found");
+                    MessageBox.Show("No appointments found for " + patientName + ". \nPlease book an appointment to continue.", "Error - No Appointment Found");
                 }
             }
             if (e.ColumnIndex == 10)

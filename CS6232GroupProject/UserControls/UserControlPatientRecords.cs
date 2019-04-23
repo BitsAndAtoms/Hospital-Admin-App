@@ -22,6 +22,8 @@ namespace CS6232GroupProject.UserControls
         private PatientVisitController visitController;
         private LabTestResultsController labTestResultsController;
         private List<Doctor> doctorList;
+        private PatientController patientController;
+        private Patient patient;
         private Appointment appointment;
         private PatientVisit visit;
         private int appointmentID;
@@ -96,7 +98,6 @@ namespace CS6232GroupProject.UserControls
             newVisit.NurseID = FormLogin.NurseID;
             newVisit.DoctorID = this.appointment.DoctorID;
             newVisit.Date = (DateTime)this.appointment.AppointmentDateTime;
-
             
             newVisit.Weight = 0.0m;
             newVisit.Systolic = 0;
@@ -124,6 +125,7 @@ namespace CS6232GroupProject.UserControls
         {
             try
             {
+                this.labelPatientNameDisplay.Text = UserControlNurseMain.patientName;
                 this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
                 this.textBoxAppointmentsSummary.Text = this.appointment.Reasons;
                 this.dateTimePickerAppointments.Value = (DateTime)this.appointment.AppointmentDateTime;
