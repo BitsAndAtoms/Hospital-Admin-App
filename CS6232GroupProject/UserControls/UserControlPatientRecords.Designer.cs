@@ -93,6 +93,9 @@
             this.labelLabTestResultsLDL = new System.Windows.Forms.Label();
             this.textBoxLabTestResultsWBC = new System.Windows.Forms.TextBox();
             this.buttonLabTestsUpdate = new System.Windows.Forms.Button();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateTimePickerLabTestResults = new System.Windows.Forms.DateTimePicker();
+            this.labelLabTestResultsDate = new System.Windows.Forms.Label();
             this.labelLabTests = new System.Windows.Forms.Label();
             this.tabPageLabResults = new System.Windows.Forms.TabPage();
             this.labTestResultDataGridView = new System.Windows.Forms.DataGridView();
@@ -105,13 +108,15 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labTestResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPatientRecordsAppointment = new System.Windows.Forms.Label();
-            this.comboBoxPatientRecordsAppointment = new System.Windows.Forms.ComboBox();
             this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelPatientRecords = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxPatientRecordsAppointment = new System.Windows.Forms.ComboBox();
+            this.labelPatientRecordsAppointment = new System.Windows.Forms.Label();
+            this.labelPatientRecords = new System.Windows.Forms.Label();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelPatientName = new System.Windows.Forms.Label();
+            this.labelPatientNameDisplay = new System.Windows.Forms.Label();
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageAppointments.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -131,14 +136,15 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
             this.tabPageLabResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labTestResultDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labTestResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
-            this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labTestBindingSource)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlPatientRecords
@@ -301,7 +307,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -785,20 +791,21 @@
             this.tableLayoutPanel3.Controls.Add(this.labelLabTestsOrder, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelLabTestsResults, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel11, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.buttonLabTestsUpdate, 1, 6);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel3.Controls.Add(this.buttonLabTestsUpdate, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel13, 1, 6);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 29);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(831, 453);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(831, 472);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // tableLayoutPanel12
@@ -810,14 +817,14 @@
             this.tableLayoutPanel12.Controls.Add(this.labelLabTestResultsHepatitisA, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.labelLabTestResultsHepatitisB, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.textBoxLabTestResultsHepatitisA, 0, 1);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(177, 303);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(177, 292);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(410, 54);
-            this.tableLayoutPanel12.TabIndex = 15;
+            this.tableLayoutPanel12.TabIndex = 6;
             // 
             // textBoxLabTestResultsHepatitisB
             // 
@@ -828,7 +835,7 @@
             this.textBoxLabTestResultsHepatitisB.Name = "textBoxLabTestResultsHepatitisB";
             this.textBoxLabTestResultsHepatitisB.ReadOnly = true;
             this.textBoxLabTestResultsHepatitisB.Size = new System.Drawing.Size(186, 29);
-            this.textBoxLabTestResultsHepatitisB.TabIndex = 5;
+            this.textBoxLabTestResultsHepatitisB.TabIndex = 8;
             // 
             // labelLabTestResultsHepatitisA
             // 
@@ -865,7 +872,7 @@
             this.textBoxLabTestResultsHepatitisA.Name = "textBoxLabTestResultsHepatitisA";
             this.textBoxLabTestResultsHepatitisA.ReadOnly = true;
             this.textBoxLabTestResultsHepatitisA.Size = new System.Drawing.Size(186, 29);
-            this.textBoxLabTestResultsHepatitisA.TabIndex = 4;
+            this.textBoxLabTestResultsHepatitisA.TabIndex = 7;
             // 
             // checkedListBoxLabTests
             // 
@@ -879,7 +886,7 @@
             this.checkedListBoxLabTests.Location = new System.Drawing.Point(177, 53);
             this.checkedListBoxLabTests.Name = "checkedListBoxLabTests";
             this.checkedListBoxLabTests.Size = new System.Drawing.Size(262, 84);
-            this.checkedListBoxLabTests.TabIndex = 12;
+            this.checkedListBoxLabTests.TabIndex = 1;
             // 
             // buttonLabTestsOrder
             // 
@@ -892,7 +899,7 @@
             this.buttonLabTestsOrder.Margin = new System.Windows.Forms.Padding(150, 3, 3, 3);
             this.buttonLabTestsOrder.Name = "buttonLabTestsOrder";
             this.buttonLabTestsOrder.Size = new System.Drawing.Size(137, 34);
-            this.buttonLabTestsOrder.TabIndex = 14;
+            this.buttonLabTestsOrder.TabIndex = 2;
             this.buttonLabTestsOrder.Text = "Order";
             this.buttonLabTestsOrder.UseVisualStyleBackColor = false;
             this.buttonLabTestsOrder.Click += new System.EventHandler(this.buttonLabTestsOrder_Click);
@@ -916,7 +923,7 @@
             this.labelLabTestsResults.AutoSize = true;
             this.labelLabTestsResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLabTestsResults.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelLabTestsResults.Location = new System.Drawing.Point(3, 195);
+            this.labelLabTestsResults.Location = new System.Drawing.Point(3, 189);
             this.labelLabTestsResults.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelLabTestsResults.Name = "labelLabTestsResults";
             this.labelLabTestsResults.Size = new System.Drawing.Size(145, 20);
@@ -932,14 +939,14 @@
             this.tableLayoutPanel11.Controls.Add(this.labelLabTestResultsWBC, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.labelLabTestResultsLDL, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.textBoxLabTestResultsWBC, 0, 1);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(177, 234);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(177, 221);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 3;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(410, 54);
-            this.tableLayoutPanel11.TabIndex = 16;
+            this.tableLayoutPanel11.TabIndex = 3;
             // 
             // textBoxLabTestResultsLDL
             // 
@@ -996,13 +1003,50 @@
             this.buttonLabTestsUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLabTestsUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLabTestsUpdate.ForeColor = System.Drawing.Color.Black;
-            this.buttonLabTestsUpdate.Location = new System.Drawing.Point(434, 373);
+            this.buttonLabTestsUpdate.Location = new System.Drawing.Point(434, 427);
             this.buttonLabTestsUpdate.Name = "buttonLabTestsUpdate";
             this.buttonLabTestsUpdate.Size = new System.Drawing.Size(137, 34);
-            this.buttonLabTestsUpdate.TabIndex = 7;
+            this.buttonLabTestsUpdate.TabIndex = 11;
             this.buttonLabTestsUpdate.Text = "Update";
             this.buttonLabTestsUpdate.UseVisualStyleBackColor = false;
             this.buttonLabTestsUpdate.Click += new System.EventHandler(this.buttonLabTestsSubmit_Click);
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Controls.Add(this.dateTimePickerLabTestResults, 0, 1);
+            this.tableLayoutPanel13.Controls.Add(this.labelLabTestResultsDate, 0, 0);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(177, 358);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(410, 54);
+            this.tableLayoutPanel13.TabIndex = 9;
+            // 
+            // dateTimePickerLabTestResults
+            // 
+            this.dateTimePickerLabTestResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerLabTestResults.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerLabTestResults.Location = new System.Drawing.Point(3, 24);
+            this.dateTimePickerLabTestResults.Name = "dateTimePickerLabTestResults";
+            this.dateTimePickerLabTestResults.Size = new System.Drawing.Size(186, 26);
+            this.dateTimePickerLabTestResults.TabIndex = 10;
+            // 
+            // labelLabTestResultsDate
+            // 
+            this.labelLabTestResultsDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelLabTestResultsDate.AutoSize = true;
+            this.labelLabTestResultsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLabTestResultsDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelLabTestResultsDate.Location = new System.Drawing.Point(3, 1);
+            this.labelLabTestResultsDate.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelLabTestResultsDate.Name = "labelLabTestResultsDate";
+            this.labelLabTestResultsDate.Size = new System.Drawing.Size(43, 18);
+            this.labelLabTestResultsDate.TabIndex = 11;
+            this.labelLabTestResultsDate.Text = "Date";
             // 
             // labelLabTests
             // 
@@ -1118,35 +1162,22 @@
             // 
             this.patientBindingSource.DataSource = typeof(CS6232GroupProject.Model.Patient);
             // 
-            // tableLayoutPanel8
+            // appointmentBindingSource
             // 
-            this.tableLayoutPanel8.ColumnCount = 3;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 395F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Controls.Add(this.labelPatientRecordsAppointment, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.comboBoxPatientRecordsAppointment, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.labelPatientRecords, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(839, 54);
-            this.tableLayoutPanel8.TabIndex = 4;
+            this.appointmentBindingSource.DataSource = typeof(CS6232GroupProject.Model.Appointment);
             // 
-            // labelPatientRecordsAppointment
+            // panel1
             // 
-            this.labelPatientRecordsAppointment.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelPatientRecordsAppointment.AutoSize = true;
-            this.labelPatientRecordsAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPatientRecordsAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelPatientRecordsAppointment.Location = new System.Drawing.Point(398, 17);
-            this.labelPatientRecordsAppointment.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelPatientRecordsAppointment.Name = "labelPatientRecordsAppointment";
-            this.labelPatientRecordsAppointment.Size = new System.Drawing.Size(167, 20);
-            this.labelPatientRecordsAppointment.TabIndex = 12;
-            this.labelPatientRecordsAppointment.Text = "Select Appointment";
+            this.panel1.Controls.Add(this.tabControlPatientRecords);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 71);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(839, 534);
+            this.panel1.TabIndex = 5;
+            // 
+            // labTestBindingSource
+            // 
+            this.labTestBindingSource.DataSource = typeof(CS6232GroupProject.Model.LabTest);
             // 
             // comboBoxPatientRecordsAppointment
             // 
@@ -1155,16 +1186,25 @@
             this.comboBoxPatientRecordsAppointment.DisplayMember = "AppointmentDateTime";
             this.comboBoxPatientRecordsAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatientRecordsAppointment.FormattingEnabled = true;
-            this.comboBoxPatientRecordsAppointment.Location = new System.Drawing.Point(595, 16);
+            this.comboBoxPatientRecordsAppointment.Location = new System.Drawing.Point(642, 39);
             this.comboBoxPatientRecordsAppointment.Name = "comboBoxPatientRecordsAppointment";
-            this.comboBoxPatientRecordsAppointment.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxPatientRecordsAppointment.Size = new System.Drawing.Size(187, 21);
             this.comboBoxPatientRecordsAppointment.TabIndex = 2;
             this.comboBoxPatientRecordsAppointment.ValueMember = "AppointmentID";
             this.comboBoxPatientRecordsAppointment.SelectedIndexChanged += new System.EventHandler(this.comboBoxPatientRecordsAppointment_SelectedIndexChanged);
             // 
-            // appointmentBindingSource
+            // labelPatientRecordsAppointment
             // 
-            this.appointmentBindingSource.DataSource = typeof(CS6232GroupProject.Model.Appointment);
+            this.labelPatientRecordsAppointment.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelPatientRecordsAppointment.AutoSize = true;
+            this.labelPatientRecordsAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPatientRecordsAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelPatientRecordsAppointment.Location = new System.Drawing.Point(498, 40);
+            this.labelPatientRecordsAppointment.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelPatientRecordsAppointment.Name = "labelPatientRecordsAppointment";
+            this.labelPatientRecordsAppointment.Size = new System.Drawing.Size(116, 20);
+            this.labelPatientRecordsAppointment.TabIndex = 12;
+            this.labelPatientRecordsAppointment.Text = "Appointment:";
             // 
             // labelPatientRecords
             // 
@@ -1177,28 +1217,63 @@
             this.labelPatientRecords.TabIndex = 1;
             this.labelPatientRecords.Text = "Patient Records";
             // 
-            // panel1
+            // tableLayoutPanel8
             // 
-            this.panel1.Controls.Add(this.tabControlPatientRecords);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 54);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(839, 534);
-            this.panel1.TabIndex = 5;
+            this.tableLayoutPanel8.ColumnCount = 4;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 231F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 343F));
+            this.tableLayoutPanel8.Controls.Add(this.labelPatientNameDisplay, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.labelPatientRecords, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.comboBoxPatientRecordsAppointment, 3, 1);
+            this.tableLayoutPanel8.Controls.Add(this.labelPatientName, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.labelPatientRecordsAppointment, 2, 1);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(839, 71);
+            this.tableLayoutPanel8.TabIndex = 4;
             // 
-            // labTestBindingSource
+            // labelPatientName
             // 
-            this.labTestBindingSource.DataSource = typeof(CS6232GroupProject.Model.LabTest);
+            this.labelPatientName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelPatientName.AutoSize = true;
+            this.labelPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPatientName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelPatientName.Location = new System.Drawing.Point(135, 40);
+            this.labelPatientName.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelPatientName.Name = "labelPatientName";
+            this.labelPatientName.Size = new System.Drawing.Size(71, 20);
+            this.labelPatientName.TabIndex = 13;
+            this.labelPatientName.Text = "Patient:";
+            // 
+            // labelPatientNameDisplay
+            // 
+            this.labelPatientNameDisplay.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelPatientNameDisplay.AutoSize = true;
+            this.labelPatientNameDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPatientNameDisplay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelPatientNameDisplay.Location = new System.Drawing.Point(307, 40);
+            this.labelPatientNameDisplay.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelPatientNameDisplay.Name = "labelPatientNameDisplay";
+            this.labelPatientNameDisplay.Size = new System.Drawing.Size(102, 20);
+            this.labelPatientNameDisplay.TabIndex = 14;
+            this.labelPatientNameDisplay.Text = "placeholder";
             // 
             // UserControlPatientRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel8);
             this.Name = "UserControlPatientRecords";
-            this.Size = new System.Drawing.Size(839, 607);
+            this.Size = new System.Drawing.Size(839, 632);
             this.tabControlPatientRecords.ResumeLayout(false);
             this.tabPageAppointments.ResumeLayout(false);
             this.tabPageAppointments.PerformLayout();
@@ -1233,15 +1308,17 @@
             this.tableLayoutPanel12.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
             this.tabPageLabResults.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.labTestResultDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labTestResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.labTestBindingSource)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1295,10 +1372,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerAppointmentsTime;
         private System.Windows.Forms.BindingSource patientBindingSource;
         private System.Windows.Forms.BindingSource doctorBindingSource;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Label labelPatientRecordsAppointment;
-        private System.Windows.Forms.ComboBox comboBoxPatientRecordsAppointment;
-        private System.Windows.Forms.Label labelPatientRecords;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.BindingSource appointmentBindingSource;
         private System.Windows.Forms.TabPage tabPageLabTests;
@@ -1332,5 +1405,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.DateTimePicker dateTimePickerLabTestResults;
+        private System.Windows.Forms.Label labelLabTestResultsDate;
+        private System.Windows.Forms.ComboBox comboBoxPatientRecordsAppointment;
+        private System.Windows.Forms.Label labelPatientRecordsAppointment;
+        private System.Windows.Forms.Label labelPatientRecords;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Label labelPatientNameDisplay;
+        private System.Windows.Forms.Label labelPatientName;
     }
 }
