@@ -255,28 +255,17 @@ namespace CS6232GroupProject.UserControls
             {
 
                 patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+                string fName = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
+                string lName = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
 
                 if (appointmentController.CheckIfAppointmentExists(patientID))
                 {
-                    bool isOpen = false;
                     FormPatientRecords formPatientRecords = new FormPatientRecords();
-                    foreach (Form form in Application.OpenForms)
-                    {
-                        if (form.Name == "FormPatientRecords")
-                        {
-                            isOpen = true;
-                            form.BringToFront();
-                            break;
-                        }
-                    }
-                    if (isOpen == false)
-                    {
-                        formPatientRecords.Show();
-                    }
+                    formPatientRecords.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Patient has no appointments. Please book one.", "Error - No Appointment Found");
+                    MessageBox.Show("No appointments found for " + fName + " " + lName + ". \nPlease book an appointment to continue.", "Error - No Appointment Found");
                 }
             }
             if (e.ColumnIndex == 10)
