@@ -76,6 +76,7 @@ namespace CS6232GroupProject.UserControls
             this.textBoxPasswordRegisterNurse.Clear();
             this.labelAddMessage.Text = "";
             this.comboBoxRegisterNurseActive.SelectedIndex = -1;
+            this.textBoxPasswordNurseInfoResults.Clear();
         }
 
         /// <summary>
@@ -336,7 +337,7 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         private void dataGridViewNurseInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 10) { 
+            if (e.ColumnIndex == 11) { 
                 panelNurseSearch.Visible = false;
                 panelNurseInfoResults.Visible = true;
                 linkLabelNurseInfoBack.Visible = true;
@@ -355,7 +356,7 @@ namespace CS6232GroupProject.UserControls
                 textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
 
                 
-                textBoxUsernameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[11].Value.ToString();
+                textBoxUsernameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[10].Value.ToString();
 
                 if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
                 {

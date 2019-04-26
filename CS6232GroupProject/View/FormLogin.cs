@@ -104,10 +104,5 @@ namespace CS6232GroupProject.View
                 this.buttonLogin_Click(this, new System.EventArgs());
             }
         }
-
-        private void FormLogin_Leave(object sender, EventArgs e)
-        {
-            this.textBoxUsername.Focus();
-        }
     }
 }
