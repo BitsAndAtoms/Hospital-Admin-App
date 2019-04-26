@@ -246,7 +246,6 @@ namespace CS6232GroupProject.UserControls
         {
             panelNurseSearch.Visible = true;
             panelNurseInfoResults.Visible = false;
-            linkLabelNurseInfoBack.Visible = false;
         }
 
         /// <summary>
@@ -340,7 +339,6 @@ namespace CS6232GroupProject.UserControls
             if (e.ColumnIndex == 11) { 
                 panelNurseSearch.Visible = false;
                 panelNurseInfoResults.Visible = true;
-                linkLabelNurseInfoBack.Visible = true;
 
                 
                 textBoxFirstNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[1].Value.ToString();
@@ -448,6 +446,8 @@ namespace CS6232GroupProject.UserControls
         {
             this.ClearNurseSearch();
             this.ClearText();
+            panelNurseSearch.Visible = true;
+            panelNurseInfoResults.Visible = false;
             this.tabControlAdminMain.SelectedTab = tabPageAdminNurseInfo;
         }
     }

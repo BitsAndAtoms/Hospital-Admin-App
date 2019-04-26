@@ -588,6 +588,8 @@ namespace CS6232GroupProject.UserControls
         {
             this.ClearSearch();
             this.ClearText();
+            panelPatientSearch.Visible = true;
+            panelPatientInfoResults.Visible = false;
             this.tabControlNurseMain.SelectedTab = tabPageNursePatientInformation;
         }
     }
