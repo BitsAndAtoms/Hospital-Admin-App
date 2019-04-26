@@ -20,8 +20,8 @@ namespace CS6232GroupProject.DAL
         internal void OrderSelectedTestForVisit(PatientVisit visit, string testOrdered)
         {
             string insertStatement =
-                "INSERT LabTestResult (testID, visitID,testPerformedDate,testResultDate) " +
-                "VALUES ((SELECT testID FROM LabTestList WHERE testName = @testName), @visitID, @testPerformedDate,@testResultDate)";
+                "INSERT LabTestResult (testID, visitID, testPerformedDate, testResultDate) " +
+                "VALUES ((SELECT testID FROM LabTestList WHERE testName = @testName), @visitID, @testPerformedDate, @testResultDate)";
             using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
@@ -142,7 +142,7 @@ namespace CS6232GroupProject.DAL
         {
             string insertStatement =
                 "UPDATE LabTestResult SET" +
-                " testResult = @testResult, testResultDate = getdate() " +
+                " testResult = @testResult, testResultDate = @testResultDate, testPerformedDate = @testPerformedDate " +
                 "WHERE  testID = " +
                 "(SELECT testID FROM LabTestList " +
                 "WHERE testName = @testName)" +
@@ -157,6 +157,8 @@ namespace CS6232GroupProject.DAL
                     insertCommand.Parameters.AddWithValue("@visitID", visit.VisitID);
                     insertCommand.Parameters.AddWithValue("@testName", test.Name);
                     insertCommand.Parameters.AddWithValue("@testResult", result.Result);
+                    insertCommand.Parameters.AddWithValue("@testResultDate", result.TestOrderedDate);
+                    insertCommand.Parameters.AddWithValue("@testPerformedDate", result.TestResultDate);
                     insertCommand.ExecuteNonQuery();
                 }
             }
