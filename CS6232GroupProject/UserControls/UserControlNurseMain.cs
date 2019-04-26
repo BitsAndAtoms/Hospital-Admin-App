@@ -572,11 +572,23 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            this.ClearSearch();
+        }
+
+        private void ClearSearch()
+        {
             this.textBoxFirstName.Clear();
             this.textBoxLastName.Clear();
             this.dateTimePickerDOB.Value = DateTime.Now;
             this.dataGridViewPatientInfo.DataSource = null;
             this.dataGridViewPatientInfo.Rows.Clear();
+        }
+
+        private void UserControlNurseMain_Leave(object sender, EventArgs e)
+        {
+            this.ClearSearch();
+            this.ClearText();
+            this.tabControlNurseMain.SelectedTab = tabPageNursePatientInformation;
         }
     }
 }

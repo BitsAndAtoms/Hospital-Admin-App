@@ -1464,6 +1464,7 @@
             this.Controls.Add(this.tabControlNurseMain);
             this.Name = "UserControlNurseMain";
             this.Size = new System.Drawing.Size(657, 1825);
+            this.Leave += new System.EventHandler(this.UserControlNurseMain_Leave);
             this.tabControlNurseMain.ResumeLayout(false);
             this.tabPageNursePatientInformation.ResumeLayout(false);
             this.tabPageNursePatientInformation.PerformLayout();

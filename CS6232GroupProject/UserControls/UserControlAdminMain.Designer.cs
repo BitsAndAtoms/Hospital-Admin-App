@@ -33,27 +33,19 @@
             this.tabPageAdminNurseInfo = new System.Windows.Forms.TabPage();
             this.panelNurseSearch = new System.Windows.Forms.Panel();
             this.dataGridViewNurseInfo = new System.Windows.Forms.DataGridView();
-            this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sSNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewButtonColumnNurseInformation = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLastNameNurseInfo = new System.Windows.Forms.TextBox();
             this.textBoxFirstNameNurseInfo = new System.Windows.Forms.TextBox();
             this.labelFirstNameNurseInfo = new System.Windows.Forms.Label();
             this.labelDateOfBirthNurseInfo = new System.Windows.Forms.Label();
             this.labelLastNameNurseInfo = new System.Windows.Forms.Label();
-            this.buttonNurseInfoSearch = new System.Windows.Forms.Button();
             this.dateTimePickerDOBNurseInfo = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonNurseInfoClear = new System.Windows.Forms.Button();
+            this.buttonNurseInfoSearch = new System.Windows.Forms.Button();
             this.panelNurseInfoResults = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -133,14 +125,22 @@
             this.dateTimePickerReportsEndDate = new System.Windows.Forms.DateTimePicker();
             this.buttonReportsSubmit = new System.Windows.Forms.Button();
             this.labelReports = new System.Windows.Forms.Label();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonNurseInfoClear = new System.Windows.Forms.Button();
+            this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlAdminMain.SuspendLayout();
             this.tabPageAdminNurseInfo.SuspendLayout();
             this.panelNurseSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNurseInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
             this.panelNurseInfoResults.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -155,7 +155,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tabPageAdminReports.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAdminMain
@@ -213,8 +213,8 @@
             this.Phone,
             this.addressIDDataGridViewTextBoxColumn,
             this.activeDataGridViewCheckBoxColumn,
-            this.dataGridViewButtonColumnNurseInformation,
-            this.Username});
+            this.Username,
+            this.dataGridViewButtonColumnNurseInformation});
             this.dataGridViewNurseInfo.DataSource = this.nurseBindingSource;
             this.dataGridViewNurseInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewNurseInfo.Location = new System.Drawing.Point(0, 268);
@@ -224,62 +224,6 @@
             this.dataGridViewNurseInfo.TabIndex = 6;
             this.dataGridViewNurseInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNurseInfo_CellClick);
             // 
-            // nurseIDDataGridViewTextBoxColumn
-            // 
-            this.nurseIDDataGridViewTextBoxColumn.DataPropertyName = "NurseID";
-            this.nurseIDDataGridViewTextBoxColumn.HeaderText = "NurseID";
-            this.nurseIDDataGridViewTextBoxColumn.Name = "nurseIDDataGridViewTextBoxColumn";
-            this.nurseIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nurseIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fNameDataGridViewTextBoxColumn
-            // 
-            this.fNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
-            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lNameDataGridViewTextBoxColumn
-            // 
-            this.lNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
-            this.lNameDataGridViewTextBoxColumn.HeaderText = "LName";
-            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
-            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fullNameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dOBDataGridViewTextBoxColumn
-            // 
-            this.dOBDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
-            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
-            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
-            this.dOBDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sSNDataGridViewTextBoxColumn
-            // 
-            this.sSNDataGridViewTextBoxColumn.DataPropertyName = "SSN";
-            this.sSNDataGridViewTextBoxColumn.HeaderText = "SSN";
-            this.sSNDataGridViewTextBoxColumn.Name = "sSNDataGridViewTextBoxColumn";
-            this.sSNDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sSNDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-            this.genderDataGridViewTextBoxColumn.Visible = false;
-            // 
             // Phone
             // 
             this.Phone.DataPropertyName = "Phone";
@@ -287,22 +231,6 @@
             this.Phone.Name = "Phone";
             this.Phone.ReadOnly = true;
             this.Phone.Visible = false;
-            // 
-            // addressIDDataGridViewTextBoxColumn
-            // 
-            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
-            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // activeDataGridViewCheckBoxColumn
-            // 
-            this.activeDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
-            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
-            this.activeDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // dataGridViewButtonColumnNurseInformation
             // 
@@ -320,10 +248,6 @@
             this.Username.Name = "Username";
             this.Username.ReadOnly = true;
             this.Username.Visible = false;
-            // 
-            // nurseBindingSource
-            // 
-            this.nurseBindingSource.DataSource = typeof(CS6232GroupProject.Model.Nurse);
             // 
             // tableLayoutPanel1
             // 
@@ -406,6 +330,45 @@
             this.labelLastNameNurseInfo.TabIndex = 2;
             this.labelLastNameNurseInfo.Text = "Last Name";
             // 
+            // dateTimePickerDOBNurseInfo
+            // 
+            this.dateTimePickerDOBNurseInfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerDOBNurseInfo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDOBNurseInfo.Location = new System.Drawing.Point(280, 112);
+            this.dateTimePickerDOBNurseInfo.Name = "dateTimePickerDOBNurseInfo";
+            this.dateTimePickerDOBNurseInfo.Size = new System.Drawing.Size(186, 26);
+            this.dateTimePickerDOBNurseInfo.TabIndex = 3;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 2;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Controls.Add(this.buttonNurseInfoClear, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.buttonNurseInfoSearch, 0, 0);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(280, 153);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(641, 44);
+            this.tableLayoutPanel13.TabIndex = 8;
+            // 
+            // buttonNurseInfoClear
+            // 
+            this.buttonNurseInfoClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonNurseInfoClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonNurseInfoClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNurseInfoClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNurseInfoClear.ForeColor = System.Drawing.Color.Black;
+            this.buttonNurseInfoClear.Location = new System.Drawing.Point(412, 4);
+            this.buttonNurseInfoClear.Name = "buttonNurseInfoClear";
+            this.buttonNurseInfoClear.Size = new System.Drawing.Size(137, 35);
+            this.buttonNurseInfoClear.TabIndex = 9;
+            this.buttonNurseInfoClear.Text = "Clear";
+            this.buttonNurseInfoClear.UseVisualStyleBackColor = false;
+            this.buttonNurseInfoClear.Click += new System.EventHandler(this.buttonNurseInfoClear_Click);
+            // 
             // buttonNurseInfoSearch
             // 
             this.buttonNurseInfoSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -420,15 +383,6 @@
             this.buttonNurseInfoSearch.Text = "Search";
             this.buttonNurseInfoSearch.UseVisualStyleBackColor = false;
             this.buttonNurseInfoSearch.Click += new System.EventHandler(this.buttonNurseInfoSearch_Click);
-            // 
-            // dateTimePickerDOBNurseInfo
-            // 
-            this.dateTimePickerDOBNurseInfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerDOBNurseInfo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDOBNurseInfo.Location = new System.Drawing.Point(280, 112);
-            this.dateTimePickerDOBNurseInfo.Name = "dateTimePickerDOBNurseInfo";
-            this.dateTimePickerDOBNurseInfo.Size = new System.Drawing.Size(186, 26);
-            this.dateTimePickerDOBNurseInfo.TabIndex = 3;
             // 
             // panelNurseInfoResults
             // 
@@ -534,7 +488,7 @@
             this.comboBoxStateNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStateNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStateNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStateNurseInfoResults.Name = "comboBoxStateNurseInfoResults";
             this.comboBoxStateNurseInfoResults.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStateNurseInfoResults.TabIndex = 15;
@@ -771,7 +725,7 @@
             this.comboBoxGenderNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(250, 211);
+            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(250, 214);
             this.comboBoxGenderNurseInfoResults.Name = "comboBoxGenderNurseInfoResults";
             this.comboBoxGenderNurseInfoResults.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderNurseInfoResults.TabIndex = 6;
@@ -802,7 +756,7 @@
             this.comboBoxNurseInfoResultsActive.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(800, 61);
+            this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(800, 64);
             this.comboBoxNurseInfoResultsActive.Name = "comboBoxNurseInfoResultsActive";
             this.comboBoxNurseInfoResultsActive.Size = new System.Drawing.Size(121, 28);
             this.comboBoxNurseInfoResultsActive.TabIndex = 8;
@@ -1009,7 +963,7 @@
             this.comboBoxStateRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStateRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStateRegisterNurse.FormattingEnabled = true;
-            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStateRegisterNurse.Name = "comboBoxStateRegisterNurse";
             this.comboBoxStateRegisterNurse.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStateRegisterNurse.TabIndex = 13;
@@ -1270,7 +1224,7 @@
             this.comboBoxGenderRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderRegisterNurse.FormattingEnabled = true;
-            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(250, 211);
+            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(250, 214);
             this.comboBoxGenderRegisterNurse.Name = "comboBoxGenderRegisterNurse";
             this.comboBoxGenderRegisterNurse.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderRegisterNurse.TabIndex = 5;
@@ -1282,7 +1236,7 @@
             this.comboBoxRegisterNurseActive.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboBoxRegisterNurseActive.Location = new System.Drawing.Point(800, 61);
+            this.comboBoxRegisterNurseActive.Location = new System.Drawing.Point(800, 64);
             this.comboBoxRegisterNurseActive.Name = "comboBoxRegisterNurseActive";
             this.comboBoxRegisterNurseActive.Size = new System.Drawing.Size(121, 28);
             this.comboBoxRegisterNurseActive.TabIndex = 7;
@@ -1463,35 +1417,81 @@
             this.labelReports.TabIndex = 5;
             this.labelReports.Text = "Generate Reports";
             // 
-            // tableLayoutPanel13
+            // nurseIDDataGridViewTextBoxColumn
             // 
-            this.tableLayoutPanel13.ColumnCount = 2;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Controls.Add(this.buttonNurseInfoClear, 1, 0);
-            this.tableLayoutPanel13.Controls.Add(this.buttonNurseInfoSearch, 0, 0);
-            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(280, 153);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 1;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(641, 44);
-            this.tableLayoutPanel13.TabIndex = 8;
+            this.nurseIDDataGridViewTextBoxColumn.DataPropertyName = "NurseID";
+            this.nurseIDDataGridViewTextBoxColumn.HeaderText = "NurseID";
+            this.nurseIDDataGridViewTextBoxColumn.Name = "nurseIDDataGridViewTextBoxColumn";
+            this.nurseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nurseIDDataGridViewTextBoxColumn.Visible = false;
             // 
-            // buttonNurseInfoClear
+            // fNameDataGridViewTextBoxColumn
             // 
-            this.buttonNurseInfoClear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonNurseInfoClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonNurseInfoClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNurseInfoClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNurseInfoClear.ForeColor = System.Drawing.Color.Black;
-            this.buttonNurseInfoClear.Location = new System.Drawing.Point(412, 4);
-            this.buttonNurseInfoClear.Name = "buttonNurseInfoClear";
-            this.buttonNurseInfoClear.Size = new System.Drawing.Size(137, 35);
-            this.buttonNurseInfoClear.TabIndex = 9;
-            this.buttonNurseInfoClear.Text = "Clear";
-            this.buttonNurseInfoClear.UseVisualStyleBackColor = false;
-            this.buttonNurseInfoClear.Click += new System.EventHandler(this.buttonNurseInfoClear_Click);
+            this.fNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
+            this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
+            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lNameDataGridViewTextBoxColumn
+            // 
+            this.lNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
+            this.lNameDataGridViewTextBoxColumn.HeaderText = "LName";
+            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fullNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dOBDataGridViewTextBoxColumn
+            // 
+            this.dOBDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
+            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
+            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
+            this.dOBDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sSNDataGridViewTextBoxColumn
+            // 
+            this.sSNDataGridViewTextBoxColumn.DataPropertyName = "SSN";
+            this.sSNDataGridViewTextBoxColumn.HeaderText = "SSN";
+            this.sSNDataGridViewTextBoxColumn.Name = "sSNDataGridViewTextBoxColumn";
+            this.sSNDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sSNDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.genderDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // addressIDDataGridViewTextBoxColumn
+            // 
+            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // activeDataGridViewCheckBoxColumn
+            // 
+            this.activeDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
+            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
+            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
+            this.activeDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // nurseBindingSource
+            // 
+            this.nurseBindingSource.DataSource = typeof(CS6232GroupProject.Model.Nurse);
             // 
             // UserControlAdminMain
             // 
@@ -1500,14 +1500,15 @@
             this.Controls.Add(this.tabControlAdminMain);
             this.Name = "UserControlAdminMain";
             this.Size = new System.Drawing.Size(955, 632);
+            this.Leave += new System.EventHandler(this.UserControlAdminMain_Leave);
             this.tabControlAdminMain.ResumeLayout(false);
             this.tabPageAdminNurseInfo.ResumeLayout(false);
             this.tabPageAdminNurseInfo.PerformLayout();
             this.panelNurseSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNurseInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
             this.panelNurseInfoResults.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
@@ -1535,7 +1536,7 @@
             this.tabPageAdminReports.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
