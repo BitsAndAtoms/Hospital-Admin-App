@@ -351,5 +351,34 @@ namespace CS6232GroupProject.DAL
                 }
             }
         }
+
+        public bool CancelAppointment(int appointmentID)
+        {
+            string deleteStatement =
+                "DELETE FROM PatientVisit WHERE appointmentID = @appointmentID AND visitDateTime > @currentDate " +
+                "DELETE FROM HasAppointment WHERE appointmentID = @appointmentID AND appointmentDateTime > @currentDate";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand deleteCommand = new SqlCommand(deleteStatement, connection))
+                {
+
+                    deleteCommand.Parameters.AddWithValue("@appointmentID", appointmentID);
+                    deleteCommand.Parameters.AddWithValue("@currentDate", DateTime.Now);
+                    
+
+                    int count = deleteCommand.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

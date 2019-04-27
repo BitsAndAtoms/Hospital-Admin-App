@@ -107,5 +107,10 @@ namespace CS6232GroupProject.Controller
         {
             return this.appointmentSource.CheckIfFutureAppointmentExists(patientID);
         }
+
+        public bool CancelAppointment(int appointmentID)
+        {
+            return this.appointmentSource.CancelAppointment(appointmentID);
+        }
     }
 }

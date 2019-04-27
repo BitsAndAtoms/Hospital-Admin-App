@@ -298,6 +298,7 @@
             this.linkLabelAppointmentsCancel.TabIndex = 8;
             this.linkLabelAppointmentsCancel.TabStop = true;
             this.linkLabelAppointmentsCancel.Text = "Cancel Appointment";
+            this.linkLabelAppointmentsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelAppointmentsCancel_LinkClicked);
             // 
             // comboBoxAppointmentsPhysician
             // 

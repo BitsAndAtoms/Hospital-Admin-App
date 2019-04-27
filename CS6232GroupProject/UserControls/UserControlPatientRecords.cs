@@ -266,6 +266,7 @@ namespace CS6232GroupProject.UserControls
                 this.comboBoxAppointmentsPhysician.Enabled = true;
                 this.dateTimePickerAppointments.Enabled = true;
                 this.dateTimePickerAppointmentsTime.Enabled = true;
+                this.linkLabelAppointmentsCancel.Enabled = true;/////////////////////////
             }
             else
             {
@@ -273,6 +274,7 @@ namespace CS6232GroupProject.UserControls
                 this.comboBoxAppointmentsPhysician.Enabled = false;
                 this.dateTimePickerAppointments.Enabled = false;
                 this.dateTimePickerAppointmentsTime.Enabled = false;
+                this.linkLabelAppointmentsCancel.Enabled = false;/////////////////////////
             }
         }
 
@@ -644,6 +646,20 @@ namespace CS6232GroupProject.UserControls
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
             
+        }
+
+        private void linkLabelAppointmentsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                this.appointmentController.CancelAppointment(appointmentID);
+                MessageBox.Show("The appointment has been cancelled!", "Appointment Cancelled!");
+                SetComboBox();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cannot cancel an appointment with pending test results!", "Error canceling appointment!");
+            }
         }
     }
 }
