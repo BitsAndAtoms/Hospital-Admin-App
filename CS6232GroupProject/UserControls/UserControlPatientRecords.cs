@@ -22,6 +22,8 @@ namespace CS6232GroupProject.UserControls
         private PatientVisitController visitController;
         private LabTestResultsController labTestResultsController;
         private List<Doctor> doctorList;
+        private PatientController patientController;
+        private Patient patient;
         private Appointment appointment;
         private PatientVisit visit;
         private int appointmentID;
@@ -96,7 +98,6 @@ namespace CS6232GroupProject.UserControls
             newVisit.NurseID = FormLogin.NurseID;
             newVisit.DoctorID = this.appointment.DoctorID;
             newVisit.Date = (DateTime)this.appointment.AppointmentDateTime;
-
             
             newVisit.Weight = 0.0m;
             newVisit.Systolic = 0;
@@ -124,6 +125,7 @@ namespace CS6232GroupProject.UserControls
         {
             try
             {
+                this.labelPatientNameDisplay.Text = UserControlNurseMain.patientName;
                 this.comboBoxAppointmentsPhysician.SelectedValue = this.appointment.DoctorID;
                 this.textBoxAppointmentsSummary.Text = this.appointment.Reasons;
                 this.dateTimePickerAppointments.Value = (DateTime)this.appointment.AppointmentDateTime;
@@ -426,7 +428,9 @@ namespace CS6232GroupProject.UserControls
                 newResult.VisitID = this.visit.VisitID;
                 newResult.TestID = 11;//Hard coded
                                       //Need to get the TestID
-                newResult.TestResultDate = DateTime.Now;
+                newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
+                newResult.TestOrderedDate = visit.Date;
+                //newResult.TestResultDate = DateTime.Now;
                 test.Name = "White Blood Cell (WBC)";
                 this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
@@ -434,6 +438,8 @@ namespace CS6232GroupProject.UserControls
                 newResult.VisitID = this.visit.VisitID;
                 newResult.TestID = 10;//Hard coded
                                       //Need to get the TestID
+                newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
+                newResult.TestOrderedDate = visit.Date;
                 newResult.TestResultDate = DateTime.Now;
                 test.Name = "Low Density Lipoproteins (LDL)";
                 this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
@@ -442,6 +448,8 @@ namespace CS6232GroupProject.UserControls
                 newResult.VisitID = this.visit.VisitID;
                 newResult.TestID = 8;//Hard coded
                                      //Need to get the TestID
+                newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
+                newResult.TestOrderedDate = visit.Date;
                 newResult.TestResultDate = DateTime.Now;
                 test.Name = "Hepatitis A";
                 this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
@@ -450,6 +458,8 @@ namespace CS6232GroupProject.UserControls
                 newResult.VisitID = this.visit.VisitID;
                 newResult.TestID = 9;//Hard coded
                                      //Need to get the TestID
+                newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
+                newResult.TestOrderedDate = visit.Date;
                 newResult.TestResultDate = DateTime.Now;
                 test.Name = "Hepatitis B";
                 this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);

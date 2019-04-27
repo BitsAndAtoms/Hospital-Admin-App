@@ -30,28 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabControlAdminMain = new System.Windows.Forms.TabControl();
-            this.tabPageAdminReports = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelReportsStartDate = new System.Windows.Forms.Label();
-            this.labelReportsEndDate = new System.Windows.Forms.Label();
-            this.dateTimePickerReportsStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerReportsEndDate = new System.Windows.Forms.DateTimePicker();
-            this.buttonReportsSubmit = new System.Windows.Forms.Button();
-            this.labelReports = new System.Windows.Forms.Label();
             this.tabPageAdminNurseInfo = new System.Windows.Forms.TabPage();
             this.panelNurseSearch = new System.Windows.Forms.Panel();
             this.dataGridViewNurseInfo = new System.Windows.Forms.DataGridView();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumnNurseInformation = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumnNurseInformation = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLastNameNurseInfo = new System.Windows.Forms.TextBox();
             this.textBoxFirstNameNurseInfo = new System.Windows.Forms.TextBox();
             this.labelFirstNameNurseInfo = new System.Windows.Forms.Label();
             this.labelDateOfBirthNurseInfo = new System.Windows.Forms.Label();
             this.labelLastNameNurseInfo = new System.Windows.Forms.Label();
-            this.buttonNurseInfoSearch = new System.Windows.Forms.Button();
             this.dateTimePickerDOBNurseInfo = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonNurseInfoClear = new System.Windows.Forms.Button();
+            this.buttonNurseInfoSearch = new System.Windows.Forms.Button();
             this.panelNurseInfoResults = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -123,6 +117,14 @@
             this.textBoxPasswordRegisterNurse = new System.Windows.Forms.TextBox();
             this.labelActiveRegisterNurse = new System.Windows.Forms.Label();
             this.labelRegisterNurse = new System.Windows.Forms.Label();
+            this.tabPageAdminReports = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelReportsStartDate = new System.Windows.Forms.Label();
+            this.labelReportsEndDate = new System.Windows.Forms.Label();
+            this.dateTimePickerReportsStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerReportsEndDate = new System.Windows.Forms.DateTimePicker();
+            this.buttonReportsSubmit = new System.Windows.Forms.Button();
+            this.labelReports = new System.Windows.Forms.Label();
             this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -134,12 +136,11 @@
             this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlAdminMain.SuspendLayout();
-            this.tabPageAdminReports.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tabPageAdminNurseInfo.SuspendLayout();
             this.panelNurseSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNurseInfo)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
             this.panelNurseInfoResults.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -152,6 +153,8 @@
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tabPageAdminReports.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,111 +170,6 @@
             this.tabControlAdminMain.SelectedIndex = 0;
             this.tabControlAdminMain.Size = new System.Drawing.Size(955, 632);
             this.tabControlAdminMain.TabIndex = 1;
-            // 
-            // tabPageAdminReports
-            // 
-            this.tabPageAdminReports.AutoScroll = true;
-            this.tabPageAdminReports.BackColor = System.Drawing.Color.White;
-            this.tabPageAdminReports.Controls.Add(this.tableLayoutPanel2);
-            this.tabPageAdminReports.Controls.Add(this.labelReports);
-            this.tabPageAdminReports.Location = new System.Drawing.Point(4, 29);
-            this.tabPageAdminReports.Name = "tabPageAdminReports";
-            this.tabPageAdminReports.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdminReports.Size = new System.Drawing.Size(947, 599);
-            this.tabPageAdminReports.TabIndex = 1;
-            this.tabPageAdminReports.Text = "Reports";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.AutoScroll = true;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.Controls.Add(this.labelReportsStartDate, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelReportsEndDate, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePickerReportsStartDate, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePickerReportsEndDate, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.buttonReportsSubmit, 1, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 32);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(941, 164);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // labelReportsStartDate
-            // 
-            this.labelReportsStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelReportsStartDate.AutoSize = true;
-            this.labelReportsStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReportsStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelReportsStartDate.Location = new System.Drawing.Point(3, 15);
-            this.labelReportsStartDate.Name = "labelReportsStartDate";
-            this.labelReportsStartDate.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelReportsStartDate.Size = new System.Drawing.Size(118, 20);
-            this.labelReportsStartDate.TabIndex = 1;
-            this.labelReportsStartDate.Text = "Start Date";
-            // 
-            // labelReportsEndDate
-            // 
-            this.labelReportsEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelReportsEndDate.AutoSize = true;
-            this.labelReportsEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReportsEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelReportsEndDate.Location = new System.Drawing.Point(3, 65);
-            this.labelReportsEndDate.Name = "labelReportsEndDate";
-            this.labelReportsEndDate.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelReportsEndDate.Size = new System.Drawing.Size(110, 20);
-            this.labelReportsEndDate.TabIndex = 2;
-            this.labelReportsEndDate.Text = "End Date";
-            // 
-            // dateTimePickerReportsStartDate
-            // 
-            this.dateTimePickerReportsStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerReportsStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerReportsStartDate.Location = new System.Drawing.Point(285, 12);
-            this.dateTimePickerReportsStartDate.Name = "dateTimePickerReportsStartDate";
-            this.dateTimePickerReportsStartDate.Size = new System.Drawing.Size(139, 26);
-            this.dateTimePickerReportsStartDate.TabIndex = 9;
-            // 
-            // dateTimePickerReportsEndDate
-            // 
-            this.dateTimePickerReportsEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerReportsEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerReportsEndDate.Location = new System.Drawing.Point(285, 62);
-            this.dateTimePickerReportsEndDate.Name = "dateTimePickerReportsEndDate";
-            this.dateTimePickerReportsEndDate.Size = new System.Drawing.Size(139, 26);
-            this.dateTimePickerReportsEndDate.TabIndex = 10;
-            // 
-            // buttonReportsSubmit
-            // 
-            this.buttonReportsSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonReportsSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonReportsSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReportsSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReportsSubmit.ForeColor = System.Drawing.Color.Black;
-            this.buttonReportsSubmit.Location = new System.Drawing.Point(543, 114);
-            this.buttonReportsSubmit.Name = "buttonReportsSubmit";
-            this.buttonReportsSubmit.Size = new System.Drawing.Size(137, 35);
-            this.buttonReportsSubmit.TabIndex = 7;
-            this.buttonReportsSubmit.Text = "Search";
-            this.buttonReportsSubmit.UseVisualStyleBackColor = false;
-            // 
-            // labelReports
-            // 
-            this.labelReports.AutoSize = true;
-            this.labelReports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelReports.Location = new System.Drawing.Point(3, 3);
-            this.labelReports.Name = "labelReports";
-            this.labelReports.Size = new System.Drawing.Size(220, 29);
-            this.labelReports.TabIndex = 5;
-            this.labelReports.Text = "Generate Reports";
             // 
             // tabPageAdminNurseInfo
             // 
@@ -315,8 +213,8 @@
             this.Phone,
             this.addressIDDataGridViewTextBoxColumn,
             this.activeDataGridViewCheckBoxColumn,
-            this.dataGridViewButtonColumnNurseInformation,
-            this.Username});
+            this.Username,
+            this.dataGridViewButtonColumnNurseInformation});
             this.dataGridViewNurseInfo.DataSource = this.nurseBindingSource;
             this.dataGridViewNurseInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewNurseInfo.Location = new System.Drawing.Point(0, 268);
@@ -334,6 +232,14 @@
             this.Phone.ReadOnly = true;
             this.Phone.Visible = false;
             // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Visible = false;
+            // 
             // dataGridViewButtonColumnNurseInformation
             // 
             this.dataGridViewButtonColumnNurseInformation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -342,14 +248,6 @@
             this.dataGridViewButtonColumnNurseInformation.ReadOnly = true;
             this.dataGridViewButtonColumnNurseInformation.Text = "View/Edit";
             this.dataGridViewButtonColumnNurseInformation.UseColumnTextForButtonValue = true;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -361,8 +259,8 @@
             this.tableLayoutPanel1.Controls.Add(this.labelFirstNameNurseInfo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelDateOfBirthNurseInfo, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelLastNameNurseInfo, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.buttonNurseInfoSearch, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePickerDOBNurseInfo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel13, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -432,21 +330,6 @@
             this.labelLastNameNurseInfo.TabIndex = 2;
             this.labelLastNameNurseInfo.Text = "Last Name";
             // 
-            // buttonNurseInfoSearch
-            // 
-            this.buttonNurseInfoSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonNurseInfoSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonNurseInfoSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNurseInfoSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNurseInfoSearch.ForeColor = System.Drawing.Color.Black;
-            this.buttonNurseInfoSearch.Location = new System.Drawing.Point(532, 157);
-            this.buttonNurseInfoSearch.Name = "buttonNurseInfoSearch";
-            this.buttonNurseInfoSearch.Size = new System.Drawing.Size(137, 35);
-            this.buttonNurseInfoSearch.TabIndex = 7;
-            this.buttonNurseInfoSearch.Text = "Search";
-            this.buttonNurseInfoSearch.UseVisualStyleBackColor = false;
-            this.buttonNurseInfoSearch.Click += new System.EventHandler(this.buttonNurseInfoSearch_Click);
-            // 
             // dateTimePickerDOBNurseInfo
             // 
             this.dateTimePickerDOBNurseInfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -455,6 +338,51 @@
             this.dateTimePickerDOBNurseInfo.Name = "dateTimePickerDOBNurseInfo";
             this.dateTimePickerDOBNurseInfo.Size = new System.Drawing.Size(186, 26);
             this.dateTimePickerDOBNurseInfo.TabIndex = 3;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 2;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Controls.Add(this.buttonNurseInfoClear, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.buttonNurseInfoSearch, 0, 0);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(280, 153);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(641, 44);
+            this.tableLayoutPanel13.TabIndex = 8;
+            // 
+            // buttonNurseInfoClear
+            // 
+            this.buttonNurseInfoClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonNurseInfoClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonNurseInfoClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNurseInfoClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNurseInfoClear.ForeColor = System.Drawing.Color.Black;
+            this.buttonNurseInfoClear.Location = new System.Drawing.Point(412, 4);
+            this.buttonNurseInfoClear.Name = "buttonNurseInfoClear";
+            this.buttonNurseInfoClear.Size = new System.Drawing.Size(137, 35);
+            this.buttonNurseInfoClear.TabIndex = 9;
+            this.buttonNurseInfoClear.Text = "Clear";
+            this.buttonNurseInfoClear.UseVisualStyleBackColor = false;
+            this.buttonNurseInfoClear.Click += new System.EventHandler(this.buttonNurseInfoClear_Click);
+            // 
+            // buttonNurseInfoSearch
+            // 
+            this.buttonNurseInfoSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonNurseInfoSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonNurseInfoSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNurseInfoSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNurseInfoSearch.ForeColor = System.Drawing.Color.Black;
+            this.buttonNurseInfoSearch.Location = new System.Drawing.Point(180, 4);
+            this.buttonNurseInfoSearch.Name = "buttonNurseInfoSearch";
+            this.buttonNurseInfoSearch.Size = new System.Drawing.Size(137, 35);
+            this.buttonNurseInfoSearch.TabIndex = 7;
+            this.buttonNurseInfoSearch.Text = "Search";
+            this.buttonNurseInfoSearch.UseVisualStyleBackColor = false;
+            this.buttonNurseInfoSearch.Click += new System.EventHandler(this.buttonNurseInfoSearch_Click);
             // 
             // panelNurseInfoResults
             // 
@@ -818,7 +746,6 @@
             this.linkLabelNurseInfoBack.TabIndex = 1;
             this.linkLabelNurseInfoBack.TabStop = true;
             this.linkLabelNurseInfoBack.Text = "Back";
-            this.linkLabelNurseInfoBack.Visible = false;
             this.linkLabelNurseInfoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNurseInfoBack_LinkClicked);
             // 
             // comboBoxNurseInfoResultsActive
@@ -1384,6 +1311,111 @@
             this.labelRegisterNurse.TabIndex = 5;
             this.labelRegisterNurse.Text = "Register Nurse";
             // 
+            // tabPageAdminReports
+            // 
+            this.tabPageAdminReports.AutoScroll = true;
+            this.tabPageAdminReports.BackColor = System.Drawing.Color.White;
+            this.tabPageAdminReports.Controls.Add(this.tableLayoutPanel2);
+            this.tabPageAdminReports.Controls.Add(this.labelReports);
+            this.tabPageAdminReports.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAdminReports.Name = "tabPageAdminReports";
+            this.tabPageAdminReports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAdminReports.Size = new System.Drawing.Size(947, 599);
+            this.tabPageAdminReports.TabIndex = 1;
+            this.tabPageAdminReports.Text = "Reports";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoScroll = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.labelReportsStartDate, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelReportsEndDate, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dateTimePickerReportsStartDate, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dateTimePickerReportsEndDate, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.buttonReportsSubmit, 1, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 32);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(941, 164);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // labelReportsStartDate
+            // 
+            this.labelReportsStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelReportsStartDate.AutoSize = true;
+            this.labelReportsStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReportsStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelReportsStartDate.Location = new System.Drawing.Point(3, 15);
+            this.labelReportsStartDate.Name = "labelReportsStartDate";
+            this.labelReportsStartDate.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelReportsStartDate.Size = new System.Drawing.Size(118, 20);
+            this.labelReportsStartDate.TabIndex = 1;
+            this.labelReportsStartDate.Text = "Start Date";
+            // 
+            // labelReportsEndDate
+            // 
+            this.labelReportsEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelReportsEndDate.AutoSize = true;
+            this.labelReportsEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReportsEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelReportsEndDate.Location = new System.Drawing.Point(3, 65);
+            this.labelReportsEndDate.Name = "labelReportsEndDate";
+            this.labelReportsEndDate.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.labelReportsEndDate.Size = new System.Drawing.Size(110, 20);
+            this.labelReportsEndDate.TabIndex = 2;
+            this.labelReportsEndDate.Text = "End Date";
+            // 
+            // dateTimePickerReportsStartDate
+            // 
+            this.dateTimePickerReportsStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerReportsStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerReportsStartDate.Location = new System.Drawing.Point(285, 12);
+            this.dateTimePickerReportsStartDate.Name = "dateTimePickerReportsStartDate";
+            this.dateTimePickerReportsStartDate.Size = new System.Drawing.Size(139, 26);
+            this.dateTimePickerReportsStartDate.TabIndex = 9;
+            // 
+            // dateTimePickerReportsEndDate
+            // 
+            this.dateTimePickerReportsEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerReportsEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerReportsEndDate.Location = new System.Drawing.Point(285, 62);
+            this.dateTimePickerReportsEndDate.Name = "dateTimePickerReportsEndDate";
+            this.dateTimePickerReportsEndDate.Size = new System.Drawing.Size(139, 26);
+            this.dateTimePickerReportsEndDate.TabIndex = 10;
+            // 
+            // buttonReportsSubmit
+            // 
+            this.buttonReportsSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonReportsSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.buttonReportsSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReportsSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReportsSubmit.ForeColor = System.Drawing.Color.Black;
+            this.buttonReportsSubmit.Location = new System.Drawing.Point(543, 114);
+            this.buttonReportsSubmit.Name = "buttonReportsSubmit";
+            this.buttonReportsSubmit.Size = new System.Drawing.Size(137, 35);
+            this.buttonReportsSubmit.TabIndex = 7;
+            this.buttonReportsSubmit.Text = "Search";
+            this.buttonReportsSubmit.UseVisualStyleBackColor = false;
+            // 
+            // labelReports
+            // 
+            this.labelReports.AutoSize = true;
+            this.labelReports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelReports.Location = new System.Drawing.Point(3, 3);
+            this.labelReports.Name = "labelReports";
+            this.labelReports.Size = new System.Drawing.Size(220, 29);
+            this.labelReports.TabIndex = 5;
+            this.labelReports.Text = "Generate Reports";
+            // 
             // nurseIDDataGridViewTextBoxColumn
             // 
             this.nurseIDDataGridViewTextBoxColumn.DataPropertyName = "NurseID";
@@ -1467,17 +1499,15 @@
             this.Controls.Add(this.tabControlAdminMain);
             this.Name = "UserControlAdminMain";
             this.Size = new System.Drawing.Size(955, 632);
+            this.Leave += new System.EventHandler(this.UserControlAdminMain_Leave);
             this.tabControlAdminMain.ResumeLayout(false);
-            this.tabPageAdminReports.ResumeLayout(false);
-            this.tabPageAdminReports.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.tabPageAdminNurseInfo.ResumeLayout(false);
             this.tabPageAdminNurseInfo.PerformLayout();
             this.panelNurseSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNurseInfo)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
             this.panelNurseInfoResults.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
@@ -1501,6 +1531,10 @@
             this.tableLayoutPanel12.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tabPageAdminReports.ResumeLayout(false);
+            this.tabPageAdminReports.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1615,5 +1649,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumnNurseInformation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.Label PasswordInfoLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Button buttonNurseInfoClear;
     }
 }

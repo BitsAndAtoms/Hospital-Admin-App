@@ -96,5 +96,16 @@ namespace CS6232GroupProject.Controller
         {
             return this.appointmentSource.UpdateAppointment(newAppointment, oldAppointment);
         }
+
+        /// <summary>
+        /// This method returns true or false if a patient has 
+        /// an appointment in the future or not.
+        /// </summary>
+        /// <param name="patientID"></param>
+        /// <returns>True or false.</returns>
+        public bool CheckIfFutureAppointmentExists(int patientID)
+        {
+            return this.appointmentSource.CheckIfFutureAppointmentExists(patientID);
+        }
     }
 }

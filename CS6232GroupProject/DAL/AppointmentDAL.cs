@@ -259,6 +259,50 @@ namespace CS6232GroupProject.DAL
         }
 
         /// <summary>
+        /// This method returns true or false if the patientID has 
+        /// an appointment in the furutre or not.
+        /// </summary>
+        /// <param name="patientID"></param>
+        /// <returns>True or false.</returns>
+        public bool CheckIfFutureAppointmentExists(int patientID)
+        {
+            int count = 0;
+            string selectStatement =
+                "SELECT COUNT(appointmentID) as 'Number'" +
+                "FROM HasAppointment " +
+                "WHERE patientID = @patientID AND appointmentDateTime < @dateTime";
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+
+                    selectCommand.Parameters.AddWithValue("@patientID", patientID);
+                    selectCommand.Parameters.AddWithValue("@dateTime", DateTime.Now);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int number = (int)reader["Number"];
+                            count += number;
+
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// This method Updates an Appointment in the DB.
         /// </summary>
         /// <param name="newAppointment"></param>

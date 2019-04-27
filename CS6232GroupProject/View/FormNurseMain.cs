@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using CS6232GroupProject.UserControls;
+using System;
+using System.Windows.Forms;
 
 namespace CS6232GroupProject.View
 {

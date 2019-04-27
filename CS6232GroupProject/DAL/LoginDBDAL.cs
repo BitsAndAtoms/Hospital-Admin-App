@@ -182,7 +182,7 @@ namespace CS6232GroupProject.DAL
                 "FROM Login " +
                 "INNER JOIN Nurse " +
                 "ON Login.username = Nurse.nurseUsername " +
-                "WHERE username = @username";
+                "WHERE username = @username and activeStatus = 0";
 
 
             using (SqlConnection connection = DBConnection.GetConnection())
