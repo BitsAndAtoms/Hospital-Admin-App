@@ -29,7 +29,6 @@ namespace CS6232GroupProject.UserControls
             this.nurseController = new NurseController();
             this.loginContoller = new LoginController();
             SetComboBox();
-            tabPageAdminReports.Enabled = false;
         }
 
         /// <summary>
