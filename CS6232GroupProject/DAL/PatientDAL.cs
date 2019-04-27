@@ -517,6 +517,9 @@ namespace CS6232GroupProject.DAL
               // Patient
 
             // I REALLY wish she would let us use cascade but I don't think she'll like that.
+            // Because the issue I've run into is that a patient can have multiple patientvists. In order 
+            // to go through all of them, which has to be done by the appointmentID, is a foreach loop, the 
+            // SQL equivalent seems to be a Cursor.
         }
     }
 }
