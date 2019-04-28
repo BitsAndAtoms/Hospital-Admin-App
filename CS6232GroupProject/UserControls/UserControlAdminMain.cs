@@ -1,5 +1,6 @@
 ﻿using CS6232GroupProject.Controller;
 using CS6232GroupProject.Model;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -16,6 +17,7 @@ namespace CS6232GroupProject.UserControls
         private AddressController addressController;
         private NurseController nurseController;
         private LoginController loginContoller;
+        private LabTestResultsController labContoller;
         private int addressID;
         public static int nurseID { get; set; }
 
@@ -28,6 +30,7 @@ namespace CS6232GroupProject.UserControls
             this.addressController = new AddressController();
             this.nurseController = new NurseController();
             this.loginContoller = new LoginController();
+            this.labContoller = new LabTestResultsController();
             SetComboBox();
         }
 
@@ -448,6 +451,16 @@ namespace CS6232GroupProject.UserControls
             panelNurseSearch.Visible = true;
             panelNurseInfoResults.Visible = false;
             this.tabControlAdminMain.SelectedTab = tabPageAdminNurseInfo;
+        }
+
+        private void buttonReportsSubmit_Click(object sender, EventArgs e)
+        {
+
+            reportViewer.LocalReport.DataSources.Clear();
+            reportViewer.Visible = true;
+            reportViewer.LocalReport.ReportPath = "ClinicReport.rdlc";
+            reportViewer.LocalReport.DataSources.Clear();
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", this.labContoller.GetLabTestResultStatiscitsForReportController(this.dateTimePickerReportsStartDate.Value,this.dateTimePickerReportsEndDate.Value)));
         }
     }
 }

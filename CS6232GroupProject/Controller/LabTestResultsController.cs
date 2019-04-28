@@ -81,7 +81,7 @@ namespace CS6232GroupProject.Controller
         /// <param name="EndDate"End time for stats</param>
         /// <returns>data table for lab stats</returns>
 
-        public DataTable GetLabTestResultStatiscitsForReport(DateTime BeginDate, DateTime EndDate)
+        public DataTable GetLabTestResultStatiscitsForReportController(DateTime BeginDate, DateTime EndDate)
         {
             return this.labTestResultsSource.GetLabTestResultStatiscitsForReport(BeginDate,EndDate);
         }
