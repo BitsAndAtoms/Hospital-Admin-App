@@ -32,5 +32,15 @@ namespace CS6232GroupProject.Properties {
                 return ((string)(this["clinicConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MAGI-04;Initial Catalog=CS6232-g4;Integrated Security=True")]
+        public string CS6232_g4ConnectionString {
+            get {
+                return ((string)(this["CS6232_g4ConnectionString"]));
+            }
+        }
     }
 }

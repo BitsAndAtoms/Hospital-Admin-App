@@ -160,6 +160,11 @@
     <Compile Include="View\FormPatientRecords.Designer.cs">
       <DependentUpon>FormPatientRecords.cs</DependentUpon>
     </Compile>
+    <Compile Include="_CS6232_g4DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -226,6 +231,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_CS6232_g4DataSet.xsc">
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_CS6232_g4DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_CS6232_g4DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_CS6232_g4DataSet.xss">
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
