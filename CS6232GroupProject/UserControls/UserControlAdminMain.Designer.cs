@@ -128,6 +128,7 @@
             this.labelActiveRegisterNurse = new System.Windows.Forms.Label();
             this.labelRegisterNurse = new System.Windows.Forms.Label();
             this.tabPageAdminReports = new System.Windows.Forms.TabPage();
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelReportsStartDate = new System.Windows.Forms.Label();
             this.labelReportsEndDate = new System.Windows.Forms.Label();
@@ -1391,6 +1392,7 @@
             // 
             this.tabPageAdminReports.AutoScroll = true;
             this.tabPageAdminReports.BackColor = System.Drawing.Color.White;
+            this.tabPageAdminReports.Controls.Add(this.reportViewer);
             this.tabPageAdminReports.Controls.Add(this.tableLayoutPanel2);
             this.tabPageAdminReports.Controls.Add(this.labelReports);
             this.tabPageAdminReports.Location = new System.Drawing.Point(4, 29);
@@ -1399,6 +1401,15 @@
             this.tabPageAdminReports.Size = new System.Drawing.Size(947, 599);
             this.tabPageAdminReports.TabIndex = 1;
             this.tabPageAdminReports.Text = "Reports";
+            // 
+            // reportViewer
+            // 
+            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer.Location = new System.Drawing.Point(3, 196);
+            this.reportViewer.Name = "reportViewer";
+            this.reportViewer.ServerReport.BearerToken = null;
+            this.reportViewer.Size = new System.Drawing.Size(941, 400);
+            this.reportViewer.TabIndex = 7;
             // 
             // tableLayoutPanel2
             // 
@@ -1651,5 +1662,6 @@
         private System.Windows.Forms.Label PasswordInfoLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Button buttonNurseInfoClear;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
     }
 }

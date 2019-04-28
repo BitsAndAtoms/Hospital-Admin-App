@@ -70,7 +70,7 @@ namespace CS6232GroupProject.DAL
         {
 
             string selectStatement =
-                "if exists(Select 'Nurse' as Role, fname, lname, nurseID FROM Nurse WHERE nurseUserName = @userName)" +
+                "if exists(Select 'Nurse' as Role, fname, lname, nurseID FROM Nurse WHERE nurseUserName = @userName AND activeStatus = 1)" +
                 " Select 'Nurse' as Role, fname, lname, nurseID from Nurse WHERE nurseUserName = @userName" +
                 " else if exists(Select 'Admin' as Role, fname, lname, adminID FROM Administrator WHERE adminUserName = @userName)" +
                 " Select 'Admin' as Role, fname, lname, adminID from Administrator WHERE adminUserName =  @userName" +
