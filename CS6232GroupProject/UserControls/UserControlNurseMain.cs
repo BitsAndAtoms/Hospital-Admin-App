@@ -123,12 +123,12 @@ namespace CS6232GroupProject.UserControls
             string zipPattern = @"^\d{5}(?:[-\s]\d{4})?$";
             bool isZipValid = Regex.IsMatch(this.textBoxRegisterZipcode.Text, zipPattern);
 
-            if (this.textBoxRegisterFirstName.Text.Length == 0 || this.textBoxRegisterFirstName.Text == null)
+            if (String.IsNullOrEmpty(this.textBoxRegisterFirstName.Text))
             {
                 labelAddMessage.Text = "Please enter a First Name";
                 return false;
             }
-            else if (this.textBoxRegisterLastName.Text.Length == 0 || this.textBoxRegisterLastName.Text == null)
+            else if (String.IsNullOrEmpty(this.textBoxRegisterLastName.Text))
             {
                 labelAddMessage.Text = "Please enter a Last Name";
                 return false;
@@ -138,7 +138,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSN.Text.Length < 9 || this.textBoxSSN.Text.Length > 9 || this.textBoxSSN.Text == null || !isSSNValid || this.patientController.CheckIfPatientSSNExists(this.textBoxSSN.Text))
+            else if (this.textBoxSSN.Text.Length < 9 || this.textBoxSSN.Text.Length > 9 || String.IsNullOrEmpty(this.textBoxSSN.Text) || !isSSNValid || this.patientController.CheckIfPatientSSNExists(this.textBoxSSN.Text))
             {
                 labelAddMessage.Text = "Please enter a valid 9 digit SSN";
                 return false;
@@ -148,12 +148,12 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxRegisterPhone.Text.Length == 0 || this.textBoxRegisterPhone.Text == null || !isPhoneValid)
+            else if (String.IsNullOrEmpty(this.textBoxRegisterPhone.Text) || !isPhoneValid)
             {
                 labelAddMessage.Text = "Please enter a Phone Number";
                 return false;
             }
-            else if (this.textBoxRegisterStreet.Text.Length == 0 || this.textBoxRegisterStreet.Text == null)
+            else if (String.IsNullOrEmpty(this.textBoxRegisterStreet.Text))
             {
                 labelAddMessage.Text = "Please enter a Street Address";
                 return false;
@@ -163,7 +163,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a State";
                 return false;
             }
-            else if (this.textBoxRegisterZipcode.Text.Length == 0 || this.textBoxRegisterZipcode.Text == null || !int.TryParse(textBoxRegisterZipcode.Text, out number) || !isZipValid)
+            else if (String.IsNullOrEmpty(this.textBoxRegisterZipcode.Text) || !int.TryParse(textBoxRegisterZipcode.Text, out number) || !isZipValid)
             {
                 labelAddMessage.Text = "Please enter a valid Zip Code";
                 return false;
@@ -410,12 +410,12 @@ namespace CS6232GroupProject.UserControls
             string zipPattern = @"^\d{5}(?:[-\s]\d{4})?$";
             bool isZipValid = Regex.IsMatch(this.textBoxZipPatientInfoResult.Text, zipPattern);
 
-            if (this.textBoxFirstNamePatientInfoResult.Text.Length == 0 || this.textBoxFirstNamePatientInfoResult.Text == null)
+            if (String.IsNullOrEmpty(this.textBoxFirstNamePatientInfoResult.Text))
             {
                 labelAddUpdateMessage.Text = "Please enter a First Name";
                 return false;
             }
-            else if (this.textBoxLastNamePatientInfoResult.Text.Length == 0 || this.textBoxLastNamePatientInfoResult.Text == null)
+            else if (String.IsNullOrEmpty(this.textBoxLastNamePatientInfoResult.Text))
             {
                 labelAddUpdateMessage.Text = "Please enter a Last Name";
                 return false;
@@ -425,7 +425,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNPatientInfoResult.Text.Length < 9 || this.textBoxSSNPatientInfoResult.Text.Length > 9 || this.textBoxSSNPatientInfoResult.Text == null || !isSSNValid || this.patientController.CheckIfPatientSSNExists(this.textBoxSSNPatientInfoResult.Text, patientID))
+            else if (this.textBoxSSNPatientInfoResult.Text.Length < 9 || this.textBoxSSNPatientInfoResult.Text.Length > 9 || String.IsNullOrEmpty(this.textBoxSSNPatientInfoResult.Text) || !isSSNValid || this.patientController.CheckIfPatientSSNExists(this.textBoxSSNPatientInfoResult.Text, patientID))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid 9 digit SSN";
                 return false;
@@ -435,12 +435,12 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (this.textBoxPhonePatientInfoResult.Text.Length == 0 || this.textBoxPhonePatientInfoResult.Text == null || !isPhoneValid)
+            else if (String.IsNullOrEmpty(this.textBoxPhonePatientInfoResult.Text) || !isPhoneValid)
             {
                 labelAddUpdateMessage.Text = "Please enter a Phone Number";
                 return false;
             }
-            else if (this.textBoxStreetPatientInfoResult.Text.Length == 0 || this.textBoxStreetPatientInfoResult.Text == null)
+            else if (String.IsNullOrEmpty(this.textBoxStreetPatientInfoResult.Text))
             {
                 labelAddUpdateMessage.Text = "Please enter a Street Address";
                 return false;
@@ -450,7 +450,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a State";
                 return false;
             }
-            else if (this.textBoxZipPatientInfoResult.Text.Length == 0 || this.textBoxZipPatientInfoResult.Text == null || !int.TryParse(textBoxZipPatientInfoResult.Text, out number) || !isZipValid)
+            else if (String.IsNullOrEmpty(this.textBoxZipPatientInfoResult.Text) || !int.TryParse(textBoxZipPatientInfoResult.Text, out number) || !isZipValid)
             {
                 labelAddUpdateMessage.Text = "Please enter a valid Zip Code";
                 return false;
