@@ -136,12 +136,6 @@
     <Compile Include="UserControls\UserControlPatientRecords.Designer.cs">
       <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlUpdateNurseLogin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlUpdateNurseLogin.Designer.cs">
-      <DependentUpon>UserControlUpdateNurseLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FormAdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,11 +160,8 @@
     <Compile Include="View\FormPatientRecords.Designer.cs">
       <DependentUpon>FormPatientRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormUpdateNurseLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormUpdateNurseLogin.Designer.cs">
-      <DependentUpon>FormUpdateNurseLogin.cs</DependentUpon>
+    <Compile Include="_CS6232_g4DataSet.cs">
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="_CS6232_g4DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -193,9 +184,6 @@
     <EmbeddedResource Include="UserControls\UserControlPatientRecords.resx">
       <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlUpdateNurseLogin.resx">
-      <DependentUpon>UserControlUpdateNurseLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FormAdminMain.resx">
       <DependentUpon>FormAdminMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormPatientRecords.resx">
       <DependentUpon>FormPatientRecords.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormUpdateNurseLogin.resx">
-      <DependentUpon>FormUpdateNurseLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="clinicDataSet.xsc">
       <DependentUpon>clinicDataSet.xsd</DependentUpon>

@@ -447,8 +447,8 @@ namespace CS6232GroupProject.UserControls
 
         private void linkLabelLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FormUpdateNurseLogin formUpdateNurseLogin = new FormUpdateNurseLogin();
-            formUpdateNurseLogin.ShowDialog();
+            //FormUpdateNurseLogin formUpdateNurseLogin = new FormUpdateNurseLogin();
+            //formUpdateNurseLogin.ShowDialog();
         }
     }
 }
