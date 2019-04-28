@@ -245,6 +245,7 @@ namespace CS6232GroupProject.UserControls
         {
             panelNurseSearch.Visible = true;
             panelNurseInfoResults.Visible = false;
+            labelNurseInformation.Text = "Search Nurse Information";
         }
 
         /// <summary>
@@ -327,7 +328,9 @@ namespace CS6232GroupProject.UserControls
                 panelNurseSearch.Visible = false;
                 panelNurseInfoResults.Visible = true;
 
-                
+                labelNurseInformation.Text = "Nurse Information";
+
+
                 textBoxFirstNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[1].Value.ToString();
                 textBoxLastNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[2].Value.ToString();
                 dateTimePickerDOBNurseInfoResults.Value = Convert.ToDateTime(this.dataGridViewNurseInfo.CurrentRow.Cells[4].Value);
@@ -352,6 +355,16 @@ namespace CS6232GroupProject.UserControls
                     comboBoxNurseInfoResultsActive.Text = "Inactive";
                 }
                 nurseID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[0].Value;
+            }
+            if (e.ColumnIndex == 12)
+            {
+                panelNurseSearch.Visible = false;
+                panelLogin.Visible = true;
+
+                labelNurseInformation.Text = "Nurse Login Information";
+
+                textBoxUsernameNurse.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[10].Value.ToString();
+
             }
         }
 
@@ -445,10 +458,40 @@ namespace CS6232GroupProject.UserControls
 
         }
 
-        private void linkLabelLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void linkLabelLoginBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //FormUpdateNurseLogin formUpdateNurseLogin = new FormUpdateNurseLogin();
-            //formUpdateNurseLogin.ShowDialog();
+            panelNurseSearch.Visible = true;
+            panelLogin.Visible = false;
+            labelNurseInformation.Text = "Search Nurse Information";
+        }
+
+        private void buttonNurseLoginInfo_Click(object sender, EventArgs e)
+        {
+            Nurse newNurse = new Nurse();
+            Address newAddress = new Address();
+            Login newLogin = new Login();
+
+
+            newNurse.NurseID = nurseID;
+            newLogin.Username = this.textBoxUsernameRegisterNurse.Text;
+            newLogin.Password = this.textBoxPasswordRegisterNurse.Text;
+            try
+            {
+                nurseController.updateNurse(newNurse, newAddress, newLogin);
+
+                MessageBox.Show("Nurse Login Information Updated", "Confirm");
+                this.ClearText();
+                this.dataGridViewNurseInfo.DataSource = null;
+                this.dataGridViewNurseInfo.DataSource = this.nurseController.GetSearchNurseByNameDOB(newNurse);
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Invalid. \n" + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }
