@@ -307,7 +307,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -1236,6 +1236,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(839, 71);
             this.tableLayoutPanel8.TabIndex = 4;
             // 
@@ -1248,9 +1249,9 @@
             this.labelPatientNameDisplay.Location = new System.Drawing.Point(225, 40);
             this.labelPatientNameDisplay.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelPatientNameDisplay.Name = "labelPatientNameDisplay";
-            this.labelPatientNameDisplay.Size = new System.Drawing.Size(91, 20);
+            this.labelPatientNameDisplay.Size = new System.Drawing.Size(110, 20);
             this.labelPatientNameDisplay.TabIndex = 14;
-            this.labelPatientNameDisplay.Text = "placeholder";
+            this.labelPatientNameDisplay.Text = "[patient name]";
             // 
             // labelPatientName
             // 

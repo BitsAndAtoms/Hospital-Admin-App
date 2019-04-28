@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace CS6232GroupProject.UserControls
@@ -171,33 +172,34 @@ namespace CS6232GroupProject.UserControls
         private bool CheckFieldsVisitRoutine()
         {
             labelAddMessageVisitRoutine.ForeColor = Color.Red;
+            string numberCheck = @"^[0-9]\d*(\.\d+)?$";
 
-            if (this.textBoxRoutineChecksWeight.Text.Length == 0 || this.textBoxRoutineChecksWeight.Text == null)
+            if (String.IsNullOrEmpty(this.textBoxRoutineChecksWeight.Text) || !Regex.IsMatch(this.textBoxRoutineChecksWeight.Text, numberCheck))
             {
-                labelAddMessageVisitRoutine.Text = "Please enter weight.";
+                labelAddMessageVisitRoutine.Text = "Please enter valid numerical weight.";
                 return false;
             }
-            else if (this.textBoxRoutineChecksTemp.Text.Length == 0 || this.textBoxRoutineChecksTemp.Text == null)
+            else if (String.IsNullOrEmpty(this.textBoxRoutineChecksTemp.Text) || !Regex.IsMatch(this.textBoxRoutineChecksTemp.Text, numberCheck))
             {
-                labelAddMessageVisitRoutine.Text = "Please enter temperature.";
+                labelAddMessageVisitRoutine.Text = "Please enter valid numerical temperature.";
                 return false;
             }
-            else if (this.textboxRoutineChecksPulse.Text.Length == 0 || this.textboxRoutineChecksPulse == null)
+            else if (String.IsNullOrEmpty(this.textboxRoutineChecksPulse.Text) || !Regex.IsMatch(this.textboxRoutineChecksPulse.Text, numberCheck))
             {
-                labelAddMessageVisitRoutine.Text = "Please enter pulse.";
+                labelAddMessageVisitRoutine.Text = "Please enter valid numerical pulse.";
                 return false;
             }
-            else if (this.textBoxRoutineChecksSystolic.Text.Length == 0 || this.textBoxRoutineChecksSystolic == null)
+            else if (String.IsNullOrEmpty(this.textBoxRoutineChecksSystolic.Text) || !Regex.IsMatch(this.textBoxRoutineChecksSystolic.Text, numberCheck))
             {
-                labelAddMessageVisitRoutine.Text = "Please enter systolic blood pressure.";
+                labelAddMessageVisitRoutine.Text = "Please enter valid numerical systolic blood pressure.";
                 return false;
             }
-            else if (this.textBoxRoutineChecksDiastolic.Text.Length == 0 || this.textBoxRoutineChecksDiastolic == null)
+            else if (String.IsNullOrEmpty(this.textBoxRoutineChecksDiastolic.Text) || !Regex.IsMatch(this.textBoxRoutineChecksDiastolic.Text, numberCheck))
             {
-                labelAddMessageVisitRoutine.Text = "Please enter diastolic blood pressure.";
+                labelAddMessageVisitRoutine.Text = "Please enter valid numerical diastolic blood pressure.";
                 return false;
             }
-            else if (this.textBoxRoutineChecksSummary.Text.Length == 0 || this.textBoxRoutineChecksSummary == null)
+            else if (String.IsNullOrEmpty(this.textBoxRoutineChecksSummary.Text))
             {
                 labelAddMessageVisitRoutine.Text = "Please fill out summary/symptoms.";
                 return false;
@@ -421,58 +423,61 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                LabTestResult newResult = new LabTestResult();
-                LabTest test = new LabTest();
+            
+                try
+                {
+                    LabTestResult newResult = new LabTestResult();
+                    LabTest test = new LabTest();
 
-                newResult.Result = this.textBoxLabTestResultsWBC.Text;
-                newResult.VisitID = this.visit.VisitID;
-                newResult.TestID = 11;//Hard coded
-                                      //Need to get the TestID
-                newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
-                newResult.TestOrderedDate = visit.Date;
-                //newResult.TestResultDate = DateTime.Now;
-                test.Name = "White Blood Cell (WBC)";
-                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                    newResult.Result = this.textBoxLabTestResultsWBC.Text;
+                    newResult.VisitID = this.visit.VisitID;
+                    newResult.TestID = 11;//Hard coded
+                                          //Need to get the TestID
+                    newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
+                    newResult.TestOrderedDate = visit.Date;
+                    //newResult.TestResultDate = DateTime.Now;
+                    test.Name = "White Blood Cell (WBC)";
+                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-                newResult.Result = this.textBoxLabTestResultsLDL.Text;
-                newResult.VisitID = this.visit.VisitID;
-                newResult.TestID = 10;//Hard coded
-                                      //Need to get the TestID
-                newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
-                newResult.TestOrderedDate = visit.Date;
-                newResult.TestResultDate = DateTime.Now;
-                test.Name = "Low Density Lipoproteins (LDL)";
-                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                    newResult.Result = this.textBoxLabTestResultsLDL.Text;
+                    newResult.VisitID = this.visit.VisitID;
+                    newResult.TestID = 10;//Hard coded
+                                          //Need to get the TestID
+                    newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
+                    newResult.TestOrderedDate = visit.Date;
+                    newResult.TestResultDate = DateTime.Now;
+                    test.Name = "Low Density Lipoproteins (LDL)";
+                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-                newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
-                newResult.VisitID = this.visit.VisitID;
-                newResult.TestID = 8;//Hard coded
-                                     //Need to get the TestID
-                newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
-                newResult.TestOrderedDate = visit.Date;
-                newResult.TestResultDate = DateTime.Now;
-                test.Name = "Hepatitis A";
-                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                    newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
+                    newResult.VisitID = this.visit.VisitID;
+                    newResult.TestID = 8;//Hard coded
+                                         //Need to get the TestID
+                    newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
+                    newResult.TestOrderedDate = visit.Date;
+                    newResult.TestResultDate = DateTime.Now;
+                    test.Name = "Hepatitis A";
+                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-                newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
-                newResult.VisitID = this.visit.VisitID;
-                newResult.TestID = 9;//Hard coded
-                                     //Need to get the TestID
-                newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
-                newResult.TestOrderedDate = visit.Date;
-                newResult.TestResultDate = DateTime.Now;
-                test.Name = "Hepatitis B";
-                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                    newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
+                    newResult.VisitID = this.visit.VisitID;
+                    newResult.TestID = 9;//Hard coded
+                                         //Need to get the TestID
+                    newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
+                    newResult.TestOrderedDate = visit.Date;
+                    newResult.TestResultDate = DateTime.Now;
+                    test.Name = "Hepatitis B";
+                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-                SetLabTestsTextBoxes();
-                MessageBox.Show("Any ordered tests updated!", "Success!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There was an issue updating the tests!", "Error");
-            }
+                    SetLabTestsTextBoxes();
+                    MessageBox.Show("Ordered test(s) updated!", "Success!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("There was an issue updating the tests!", "Error");
+                }
+            
+            
 
         }
 
