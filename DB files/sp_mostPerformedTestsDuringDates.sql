@@ -66,7 +66,8 @@ AS
   ON table3.testID = LabTestList.testID) as table4 
   WHERE testPerformedDate Between @BeginDate AND @EndDate 
   GROUP BY testID, testName
-  HAVING COUNT(testID)>1;
+  HAVING COUNT(testID)>1
+  ORDER BY timesTestPerformed DESC, testCode DESC;
  END
 GO
 
