@@ -1,7 +1,8 @@
 ﻿using CS6232GroupProject.Controller;
 using CS6232GroupProject.Model;
-using CS6232GroupProject.View;
+using Microsoft.Reporting.WinForms;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Text.RegularExpressions;
@@ -17,6 +18,7 @@ namespace CS6232GroupProject.UserControls
         private AddressController addressController;
         private NurseController nurseController;
         private LoginController loginContoller;
+        private LabTestResultsController labContoller;
         private int addressID;
         public static int nurseID { get; set; }
 
@@ -29,6 +31,7 @@ namespace CS6232GroupProject.UserControls
             this.addressController = new AddressController();
             this.nurseController = new NurseController();
             this.loginContoller = new LoginController();
+            this.labContoller = new LabTestResultsController();
             SetComboBox();
         }
 
@@ -99,12 +102,12 @@ namespace CS6232GroupProject.UserControls
             string zipPattern = @"^\d{5}(?:[-\s]\d{4})?$";
             bool isZipValid = Regex.IsMatch(this.textBoxZipRegisterNurse.Text, zipPattern);
 
-            if (String.IsNullOrEmpty(this.textBoxFirstNameRegisterNurse.Text))
+            if (this.textBoxFirstNameRegisterNurse.Text.Length == 0 || this.textBoxFirstNameRegisterNurse.Text == null)
             {
                 labelAddMessage.Text = "Please enter a First Name";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxLastNameRegisterNurse.Text))
+            else if (this.textBoxLastNameRegisterNurse.Text.Length == 0 || this.textBoxLastNameRegisterNurse.Text == null)
             {
                 labelAddMessage.Text = "Please enter a Last Name";
                 return false;
@@ -114,7 +117,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNRegisterNurse.Text.Length < 9 || this.textBoxSSNRegisterNurse.Text.Length > 9 || String.IsNullOrEmpty(this.textBoxSSNRegisterNurse.Text) || !isSSNValid || this.nurseController.IsNurseSSNTaken(this.textBoxSSNRegisterNurse.Text))
+            else if (this.textBoxSSNRegisterNurse.Text.Length < 9 || this.textBoxSSNRegisterNurse.Text.Length > 9 || this.textBoxSSNRegisterNurse.Text == null || !isSSNValid || this.nurseController.IsNurseSSNTaken(this.textBoxSSNRegisterNurse.Text))
             {
                 labelAddMessage.Text = "Please enter a valid or non-taken 9 digit SSN";
                 return false;
@@ -124,12 +127,12 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxPhoneRegisterNurse.Text) || !isPhoneValid)
+            else if (this.textBoxPhoneRegisterNurse.Text.Length == 0 || this.textBoxPhoneRegisterNurse.Text == null || !isPhoneValid)
             {
                 labelAddMessage.Text = "Please enter a Phone Number";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxStreetRegisterNurse.Text))
+            else if (this.textBoxStreetRegisterNurse.Text.Length == 0 || this.textBoxStreetRegisterNurse.Text == null)
             {
                 labelAddMessage.Text = "Please enter a Street Address";
                 return false;
@@ -139,17 +142,17 @@ namespace CS6232GroupProject.UserControls
                 labelAddMessage.Text = "Please select a State";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxZipRegisterNurse.Text)|| !int.TryParse(textBoxZipRegisterNurse.Text, out number) || !isZipValid)
+            else if (this.textBoxZipRegisterNurse.Text.Length == 0 || this.textBoxZipRegisterNurse.Text == null || !int.TryParse(textBoxZipRegisterNurse.Text, out number) || !isZipValid)
             {
                 labelAddMessage.Text = "Please enter a valid Zip Code";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxUsernameRegisterNurse.Text) || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameRegisterNurse.Text))
+            else if (this.textBoxUsernameRegisterNurse.Text.Length == 0 || this.textBoxUsernameRegisterNurse.Text == "" || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameRegisterNurse.Text))
             {
                 labelAddMessage.Text = "Please enter a valid or non-taken Username";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxPasswordRegisterNurse.Text))
+            else if (this.textBoxPasswordRegisterNurse.Text.Length == 0 || this.textBoxPasswordRegisterNurse.Text == "")
             {
                 labelAddMessage.Text = "Please enter a valid Password";
                 return false;
@@ -180,12 +183,12 @@ namespace CS6232GroupProject.UserControls
             string zipPattern = @"^\d{5}(?:[-\s]\d{4})?$";
             bool isZipValid = Regex.IsMatch(this.textBoxZipNurseInfoResults.Text, zipPattern);
 
-            if (String.IsNullOrEmpty(this.textBoxFirstNameNurseInfoResults.Text))
+            if (this.textBoxFirstNameNurseInfoResults.Text.Length == 0 || this.textBoxFirstNameNurseInfoResults.Text == null)
             {
                 labelAddUpdateMessage.Text = "Please enter a First Name";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxLastNameNurseInfoResults.Text))
+            else if (this.textBoxLastNameNurseInfoResults.Text.Length == 0 || this.textBoxLastNameNurseInfoResults.Text == null)
             {
                 labelAddUpdateMessage.Text = "Please enter a Last Name";
                 return false;
@@ -195,7 +198,7 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please enter a valid Date of Birth";
                 return false;
             }
-            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || String.IsNullOrEmpty(this.textBoxSSNNurseInfoResults.Text)|| !isSSNValid || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text, nurseID))
+            else if (this.textBoxSSNNurseInfoResults.Text.Length < 9 || this.textBoxSSNNurseInfoResults.Text.Length > 9 || this.textBoxSSNNurseInfoResults.Text == null || !isSSNValid || this.nurseController.IsNurseSSNTaken(this.textBoxSSNNurseInfoResults.Text, nurseID))
             {
                 labelAddUpdateMessage.Text = "Please enter a valid 9 digit SSN";
                 return false;
@@ -205,12 +208,12 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a Gender";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxPhoneNurseInfoResults.Text) || !isPhoneValid)
+            else if (this.textBoxPhoneNurseInfoResults.Text.Length == 0 || this.textBoxPhoneNurseInfoResults.Text == null || !isPhoneValid)
             {
                 labelAddUpdateMessage.Text = "Please enter a Phone Number";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxStreetNurseInfoResults.Text))
+            else if (this.textBoxStreetNurseInfoResults.Text.Length == 0 || this.textBoxStreetNurseInfoResults.Text == null)
             {
                 labelAddUpdateMessage.Text = "Please enter a Street Address";
                 return false;
@@ -220,9 +223,14 @@ namespace CS6232GroupProject.UserControls
                 labelAddUpdateMessage.Text = "Please select a State";
                 return false;
             }
-            else if (String.IsNullOrEmpty(this.textBoxZipNurseInfoResults.Text) || !int.TryParse(textBoxZipNurseInfoResults.Text, out number) || !isZipValid)
+            else if (this.textBoxZipNurseInfoResults.Text.Length == 0 || this.textBoxZipNurseInfoResults.Text == null || !int.TryParse(textBoxZipNurseInfoResults.Text, out number) || !isZipValid)
             {
                 labelAddUpdateMessage.Text = "Please enter a valid Zip Code";
+                return false;
+            }
+            else if (this.textBoxUsernameNurseInfoResults.Text.Length == 0 || this.textBoxUsernameNurseInfoResults.Text == "" || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameNurseInfoResults.Text, nurseID))
+            {
+                labelAddUpdateMessage.Text = "Please enter a valid Username";
                 return false;
             }
             else
@@ -287,9 +295,15 @@ namespace CS6232GroupProject.UserControls
                     newNurse.Phone = this.textBoxPhoneRegisterNurse.Text;
                     newNurse.Gender = this.comboBoxGenderRegisterNurse.Text;
                     newNurse.Username = this.textBoxUsernameRegisterNurse.Text;
-                    this.comboBoxRegisterNurseActive.Text = "Active";
-                    newNurse.Active = true;
-
+                    
+                    if (this.comboBoxRegisterNurseActive.Text == "Active")
+                    {
+                        newNurse.Active = true;
+                    }
+                    else
+                    {
+                        newNurse.Active = false;
+                    }
                     
                     newAddress.Street = this.textBoxStreetRegisterNurse.Text;
                     newAddress.State = this.comboBoxStateRegisterNurse.Text;
@@ -342,6 +356,8 @@ namespace CS6232GroupProject.UserControls
                 comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
                 textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
 
+                
+                textBoxUsernameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[10].Value.ToString();
 
                 if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
                 {
@@ -377,6 +393,7 @@ namespace CS6232GroupProject.UserControls
                 newNurse.Gender = this.comboBoxGenderNurseInfoResults.Text;
                 newNurse.Phone = this.textBoxPhoneNurseInfoResults.Text;
                 newNurse.DOB = this.dateTimePickerDOBNurseInfoResults.Value;
+                newNurse.Username = this.textBoxUsernameNurseInfoResults.Text;
                 if (this.comboBoxNurseInfoResultsActive.Text == "Active")
                 {
                     newNurse.Active = true;
@@ -391,6 +408,10 @@ namespace CS6232GroupProject.UserControls
                 newAddress.Zip = Convert.ToInt32(this.textBoxZipNurseInfoResults.Text);
                 newAddress.State = this.comboBoxStateNurseInfoResults.Text;
 
+
+
+                newLogin.Username = this.textBoxUsernameNurseInfoResults.Text;
+                newLogin.Password = this.textBoxPasswordNurseInfoResults.Text;
 
                 try
                 {
@@ -433,10 +454,17 @@ namespace CS6232GroupProject.UserControls
             this.tabControlAdminMain.SelectedTab = tabPageAdminNurseInfo;
         }
 
-        private void linkLabelLogin_Click(object sender, EventArgs e)
+        private void buttonReportsSubmit_Click(object sender, EventArgs e)
         {
-            FormUpdateNurseLogin formUpdateNurseLogin = new FormUpdateNurseLogin();
-            formUpdateNurseLogin.ShowDialog();
+            this.reportViewer.Visible = true;
+            this.reportViewer.LocalReport.DataSources.Clear();
+            DataTable yourDataTable = this.labContoller.GetLabTestResultStatiscitsForReportController(this.dateTimePickerReportsStartDate.Value, this.dateTimePickerReportsEndDate.Value);
+            Microsoft.Reporting.WinForms.ReportDataSource DataSet1 = new Microsoft.Reporting.WinForms.ReportDataSource( "DataSet1", yourDataTable);
+            this.reportViewer.LocalReport.DataSources.Add(DataSet1);
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "Namespace.ClinicReport.rdlc";
+     
+            this.reportViewer.RefreshReport();
+
         }
     }
 }

@@ -12,8 +12,8 @@ GO
 
 CREATE PROCEDURE [dbo].[sp_mostPerformedTestsDuringDates] 
 	-- Add the parameters for the stored procedure here
-	@BeginDate DATE,   
-    @EndDate DATE 
+	@BeginDate DATETIME,   
+    @EndDate DATETIME 
 AS
 
  IF(@BeginDate IS NULL)

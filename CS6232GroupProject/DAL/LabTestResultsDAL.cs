@@ -1,6 +1,7 @@
 ﻿using CS6232GroupProject.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace CS6232GroupProject.DAL
@@ -163,5 +164,38 @@ namespace CS6232GroupProject.DAL
                 }
             }
         }
+
+
+        /// <summary>
+        /// Get lab test results stats
+        /// </summary>
+        /// <param name="BeginDate">Begin time for stats</param>
+        /// <param name="EndDate"End time for stats</param>
+        /// <returns>data table for lab stats</returns>
+        public DataTable GetLabTestResultStatiscitsForReport(DateTime BeginDate, DateTime EndDate)
+        {
+            DataTable resultTable = new DataTable();
+
+          
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                using (SqlCommand selectCommand = new SqlCommand("sp_mostPerformedTestsDuringDates", connection))
+                {
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
+                    selectCommand.Parameters.AddWithValue("@BeginDate",BeginDate);
+                    selectCommand.Parameters.AddWithValue("@EndDate", EndDate);
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        resultTable.Load(reader);
+                        return resultTable;
+                    }
+                        
+                    
+                }
+            }
+           
+        }
+
     }
 }
