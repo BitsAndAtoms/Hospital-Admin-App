@@ -1406,6 +1406,7 @@
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer.LocalReport.ReportEmbeddedResource = "CS6232GroupProject.Reports.ClinicReport.rdlc";
+            this.reportViewer.LocalReport.ReportPath = "C:\\Users\\Sid\\Desktop\\Project2\\CS6232GroupProject\\Reports\\ClinicReport.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(3, 196);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;

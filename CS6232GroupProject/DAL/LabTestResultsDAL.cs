@@ -179,17 +179,22 @@ namespace CS6232GroupProject.DAL
           
             using (SqlConnection connection = DBConnection.GetConnection())
             {
-                connection.Open();
-
                 using (SqlCommand selectCommand = new SqlCommand("sp_mostPerformedTestsDuringDates", connection))
                 {
                     selectCommand.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
                     selectCommand.Parameters.AddWithValue("@BeginDate",BeginDate);
                     selectCommand.Parameters.AddWithValue("@EndDate", EndDate);
-                    resultTable.Load(selectCommand.ExecuteReader()) ;
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        resultTable.Load(reader);
+                        return resultTable;
+                    }
+                        
+                    
                 }
             }
-            return resultTable;
+           
         }
 
     }

@@ -2,6 +2,7 @@
 using CS6232GroupProject.Model;
 using Microsoft.Reporting.WinForms;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Text.RegularExpressions;
@@ -455,12 +456,15 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonReportsSubmit_Click(object sender, EventArgs e)
         {
+            this.reportViewer.Visible = true;
+            this.reportViewer.LocalReport.DataSources.Clear();
+            DataTable yourDataTable = this.labContoller.GetLabTestResultStatiscitsForReportController(this.dateTimePickerReportsStartDate.Value, this.dateTimePickerReportsEndDate.Value);
+            Microsoft.Reporting.WinForms.ReportDataSource rprtDTSource = new Microsoft.Reporting.WinForms.ReportDataSource(yourDataTable.TableName, yourDataTable);
+            this.reportViewer.LocalReport.DataSources.Add(rprtDTSource);
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "Namespace.ClinicReport.rdlc";
+     
+            this.reportViewer.RefreshReport();
 
-            reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.Visible = true;
-            reportViewer.LocalReport.ReportPath = "ClinicReport.rdlc";
-            reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", this.labContoller.GetLabTestResultStatiscitsForReportController(this.dateTimePickerReportsStartDate.Value,this.dateTimePickerReportsEndDate.Value)));
         }
     }
 }
