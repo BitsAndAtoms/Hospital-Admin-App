@@ -160,6 +160,9 @@
     <Compile Include="View\FormPatientRecords.Designer.cs">
       <DependentUpon>FormPatientRecords.cs</DependentUpon>
     </Compile>
+    <Compile Include="_CS6232_g4DataSet.cs">
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_CS6232_g4DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

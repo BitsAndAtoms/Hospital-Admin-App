@@ -74,13 +74,9 @@
             this.comboBoxGenderNurseInfoResults = new System.Windows.Forms.ComboBox();
             this.linkLabelNurseInfoBack = new System.Windows.Forms.LinkLabel();
             this.comboBoxNurseInfoResultsActive = new System.Windows.Forms.ComboBox();
-            this.textBoxUsernameNurseInfoResults = new System.Windows.Forms.TextBox();
-            this.textBoxPasswordNurseInfoResults = new System.Windows.Forms.TextBox();
-            this.labelUsernameNurseInfoResults = new System.Windows.Forms.Label();
-            this.labelPasswordNurseInfoResults = new System.Windows.Forms.Label();
             this.textBoxLastNameNurseInfoResults = new System.Windows.Forms.TextBox();
             this.labelActiveNurseInfoResults = new System.Windows.Forms.Label();
-            this.PasswordInfoLabel = new System.Windows.Forms.Label();
+            this.linkLabelLogin = new System.Windows.Forms.LinkLabel();
             this.labelNurseInformation = new System.Windows.Forms.Label();
             this.tabPageNurseRegister = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -586,13 +582,9 @@
             this.tableLayoutPanel4.Controls.Add(this.comboBoxGenderNurseInfoResults, 1, 4);
             this.tableLayoutPanel4.Controls.Add(this.linkLabelNurseInfoBack, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.comboBoxNurseInfoResultsActive, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.textBoxUsernameNurseInfoResults, 3, 2);
-            this.tableLayoutPanel4.Controls.Add(this.textBoxPasswordNurseInfoResults, 3, 3);
-            this.tableLayoutPanel4.Controls.Add(this.labelUsernameNurseInfoResults, 2, 2);
-            this.tableLayoutPanel4.Controls.Add(this.labelPasswordNurseInfoResults, 2, 3);
             this.tableLayoutPanel4.Controls.Add(this.textBoxLastNameNurseInfoResults, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.labelActiveNurseInfoResults, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.PasswordInfoLabel, 2, 4);
+            this.tableLayoutPanel4.Controls.Add(this.linkLabelLogin, 3, 3);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -761,50 +753,6 @@
             this.comboBoxNurseInfoResultsActive.Size = new System.Drawing.Size(121, 28);
             this.comboBoxNurseInfoResultsActive.TabIndex = 8;
             // 
-            // textBoxUsernameNurseInfoResults
-            // 
-            this.textBoxUsernameNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBoxUsernameNurseInfoResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxUsernameNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsernameNurseInfoResults.Location = new System.Drawing.Point(735, 110);
-            this.textBoxUsernameNurseInfoResults.Name = "textBoxUsernameNurseInfoResults";
-            this.textBoxUsernameNurseInfoResults.Size = new System.Drawing.Size(186, 29);
-            this.textBoxUsernameNurseInfoResults.TabIndex = 9;
-            // 
-            // textBoxPasswordNurseInfoResults
-            // 
-            this.textBoxPasswordNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBoxPasswordNurseInfoResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPasswordNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPasswordNurseInfoResults.Location = new System.Drawing.Point(735, 160);
-            this.textBoxPasswordNurseInfoResults.Name = "textBoxPasswordNurseInfoResults";
-            this.textBoxPasswordNurseInfoResults.Size = new System.Drawing.Size(186, 29);
-            this.textBoxPasswordNurseInfoResults.TabIndex = 10;
-            // 
-            // labelUsernameNurseInfoResults
-            // 
-            this.labelUsernameNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelUsernameNurseInfoResults.AutoSize = true;
-            this.labelUsernameNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsernameNurseInfoResults.Location = new System.Drawing.Point(564, 115);
-            this.labelUsernameNurseInfoResults.Name = "labelUsernameNurseInfoResults";
-            this.labelUsernameNurseInfoResults.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelUsernameNurseInfoResults.Size = new System.Drawing.Size(116, 20);
-            this.labelUsernameNurseInfoResults.TabIndex = 24;
-            this.labelUsernameNurseInfoResults.Text = "Username";
-            // 
-            // labelPasswordNurseInfoResults
-            // 
-            this.labelPasswordNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelPasswordNurseInfoResults.AutoSize = true;
-            this.labelPasswordNurseInfoResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPasswordNurseInfoResults.Location = new System.Drawing.Point(564, 165);
-            this.labelPasswordNurseInfoResults.Name = "labelPasswordNurseInfoResults";
-            this.labelPasswordNurseInfoResults.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.labelPasswordNurseInfoResults.Size = new System.Drawing.Size(111, 20);
-            this.labelPasswordNurseInfoResults.TabIndex = 25;
-            this.labelPasswordNurseInfoResults.Text = "Password";
-            // 
             // textBoxLastNameNurseInfoResults
             // 
             this.textBoxLastNameNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -827,21 +775,22 @@
             this.labelActiveNurseInfoResults.TabIndex = 26;
             this.labelActiveNurseInfoResults.Text = "Active Status";
             // 
-            // PasswordInfoLabel
+            // linkLabelLogin
             // 
-            this.PasswordInfoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordInfoLabel.AutoSize = true;
-            this.tableLayoutPanel4.SetColumnSpan(this.PasswordInfoLabel, 2);
-            this.PasswordInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordInfoLabel.Location = new System.Drawing.Point(586, 220);
-            this.PasswordInfoLabel.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.PasswordInfoLabel.Name = "PasswordInfoLabel";
-            this.PasswordInfoLabel.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.tableLayoutPanel4.SetRowSpan(this.PasswordInfoLabel, 2);
-            this.PasswordInfoLabel.Size = new System.Drawing.Size(291, 60);
-            this.PasswordInfoLabel.TabIndex = 27;
-            this.PasswordInfoLabel.Text = "Note that the Password will not display but if a new password is entered, it will" +
-    " be updated.";
+            this.linkLabelLogin.AutoSize = true;
+            this.linkLabelLogin.Cursor = System.Windows.Forms.Cursors.Default;
+            this.linkLabelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.linkLabelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabelLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.linkLabelLogin.Location = new System.Drawing.Point(730, 150);
+            this.linkLabelLogin.Name = "linkLabelLogin";
+            this.linkLabelLogin.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.linkLabelLogin.Size = new System.Drawing.Size(191, 50);
+            this.linkLabelLogin.TabIndex = 27;
+            this.linkLabelLogin.TabStop = true;
+            this.linkLabelLogin.Text = "Update Login Information";
+            this.linkLabelLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogin_LinkClicked);
             // 
             // labelNurseInformation
             // 
@@ -1240,6 +1189,7 @@
             this.comboBoxRegisterNurseActive.Name = "comboBoxRegisterNurseActive";
             this.comboBoxRegisterNurseActive.Size = new System.Drawing.Size(121, 28);
             this.comboBoxRegisterNurseActive.TabIndex = 7;
+            this.comboBoxRegisterNurseActive.Visible = false;
             // 
             // labelUsernameRegisterNurse
             // 
@@ -1299,6 +1249,7 @@
             this.labelActiveRegisterNurse.Size = new System.Drawing.Size(141, 20);
             this.labelActiveRegisterNurse.TabIndex = 26;
             this.labelActiveRegisterNurse.Text = "Active Status";
+            this.labelActiveRegisterNurse.Visible = false;
             // 
             // labelRegisterNurse
             // 
@@ -1330,7 +1281,7 @@
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer.LocalReport.ReportEmbeddedResource = "CS6232GroupProject.Reports.ClinicReport.rdlc";
-            this.reportViewer.LocalReport.ReportPath = "C:\\Users\\Sid\\Desktop\\Project2\\CS6232GroupProject\\Reports\\ClinicReport.rdlc";
+            this.reportViewer.LocalReport.ReportPath = "..\\..\\Reports\\ClinicReport.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(3, 196);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
@@ -1640,10 +1591,6 @@
         private System.Windows.Forms.LinkLabel linkLabelNurseInfoBack;
         private System.Windows.Forms.ComboBox comboBoxNurseInfoResultsActive;
         private System.Windows.Forms.ComboBox comboBoxRegisterNurseActive;
-        private System.Windows.Forms.TextBox textBoxUsernameNurseInfoResults;
-        private System.Windows.Forms.TextBox textBoxPasswordNurseInfoResults;
-        private System.Windows.Forms.Label labelUsernameNurseInfoResults;
-        private System.Windows.Forms.Label labelPasswordNurseInfoResults;
         private System.Windows.Forms.Label labelUsernameRegisterNurse;
         private System.Windows.Forms.Label labelPasswordRegisterNurse;
         private System.Windows.Forms.TextBox textBoxUsernameRegisterNurse;
@@ -1662,9 +1609,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumnNurseInformation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.Label PasswordInfoLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Button buttonNurseInfoClear;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+        private System.Windows.Forms.LinkLabel linkLabelLogin;
     }
 }
