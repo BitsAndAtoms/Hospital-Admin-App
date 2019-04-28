@@ -73,6 +73,16 @@ namespace CS6232GroupProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adminicon2c {
+            get {
+                object obj = ResourceManager.GetObject("adminicon2c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_circle {
             get {
                 object obj = ResourceManager.GetObject("back-circle", resourceCulture);
@@ -176,6 +186,16 @@ namespace CS6232GroupProject.Properties {
         internal static System.Drawing.Bitmap nurseicon {
             get {
                 object obj = ResourceManager.GetObject("nurseicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nurseicon2e {
+            get {
+                object obj = ResourceManager.GetObject("nurseicon2e", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

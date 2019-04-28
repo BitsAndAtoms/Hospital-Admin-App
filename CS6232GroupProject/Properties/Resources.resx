@@ -121,29 +121,20 @@
   <data name="logotext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logotext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bggradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bggradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bggradientD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bggradientD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bggradientB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bggradientB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logotexts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logotexts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_41d_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_41d_icon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bggradientC" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bggradientC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bggradient-topsmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bggradient-topsmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logotexts" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logotexts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nurseicon2e" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nurseicon2e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adminicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,7 +142,22 @@
   <data name="nurseicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nurseicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="back-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bggradientB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bggradientB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bggradient-topsmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bggradient-topsmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bggradientC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bggradientC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bggradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bggradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adminicon2c" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adminicon2c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

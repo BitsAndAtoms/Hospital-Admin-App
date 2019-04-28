@@ -42,9 +42,9 @@
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.3211F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.6789F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.03F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.97F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
             this.tableLayoutPanel1.Controls.Add(this.linkLabelLogout, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxNurseIcon, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelName, 1, 0);
@@ -52,8 +52,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(804, 149);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(804, 120);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // linkLabelLogout
@@ -75,12 +75,12 @@
             // pictureBoxNurseIcon
             // 
             this.pictureBoxNurseIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxNurseIcon.Image = global::CS6232GroupProject.Properties.Resources.adminicon;
+            this.pictureBoxNurseIcon.Image = global::CS6232GroupProject.Properties.Resources.adminicon2c;
             this.pictureBoxNurseIcon.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxNurseIcon.Name = "pictureBoxNurseIcon";
             this.pictureBoxNurseIcon.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.pictureBoxNurseIcon.Size = new System.Drawing.Size(130, 130);
-            this.pictureBoxNurseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxNurseIcon.Size = new System.Drawing.Size(111, 114);
+            this.pictureBoxNurseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxNurseIcon.TabIndex = 0;
             this.pictureBoxNurseIcon.TabStop = false;
             // 
@@ -90,7 +90,7 @@
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(153, 62);
+            this.labelName.Location = new System.Drawing.Point(120, 47);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(105, 25);
             this.labelName.TabIndex = 1;
@@ -99,9 +99,9 @@
             // userControlAdminMain1
             // 
             this.userControlAdminMain1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlAdminMain1.Location = new System.Drawing.Point(0, 149);
+            this.userControlAdminMain1.Location = new System.Drawing.Point(0, 120);
             this.userControlAdminMain1.Name = "userControlAdminMain1";
-            this.userControlAdminMain1.Size = new System.Drawing.Size(804, 754);
+            this.userControlAdminMain1.Size = new System.Drawing.Size(804, 783);
             this.userControlAdminMain1.TabIndex = 6;
             this.userControlAdminMain1.Load += new System.EventHandler(this.userControlAdminMain1_Load);
             // 
