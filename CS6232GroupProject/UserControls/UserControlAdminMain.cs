@@ -459,8 +459,8 @@ namespace CS6232GroupProject.UserControls
             this.reportViewer.Visible = true;
             this.reportViewer.LocalReport.DataSources.Clear();
             DataTable yourDataTable = this.labContoller.GetLabTestResultStatiscitsForReportController(this.dateTimePickerReportsStartDate.Value, this.dateTimePickerReportsEndDate.Value);
-            Microsoft.Reporting.WinForms.ReportDataSource rprtDTSource = new Microsoft.Reporting.WinForms.ReportDataSource(yourDataTable.TableName, yourDataTable);
-            this.reportViewer.LocalReport.DataSources.Add(rprtDTSource);
+            Microsoft.Reporting.WinForms.ReportDataSource DataSet1 = new Microsoft.Reporting.WinForms.ReportDataSource( "DataSet1", yourDataTable);
+            this.reportViewer.LocalReport.DataSources.Add(DataSet1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "Namespace.ClinicReport.rdlc";
      
             this.reportViewer.RefreshReport();
