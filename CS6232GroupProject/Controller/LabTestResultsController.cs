@@ -1,6 +1,8 @@
 ﻿using CS6232GroupProject.DAL;
 using CS6232GroupProject.Model;
+using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CS6232GroupProject.Controller
 {
@@ -70,6 +72,18 @@ namespace CS6232GroupProject.Controller
         internal void OrderSelectedTestForVisit(PatientVisit visit, string testOrdered)
         {
             this.labTestResultsSource.OrderSelectedTestForVisit(visit, testOrdered);
+        }
+
+        /// <summary>
+        /// Get lab test results stats
+        /// </summary>
+        /// <param name="BeginDate">Begin time for stats</param>
+        /// <param name="EndDate"End time for stats</param>
+        /// <returns>data table for lab stats</returns>
+
+        public DataTable GetLabTestResultStatiscitsForReport(DateTime BeginDate, DateTime EndDate)
+        {
+            return this.labTestResultsSource.GetLabTestResultStatiscitsForReport(BeginDate,EndDate);
         }
     }
 }
