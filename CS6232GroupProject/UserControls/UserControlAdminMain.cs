@@ -22,7 +22,6 @@ namespace CS6232GroupProject.UserControls
         private LabTestResultsController labContoller;
         private int addressID;
         public static int nurseID { get; set; }
-        public FormUpdateNurseLogin formUpdateNurseLogin;
 
         /// <summary>
         /// Constructor
