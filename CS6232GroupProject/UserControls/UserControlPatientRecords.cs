@@ -375,7 +375,6 @@ namespace CS6232GroupProject.UserControls
             }
         }
             
-        
 
         private void comboBoxPatientRecordsAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -389,32 +388,6 @@ namespace CS6232GroupProject.UserControls
             this.tabControlPatientRecords_SelectedIndexChanged(null, null);
         }
 
-
-
-        private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                LabTestResult newResult = new LabTestResult();
-                LabTest test = new LabTest();
-
-                newResult.Result = this.labTestResultDataGridView.CurrentRow.Cells[2].Value.ToString();
-                newResult.VisitID = this.visit.VisitID;
-                newResult.TestID = (int)this.labTestResultDataGridView.CurrentRow.Cells[6].Value;
-                newResult.TestOrderedDate = visit.Date;
-                newResult.TestResultDate = Convert.ToDateTime(this.labTestResultDataGridView.CurrentRow.Cells[3].Value);
-
-                test.Name = this.labTestResultDataGridView.CurrentRow.Cells[0].Value.ToString();
-                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
-
-                MessageBox.Show("Test results updated.");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There was an issue updating the tests!", "Error");
-            }
-        }
 
         private void buttonLabTestsOrder_Click(object sender, EventArgs e)
         {
@@ -533,7 +506,6 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
-
         private void linkLabelAppointmentsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogResult confirmCancel = MessageBox.Show("Appointment will be cancelled and removed.\nContinue?", "Cancel Appointment Warning", MessageBoxButtons.YesNo);
@@ -556,8 +528,6 @@ namespace CS6232GroupProject.UserControls
             }
         }
 
-
-
         private void dtp_TextChange(object sender, EventArgs e)
         {
             labTestResultDataGridView.CurrentCell.Value = dtp.Text.ToString();
@@ -572,6 +542,33 @@ namespace CS6232GroupProject.UserControls
         private void labTestResultDataGridView_Scroll(object sender, ScrollEventArgs e)
         {
             dtp.Visible = false;
+        }
+
+        private void labTestResultDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                try
+                {
+                    LabTestResult newResult = new LabTestResult();
+                    LabTest test = new LabTest();
+
+                    newResult.Result = this.labTestResultDataGridView.CurrentRow.Cells[2].Value.ToString();
+                    newResult.VisitID = this.visit.VisitID;
+                    newResult.TestID = (int)this.labTestResultDataGridView.CurrentRow.Cells[6].Value;
+                    newResult.TestOrderedDate = visit.Date;
+                    newResult.TestResultDate = Convert.ToDateTime(this.labTestResultDataGridView.CurrentRow.Cells[3].Value);
+
+                    test.Name = this.labTestResultDataGridView.CurrentRow.Cells[0].Value.ToString();
+                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+
+                    MessageBox.Show("Test results updated.");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("There was an issue updating the tests!", "Error");
+                }
+            }
         }
     }
 }

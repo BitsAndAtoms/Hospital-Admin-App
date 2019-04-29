@@ -521,7 +521,7 @@ namespace CS6232GroupProject.DAL
                " SET @oldLoginUserName = (SELECT nurseUsername FROM Nurse " +
                " WHERE nurseID = @nurseID) " +
                " IF (@oldLoginUserName != @username )" +
-               " INSERT INTO Login(username,password) Values(@username,PWDENCRYPT(@password)) " +
+               " INSERT INTO Login(username, password) Values(@username,PWDENCRYPT(@password)) " +
                " ELSE " +
                    " UPDATE Login " +
                " SET password = PWDENCRYPT(@password) WHERE username = @oldLoginUserName " +
@@ -573,7 +573,7 @@ namespace CS6232GroupProject.DAL
                " SET @oldPassword = (SELECT password FROM Login " +
                " WHERE username = @oldLoginUserName) " +
                " IF (@oldLoginUserName != @username ) " +
-               " INSERT INTO Login(username, password) Values(@username, PWDENCRYPT(@oldPassword)) " +
+               " INSERT INTO Login(username, password) Values(@username, @oldPassword) " +
                " ELSE " +
                    " UPDATE Login " +
                " SET password = PWDENCRYPT(@oldPassword) WHERE username = @oldLoginUserName " +

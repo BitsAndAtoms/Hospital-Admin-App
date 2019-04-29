@@ -71,13 +71,9 @@ namespace CS6232GroupProject.UserControls
             try
             {
                 patientList = this.patientController.GetPatients();
-                //comboBoxPatient.DataSource = patientList;
-
                 doctorList = this.doctorController.GetDoctors();
                 comboBoxPhysician.DataSource = doctorList;
 
-                //patientBindingSource.Clear();
-                //patientBindingSource.Add();
             }
             catch (Exception ex)
             {
@@ -103,7 +99,7 @@ namespace CS6232GroupProject.UserControls
         }
 
         /// <summary>
-        /// Chekck fields prior to register 
+        /// Register field validation.
         /// </summary>
         /// <returns></returns>
         private bool CheckFieldsRegister()
