@@ -436,13 +436,29 @@ namespace CS6232GroupProject.UserControls
 
         private void buttonReportsSubmit_Click(object sender, EventArgs e)
         {
-            this.reportViewer.Visible = true;
-            this.reportViewer.LocalReport.DataSources.Clear();
-            DataTable yourDataTable = this.labContoller.GetLabTestResultStatiscitsForReportController(this.dateTimePickerReportsStartDate.Value, this.dateTimePickerReportsEndDate.Value);
-            Microsoft.Reporting.WinForms.ReportDataSource DataSet1 = new Microsoft.Reporting.WinForms.ReportDataSource( "DataSet1", yourDataTable);
-            this.reportViewer.LocalReport.DataSources.Add(DataSet1);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "Namespace.ClinicReport.rdlc";
-            this.reportViewer.RefreshReport();
+
+            if (this.dateTimePickerReportsEndDate.Value < this.dateTimePickerReportsStartDate.Value)
+            {
+                MessageBox.Show("The start date must be prior to the end date!", "Error");
+            }
+            else
+            {
+                try
+                {
+                    this.reportViewer.Visible = true;
+                    this.reportViewer.LocalReport.DataSources.Clear();
+                    DataTable yourDataTable = this.labContoller.GetLabTestResultStatiscitsForReportController(this.dateTimePickerReportsStartDate.Value, this.dateTimePickerReportsEndDate.Value);
+                    Microsoft.Reporting.WinForms.ReportDataSource DataSet1 = new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", yourDataTable);
+                    this.reportViewer.LocalReport.DataSources.Add(DataSet1);
+                    this.reportViewer.LocalReport.ReportEmbeddedResource = "Namespace.ClinicReport.rdlc";
+                    this.reportViewer.RefreshReport();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("There was an issue with the dates!", "Error");
+                }
+            }
+            
 
         }
 
