@@ -537,23 +537,5 @@ namespace CS6232GroupProject.DAL
                 }
             }
         }
-
-        public void DeletePatient(int patientID)//I may change this to bool so that we can have a confirmation but we can just leave it as void.
-        {
-            // By this point the view has run the call of the AppointmentDAL method
-            // CHeckIfPatientHasFUtureAppointment and it has returned false. All this method needs 
-            // to do is to delete the patient. To do that, all appointments, visits, labtests, and maybe addresses to be 
-            // deleted along with it. So far, I think the order is: 
-              // Address if it isn't used by anyone else
-              // LabTestResults
-              // PatientVisits
-              // HasAppointments
-              // Patient
-
-            // I REALLY wish she would let us use cascade but I don't think she'll like that.
-            // Because the issue I've run into is that a patient can have multiple patientvists. In order 
-            // to go through all of them, which has to be done by the appointmentID, is a foreach loop, the 
-            // SQL equivalent seems to be a Cursor.
-        }
     }
 }
