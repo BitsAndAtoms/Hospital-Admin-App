@@ -567,11 +567,16 @@ namespace CS6232GroupProject.DAL
                " begin transaction " +
                " begin try " +
                " DECLARE @oldLoginUserName varchar(10);" +
+               " DECLARE @oldPassword varbinary(128); " +
                " SET @oldLoginUserName = (SELECT nurseUsername FROM Nurse " +
                " WHERE nurseID = @nurseID) " +
-               " IF (@oldLoginUserName != @username )" +
-               " INSERT INTO Login(username) Values(@username) " +
-               
+               " SET @oldPassword = (SELECT password FROM Login " +
+               " WHERE username = @oldLoginUserName) " +
+               " IF (@oldLoginUserName != @username ) " +
+               " INSERT INTO Login(username, password) Values(@username, PWDENCRYPT(@oldPassword)) " +
+               " ELSE " +
+                   " UPDATE Login " +
+               " SET password = PWDENCRYPT(@oldPassword) WHERE username = @oldLoginUserName " +
                " UPDATE Nurse" +
                " SET nurseUsername = @nurseUsername " +
                " WHERE nurseID = @nurseID" +
