@@ -220,8 +220,6 @@ namespace CS6232GroupProject.UserControls
             {
                 try
                 {
-
-
                     newVisit.VisitID = this.visit.VisitID;
                     newVisit.AppointmentID = this.visit.AppointmentID;
                     newVisit.Date = this.visit.Date;
@@ -232,7 +230,6 @@ namespace CS6232GroupProject.UserControls
                     newVisit.Temperature = Convert.ToDecimal(this.textBoxRoutineChecksTemp.Text);
                     newVisit.Pulse = Convert.ToInt32(this.textboxRoutineChecksPulse.Text);
                     newVisit.Symptoms = this.textBoxRoutineChecksSummary.Text;
-
 
                     if (this.visitController.UpdateRoutineCheck(newVisit, this.visit))
                     {
@@ -653,15 +650,23 @@ namespace CS6232GroupProject.UserControls
 
         private void linkLabelAppointmentsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            try
+            DialogResult confirmCancel = MessageBox.Show("Appointment will be cancelled and removed.\nContinue?", "Cancel Appointment Warning", MessageBoxButtons.YesNo);
+            if (confirmCancel == DialogResult.Yes)
             {
-                this.appointmentController.CancelAppointment(appointmentID);
-                MessageBox.Show("The appointment has been cancelled!", "Appointment Cancelled!");
-                SetComboBox();
+                try
+                {
+                    this.appointmentController.CancelAppointment(appointmentID);
+                    MessageBox.Show("The appointment has been cancelled!", "Appointment Cancelled!");
+                    SetComboBox();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cannot cancel an appointment with pending test results!", "Error canceling appointment!");
+                }
             }
-            catch (Exception)
+            else if (confirmCancel == DialogResult.No)
             {
-                MessageBox.Show("Cannot cancel an appointment with pending test results!", "Error canceling appointment!");
+                return;
             }
         }
     }

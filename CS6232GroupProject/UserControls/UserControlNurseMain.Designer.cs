@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlNurseMain = new System.Windows.Forms.TabControl();
             this.tabPageNursePatientInformation = new System.Windows.Forms.TabPage();
             this.panelPatientInfoResults = new System.Windows.Forms.Panel();
@@ -304,7 +304,7 @@
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 12;
@@ -577,7 +577,7 @@
             this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
-            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(195, 214);
+            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(195, 211);
             this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
             this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderPatientInfoResult.TabIndex = 6;
@@ -659,7 +659,7 @@
             this.comboBoxPhysician.DisplayMember = "FullName";
             this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(159, 47);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(159, 50);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
@@ -860,11 +860,11 @@
             // dataGridViewButtonColumnPatientInfo
             // 
             this.dataGridViewButtonColumnPatientInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.dataGridViewButtonColumnPatientInfo.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.dataGridViewButtonColumnPatientInfo.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewButtonColumnPatientInfo.HeaderText = "";
             this.dataGridViewButtonColumnPatientInfo.Name = "dataGridViewButtonColumnPatientInfo";
             this.dataGridViewButtonColumnPatientInfo.ReadOnly = true;
@@ -874,10 +874,10 @@
             // dataGridViewButtonColumnPatientRecords
             // 
             this.dataGridViewButtonColumnPatientRecords.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewButtonColumnPatientRecords.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewButtonColumnPatientRecords.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewButtonColumnPatientRecords.HeaderText = "";
             this.dataGridViewButtonColumnPatientRecords.Name = "dataGridViewButtonColumnPatientRecords";
             this.dataGridViewButtonColumnPatientRecords.ReadOnly = true;
@@ -887,10 +887,10 @@
             // dataGridViewButtonColumnBookAppointment
             // 
             this.dataGridViewButtonColumnBookAppointment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
-            this.dataGridViewButtonColumnBookAppointment.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewButtonColumnBookAppointment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewButtonColumnBookAppointment.HeaderText = "";
             this.dataGridViewButtonColumnBookAppointment.Name = "dataGridViewButtonColumnBookAppointment";
             this.dataGridViewButtonColumnBookAppointment.ReadOnly = true;
@@ -1114,7 +1114,7 @@
             this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRegisterGender.FormattingEnabled = true;
-            this.comboBoxRegisterGender.Location = new System.Drawing.Point(195, 214);
+            this.comboBoxRegisterGender.Location = new System.Drawing.Point(195, 211);
             this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
             this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
             this.comboBoxRegisterGender.TabIndex = 6;
@@ -1305,7 +1305,7 @@
             this.comboBoxState.BackColor = System.Drawing.Color.White;
             this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxState.Location = new System.Drawing.Point(3, 29);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 12;
