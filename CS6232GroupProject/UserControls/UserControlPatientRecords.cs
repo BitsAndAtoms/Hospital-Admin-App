@@ -40,8 +40,6 @@ namespace CS6232GroupProject.UserControls
             this.labTestResultsController = new LabTestResultsController();
             SetComboBox();
             SetAppointment();
-            SetLabTestsTextBoxes();
-            EnableTests();
         }
         /// <summary>
         /// Checks if a patient visit exists
@@ -382,98 +380,33 @@ namespace CS6232GroupProject.UserControls
             SetVisitInfo();
             AppointmentTimeCheck();
             this.tabControlPatientRecords_SelectedIndexChanged(null, null);
-            EnableTests();
-            SetLabTestsTextBoxes();
         }
 
-        private void SetLabTestsTextBoxes()
-        {
-            this.textBoxLabTestResultsHepatitisA.Text = "";
-            this.textBoxLabTestResultsHepatitisB.Text = "";
-            this.textBoxLabTestResultsWBC.Text = "";
-            this.textBoxLabTestResultsLDL.Text = "";
 
-            List<LabTestResult> results = new List<LabTestResult>();
-            results = this.labTestResultsController.GetLabTestResultByVisitID(this.visit);
-            foreach (var nameOfTestOrdered in results) {
-                if (nameOfTestOrdered.Name == "Low Density Lipoproteins (LDL)")
-                {
-                    this.textBoxLabTestResultsLDL.Text = nameOfTestOrdered.Result;
-                } else if (nameOfTestOrdered.Name == "White Blood Cell (WBC)")
-                {
-                    this.textBoxLabTestResultsWBC.Text = nameOfTestOrdered.Result;
-                }
-                else if (nameOfTestOrdered.Name == "Hepatitis B")
-                {
-                    this.textBoxLabTestResultsHepatitisB.Text = nameOfTestOrdered.Result;
-                }
-                else if (nameOfTestOrdered.Name == "Hepatitis A")
-                {
-                    this.textBoxLabTestResultsHepatitisA.Text = nameOfTestOrdered.Result;
-                }
-            }
-
-            this.tabControlPatientRecords_SelectedIndexChanged(null, null);
-        }
 
         private void buttonLabTestsSubmit_Click(object sender, EventArgs e)
         {
-            
-                try
-                {
-                    LabTestResult newResult = new LabTestResult();
-                    LabTest test = new LabTest();
 
-                    newResult.Result = this.textBoxLabTestResultsWBC.Text;
-                    newResult.VisitID = this.visit.VisitID;
-                    newResult.TestID = 11;//Hard coded
-                                          //Need to get the TestID
-                    newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
-                    newResult.TestOrderedDate = visit.Date;
-                    //newResult.TestResultDate = DateTime.Now;
-                    test.Name = "White Blood Cell (WBC)";
-                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+            try
+            {
+                LabTestResult newResult = new LabTestResult();
+                LabTest test = new LabTest();
 
-                    newResult.Result = this.textBoxLabTestResultsLDL.Text;
-                    newResult.VisitID = this.visit.VisitID;
-                    newResult.TestID = 10;//Hard coded
-                                          //Need to get the TestID
-                    newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
-                    newResult.TestOrderedDate = visit.Date;
-                    newResult.TestResultDate = DateTime.Now;
-                    test.Name = "Low Density Lipoproteins (LDL)";
-                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                newResult.Result = this.labTestResultDataGridView.CurrentRow.Cells[2].Value.ToString();
+                newResult.VisitID = this.visit.VisitID;
+                newResult.TestID = (int)this.labTestResultDataGridView.CurrentRow.Cells[6].Value;
+                newResult.TestOrderedDate = visit.Date;
+                newResult.TestResultDate = Convert.ToDateTime(this.labTestResultDataGridView.CurrentRow.Cells[3].Value);
 
-                    newResult.Result = this.textBoxLabTestResultsHepatitisA.Text;
-                    newResult.VisitID = this.visit.VisitID;
-                    newResult.TestID = 8;//Hard coded
-                                         //Need to get the TestID
-                    newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
-                    newResult.TestOrderedDate = visit.Date;
-                    newResult.TestResultDate = DateTime.Now;
-                    test.Name = "Hepatitis A";
-                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
+                test.Name = this.labTestResultDataGridView.CurrentRow.Cells[0].Value.ToString();
+                this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-                    newResult.Result = this.textBoxLabTestResultsHepatitisB.Text;
-                    newResult.VisitID = this.visit.VisitID;
-                    newResult.TestID = 9;//Hard coded
-                                         //Need to get the TestID
-                    newResult.TestResultDate = this.dateTimePickerLabTestResults.Value;
-                    newResult.TestOrderedDate = visit.Date;
-                    newResult.TestResultDate = DateTime.Now;
-                    test.Name = "Hepatitis B";
-                    this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
-
-                    SetLabTestsTextBoxes();
-                    MessageBox.Show("Ordered test(s) updated!", "Success!");
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("There was an issue updating the tests!", "Error");
-                }
-            
-            
-
+                MessageBox.Show("Test results updated.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was an issue updating the tests!", "Error");
+            }
         }
 
         private void buttonLabTestsOrder_Click(object sender, EventArgs e)
@@ -487,7 +420,6 @@ namespace CS6232GroupProject.UserControls
                     try
                     {
                         this.labTestResultsController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
-                        
                     }
                     catch (Exception)
                     {
@@ -496,11 +428,10 @@ namespace CS6232GroupProject.UserControls
                     }
                 }
                 MessageBox.Show("Test(s) ordered.", "Confirm");
-                this.EnableTests();
             }
             else
             {
-                MessageBox.Show("Tests cant be ordered without an inital diagnosis or after a final diagnosis");
+                MessageBox.Show("Tests cannot be ordered before an inital diagnosis or after a final diagnosis.");
             }
         }
 
@@ -547,11 +478,9 @@ namespace CS6232GroupProject.UserControls
             {
                 if (String.IsNullOrEmpty(this.visit.finalDiagnosis))
                 {
-                    this.buttonLabTestsUpdate.Enabled = true;
                     this.checkedListBoxLabTests.Enabled = true;
                 } else if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
                 {
-                    this.buttonLabTestsUpdate.Enabled = false;
                     this.checkedListBoxLabTests.Enabled = false;
                   
                 }
@@ -566,87 +495,27 @@ namespace CS6232GroupProject.UserControls
                     if (nameOfTestOrdered.Name == "White Blood Cell (WBC)")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(0, CheckState.Checked);
-                        this.textBoxLabTestResultsWBC.ReadOnly = false;
                     }
 
                     if (nameOfTestOrdered.Name == "Low Density Lipoproteins (LDL)")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(1, CheckState.Checked);
-                        this.textBoxLabTestResultsLDL.ReadOnly = false;
                     }
 
                     if (nameOfTestOrdered.Name == "Hepatitis A")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(2, CheckState.Checked);
-                        this.textBoxLabTestResultsHepatitisA.ReadOnly = false;
                     }
 
                     if (nameOfTestOrdered.Name == "Hepatitis B")
                     {
                         this.checkedListBoxLabTests.SetItemCheckState(3, CheckState.Checked);
-                        this.textBoxLabTestResultsHepatitisB.ReadOnly = false;
                     }
 
                 }
-
-                if (!String.IsNullOrEmpty(this.visit.finalDiagnosis))
-                {
-                    this.textBoxLabTestResultsWBC.ReadOnly = true;
-                    this.textBoxLabTestResultsLDL.ReadOnly = true;
-                    this.textBoxLabTestResultsHepatitisB.ReadOnly = true;
-                    this.textBoxLabTestResultsHepatitisA.ReadOnly = true;
-                }
-
             }
-
         }
 
-        private void EnableTests()
-        {
-            try
-            {
-                if (this.checkedListBoxLabTests.GetItemCheckState(0) == CheckState.Checked)
-                {
-                    this.textBoxLabTestResultsWBC.ReadOnly = false;
-                }
-                else
-                {
-                    this.textBoxLabTestResultsWBC.ReadOnly = true;
-                }
-
-                if (this.checkedListBoxLabTests.GetItemCheckState(1) == CheckState.Checked)
-                {
-                    this.textBoxLabTestResultsLDL.ReadOnly = false;
-                }
-                else
-                {
-                    this.textBoxLabTestResultsLDL.ReadOnly = true;
-                }
-
-                if (this.checkedListBoxLabTests.GetItemCheckState(2) == CheckState.Checked)
-                {
-                    this.textBoxLabTestResultsHepatitisA.ReadOnly = false;
-                }
-                else
-                {
-                    this.textBoxLabTestResultsHepatitisA.ReadOnly = true;
-                }
-
-                if (this.checkedListBoxLabTests.GetItemCheckState(3) == CheckState.Checked)
-                {
-                    this.textBoxLabTestResultsHepatitisB.ReadOnly = false;
-                }
-                else
-                {
-                    this.textBoxLabTestResultsHepatitisB.ReadOnly = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-            
-        }
 
         private void linkLabelAppointmentsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
