@@ -562,7 +562,7 @@ namespace CS6232GroupProject.UserControls
                     test.Name = this.labTestResultDataGridView.CurrentRow.Cells[0].Value.ToString();
                     this.labTestResultsController.EnterTestResultForVisit(visit, test, newResult);
 
-                    MessageBox.Show("Test results updated.");
+                    MessageBox.Show("Test result updated.");
                 }
                 catch (Exception)
                 {
