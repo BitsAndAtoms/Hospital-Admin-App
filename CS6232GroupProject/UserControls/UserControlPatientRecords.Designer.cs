@@ -87,7 +87,7 @@
             this.labTestResultDataGridView = new System.Windows.Forms.DataGridView();
             this.TestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TestOrderedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.TestResultDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -155,7 +155,7 @@
             this.tabPageAppointments.Location = new System.Drawing.Point(4, 29);
             this.tabPageAppointments.Name = "tabPageAppointments";
             this.tabPageAppointments.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAppointments.Size = new System.Drawing.Size(831, 382);
+            this.tabPageAppointments.Size = new System.Drawing.Size(831, 461);
             this.tabPageAppointments.TabIndex = 3;
             this.tabPageAppointments.Text = "Appointments";
             this.tabPageAppointments.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(808, 370);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(825, 370);
             this.tableLayoutPanel7.TabIndex = 7;
             // 
             // tableLayoutPanel9
@@ -192,7 +192,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.dateTimePickerAppointmentsTime, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.dateTimePickerAppointments, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(163, 52);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(166, 52);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -222,7 +222,7 @@
             this.textBoxAppointmentsSummary.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxAppointmentsSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAppointmentsSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAppointmentsSummary.Location = new System.Drawing.Point(163, 113);
+            this.textBoxAppointmentsSummary.Location = new System.Drawing.Point(166, 113);
             this.textBoxAppointmentsSummary.Multiline = true;
             this.textBoxAppointmentsSummary.Name = "textBoxAppointmentsSummary";
             this.textBoxAppointmentsSummary.Size = new System.Drawing.Size(427, 121);
@@ -261,7 +261,7 @@
             this.buttonAppointmentsUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAppointmentsUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAppointmentsUpdate.ForeColor = System.Drawing.Color.Black;
-            this.buttonAppointmentsUpdate.Location = new System.Drawing.Point(415, 256);
+            this.buttonAppointmentsUpdate.Location = new System.Drawing.Point(425, 256);
             this.buttonAppointmentsUpdate.Name = "buttonAppointmentsUpdate";
             this.buttonAppointmentsUpdate.Size = new System.Drawing.Size(137, 35);
             this.buttonAppointmentsUpdate.TabIndex = 7;
@@ -275,7 +275,7 @@
             this.linkLabelAppointmentsCancel.AutoSize = true;
             this.linkLabelAppointmentsCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelAppointmentsCancel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.linkLabelAppointmentsCancel.Location = new System.Drawing.Point(616, 299);
+            this.linkLabelAppointmentsCancel.Location = new System.Drawing.Point(633, 299);
             this.linkLabelAppointmentsCancel.Name = "linkLabelAppointmentsCancel";
             this.linkLabelAppointmentsCancel.Size = new System.Drawing.Size(189, 25);
             this.linkLabelAppointmentsCancel.TabIndex = 8;
@@ -290,7 +290,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(163, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -909,7 +909,12 @@
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Result";
             this.dataGridViewTextBoxColumn4.HeaderText = "Result";
+            this.dataGridViewTextBoxColumn4.Items.AddRange(new object[] {
+            "normal",
+            "abnormal"});
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // TestResultDate
             // 
@@ -1178,7 +1183,7 @@
         private System.Windows.Forms.Button buttonLabTestsUpdateDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn TestName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TestOrderedDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn TestResultDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

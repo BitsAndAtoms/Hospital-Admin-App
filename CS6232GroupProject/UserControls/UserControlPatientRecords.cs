@@ -26,6 +26,8 @@ namespace CS6232GroupProject.UserControls
         private Appointment appointment;
         private PatientVisit visit;
         private int appointmentID;
+        DateTimePicker dtp = new DateTimePicker();
+        Rectangle rectangle;
 
         /// <summary>
         /// This constructs the UserControlPatientRecords objects and instatiates
@@ -40,6 +42,10 @@ namespace CS6232GroupProject.UserControls
             this.labTestResultsController = new LabTestResultsController();
             SetComboBox();
             SetAppointment();
+            labTestResultDataGridView.Controls.Add(dtp);
+            dtp.Visible = false;
+            dtp.Format = DateTimePickerFormat.Custom;
+            dtp.TextChanged += new EventHandler(dtp_TextChange);
         }
         /// <summary>
         /// Checks if a patient visit exists
@@ -437,7 +443,17 @@ namespace CS6232GroupProject.UserControls
 
         private void labTestResultDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == 3)
+            {
 
+
+                rectangle = labTestResultDataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                dtp.Size = new Size(rectangle.Width, rectangle.Height);
+                dtp.Location = new Point(rectangle.X, rectangle.Y);
+                dtp.Visible = true;
+
+
+            }
         }
 
         /// <summary>
@@ -537,6 +553,24 @@ namespace CS6232GroupProject.UserControls
             {
                 return;
             }
+        }
+
+
+
+        private void dtp_TextChange(object sender, EventArgs e)
+        {
+            labTestResultDataGridView.CurrentCell.Value = dtp.Text.ToString();
+        }
+
+        private void labTestResultDataGridView_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+        {
+            dtp.Visible = false;
+
+        }
+
+        private void labTestResultDataGridView_Scroll(object sender, ScrollEventArgs e)
+        {
+            dtp.Visible = false;
         }
     }
 }
