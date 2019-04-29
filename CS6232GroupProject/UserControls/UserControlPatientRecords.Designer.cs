@@ -83,7 +83,6 @@
             this.labelLabTestsOrder = new System.Windows.Forms.Label();
             this.labelLabTests = new System.Windows.Forms.Label();
             this.tabPageLabResults = new System.Windows.Forms.TabPage();
-            this.buttonLabTestsUpdateDataGrid = new System.Windows.Forms.Button();
             this.labTestResultDataGridView = new System.Windows.Forms.DataGridView();
             this.TestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TestOrderedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,6 +91,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updateButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.labTestResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -290,7 +290,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -841,7 +841,6 @@
             // tabPageLabResults
             // 
             this.tabPageLabResults.AutoScroll = true;
-            this.tabPageLabResults.Controls.Add(this.buttonLabTestsUpdateDataGrid);
             this.tabPageLabResults.Controls.Add(this.labTestResultDataGridView);
             this.tabPageLabResults.Location = new System.Drawing.Point(4, 29);
             this.tabPageLabResults.Name = "tabPageLabResults";
@@ -850,21 +849,6 @@
             this.tabPageLabResults.TabIndex = 5;
             this.tabPageLabResults.Text = "Lab Results";
             this.tabPageLabResults.UseVisualStyleBackColor = true;
-            // 
-            // buttonLabTestsUpdateDataGrid
-            // 
-            this.buttonLabTestsUpdateDataGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonLabTestsUpdateDataGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.buttonLabTestsUpdateDataGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLabTestsUpdateDataGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLabTestsUpdateDataGrid.ForeColor = System.Drawing.Color.Black;
-            this.buttonLabTestsUpdateDataGrid.Location = new System.Drawing.Point(646, 261);
-            this.buttonLabTestsUpdateDataGrid.Name = "buttonLabTestsUpdateDataGrid";
-            this.buttonLabTestsUpdateDataGrid.Size = new System.Drawing.Size(137, 34);
-            this.buttonLabTestsUpdateDataGrid.TabIndex = 12;
-            this.buttonLabTestsUpdateDataGrid.Text = "Update";
-            this.buttonLabTestsUpdateDataGrid.UseVisualStyleBackColor = false;
-            this.buttonLabTestsUpdateDataGrid.Click += new System.EventHandler(this.buttonLabTestsSubmit_Click);
             // 
             // labTestResultDataGridView
             // 
@@ -879,13 +863,16 @@
             this.TestResultDate,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTextBoxColumn2,
+            this.updateButton});
             this.labTestResultDataGridView.DataSource = this.labTestResultBindingSource;
             this.labTestResultDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.labTestResultDataGridView.Location = new System.Drawing.Point(3, 3);
             this.labTestResultDataGridView.Name = "labTestResultDataGridView";
+            this.labTestResultDataGridView.RowTemplate.Height = 30;
             this.labTestResultDataGridView.Size = new System.Drawing.Size(825, 252);
             this.labTestResultDataGridView.TabIndex = 0;
+            this.labTestResultDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.labTestResultDataGridView_CellClick);
             this.labTestResultDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.labTestResultDataGridView_CellContentClick);
             // 
             // TestName
@@ -948,6 +935,14 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "TestID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // updateButton
+            // 
+            this.updateButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.updateButton.HeaderText = "";
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Text = "Update";
+            this.updateButton.UseColumnTextForButtonValue = true;
             // 
             // labTestResultBindingSource
             // 
@@ -1181,7 +1176,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label labelPatientNameDisplay;
         private System.Windows.Forms.Label labelPatientName;
-        private System.Windows.Forms.Button buttonLabTestsUpdateDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn TestName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TestOrderedDate;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
@@ -1189,5 +1183,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewButtonColumn updateButton;
     }
 }

@@ -639,7 +639,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 75);
-            this.tableLayoutPanel5.TabIndex = 12;
+            this.tableLayoutPanel5.TabIndex = 8;
             // 
             // textBoxStreetNurseInfoResults
             // 
@@ -649,7 +649,7 @@
             this.textBoxStreetNurseInfoResults.Location = new System.Drawing.Point(3, 33);
             this.textBoxStreetNurseInfoResults.Name = "textBoxStreetNurseInfoResults";
             this.textBoxStreetNurseInfoResults.Size = new System.Drawing.Size(186, 29);
-            this.textBoxStreetNurseInfoResults.TabIndex = 13;
+            this.textBoxStreetNurseInfoResults.TabIndex = 9;
             // 
             // labelStreetNurseInfoResults
             // 
@@ -676,7 +676,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel6.TabIndex = 14;
+            this.tableLayoutPanel6.TabIndex = 10;
             // 
             // labelStateNurseInfoResults
             // 
@@ -695,10 +695,10 @@
             this.comboBoxStateNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStateNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStateNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStateNurseInfoResults.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStateNurseInfoResults.Name = "comboBoxStateNurseInfoResults";
             this.comboBoxStateNurseInfoResults.Size = new System.Drawing.Size(179, 28);
-            this.comboBoxStateNurseInfoResults.TabIndex = 15;
+            this.comboBoxStateNurseInfoResults.TabIndex = 11;
             // 
             // tableLayoutPanel7
             // 
@@ -712,7 +712,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel7.TabIndex = 16;
+            this.tableLayoutPanel7.TabIndex = 12;
             // 
             // textBoxZipNurseInfoResults
             // 
@@ -722,7 +722,7 @@
             this.textBoxZipNurseInfoResults.Location = new System.Drawing.Point(3, 25);
             this.textBoxZipNurseInfoResults.Name = "textBoxZipNurseInfoResults";
             this.textBoxZipNurseInfoResults.Size = new System.Drawing.Size(186, 29);
-            this.textBoxZipNurseInfoResults.TabIndex = 17;
+            this.textBoxZipNurseInfoResults.TabIndex = 13;
             // 
             // labelZipNurseInfoResults
             // 
@@ -746,7 +746,7 @@
             this.buttonNurseInfoResultsUpdate.Location = new System.Drawing.Point(828, 252);
             this.buttonNurseInfoResultsUpdate.Name = "buttonNurseInfoResultsUpdate";
             this.buttonNurseInfoResultsUpdate.Size = new System.Drawing.Size(137, 35);
-            this.buttonNurseInfoResultsUpdate.TabIndex = 18;
+            this.buttonNurseInfoResultsUpdate.TabIndex = 15;
             this.buttonNurseInfoResultsUpdate.Text = "Update";
             this.buttonNurseInfoResultsUpdate.UseVisualStyleBackColor = false;
             this.buttonNurseInfoResultsUpdate.Click += new System.EventHandler(this.buttonNurseInfoResultsUpdate_Click);
@@ -927,7 +927,7 @@
             this.comboBoxGenderNurseInfoResults.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderNurseInfoResults.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderNurseInfoResults.FormattingEnabled = true;
-            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(372, 211);
+            this.comboBoxGenderNurseInfoResults.Location = new System.Drawing.Point(372, 214);
             this.comboBoxGenderNurseInfoResults.Name = "comboBoxGenderNurseInfoResults";
             this.comboBoxGenderNurseInfoResults.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderNurseInfoResults.TabIndex = 6;
@@ -957,10 +957,10 @@
             this.comboBoxNurseInfoResultsActive.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(1256, 61);
+            this.comboBoxNurseInfoResultsActive.Location = new System.Drawing.Point(1256, 64);
             this.comboBoxNurseInfoResultsActive.Name = "comboBoxNurseInfoResultsActive";
             this.comboBoxNurseInfoResultsActive.Size = new System.Drawing.Size(121, 28);
-            this.comboBoxNurseInfoResultsActive.TabIndex = 8;
+            this.comboBoxNurseInfoResultsActive.TabIndex = 14;
             // 
             // textBoxLastNameNurseInfoResults
             // 
@@ -1046,7 +1046,7 @@
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(200, 75);
-            this.tableLayoutPanel10.TabIndex = 10;
+            this.tableLayoutPanel10.TabIndex = 7;
             // 
             // textBoxStreetRegisterNurse
             // 
@@ -1056,7 +1056,7 @@
             this.textBoxStreetRegisterNurse.Location = new System.Drawing.Point(3, 33);
             this.textBoxStreetRegisterNurse.Name = "textBoxStreetRegisterNurse";
             this.textBoxStreetRegisterNurse.Size = new System.Drawing.Size(186, 29);
-            this.textBoxStreetRegisterNurse.TabIndex = 11;
+            this.textBoxStreetRegisterNurse.TabIndex = 8;
             // 
             // labelStreetRegisterNurse
             // 
@@ -1084,7 +1084,7 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel11.TabIndex = 12;
+            this.tableLayoutPanel11.TabIndex = 9;
             // 
             // labelStateRegisterNurse
             // 
@@ -1104,10 +1104,10 @@
             this.comboBoxStateRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStateRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStateRegisterNurse.FormattingEnabled = true;
-            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 25);
+            this.comboBoxStateRegisterNurse.Location = new System.Drawing.Point(3, 29);
             this.comboBoxStateRegisterNurse.Name = "comboBoxStateRegisterNurse";
             this.comboBoxStateRegisterNurse.Size = new System.Drawing.Size(179, 28);
-            this.comboBoxStateRegisterNurse.TabIndex = 13;
+            this.comboBoxStateRegisterNurse.TabIndex = 10;
             // 
             // tableLayoutPanel12
             // 
@@ -1121,7 +1121,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(200, 59);
-            this.tableLayoutPanel12.TabIndex = 14;
+            this.tableLayoutPanel12.TabIndex = 11;
             // 
             // textBoxZipRegisterNurse
             // 
@@ -1131,7 +1131,7 @@
             this.textBoxZipRegisterNurse.Location = new System.Drawing.Point(3, 25);
             this.textBoxZipRegisterNurse.Name = "textBoxZipRegisterNurse";
             this.textBoxZipRegisterNurse.Size = new System.Drawing.Size(186, 29);
-            this.textBoxZipRegisterNurse.TabIndex = 15;
+            this.textBoxZipRegisterNurse.TabIndex = 12;
             // 
             // labelZipRegisterNurse
             // 
@@ -1365,7 +1365,7 @@
             this.comboBoxGenderRegisterNurse.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderRegisterNurse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderRegisterNurse.FormattingEnabled = true;
-            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(377, 211);
+            this.comboBoxGenderRegisterNurse.Location = new System.Drawing.Point(377, 214);
             this.comboBoxGenderRegisterNurse.Name = "comboBoxGenderRegisterNurse";
             this.comboBoxGenderRegisterNurse.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderRegisterNurse.TabIndex = 5;
@@ -1377,10 +1377,10 @@
             this.comboBoxRegisterNurseActive.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboBoxRegisterNurseActive.Location = new System.Drawing.Point(1273, 61);
+            this.comboBoxRegisterNurseActive.Location = new System.Drawing.Point(1273, 64);
             this.comboBoxRegisterNurseActive.Name = "comboBoxRegisterNurseActive";
             this.comboBoxRegisterNurseActive.Size = new System.Drawing.Size(121, 28);
-            this.comboBoxRegisterNurseActive.TabIndex = 7;
+            this.comboBoxRegisterNurseActive.TabIndex = 13;
             this.comboBoxRegisterNurseActive.Visible = false;
             // 
             // labelUsernameRegisterNurse
@@ -1417,7 +1417,7 @@
             this.textBoxUsernameRegisterNurse.Location = new System.Drawing.Point(1208, 110);
             this.textBoxUsernameRegisterNurse.Name = "textBoxUsernameRegisterNurse";
             this.textBoxUsernameRegisterNurse.Size = new System.Drawing.Size(186, 29);
-            this.textBoxUsernameRegisterNurse.TabIndex = 8;
+            this.textBoxUsernameRegisterNurse.TabIndex = 14;
             // 
             // textBoxPasswordRegisterNurse
             // 
@@ -1427,7 +1427,7 @@
             this.textBoxPasswordRegisterNurse.Location = new System.Drawing.Point(1208, 160);
             this.textBoxPasswordRegisterNurse.Name = "textBoxPasswordRegisterNurse";
             this.textBoxPasswordRegisterNurse.Size = new System.Drawing.Size(186, 29);
-            this.textBoxPasswordRegisterNurse.TabIndex = 9;
+            this.textBoxPasswordRegisterNurse.TabIndex = 15;
             // 
             // labelActiveRegisterNurse
             // 
@@ -1478,7 +1478,7 @@
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
             this.reportViewer.Size = new System.Drawing.Size(1397, 1346);
-            this.reportViewer.TabIndex = 7;
+            this.reportViewer.TabIndex = 4;
             this.reportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // tableLayoutPanel2
@@ -1536,7 +1536,7 @@
             this.dateTimePickerReportsStartDate.Location = new System.Drawing.Point(422, 12);
             this.dateTimePickerReportsStartDate.Name = "dateTimePickerReportsStartDate";
             this.dateTimePickerReportsStartDate.Size = new System.Drawing.Size(139, 26);
-            this.dateTimePickerReportsStartDate.TabIndex = 9;
+            this.dateTimePickerReportsStartDate.TabIndex = 1;
             // 
             // dateTimePickerReportsEndDate
             // 
@@ -1545,7 +1545,7 @@
             this.dateTimePickerReportsEndDate.Location = new System.Drawing.Point(422, 62);
             this.dateTimePickerReportsEndDate.Name = "dateTimePickerReportsEndDate";
             this.dateTimePickerReportsEndDate.Size = new System.Drawing.Size(139, 26);
-            this.dateTimePickerReportsEndDate.TabIndex = 10;
+            this.dateTimePickerReportsEndDate.TabIndex = 2;
             // 
             // buttonReportsSubmit
             // 
@@ -1557,7 +1557,7 @@
             this.buttonReportsSubmit.Location = new System.Drawing.Point(839, 114);
             this.buttonReportsSubmit.Name = "buttonReportsSubmit";
             this.buttonReportsSubmit.Size = new System.Drawing.Size(137, 35);
-            this.buttonReportsSubmit.TabIndex = 7;
+            this.buttonReportsSubmit.TabIndex = 3;
             this.buttonReportsSubmit.Text = "Search";
             this.buttonReportsSubmit.UseVisualStyleBackColor = false;
             this.buttonReportsSubmit.Click += new System.EventHandler(this.buttonReportsSubmit_Click);
