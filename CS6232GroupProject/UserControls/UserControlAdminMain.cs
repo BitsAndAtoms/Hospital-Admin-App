@@ -80,7 +80,7 @@ namespace CS6232GroupProject.UserControls
             this.textBoxPasswordRegisterNurse.Clear();
             this.labelAddMessage.Text = "";
             this.comboBoxRegisterNurseActive.SelectedIndex = -1;
-            //this.textBoxPasswordNurseInfoResults.Clear();
+            this.textBoxPasswordNurse.Clear();
         }
 
         /// <summary>
@@ -474,22 +474,47 @@ namespace CS6232GroupProject.UserControls
 
 
             newNurse.NurseID = nurseID;
-            newLogin.Username = this.textBoxUsernameRegisterNurse.Text;
-            newLogin.Password = this.textBoxPasswordRegisterNurse.Text;
-            try
+            newNurse.Username = this.textBoxUsernameNurse.Text;
+            newLogin.Username = this.textBoxUsernameNurse.Text;
+            newLogin.Password = this.textBoxPasswordNurse.Text;
+            if (this.textBoxPasswordNurse.Text == "")
             {
-                nurseController.updateNurse(newNurse, newAddress, newLogin);
+                //Call the update username only.
+                try
+                {
+                    this.nurseController.UpdateNurseUsername(newNurse, newLogin);
 
-                MessageBox.Show("Nurse Login Information Updated", "Confirm");
-                this.ClearText();
-                this.dataGridViewNurseInfo.DataSource = null;
-                this.dataGridViewNurseInfo.DataSource = this.nurseController.GetSearchNurseByNameDOB(newNurse);
+                    MessageBox.Show("Nurse Username Information Updated", "Confirm");
+                    this.ClearText();
+                    this.dataGridViewNurseInfo.DataSource = null;
+                    this.dataGridViewNurseInfo.DataSource = this.nurseController.GetSearchNurseByNameDOB(newNurse);
+                }
+
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Invalid. \n" + ex.Message,
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
-
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show("Invalid. \n" + ex.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //call update username and password
+                try
+                {
+                    this.nurseController.UpdateNurseUsernameAndPassword(newNurse, newLogin);
+
+                    MessageBox.Show("Nurse Username and Password Information Updated", "Confirm");
+                    this.ClearText();
+                    this.dataGridViewNurseInfo.DataSource = null;
+                    this.dataGridViewNurseInfo.DataSource = this.nurseController.GetSearchNurseByNameDOB(newNurse);
+                }
+
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Invalid. \n" + ex.Message,
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             
         }
