@@ -235,6 +235,7 @@ namespace CS6232GroupProject.UserControls
             {
                 panelPatientSearch.Visible = false;
                 panelPatientInfoResults.Visible = true;
+                labelPatientInformation.Text = "Patient Information";
 
                 textBoxFirstNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
                 textBoxLastNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
@@ -272,7 +273,7 @@ namespace CS6232GroupProject.UserControls
             {
                 panelPatientSearch.Visible = false;
                 panelPatientBookAppointment.Visible = true;
-                labelPatientInformation.Visible = false;
+                labelPatientInformation.Text = "Book Appointment";
                 patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
             }
             
@@ -287,6 +288,7 @@ namespace CS6232GroupProject.UserControls
         {
             panelPatientSearch.Visible = true;
             panelPatientInfoResults.Visible = false;
+            labelPatientInformation.Text = "Search Patient Information";
 
             foreach (Form form in Application.OpenForms)
             {
@@ -303,6 +305,7 @@ namespace CS6232GroupProject.UserControls
             panelPatientSearch.Visible = true;
             panelPatientBookAppointment.Visible = false;
             labelPatientInformation.Visible = true;
+            labelPatientInformation.Text = "Search Patient Information";
         }
 
         /// <summary>

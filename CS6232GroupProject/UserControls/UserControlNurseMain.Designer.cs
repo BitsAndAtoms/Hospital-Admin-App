@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlNurseMain = new System.Windows.Forms.TabControl();
             this.tabPageNursePatientInformation = new System.Windows.Forms.TabPage();
             this.panelPatientInfoResults = new System.Windows.Forms.Panel();
@@ -76,7 +76,6 @@
             this.buttonBookSubmit = new System.Windows.Forms.Button();
             this.textBoxSummary = new System.Windows.Forms.TextBox();
             this.linkLabelBookBack = new System.Windows.Forms.LinkLabel();
-            this.labelBookAppointment = new System.Windows.Forms.Label();
             this.panelPatientSearch = new System.Windows.Forms.Panel();
             this.dataGridViewPatientInfo = new System.Windows.Forms.DataGridView();
             this.patientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -305,7 +304,7 @@
             this.comboBoxStatePatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxStatePatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatePatientInfoResult.FormattingEnabled = true;
-            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 29);
+            this.comboBoxStatePatientInfoResult.Location = new System.Drawing.Point(3, 25);
             this.comboBoxStatePatientInfoResult.Name = "comboBoxStatePatientInfoResult";
             this.comboBoxStatePatientInfoResult.Size = new System.Drawing.Size(179, 28);
             this.comboBoxStatePatientInfoResult.TabIndex = 12;
@@ -578,7 +577,7 @@
             this.comboBoxGenderPatientInfoResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxGenderPatientInfoResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenderPatientInfoResult.FormattingEnabled = true;
-            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(195, 211);
+            this.comboBoxGenderPatientInfoResult.Location = new System.Drawing.Point(195, 214);
             this.comboBoxGenderPatientInfoResult.Name = "comboBoxGenderPatientInfoResult";
             this.comboBoxGenderPatientInfoResult.Size = new System.Drawing.Size(186, 28);
             this.comboBoxGenderPatientInfoResult.TabIndex = 6;
@@ -586,7 +585,6 @@
             // panelPatientBookAppointment
             // 
             this.panelPatientBookAppointment.Controls.Add(this.tableLayoutPanel2);
-            this.panelPatientBookAppointment.Controls.Add(this.labelBookAppointment);
             this.panelPatientBookAppointment.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPatientBookAppointment.Location = new System.Drawing.Point(3, 618);
             this.panelPatientBookAppointment.Name = "panelPatientBookAppointment";
@@ -610,7 +608,7 @@
             this.tableLayoutPanel2.Controls.Add(this.textBoxSummary, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.linkLabelBookBack, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 29);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
@@ -661,7 +659,7 @@
             this.comboBoxPhysician.DisplayMember = "FullName";
             this.comboBoxPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhysician.FormattingEnabled = true;
-            this.comboBoxPhysician.Location = new System.Drawing.Point(159, 50);
+            this.comboBoxPhysician.Location = new System.Drawing.Point(159, 47);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxPhysician.TabIndex = 2;
@@ -754,18 +752,6 @@
             this.linkLabelBookBack.TabStop = true;
             this.linkLabelBookBack.Text = "Back";
             this.linkLabelBookBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBookBack_LinkClicked);
-            // 
-            // labelBookAppointment
-            // 
-            this.labelBookAppointment.AutoSize = true;
-            this.labelBookAppointment.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelBookAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBookAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelBookAppointment.Location = new System.Drawing.Point(0, 0);
-            this.labelBookAppointment.Name = "labelBookAppointment";
-            this.labelBookAppointment.Size = new System.Drawing.Size(226, 29);
-            this.labelBookAppointment.TabIndex = 5;
-            this.labelBookAppointment.Text = "Book Appointment";
             // 
             // panelPatientSearch
             // 
@@ -874,11 +860,11 @@
             // dataGridViewButtonColumnPatientInfo
             // 
             this.dataGridViewButtonColumnPatientInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.dataGridViewButtonColumnPatientInfo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.dataGridViewButtonColumnPatientInfo.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewButtonColumnPatientInfo.HeaderText = "";
             this.dataGridViewButtonColumnPatientInfo.Name = "dataGridViewButtonColumnPatientInfo";
             this.dataGridViewButtonColumnPatientInfo.ReadOnly = true;
@@ -888,10 +874,10 @@
             // dataGridViewButtonColumnPatientRecords
             // 
             this.dataGridViewButtonColumnPatientRecords.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewButtonColumnPatientRecords.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewButtonColumnPatientRecords.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewButtonColumnPatientRecords.HeaderText = "";
             this.dataGridViewButtonColumnPatientRecords.Name = "dataGridViewButtonColumnPatientRecords";
             this.dataGridViewButtonColumnPatientRecords.ReadOnly = true;
@@ -901,10 +887,10 @@
             // dataGridViewButtonColumnBookAppointment
             // 
             this.dataGridViewButtonColumnBookAppointment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
-            this.dataGridViewButtonColumnBookAppointment.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewButtonColumnBookAppointment.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewButtonColumnBookAppointment.HeaderText = "";
             this.dataGridViewButtonColumnBookAppointment.Name = "dataGridViewButtonColumnBookAppointment";
             this.dataGridViewButtonColumnBookAppointment.ReadOnly = true;
@@ -1063,9 +1049,9 @@
             this.labelPatientInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPatientInformation.Location = new System.Drawing.Point(3, 3);
             this.labelPatientInformation.Name = "labelPatientInformation";
-            this.labelPatientInformation.Size = new System.Drawing.Size(231, 29);
+            this.labelPatientInformation.Size = new System.Drawing.Size(320, 29);
             this.labelPatientInformation.TabIndex = 0;
-            this.labelPatientInformation.Text = "Patient Information";
+            this.labelPatientInformation.Text = "Search Patient Information";
             // 
             // tabPageNurseRegister
             // 
@@ -1128,7 +1114,7 @@
             this.comboBoxRegisterGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxRegisterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRegisterGender.FormattingEnabled = true;
-            this.comboBoxRegisterGender.Location = new System.Drawing.Point(195, 211);
+            this.comboBoxRegisterGender.Location = new System.Drawing.Point(195, 214);
             this.comboBoxRegisterGender.Name = "comboBoxRegisterGender";
             this.comboBoxRegisterGender.Size = new System.Drawing.Size(186, 28);
             this.comboBoxRegisterGender.TabIndex = 6;
@@ -1319,7 +1305,7 @@
             this.comboBoxState.BackColor = System.Drawing.Color.White;
             this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(3, 29);
+            this.comboBoxState.Location = new System.Drawing.Point(3, 25);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(184, 28);
             this.comboBoxState.TabIndex = 12;
@@ -1480,7 +1466,6 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.panelPatientBookAppointment.ResumeLayout(false);
-            this.panelPatientBookAppointment.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -1612,7 +1597,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.DateTimePicker dateTimePickerBookAppointmentTime;
         private System.Windows.Forms.DateTimePicker dateTimePickerBookAppointment;
-        private System.Windows.Forms.Label labelBookAppointment;
         private System.Windows.Forms.ComboBox comboBoxPhysician;
         private System.Windows.Forms.Label labelSummary;
         private System.Windows.Forms.Label labelDateTime;
