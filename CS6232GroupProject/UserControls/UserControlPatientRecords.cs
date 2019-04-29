@@ -350,6 +350,7 @@ namespace CS6232GroupProject.UserControls
                       this.visit.finalDiagnosis = this.textBoxDiagnosisFinal.Text;
                       this.visitController.EnterFinalDiagnosis(this.visit);
                       this.textBoxDiagnosisIntial.Enabled = false;
+                    MessageBox.Show("Final diagnosis submitted.", "Success");
                   }
                   catch (Exception)
                   {
