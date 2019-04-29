@@ -291,7 +291,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -960,10 +960,10 @@
             this.labelInstructions.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
             this.labelInstructions.Name = "labelInstructions";
             this.labelInstructions.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.labelInstructions.Size = new System.Drawing.Size(742, 37);
+            this.labelInstructions.Size = new System.Drawing.Size(828, 37);
             this.labelInstructions.TabIndex = 13;
             this.labelInstructions.Text = "Select the Result and Result Date for the corresponding row then click Update to " +
-    "update test results.";
+    "update test results individually.";
             // 
             // patientBindingSource
             // 
