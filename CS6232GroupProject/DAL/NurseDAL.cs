@@ -44,9 +44,7 @@ namespace CS6232GroupProject.DAL
                             nurse.Phone = reader["Phone"].ToString();
                             nurse.Username = reader["Username"].ToString();
                             nurse.AddressID = (int)reader["AddressID"];
-
-                            //This section either needs to be re-written after the DB sets the ActiveStatus for 
-                            // Nurses to not null with default false, or we need to make sure it is all correct.
+                            
                             if (reader["activeStatus"] == null)
                             {
                                 nurse.Active = false;
@@ -512,6 +510,11 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        /// <summary>
+        /// This method updates a Nurse's Username and Password.
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newLogin"></param>
         public void UpdateNurseUsernameAndPassword(Nurse newNurse, Login newLogin)
         {
             string updateStatement = 
@@ -561,6 +564,11 @@ namespace CS6232GroupProject.DAL
 
         }
 
+        /// <summary>
+        /// This method updates a Nurse's Username only.
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newLogin"></param>
         public void UpdateNurseUsername(Nurse newNurse, Login newLogin)
         {
             string updateStatement =

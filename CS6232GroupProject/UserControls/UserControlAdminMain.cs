@@ -472,7 +472,7 @@ namespace CS6232GroupProject.UserControls
             {
                 if (String.IsNullOrEmpty(this.textBoxPasswordNurse.Text))
                 {
-                    //Call the update username only.
+                    
                     try
                     {
                         this.nurseController.UpdateNurseUsername(newNurse, newLogin);
@@ -491,7 +491,7 @@ namespace CS6232GroupProject.UserControls
                 }
                 else
                 {
-                    //call update username and password
+                    
                     try
                     {
                         this.nurseController.UpdateNurseUsernameAndPassword(newNurse, newLogin);

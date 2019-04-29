@@ -47,6 +47,7 @@ namespace CS6232GroupProject.UserControls
             dtp.Format = DateTimePickerFormat.Custom;
             dtp.TextChanged += new EventHandler(dtp_TextChange);
         }
+
         /// <summary>
         /// Checks if a patient visit exists
         /// </summary>
@@ -267,7 +268,7 @@ namespace CS6232GroupProject.UserControls
                 this.comboBoxAppointmentsPhysician.Enabled = true;
                 this.dateTimePickerAppointments.Enabled = true;
                 this.dateTimePickerAppointmentsTime.Enabled = true;
-                this.linkLabelAppointmentsCancel.Enabled = true;/////////////////////////
+                this.linkLabelAppointmentsCancel.Enabled = true;
             }
             else
             {
@@ -275,7 +276,7 @@ namespace CS6232GroupProject.UserControls
                 this.comboBoxAppointmentsPhysician.Enabled = false;
                 this.dateTimePickerAppointments.Enabled = false;
                 this.dateTimePickerAppointmentsTime.Enabled = false;
-                this.linkLabelAppointmentsCancel.Enabled = false;/////////////////////////
+                this.linkLabelAppointmentsCancel.Enabled = false;
             }
         }
 

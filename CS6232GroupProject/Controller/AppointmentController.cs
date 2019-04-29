@@ -108,6 +108,12 @@ namespace CS6232GroupProject.Controller
             return this.appointmentSource.CheckIfFutureAppointmentExists(patientID);
         }
 
+        /// <summary>
+        /// This method returns true or false if a patient has cancelled 
+        /// their appointment or not.
+        /// </summary>
+        /// <param name="appointmentID"></param>
+        /// <returns>True or false</returns>
         public bool CancelAppointment(int appointmentID)
         {
             return this.appointmentSource.CancelAppointment(appointmentID);
