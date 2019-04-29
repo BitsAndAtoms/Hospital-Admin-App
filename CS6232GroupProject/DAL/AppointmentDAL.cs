@@ -352,6 +352,11 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        /// <summary>
+        /// This method takes an appoinment ID and cancels the appointment.
+        /// </summary>
+        /// <param name="appointmentID"></param>
+        /// <returns>True or false</returns>
         public bool CancelAppointment(int appointmentID)
         {
             string deleteStatement =
