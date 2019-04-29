@@ -449,7 +449,7 @@ namespace CS6232GroupProject.DAL
 
         /// <summary>
         /// This method checks to see if a SSN is unique to anyone other than 
-        /// the patientID entered.
+        /// the patientID entered. 
         /// </summary>
         /// <param name="ssn"></param>
         /// <param name="patientID"></param>
