@@ -148,7 +148,7 @@ namespace CS6232GroupProject.UserControls
             }
             else if (String.IsNullOrEmpty(this.textBoxUsernameRegisterNurse.Text) || this.loginContoller.CheckIfUsernameExists(this.textBoxUsernameRegisterNurse.Text))
             {
-                labelAddMessage.Text = "Please enter a valid or non-taken Username";
+                labelAddMessage.Text = "Please enter a valid, unique Username";
                 return false;
             }
             else if (String.IsNullOrEmpty(this.textBoxPasswordRegisterNurse.Text))
@@ -275,12 +275,8 @@ namespace CS6232GroupProject.UserControls
             Address newAddress = new Address();
             Login newLogin = new Login();
 
-            
-
             if (this.CheckFieldsRegister())
             {
-                
-
                 try
                 {
                     newNurse.FName = this.textBoxFirstNameRegisterNurse.Text;
@@ -301,7 +297,6 @@ namespace CS6232GroupProject.UserControls
                     newLogin.Password = this.textBoxPasswordRegisterNurse.Text;
 
                     nurseController.registerNurse(newNurse, newAddress, newLogin);
-
 
                     MessageBox.Show("Nurse Registered", "Confirm");
                     this.ClearText();
@@ -328,7 +323,6 @@ namespace CS6232GroupProject.UserControls
 
                 labelNurseInformation.Text = "Nurse Information";
 
-
                 textBoxFirstNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[1].Value.ToString();
                 textBoxLastNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[2].Value.ToString();
                 dateTimePickerDOBNurseInfoResults.Value = Convert.ToDateTime(this.dataGridViewNurseInfo.CurrentRow.Cells[4].Value);
@@ -340,9 +334,6 @@ namespace CS6232GroupProject.UserControls
                 textBoxStreetNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).Street;
                 comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
                 textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
-
-                
-
 
                 if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
                 {
@@ -362,7 +353,7 @@ namespace CS6232GroupProject.UserControls
                 labelNurseInformation.Text = "Nurse Login Information";
 
                 textBoxUsernameNurse.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[10].Value.ToString();
-
+                nurseID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[0].Value;
             }
         }
 
@@ -377,7 +368,6 @@ namespace CS6232GroupProject.UserControls
             Address newAddress = new Address();
             Login newLogin = new Login();
             
-
             if (this.CheckFieldsUpdate())
             {
                 newNurse.NurseID = nurseID;
@@ -452,7 +442,6 @@ namespace CS6232GroupProject.UserControls
             Microsoft.Reporting.WinForms.ReportDataSource DataSet1 = new Microsoft.Reporting.WinForms.ReportDataSource( "DataSet1", yourDataTable);
             this.reportViewer.LocalReport.DataSources.Add(DataSet1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "Namespace.ClinicReport.rdlc";
-     
             this.reportViewer.RefreshReport();
 
         }
@@ -471,12 +460,11 @@ namespace CS6232GroupProject.UserControls
             Address newAddress = new Address();
             Login newLogin = new Login();
 
-
             newNurse.NurseID = nurseID;
             newNurse.Username = this.textBoxUsernameNurse.Text;
             newLogin.Username = this.textBoxUsernameNurse.Text;
             newLogin.Password = this.textBoxPasswordNurse.Text;
-            if (this.textBoxPasswordNurse.Text == "")
+            if (String.IsNullOrEmpty(this.textBoxPasswordNurse.Text))
             {
                 //Call the update username only.
                 try
@@ -484,7 +472,6 @@ namespace CS6232GroupProject.UserControls
                     this.nurseController.UpdateNurseUsername(newNurse, newLogin);
 
                     MessageBox.Show("Nurse Username Information Updated", "Confirm");
-                    this.ClearText();
                     this.dataGridViewNurseInfo.DataSource = null;
                     this.dataGridViewNurseInfo.DataSource = this.nurseController.GetSearchNurseByNameDOB(newNurse);
                 }
