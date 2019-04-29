@@ -1,45 +1,48 @@
-SQL DB File is in the DB Files folder of the project and will also be added as a standalone copy in the first layer 
-of the Submission file. Please note that you may need to delete our old Database first. 
 
-Login Information:
 
-	Nurse   
+CS6232 Group G4
+
+
+The All Database Files are located in the Folder DB Files.
+
+****************************************************************************************************************
+
+Please note: If you set a nurse to inactive, or they are already set to inactive,
+you cannot log in with that nurse.
+
+The Patient's Information below is for testing that a patient with an incomplete appointment (in progress) and 
+a patient with pending test results cannot be deleted.
+
+****************************************************************************************************************
+Nurse Information:
+    Login:
+		Username: Betty
+		Password: password
+	
+	Login:
+		Username: Omar
+		Password: password
+		
+	Login:
 		Username: Tyson
 		Password: password
 		
-	Admin
+Administrator Information:
+	Login:
 		Username: Chester
 		Password: password
 		
-		
-	*Please note that our passwords have always been encrypted*
-	*so the passwords haven't changed.*
-	
-Current Missing Features:
+Patient Information:
 
-	Report generating for Admin.
-		We didn't have time to finish this as we wanted to make sure the minimum requirements 
-		were met, and due to time constraints. We left it for the final submission deadline as a result, 
-		but the tab page can be found on the Patient Records form. All we have left is to add the report viewer,
-		then have it linked to the SP of the last semester so that the information is generated in the report correctly.
+	Name:
+		Marvin Ronda
+	
+	Name:
+		Ram Ram
 		
-	Adding Specialties to Doctors:
-		This was something we decided to push back each iteration. It was never a main requirement, so we pushed it back 
-		as we got more ambitious with each other requirement. We quickly realized that, as each of us has a job and life 
-		outside of the course, adding it in with the little time we did have to complete the main requirements wouldn't be 
-		a feasible possibility. 
-		
-	Adding Admin Approval/Disapproval of Doctor Specialties
-		The reasonings behind this are the same as above, compounded by the fact that we didn't implement specialties to 
-		begin with.
-		
-	Allowing the Setting of When a Test Should Be Preformed
-		We decided this was best changed to allow the input of information of the tests, and the date would be set to 
-		whenever that update was made. It is less of a non-implemented feature, and more of an evolution of one.
-		
-	Have a Printable Form of Treatments and Prescriptions
-		This is another victim of life getting in our way. We originally planned for this to be a major feature; something 
-		to make us stand out from the rest of the groups. Unfortunately, it very quickly became a low priority for us. We 
-		have decided that it will be the last feature, possibly even one we can't finish in time, but that was something we 
-		intended to speak to you about after a meeting with one another. We haven't given up hope on it, and we do have a 
-		rough plan and some saved code hidden away.
+Known Bugs:
+
+	Patient Records: This is less of a bug, and more of a comment. A user can order lab tests after an appointment has passed, along with 
+		routine checkup information. That said, we left the possibility open as often the need to correct information is important. If 
+		a nurse accidentally stated that the patient's weight was 12, not 120, the need to correct that is important. That is one of the 
+		reasons we left the ability to edit the appointment, but not cancel it, after the appointment had passed available.
