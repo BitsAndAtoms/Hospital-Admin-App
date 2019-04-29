@@ -1129,8 +1129,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.05903in</Top>
-        <Height>0.875in</Height>
+        <Top>1.01166in</Top>
+        <Left>0.02419in</Left>
+        <Height>0.87499in</Height>
         <Width>8.74814in</Width>
         <Style>
           <Border>
@@ -1142,10 +1143,9 @@
         <Source>Embedded</Source>
         <Value>logoicon</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.02778in</Top>
-        <Left>5.13843in</Left>
-        <Height>0.98958in</Height>
-        <Width>3.45833in</Width>
+        <Left>0.02419in</Left>
+        <Height>0.94222in</Height>
+        <Width>3.11493in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1160,22 +1160,38 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Performed Tests Report</Value>
+                <Value>Clinic Report</Value>
                 <Style>
-                  <FontSize>20pt</FontSize>
+                  <FontSize>25pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Color>#0078bd</Color>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Performed Tests</Value>
+                <Style>
+                  <FontSize>15pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#0078bd</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.62375in</Top>
-        <Left>0.02419in</Left>
-        <Height>0.36583in</Height>
-        <Width>3.60081in</Width>
+        <Left>6.21378in</Left>
+        <Height>0.66444in</Height>
+        <Width>2.48563in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -1187,11 +1203,76 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="ExecutionTime">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Globals!ExecutionTime</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ExecutionTime</rd:DefaultName>
+        <Top>0.70611in</Top>
+        <Left>7.22767in</Left>
+        <Height>0.25in</Height>
+        <Width>1.47174in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Date:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#0078bd</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox29</rd:DefaultName>
+        <Top>0.70611in</Top>
+        <Left>6.73461in</Left>
+        <Height>0.25in</Height>
+        <Width>0.47917in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>1.93402in</Height>
+    <Height>1.88665in</Height>
     <Style />
   </Body>
-  <Width>8.74814in</Width>
+  <Width>8.77233in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
