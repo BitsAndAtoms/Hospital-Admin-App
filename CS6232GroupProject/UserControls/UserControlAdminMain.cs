@@ -1,7 +1,5 @@
 ﻿using CS6232GroupProject.Controller;
 using CS6232GroupProject.Model;
-using CS6232GroupProject.View;
-using Microsoft.Reporting.WinForms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -442,6 +440,7 @@ namespace CS6232GroupProject.UserControls
             this.ClearText();
             panelNurseSearch.Visible = true;
             panelNurseInfoResults.Visible = false;
+            panelLogin.Visible = false;
             this.tabControlAdminMain.SelectedTab = tabPageAdminNurseInfo;
         }
 

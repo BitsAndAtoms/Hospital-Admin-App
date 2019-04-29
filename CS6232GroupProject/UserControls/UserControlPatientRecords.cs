@@ -23,8 +23,6 @@ namespace CS6232GroupProject.UserControls
         private PatientVisitController visitController;
         private LabTestResultsController labTestResultsController;
         private List<Doctor> doctorList;
-        private PatientController patientController;
-        private Patient patient;
         private Appointment appointment;
         private PatientVisit visit;
         private int appointmentID;

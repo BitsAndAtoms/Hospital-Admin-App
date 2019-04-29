@@ -1396,7 +1396,6 @@
         private System.Windows.Forms.TextBox textBoxLabTestResultsWBC;
         private System.Windows.Forms.TabPage tabPageLabResults;
         private System.Windows.Forms.DataGridView labTestResultDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.BindingSource labTestResultBindingSource;
         private System.Windows.Forms.BindingSource labTestBindingSource;
         private System.Windows.Forms.Label labelAddMessageVisitRoutine;

@@ -1705,9 +1705,6 @@
         private System.Windows.Forms.Label labelAddMessage;
         private System.Windows.Forms.DataGridView dataGridViewNurseInfo;
         private System.Windows.Forms.BindingSource nurseBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.LinkLabel linkLabelNurseInfoBack;
         private System.Windows.Forms.ComboBox comboBoxNurseInfoResultsActive;
         private System.Windows.Forms.ComboBox comboBoxRegisterNurseActive;
