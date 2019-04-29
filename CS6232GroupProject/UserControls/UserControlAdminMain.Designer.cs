@@ -41,6 +41,10 @@
             this.linkLabelLoginBack = new System.Windows.Forms.LinkLabel();
             this.panelNurseSearch = new System.Windows.Forms.Panel();
             this.dataGridViewNurseInfo = new System.Windows.Forms.DataGridView();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumnNurseInformation = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumnNurseLogin = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLastNameNurseInfo = new System.Windows.Forms.TextBox();
             this.textBoxFirstNameNurseInfo = new System.Windows.Forms.TextBox();
@@ -126,10 +130,6 @@
             this.dateTimePickerReportsEndDate = new System.Windows.Forms.DateTimePicker();
             this.buttonReportsSubmit = new System.Windows.Forms.Button();
             this.labelReports = new System.Windows.Forms.Label();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumnNurseInformation = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumnNurseLogin = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nurseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -343,6 +343,42 @@
             this.dataGridViewNurseInfo.Size = new System.Drawing.Size(1380, 318);
             this.dataGridViewNurseInfo.TabIndex = 6;
             this.dataGridViewNurseInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNurseInfo_CellClick);
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "Phone";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            this.Phone.Visible = false;
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Visible = false;
+            // 
+            // dataGridViewButtonColumnNurseInformation
+            // 
+            this.dataGridViewButtonColumnNurseInformation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewButtonColumnNurseInformation.HeaderText = "";
+            this.dataGridViewButtonColumnNurseInformation.Name = "dataGridViewButtonColumnNurseInformation";
+            this.dataGridViewButtonColumnNurseInformation.ReadOnly = true;
+            this.dataGridViewButtonColumnNurseInformation.Text = "View/Edit Info";
+            this.dataGridViewButtonColumnNurseInformation.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumnNurseLogin
+            // 
+            this.dataGridViewButtonColumnNurseLogin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewButtonColumnNurseLogin.HeaderText = "";
+            this.dataGridViewButtonColumnNurseLogin.Name = "dataGridViewButtonColumnNurseLogin";
+            this.dataGridViewButtonColumnNurseLogin.ReadOnly = true;
+            this.dataGridViewButtonColumnNurseLogin.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumnNurseLogin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewButtonColumnNurseLogin.Text = "Login Info";
+            this.dataGridViewButtonColumnNurseLogin.UseColumnTextForButtonValue = true;
             // 
             // tableLayoutPanel1
             // 
@@ -1367,6 +1403,7 @@
             this.reportViewer.ServerReport.BearerToken = null;
             this.reportViewer.Size = new System.Drawing.Size(1397, 1346);
             this.reportViewer.TabIndex = 7;
+            this.reportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // tableLayoutPanel2
             // 
@@ -1460,42 +1497,6 @@
             this.labelReports.Size = new System.Drawing.Size(220, 29);
             this.labelReports.TabIndex = 5;
             this.labelReports.Text = "Generate Reports";
-            // 
-            // Phone
-            // 
-            this.Phone.DataPropertyName = "Phone";
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
-            this.Phone.Visible = false;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.Visible = false;
-            // 
-            // dataGridViewButtonColumnNurseInformation
-            // 
-            this.dataGridViewButtonColumnNurseInformation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewButtonColumnNurseInformation.HeaderText = "";
-            this.dataGridViewButtonColumnNurseInformation.Name = "dataGridViewButtonColumnNurseInformation";
-            this.dataGridViewButtonColumnNurseInformation.ReadOnly = true;
-            this.dataGridViewButtonColumnNurseInformation.Text = "View/Edit Info";
-            this.dataGridViewButtonColumnNurseInformation.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumnNurseLogin
-            // 
-            this.dataGridViewButtonColumnNurseLogin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewButtonColumnNurseLogin.HeaderText = "";
-            this.dataGridViewButtonColumnNurseLogin.Name = "dataGridViewButtonColumnNurseLogin";
-            this.dataGridViewButtonColumnNurseLogin.ReadOnly = true;
-            this.dataGridViewButtonColumnNurseLogin.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewButtonColumnNurseLogin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewButtonColumnNurseLogin.Text = "Login Info";
-            this.dataGridViewButtonColumnNurseLogin.UseColumnTextForButtonValue = true;
             // 
             // nurseIDDataGridViewTextBoxColumn
             // 

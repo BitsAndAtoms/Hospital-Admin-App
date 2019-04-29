@@ -44,7 +44,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.03F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.97F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tableLayoutPanel1.Controls.Add(this.linkLabelLogout, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxNurseIcon, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelName, 1, 0);
@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(804, 120);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(839, 120);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // linkLabelLogout
@@ -63,7 +63,7 @@
             this.linkLabelLogout.BackColor = System.Drawing.Color.Transparent;
             this.linkLabelLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelLogout.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(100)))));
-            this.linkLabelLogout.Location = new System.Drawing.Point(713, 0);
+            this.linkLabelLogout.Location = new System.Drawing.Point(748, 0);
             this.linkLabelLogout.Name = "linkLabelLogout";
             this.linkLabelLogout.Padding = new System.Windows.Forms.Padding(0, 10, 10, 0);
             this.linkLabelLogout.Size = new System.Drawing.Size(88, 35);
@@ -90,7 +90,7 @@
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(120, 47);
+            this.labelName.Location = new System.Drawing.Point(126, 47);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(105, 25);
             this.labelName.TabIndex = 1;
@@ -101,7 +101,7 @@
             this.userControlAdminMain1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlAdminMain1.Location = new System.Drawing.Point(0, 120);
             this.userControlAdminMain1.Name = "userControlAdminMain1";
-            this.userControlAdminMain1.Size = new System.Drawing.Size(804, 783);
+            this.userControlAdminMain1.Size = new System.Drawing.Size(839, 783);
             this.userControlAdminMain1.TabIndex = 6;
             this.userControlAdminMain1.Load += new System.EventHandler(this.userControlAdminMain1_Load);
             // 
@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CS6232GroupProject.Properties.Resources.bggradient_topsmall;
-            this.ClientSize = new System.Drawing.Size(804, 903);
+            this.ClientSize = new System.Drawing.Size(839, 903);
             this.Controls.Add(this.userControlAdminMain1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
