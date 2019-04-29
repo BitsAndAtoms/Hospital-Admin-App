@@ -547,6 +547,7 @@ namespace CS6232GroupProject.UserControls
 
         private void labTestResultDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.ColumnIndex == 7)
             {
                 try
@@ -569,6 +570,7 @@ namespace CS6232GroupProject.UserControls
                 {
                     MessageBox.Show("There was an issue updating the tests!", "Error");
                 }
+                
             }
         }
     }
