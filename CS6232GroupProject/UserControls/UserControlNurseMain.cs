@@ -519,8 +519,7 @@ namespace CS6232GroupProject.UserControls
         {
             Patient newPatient = new Patient();
             Address newAddress = new Address();
-            if (this.CheckFieldsUpdate())
-            {
+            
                 DialogResult confirmDelete = MessageBox.Show("Patient will be removed from database.\nContinue?", "Delete Patient Warning", MessageBoxButtons.YesNo);
                 if(confirmDelete == DialogResult.Yes)
                 {
@@ -565,7 +564,7 @@ namespace CS6232GroupProject.UserControls
                 {
                     return;
                 }
-            }
+            
                
         }
 

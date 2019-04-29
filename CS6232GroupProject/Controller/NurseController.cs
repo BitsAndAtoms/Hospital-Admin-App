@@ -82,11 +82,21 @@ namespace CS6232GroupProject.Controller
             return this.nurseSource.CheckNurseSSN(ssn);
         }
 
+        /// <summary>
+        /// This method updates a Nurse's Username and password.
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newLogin"></param>
         public void UpdateNurseUsernameAndPassword(Nurse newNurse, Login newLogin)
         {
             this.nurseSource.UpdateNurseUsernameAndPassword(newNurse, newLogin);
         }
 
+        /// <summary>
+        /// This method only updates the Nurse's username.
+        /// </summary>
+        /// <param name="newNurse"></param>
+        /// <param name="newLogin"></param>
         public void UpdateNurseUsername(Nurse newNurse, Login newLogin)
         {
             this.nurseSource.UpdateNurseUsername(newNurse, newLogin);
