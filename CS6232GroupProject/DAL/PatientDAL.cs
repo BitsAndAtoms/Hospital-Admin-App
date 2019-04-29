@@ -78,26 +78,26 @@ namespace CS6232GroupProject.DAL
                " WHERE Patient.patientID = @patientID AND finalDiagnosis is null)" +
                " BEGIN " +
                
-               " DELETE FROM  LabTestResult WHERE labTestResultID IN (SELECT Address.addressID, HasAppointment.appointmentID, LabTestResult.labTestResultID, PatientVisit.visitID, Patient.patientID, PatientVisit.finalDiagnosis " +
+               " DELETE FROM  LabTestResult WHERE labTestResultID IN (SELECT LabTestResult.labTestResultID " +
                " FROM HasAppointment INNER JOIN" +
                " Address INNER JOIN " +
                " Patient ON Address.addressID = Patient.addressID ON HasAppointment.patientID = Patient.patientID INNER JOIN " +
                " PatientVisit ON HasAppointment.appointmentID = PatientVisit.appointmentID INNER JOIN" +
                " LabTestResult INNER JOIN" +
                " LabTestList ON LabTestResult.testID = LabTestList.testID ON PatientVisit.visitID = LabTestResult.visitID" +
-               " WHERE Patient.patientID = @patientID) as table1 " +
+               " WHERE Patient.patientID = @patientID) " +
 
                " DELETE FROM PatientVisit WHERE visitID IN " +
-               " (SELECT Address.addressID, HasAppointment.appointmentID, PatientVisit.visitID, Patient.patientID " +
+               " (SELECT PatientVisit.visitID FROM " +
                " Address INNER JOIN Patient ON Address.addressID = Patient.addressID INNER JOIN " +
                " HasAppointment ON Patient.patientID = HasAppointment.patientID INNER JOIN " +
-               " PatientVisit ON HasAppointment.appointmentID = PatientVisit.appointmentID WHERE Patient.patientID = @patientID) as table2 " +
+               " PatientVisit ON HasAppointment.appointmentID = PatientVisit.appointmentID WHERE Patient.patientID = @patientID) " +
 
-               " DELETE FROM HasAppointment WHERE appointmentID IN (SELECT Address.addressID, HasAppointment.appointmentID, Patient.patientID " +
+               " DELETE FROM HasAppointment WHERE appointmentID IN (SELECT HasAppointment.appointmentID FROM " +
                " Address INNER JOIN " +
                " Patient ON Address.addressID = Patient.addressID INNER JOIN " +
                " HasAppointment ON Patient.patientID = HasAppointment.patientID " +
-               " WHERE Patient.patientID = @patientID) as table3" +
+               " WHERE Patient.patientID = @patientID) " +
                
                " DELETE FROM Patient" +
                " WHERE patientID = @patientID " +
