@@ -181,23 +181,13 @@ namespace CS6232GroupProject.DAL
             string updateStatement =
                " begin transaction " +
                " begin try " +
-               " DECLARE @oldLoginUserName varchar(10);" +
                " UPDATE Address " +
                " SET state = @state, zip =@zip,street =@street " +
                " WHERE Address.addressID = (SELECT AddressID FROM Nurse " +
                " WHERE nurseID = @nurseID) " +
-               " SET @oldLoginUserName = (SELECT nurseUsername FROM Nurse " +
-               " WHERE nurseID = @nurseID) " +
-               " IF (@oldLoginUserName != @username )" +
-               " INSERT INTO Login(username,password) Values(@username,PWDENCRYPT(@password)) " +
-               " ELSE "+
-                   " UPDATE Login " +
-               " SET password = PWDENCRYPT(@password) WHERE username = @oldLoginUserName " +
                " UPDATE Nurse" +
-               " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID, nurseUsername = @nurseUsername, activeStatus = @activeStatus " +
+               " SET fname = @fname, lname =@lname, dob=@dob, ssn=@ssn, gender=@gender, phone=@phone, addressID =@addressID, activeStatus = @activeStatus " +
                " WHERE nurseID = @nurseID" +
-               " IF (@oldLoginUserName != @username )" +
-               " DELETE FROM Login WHERE username = @oldLoginUserName " +
                " commit transaction" +
                " end try" +
                " begin catch" +
@@ -239,8 +229,7 @@ namespace CS6232GroupProject.DAL
                         updateCommand.Parameters.AddWithValue("@street", newAddress.Street);
                     }
 
-                    updateCommand.Parameters.AddWithValue("@username", newLogin.Username);
-                    updateCommand.Parameters.AddWithValue("@password", newLogin.Password);
+                    
 
                     if (newNurse.FName == null)
                     {
@@ -291,7 +280,7 @@ namespace CS6232GroupProject.DAL
                         updateCommand.Parameters.AddWithValue("@gender", newNurse.Gender);
                     }
 
-                    updateCommand.Parameters.AddWithValue("@nurseUsername", newNurse.Username);
+                    
 
                     if (newNurse.Active == true)
                     {
@@ -523,7 +512,99 @@ namespace CS6232GroupProject.DAL
             }
         }
 
+        public void UpdateNurseUsernameAndPassword(Nurse newNurse, Login newLogin)
+        {
+            string updateStatement = 
+               " begin transaction " +
+               " begin try " +
+               " DECLARE @oldLoginUserName varchar(10);" +
+               " SET @oldLoginUserName = (SELECT nurseUsername FROM Nurse " +
+               " WHERE nurseID = @nurseID) " +
+               " IF (@oldLoginUserName != @username )" +
+               " INSERT INTO Login(username,password) Values(@username,PWDENCRYPT(@password)) " +
+               " ELSE " +
+                   " UPDATE Login " +
+               " SET password = PWDENCRYPT(@password) WHERE username = @oldLoginUserName " +
+               " UPDATE Nurse" +
+               " SET nurseUsername = @nurseUsername " +
+               " WHERE nurseID = @nurseID" +
+               " IF (@oldLoginUserName != @username )" +
+               " DELETE FROM Login WHERE username = @oldLoginUserName " +
+               " commit transaction" +
+               " end try" +
+               " begin catch" +
+               "  raiserror('Update failed',16,1)" +
+               "  rollback transaction" +
+               " end catch";
 
+
+            
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand updateCommand = new SqlCommand(updateStatement, connection))
+                {
+                    updateCommand.Parameters.AddWithValue("@nurseID", newNurse.NurseID);
+
+                    updateCommand.Parameters.AddWithValue("@nurseUsername", newNurse.Username);
+                    updateCommand.Parameters.AddWithValue("@username", newLogin.Username);
+                    
+                    updateCommand.Parameters.AddWithValue("@password", newLogin.Password);
+
+                    updateCommand.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
+            }
+
+        }
+
+        public void UpdateNurseUsername(Nurse newNurse, Login newLogin)
+        {
+            string updateStatement =
+               " begin transaction " +
+               " begin try " +
+               " DECLARE @oldLoginUserName varchar(10);" +
+               " SET @oldLoginUserName = (SELECT nurseUsername FROM Nurse " +
+               " WHERE nurseID = @nurseID) " +
+               " IF (@oldLoginUserName != @username )" +
+               " INSERT INTO Login(username) Values(@username) " +
+               
+               " UPDATE Nurse" +
+               " SET nurseUsername = @nurseUsername " +
+               " WHERE nurseID = @nurseID" +
+               " IF (@oldLoginUserName != @username )" +
+               " DELETE FROM Login WHERE username = @oldLoginUserName " +
+               " commit transaction" +
+               " end try" +
+               " begin catch" +
+               "  raiserror('Update failed',16,1)" +
+               "  rollback transaction" +
+               " end catch";
+
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand updateCommand = new SqlCommand(updateStatement, connection))
+                {
+                    updateCommand.Parameters.AddWithValue("@nurseID", newNurse.NurseID);
+
+                    updateCommand.Parameters.AddWithValue("@nurseUsername", newNurse.Username);
+                    updateCommand.Parameters.AddWithValue("@username", newLogin.Username);
+
+                    updateCommand.ExecuteNonQuery();
+
+                }
+
+                connection.Close();
+            }
+
+        }
 
     }
 }

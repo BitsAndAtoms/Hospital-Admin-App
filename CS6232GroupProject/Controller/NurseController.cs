@@ -81,5 +81,15 @@ namespace CS6232GroupProject.Controller
         {
             return this.nurseSource.CheckNurseSSN(ssn);
         }
+
+        public void UpdateNurseUsernameAndPassword(Nurse newNurse, Login newLogin)
+        {
+            this.nurseSource.UpdateNurseUsernameAndPassword(newNurse, newLogin);
+        }
+
+        public void UpdateNurseUsername(Nurse newNurse, Login newLogin)
+        {
+            this.nurseSource.UpdateNurseUsername(newNurse, newLogin);
+        }
     }
 }
