@@ -57,3 +57,5 @@ Known Bugs:
 	PatientRecords: This is more of our only bug that we found. If the appointment has passed, the user can still update the results of the lab tests.
 		We tried to disable this, but as it required some custom coding to get to work, it was a bit difficult, thus, we left it possible to update the 
 		results after the appointment had passed.
+		
+	FormLogin: The username entered isn't case sensitive, and accepts upper or lowercase letters. The password is case sensitive.
