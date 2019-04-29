@@ -46,3 +46,8 @@ Known Bugs:
 		routine checkup information. That said, we left the possibility open as often the need to correct information is important. If 
 		a nurse accidentally stated that the patient's weight was 12, not 120, the need to correct that is important. That is one of the 
 		reasons we left the ability to edit the appointment, but not cancel it, after the appointment had passed available.
+
+    FormPatientRecords.cs: When opening the designer view of the Patient Records Form, but not the User Control, a message about and object 
+		reference not set to an instance of an object as well as a notification about a patient having no appointments. This is due to one of 
+		our built-in checks for displaying the page if, and only if, the patient has an appointment. It doesn't effect the running of the application 
+		in any way.
