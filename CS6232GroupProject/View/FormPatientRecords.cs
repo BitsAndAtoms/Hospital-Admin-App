@@ -15,6 +15,9 @@ namespace CS6232GroupProject.View
             InitializeComponent();
         }
 
+        private void userControlPatientRecords1_Load(object sender, System.EventArgs e)
+        {
 
+        }
     }
 }

@@ -66,13 +66,47 @@ namespace CS6232GroupProject.DAL
             string deleteStatement =
                " begin transaction " +
                " begin try " +
-               " If NOT EXISTS (select * from HasAppointment where patientID = @patientID)" +
+
+
+               " If NOT EXISTS (SELECT Address.addressID, HasAppointment.appointmentID, LabTestResult.labTestResultID, PatientVisit.visitID, Patient.patientID, PatientVisit.finalDiagnosis " +
+               " FROM HasAppointment INNER JOIN" +
+               " Address INNER JOIN " +
+               " Patient ON Address.addressID = Patient.addressID ON HasAppointment.patientID = Patient.patientID INNER JOIN " +
+               " PatientVisit ON HasAppointment.appointmentID = PatientVisit.appointmentID INNER JOIN" +
+               " LabTestResult INNER JOIN" +
+               " LabTestList ON LabTestResult.testID = LabTestList.testID ON PatientVisit.visitID = LabTestResult.visitID" +
+               " WHERE Patient.patientID = @patientID AND finalDiagnosis is null)" +
                " BEGIN " +
+               
+               " DELETE FROM  LabTestResult WHERE labTestResultID IN (SELECT Address.addressID, HasAppointment.appointmentID, LabTestResult.labTestResultID, PatientVisit.visitID, Patient.patientID, PatientVisit.finalDiagnosis " +
+               " FROM HasAppointment INNER JOIN" +
+               " Address INNER JOIN " +
+               " Patient ON Address.addressID = Patient.addressID ON HasAppointment.patientID = Patient.patientID INNER JOIN " +
+               " PatientVisit ON HasAppointment.appointmentID = PatientVisit.appointmentID INNER JOIN" +
+               " LabTestResult INNER JOIN" +
+               " LabTestList ON LabTestResult.testID = LabTestList.testID ON PatientVisit.visitID = LabTestResult.visitID" +
+               " WHERE Patient.patientID = @patientID) as table1 " +
+
+               " DELETE FROM PatientVisit WHERE visitID IN " +
+               " (SELECT Address.addressID, HasAppointment.appointmentID, PatientVisit.visitID, Patient.patientID " +
+               " Address INNER JOIN Patient ON Address.addressID = Patient.addressID INNER JOIN " +
+               " HasAppointment ON Patient.patientID = HasAppointment.patientID INNER JOIN " +
+               " PatientVisit ON HasAppointment.appointmentID = PatientVisit.appointmentID WHERE Patient.patientID = @patientID) as table2 " +
+
+               " DELETE FROM HasAppointment WHERE appointmentID IN (SELECT Address.addressID, HasAppointment.appointmentID, Patient.patientID " +
+               " Address INNER JOIN " +
+               " Patient ON Address.addressID = Patient.addressID INNER JOIN " +
+               " HasAppointment ON Patient.patientID = HasAppointment.patientID " +
+               " WHERE Patient.patientID = @patientID) as table3" +
+               
                " DELETE FROM Patient" +
                " WHERE patientID = @patientID " +
+
                " DELETE FROM Address " +
                " WHERE Address.addressID = @addressID; " +
                " END" +
+
+
                " ELSE" +
                " BEGIN " +
                " raiserror('Update failed',16,1);" +

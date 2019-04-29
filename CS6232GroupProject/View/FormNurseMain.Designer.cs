@@ -87,7 +87,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.03425F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.96575F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel1.Controls.Add(this.linkLabelLogout, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxNurseIcon, 0, 0);
@@ -116,6 +116,7 @@
             this.userControlNurseMain1.Name = "userControlNurseMain1";
             this.userControlNurseMain1.Size = new System.Drawing.Size(794, 783);
             this.userControlNurseMain1.TabIndex = 3;
+            this.userControlNurseMain1.Load += new System.EventHandler(this.userControlNurseMain1_Load);
             // 
             // FormNurseMain
             // 
