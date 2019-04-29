@@ -400,18 +400,18 @@ namespace CS6232GroupProject.UserControls
                     try
                     {
                         this.labTestResultsController.OrderSelectedTestForVisit(this.visit, nameOfTestOrdered);
+                        MessageBox.Show("Test " + nameOfTestOrdered + " ordered successfully.", "Confirm");
                     }
                     catch (Exception)
                     {
-
-                        MessageBox.Show("Error: The test could not be ordered");
+                        MessageBox.Show(nameOfTestOrdered + " has already been ordered.","Confirm");
                     }
+
                 }
-                MessageBox.Show("Test(s) ordered.", "Confirm");
             }
             else
             {
-                MessageBox.Show("Tests cannot be ordered before an inital diagnosis or after a final diagnosis.");
+                MessageBox.Show("Tests cannot be ordered before an inital diagnosis or after a final diagnosis.", "Confirm");
             }
         }
 

@@ -93,6 +93,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updateButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.labTestResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelInstructions = new System.Windows.Forms.Label();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -103,7 +104,6 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPatientNameDisplay = new System.Windows.Forms.Label();
             this.labelPatientName = new System.Windows.Forms.Label();
-            this.labelInstructions = new System.Windows.Forms.Label();
             this.tabControlPatientRecords.SuspendLayout();
             this.tabPageAppointments.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -291,7 +291,7 @@
             this.comboBoxAppointmentsPhysician.DisplayMember = "FullName";
             this.comboBoxAppointmentsPhysician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentsPhysician.FormattingEnabled = true;
-            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 14);
+            this.comboBoxAppointmentsPhysician.Location = new System.Drawing.Point(166, 10);
             this.comboBoxAppointmentsPhysician.Name = "comboBoxAppointmentsPhysician";
             this.comboBoxAppointmentsPhysician.Size = new System.Drawing.Size(298, 28);
             this.comboBoxAppointmentsPhysician.TabIndex = 3;
@@ -950,6 +950,21 @@
             // 
             this.labTestResultBindingSource.DataSource = typeof(CS6232GroupProject.Model.LabTestResult);
             // 
+            // labelInstructions
+            // 
+            this.labelInstructions.AutoSize = true;
+            this.labelInstructions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInstructions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
+            this.labelInstructions.Location = new System.Drawing.Point(3, 3);
+            this.labelInstructions.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
+            this.labelInstructions.Name = "labelInstructions";
+            this.labelInstructions.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.labelInstructions.Size = new System.Drawing.Size(742, 37);
+            this.labelInstructions.TabIndex = 13;
+            this.labelInstructions.Text = "Select the Result and Result Date for the corresponding row then click Update to " +
+    "update test results.";
+            // 
             // patientBindingSource
             // 
             this.patientBindingSource.DataSource = typeof(CS6232GroupProject.Model.Patient);
@@ -1056,21 +1071,6 @@
             this.labelPatientName.Size = new System.Drawing.Size(71, 20);
             this.labelPatientName.TabIndex = 13;
             this.labelPatientName.Text = "Patient:";
-            // 
-            // labelInstructions
-            // 
-            this.labelInstructions.AutoSize = true;
-            this.labelInstructions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInstructions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(189)))));
-            this.labelInstructions.Location = new System.Drawing.Point(3, 3);
-            this.labelInstructions.Margin = new System.Windows.Forms.Padding(3, 0, 25, 0);
-            this.labelInstructions.Name = "labelInstructions";
-            this.labelInstructions.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.labelInstructions.Size = new System.Drawing.Size(742, 37);
-            this.labelInstructions.TabIndex = 13;
-            this.labelInstructions.Text = "Select the Result and Result Date for the corresponding row then click Update to " +
-    "update test results.";
             // 
             // UserControlPatientRecords
             // 
