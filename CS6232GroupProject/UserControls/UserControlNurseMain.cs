@@ -227,51 +227,59 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 8)
+            try
             {
-                panelPatientSearch.Visible = false;
-                panelPatientInfoResults.Visible = true;
-                labelPatientInformation.Text = "Patient Information";
-
-                textBoxFirstNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
-                textBoxLastNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
-                dateTimePickerDOBPatientInfoResult.Value = Convert.ToDateTime(this.dataGridViewPatientInfo.CurrentRow.Cells[3].Value);
-                textBoxSSNPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[4].Value.ToString();
-                comboBoxGenderPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[5].Value.ToString();
-                textBoxPhonePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[6].Value.ToString();
-
-                addressID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value;
-                Address patientAddress = this.addressController.GetAddressByID(addressID);
-                textBoxStreetPatientInfoResult.Text = patientAddress.Street;
-                comboBoxStatePatientInfoResult.Text = patientAddress.State;
-                textBoxZipPatientInfoResult.Text = Convert.ToString(patientAddress.Zip);
-                patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
-            }
-            if (e.ColumnIndex == 9)
-            {
-
-                patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
-                string fName = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
-                string lName = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
-                patientName = fName + " " + lName;
-
-                if (appointmentController.CheckIfAppointmentExists(patientID))
+                if (e.ColumnIndex == 8)
                 {
-                    FormPatientRecords formPatientRecords = new FormPatientRecords();
-                    formPatientRecords.ShowDialog();
+                    panelPatientSearch.Visible = false;
+                    panelPatientInfoResults.Visible = true;
+                    labelPatientInformation.Text = "Patient Information";
+
+                    textBoxFirstNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
+                    textBoxLastNamePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
+                    dateTimePickerDOBPatientInfoResult.Value = Convert.ToDateTime(this.dataGridViewPatientInfo.CurrentRow.Cells[3].Value);
+                    textBoxSSNPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[4].Value.ToString();
+                    comboBoxGenderPatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[5].Value.ToString();
+                    textBoxPhonePatientInfoResult.Text = this.dataGridViewPatientInfo.CurrentRow.Cells[6].Value.ToString();
+
+                    addressID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[7].Value;
+                    Address patientAddress = this.addressController.GetAddressByID(addressID);
+                    textBoxStreetPatientInfoResult.Text = patientAddress.Street;
+                    comboBoxStatePatientInfoResult.Text = patientAddress.State;
+                    textBoxZipPatientInfoResult.Text = Convert.ToString(patientAddress.Zip);
+                    patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
                 }
-                else
+                if (e.ColumnIndex == 9)
                 {
-                    MessageBox.Show("No appointments found for " + patientName + ". \nPlease book an appointment to continue.", "Error - No Appointment Found");
+
+                    patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+                    string fName = this.dataGridViewPatientInfo.CurrentRow.Cells[1].Value.ToString();
+                    string lName = this.dataGridViewPatientInfo.CurrentRow.Cells[2].Value.ToString();
+                    patientName = fName + " " + lName;
+
+                    if (appointmentController.CheckIfAppointmentExists(patientID))
+                    {
+                        FormPatientRecords formPatientRecords = new FormPatientRecords();
+                        formPatientRecords.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No appointments found for " + patientName + ". \nPlease book an appointment to continue.", "Error - No Appointment Found");
+                    }
+                }
+                if (e.ColumnIndex == 10)
+                {
+                    panelPatientSearch.Visible = false;
+                    panelPatientBookAppointment.Visible = true;
+                    labelPatientInformation.Text = "Book Appointment";
+                    patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
                 }
             }
-            if (e.ColumnIndex == 10)
+            catch (Exception)
             {
-                panelPatientSearch.Visible = false;
-                panelPatientBookAppointment.Visible = true;
-                labelPatientInformation.Text = "Book Appointment";
-                patientID = (int)this.dataGridViewPatientInfo.CurrentRow.Cells[0].Value;
+                MessageBox.Show("Error: No search results found.");
             }
+            
             
         }
 

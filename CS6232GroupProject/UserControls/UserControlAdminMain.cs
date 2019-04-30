@@ -317,44 +317,56 @@ namespace CS6232GroupProject.UserControls
         /// <param name="e"></param>
         private void dataGridViewNurseInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 11) { 
-                panelNurseSearch.Visible = false;
-                panelNurseInfoResults.Visible = true;
-
-                labelNurseInformation.Text = "Nurse Information";
-
-                textBoxFirstNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[1].Value.ToString();
-                textBoxLastNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[2].Value.ToString();
-                dateTimePickerDOBNurseInfoResults.Value = Convert.ToDateTime(this.dataGridViewNurseInfo.CurrentRow.Cells[4].Value);
-                textBoxSSNNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[5].Value.ToString();
-                comboBoxGenderNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[6].Value.ToString();
-                textBoxPhoneNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[7].Value.ToString();
-
-                addressID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[8].Value;
-                textBoxStreetNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).Street;
-                comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
-                textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
-
-                if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
-                {
-                    comboBoxNurseInfoResultsActive.Text = "Active";
-                }
-                else
-                {
-                    comboBoxNurseInfoResultsActive.Text = "Inactive";
-                }
-                nurseID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[0].Value;
-            }
-            if (e.ColumnIndex == 12)
+            try
             {
-                panelNurseSearch.Visible = false;
-                panelLogin.Visible = true;
+                if (e.ColumnIndex == 11)
+                {
+                    panelNurseSearch.Visible = false;
+                    panelNurseInfoResults.Visible = true;
 
-                labelNurseInformation.Text = "Nurse Login Information";
+                    labelNurseInformation.Text = "Nurse Information";
 
-                textBoxUsernameNurse.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[10].Value.ToString();
-                nurseID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[0].Value;
+                    textBoxFirstNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[1].Value.ToString();
+                    textBoxLastNameNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[2].Value.ToString();
+                    dateTimePickerDOBNurseInfoResults.Value = Convert.ToDateTime(this.dataGridViewNurseInfo.CurrentRow.Cells[4].Value);
+                    textBoxSSNNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[5].Value.ToString();
+                    comboBoxGenderNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[6].Value.ToString();
+                    textBoxPhoneNurseInfoResults.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[7].Value.ToString();
+
+                    addressID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[8].Value;
+                    textBoxStreetNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).Street;
+                    comboBoxStateNurseInfoResults.Text = this.addressController.GetAddressByID(addressID).State;
+                    textBoxZipNurseInfoResults.Text = Convert.ToString(this.addressController.GetAddressByID(addressID).Zip);
+
+                    if (this.dataGridViewNurseInfo.CurrentRow.Cells[9].Value.Equals(true))
+                    {
+                        comboBoxNurseInfoResultsActive.Text = "Active";
+                    }
+                    else
+                    {
+                        comboBoxNurseInfoResultsActive.Text = "Inactive";
+                    }
+                    nurseID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[0].Value;
+                }
+                if (e.ColumnIndex == 12)
+                {
+                    panelNurseSearch.Visible = false;
+                    panelLogin.Visible = true;
+
+                    labelNurseInformation.Text = "Nurse Login Information";
+
+                    textBoxUsernameNurse.Text = this.dataGridViewNurseInfo.CurrentRow.Cells[10].Value.ToString();
+                    nurseID = (int)this.dataGridViewNurseInfo.CurrentRow.Cells[0].Value;
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: No search values found.");
+                panelNurseSearch.Visible = true;
+                panelNurseInfoResults.Visible = false;
+                panelLogin.Visible = false;
+            }
+            
         }
 
         /// <summary>
