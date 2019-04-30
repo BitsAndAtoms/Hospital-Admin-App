@@ -59,3 +59,6 @@ Known Bugs:
 		results after the appointment had passed.
 		
 	FormLogin: The username entered isn't case sensitive, and accepts upper or lowercase letters. The password is case sensitive.
+	
+	FormAdmin: A try catch was added to fix this but it is included as a precaution. If the user clicks on the non-filled in column heading the application would crash 
+		but an identical data grid view in the NurseForm would not. It is no longer a bug.
