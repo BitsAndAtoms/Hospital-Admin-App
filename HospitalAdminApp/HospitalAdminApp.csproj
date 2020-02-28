@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59BD5644-1070-4644-8CAA-0930544D2E7C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HospitalAdminApp</RootNamespace>
+    <AssemblyName>HospitalAdminApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon_41d_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clinicDataSet.cs">
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="clinicDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="clinicDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\AddressController.cs" />
+    <Compile Include="Controller\AppointmentController.cs" />
+    <Compile Include="Controller\DoctorController.cs" />
+    <Compile Include="Controller\LabTestResultsController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\NurseController.cs" />
+    <Compile Include="Controller\PatientController.cs" />
+    <Compile Include="Controller\PatientVisitController.cs" />
+    <Compile Include="DAL\AddressDAL.cs" />
+    <Compile Include="DAL\AppointmentDAL.cs" />
+    <Compile Include="DAL\DBConnection.cs" />
+    <Compile Include="DAL\DoctorDAL.cs" />
+    <Compile Include="DAL\LabTestResultsDAL.cs" />
+    <Compile Include="DAL\LoginDBDAL.cs" />
+    <Compile Include="DAL\NurseDAL.cs" />
+    <Compile Include="DAL\PatientDAL.cs" />
+    <Compile Include="DAL\PatientVisitDAL.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\Appointment.cs" />
+    <Compile Include="Model\Doctor.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\LabTest.cs" />
+    <Compile Include="Model\LabTestResult.cs" />
+    <Compile Include="Model\Login.cs" />
+    <Compile Include="Model\Nurse.cs" />
+    <Compile Include="Controller\Program.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\PatientVisit.cs" />
+    <Compile Include="Model\Specialty.cs" />
+    <Compile Include="Model\State.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserControls\UserControlAdminMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlAdminMain.Designer.cs">
+      <DependentUpon>UserControlAdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNurseMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNurseMain.Designer.cs">
+      <DependentUpon>UserControlNurseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlPatientRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlPatientRecords.Designer.cs">
+      <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAdminMain.Designer.cs">
+      <DependentUpon>FormAdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormNurseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormNurseMain.Designer.cs">
+      <DependentUpon>FormNurseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormPatientRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPatientRecords.Designer.cs">
+      <DependentUpon>FormPatientRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_CS6232_g4DataSet.cs">
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_CS6232_g4DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClinicReport.rdlc" />
+    <EmbeddedResource Include="UserControls\UserControlAdminMain.resx">
+      <DependentUpon>UserControlAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNurseMain.resx">
+      <DependentUpon>UserControlNurseMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlPatientRecords.resx">
+      <DependentUpon>UserControlPatientRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAdminMain.resx">
+      <DependentUpon>FormAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormNurseMain.resx">
+      <DependentUpon>FormNurseMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPatientRecords.resx">
+      <DependentUpon>FormPatientRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="clinicDataSet.xsc">
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clinicDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="clinicDataSet.xss">
+      <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet1.xsc">
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clinicDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="clinicDataSet1.xss">
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="_CS6232_g4DataSet.xsc">
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_CS6232_g4DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_CS6232_g4DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_CS6232_g4DataSet.xss">
+      <DependentUpon>_CS6232_g4DataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logotext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logotexts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_41d_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bggradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nurseicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bggradientD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bggradientB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bggradientC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bggradient-topsmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminicon2c.png" />
+    <None Include="Resources\nurseicon2e.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
