@@ -1,6 +1,5 @@
 
-
-CS6232 Group G4
+Computer science C# Hospital Admin App
 
 
 The All Database Files are located in the Folder DB Files.
