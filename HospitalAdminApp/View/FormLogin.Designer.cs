@@ -119,7 +119,7 @@
             this.labelInformation.Name = "labelInformation";
             this.labelInformation.Size = new System.Drawing.Size(140, 13);
             this.labelInformation.TabIndex = 5;
-            this.labelInformation.Text = "CS6232 Group Project 2019";
+            this.labelInformation.Text = "Hospital Admin App";
             // 
             // labelNames
             // 
